@@ -1,0 +1,701 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap");
+
+:root {
+  color-scheme: light;
+  --hair-emerald: #16a34a;
+  --hair-emerald-dark: #0f6b3a;
+  --hair-slate: #0f172a;
+  --hair-muted: #64748b;
+  --hair-border: #e2e8f0;
+  --hair-canvas: #f8fafc;
+  --hair-cream: #f8f4e6;
+  --hair-red: #b91c1c;
+  --hair-amber: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--hair-canvas);
+  color: var(--hair-slate);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hair-page {
+  min-height: 100vh;
+  background: var(--hair-canvas);
+  color: var(--hair-slate);
+  padding-bottom: 5.5rem;
+}
+
+.hair-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hair-topbar {
+  background: var(--hair-emerald);
+  border-bottom: 1px solid var(--hair-emerald-dark);
+  color: #effff4;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+  text-align: center;
+}
+
+.hair-kicker {
+  margin: 0 0 0.75rem;
+  color: rgba(5, 46, 22, 0.72);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hair-topbar h1 {
+  max-width: 980px;
+  margin: 0 auto;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.2rem, 7vw, 4.85rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.hair-subtitle {
+  max-width: 780px;
+  margin: 1rem auto 0;
+  color: rgba(5, 46, 22, 0.78);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.hair-intro {
+  background: #fbfdfb;
+  border-bottom: 1px solid var(--hair-border);
+  padding: clamp(2rem, 5vw, 3.75rem) 0;
+}
+
+.hair-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.hair-editor-card,
+.hair-card {
+  background: #fbfdfb;
+  border: 1px solid var(--hair-border);
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.hair-editor-card {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.hair-editor-head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hair-editor-head img {
+  width: 5.25rem;
+  height: 5.25rem;
+  border: 4px solid #d1fae5;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.hair-editor-card h2,
+.hair-editor-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.hair-editor-role {
+  margin: 0.35rem 0 0;
+  color: var(--hair-muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hair-editor-card p {
+  margin: 1.25rem 0 0;
+  color: #475569;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.hair-hero-image {
+  overflow: hidden;
+  background: var(--hair-cream);
+  border: 1px solid #e8dccb;
+  border-radius: 1.4rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.hair-hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1536 / 461;
+  object-fit: cover;
+}
+
+.hair-hero-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  background: #fbfdfb;
+  border-top: 1px solid var(--hair-border);
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.hair-hero-caption strong {
+  color: #047857;
+}
+
+.hair-copy {
+  max-width: 74ch;
+}
+
+.hair-copy p {
+  margin: 0 0 1.1rem;
+  color: #334155;
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  line-height: 1.85;
+}
+
+.hair-main {
+  padding: clamp(2.4rem, 6vw, 4rem) 0;
+}
+
+.hair-section {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hair-section:first-child {
+  margin-top: 0;
+}
+
+.hair-card {
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+}
+
+.hair-section-label {
+  margin: 0 0 0.85rem;
+  color: #047857;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hair-heading {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.hair-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+.hair-criterion {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  min-height: 4rem;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 0.9rem;
+  color: #334155;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.hair-check {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #047857;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.hair-product-list {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.25rem);
+}
+
+.hair-product {
+  position: relative;
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.6rem);
+  padding: clamp(1.4rem, 4vw, 2.25rem);
+  background: #fbfdfb;
+  border: 1px solid var(--hair-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+}
+
+.hair-product.is-winner {
+  border-color: var(--hair-emerald);
+  box-shadow: 0 18px 46px rgba(22, 163, 74, 0.14);
+}
+
+.hair-ribbon {
+  position: absolute;
+  top: -0.9rem;
+  left: 1.35rem;
+  padding: 0.55rem 1rem;
+  background: var(--hair-emerald);
+  border-radius: 999px;
+  color: #fbfdfb;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 22px rgba(22, 163, 74, 0.3);
+}
+
+.hair-product-media {
+  text-align: center;
+}
+
+.hair-product-media img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--hair-cream);
+  border: 1px solid #edf2f7;
+  border-radius: 1.1rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.hair-badge {
+  margin: 1.25rem 0 0;
+  color: #047857;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hair-price-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.hair-price {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.hair-was {
+  padding: 0.25rem 0.7rem;
+  background: #f1f5f9;
+  border-radius: 999px;
+  color: #64748b;
+  font-weight: 800;
+  text-decoration: line-through;
+}
+
+.hair-stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.18rem;
+  margin-top: 0.65rem;
+  color: #00b67a;
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+}
+
+.hair-rating-text {
+  margin: 0.3rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.hair-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(180deg, #1a7444 0%, #0d4a29 100%);
+  border: 0;
+  border-radius: 999px;
+  color: #fbfdfb;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(13, 74, 41, 0.32);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hair-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(13, 74, 41, 0.38);
+}
+
+.hair-product-media .hair-cta {
+  width: 100%;
+  max-width: 260px;
+  margin-top: 1.15rem;
+}
+
+.hair-product-rank {
+  margin: 0 0 0.25rem;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hair-product h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.hair-best-for {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  background: #f1f5f9;
+  border-radius: 999px;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.hair-summary {
+  margin: 1.25rem 0 0;
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.82;
+}
+
+.hair-metrics {
+  margin-top: 1.6rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 1.1rem;
+}
+
+.hair-metrics h3,
+.hair-proscons h3,
+.hair-offer h3 {
+  margin: 0 0 1rem;
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.hair-metric {
+  margin-top: 0.8rem;
+}
+
+.hair-metric-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+  color: #334155;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.hair-bar {
+  overflow: hidden;
+  height: 0.64rem;
+  background: #e2e8f0;
+  border-radius: 999px;
+}
+
+.hair-bar span {
+  display: block;
+  height: 100%;
+  background: var(--hair-emerald);
+  border-radius: inherit;
+}
+
+.hair-proscons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+.hair-panel {
+  padding: 1.25rem;
+  border-radius: 1.1rem;
+}
+
+.hair-panel.pros {
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.hair-panel.cons {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.hair-panel.pros h3 {
+  color: #047857;
+}
+
+.hair-panel.cons h3 {
+  color: var(--hair-red);
+}
+
+.hair-panel ul,
+.hair-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hair-panel li,
+.hair-bullets li {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.hair-x {
+  flex: 0 0 auto;
+  color: var(--hair-red);
+  font-weight: 900;
+}
+
+.hair-offer {
+  margin-top: 1.7rem;
+  padding: clamp(1.25rem, 4vw, 1.9rem);
+  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+  border: 2px solid #bfdbfe;
+  border-radius: 1.3rem;
+}
+
+.hair-offer h3 {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.hair-offer h3 span {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  background: #dbeafe;
+  border-radius: 0.45rem;
+  color: #2563eb;
+}
+
+.hair-offer p {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.hair-gifts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.hair-gift {
+  display: block;
+  min-height: 100%;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid #bfdbfe;
+  border-radius: 1rem;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hair-gift img {
+  width: 100%;
+  height: 6.5rem;
+  object-fit: contain;
+}
+
+.hair-gift strong {
+  display: block;
+  margin-top: 0.55rem;
+  color: #0f172a;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.hair-gift span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.hair-offer .hair-cta {
+  width: 100%;
+  margin-top: 1.25rem;
+  background: #2563eb;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.26);
+}
+
+.hair-verdict {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  background: var(--hair-cream);
+  border: 1px solid #e8dccb;
+  border-radius: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 2.75rem);
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
+}
+
+.hair-verdict img {
+  width: min(310px, 100%);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 1.4rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.hair-verdict h2 {
+  color: #8b1528;
+}
+
+.hair-verdict p {
+  color: #334155;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.hair-footer {
+  margin-top: 4rem;
+  padding: 3rem 1rem 7rem;
+  background: #fbfdfb;
+  border-top: 1px solid var(--hair-border);
+  color: #64748b;
+  text-align: center;
+}
+
+.hair-disclosure {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  padding: 1.25rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 0.8rem;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.hair-mobile-cta {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 50;
+  display: none;
+  padding: 0.8rem;
+  background: rgba(251, 253, 251, 0.96);
+  border-top: 1px solid var(--hair-border);
+  box-shadow: 0 -10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.hair-mobile-cta .hair-cta {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hair-intro-grid,
+  .hair-product,
+  .hair-verdict {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-product-media {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hair-proscons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .hair-shell {
+    width: min(100% - 1rem, 1120px);
+  }
+
+  .hair-criteria-grid,
+  .hair-gifts {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-card,
+  .hair-product,
+  .hair-editor-card,
+  .hair-verdict {
+    border-radius: 1rem;
+  }
+
+  .hair-hero-caption {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .hair-product h2 {
+    font-size: 1.85rem;
+  }
+
+  .hair-mobile-cta {
+    display: block;
+  }
+}
