@@ -40,7 +40,6 @@ const nextConfig = {
     '/*': [
       './.git/**/*',
       './.next/**/*',
-      './node_modules/**/*',
       './unzipped/**/*',
       './unzipped_new_pages/**/*',
       './audit-video-test/**/*',
