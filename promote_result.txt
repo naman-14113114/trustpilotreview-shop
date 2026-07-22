@@ -1,0 +1,41 @@
+﻿node.exe : Vercel CLI 
+47.0.5
+At C:\Users\NAMAN KHAR
+BANDA\AppData\Roaming\
+npm\vercel.ps1:24 
+char:5
++     & "node$exe"  "$
+basedir/node_modules/v
+ercel/dist/vc.js" 
+$args
++     ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Vercel CLI   
+  47.0.5:String) [    
+], RemoteExceptio    n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+Fetching deployment "t
+rustpilot-led-mask-rep
+lica-fc40sg2le-elato-t
+ests-projects.vercel.a
+pp" in elato-tests-pro
+jectsΓÇª
+> Fetching deployment 
+"trustpilot-led-mask-r
+eplica-fc40sg2le-elato
+-tests-projects.vercel
+.app" in elato-tests-p
+rojectsΓÇª
+Error: The provided 
+deploymentId (dpl_8ggw
+EcEdNsRc6MMujiizzgbyjw
+AY) is already the 
+current production 
+deployment. (409)

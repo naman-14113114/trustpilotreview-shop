@@ -1,0 +1,17 @@
+.vercel
+
+# Local credentials and sensitive configuration.
+.env
+.env.*
+!.env.example
+SECRETS.local.md
+*.pem
+*.key
+
+# Dependencies and generated build output.
+node_modules/
+dist/
+
+# This raw source video is deliberately excluded from Vercel deployments.
+# The production page uses the deployable asset in assets/ instead.
+/buudy_dermatologist_review.mp4

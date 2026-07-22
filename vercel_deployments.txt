@@ -1,0 +1,224 @@
+﻿node.exe : Vercel CLI 
+47.0.5
+At C:\Users\NAMAN KHAR
+BANDA\AppData\Roaming\
+npm\vercel.ps1:24 
+char:5
++     & "node$exe"  "$
+basedir/node_modules/v
+ercel/dist/vc.js" 
+$args
++     ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Vercel CLI   
+  47.0.5:String) [    
+], RemoteExceptio    n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+Retrieving projectΓÇª
+Fetching deployments 
+in 
+elato-tests-projects
+> Deployments for elat
+o-tests-projects/trust
+pilot-led-mask-replica
+ [412ms]
+
+  Age     Deployment  
+                      
+                      
+                      
+    Status      
+Environment     
+Duration     Username 
+             
+  1h      https://trus
+tpilot-led-mask-replic
+a-1y38vms7z-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  2h      https://trus
+tpilot-led-mask-replic
+a-7b83b7xeb-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  2h      https://trus
+tpilot-led-mask-replic
+a-jebze62yc-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      7s    
+       
+pahujaparas4-boop     
+  2h      https://trus
+tpilot-led-mask-replic
+a-5tz8uhjs5-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  3h      https://trus
+tpilot-led-mask-replic
+a-bn77c2b4l-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  2d      https://trus
+tpilot-led-mask-replic
+a-p1w0s42qm-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      7s    
+       
+pahujaparas4-boop     
+  2d      https://trus
+tpilot-led-mask-replic
+a-jhqk1mvds-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      9s    
+       
+pahujaparas4-boop     
+  9d      https://trus
+tpilot-led-mask-replic
+a-fc40sg2le-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      7s    
+       
+pahujaparas4-boop     
+  9d      https://trus
+tpilot-led-mask-replic
+a-p6h1yz735-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      7s    
+       
+pahujaparas4-boop     
+  9d      https://trus
+tpilot-led-mask-replic
+a-l0mn5ttr8-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  9d      https://trus
+tpilot-led-mask-replic
+a-r3bk3k6dk-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  9d      https://trus
+tpilot-led-mask-replic
+a-hvkfnd9kv-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  10d     https://trus
+tpilot-led-mask-replic
+a-k9na610u8-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  10d     https://trus
+tpilot-led-mask-replic
+a-7d1thlzm8-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  10d     https://trus
+tpilot-led-mask-replic
+a-hamr3c4hq-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  10d     https://trus
+tpilot-led-mask-replic
+a-6g7s70cy3-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  10d     https://trus
+tpilot-led-mask-replic
+a-1b7ksina8-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      6s    
+       
+pahujaparas4-boop     
+  11d     https://trus
+tpilot-led-mask-replic
+a-o3yz71rab-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  11d     https://trus
+tpilot-led-mask-replic
+a-7b1r8k9si-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+  11d     https://trus
+tpilot-led-mask-replic
+a-292r87fy1-elato-test
+s-projects.vercel.app 
+    ΓùÅ Ready     
+Production      5s    
+       
+pahujaparas4-boop     
+
+https://trustpilot-led-mask-replica-1y38vms7z-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-7b83b7xeb-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-jebze62yc-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-5tz8uhjs5-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-bn77c2b4l-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-p1w0s42qm-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-jhqk1mvds-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-fc40sg2le-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-p6h1yz735-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-l0mn5ttr8-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-r3bk3k6dk-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-hvkfnd9kv-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-k9na610u8-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-7d1thlzm8-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-hamr3c4hq-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-6g7s70cy3-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-1b7ksina8-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-o3yz71rab-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-7b1r8k9si-elato-tests-projects.vercel.app
+https://trustpilot-led-mask-replica-292r87fy1-elato-tests-projects.vercel.app
+> To display the next 
+page, run `vercel ls 
+--next 1773257040615`

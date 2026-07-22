@@ -1,0 +1,1 @@
+import{c as e,j as t,r,H as s,B as a,A as o}from"./index-q0mrjkz3.js";const n=()=>window.location.pathname.startsWith("/best-red-light-therapy-mask")?"/best-red-light-therapy-mask":"/",i=n();e.createRoot(document.getElementById("root")).render(t.jsx(r.StrictMode,{children:t.jsx(s,{children:t.jsx(a,{basename:i,children:t.jsx(o,{})})})}));

@@ -1,0 +1,2393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buudy LED Mask | Redesign Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and Custom Variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --bg-light: #FAFAF9;
+      --bg-dark: #0C0A09;
+      --text-light: #1C1917;
+      --text-dark: #FAFAF9;
+      --border-light: #E7E5E4;
+      --border-dark: rgba(255, 255, 255, 0.1);
+      --brand-plum: #2E102F;
+      --brand-plum-hover: #48184A;
+      --brand-gold: #CA8A04;
+      --brand-rose: #E5A99E;
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-blur: blur(12px);
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      
+      --shadow-premium: 0 20px 48px rgba(12, 10, 9, 0.05);
+      --shadow-dark: 0 30px 60px rgba(0, 0, 0, 0.4);
+      --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      
+      --active-glow: rgba(239, 68, 68, 0.55); /* Default Red */
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    /* Layout Wrapper */
+    .buudy-redesign {
+      overflow-x: hidden;
+    }
+    
+    .br__wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+    
+    /* Marquee / Announcement */
+    .br__marquee {
+      background: var(--brand-plum);
+      color: var(--text-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .br__marquee-track {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+    }
+    
+    .br__marquee span {
+      display: inline-block;
+      padding-right: 4rem;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    
+    /* Navigation */
+    .br__nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--border-light);
+      transition: var(--transition-smooth);
+    }
+    
+    .br__nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .br__logo img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .br__nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    
+    .br__nav-links a {
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+    }
+    
+    .br__nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--brand-plum);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .br__nav-links a:hover {
+      color: var(--brand-plum);
+    }
+    
+    .br__nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    .br__nav-cta {
+      background: var(--brand-plum);
+      color: var(--text-dark) !important;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(46, 16, 47, 0.15);
+      transition: var(--transition-smooth);
+    }
+    
+    .br__nav-cta:hover {
+      background: var(--brand-plum-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 16, 47, 0.25);
+    }
+    
+    /* Hero Section */
+    .br__hero {
+      padding: 40px 0 80px;
+      background: radial-gradient(circle at 10% 10%, rgba(229, 169, 158, 0.15), transparent 45%),
+                  radial-gradient(circle at 90% 90%, rgba(202, 138, 4, 0.06), transparent 50%);
+    }
+    
+    .br__hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: start;
+    }
+    
+    /* Visual Gallery */
+    .br__visual {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .br__main-shot {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 1.05 / 1;
+      background: #EAEAEA;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-light);
+    }
+    
+    .br__main-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease-in-out;
+    }
+    
+    .br__zoom {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .br__zoom:hover {
+      transform: scale(1.1);
+      background: #FFFFFF;
+    }
+    
+    .br__thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .br__thumb {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      padding: 0;
+      background: transparent;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .br__thumb.is-active, .br__thumb:hover {
+      border-color: var(--brand-plum);
+      box-shadow: 0 0 0 2px var(--brand-plum);
+      transform: translateY(-2px);
+    }
+    
+    /* Purchase Panel */
+    .br__buy {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: var(--shadow-premium);
+    }
+    
+    .br__rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #57534E;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    
+    .br__trust-stars {
+      color: #15803D; /* Trustpilot Green */
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+    
+    .br__serif-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 3.5vw, 44px);
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--brand-plum);
+    }
+    
+    .br__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .br__badge {
+      background: #F5F5F4;
+      border: 1px solid var(--border-light);
+      border-radius: 99px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #44403C;
+    }
+    
+    .br__price-block {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .br__sale-price {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--brand-plum);
+    }
+    
+    .br__compare-price {
+      font-size: 20px;
+      text-decoration: line-through;
+      color: #78716C;
+    }
+    
+    .br__discount-pill {
+      background: #FEE2E2;
+      color: #EF4444;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+    }
+    
+    .br__ship-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(20, 83, 45, 0.05);
+      border: 1px solid rgba(20, 83, 45, 0.12);
+      color: #14532D;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    
+    .br__benefits-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    
+    .br__benefits-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #44403C;
+      font-weight: 500;
+    }
+    
+    .br__benefits-list li svg {
+      width: 18px;
+      height: 18px;
+      color: #15803D;
+      flex-shrink: 0;
+    }
+    
+    .br__payment-box {
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: #57534E;
+    }
+    
+    .br__pay-logos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    
+    .br__pay-logos img {
+      height: 22px;
+      object-fit: contain;
+    }
+    
+    .br__cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      background: var(--brand-plum);
+      color: var(--text-dark);
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 25px rgba(46, 16, 47, 0.2);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .br__cta-btn:hover {
+      background: var(--brand-plum-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(46, 16, 47, 0.3);
+    }
+    
+    .br__trust-badge-strip {
+      margin-top: 16px;
+      opacity: 0.85;
+    }
+    
+    /* Spring Sale Box */
+    .br__offer-box {
+      margin-top: 28px;
+      border: 1px dashed var(--brand-rose);
+      background: rgba(229, 169, 158, 0.08);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    
+    .br__offer-head {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .br__offer-head h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--brand-plum);
+    }
+    
+    .br__offer-head p {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      margin-top: 4px;
+    }
+    
+    .br__countdown {
+      display: inline-block;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 99px;
+      padding: 4px 16px;
+      font-weight: 700;
+      color: var(--brand-plum);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    
+    .br__gifts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    .br__gift-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    
+    .br__gift-card img {
+      height: 70px;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+    
+    .br__gift-card span {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #B45309;
+      text-transform: uppercase;
+    }
+    
+    .br__gift-card h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand-plum);
+      margin-top: 2px;
+    }
+    
+    /* Grayscale proof strip */
+    .br__proof-strip {
+      background: #FFFFFF;
+      border-block: 1px solid var(--border-light);
+      padding: 24px 0;
+    }
+    
+    .br__proof-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .br__proof-row img {
+      max-height: 28px;
+      filter: grayscale(1);
+      opacity: 0.6;
+      object-fit: contain;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__proof-row img:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+    
+    /* Unique Split Section */
+    .br__section {
+      padding: 90px 0;
+    }
+    
+    .br__section--mist {
+      background-color: #F5F5F4;
+    }
+    
+    .br__split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .br__media-card {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-light);
+    }
+    
+    .br__media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .br__section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: var(--brand-plum);
+    }
+    
+    .br__accordions {
+      display: grid;
+      gap: 16px;
+    }
+    
+    .br__accordion-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__accordion-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      user-select: none;
+      color: var(--brand-plum);
+    }
+    
+    .br__accordion-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .br__accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      color: #57534E;
+      font-size: 14px;
+    }
+    
+    .br__accordion-content-inner {
+      padding: 0 24px 24px;
+      line-height: 1.6;
+    }
+    
+    .br__accordion-item.is-active {
+      border-color: var(--brand-rose);
+      box-shadow: 0 10px 30px rgba(229, 169, 158, 0.08);
+    }
+    
+    .br__accordion-item.is-active .br__accordion-icon {
+      transform: rotate(180deg);
+    }
+    
+    .br__feature-grid {
+      display: grid;
+      gap: 18px;
+    }
+    
+    .br__feature-block {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 14px;
+    }
+    
+    .br__feature-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .br__feature-block h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brand-plum);
+      margin-bottom: 4px;
+    }
+    
+    .br__feature-block p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    
+    /* UGC video row */
+    .br__ugc-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+      text-align: center;
+    }
+    
+    .br__ugc-track {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+    }
+    
+    .br__ugc-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      scroll-snap-align: start;
+      min-width: 170px;
+      box-shadow: var(--shadow-premium);
+      cursor: pointer;
+    }
+    
+    .br__ugc-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__ugc-card:hover video {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    
+    .br__video-play-btn {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__ugc-card:hover .br__video-play-btn {
+      transform: scale(1.1);
+      background: #FFFFFF;
+    }
+    
+    .br__video-play-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--brand-plum);
+      color: var(--brand-plum);
+      margin-left: 2px;
+    }
+    
+    /* Before/After Masonry Results */
+    .br__results-section {
+      background: var(--bg-light);
+      padding: 90px 0;
+    }
+    
+    .br__results-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .br__results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    
+    .br__result-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      transition: var(--transition-smooth);
+    }
+    
+    .br__result-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+    
+    .br__result-image {
+      aspect-ratio: 1.1 / 1;
+      overflow: hidden;
+      background: #E5E5E5;
+    }
+    
+    .br__result-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .br__result-info {
+      padding: 20px;
+    }
+    
+    .br__result-info h4 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--brand-plum);
+      margin-bottom: 6px;
+    }
+    
+    .br__result-stars {
+      color: var(--brand-gold);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    
+    .br__result-info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    
+    .br__result-info p {
+      font-size: 13px;
+      color: #6B7280;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    
+    .br__result-user {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #16A34A;
+    }
+    
+    .br__result-user svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+    
+    /* Wavelengths Interactive Dark Section */
+    .br__wavelengths-dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .br__wavelengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .br__wavelengths-visual {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1.05;
+      display: grid;
+      place-items: center;
+      background: #12100E;
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-dark);
+    }
+    
+    .br__wavelengths-visual video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+    
+    .br__glow-backlight {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background-color: var(--active-glow);
+      filter: blur(100px);
+      opacity: 0.85;
+      z-index: 1;
+      transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .br__wavelengths-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    
+    .br__wavelengths-content > p {
+      font-size: 16px;
+      color: #A8A29E;
+      margin-bottom: 32px;
+    }
+    
+    .br__wavelengths-list {
+      display: grid;
+      gap: 12px;
+    }
+    
+    .br__wavelength-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__wavelength-item:hover, .br__wavelength-item.is-active {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    .br__wavelength-chip {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px currentColor;
+    }
+    
+    .br__wavelength-text {
+      flex-grow: 1;
+    }
+    
+    .br__wavelength-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    
+    .br__wavelength-text p {
+      font-size: 13px;
+      color: #A8A29E;
+      margin-top: 2px;
+    }
+    
+    /* Doctor section */
+    .br__doctor-dark {
+      background: #080706;
+      color: var(--text-dark);
+      padding: 100px 0;
+      border-top: 1px solid var(--border-dark);
+    }
+    
+    .br__doctor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .br__doctor-text h2 {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    
+    .br__doctor-role {
+      font-size: 16px;
+      color: var(--brand-rose);
+      font-style: italic;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    
+    .br__doctor-text p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #D6D3D1;
+      margin-bottom: 16px;
+    }
+    
+    .br__doctor-media {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      box-shadow: var(--shadow-dark);
+      border: 1px solid var(--border-dark);
+      cursor: pointer;
+    }
+    
+    .br__doctor-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Scattered Gallery */
+    .br__scattered {
+      background: var(--bg-light);
+      padding: 110px 0;
+      position: relative;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    
+    .br__scattered-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .br__scattered-collage {
+      position: relative;
+      height: 480px;
+    }
+    
+    .br__scattered-img {
+      position: absolute;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-light);
+      background: #FFFFFF;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__scattered-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .br__scattered-img:hover {
+      transform: scale(1.08) translateY(-5px) !important;
+      z-index: 10;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Positions */
+    .br__sc-1 { width: 140px; height: 140px; top: 10%; left: 5%; transform: rotate(-8deg); }
+    .br__sc-2 { width: 170px; height: 170px; top: 5%; left: 45%; transform: rotate(6deg); }
+    .br__sc-3 { width: 150px; height: 150px; top: 50%; left: 15%; transform: rotate(10deg); }
+    .br__sc-4 { width: 180px; height: 180px; top: 40%; left: 55%; transform: rotate(-5deg); }
+    
+    /* Comparison Table */
+    .br__comp-section {
+      background: #FFFFFF;
+      padding: 90px 0;
+    }
+    
+    .br__comp-table-wrapper {
+      margin-top: 48px;
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+    }
+    
+    .br__comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #FFFFFF;
+    }
+    
+    .br__comp-row {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      align-items: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .br__comp-row:last-child {
+      border-bottom: none;
+    }
+    
+    .br__comp-cell {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      height: 100%;
+    }
+    
+    .br__comp-cell:first-child {
+      justify-content: flex-start;
+      text-align: left;
+      font-weight: 600;
+      color: var(--brand-plum);
+    }
+    
+    .br__comp-head-cell {
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px 16px;
+      font-weight: 700;
+      background: #FAF9F6;
+    }
+    
+    .br__comp-head-cell img {
+      max-height: 80px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    
+    .br__comp-head-cell img.logo-mini {
+      max-height: 24px;
+      margin-top: 8px;
+    }
+    
+    .br__comp-buudy-col {
+      background: rgba(229, 169, 158, 0.06);
+      font-weight: 700;
+    }
+    
+    .br__comp-cell.yes-icon {
+      color: #15803D;
+      font-weight: 700;
+    }
+    
+    .br__comp-cell.no-icon {
+      color: #DC2626;
+      font-weight: 700;
+    }
+    
+    /* Touch Tech & App promo */
+    .br__app-split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .br__as-seen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .br__as-seen-card {
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 16px;
+      display: grid;
+      place-items: center;
+      background: #FFFFFF;
+    }
+    
+    .br__as-seen-card img {
+      max-height: 60px;
+      object-fit: contain;
+    }
+    
+    /* Vimeo blue light block */
+    .br__blue-video-block {
+      position: relative;
+      height: 560px;
+      display: grid;
+      place-items: center;
+      color: var(--text-dark);
+      background: #000;
+      overflow: hidden;
+    }
+    
+    .br__blue-video-block iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .br__blue-content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      width: min(800px, calc(100% - 40px));
+    }
+    
+    .br__blue-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 68px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    
+    .br__blue-content blockquote {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--brand-rose);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    
+    .br__blue-content p {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #A8A29E;
+    }
+    
+    /* Accordion FAQ */
+    .br__faq-section {
+      background: var(--bg-light);
+      padding: 90px 0;
+    }
+    
+    .br__faq-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 50px;
+      align-items: start;
+    }
+    
+    /* Guarantee Banner */
+    .br__guarantee {
+      background: linear-gradient(135deg, var(--brand-plum), #1A0A1B);
+      color: var(--text-dark);
+      padding: 80px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .br__guarantee p {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brand-rose);
+      margin-bottom: 12px;
+    }
+    
+    .br__guarantee h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 6vw, 84px);
+      line-height: 0.95;
+      font-weight: 400;
+    }
+    
+    /* Footer */
+    .br__footer {
+      background: #FAF9F6;
+      border-top: 1px solid var(--border-light);
+      padding: 80px 0 40px;
+    }
+    
+    .br__footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+    
+    .br__footer-logo img {
+      height: 38px;
+      margin-bottom: 16px;
+    }
+    
+    .br__footer h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-plum);
+      margin-bottom: 18px;
+    }
+    
+    .br__footer-links {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    
+    .br__footer-links a {
+      font-size: 14px;
+      color: #57534E;
+      transition: color 0.2s ease;
+    }
+    
+    .br__footer-links a:hover {
+      color: var(--brand-plum);
+    }
+    
+    .br__footer-contacts p {
+      font-size: 14px;
+      color: #57534E;
+      margin-bottom: 12px;
+    }
+    
+    .br__footer-contacts a {
+      color: var(--brand-plum);
+      font-weight: 600;
+    }
+    
+    .br__social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .br__social-icons img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    
+    .br__legal-footer {
+      border-top: 1px solid var(--border-light);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #78716C;
+    }
+    
+    .br__legal-footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    /* Sticky Bottom Bar */
+    .br__sticky-bar {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translate(-50%, 150%);
+      width: min(700px, calc(100% - 24px));
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 99px;
+      padding: 10px 12px 10px 20px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      z-index: 1000;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .br__sticky-bar.is-visible {
+      transform: translate(-50%, 0);
+    }
+    
+    .br__sticky-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .br__sticky-info img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--border-light);
+    }
+    
+    .br__sticky-text strong {
+      display: block;
+      font-size: 14px;
+      color: var(--brand-plum);
+    }
+    
+    .br__sticky-text span {
+      font-size: 12px;
+      color: #6B7280;
+    }
+    
+    .br__sticky-cta {
+      background: var(--brand-plum);
+      color: var(--text-dark) !important;
+      border-radius: 99px;
+      padding: 12px 28px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(46, 16, 47, 0.15);
+      transition: var(--transition-smooth);
+    }
+    
+    .br__sticky-cta:hover {
+      background: var(--brand-plum-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Lightbox Modal */
+    .br__lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 10, 9, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: none;
+      place-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .br__lightbox.is-open {
+      display: grid;
+      opacity: 1;
+    }
+    
+    .br__lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 24px;
+      transition: var(--transition-smooth);
+    }
+    
+    .br__lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .br__lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .br__lightbox-content img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+    
+    /* Responsive overrides */
+    @media (max-width: 1040px) {
+      .br__hero-grid, .br__split, .br__wavelengths-grid, .br__doctor-grid, .br__comp-row, .br__app-split, .br__faq-grid, .br__footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .br__visual {
+        position: relative;
+        top: auto;
+      }
+      
+      .br__comp-table-wrapper {
+        overflow-x: auto;
+      }
+      
+      .br__comp-row {
+        min-width: 900px;
+        grid-template-columns: 1.5fr repeat(4, 1fr);
+      }
+      
+      .br__nav-links {
+        display: none;
+      }
+      
+      .br__results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .br__sc-1, .br__sc-2, .br__sc-3, .br__sc-4 {
+        position: static;
+        width: 100%;
+        height: auto;
+        transform: none !important;
+        aspect-ratio: 1.2 / 1;
+      }
+      
+      .br__scattered-collage {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        height: auto;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .br__results-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .br__buy {
+        padding: 24px;
+      }
+      
+      .br__gifts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .br__scattered-collage {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .br__sticky-bar {
+        border-radius: 20px;
+        padding: 10px 14px;
+        gap: 12px;
+      }
+      
+      .br__sticky-info img {
+        display: none;
+      }
+      
+      .br__sticky-text strong {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="buudy-redesign">
+  
+  <!-- Announcement -->
+  <div class="br__marquee">
+    <div class="br__marquee-track">
+      <span>✦ FREE SHIPPING ON ALL UK ORDERS ✦</span>
+      <span>✦ SPRING SALE ONGOING - £128 GIFT VALUE INCLUDED ✦</span>
+      <span>✦ DERMATOLOGIST CLINICAL GRADE APPROVED ✦</span>
+      <span>✦ 90-DAY TRIPLE VALUE RISK-FREE RETURNS ✦</span>
+      <span>✦ FREE SHIPPING ON ALL UK ORDERS ✦</span>
+      <span>✦ SPRING SALE ONGOING - £128 GIFT VALUE INCLUDED ✦</span>
+      <span>✦ DERMATOLOGIST CLINICAL GRADE APPROVED ✦</span>
+      <span>✦ 90-DAY TRIPLE VALUE RISK-FREE RETURNS ✦</span>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="br__nav">
+    <div class="br__wrap br__nav-inner">
+      <a class="br__logo" href="#">
+        <img src="https://img.thesitebase.net/10650/10650730/themes/1755422352b06fc5e9c9.png" alt="Buudy Logo">
+      </a>
+      <div class="br__nav-links">
+        <a href="#playground">7 Light Modes</a>
+        <a href="#features">Key Features</a>
+        <a href="#results">Real Results</a>
+        <a href="#doctor">Expert MD Advice</a>
+        <a href="#comparison">Compare Us</a>
+        <a href="#faq">Skincare FAQ</a>
+      </div>
+      <a class="br__nav-cta" href="#hero-buy">ADD TO CART</a>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="br__hero">
+    <div class="br__wrap br__hero-grid">
+      
+      <!-- Visual Gallery -->
+      <div class="br__visual">
+        <div class="br__main-shot">
+          <img id="br-main-image" src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/08-buudy-led-mask-lifestyle-use.webp" alt="Woman Using Buudy Mask Lifestyle">
+          <span class="br__zoom" id="br-zoom-trigger">⌕</span>
+        </div>
+        <div class="br__thumb-grid">
+          <button class="br__thumb is-active" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/08-buudy-led-mask-lifestyle-use.webp" data-alt="Woman Using Buudy Mask Lifestyle">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/08-buudy-led-mask-lifestyle-use.webp" alt="">
+          </button>
+          <button class="br__thumb" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/01-buudy-led-mask-front.webp" data-alt="Buudy LED Face Mask Front View">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/01-buudy-led-mask-front.webp" alt="">
+          </button>
+          <button class="br__thumb" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/02-buudy-led-mask-side-profile.webp" data-alt="Best LED Face Mask UK Side Profile">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/02-buudy-led-mask-side-profile.webp" alt="">
+          </button>
+          <button class="br__thumb" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/03-buudy-led-mask-anti-ageing-mode.webp" data-alt="Clinical Grade Anti-Ageing Red Light Mask">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/03-buudy-led-mask-anti-ageing-mode.webp" alt="">
+          </button>
+          <button class="br__thumb" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/04-buudy-led-mask-blue-light-acne.webp" data-alt="Blue Light Mask for Blemishes">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/04-buudy-led-mask-blue-light-acne.webp" alt="">
+          </button>
+          <button class="br__thumb" type="button" data-src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/05-buudy-led-mask-packaging.webp" data-alt="Premium Buudy Box Packaging">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/05-buudy-led-mask-packaging.webp" alt="">
+          </button>
+        </div>
+      </div>
+      
+      <!-- Buy Panel -->
+      <div class="br__buy" id="hero-buy">
+        <div class="br__rating">
+          <span class="br__trust-stars">★★★★★</span>
+          <span>4.9 Stars | Trusted by 16,000+ Customers</span>
+        </div>
+        <h1 class="br__serif-title">BUUDY LED MASK</h1>
+        
+        <div class="br__badges">
+          <span class="br__badge">Clinically Proven</span>
+          <span class="br__badge">90-Day Returns</span>
+          <span class="br__badge">Dermatologist Approved</span>
+        </div>
+        
+        <div class="br__price-block">
+          <span class="br__sale-price">£179.00</span>
+          <span class="br__compare-price">£449.00</span>
+          <span class="br__discount-pill">Save 60%</span>
+        </div>
+        
+        <div class="br__ship-bar">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+            <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7h-3V5h3v2zM14.05 13a2.5 2.5 0 014.9 0H19a1 1 0 001-1v-4a1 1 0 00-.293-.707l-3-3A1 1 0 0016 4h-1.95v9z" />
+          </svg>
+          <span>Free express UK delivery included</span>
+        </div>
+        
+        <ul class="br__benefits-list">
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            Stimulate collagen production and skin glow
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            Assist with anti-aging & fine wrinkles
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            Reduce acne breakouts & balance complexion
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            Minimize sun spots and texturized lines
+          </li>
+        </ul>
+        
+        <div class="br__payment-box">
+          Pay in 4 interest-free instalments with Klarna & Clearpay
+          <div class="br__pay-logos">
+            <img src="https://img.thesitebase.net/10650/10650730/themes/1769515667053f668bf4.jpeg?width=256" alt="Payment options">
+            <img src="https://img.thesitebase.net/10650/10650730/themes/177101538520670d4a5f.png?width=1080" alt="Card logos">
+          </div>
+        </div>
+        
+        <button class="br__cta-btn" onclick="document.querySelector('#hero-buy').scrollIntoView();">ADD TO CART + FREE GIFTS</button>
+        <div class="br__trust-badge-strip">
+          <img src="https://img.thesitebase.net/files/10390699/2025/05/21/1747853963f39a80ca46.png?width=128" alt="Safe shop trust badges">
+        </div>
+        
+        <!-- Offer Capsule -->
+        <section class="br__offer-box">
+          <div class="br__offer-head">
+            <h3>Special Spring Sale</h3>
+            <p>£128 VALUE OF FREE GIFTS FOR TODAY ONLY</p>
+            <div class="br__countdown" id="br-timer-display">Countdown Loading...</div>
+          </div>
+          <div class="br__gifts-grid">
+            <article class="br__gift-card">
+              <img src="https://img.thesitebase.net/10650/10650730/themes/17682450181b5f55beb5.png" alt="Travel Box">
+              <span>FREE £39</span>
+              <h4>Premium Case</h4>
+            </article>
+            <article class="br__gift-card">
+              <img src="https://img.thesitebase.net/10650/10650730/products/ver_1/176738038817f3610740.png" alt="LED Torch">
+              <span>FREE £70</span>
+              <h4>Buudy Torch</h4>
+            </article>
+            <article class="br__gift-card">
+              <img src="https://img.thesitebase.net/10650/10650730/themes/17682431737d583cc2df.png" alt="E-Book">
+              <span>FREE £19</span>
+              <h4>Glow E-Book</h4>
+            </article>
+          </div>
+        </section>
+        
+      </div>
+      
+    </div>
+  </header>
+  
+  <!-- Proof Strip -->
+  <section class="br__proof-strip">
+    <div class="br__wrap br__proof-row">
+      <img src="https://img.thesitebase.net/10650/10650730/themes/176945624530181efe93.png" alt="Featured badge">
+      <img src="https://img.thesitebase.net/10650/10650730/themes/1769456263394585026a.png" alt="Press badge">
+      <img src="https://img.thesitebase.net/10650/10650730/themes/1769456284a778610fa6.png" alt="Clinical reference">
+      <img src="https://img.thesitebase.net/10650/10650730/themes/1769456299badd64b527.png" alt="Media outlet logo">
+    </div>
+  </section>
+  
+  <!-- Features Accordion -->
+  <section class="br__section" id="features">
+    <div class="br__wrap br__split">
+      <figure class="br__media-card">
+        <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/12-buudy-led-mask-near-infrared.webp" alt="Near Infrared deep tissue LED treatment">
+      </figure>
+      <div class="br__copy">
+        <h2 class="br__section-title">What Makes Our Mask Unique?</h2>
+        <div class="br__accordions">
+          
+          <div class="br__accordion-item is-active">
+            <div class="br__accordion-header" onclick="toggleAccordion(this)">
+              <span>What Makes Our Mask Unique?</span>
+              <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+            <div class="br__accordion-content" style="max-height: 500px;">
+              <div class="br__accordion-content-inner">
+                <div class="br__feature-grid">
+                  <div class="br__feature-block">
+                    <h5>1. Unrivaled LED Density (192 High-Intensity LEDs)</h5>
+                    <p>Most competitors space out their lights, leaving "dead zones" on your skin. Buudy features 192 High-Density LEDs—which is more than double the amount found in standard masks. This ensures consistent, effective treatment.</p>
+                  </div>
+                  <div class="br__feature-block">
+                    <h5>2. Full Neck Coverage (Say No to "Turkey Neck")</h5>
+                    <p>Unlike many popular brands that neglect the neck, Buudy includes integrated neck coverage to firm and rejuvenate the neck area together with your face.</p>
+                  </div>
+                  <div class="br__feature-block">
+                    <h5>3. 7-in-1 Multi-Spectrum Therapy</h5>
+                    <p>Offering 7 distinct wavelengths (Red, Blue, Green, Cyan, Yellow, Purple, and White). Whether you are fighting blemishes, reducing deep lines, or balancing skin texture.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="br__accordion-item">
+            <div class="br__accordion-header" onclick="toggleAccordion(this)">
+              <span>Specifications</span>
+              <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+            <div class="br__accordion-content">
+              <div class="br__accordion-content-inner">
+                <ul style="list-style: disc; margin-left: 20px;">
+                  <li>Dimensions: 20cm × 29cm (7.87in × 11.42in).</li>
+                  <li>Number of LEDs: 192 LEDs</li>
+                  <li>Number of Light Color: 7-color LED mask.</li>
+                  <li>Battery Life: Up to 12 sessions per charge (1500mAh)</li>
+                  <li>Irradiance: 32mW/cm²</li>
+                  <li>Power: 6.8W</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="br__accordion-item">
+            <div class="br__accordion-header" onclick="toggleAccordion(this)">
+              <span>What It Includes</span>
+              <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+            <div class="br__accordion-content">
+              <div class="br__accordion-content-inner">
+                <ul style="list-style: disc; margin-left: 20px;">
+                  <li>1 x Premium Travel Box ( FREE GIFT )</li>
+                  <li>1 x 7-color LED Light Face Mask</li>
+                  <li>1 x Charger with USB-C cable</li>
+                  <li>2 x Eye Support</li>
+                  <li>1 x Comprehensive Treatment Guide</li>
+                  <li>1 x Buudy LED Torch ( FREE GIFT )</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- UGC Video Section -->
+  <section class="br__ugc-section">
+    <div class="br__wrap">
+      <h2 class="br__section-title" style="text-align: center;">Buudy Mask Reviews & Real Results</h2>
+      <div class="br__ugc-track">
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719486304350_448129a4-6d94-4e44-b8af-511f3e7999b2.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1680194145059_06e68cf3-1a7d-4636-a05a-8c1922a066a4_h264c_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719486138534_38dd960f-2287-4bfc-b1be-af40bc8ef5d6.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1686511751028_e8ecbe6c-94ca-4754-bff1-4bdfff8aad16_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719485722607_ded18359-40b7-427c-b2a9-62e48436f87c.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1679081088110_c7eea873-a477-4a43-aafb-bcbc47f285ca_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719485860443_d12fd0ec-8701-4fe7-8e68-1c801ff59f85.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1684780828045_7e4e871c-89be-45e4-9fb5-1d4c9ac1f30f_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719485816239_f9dba8d1-d096-4067-aff8-eb4a72366122.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1679081092710_1bac0b63-1caf-46ec-8a9e-33981ec0d67c_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="br__ugc-card" onclick="playUgcVideo(this)">
+          <video muted loop playsinline poster="https://images.videowise.com/cdn_v_i/XS/converted/thumbnails/1719485713943_cdd6cc24-2387-470e-b124-abd3854c444a.webp">
+            <source src="https://cdn2.videowise.com/converted/videos/1679081090744_9551ac45-ed4a-43b8-b9ac-8213907377b3_h264c_h264q6clip.mp4" type="video/mp4">
+          </video>
+          <div class="br__video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Before After Results -->
+  <section class="br__results-section" id="results">
+    <div class="br__wrap">
+      <div class="br__results-title">
+        <h2 class="br__section-title">Real Users, Real Results</h2>
+        <p style="color: #6B7280; font-size: 16px; margin-top: 4px;">Tracked progress from consistent home therapies</p>
+      </div>
+      <div class="br__results-grid">
+        <article class="br__result-card">
+          <div class="br__result-image">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-before-after/full/01-sagging-cheeks.webp" alt="Sagging Cheeks Results">
+          </div>
+          <div class="br__result-info">
+            <h4>Sagging Cheeks</h4>
+            <div class="br__result-stars">★★★★★</div>
+            <strong>Best investment ever</strong>
+            <p>“I have noticed a significant reduction in the sagging around my cheeks and jawline.”</p>
+            <div class="br__result-user">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              Donna P. ✔ Verified
+            </div>
+          </div>
+        </article>
+        
+        <article class="br__result-card">
+          <div class="br__result-image">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-before-after/full/02-fine-lines.webp" alt="Fine Lines Results">
+          </div>
+          <div class="br__result-info">
+            <h4>Fine Lines</h4>
+            <div class="br__result-stars">★★★★★</div>
+            <strong>IT REALLY WORKS!!</strong>
+            <p>"After using for 1 month, I can't believe the difference! Fine lines are much less noticeable."</p>
+            <div class="br__result-user">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              Jane P. ✔ Verified
+            </div>
+          </div>
+        </article>
+        
+        <article class="br__result-card">
+          <div class="br__result-image">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-before-after/full/03-neck-firming.webp" alt="Neck Firming Results">
+          </div>
+          <div class="br__result-info">
+            <h4>Neck Firming</h4>
+            <div class="br__result-stars">★★★★★</div>
+            <strong>Incredible results</strong>
+            <p>"In less than 2 months, noticed the fine lines around my eyes and mouth are much less noticeable."</p>
+            <div class="br__result-user">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              Sarah K. ✔ Verified
+            </div>
+          </div>
+        </article>
+        
+        <article class="br__result-card">
+          <div class="br__result-image">
+            <img src="https://www.trustpilotreview.shop/gallery/buudy-before-after/full/04-forehead-lines.webp" alt="Forehead Lines Results">
+          </div>
+          <div class="br__result-info">
+            <h4>Forehead Lines</h4>
+            <div class="br__result-stars">★★★★★</div>
+            <strong>Better than Botox</strong>
+            <p>"Within just a few weeks, my skin started to clear up and the scars began to fade."</p>
+            <div class="br__result-user">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              Michelle L. ✔ Verified
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Wavelengths Interactive Playground -->
+  <section class="br__wavelengths-dark" id="playground">
+    <div class="br__wrap br__wavelengths-grid">
+      
+      <!-- Visual Display with Backlight Glow -->
+      <div class="br__wavelengths-visual">
+        <div class="br__glow-backlight" id="br-glow-aura"></div>
+        <video autoplay muted loop playsinline poster="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/01-buudy-led-mask-front.webp">
+          <source src="https://www.trustpilotreview.shop/gallery/buudy-video/7-colors-muted.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Interactive Selectors -->
+      <div class="br__wavelengths-content">
+        <h2>7 Wavelengths, One Touch</h2>
+        <p>Tap a mode below to preview how our spectrum treatments target specific skin layers.</p>
+        
+        <div class="br__wavelengths-list">
+          
+          <div class="br__wavelength-item is-active" data-color="rgba(239, 68, 68, 0.65)" data-text="Stimulates collagen, firms wrinkles, and rejuvenates elasticity.">
+            <span class="br__wavelength-chip" style="background-color: #EF4444; color: #EF4444;"></span>
+            <div class="br__wavelength-text">
+              <strong>RED - 633nm</strong>
+              <p>Anti-aging and Skin Revitalisation</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(59, 130, 246, 0.65)" data-text="Destroys breakout-causing bacteria and calms sensitive sebaceous glands.">
+            <span class="br__wavelength-chip" style="background-color: #3B82F6; color: #3B82F6;"></span>
+            <div class="br__wavelength-text">
+              <strong>BLUE - 415nm</strong>
+              <p>Anti-acne Fighter</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(16, 185, 129, 0.65)" data-text="Targets pigment production to reduce dark circles, dark spots, and redness.">
+            <span class="br__wavelength-chip" style="background-color: #10B981; color: #10B981;"></span>
+            <div class="br__wavelength-text">
+              <strong>GREEN - 525nm</strong>
+              <p>Reduces dark spots & Pigmentation</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(6, 182, 212, 0.65)" data-text="Relieves swollen capillaries and improves lymphatic circulation.">
+            <span class="br__wavelength-chip" style="background-color: #06B6D4; color: #06B6D4;"></span>
+            <div class="br__wavelength-text">
+              <strong>CYAN - 490nm</strong>
+              <p>Reduces Swollen Capillaries</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(234, 179, 8, 0.65)" data-text="Balances texture, supports vascular health, and adds dynamic brightness.">
+            <span class="br__wavelength-chip" style="background-color: #EAB308; color: #EAB308;"></span>
+            <div class="br__wavelength-text">
+              <strong>YELLOW - 590nm</strong>
+              <p>Balances Skin Texture</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(168, 85, 247, 0.65)" data-text="Combines the power of Red and Blue wavelengths for comprehensive restoration.">
+            <span class="br__wavelength-chip" style="background-color: #A855F7; color: #A855F7;"></span>
+            <div class="br__wavelength-text">
+              <strong>PURPLE - Multi spectrum</strong>
+              <p>Red and Blue Dual Therapy</p>
+            </div>
+          </div>
+          
+          <div class="br__wavelength-item" data-color="rgba(255, 255, 255, 0.55)" data-text="Deeply penetrates the skin layers to accelerate cellular metabolism.">
+            <span class="br__wavelength-chip" style="background-color: #FFFFFF; color: #FFFFFF;"></span>
+            <div class="br__wavelength-text">
+              <strong>WHITE - Infrared mix</strong>
+              <p>Speeds up Skin Metabolism</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Doctor Section -->
+  <section class="br__doctor-dark" id="doctor">
+    <div class="br__wrap br__doctor-grid">
+      <div class="br__doctor-text">
+        <h2>Dr. Gabriella Vasili, MD</h2>
+        <div class="br__doctor-role">Double Board-Certified Dermatologist</div>
+        <p>Dr. Gabriella Vasili is an esteemed, double board-certified dermatologist based in Atlanta, Georgia. With an expert focus on enhancing the efficacy of modern skincare, Dr. Vasili is a strong advocate for integrating clinical-grade technologies into daily routines. She is particularly recognized for her expertise in Light Emitting Diode (LED) therapy.</p>
+        <p>Dr. Vasili’s commitment to skin health extends beyond the face to often-neglected areas like the neck, ensuring her patients achieve a comprehensive and rejuvenated glow. Her professional mission is to bridge the gap between professional dermatological treatments and accessible, high-performance skincare at home.</p>
+      </div>
+      <div class="br__doctor-media" onclick="toggleDoctorVideo(this)">
+        <video id="br-doctor-video" poster="https://img.thesitebase.net/10650/10650730/themes/177101743964891dc1d2.png?width=1080" playsinline>
+          <source src="https://res.cloudinary.com/dzurujbwh/video/upload/v1778069326/Untitled_video_-_Made_with_Clipchamp_5_zbxbso.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNmYyYzVlYi00ZTNjLTQxNTgtOGZlNS1iNTE1MWNmMmRjZDQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJCdXVkeSBMRUQgbWFzayBJbWFnZXMvMS1iLm1wNCIsImlhdCI6MTc3NTM5MzE4NiwiZXhwIjoxODA2OTI5MTg2fQ.pdE4pHngDME_BBlYIlVSfW7tuIzE-WNHBOs0vtRvZaE" type="video/mp4">
+        </video>
+        <div class="br__video-play-btn" style="width: 70px; height: 70px;"><svg viewBox="0 0 24 24" style="width: 28px; height: 28px;"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Scattered Gallery Section -->
+  <section class="br__scattered">
+    <div class="br__wrap br__scattered-grid">
+      <div class="br__scattered-collage">
+        <figure class="br__scattered-img br__sc-1"><img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/10-buudy-led-mask-dermatologist-recommended.webp" alt=""></figure>
+        <figure class="br__scattered-img br__sc-2"><img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/02-buudy-led-mask-side-profile.webp" alt=""></figure>
+        <figure class="br__scattered-img br__sc-3"><img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/11-buudy-led-mask-flexible-silicone.webp" alt=""></figure>
+        <figure class="br__scattered-img br__sc-4"><img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/08-buudy-led-mask-lifestyle-use.webp" alt=""></figure>
+      </div>
+      <div>
+        <h2 class="br__section-title">New to Buudy?</h2>
+        <p style="color: #6B7280; font-size: 16px; margin-bottom: 24px;">Discover how Buudy's 7 LED modes, flexible silicone fit, and simple 10-minute routine make at-home light therapy feel easy, consistent, and beautifully wearable.</p>
+        <a class="br__nav-cta" href="#hero-buy" style="display: inline-block;">Learn More</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Comparison Section -->
+  <section class="br__comp-section" id="comparison">
+    <div class="br__wrap">
+      <h2 class="br__section-title" style="text-align: center;">What makes Buudy right for you?</h2>
+      <p style="color: #6B7280; font-size: 16px; text-align: center; margin-top: 4px;">Compare side-by-side specs</p>
+      
+      <div class="br__comp-table-wrapper">
+        <table class="br__comp-table">
+          <thead>
+            <tr class="br__comp-row">
+              <th class="br__comp-cell br__comp-head-cell">Features</th>
+              <th class="br__comp-cell br__comp-head-cell br__comp-buudy-col">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/175579000979c2a2281d.png" alt="Buudy" class="logo-mini">
+                <img src="https://i.postimg.cc/8cytzn6N/Chat-GPT-Image-May-3-2026-03-11-11-PM.png" alt="Buudy mask">
+              </th>
+              <th class="br__comp-cell br__comp-head-cell">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/1759003193a7db01a3c7.png" alt="Brand A" class="logo-mini">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/175900439737e42788a9.png" alt="Mask A">
+              </th>
+              <th class="br__comp-cell br__comp-head-cell">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/17590031356aa3e01a9f.png" alt="Brand B" class="logo-mini">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/1771012851e88997fab0.png" alt="Mask B">
+              </th>
+              <th class="br__comp-cell br__comp-head-cell">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/1769708919dc4a07e741.png" alt="Brand C" class="logo-mini">
+                <img src="https://img.thesitebase.net/10650/10650730/themes/17697089083f979823cc.png" alt="Mask C">
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="br__comp-row">
+              <td class="br__comp-cell">Portable (Cordless)</td>
+              <td class="br__comp-cell br__comp-buudy-col yes-icon">✓</td>
+              <td class="br__comp-cell no-icon">×</td>
+              <td class="br__comp-cell no-icon">×</td>
+              <td class="br__comp-cell yes-icon">✓</td>
+            </tr>
+            <tr class="br__comp-row">
+              <td class="br__comp-cell">Light Modes</td>
+              <td class="br__comp-cell br__comp-buudy-col">7 Spectrum</td>
+              <td class="br__comp-cell">3 Modes</td>
+              <td class="br__comp-cell">1 Mode</td>
+              <td class="br__comp-cell">3 Modes</td>
+            </tr>
+            <tr class="br__comp-row">
+              <td class="br__comp-cell">Neck Treatment</td>
+              <td class="br__comp-cell br__comp-buudy-col yes-icon">✓ (Included)</td>
+              <td class="br__comp-cell no-icon">×</td>
+              <td class="br__comp-cell no-icon">×</td>
+              <td class="br__comp-cell no-icon">×</td>
+            </tr>
+            <tr class="br__comp-row">
+              <td class="br__comp-cell">LED Light Density</td>
+              <td class="br__comp-cell br__comp-buudy-col">192 LEDs</td>
+              <td class="br__comp-cell">100 LEDs</td>
+              <td class="br__comp-cell">80 LEDs</td>
+              <td class="br__comp-cell">120 LEDs</td>
+            </tr>
+            <tr class="br__comp-row">
+              <td class="br__comp-cell">Price</td>
+              <td class="br__comp-cell br__comp-buudy-col" style="color: var(--brand-plum); font-weight: 700;">£179</td>
+              <td class="br__comp-cell">£299</td>
+              <td class="br__comp-cell">£399</td>
+              <td class="br__comp-cell">£372</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Intuitive Touch Tech & App -->
+  <section class="br__section br__section--mist">
+    <div class="br__wrap br__app-split">
+      <div class="br__copy">
+        <h2 class="br__section-title">Intuitive Touch Tech &amp; AI App</h2>
+        <p style="color: #57534E; margin-bottom: 20px;">Skincare should be an escape, not a hassle. We engineered the Buudy LED Mask to be as smart as it is effective, replacing frustrating wires and heavy controllers with a sleek, wearable design.</p>
+        <ul style="list-style: none; display: grid; gap: 12px; margin-bottom: 24px;">
+          <li style="display: flex; gap: 8px;">
+            <span style="color: var(--brand-rose);">✦</span>
+            <span><strong>Built-in Tap Tech:</strong> Cycle through color treatments with a gentle tap on the mask forehead.</span>
+          </li>
+          <li style="display: flex; gap: 8px;">
+            <span style="color: var(--brand-rose);">✦</span>
+            <span><strong>Glow Coach AI App:</strong> Plan, time, and track your personalized LED treatments.</span>
+          </li>
+        </ul>
+        <a class="br__nav-cta" href="#hero-buy">Add to Cart</a>
+        <div class="br__as-seen-grid">
+          <div class="br__as-seen-card"><img src="https://img.thesitebase.net/10650/10650730/themes/1769515667053f668bf4.jpeg?width=256" alt="Trustpilot badge"></div>
+          <div class="br__as-seen-card"><img src="https://img.thesitebase.net/10650/10650730/themes/17712123665783228a31.png?width=1080" alt="Dermatology badge"></div>
+        </div>
+      </div>
+      <figure class="br__media-card">
+        <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/09-buudy-led-mask-home-spa.webp" alt="Buudy AI App support">
+      </figure>
+    </div>
+  </section>
+  
+  <!-- Vimeo quote display -->
+  <section class="br__blue-video-block">
+    <iframe src="https://player.vimeo.com/video/1135041274?background=1&autoplay=1&loop=1&muted=1&controls=0&autopause=0&playsinline=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen"></iframe>
+    <div class="br__blue-content">
+      <h2>Blue Light Therapy</h2>
+      <blockquote>"One of my other favorite LED colours is going to be the blue light therapy. Blue light specifically is going to be for combatting acne, so killing any bacteria that's going to be sitting on the surface of the skin contributing to that acne breakout."</blockquote>
+      <p>SHANNON - LICENSED MEDICAL AESTHETICIAN</p>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="br__faq-section" id="faq">
+    <div class="br__wrap br__faq-grid">
+      <div>
+        <h2 class="br__section-title">Frequently Asked Questions</h2>
+        <p style="color: #6B7280; font-size: 15px; margin-top: 8px;">Got questions? We've got answers.</p>
+      </div>
+      <div class="br__accordions">
+        <div class="br__accordion-item is-active">
+          <div class="br__accordion-header" onclick="toggleAccordion(this)">
+            <span>Does this cover the neck?</span>
+            <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="br__accordion-content" style="max-height: 200px;">
+            <div class="br__accordion-content-inner">
+              Yes, one of the best things about the Buudy LED Mask is that it covers your neck as well! So many LED masks neglect the neck entirely or charge extra for it.
+            </div>
+          </div>
+        </div>
+        
+        <div class="br__accordion-item">
+          <div class="br__accordion-header" onclick="toggleAccordion(this)">
+            <span>How many LEDs does the Buudy LED Mask have?</span>
+            <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="br__accordion-content">
+            <div class="br__accordion-content-inner">
+              The Buudy LED Mask has 192 High-Density LEDs.
+            </div>
+          </div>
+        </div>
+        
+        <div class="br__accordion-item">
+          <div class="br__accordion-header" onclick="toggleAccordion(this)">
+            <span>What are the wavelengths? Irradiance/Power Density?</span>
+            <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="br__accordion-content">
+            <div class="br__accordion-content-inner">
+              Red: 633nm, Blue: 415nm, Green: 525nm, Cyan: 490nm, Yellow: 590nm, Purple: Red & Blue, White: 400-700nm. Irradiance/Power Density: 32mW/cm².
+            </div>
+          </div>
+        </div>
+        
+        <div class="br__accordion-item">
+          <div class="br__accordion-header" onclick="toggleAccordion(this)">
+            <span>Can I use it in my country?</span>
+            <svg class="br__accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="br__accordion-content">
+            <div class="br__accordion-content-inner">
+              Yes! The Buudy LED Mask is dual voltage which means it can be used worldwide without any issues.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Guarantee -->
+  <section class="br__guarantee">
+    <p>OUR 90 DAY GODDESS</p>
+    <h2>MONEY BACK</h2>
+    <h2>GUARANTEE</h2>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="br__footer">
+    <div class="br__wrap br__footer-grid">
+      <div>
+        <a class="br__footer-logo" href="#">
+          <img src="https://img.thesitebase.net/10650/10650730/themes/1755422352b06fc5e9c9.png" alt="Buudy Logo">
+        </a>
+        <p style="color: #6B7280; font-size: 14px; margin-top: 10px;">13 Harefield Rd, Rickmansworth, England, WD3 1LY, UK</p>
+        <p style="color: #6B7280; font-size: 14px; margin-top: 4px;">© 2026, buudy</p>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <ul class="br__footer-links">
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="br__footer-contacts">
+        <h4>Get in Touch</h4>
+        <p>Operating Hours: Mon - Fri 9am - 5pm EST</p>
+        <p>Email: <a href="mailto:support@buudy.com">support@buudy.com</a></p>
+        <div class="br__social-icons">
+          <a href="#"><img src="https://img.thesitebase.net/10650/10650730/themes/17712123665783228a31.png" alt="Social"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="br__wrap br__legal-footer">
+      <span>548 Market St #14148, San Francisco, CA 94104 USA</span>
+      <div class="br__legal-footer-links">
+        <a href="#">DMCA</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Sticky Bottom Bar -->
+  <div class="br__sticky-bar" id="br-sticky-action-bar">
+    <div class="br__sticky-info">
+      <img src="https://www.trustpilotreview.shop/gallery/buudy-led-mask/full/08-buudy-led-mask-lifestyle-use.webp" alt="Buudy Mask">
+      <div class="br__sticky-text">
+        <strong>BUUDY LED MASK</strong>
+        <span>£179.00 · <span style="text-decoration: line-through;">£449.00</span></span>
+      </div>
+    </div>
+    <a class="br__sticky-cta" href="#hero-buy">Add to Cart</a>
+  </div>
+  
+  <!-- Lightbox Modal -->
+  <div class="br__lightbox" id="br-lightbox-modal">
+    <div class="br__lightbox-close" id="br-lightbox-close-btn">&times;</div>
+    <div class="br__lightbox-content">
+      <img id="br-lightbox-img" src="" alt="Zoomed view">
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Hero Gallery Interaction
+  (function() {
+    const mainImg = document.getElementById('br-main-image');
+    const thumbs = document.querySelectorAll('.br__thumb');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        thumbs.forEach(t => t.classList.remove('is-active'));
+        this.classList.add('is-active');
+        
+        const newSrc = this.getAttribute('data-src');
+        const newAlt = this.getAttribute('data-alt') || '';
+        
+        // Smooth cross-fade
+        mainImg.style.opacity = 0.3;
+        setTimeout(() => {
+          mainImg.src = newSrc;
+          mainImg.alt = newAlt;
+          mainImg.style.opacity = 1;
+        }, 150);
+      });
+    });
+    
+    // Lightbox Zoom
+    const zoomTrigger = document.getElementById('br-zoom-trigger');
+    const lightbox = document.getElementById('br-lightbox-modal');
+    const lightboxImg = document.getElementById('br-lightbox-img');
+    const lightboxClose = document.getElementById('br-lightbox-close-btn');
+    
+    zoomTrigger.addEventListener('click', function() {
+      lightboxImg.src = mainImg.src;
+      lightbox.classList.add('is-open');
+    });
+    
+    lightboxClose.addEventListener('click', function() {
+      lightbox.classList.remove('is-open');
+    });
+    
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('is-open');
+      }
+    });
+  })();
+
+  // Wavelengths Interactive Playground
+  (function() {
+    const items = document.querySelectorAll('.br__wavelength-item');
+    const aura = document.getElementById('br-glow-aura');
+    
+    items.forEach(item => {
+      item.addEventListener('click', function() {
+        items.forEach(i => i.classList.remove('is-active'));
+        this.classList.add('is-active');
+        
+        const glowColor = this.getAttribute('data-color');
+        document.documentElement.style.setProperty('--active-glow', glowColor);
+      });
+    });
+  })();
+
+  // Accordion Logic
+  function toggleAccordion(element) {
+    const item = element.parentElement;
+    const content = item.querySelector('.br__accordion-content');
+    const isActive = item.classList.contains('is-active');
+    
+    // Close other accordions in the same group if desired
+    const siblingItems = item.parentElement.querySelectorAll('.br__accordion-item');
+    siblingItems.forEach(sib => {
+      sib.classList.remove('is-active');
+      sib.querySelector('.br__accordion-content').style.maxHeight = null;
+    });
+    
+    if (!isActive) {
+      item.classList.add('is-active');
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      item.classList.remove('is-active');
+      content.style.maxHeight = null;
+    }
+  }
+
+  // CountDown Timer
+  (function() {
+    const display = document.getElementById('br-timer-display');
+    let duration = 600; // 10 minutes default
+    
+    function startTimer(timer) {
+      let minutes, seconds;
+      const interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = "FREE GIFT INCLUDED FOR " + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration; // restart
+        }
+      }, 1000);
+    }
+    
+    startTimer(duration);
+  })();
+
+  // Scroll Observer for Sticky bottom CTA
+  (function() {
+    const stickyBar = document.getElementById('br-sticky-action-bar');
+    const heroBuy = document.getElementById('hero-buy');
+    
+    window.addEventListener('scroll', function() {
+      const heroBottom = heroBuy.getBoundingClientRect().bottom + window.scrollY;
+      const currentScroll = window.scrollY;
+      
+      if (currentScroll > heroBottom - 200) {
+        stickyBar.classList.add('is-visible');
+      } else {
+        stickyBar.classList.remove('is-visible');
+      }
+    });
+  })();
+
+  // UGC & Doctor Video Controls
+  function playUgcVideo(card) {
+    const video = card.querySelector('video');
+    const playBtn = card.querySelector('.br__video-play-btn');
+    if (video.paused) {
+      video.play();
+      playBtn.style.opacity = 0;
+    } else {
+      video.pause();
+      playBtn.style.opacity = 1;
+    }
+  }
+  
+  function toggleDoctorVideo(card) {
+    const video = card.querySelector('video');
+    const playBtn = card.querySelector('.br__video-play-btn');
+    if (video.paused) {
+      video.play();
+      playBtn.style.opacity = 0;
+    } else {
+      video.pause();
+      playBtn.style.opacity = 1;
+    }
+  }
+  </script>
+  <script defer src="/assets/microsoft-consent-mode.js"></script>
+  <script defer src="/assets/buudy-outbound-failsafe.js"></script>
+</body>
+</html>

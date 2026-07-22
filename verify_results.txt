@@ -1,0 +1,27 @@
+{
+  "https://www.trustpilotreview.shop/": {
+    "status": 200,
+    "root": true,
+    "js": true
+  },
+  "https://www.trustpilotreview.shop/floating-head-warning": {
+    "status": 200,
+    "root": true,
+    "js": true
+  },
+  "https://www.trustpilotreview.shop/missing-colors-expose": {
+    "status": 200,
+    "root": true,
+    "js": true
+  },
+  "https://www.trustpilotreview.shop/led-density-scam": {
+    "status": 200,
+    "root": true,
+    "js": true
+  },
+  "https://www.trustpilotreview.shop/brand-name-premium": {
+    "status": 200,
+    "root": true,
+    "js": true
+  }
+}

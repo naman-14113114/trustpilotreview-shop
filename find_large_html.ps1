@@ -1,0 +1,1 @@
+Get-ChildItem -Path "c:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilot-led-mask-replica" -Recurse -Filter *.html | Where-Object { $_.Length -gt 1000000 } | Select-Object FullName, Length
