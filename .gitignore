@@ -11,6 +11,9 @@ SECRETS.local.md
 # Dependencies and generated build output.
 node_modules/
 dist/
+.next/
+out/
+*.tsbuildinfo
 
 # This raw source video is deliberately excluded from Vercel deployments.
 # The production page uses the deployable asset in assets/ instead.
