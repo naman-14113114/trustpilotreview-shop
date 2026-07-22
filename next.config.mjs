@@ -39,7 +39,6 @@ const nextConfig = {
   outputFileTracingExcludes: {
     '/*': [
       './.git/**/*',
-      './.next/**/*',
       './unzipped/**/*',
       './unzipped_new_pages/**/*',
       './audit-video-test/**/*',
