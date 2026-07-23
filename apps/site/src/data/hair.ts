@@ -1,4 +1,5 @@
 import type { AdvertorialPage, GuideCard, RankedProduct } from "@trustpilotreview/shared";
+import { hairGuideGroups, hairGuides } from "@/data/hairGuides";
 
 export const MUUHU_HAIR_URL = "https://uk.muuhu.com/products/muuhu-hair-dryer";
 export const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
@@ -12,6 +13,9 @@ export const hairImages = {
   ghd: "/img/hair/ghd.jpg",
   loreal: "/img/hair/loreal_new.webp",
   topFive: "/img/hair/top5-uk.webp",
+  vsDyson: "/img/hair/vs-dyson.webp",
+  vsShark: "/img/hair/vs-shark.webp",
+  vsGhd: "/img/hair/vs-ghd.webp",
   threeWay: "/img/hair/vs-dyson-shark-muuhu.webp",
   editor: "/img/hair/editor-stylist-unsplash.webp",
   trust: "/img/hair/about-trust-hair-dryer.webp",
@@ -167,12 +171,20 @@ export const hairGuideCards: GuideCard[] = [
     title: "Best Hair Dryer UK 2026",
     description: "Compare Muuhu, Dyson, Shark, ghd and L'Oreal for speed, styling range, heat control and value.",
     href: "/best-hair-dryer-uk-2026",
-    group: "Hair Dryer Buying Guides"
-  },
-  {
-    title: "Dyson vs Shark vs Muuhu",
-    description: "A focused three-way comparison for UK shoppers choosing between prestige, familiarity and value.",
-    href: "/dyson-vs-shark-vs-muuhu-uk",
-    group: "Hair Dryer Buying Guides"
+    code: "TOP 5",
+    group: "Hair Type Guides"
   }
-];
+].concat(
+  hairGuideGroups.flatMap((group) =>
+    group.guides.map((slug) => {
+      const guide = hairGuides[slug];
+      return {
+        title: guide.cardTitle,
+        description: guide.cardDescription,
+        href: `/${slug}`,
+        code: guide.cardCode,
+        group: group.title
+      };
+    }),
+  ),
+);

@@ -1,8 +1,43 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { articles } from '@/data/old/articles';
-import { hairGuideCards, hairImages } from '@/data/hair';
+import { hairImages } from '@/data/hair';
+import { hairGuideGroups, hairGuides, type HairGuideSlug } from '@/data/hairGuides';
 import { Calendar, ChevronRight } from 'lucide-react';
+
+function hairGuideImage(slug: HairGuideSlug) {
+  if (slug === 'dyson-vs-shark-vs-muuhu-uk') return hairImages.threeWay;
+  if (slug.includes('dyson')) return hairImages.vsDyson;
+  if (slug.includes('shark')) return hairImages.vsShark;
+  if (slug.includes('ghd')) return hairImages.vsGhd;
+  return hairImages.topFive;
+}
+
+function hairCardsForGroup(groupTitle: string, guides: HairGuideSlug[]) {
+  const cards = guides.map((slug) => {
+    const guide = hairGuides[slug];
+    return {
+      href: `/${slug}`,
+      code: guide.cardCode,
+      title: guide.cardTitle,
+      description: guide.cardDescription,
+      image: hairGuideImage(slug)
+    };
+  });
+
+  if (groupTitle !== 'Hair Type Guides') return cards;
+
+  return [
+    {
+      href: '/best-hair-dryer-uk-2026',
+      code: 'TOP 5',
+      title: 'Best Hair Dryer UK 2026',
+      description: "Compare Muuhu, Dyson, Shark, ghd and L'Oreal for speed, styling range, heat control and value.",
+      image: hairImages.topFive
+    },
+    ...cards
+  ];
+}
 
 export default function Home() {
   const featured = articles[0];
@@ -194,35 +229,47 @@ export default function Home() {
             <p className="text-slate-600 mt-4 max-w-2xl mx-auto">UK hair dryer reviews and brand comparisons for shoppers comparing speed, styling range, heat control, attachments and value.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {hairGuideCards.map((card) => {
-              const image = card.href.includes('dyson-vs-shark') ? hairImages.threeWay : hairImages.topFive;
-              return (
-                <Link
-                  key={card.href}
-                  to={card.href}
-                  className="group flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="h-48 overflow-hidden relative border-b border-slate-100 bg-slate-50">
-                    <img src={image} alt={card.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500 text-white">
-                      Hair Guide
-                    </div>
+          <div className="space-y-12">
+            {hairGuideGroups.map((group) => (
+              <div key={group.title}>
+                <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 font-serif">{group.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{group.description}</p>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif group-hover:text-emerald-600 transition-colors leading-tight">
-                      {card.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
-                      {card.description}
-                    </p>
-                    <div className="mt-auto flex items-center text-emerald-600 font-bold text-sm">
-                      Read More <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {hairCardsForGroup(group.title, group.guides).map((card) => {
+                    return (
+                      <Link
+                        key={card.href}
+                        to={card.href}
+                        className="group flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className="h-48 overflow-hidden relative border-b border-slate-100 bg-slate-50">
+                          <img src={card.image} alt={card.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                          <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500 text-white">
+                            {card.code}
+                          </div>
+                        </div>
+                        <div className="p-6 flex flex-col flex-grow">
+                          <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif group-hover:text-emerald-600 transition-colors leading-tight">
+                            {card.title}
+                          </h3>
+                          <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                            {card.description}
+                          </p>
+                          <div className="mt-auto flex items-center text-emerald-600 font-bold text-sm">
+                            Read More <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

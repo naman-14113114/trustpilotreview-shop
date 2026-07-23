@@ -7,7 +7,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.trustpilotreview.shop"),
   title: "Trustpilot Review Shop | LED Face Mask Reviews & Buyer Guides",
   description:
-    "UK-focused LED face mask reviews, buyer guides, and red light therapy comparisons covering wavelengths, safety, face and neck coverage, and value."
+    "UK-focused LED face mask reviews, buyer guides, and red light therapy comparisons covering wavelengths, safety, face and neck coverage, and value.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    shortcut: ["/favicon.ico"]
+  }
 };
 
 export const viewport: Viewport = {

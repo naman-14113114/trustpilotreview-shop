@@ -20,6 +20,7 @@ import {
   type ProductPriceKey,
 } from "@/lib/advertorialMarkets";
 import type { MarketContextProps } from "@/lib/marketContext";
+import { MUUHU_HAIR_URL, type HairGuide, type HairGuideProduct } from "@/data/hairGuides";
 import { getMobileProsCons } from "./mobileProsCons";
 
 const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
@@ -463,6 +464,137 @@ function getThreeWayProducts(products: Product[]) {
     .map((product, index) => ({ ...product, rank: `#${index + 1}` }));
 }
 
+const defaultGuideCriteria = [
+  "Current UK price and total value",
+  "Included attachment count",
+  "Drying speed and airflow confidence",
+  "Styling versatility across daily routines",
+  "Curling and wave creation",
+  "Smoothing and flyaway control",
+  "Diffuser and textured-hair support",
+  "Heat-control story",
+  "Warranty and guarantee strength",
+  "Free gifts and offer clarity",
+  "Brand trust versus price resistance",
+  "Best buyer fit for search-ad visitors",
+];
+
+const prosLabels = [
+  "Best fit",
+  "Styling range",
+  "Value case",
+  "Confidence",
+  "Daily use",
+  "Buyer advantage",
+];
+
+const consLabels = [
+  "Watchout",
+  "Bundle note",
+  "Buyer note",
+  "Value note",
+  "Fit note",
+];
+
+function ensureLabel(point: string, labels: string[], index: number) {
+  if (point.includes(":")) return point;
+  return `${labels[index] ?? "Point"}: ${point}`;
+}
+
+function normalizeGuideCriteria(guide: HairGuide) {
+  const seen = new Set<string>();
+  const merged = [...guide.criteria, ...defaultGuideCriteria].filter((item) => {
+    const key = item.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  return merged.slice(0, Math.max(10, Math.min(12, merged.length)));
+}
+
+function guideHeadlineTitle(guide: HairGuide) {
+  return guide.headline.replace(/\s+UK\s+2026$/i, "").replace(/\s+UK$/i, "");
+}
+
+function isDirectVsGuide(guide: HairGuide) {
+  return guide.slug === "muuhu-vs-dyson-airwrap-uk"
+    || guide.slug === "muuhu-vs-shark-flexstyle-uk"
+    || guide.slug === "muuhu-vs-ghd-helios-uk";
+}
+
+function shouldKeepGuideProduct(guide: HairGuide, product: HairGuideProduct) {
+  if (!isDirectVsGuide(guide)) return true;
+
+  const name = product.name.toLowerCase();
+  if (product.isWinner || name.includes("muuhu")) return true;
+  if (guide.slug === "muuhu-vs-dyson-airwrap-uk") return name.includes("dyson");
+  if (guide.slug === "muuhu-vs-shark-flexstyle-uk") return name.includes("shark");
+  if (guide.slug === "muuhu-vs-ghd-helios-uk") return name.includes("ghd") || name.includes("helios");
+
+  return false;
+}
+
+function guideProductId(product: HairGuideProduct) {
+  const name = product.name.toLowerCase();
+  if (name.includes("muuhu")) return 1;
+  if (name.includes("dyson")) return 2;
+  if (name.includes("shark")) return 3;
+  if (name.includes("ghd")) return 4;
+  if (name.includes("l'oreal") || name.includes("l’oréal") || name.includes("loreal")) return 5;
+  return Number(product.rank) || 99;
+}
+
+function guideProductDescription(product: HairGuideProduct, guide: HairGuide) {
+  const comparisonFocus = normalizeGuideCriteria(guide).slice(0, 4).join(", ");
+
+  if (product.isWinner) {
+    return [
+      product.summary,
+      `${guide.quickTake} That is why Muuhu is positioned as the No. 1 pick on this page, especially for UK shoppers who want the clearest price-to-kit argument before clicking through.`,
+      `The deciding points are simple: ${guide.winnerBullets.join(" ")} The £149 offer, official free gifts, 2-year warranty and 90-day guarantee make the page's recommendation easier to trust without making the comparison feel one-sided.`,
+    ];
+  }
+
+  return [
+    product.summary,
+    `${product.name} still has a clear place in the comparison for ${product.bestFor.toLowerCase()} It should be treated as a credible option, not dismissed, because UK shoppers know these brands and want a fair reason to choose.`,
+    `Where Muuhu moves ahead is the combined buying case. When we weight ${comparisonFocus}, Muuhu's £149 complete kit, official gift bundle, 2-year warranty and 90-day guarantee make the decision easier for value-focused shoppers.`,
+  ];
+}
+
+function guideProductToAdvertorialProduct(
+  product: HairGuideProduct,
+  guide: HairGuide,
+  index: number,
+): Product {
+  return {
+    id: guideProductId(product),
+    rank: `#${index + 1}`,
+    name: product.name,
+    image: product.image,
+    price: product.price,
+    originalPrice: product.isWinner ? "£299" : undefined,
+    rating: product.rating,
+    link: product.isWinner ? product.link ?? MUUHU_HAIR_URL : product.link ?? "#",
+    isWinner: Boolean(product.isWinner),
+    description: guideProductDescription(product, guide),
+    pros: product.pros.map((point, pointIndex) =>
+      ensureLabel(point, prosLabels, pointIndex),
+    ),
+    cons: product.watchouts.map((point, pointIndex) =>
+      ensureLabel(point, consLabels, pointIndex),
+    ),
+    metrics: product.metrics,
+  };
+}
+
+function getGuideProducts(guide: HairGuide) {
+  return guide.products
+    .filter((product) => shouldKeepGuideProduct(guide, product))
+    .map((product, index) => guideProductToAdvertorialProduct(product, guide, index));
+}
+
 function preventPlaceholderNavigation(
   event: React.MouseEvent<HTMLAnchorElement>,
   href: string,
@@ -556,12 +688,25 @@ export default function HairDryerAdvertorial({
   market: marketKey = "uk",
   context,
   mode = "best",
-}: { market?: AdvertorialMarketKey; mode?: HairDryerAdvertorialMode } & MarketContextProps) {
+  guide,
+}: {
+  market?: AdvertorialMarketKey;
+  mode?: HairDryerAdvertorialMode;
+  guide?: HairGuide;
+} & MarketContextProps) {
   const market = getAdvertorialMarket(marketKey);
   const isThreeWay = mode === "three-way";
   const allProducts = getProductsForMarket(market);
-  const products = isThreeWay ? getThreeWayProducts(allProducts) : allProducts;
-  const activeCriteria = isThreeWay ? threeWayCriteria : criteria;
+  const products = guide
+    ? getGuideProducts(guide)
+    : isThreeWay
+      ? getThreeWayProducts(allProducts)
+      : allProducts;
+  const activeCriteria = guide
+    ? normalizeGuideCriteria(guide)
+    : isThreeWay
+      ? threeWayCriteria
+      : criteria;
   const expertProfile = {
     name: "Amara Wright",
     title: "Beauty Technology Editor",
@@ -571,13 +716,31 @@ export default function HairDryerAdvertorial({
     testingHours: 240,
   };
   const heroImage =
-    isThreeWay
+    guide
+      ? guide.heroImage
+      : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
       ? "/img/hair/top5-uk.webp"
       : market.key === "ca"
       ? "/img/hair/top5-uk.webp"
       : "/img/hair/top5-uk.webp";
+  const headlineTitle = guide
+    ? guideHeadlineTitle(guide)
+    : isThreeWay
+      ? "Dyson vs Shark vs Muuhu"
+      : "Best Hair Dryer";
+  const heroAlt = guide?.heroAlt
+    ?? (isThreeWay
+      ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
+      : `Top hair dryers comparison for ${market.titleCountry}`);
+  const heroImageClass = guide
+    ? guide.heroImage.includes("top5-uk")
+      ? "max-w-5xl aspect-[1536/461] object-cover"
+      : "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
+    : isThreeWay
+      ? "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
+      : "max-w-5xl aspect-[1536/461] object-cover";
   const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -596,9 +759,7 @@ export default function HairDryerAdvertorial({
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
-            <span className="block">
-              {isThreeWay ? "Dyson vs Shark vs Muuhu" : "Best Hair Dryer"}
-            </span>
+            <span className="block">{headlineTitle}</span>
             <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
               <MarketFlag market={market.flagKey} />
               <span>{market.headingCountry} - 2026</span>
@@ -616,19 +777,11 @@ export default function HairDryerAdvertorial({
         <div className="max-w-6xl mx-auto text-center">
           <img
             src={heroImage}
-            alt={
-              isThreeWay
-                ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
-                : `Top hair dryers comparison for ${market.titleCountry}`
-            }
+            alt={heroAlt}
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${
-              isThreeWay
-                ? "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
-                : "max-w-5xl aspect-[1536/461] object-cover"
-            }`}
+            className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${heroImageClass}`}
           />
 
           <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
@@ -650,7 +803,21 @@ export default function HairDryerAdvertorial({
               </div>
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
-                {isThreeWay ? (
+                {guide ? (
+                  <p>
+                    With {expertProfile.yearsExperience} years of experience in
+                    hair styling and beauty technology,{" "}
+                    <strong className="text-slate-900">
+                      {expertProfile.name}
+                    </strong>{" "}
+                    reviewed this UK guide for {guide.cardTitle.toLowerCase()}.
+                    She compared {activeCriteria.slice(0, 5).join(", ")},
+                    buyer confidence, current pricing and offer clarity. Her
+                    main finding was simple: Muuhu made the strongest No. 1 case
+                    because it combines a complete 7-in-1 styling system with a
+                    cleaner £149 value story.
+                  </p>
+                ) : isThreeWay ? (
                   <p>
                     With {expertProfile.yearsExperience} years of experience in
                     hair styling and beauty technology,{" "}
@@ -711,7 +878,22 @@ export default function HairDryerAdvertorial({
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Intro */}
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
-          {isThreeWay ? (
+          {guide ? (
+            <>
+              <p>
+                {guide.quickTake}
+              </p>
+              {guide.intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <p>
+                Below, we use the same review structure as our full Best Hair
+                Dryer ranking, but focus the scoring and copy around this page's
+                search intent so UK buyers can compare quickly without losing
+                the fair product-by-product context.
+              </p>
+            </>
+          ) : isThreeWay ? (
             <>
               <p>
                 Dyson, Shark and Muuhu are the three names UK shoppers often
@@ -799,7 +981,17 @@ export default function HairDryerAdvertorial({
             ))}
           </div>
           <p className="text-center text-slate-600 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 text-[14px] md:text-base leading-snug md:leading-relaxed">
-            {isThreeWay ? (
+            {guide ? (
+              <>
+                For this page, we reviewed the products against{" "}
+                <strong>{activeCriteria.length} practical buying points</strong>{" "}
+                and weighted the result around {guide.cardTitle.toLowerCase()}.
+                Based on <strong>editorial evaluation</strong>,{" "}
+                <strong>offer clarity</strong>, and{" "}
+                <strong>consumer-facing value</strong>, Muuhu stood out as the
+                strongest No. 1 choice for UK shoppers.
+              </>
+            ) : isThreeWay ? (
               <>
                 For this direct comparison, we reviewed the three models UK
                 shoppers most often compare before buying. Based on{" "}
