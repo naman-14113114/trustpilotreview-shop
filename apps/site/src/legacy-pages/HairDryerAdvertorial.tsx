@@ -130,6 +130,21 @@ const criteria = [
   "Value for money and warranty",
 ];
 
+const threeWayCriteria = [
+  "Current UK price and total value",
+  "Included attachment count",
+  "Drying speed and airflow confidence",
+  "Curling and wave creation",
+  "Smoothing and flyaway control",
+  "Diffuser and textured-hair support",
+  "Heat-control story",
+  "Ease of understanding the bundle",
+  "Warranty and guarantee strength",
+  "Free gifts and offer clarity",
+  "Brand trust versus price resistance",
+  "Best buyer fit for search-ad visitors",
+];
+
 type Product = {
   id: number;
   rank: string;
@@ -198,6 +213,7 @@ const baseProducts: Product[] = [
       "The Dyson Airwrap is the category's best-known name, using Coanda airflow to wrap hair and a digital motor for fast drying. It is a genuine premium styler with strong brand prestige.",
       "However, at £399.99 it costs more than 2.5x our top pick while shipping fewer styling attachments overall, and its bundles still leave gaps that the seven-piece Muuhu system covers out of the box.",
       "For buyers who want the Dyson name, it remains a capable choice, but the value gap is hard to ignore once you compare motor, attachment count, and what is included in the box.",
+      "The weakness for paid-search shoppers is not performance; it is justification. Once a buyer sees a £149 complete kit with diffuser, brush heads, curlers, warranty and gifts, Dyson has to win mainly on brand prestige, which is why it sits behind Muuhu in our value ranking.",
     ],
     pros: [
       "Strong Brand & Coanda Tech: Dyson pioneered Coanda airflow wrapping and has unmatched name recognition.",
@@ -231,6 +247,7 @@ const baseProducts: Product[] = [
       "The Shark FlexStyle rotates from a powerful dryer into a versatile styler and is a respected mid-premium option with a no-heat-damage claim.",
       "At £199 it is still more than £50 above our top pick, and it does not include a pair of Coanda auto-wrap curlers or the full seven-attachment range out of the box.",
       "It is a solid dryer-styler, but on attachment completeness and total value it trails the seven-piece £149 system.",
+      "For buyers who already trust Shark, it is a sensible middle option. The problem is the offer is less clean: shoppers still need to check exact bundle contents, diffuser support, curling tools and sale price, whereas Muuhu makes the full styling routine obvious in one page.",
     ],
     pros: [
       "Dryer-to-Styler Design: Twists between a fast dryer and a styling wand.",
@@ -264,6 +281,7 @@ const baseProducts: Product[] = [
       "The ghd Helios is a beloved professional dryer with a strong motor and a premium feel, a favourite among salon stylists.",
       "But it is a dryer only, not a styling system. It ships with a single concentrator and no Coanda auto-wrap curlers, no round brush, no diffuser, and no curl/wave function out of the box.",
       "At £189 it costs more than our £149 top pick while delivering a fraction of the styling versatility, since it cannot curl or wave hair automatically.",
+      "It is best for someone who already owns curling and brush tools. If a shopper is starting from zero or wants one purchase to cover drying, smoothing, volume, curls and diffusing, Muuhu's wider attachment set is easier to recommend.",
     ],
     pros: [
       "Salon-Grade Dryer: Well-regarded by professionals for smooth, fast drying.",
@@ -297,6 +315,7 @@ const baseProducts: Product[] = [
       "The L'Oréal Professionnel AirLight Pro is an infrared dryer with a premium salon positioning and two magnetic attachments.",
       "At £350 it is the most expensive on this list after Dyson, yet it ships with only two attachments and no Coanda auto-wrap curlers, so its styling range is the narrowest of the premium options.",
       "For the price, buyers get a capable dryer but not the complete seven-piece styling system or the value of our £149 top pick.",
+      "It is interesting technology for salon-focused buyers, but the landing-page value case is difficult. At £350, shoppers expect a complete routine, and the AirLight Pro feels more like a premium dryer than an all-in-one styling system.",
     ],
     pros: [
       "Infrared Technology: Uses infrared light for fast, gentle drying.",
@@ -422,10 +441,26 @@ function getCanadaProducts(market: AdvertorialMarket) {
 }
 
 function getProductsForMarket(market: AdvertorialMarket) {
-  if (market.key === "uk") return baseProducts;
+  if (market.key === "uk") {
+    return baseProducts.map((product) =>
+      product.isWinner
+        ? { ...product, link: market.muuhuUrl ?? product.link }
+        : product,
+    );
+  }
   if (market.key === "ca") return getCanadaProducts(market);
 
   return baseProducts.map((product) => localizeBaseProduct(product, market));
+}
+
+function getThreeWayProducts(products: Product[]) {
+  const muuhu = products.find((product) => product.id === 1);
+  const shark = products.find((product) => product.id === 3);
+  const dyson = products.find((product) => product.id === 2);
+
+  return [muuhu, shark, dyson]
+    .filter((product): product is Product => Boolean(product))
+    .map((product, index) => ({ ...product, rank: `#${index + 1}` }));
 }
 
 function preventPlaceholderNavigation(
@@ -515,12 +550,18 @@ export const MetricBar: React.FC<{ label: string; value: number }> = ({
   </div>
 );
 
+type HairDryerAdvertorialMode = "best" | "three-way";
+
 export default function HairDryerAdvertorial({
   market: marketKey = "uk",
   context,
-}: { market?: AdvertorialMarketKey } & MarketContextProps) {
+  mode = "best",
+}: { market?: AdvertorialMarketKey; mode?: HairDryerAdvertorialMode } & MarketContextProps) {
   const market = getAdvertorialMarket(marketKey);
-  const products = getProductsForMarket(market);
+  const isThreeWay = mode === "three-way";
+  const allProducts = getProductsForMarket(market);
+  const products = isThreeWay ? getThreeWayProducts(allProducts) : allProducts;
+  const activeCriteria = isThreeWay ? threeWayCriteria : criteria;
   const expertProfile = {
     name: "Amara Wright",
     title: "Beauty Technology Editor",
@@ -530,7 +571,9 @@ export default function HairDryerAdvertorial({
     testingHours: 240,
   };
   const heroImage =
-    market.key === "uk"
+    isThreeWay
+      ? "/img/hair/vs-dyson-shark-muuhu.webp"
+      : market.key === "uk"
       ? "/img/hair/top5-uk.webp"
       : market.key === "ca"
       ? "/img/hair/top5-uk.webp"
@@ -553,7 +596,9 @@ export default function HairDryerAdvertorial({
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
-            <span className="block">Best Hair Dryer</span>
+            <span className="block">
+              {isThreeWay ? "Dyson vs Shark vs Muuhu" : "Best Hair Dryer"}
+            </span>
             <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
               <MarketFlag market={market.flagKey} />
               <span>{market.headingCountry} - 2026</span>
@@ -571,11 +616,19 @@ export default function HairDryerAdvertorial({
         <div className="max-w-6xl mx-auto text-center">
           <img
             src={heroImage}
-            alt={`Top hair dryers comparison for ${market.titleCountry}`}
+            alt={
+              isThreeWay
+                ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
+                : `Top hair dryers comparison for ${market.titleCountry}`
+            }
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="w-full max-w-5xl mx-auto aspect-[1536/461] object-cover rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12"
+            className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${
+              isThreeWay
+                ? "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
+                : "max-w-5xl aspect-[1536/461] object-cover"
+            }`}
           />
 
           <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
@@ -597,7 +650,22 @@ export default function HairDryerAdvertorial({
               </div>
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
-                {market.key === "ca" ? (
+                {isThreeWay ? (
+                  <p>
+                    With {expertProfile.yearsExperience} years of experience in
+                    hair styling and beauty technology,{" "}
+                    <strong className="text-slate-900">
+                      {expertProfile.name}
+                    </strong>{" "}
+                    reviewed the three premium stylers UK shoppers compare most
+                    often: Muuhu, Shark FlexStyle and Dyson Airwrap. She looked
+                    at price, attachments, drying speed, curling, smoothing,
+                    diffuser support, heat control, warranty, offer clarity and
+                    buyer fit. Dyson has prestige and Shark has familiarity, but
+                    Muuhu made the strongest first-click case for shoppers who
+                    want a complete kit at a clearer price.
+                  </p>
+                ) : market.key === "ca" ? (
                   <p>
                     Our editorial team compared 22 of the most popular hair
                     dryers over 240+ hours, evaluating motor speed, ionic care,
@@ -643,48 +711,85 @@ export default function HairDryerAdvertorial({
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Intro */}
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
-          <p>
-            Hair dryers have exploded in {market.titleCountry}, but the market
-            is confusing. Prices range from{" "}
-            <strong>{market.priceRange}</strong>, and many brands make almost
-            identical claims about drying speed, shine, frizz control, and
-            salon results.
-          </p>
-          {market.key === "ca" ? (
-            <p>
-              We compared <strong>22 of the most popular hair dryers</strong>{" "}
-              over 240+ hours, evaluating motor speed, ionic care, heat control,
-              attachments, Coanda styling, ease of use, reviews, price, and
-              warranty.
-            </p>
+          {isThreeWay ? (
+            <>
+              <p>
+                Dyson, Shark and Muuhu are the three names UK shoppers often
+                compare before buying an air styler. The choice looks simple at
+                first, but the real difference is not only brand name; it is how
+                much styling routine you get for the price.
+              </p>
+              <p>
+                We compared these three products across{" "}
+                <strong>12 practical buying points</strong>, including current
+                UK price, attachment count, drying speed, curl creation,
+                smoothing control, diffuser support, warranty, guarantee, free
+                gifts and how clearly the offer answers a paid-search buyer's
+                doubts.
+              </p>
+              <p>
+                Dyson remains the prestige pick and Shark is the familiar
+                mid-premium alternative. Muuhu ranks first here because it gives
+                shoppers the easiest value story to understand: a 7-in-1
+                styling kit, Coanda-style curlers, diffuser, brushes,
+                intelligent heat control, official gifts and a lower price.
+              </p>
+              <p>
+                Below, we use the same review structure as our full Best Hair
+                Dryer ranking, but focus only on the three products buyers are
+                most likely to compare side by side.
+              </p>
+            </>
           ) : (
-            <p>
-              So we tested <strong>22 of the most popular hair dryers</strong>{" "}
-              over <strong>240+ hours</strong>, comparing motor speed, ionic
-              care, heat control, attachments, Coanda styling, ease of use,
-              reviews, price, and warranty.
-            </p>
+            <>
+              <p>
+                Hair dryers have exploded in {market.titleCountry}, but the
+                market is confusing. Prices range from{" "}
+                <strong>{market.priceRange}</strong>, and many brands make
+                almost identical claims about drying speed, shine, frizz
+                control, and salon results.
+              </p>
+              {market.key === "ca" ? (
+                <p>
+                  We compared{" "}
+                  <strong>22 of the most popular hair dryers</strong> over 240+
+                  hours, evaluating motor speed, ionic care, heat control,
+                  attachments, Coanda styling, ease of use, reviews, price, and
+                  warranty.
+                </p>
+              ) : (
+                <p>
+                  So we tested{" "}
+                  <strong>22 of the most popular hair dryers</strong> over{" "}
+                  <strong>240+ hours</strong>, comparing motor speed, ionic
+                  care, heat control, attachments, Coanda styling, ease of use,
+                  reviews, price, and warranty.
+                </p>
+              )}
+              <p>
+                The biggest finding was simple: a higher price did not always
+                mean better results. The best dryers paired a fast brushless
+                motor, real ionic care, and a complete attachment set with a fair
+                price.
+              </p>
+              <p>
+                Below, we rank the hair dryers that actually stood out,
+                including{" "}
+                {market.key === "ca"
+                  ? "our editorial recommendation for Canadian buyers."
+                  : `the one we believe offers the strongest balance of results, styling versatility, and value for ${market.buyerLabel}.`}
+              </p>
+            </>
           )}
-          <p>
-            The biggest finding was simple: a higher price did not always mean
-            better results. The best dryers paired a fast brushless motor, real
-            ionic care, and a complete attachment set with a fair price.
-          </p>
-          <p>
-            Below, we rank the hair dryers that actually stood out, including{" "}
-            {market.key === "ca"
-              ? "our editorial recommendation for Canadian buyers."
-              : `the one we believe offers the strongest balance of results, styling versatility, and value for ${market.buyerLabel}.`}
-          </p>
         </div>
 
         {/* Criteria */}
         <div className="bg-white rounded-2xl md:rounded-3xl p-5 min-[360px]:p-5 md:p-10 shadow-sm border border-slate-200 mb-10 md:mb-16 w-full">
           <h2 className="text-[1.35rem] md:text-3xl font-bold text-slate-900 mb-5 md:mb-8 text-center font-serif leading-tight">
-            We evaluated hair dryers based on 5 criteria
+            We evaluated hair dryers based on {activeCriteria.length} criteria
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4 mb-5 md:mb-8">
-            {criteria.map((item, idx) => (
+            {activeCriteria.map((item, idx) => (
               <div key={idx} className="flex items-start gap-2.5 md:gap-3">
                 <ShieldCheck className="text-emerald-500 shrink-0 mt-0.5 h-[18px] w-[18px] md:h-5 md:w-5" />
                 <span className="font-semibold text-slate-700 text-[15px] md:text-base leading-snug">
@@ -694,7 +799,17 @@ export default function HairDryerAdvertorial({
             ))}
           </div>
           <p className="text-center text-slate-600 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 text-[14px] md:text-base leading-snug md:leading-relaxed">
-            {market.key === "ca" ? (
+            {isThreeWay ? (
+              <>
+                For this direct comparison, we reviewed the three models UK
+                shoppers most often compare before buying. Based on{" "}
+                <strong>editorial evaluation</strong>,{" "}
+                <strong>offer clarity</strong>, and{" "}
+                <strong>consumer-facing value</strong>, Muuhu stood out as the
+                strongest first choice for buyers balancing performance, styling
+                range, confidence and price.
+              </>
+            ) : market.key === "ca" ? (
               <>
                 We compared these hair dryers based on published specifications,
                 verified user feedback, and editorial criteria. Based on{" "}
@@ -743,7 +858,7 @@ export default function HairDryerAdvertorial({
                         <img
                           src={product.image}
                           alt={product.name}
-                          loading="lazy"
+                          loading="eager"
                           decoding="async"
                           className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
                         />
@@ -1045,7 +1160,7 @@ export default function HairDryerAdvertorial({
         </div>
 
         {/* Bottom Verdict Section - Elegant Design */}
-        <div className="mt-20 md:mt-24 mb-10 md:mb-12 relative max-w-sm md:max-w-5xl mx-auto">
+        <div className="mt-20 md:mt-24 mb-4 md:mb-6 relative max-w-sm md:max-w-5xl mx-auto">
           <div className="bg-[#f8f4e6] rounded-[1.5rem] md:rounded-[2rem] p-5 pb-6 md:p-12 md:pb-8 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] border border-[#e8dccb] relative z-10">
             <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
               {market.key === "ca" ? "Editor's Pick" : "Editor's Verdict"}
@@ -1103,7 +1218,7 @@ export default function HairDryerAdvertorial({
       </main>
 
       {/* Footer / Disclosures */}
-      <footer className="mt-20 border-t border-slate-200 bg-white px-4 py-12 pb-24 shadow-inner">
+      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 pb-24 shadow-inner">
         <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
           <p className="mb-2 text-lg font-bold text-slate-800">Best Hair Dryer</p>
           <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
