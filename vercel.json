@@ -1,4 +1,8 @@
 {
+  "framework": "nextjs",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @trustpilotreview/site build",
+  "outputDirectory": "apps/site/.next",
   "headers": [
     {
       "source": "/best-led-face-mask-uk-2026-previous",

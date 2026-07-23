@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap");
+@import "tailwindcss";
+
+@source "../components";
+@source "../features";
+@source "../legacy-pages";
+@source "../data";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+[data-outbound-button="true"][data-loading="true"] [data-outbound-content="true"] {
+  visibility: hidden;
+}
+
+[data-outbound-button="true"][data-loading="true"] [data-outbound-loader="true"] {
+  display: flex;
+}
+
+.outbound-lottie-loader svg path {
+  stroke: #fff !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+}
+
+img,
+video {
+  max-width: 100%;
+}
