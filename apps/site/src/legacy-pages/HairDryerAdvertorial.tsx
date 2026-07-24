@@ -521,7 +521,7 @@ const defaultGuideCriteria = [
 const bestHairDryerProducts: Product[] = [
   {
     id: 1,
-    rank: "#1",
+    rank: "",
     name: "Muuhu 7-in-1 High-Speed Hair Dryer",
     image: "/img/hair/muuhu_product_1x1.webp",
     price: "£149",
@@ -540,7 +540,7 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 2,
-    rank: "#2",
+    rank: "",
     name: "Dyson Supersonic",
     image: "/img/hair/dyson-supersonic.webp",
     price: "£329.99",
@@ -558,7 +558,7 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 4,
-    rank: "#3",
+    rank: "",
     name: "Cloud Nine Airshot Pro",
     image: "/img/hair/cloudnine-airshot-pro.webp",
     price: "£229",
@@ -576,11 +576,11 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 3,
-    rank: "#4",
-    name: "Shark SpeedStyle Pro FLEX 4-in-1",
+    rank: "",
+    name: "Shark SpeedStyle Pro",
     image: "/img/hair/shark.png",
     price: "£169.99",
-    originalPrice: "£199.99",
+    originalPrice: "£169.99",
     rating: "4.6 / 5",
     link: "#",
     isWinner: false,
@@ -595,7 +595,7 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 5,
-    rank: "#5",
+    rank: "",
     name: "ghd Helios",
     image: "/img/hair/ghd.jpg",
     price: "£189",
