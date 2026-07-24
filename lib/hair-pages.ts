@@ -226,7 +226,7 @@ export const bestHairDryerPage: HairPageData = {
   heroImage: images.topFive,
   heroAlt: "Top five UK hair dryers compared",
   editorIntro:
-    "With 12 years of experience covering hair styling tools and beauty technology, Amara Wright reviewed current UK pricing, product pages, attachment sets, buyer objections and warranties. Her biggest finding was simple: the most expensive dryer was not always the best buy.",
+    "With 12 years of experience in hair styling and salon-grade haircare, Amara Wright is a certified haircare and hair style expert. She reviewed 22 popular United Kingdom hair dryers over 240 hours, comparing motor speed, heat protection, frizz control, dryer attachments, diffuser support, weight, reviews, price, and warranty. Her biggest finding was simple: the most expensive dryer was not always the best. The strongest options paired a fast brushless motor, real ionic care, and useful dryer attachments.",
   intro: [
     "Hair dryers have exploded in the UK, but the market is confusing. Prices range from around £100 to £600+, and many brands make similar claims about drying speed, shine, frizz control and salon results.",
     "For this guide we compared motor power, ionic care, intelligent heat control, attachment range, Coanda-style styling, ease of use, reviews, price and warranty. The strongest options paired a fast brushless motor with a complete styling kit and a fair price.",

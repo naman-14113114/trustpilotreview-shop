@@ -137,7 +137,7 @@ export default function HairAdvertorialPage({ page }: { page: HairPageData }) {
     author: {
       "@type": "Person",
       name: "Amara Wright",
-      jobTitle: "Beauty Technology Editor",
+      jobTitle: "Haircare and hair style expert",
     },
     publisher: {
       "@type": "Organization",
@@ -163,10 +163,10 @@ export default function HairAdvertorialPage({ page }: { page: HairPageData }) {
         <div className="hair-shell hair-intro-grid">
           <div className="hair-editor-card">
             <div className="hair-editor-head">
-              <img src="/img/hair/editor-stylist-unsplash.webp" alt="Beauty technology editor portrait" loading="eager" decoding="async" />
+              <img src="/img/hair/doc_pic.webp" alt="Haircare and hair style expert portrait" loading="eager" decoding="async" />
               <div>
                 <h2>Amara Wright</h2>
-                <p className="hair-editor-role">Beauty Technology Editor</p>
+                <p className="hair-editor-role">Haircare and hair style expert</p>
               </div>
             </div>
             <p>{page.editorIntro}</p>
