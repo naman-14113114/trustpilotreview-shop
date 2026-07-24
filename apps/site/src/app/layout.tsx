@@ -10,12 +10,10 @@ export const metadata: Metadata = {
     "UK-focused LED face mask reviews, buyer guides, and red light therapy comparisons covering wavelengths, safety, face and neck coverage, and value.",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.png", type: "image/png" }
+      { url: "/favicon.svg", type: "image/svg+xml" }
     ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-    shortcut: ["/favicon.ico"]
+    apple: [{ url: "/favicon.svg" }],
+    shortcut: ["/favicon.svg"]
   }
 };
 
