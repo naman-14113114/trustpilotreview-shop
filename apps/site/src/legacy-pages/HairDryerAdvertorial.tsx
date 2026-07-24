@@ -1,5 +1,6 @@
 "use client";
 import { ExpandableDescription } from "@/components/ExpandableDescription";
+import Script from "next/script";
 import React, { useState, useRef } from "react";
 import {
   CheckCircle2,
@@ -20,7 +21,11 @@ import {
   type ProductPriceKey,
 } from "@/lib/advertorialMarkets";
 import type { MarketContextProps } from "@/lib/marketContext";
-import { MUUHU_HAIR_URL, type HairGuide, type HairGuideProduct } from "@/data/hairGuides";
+import {
+  MUUHU_HAIR_URL,
+  type HairGuide,
+  type HairGuideProduct,
+} from "@/data/hairGuides";
 import { getMobileProsCons } from "./mobileProsCons";
 
 const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
@@ -717,9 +722,11 @@ function guideHeadlineTitle(guide: HairGuide) {
 }
 
 function isDirectVsGuide(guide: HairGuide) {
-  return guide.slug === "muuhu-vs-dyson-airwrap-uk"
-    || guide.slug === "muuhu-vs-shark-flexstyle-uk"
-    || guide.slug === "muuhu-vs-ghd-helios-uk";
+  return (
+    guide.slug === "muuhu-vs-dyson-airwrap-uk" ||
+    guide.slug === "muuhu-vs-shark-flexstyle-uk" ||
+    guide.slug === "muuhu-vs-ghd-helios-uk"
+  );
 }
 
 function shouldKeepGuideProduct(guide: HairGuide, product: HairGuideProduct) {
@@ -728,8 +735,10 @@ function shouldKeepGuideProduct(guide: HairGuide, product: HairGuideProduct) {
   const name = product.name.toLowerCase();
   if (product.isWinner || name.includes("muuhu")) return true;
   if (guide.slug === "muuhu-vs-dyson-airwrap-uk") return name.includes("dyson");
-  if (guide.slug === "muuhu-vs-shark-flexstyle-uk") return name.includes("shark");
-  if (guide.slug === "muuhu-vs-ghd-helios-uk") return name.includes("ghd") || name.includes("helios");
+  if (guide.slug === "muuhu-vs-shark-flexstyle-uk")
+    return name.includes("shark");
+  if (guide.slug === "muuhu-vs-ghd-helios-uk")
+    return name.includes("ghd") || name.includes("helios");
 
   return false;
 }
@@ -740,7 +749,12 @@ function guideProductId(product: HairGuideProduct) {
   if (name.includes("dyson")) return 2;
   if (name.includes("shark")) return 3;
   if (name.includes("ghd")) return 4;
-  if (name.includes("l'oreal") || name.includes("l’oréal") || name.includes("loreal")) return 5;
+  if (
+    name.includes("l'oreal") ||
+    name.includes("l’oréal") ||
+    name.includes("loreal")
+  )
+    return 5;
   return Number(product.rank) || 99;
 }
 
@@ -775,7 +789,9 @@ function guideProductToAdvertorialProduct(
     price: product.price,
     originalPrice: product.isWinner ? "£299" : undefined,
     rating: product.rating,
-    link: product.isWinner ? product.link ?? MUUHU_HAIR_URL : product.link ?? "#",
+    link: product.isWinner
+      ? (product.link ?? MUUHU_HAIR_URL)
+      : (product.link ?? "#"),
     isWinner: Boolean(product.isWinner),
     description: guideProductDescription(product, guide),
     pros: product.pros.map((point, pointIndex) =>
@@ -791,7 +807,9 @@ function guideProductToAdvertorialProduct(
 function getGuideProducts(guide: HairGuide) {
   return guide.products
     .filter((product) => shouldKeepGuideProduct(guide, product))
-    .map((product, index) => guideProductToAdvertorialProduct(product, guide, index));
+    .map((product, index) =>
+      guideProductToAdvertorialProduct(product, guide, index),
+    );
 }
 
 function preventPlaceholderNavigation(
@@ -896,7 +914,8 @@ export default function HairDryerAdvertorial({
   const market = getAdvertorialMarket(marketKey);
   const isThreeWay = mode === "three-way";
   const allProducts = getProductsForMarket(market);
-  const bestHairDryerProductsForMarket = getBestHairDryerProductsForMarket(market);
+  const bestHairDryerProductsForMarket =
+    getBestHairDryerProductsForMarket(market);
   const products = guide
     ? getGuideProducts(guide)
     : isThreeWay
@@ -915,23 +934,23 @@ export default function HairDryerAdvertorial({
     dryersReviewed: 22,
     testingHours: 240,
   };
-  const heroImage =
-    guide
-      ? guide.heroImage
-      : isThreeWay
+  const heroImage = guide
+    ? guide.heroImage
+    : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-      ? "/img/hair/best-hair-dryer-uk-hero.png"
-      : market.key === "ca"
-      ? "/img/hair/top5-uk.webp"
-      : "/img/hair/top5-uk.webp";
+        ? "/img/hair/best-hair-dryer-uk-hero.png"
+        : market.key === "ca"
+          ? "/img/hair/top5-uk.webp"
+          : "/img/hair/top5-uk.webp";
   const headlineTitle = guide
     ? guideHeadlineTitle(guide)
     : isThreeWay
       ? "Dyson vs Shark vs Muuhu"
       : "Best Hair Dryer";
-  const heroAlt = guide?.heroAlt
-    ?? (isThreeWay
+  const heroAlt =
+    guide?.heroAlt ??
+    (isThreeWay
       ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
       : `Top hair dryers comparison for ${market.titleCountry}`);
   const heroImageClass = guide
@@ -955,23 +974,27 @@ export default function HairDryerAdvertorial({
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
+      <Script
+        src="/assets/muuhu-hair-dryer-exit-popup.js"
+        strategy="afterInteractive"
+      />
       {/* Header / Hero */}
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
-          <div className="max-w-6xl mx-auto text-center">
-            <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
-              <span className="block">{headlineTitle}</span>
-              <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
-                <MarketFlag market={market.flagKey} />
-                <span>{market.headingCountry} - 2026</span>
-              </span>
-            </h1>
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
+            <span className="block">{headlineTitle}</span>
+            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
+              <MarketFlag market={market.flagKey} />
+              <span>{market.headingCountry} - 2026</span>
+            </span>
+          </h1>
 
-            <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
-              <CheckCircle2 size={20} className="text-white shrink-0" />
-              Last updated – {context.updatedDate}
-            </div>
+          <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
+            <CheckCircle2 size={20} className="text-white shrink-0" />
+            Last updated – {context.updatedDate}
           </div>
         </div>
+      </div>
 
       <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-12 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
@@ -997,7 +1020,6 @@ export default function HairDryerAdvertorial({
                     {expertProfile.name}
                   </h3>
                   <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
-
                     {expertProfile.title}
                   </p>
                 </div>
@@ -1012,10 +1034,10 @@ export default function HairDryerAdvertorial({
                       {expertProfile.name}
                     </strong>{" "}
                     is a certified haircare and hair style expert. She reviewed{" "}
-                    this UK guide for {guide.cardTitle.toLowerCase()}.
-                    She compared {activeCriteria.slice(0, 5).join(", ")},
-                    buyer confidence, current pricing and offer clarity. Her
-                    main finding was simple: Muuhu made the strongest No. 1 case
+                    this UK guide for {guide.cardTitle.toLowerCase()}. She
+                    compared {activeCriteria.slice(0, 5).join(", ")}, buyer
+                    confidence, current pricing and offer clarity. Her main
+                    finding was simple: Muuhu made the strongest No. 1 case
                     because it combines a complete 7-in-1 styling system with a
                     cleaner £149 value story.
                   </p>
@@ -1040,9 +1062,9 @@ export default function HairDryerAdvertorial({
                     dryers over 240+ hours, evaluating motor speed, ionic care,
                     heat control, attachments, Coanda styling, reviews, price,
                     and warranty. Our biggest finding was simple: the most
-                    expensive dryer was not always the best choice. The strongest
-                    options paired a fast brushless motor, real ionic care, and a
-                    complete attachment set with a fair price.
+                    expensive dryer was not always the best choice. The
+                    strongest options paired a fast brushless motor, real ionic
+                    care, and a complete attachment set with a fair price.
                   </p>
                 ) : (
                   <p>
@@ -1056,10 +1078,11 @@ export default function HairDryerAdvertorial({
                     {market.headingCountry} hair dryers over{" "}
                     {expertProfile.testingHours} hours, comparing motor speed,
                     heat protection, frizz control, dryer attachments, diffuser
-                    support, weight, reviews, price, and warranty. Her biggest finding was
-                    simple: the most expensive dryer was not always the best.
-                    The strongest options paired a fast brushless motor, real
-                    ionic care, and useful dryer attachments with a fair price.
+                    support, weight, reviews, price, and warranty. Her biggest
+                    finding was simple: the most expensive dryer was not always
+                    the best. The strongest options paired a fast brushless
+                    motor, real ionic care, and useful dryer attachments with a
+                    fair price.
                   </p>
                 )}
               </div>
@@ -1082,9 +1105,7 @@ export default function HairDryerAdvertorial({
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
           {guide ? (
             <>
-              <p>
-                {guide.quickTake}
-              </p>
+              <p>{guide.quickTake}</p>
               {guide.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -1114,9 +1135,9 @@ export default function HairDryerAdvertorial({
               <p>
                 Dyson remains the prestige pick and Shark is the familiar
                 mid-premium alternative. Muuhu ranks first here because it gives
-                shoppers the easiest value story to understand: a 7-in-1
-                styling kit, Coanda-style curlers, diffuser, brushes,
-                intelligent heat control, official gifts and a lower price.
+                shoppers the easiest value story to understand: a 7-in-1 styling
+                kit, Coanda-style curlers, diffuser, brushes, intelligent heat
+                control, official gifts and a lower price.
               </p>
               <p>
                 Below, we use the same review structure as our full Best Hair
@@ -1127,8 +1148,8 @@ export default function HairDryerAdvertorial({
           ) : (
             <>
               <p>
-                Hair dryers have exploded in {market.titleCountry}, but the
-                market is confusing. Prices range from{" "}
+                Finding a hair dryer is easy. Knowing which one is actually
+                worth the money is the hard part. Prices range from{" "}
                 <strong>{market.priceRange}</strong>, and many brands make
                 almost identical claims about drying speed, shine, frizz
                 control, and salon results.
@@ -1146,8 +1167,8 @@ export default function HairDryerAdvertorial({
                   So we tested{" "}
                   <strong>22 of the most popular hair dryers</strong> over{" "}
                   <strong>240+ hours</strong>, comparing motor speed, heat
-                  protection, frizz control, dryer attachments, diffuser support,
-                  ease of use, reviews, price, and warranty.
+                  protection, frizz control, dryer attachments, diffuser
+                  support, ease of use, reviews, price, and warranty.
                 </p>
               )}
               <p>
@@ -1210,7 +1231,10 @@ export default function HairDryerAdvertorial({
                 <strong>technical evaluations</strong> and{" "}
                 <strong>consumer reviews</strong>, the following five models
                 stood out as the best in terms of{" "}
-                <strong>performance, styling versatility, safety, and affordability</strong>.
+                <strong>
+                  performance, styling versatility, safety, and affordability
+                </strong>
+                .
               </>
             ) : (
               <>
@@ -1220,7 +1244,10 @@ export default function HairDryerAdvertorial({
                 <strong>certified haircare professionals</strong>, and{" "}
                 <strong>thousands of consumer reviews</strong>, the following
                 five models stood out as the best in terms of{" "}
-                <strong>performance, styling versatility, safety, and affordability</strong>.
+                <strong>
+                  performance, styling versatility, safety, and affordability
+                </strong>
+                .
               </>
             )}
           </p>
@@ -1309,7 +1336,10 @@ export default function HairDryerAdvertorial({
                     </a>
                   </h2>
 
-                  <ExpandableDescription description={product.description} isWinner={product.isWinner} />
+                  <ExpandableDescription
+                    description={product.description}
+                    isWinner={product.isWinner}
+                  />
 
                   {/* Metrics */}
                   <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
@@ -1352,7 +1382,11 @@ export default function HairDryerAdvertorial({
                                 <strong className="text-slate-900">
                                   {bold}:
                                 </strong>
-                                <span dangerouslySetInnerHTML={{ __html: rest.join(":") }} />
+                                <span
+                                  dangerouslySetInnerHTML={{
+                                    __html: rest.join(":"),
+                                  }}
+                                />
                               </span>
                             </li>
                           );
@@ -1416,7 +1450,10 @@ export default function HairDryerAdvertorial({
                         </div>
 
                         <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-                          {market.key === "ca" ? "Exclusive Canadian Offer" : "Active Offer Found"}: £127 in{" "}
+                          {market.key === "ca"
+                            ? "Exclusive Canadian Offer"
+                            : "Active Offer Found"}
+                          : £127 in{" "}
                           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
                             FREE GIFTS
                           </span>
@@ -1581,7 +1618,7 @@ export default function HairDryerAdvertorial({
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
 
                 <div className="text-2xl md:text-4xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans">
-                  {market.key === "ca" ? "Current Price" : "Now at 60% off"}
+                  {market.key === "ca" ? "Current Price" : "Now at 50% off"}
                 </div>
 
                 {/* Trustpilot-style Badge */}
@@ -1614,14 +1651,30 @@ export default function HairDryerAdvertorial({
       {/* Footer / Disclosures */}
       <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 pb-24 shadow-inner">
         <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-          <p className="mb-2 text-lg font-bold text-slate-800">Best Hair Dryer</p>
+          <p className="mb-2 text-lg font-bold text-slate-800">
+            Best Hair Dryer
+          </p>
           <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
           <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">Important disclosure</p>
-            <p className="mb-4"><strong>Affiliate disclosure:</strong> We may receive compensation for clicks on or purchases of products featured on this site. This comes at no additional cost to you.</p>
-            <p><strong>Individual results:</strong> Experiences with hair styling devices vary. Product information and examples do not guarantee a particular result.</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
+              Important disclosure
+            </p>
+            <p className="mb-4">
+              <strong>Affiliate disclosure:</strong> We may receive compensation
+              for clicks on or purchases of products featured on this site. This
+              comes at no additional cost to you.
+            </p>
+            <p>
+              <strong>Individual results:</strong> Experiences with hair styling
+              devices vary. Product information and examples do not guarantee a
+              particular result.
+            </p>
             {market.key === "ca" && (
-              <p className="mt-4"><strong>Regulatory Note:</strong> Reference to certifications does not imply an endorsement of product efficacy for specific individual conditions.</p>
+              <p className="mt-4">
+                <strong>Regulatory Note:</strong> Reference to certifications
+                does not imply an endorsement of product efficacy for specific
+                individual conditions.
+              </p>
             )}
           </div>
         </div>
@@ -1634,7 +1687,11 @@ export default function HairDryerAdvertorial({
           ariaLabel="Take me to the winning hair dryer"
           className="w-full text-center bg-emerald-500 text-white px-2 py-3.5 rounded-full font-bold text-[13px] sm:text-base shadow-lg shadow-emerald-500/30 whitespace-nowrap relative overflow-hidden group"
         >
-          <span className="relative z-10">{market.key === "ca" ? "View Our Top Pick" : "Take me to the winning hair dryer"}</span>
+          <span className="relative z-10">
+            {market.key === "ca"
+              ? "View Our Top Pick"
+              : "Take me to the winning hair dryer"}
+          </span>
           <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2s_infinite]" />
         </OutboundButton>
       </div>
