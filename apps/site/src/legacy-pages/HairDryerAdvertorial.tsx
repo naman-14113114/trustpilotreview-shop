@@ -172,7 +172,7 @@ const baseProducts: Product[] = [
   {
     id: 1,
     rank: "#1",
-    name: "Muuhu 7-in-1 High-Speed Hair Dryer & Styler",
+    name: "Muuhu 7-in-1 High-Speed Hair Dryer",
     image: "/img/hair/muuhu_product_1x1.webp",
     price: "£149",
     originalPrice: "£299",
@@ -180,7 +180,7 @@ const baseProducts: Product[] = [
     link: "#",
     isWinner: true,
     description: [
-      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer & Styler, a salon-grade device that outperforms far more expensive rivals with a 110,000 RPM brushless motor and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
+      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer, a salon-grade device that outperforms far more expensive rivals with a 110,000 RPM brushless motor and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
       "A major advantage is the complete styling system: a dedicated L-shaped base, left and right auto-wrap Coanda curlers, a smoothing brush, a round volumising brush, a concentrator nozzle, and a diffuser. Intelligent heat control and negative-ion technology dry hair fast while helping protect against heat damage, all from a UK 3-pin 220-240V plug.",
       "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £149, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 2-year warranty, and a 90-day money-back guarantee.",
     ],
@@ -502,7 +502,7 @@ const bestHairDryerProducts: Product[] = [
   {
     id: 1,
     rank: "#1",
-    name: "Muuhu 7-in-1 High-Speed Hair Dryer & Styler",
+    name: "Muuhu 7-in-1 High-Speed Hair Dryer",
     image: "/img/hair/muuhu_product_1x1.webp",
     price: "£149",
     originalPrice: "£299",
@@ -510,7 +510,7 @@ const bestHairDryerProducts: Product[] = [
     link: "#",
     isWinner: true,
     description: [
-      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer & Styler because it gives UK shoppers the strongest full drying routine for the price. The 110,000 RPM brushless motor creates fast, focused airflow for everyday blow-dries, while the included diffuser, concentrator, smoothing brush and round volumising brush cover the most common hair dryer needs without pushing buyers into a £300+ device.",
+      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer because it gives UK shoppers the strongest full drying routine for the price. The 110,000 RPM brushless motor creates fast, focused airflow for everyday blow-dries, while the included diffuser, concentrator, smoothing brush and round volumising brush cover the most common hair dryer needs without pushing buyers into a £300+ device.",
       "The biggest advantage is that Muuhu is not just a fast dryer. It also includes left and right auto-wrap curlers for finishing curls and waves, so one purchase can handle rough-drying, smoothing, root volume, diffuser drying and occasional styling. Intelligent heat control and negative-ion care help keep the routine focused on shine, frizz control and lower heat exposure instead of simply blasting hair with heat.",
       "Trusted by over 16,000 customers with a 4.9-star rating, Muuhu makes the clearest paid-search value case. At £149, it combines a high-speed motor, seven useful attachments, ionic care, a 2-year warranty and a 90-day money-back guarantee, which is why it beats the bigger dryer brands for shoppers who want performance, flexibility and reassurance in one bundle.",
     ],
@@ -539,26 +539,25 @@ const bestHairDryerProducts: Product[] = [
   {
     id: 2,
     rank: "#2",
-    name: "Dyson Supersonic Nural",
-    image: "/img/hair/dyson-supersonic-nural.webp",
-    price: "£299.99",
-    originalPrice: "£399.99",
-    rating: "4.4 / 5",
+    name: "Dyson Supersonic",
+    image: "/img/hair/dyson-supersonic.webp",
+    price: "£329.99",
+    rating: "4.6 / 5",
     link: "#",
     isWinner: false,
     description: [
-      "The Dyson Supersonic Nural is the right Dyson comparison for a best hair dryer ranking. It is a premium dryer rather than an Airwrap-style styler, with Dyson's intelligent drying story, scalp protect mode, strong brand recognition and a useful set of drying attachments for straight and wavy hair routines.",
-      "Dyson's strengths are clear: fast controlled drying, a refined feel, magnetic attachments, static reduction and a 2-year guarantee. The Straight+Wavy bundle includes a smoothing nozzle, diffuser, styling concentrator, flyaway smoother and gentle air attachment, which makes it a capable dryer for buyers who want the Dyson name and a polished blow-dry experience.",
-      "The reason it ranks behind Muuhu is value, not brand quality. Even at £299.99, it costs about twice the Muuhu offer and remains a dryer-first purchase. It does not give shoppers the same complete 7-in-1 routine with brush heads, curlers, gifts and a 90-day money-back guarantee, so the extra spend is easiest to justify only if Dyson prestige matters most.",
+      "The Dyson Supersonic is the right Dyson comparison for a best hair dryer ranking. It is a premium dryer rather than an Airwrap-style styler, with Dyson's original fast-drying design, no-extreme-heat positioning, strong brand recognition and attachments engineered for straight and wavy hair routines.",
+      "Dyson's strengths are clear: fast controlled drying, a refined feel, magnetic attachments, static reduction and a 2-year guarantee. The Straight+Wavy model uses Dyson's digital motor V9, spinning at up to 110,000rpm, with Air Multiplier technology to create a high-pressure jet of controlled air for fast drying and precision styling.",
+      "The reason it ranks behind Muuhu is value, not brand quality. At £329.99, it costs more than twice the Muuhu offer and remains a dryer-first purchase. It does not give shoppers the same complete 7-in-1 routine with brush heads, curlers, gifts and a 90-day money-back guarantee, so the extra spend is easiest to justify only if Dyson prestige matters most.",
     ],
     pros: [
       "Premium Dryer Brand: Dyson has the strongest name recognition in high-end hair drying and strong buyer confidence.",
-      "Scalp Protect Mode: The Nural model focuses on intelligent drying and scalp comfort, which is a real plus for cautious heat users.",
-      "Useful Dryer Attachments: Includes smoothing nozzle, diffuser, styling concentrator, flyaway smoother and gentle air attachment.",
+      "Fast Premium Drying: Dyson's digital motor V9 spins at up to 110,000rpm for quick, controlled airflow.",
+      "Useful Dryer Attachments: Includes styling concentrator, diffuser, flyaway attachment and gentle air attachment for straight and wavy routines.",
       "Strong Finish Control: Designed for fast drying, reduced static and a smoother blow-dry result.",
     ],
     cons: [
-      "High Price: At £299.99, even reduced from £399.99, it still costs about twice the £149 Muuhu bundle.",
+      "High Price: At £329.99, it costs more than twice the £149 Muuhu bundle.",
       "Dryer First, Not a Full Kit: It is excellent for drying, but it does not include brush heads or auto-wrap curlers for a complete styling routine.",
       "Lower Overall Value: Buyers pay heavily for the Dyson name while Muuhu includes more routine coverage at a lower price.",
       "Shorter Trial Comfort: Dyson's standard 35-day return policy is less reassuring than Muuhu's 90-day money-back guarantee.",
@@ -566,7 +565,7 @@ const bestHairDryerProducts: Product[] = [
     ],
     metrics: [
       { label: "Drying Speed", value: 94 },
-      { label: "Heat Protection", value: 96 },
+      { label: "Heat Protection", value: 93 },
       { label: "Frizz Control", value: 92 },
       { label: "Attachment Value", value: 78 },
       { label: "Value for Money", value: 58 },
@@ -913,7 +912,7 @@ export default function HairDryerAdvertorial({
     title: "Haircare and hair style expert",
     image: "/img/hair/doc_pic.webp",
     yearsExperience: 12,
-    masksReviewed: 22,
+    dryersReviewed: 22,
     testingHours: 240,
   };
   const heroImage =
@@ -922,7 +921,7 @@ export default function HairDryerAdvertorial({
       : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-      ? "/img/hair/top5-uk.webp"
+      ? "/img/hair/best-hair-dryer-uk-hero.png"
       : market.key === "ca"
       ? "/img/hair/top5-uk.webp"
       : "/img/hair/top5-uk.webp";
@@ -958,21 +957,21 @@ export default function HairDryerAdvertorial({
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
       {/* Header / Hero */}
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
-            <span className="block">{headlineTitle}</span>
-            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
-              <MarketFlag market={market.flagKey} />
-              <span>{market.headingCountry} - 2026</span>
-            </span>
-          </h1>
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
+              <span className="block">{headlineTitle}</span>
+              <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
+                <MarketFlag market={market.flagKey} />
+                <span>{market.headingCountry} - 2026</span>
+              </span>
+            </h1>
 
-          <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
-            <CheckCircle2 size={20} className="text-white shrink-0" />
-            Last updated – {context.updatedDate}
+            <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
+              <CheckCircle2 size={20} className="text-white shrink-0" />
+              Last updated – {context.updatedDate}
+            </div>
           </div>
         </div>
-      </div>
 
       <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-12 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
@@ -1053,7 +1052,7 @@ export default function HairDryerAdvertorial({
                       {expertProfile.name}
                     </strong>{" "}
                     is a certified haircare and hair style expert. She reviewed{" "}
-                    {expertProfile.masksReviewed} popular{" "}
+                    {expertProfile.dryersReviewed} popular{" "}
                     {market.headingCountry} hair dryers over{" "}
                     {expertProfile.testingHours} hours, comparing motor speed,
                     heat protection, frizz control, dryer attachments, diffuser
@@ -1218,7 +1217,7 @@ export default function HairDryerAdvertorial({
                 Over the past three months, we have thoroughly tested{" "}
                 <strong>22 different hair dryers</strong>. Based on{" "}
                 <strong>hands-on evaluations</strong>, insights from{" "}
-                <strong>certified beauty-technology editors</strong>, and{" "}
+                <strong>certified haircare professionals</strong>, and{" "}
                 <strong>thousands of consumer reviews</strong>, the following
                 five models stood out as the best in terms of{" "}
                 <strong>performance, styling versatility, safety, and affordability</strong>.

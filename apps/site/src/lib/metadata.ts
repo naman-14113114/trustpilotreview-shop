@@ -47,7 +47,7 @@ const routeMetadata: Record<string, RouteMetadata> = {
   "/best-hair-dryer-uk-2026": {
     title: "Best Hair Dryer 2026 (UK)",
     description:
-      "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic Nural, Shark, Cloud Nine and ghd ranked for drying speed, heat control, attachments and value.",
+      "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Shark, Cloud Nine and ghd ranked for drying speed, heat control, attachments and value.",
     canonical: `${SITE_URL}/best-hair-dryer-uk-2026`
   },
   "/dyson-vs-shark-vs-muuhu-uk": {

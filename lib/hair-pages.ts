@@ -1,5 +1,6 @@
 export const MUUHU_HAIR_URL = "https://uk.muuhu.com/products/muuhu-hair-dryer";
-export const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
+export const MUUHU_PACKAGING_URL =
+  "https://uk.muuhu.com/pages/premium-packaging";
 export const MUUHU_COMB_URL = "https://uk.muuhu.com/products/muuhu-comb";
 export const MUUHU_EBOOK_URL = "https://uk.muuhu.com/pages/haircare-ebook";
 
@@ -93,7 +94,7 @@ const metrics = {
 
 const muuhuProduct: HairProduct = {
   rank: 1,
-  name: "Muuhu 7-in-1 High-Speed Hair Dryer & Styler",
+  name: "Muuhu 7-in-1 High-Speed Hair Dryer",
   image: images.muuhu,
   price: "£149",
   wasPrice: "£299",
@@ -223,7 +224,7 @@ export const bestHairDryerPage: HairPageData = {
   headline: "Best Hair Dryer United Kingdom - 2026",
   subheadline:
     "We compared the UK hair dryers that shoppers actually consider for speed, styling versatility, heat control, attachments, price and warranty.",
-  heroImage: images.topFive,
+  heroImage: "/img/hair/best-hair-dryer-uk-hero.png",
   heroAlt: "Top five UK hair dryers compared",
   editorIntro:
     "With 12 years of experience in hair styling and salon-grade haircare, Amara Wright is a certified haircare and hair style expert. She reviewed 22 popular United Kingdom hair dryers over 240 hours, comparing motor speed, heat protection, frizz control, dryer attachments, diffuser support, weight, reviews, price, and warranty. Her biggest finding was simple: the most expensive dryer was not always the best. The strongest options paired a fast brushless motor, real ionic care, and useful dryer attachments.",
@@ -242,7 +243,13 @@ export const bestHairDryerPage: HairPageData = {
   productsTitle: "The 5 UK hair dryers we would compare first",
   productsIntro:
     "The ranking below keeps Muuhu first because it gives the clearest overall balance of results, styling range and value for UK buyers.",
-  products: [muuhuProduct, dysonProduct, sharkProduct, ghdProduct, lorealProduct],
+  products: [
+    muuhuProduct,
+    dysonProduct,
+    sharkProduct,
+    ghdProduct,
+    lorealProduct,
+  ],
   verdict:
     "For most UK buyers, Muuhu gives the most persuasive buying argument: complete styling range, strong heat-control story, £149 price, 2-year warranty, 90-day guarantee and official free gifts. Dyson remains the prestige buy, Shark remains the familiar alternative, but Muuhu is the smarter first click for value-focused shoppers.",
 };
@@ -283,7 +290,11 @@ export const dysonSharkMuuhuPage: HairPageData = {
   productsIntro:
     "This page keeps the comparison tight: Muuhu for value, Shark for familiarity, Dyson for prestige. No extra unrelated rankings are needed.",
   products: [
-    { ...muuhuProduct, badge: "Best value overall", bestFor: "Most UK shoppers comparing Dyson and Shark before buying." },
+    {
+      ...muuhuProduct,
+      badge: "Best value overall",
+      bestFor: "Most UK shoppers comparing Dyson and Shark before buying.",
+    },
     { ...sharkProduct, rank: 2 },
     { ...dysonProduct, rank: 3 },
   ],
