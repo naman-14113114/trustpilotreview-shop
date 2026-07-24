@@ -63,7 +63,7 @@ export const bestHairDryerProductContent = {
         </li>
         <li>
           <strong>Best Value Bundle:</strong> At &pound;149 (was &pound;299), it
-          costs less than Dyson, Shark, Cloud Nine and ghd while giving shoppers
+          costs less than Dyson, Cloud Nine, Shark and ghd while giving shoppers
           a wider attachment set.
         </li>
         <li>
@@ -172,76 +172,92 @@ export const bestHairDryerProductContent = {
       </>
     ),
   },
-  sharkFlexStyle: {
+  sharkSpeedStyleProFlex: {
     descriptionContent: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          The Shark FlexStyle is a strong mid-premium option for shoppers who
-          want a dryer that can also become a styling wand. It is more relevant
-          than many salon-only dryers because it speaks to the same everyday
-          buyer need: dry hair quickly, smooth it down, add volume and create a
-          more finished look without buying several separate tools.
+          The Shark SpeedStyle Pro FLEX 4-in-1 High-Velocity Hair Dryer System
+          HD542UK is the correct Shark product for this best hair dryer
+          comparison. It is a compact, folding dryer system rather than the old
+          FlexStyle air styler, and Shark positions it around fast high-velocity
+          drying, scalp comfort and smooth salon-style finishing for all hair
+          types.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          Shark&apos;s biggest advantage is familiarity. UK shoppers know the
-          brand, the fold/rotate format feels practical, and certain bundles
-          include useful attachments for smoothing, volume and diffusing. For
-          someone who wants a recognisable brand below Dyson pricing, FlexStyle
-          is a reasonable shortlist product.
+          Shark&apos;s strongest points are practical: the handle folds for
+          compact storage, the dryer weighs 0.68kg, and the box includes four
+          styling attachments: Turbo Concentrator, QuickSmooth Brush,
+          DefrizzFast Diffuser and FrizzFighter Finishing Tool. Its Scalp Shield
+          Mode is designed to reduce air temperature for scalp comfort and root
+          drying, while the dryer measures and regulates temperature 1,000 times
+          per second.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          The issue is bundle clarity and value. Shark packages can vary, exact
-          attachments need checking, and the price still sits above Muuhu while
-          the total included routine is not as clean as Muuhu&apos;s seven-piece
-          offer. It is good, but it asks shoppers to do more comparison work
-          before checkout.
+          It is a better dryer-first Shark choice than the previous FlexStyle
+          listing, but it now ranks #4 because Cloud Nine feels more like a pure
+          premium hair dryer upgrade. At <strong>&pound;169.99</strong> sale
+          price, Shark is strong value against Dyson, but Muuhu still gives the
+          wider 7-in-1 routine, curl finishing, free gifts and longer money-back
+          reassurance for less.
         </p>
       </>
     ),
     prosContent: (
       <>
         <li>
-          <strong>Recognisable Mid-Premium Brand:</strong> Shark is familiar to
-          UK shoppers and has strong home-tech trust.
+          <strong>Correct Dryer System:</strong> This is Shark&apos;s SpeedStyle
+          Pro FLEX HD542UK hair dryer system, not the older FlexStyle air styler
+          comparison.
         </li>
         <li>
-          <strong>Dryer-to-Styler Format:</strong> Rotates from dryer mode into
-          a styling wand, which is practical for small bathrooms and travel
-          bags.
+          <strong>Fast High-Velocity Airflow:</strong> Designed for wet-to-dry
+          styling with powerful airflow and a compact body.
         </li>
         <li>
-          <strong>Good Routine Coverage:</strong> Depending on the bundle, it
-          can support smoothing, volume, curling and diffusing.
+          <strong>Four Useful Attachments:</strong> Includes Turbo Concentrator,
+          QuickSmooth Brush, DefrizzFast Diffuser and FrizzFighter Finishing
+          Tool.
         </li>
         <li>
-          <strong>Lower Than Dyson:</strong> Usually easier to justify than a
-          Dyson for shoppers watching price.
+          <strong>Scalp Shield Mode:</strong> Built to reduce air temperature
+          for scalp comfort and root drying, which is a genuine buyer-friendly
+          feature.
+        </li>
+        <li>
+          <strong>Folding Handle:</strong> Folds for compact storage, making it
+          easier to keep in a drawer, bag or travel case.
+        </li>
+        <li>
+          <strong>Good Shark Assurance:</strong> Comes with a 2-year guarantee
+          upon registration and free 30-day returns on main units.
         </li>
       </>
     ),
     consContent: (
       <>
         <li>
-          <strong>Still More Than Muuhu:</strong> At &pound;199+, it costs more
-          than the &pound;149 top pick while not clearly beating it on included
-          value.
+          <strong>Still More Than Muuhu:</strong> At &pound;169.99, it costs
+          more than the &pound;149 top pick while including fewer total styling
+          options.
         </li>
         <li>
-          <strong>Bundle Confusion:</strong> Exact attachment sets vary, so
-          shoppers need to check whether diffuser, brush and curling tools are
-          all included.
+          <strong>No Auto-Wrap Curlers:</strong> It covers drying, smoothing,
+          diffusing and finishing, but it does not include Muuhu&apos;s
+          left/right auto-wrap curlers.
         </li>
         <li>
-          <strong>Less Clean Offer Story:</strong> Muuhu makes the full 7-in-1
-          routine, free gifts and guarantee easier to understand at first click.
+          <strong>Fewer Attachments Overall:</strong> Shark includes 4
+          attachments, while Muuhu includes a broader 7-in-1 routine for less.
         </li>
         <li>
-          <strong>Not Always Dryer First:</strong> Some buyers may find it feels
-          more like a styling system than a simple dedicated hair dryer.
+          <strong>Shorter Return Window:</strong> Shark&apos;s 30-day returns
+          are helpful, but less reassuring than Muuhu&apos;s 90-day money-back
+          guarantee.
         </li>
         <li>
-          <strong>Shorter Value Case:</strong> It does not match Muuhu&apos;s
-          combination of lower price, attachment count and 90-day guarantee.
+          <strong>Less Premium Dryer Feel Than Cloud Nine:</strong> It is
+          practical and compact, but Cloud Nine has the cleaner salon-dryer
+          positioning for buyers who want a dedicated premium dryer.
         </li>
       </>
     ),
@@ -250,25 +266,24 @@ export const bestHairDryerProductContent = {
     descriptionContent: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          The Cloud Nine Airshot Pro is a proper dryer-first competitor and
-          belongs in this ranking ahead of more styler-led options. It focuses
-          on lightweight handling, fast drying, ionic and mineral-infused
-          technology, and a salon-style finish without trying to be a full
-          Airwrap alternative.
+          The Cloud Nine Airshot Pro is a sensible #3 choice because it does the
+          classic hair dryer job very well. It is best for buyers who already
+          know they want a proper dryer rather than a full styling system, with
+          a focus on smooth blow-dries, frizz control and a salon-style finish.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          For daily blow-dries, Cloud Nine has genuine strengths. It is
-          lightweight at around 0.4kg, uses a 1600W motor, includes magnetic
-          attachments, and is sold with a diffuser plus precise-drying nozzles.
-          The current offer also includes Airshot Pro Volumisers, which improves
-          the value story for shoppers who like a round-brush blow-dry finish.
+          Cloud Nine also does a good job of making the package feel practical.
+          The magnetic attachments are easy to use, the diffuser adds
+          flexibility, and the precise nozzles help with controlled drying and a
+          cleaner finish. With the Volumisers included in the current offer, it
+          becomes more attractive for buyers who like extra lift and shape.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          Where it loses ground is complete routine value. At &pound;229 for the
-          black model, it is considerably more expensive than Muuhu and still
-          mostly a dryer-first purchase. It can dry, smooth and support volume
-          well, but it does not give the same 7-in-1 attachment range or 90-day
-          guarantee that makes Muuhu easier to recommend for paid-search buyers.
+          Where it becomes harder to recommend as the best overall choice is the
+          price-to-routine balance. At <strong>&pound;229</strong> for the black
+          model, it costs more than our #1 pick but offers fewer styling options.
+          It is a very good dryer, but not the most complete choice for someone
+          who wants one tool to cover drying, smoothing, volume and curls.
         </p>
       </>
     ),
@@ -373,7 +388,7 @@ export const bestHairDryerProductContent = {
         </li>
         <li>
           <strong>Limited Included Attachments:</strong> The out-of-box routine
-          is narrower than Muuhu, Shark, Dyson and Cloud Nine.
+          is narrower than Muuhu, Dyson, Cloud Nine and Shark.
         </li>
         <li>
           <strong>Higher Price for Less Coverage:</strong> At &pound;189, it

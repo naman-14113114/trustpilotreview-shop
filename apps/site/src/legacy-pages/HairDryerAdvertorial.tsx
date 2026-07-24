@@ -521,7 +521,7 @@ const defaultGuideCriteria = [
 const bestHairDryerProducts: Product[] = [
   {
     id: 1,
-    rank: "",
+    rank: "#1",
     name: "Muuhu 7-in-1 High-Speed Hair Dryer",
     image: "/img/hair/muuhu_product_1x1.webp",
     price: "£149",
@@ -540,7 +540,7 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 2,
-    rank: "",
+    rank: "#2",
     name: "Dyson Supersonic",
     image: "/img/hair/dyson-supersonic.webp",
     price: "£329.99",
@@ -557,26 +557,8 @@ const bestHairDryerProducts: Product[] = [
     ],
   },
   {
-    id: 3,
-    rank: "",
-    name: "Shark FlexStyle",
-    image: "/img/hair/shark.png",
-    price: "£199+",
-    rating: "4.6 / 5",
-    link: "#",
-    isWinner: false,
-    ...bestHairDryerProductContent.sharkFlexStyle,
-    metrics: [
-      { label: "Drying Speed", value: 88 },
-      { label: "Heat Protection", value: 86 },
-      { label: "Frizz Control", value: 84 },
-      { label: "Attachment Value", value: 82 },
-      { label: "Value for Money", value: 66 },
-    ],
-  },
-  {
     id: 4,
-    rank: "",
+    rank: "#3",
     name: "Cloud Nine Airshot Pro",
     image: "/img/hair/cloudnine-airshot-pro.webp",
     price: "£229",
@@ -585,16 +567,35 @@ const bestHairDryerProducts: Product[] = [
     isWinner: false,
     ...bestHairDryerProductContent.cloudNineAirshotPro,
     metrics: [
+      { label: "Drying Speed", value: 91 },
+      { label: "Heat Protection", value: 88 },
+      { label: "Frizz Control", value: 89 },
+      { label: "Attachment Value", value: 76 },
+      { label: "Value for Money", value: 72 },
+    ],
+  },
+  {
+    id: 3,
+    rank: "#4",
+    name: "Shark SpeedStyle Pro FLEX 4-in-1",
+    image: "/img/hair/shark.png",
+    price: "£169.99",
+    originalPrice: "£199.99",
+    rating: "4.6 / 5",
+    link: "#",
+    isWinner: false,
+    ...bestHairDryerProductContent.sharkSpeedStyleProFlex,
+    metrics: [
       { label: "Drying Speed", value: 89 },
-      { label: "Heat Protection", value: 86 },
-      { label: "Frizz Control", value: 87 },
+      { label: "Heat Protection", value: 87 },
+      { label: "Frizz Control", value: 86 },
       { label: "Attachment Value", value: 74 },
-      { label: "Value for Money", value: 64 },
+      { label: "Value for Money", value: 70 },
     ],
   },
   {
     id: 5,
-    rank: "",
+    rank: "#5",
     name: "ghd Helios",
     image: "/img/hair/ghd.jpg",
     price: "£189",
@@ -934,7 +935,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-        ? "/img/hair/best-hair-dryer-uk-hero.png"
+        ? "/img/hair/hero_updated.png"
         : market.key === "ca"
           ? "/img/hair/top5-uk.webp"
           : "/img/hair/top5-uk.webp";
@@ -1655,7 +1656,7 @@ export default function HairDryerAdvertorial({
       </main>
 
       {/* Footer / Disclosures */}
-      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 pb-24 shadow-inner">
+      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
         <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
           <p className="mb-2 text-lg font-bold text-slate-800">
             Best Hair Dryer

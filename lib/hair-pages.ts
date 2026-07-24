@@ -224,7 +224,7 @@ export const bestHairDryerPage: HairPageData = {
   headline: "Best Hair Dryer United Kingdom - 2026",
   subheadline:
     "We compared the UK hair dryers that shoppers actually consider for speed, styling versatility, heat control, attachments, price and warranty.",
-  heroImage: "/img/hair/best-hair-dryer-uk-hero.png",
+  heroImage: "/img/hair/hero_updated.png",
   heroAlt: "Top five UK hair dryers compared",
   editorIntro:
     "With 12 years of experience in hair styling and salon-grade haircare, Amara Wright is a certified haircare and hair style expert. She reviewed 22 popular United Kingdom hair dryers over 240 hours, comparing motor speed, heat protection, frizz control, dryer attachments, diffuser support, weight, reviews, price, and warranty. Her biggest finding was simple: the most expensive dryer was not always the best. The strongest options paired a fast brushless motor, real ionic care, and useful dryer attachments.",
