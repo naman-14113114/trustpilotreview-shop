@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 export function ExpandableDescription({
+  content,
   description,
 }: {
-  description: string[];
+  content?: React.ReactNode;
+  description?: string[];
   isWinner?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -18,13 +20,14 @@ export function ExpandableDescription({
           expanded ? "max-h-[2000px]" : "max-h-32 md:max-h-none"
         }`}
       >
-        {description.map((p, idx) => (
-          <p
-            key={idx}
-            className="text-slate-600 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: p }}
-          />
-        ))}
+        {content ??
+          description?.map((p, idx) => (
+            <p
+              key={idx}
+              className="text-slate-600 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: p }}
+            />
+          ))}
         {!expanded && (
           <div className="md:hidden absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         )}

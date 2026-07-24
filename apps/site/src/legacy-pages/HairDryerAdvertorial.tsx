@@ -26,6 +26,7 @@ import {
   type HairGuide,
   type HairGuideProduct,
 } from "@/data/hairGuides";
+import { bestHairDryerProductContent } from "@/data/bestHairDryerProductContent";
 import { getMobileProsCons } from "./mobileProsCons";
 
 const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
@@ -167,9 +168,12 @@ type Product = {
   link: string;
   isWinner: boolean;
   siliconWarning?: boolean;
-  description: string[];
-  pros: string[];
-  cons: string[];
+  description?: string[];
+  pros?: string[];
+  cons?: string[];
+  descriptionContent?: React.ReactNode;
+  prosContent?: React.ReactNode;
+  consContent?: React.ReactNode;
   metrics: Array<{ label: string; value: number }>;
 };
 
@@ -414,28 +418,37 @@ function localizeProductCopy(
   return replaceMarketPrices(replaceMarketLanguage(text, market), market);
 }
 
-function localizeBaseProduct(product: Product, market: AdvertorialMarket) {
+function localizeBaseProduct(
+  product: Product,
+  market: AdvertorialMarket,
+): Product {
   const productKey = productPriceKeys[product.id];
   const productPrice = market.productPrices[productKey];
+  const {
+    descriptionContent: _descriptionContent,
+    prosContent: _prosContent,
+    consContent: _consContent,
+    ...localizableProduct
+  } = product;
 
   return {
-    ...product,
+    ...localizableProduct,
     price: productPrice?.price ?? product.price,
     originalPrice: productPrice?.originalPrice ?? product.originalPrice,
     link: product.isWinner ? (market.muuhuUrl ?? "#") : product.link,
-    description: product.description.map((copy) =>
+    description: (product.description ?? []).map((copy) =>
       localizeProductCopy(copy, market, productKey),
     ),
-    pros: product.pros.map((copy) =>
+    pros: (product.pros ?? []).map((copy) =>
       localizeProductCopy(copy, market, productKey),
     ),
-    cons: product.cons.map((copy) =>
+    cons: (product.cons ?? []).map((copy) =>
       localizeProductCopy(copy, market, productKey),
     ),
   };
 }
 
-function getCanadaProducts(market: AdvertorialMarket) {
+function getCanadaProducts(market: AdvertorialMarket): Product[] {
   const muuhu = {
     ...localizeBaseProduct(baseProducts[0], market),
     link: market.muuhuUrl ?? "#",
@@ -451,7 +464,7 @@ function getCanadaProducts(market: AdvertorialMarket) {
   return [muuhu, ...canadaCompetitorProducts];
 }
 
-function getProductsForMarket(market: AdvertorialMarket) {
+function getProductsForMarket(market: AdvertorialMarket): Product[] {
   if (market.key === "uk") {
     return baseProducts.map((product) =>
       product.isWinner
@@ -464,7 +477,9 @@ function getProductsForMarket(market: AdvertorialMarket) {
   return baseProducts.map((product) => localizeBaseProduct(product, market));
 }
 
-function getBestHairDryerProductsForMarket(market: AdvertorialMarket) {
+function getBestHairDryerProductsForMarket(
+  market: AdvertorialMarket,
+): Product[] {
   if (market.key === "uk") {
     return bestHairDryerProducts.map((product) =>
       product.isWinner
@@ -506,7 +521,7 @@ const defaultGuideCriteria = [
 const bestHairDryerProducts: Product[] = [
   {
     id: 1,
-    rank: "#1",
+    rank: "",
     name: "Muuhu 7-in-1 High-Speed Hair Dryer",
     image: "/img/hair/muuhu_product_1x1.webp",
     price: "£149",
@@ -514,25 +529,7 @@ const bestHairDryerProducts: Product[] = [
     rating: "4.9 / 5",
     link: "#",
     isWinner: true,
-    description: [
-      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer because it gives UK shoppers the strongest full drying routine for the price. The 110,000 RPM brushless motor creates fast, focused airflow for everyday blow-dries, while the included diffuser, concentrator, smoothing brush and round volumising brush cover the most common hair dryer needs without pushing buyers into a £300+ device.",
-      "The biggest advantage is that Muuhu is not just a fast dryer. It also includes left and right auto-wrap curlers for finishing curls and waves, so one purchase can handle rough-drying, smoothing, root volume, diffuser drying and occasional styling. Intelligent heat control and negative-ion care help keep the routine focused on shine, frizz control and lower heat exposure instead of simply blasting hair with heat.",
-      "Trusted by over 16,000 customers with a 4.9-star rating, Muuhu makes the clearest paid-search value case. At £149, it combines a high-speed motor, seven useful attachments, ionic care, a 2-year warranty and a 90-day money-back guarantee, which is why it beats the bigger dryer brands for shoppers who want performance, flexibility and reassurance in one bundle.",
-    ],
-    pros: [
-      "Fast High-Speed Drying: 110,000 RPM brushless motor gives strong airflow for quick daily blow-dries without needing premium-brand pricing.",
-      "Complete Dryer Routine: Includes diffuser, concentrator, smoothing brush and round volumising brush, so it covers straight, wavy, curly and thicker hair routines better than dryer-only rivals.",
-      "Extra Styling Flexibility: Left and right auto-wrap curlers add curls and waves when needed, but the main value still starts with fast drying and smooth finishing.",
-      "Frizz and Heat Care: Negative ions help reduce static and flyaways, while intelligent heat regulation supports a gentler finish than simple high-heat dryers.",
-      "Best Value Bundle: At £149 (was £299), it costs less than Dyson, Shark, Cloud Nine and ghd while giving shoppers a wider attachment set.",
-      "Strong Buyer Reassurance: Backed by a 2-year warranty and a 90-day money-back guarantee for a lower-risk first order.",
-      "UK Ready: Supplied for UK 220-240V with a standard 3-pin plug, no travel adapter needed.",
-    ],
-    cons: [
-      "Online Only: Available to buy online, not in high-street shops.",
-      "Limited Stock: Popular demand means the £149 launch price may sell out.",
-      "More Attachments to Learn: The wider kit takes a little organisation at first, though the core dryer and brush heads are simple to use.",
-    ],
+    ...bestHairDryerProductContent.muuhu,
     metrics: [
       { label: "Drying Speed", value: 97 },
       { label: "Heat Protection", value: 96 },
@@ -543,31 +540,14 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 2,
-    rank: "#2",
+    rank: "",
     name: "Dyson Supersonic",
     image: "/img/hair/dyson-supersonic.webp",
     price: "£329.99",
     rating: "4.6 / 5",
     link: "#",
     isWinner: false,
-    description: [
-      "The Dyson Supersonic is the right Dyson comparison for a best hair dryer ranking. It is a premium dryer rather than an Airwrap-style styler, with Dyson's original fast-drying design, no-extreme-heat positioning, strong brand recognition and attachments engineered for straight and wavy hair routines.",
-      "Dyson's strengths are clear: fast controlled drying, a refined feel, magnetic attachments, static reduction and a 2-year guarantee. The Straight+Wavy model uses Dyson's digital motor V9, spinning at up to 110,000rpm, with Air Multiplier technology to create a high-pressure jet of controlled air for fast drying and precision styling.",
-      "The reason it ranks behind Muuhu is value, not brand quality. At £329.99, it costs more than twice the Muuhu offer and remains a dryer-first purchase. It does not give shoppers the same complete 7-in-1 routine with brush heads, curlers, gifts and a 90-day money-back guarantee, so the extra spend is easiest to justify only if Dyson prestige matters most.",
-    ],
-    pros: [
-      "Premium Dryer Brand: Dyson has the strongest name recognition in high-end hair drying and strong buyer confidence.",
-      "Fast Premium Drying: Dyson's digital motor V9 spins at up to 110,000rpm for quick, controlled airflow.",
-      "Useful Dryer Attachments: Includes styling concentrator, diffuser, flyaway attachment and gentle air attachment for straight and wavy routines.",
-      "Strong Finish Control: Designed for fast drying, reduced static and a smoother blow-dry result.",
-    ],
-    cons: [
-      "High Price: At £329.99, it costs more than twice the £149 Muuhu bundle.",
-      "Dryer First, Not a Full Kit: It is excellent for drying, but it does not include brush heads or auto-wrap curlers for a complete styling routine.",
-      "Lower Overall Value: Buyers pay heavily for the Dyson name while Muuhu includes more routine coverage at a lower price.",
-      "Shorter Trial Comfort: Dyson's standard 35-day return policy is less reassuring than Muuhu's 90-day money-back guarantee.",
-      "No Free Gift Bundle: It does not include the premium packaging, comb and haircare guide offer promoted with Muuhu.",
-    ],
+    ...bestHairDryerProductContent.dysonSupersonic,
     metrics: [
       { label: "Drying Speed", value: 94 },
       { label: "Heat Protection", value: 93 },
@@ -578,31 +558,14 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 3,
-    rank: "#3",
+    rank: "",
     name: "Shark FlexStyle",
     image: "/img/hair/shark.png",
     price: "£199+",
     rating: "4.6 / 5",
     link: "#",
     isWinner: false,
-    description: [
-      "The Shark FlexStyle is a strong mid-premium option for shoppers who want a dryer that can also become a styling wand. It is more relevant than many salon-only dryers because it speaks to the same everyday buyer need: dry hair quickly, smooth it down, add volume and create a more finished look without buying several separate tools.",
-      "Shark's biggest advantage is familiarity. UK shoppers know the brand, the fold/rotate format feels practical, and certain bundles include useful attachments for smoothing, volume and diffusing. For someone who wants a recognisable brand below Dyson pricing, FlexStyle is a reasonable shortlist product.",
-      "The issue is bundle clarity and value. Shark packages can vary, exact attachments need checking, and the price still sits above Muuhu while the total included routine is not as clean as Muuhu's seven-piece offer. It is good, but it asks shoppers to do more comparison work before checkout.",
-    ],
-    pros: [
-      "Recognisable Mid-Premium Brand: Shark is familiar to UK shoppers and has strong home-tech trust.",
-      "Dryer-to-Styler Format: Rotates from dryer mode into a styling wand, which is practical for small bathrooms and travel bags.",
-      "Good Routine Coverage: Depending on the bundle, it can support smoothing, volume, curling and diffusing.",
-      "Lower Than Dyson: Usually easier to justify than a Dyson for shoppers watching price.",
-    ],
-    cons: [
-      "Still More Than Muuhu: At £199+, it costs more than the £149 top pick while not clearly beating it on included value.",
-      "Bundle Confusion: Exact attachment sets vary, so shoppers need to check whether diffuser, brush and curling tools are all included.",
-      "Less Clean Offer Story: Muuhu makes the full 7-in-1 routine, free gifts and guarantee easier to understand at first click.",
-      "Not Always Dryer First: Some buyers may find it feels more like a styling system than a simple dedicated hair dryer.",
-      "Shorter Value Case: It does not match Muuhu's combination of lower price, attachment count and 90-day guarantee.",
-    ],
+    ...bestHairDryerProductContent.sharkFlexStyle,
     metrics: [
       { label: "Drying Speed", value: 88 },
       { label: "Heat Protection", value: 86 },
@@ -613,31 +576,14 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 4,
-    rank: "#4",
+    rank: "",
     name: "Cloud Nine Airshot Pro",
     image: "/img/hair/cloudnine-airshot-pro.webp",
     price: "£229",
     rating: "4.5 / 5",
     link: "#",
     isWinner: false,
-    description: [
-      "The Cloud Nine Airshot Pro is a proper dryer-first competitor and belongs in this ranking ahead of more styler-led options. It focuses on lightweight handling, fast drying, ionic and mineral-infused technology, and a salon-style finish without trying to be a full Airwrap alternative.",
-      "For daily blow-dries, Cloud Nine has genuine strengths. It is lightweight at around 0.4kg, uses a 1600W motor, includes magnetic attachments, and is sold with a diffuser plus precise-drying nozzles. The current offer also includes Airshot Pro Volumisers, which improves the value story for shoppers who like a round-brush blow-dry finish.",
-      "Where it loses ground is complete routine value. At £229 for the black model, it is considerably more expensive than Muuhu and still mostly a dryer-first purchase. It can dry, smooth and support volume well, but it does not give the same 7-in-1 attachment range or 90-day guarantee that makes Muuhu easier to recommend for paid-search buyers.",
-    ],
-    pros: [
-      "Lightweight Dryer Feel: Around 0.4kg, so it is comfortable for longer blow-dry sessions and thick-hair routines.",
-      "Dryer-First Performance: 1600W motor, ionic care and mineral-infused technology make it a credible dedicated hair dryer.",
-      "Useful Attachments: Includes magnetic diffuser and precise-drying nozzles for more controlled styling.",
-      "Good Current Bundle: The Airshot Pro Volumisers offer adds value for shoppers who want volume and shape.",
-    ],
-    cons: [
-      "Higher Price Than Muuhu: At £229, it costs £80 more than the £149 top pick.",
-      "Not a Complete 7-in-1 System: Strong as a dryer, but it does not include Muuhu's full brush, diffuser, concentrator and auto-wrap routine in one kit.",
-      "Less Styling Flexibility: Volumisers help, but buyers still get fewer styling options than Muuhu's wider attachment set.",
-      "Brand Pull Is Narrower: Cloud Nine is respected, but Dyson, Shark and ghd have broader mainstream recognition.",
-      "Weaker Trial Story: The product warranty is useful, but Muuhu's 90-day money-back guarantee is easier for hesitant shoppers.",
-    ],
+    ...bestHairDryerProductContent.cloudNineAirshotPro,
     metrics: [
       { label: "Drying Speed", value: 89 },
       { label: "Heat Protection", value: 86 },
@@ -648,31 +594,14 @@ const bestHairDryerProducts: Product[] = [
   },
   {
     id: 5,
-    rank: "#5",
+    rank: "",
     name: "ghd Helios",
     image: "/img/hair/ghd.jpg",
     price: "£189",
     rating: "4.5 / 5",
     link: "#",
     isWinner: false,
-    description: [
-      "The ghd Helios remains a respected salon-style hair dryer and deserves a place in the top five. It is a clean, simple choice for shoppers who mainly want a powerful blow-dry tool from a brand they already know, especially if they do not care about curlers, brushes or a wider attachment system.",
-      "Its strengths are professional feel, focused airflow and brand trust. For someone who already owns a round brush, diffuser and separate styling tools, the Helios can be a polished dryer-only upgrade that keeps the routine straightforward and reliable.",
-      "The limitation is value for a new buyer starting from scratch. At £189, it costs more than Muuhu but gives far fewer options in the box. It is a strong dryer, not a complete routine, so it ranks fifth behind products that give more attachment coverage and buyer reassurance for the money.",
-    ],
-    pros: [
-      "Trusted Salon Name: ghd has strong professional recognition and a loyal UK customer base.",
-      "Focused Blow-Dry Performance: Good for shoppers who want a simple, powerful dryer rather than a multi-styler.",
-      "Premium Feel: Solid build and straightforward controls make it easy to understand.",
-      "Good Fit for Existing Tool Owners: Works well if the buyer already owns brushes, curlers and diffuser accessories.",
-    ],
-    cons: [
-      "Dryer Only: It does not include Muuhu's wider brush, diffuser, concentrator and auto-wrap styling system.",
-      "Limited Included Attachments: The out-of-box routine is narrower than Muuhu, Shark, Dyson and Cloud Nine.",
-      "Higher Price for Less Coverage: At £189, it costs more than Muuhu while solving fewer daily styling needs.",
-      "No Curl or Volume Bundle: Buyers may need separate tools for waves, volume and a more finished salon look.",
-      "No Free Gift Bundle: Misses the premium packaging, comb and haircare guide offer included with Muuhu.",
-    ],
+    ...bestHairDryerProductContent.ghdHelios,
     metrics: [
       { label: "Drying Speed", value: 90 },
       { label: "Heat Protection", value: 82 },
@@ -898,6 +827,72 @@ export const MetricBar: React.FC<{ label: string; value: number }> = ({
     </div>
   </div>
 );
+
+function mergeClassNames(...classes: Array<string | undefined | false>) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function flattenReactChildren(children: React.ReactNode): React.ReactNode[] {
+  const flattened: React.ReactNode[] = [];
+
+  React.Children.forEach(children, (child) => {
+    if (React.isValidElement(child) && child.type === React.Fragment) {
+      flattened.push(
+        ...flattenReactChildren(
+          (child.props as { children?: React.ReactNode }).children,
+        ),
+      );
+      return;
+    }
+
+    flattened.push(child);
+  });
+
+  return flattened;
+}
+
+function renderEditableProductList(
+  content: React.ReactNode,
+  variant: "pros" | "cons",
+) {
+  const Icon = variant === "pros" ? Check : XCircle;
+  const iconClass =
+    variant === "pros" ? "text-emerald-500" : "text-red-500";
+
+  return flattenReactChildren(content).map((child, idx) => {
+    const key = React.isValidElement(child) ? (child.key ?? idx) : idx;
+
+    if (React.isValidElement(child) && child.type === "li") {
+      const props = child.props as {
+        children?: React.ReactNode;
+        className?: string;
+      };
+
+      return (
+        <li
+          key={key}
+          className={mergeClassNames(
+            "text-base text-slate-700 flex items-start gap-3",
+            props.className,
+          )}
+        >
+          <Icon size={20} className={`${iconClass} shrink-0 mt-0.5`} />
+          <span>{props.children}</span>
+        </li>
+      );
+    }
+
+    return (
+      <li
+        key={key}
+        className="text-base text-slate-700 flex items-start gap-3"
+      >
+        <Icon size={20} className={`${iconClass} shrink-0 mt-0.5`} />
+        <span>{child}</span>
+      </li>
+    );
+  });
+}
 
 type HairDryerAdvertorialMode = "best" | "three-way";
 
@@ -1338,6 +1333,7 @@ export default function HairDryerAdvertorial({
 
                   <ExpandableDescription
                     description={product.description}
+                    content={product.descriptionContent}
                     isWinner={product.isWinner}
                   />
 
@@ -1367,30 +1363,35 @@ export default function HairDryerAdvertorial({
                         Pros
                       </h4>
                       <ul className="space-y-4">
-                        {product.pros.map((pro, idx) => {
-                          const [bold, ...rest] = pro.split(":");
-                          return (
-                            <li
-                              key={idx}
-                              className="text-base text-slate-700 flex items-start gap-3"
-                            >
-                              <Check
-                                size={20}
-                                className="text-emerald-500 shrink-0 mt-0.5"
-                              />
-                              <span>
-                                <strong className="text-slate-900">
-                                  {bold}:
-                                </strong>
-                                <span
-                                  dangerouslySetInnerHTML={{
-                                    __html: rest.join(":"),
-                                  }}
-                                />
-                              </span>
-                            </li>
-                          );
-                        })}
+                        {product.prosContent
+                          ? renderEditableProductList(
+                              product.prosContent,
+                              "pros",
+                            )
+                          : (product.pros ?? []).map((pro, idx) => {
+                              const [bold, ...rest] = pro.split(":");
+                              return (
+                                <li
+                                  key={idx}
+                                  className="text-base text-slate-700 flex items-start gap-3"
+                                >
+                                  <Check
+                                    size={20}
+                                    className="text-emerald-500 shrink-0 mt-0.5"
+                                  />
+                                  <span>
+                                    <strong className="text-slate-900">
+                                      {bold}:
+                                    </strong>
+                                    <span
+                                      dangerouslySetInnerHTML={{
+                                        __html: rest.join(":"),
+                                      }}
+                                    />
+                                  </span>
+                                </li>
+                              );
+                            })}
                       </ul>
                     </div>
 
@@ -1400,30 +1401,35 @@ export default function HairDryerAdvertorial({
                         Cons
                       </h4>
                       <ul className="space-y-4">
-                        {product.cons.map((con, idx) => {
-                          const [bold, ...rest] = con.split(":");
-                          return (
-                            <li
-                              key={idx}
-                              className="text-base text-slate-700 flex items-start gap-3"
-                            >
-                              <XCircle
-                                size={20}
-                                className="text-red-500 shrink-0 mt-0.5"
-                              />
-                              <span>
-                                <strong className="text-slate-900">
-                                  {bold}:
-                                </strong>
-                                <span
-                                  dangerouslySetInnerHTML={{
-                                    __html: rest.join(":"),
-                                  }}
-                                />
-                              </span>
-                            </li>
-                          );
-                        })}
+                        {product.consContent
+                          ? renderEditableProductList(
+                              product.consContent,
+                              "cons",
+                            )
+                          : (product.cons ?? []).map((con, idx) => {
+                              const [bold, ...rest] = con.split(":");
+                              return (
+                                <li
+                                  key={idx}
+                                  className="text-base text-slate-700 flex items-start gap-3"
+                                >
+                                  <XCircle
+                                    size={20}
+                                    className="text-red-500 shrink-0 mt-0.5"
+                                  />
+                                  <span>
+                                    <strong className="text-slate-900">
+                                      {bold}:
+                                    </strong>
+                                    <span
+                                      dangerouslySetInnerHTML={{
+                                        __html: rest.join(":"),
+                                      }}
+                                    />
+                                  </span>
+                                </li>
+                              );
+                            })}
                       </ul>
                     </div>
                   </div>
@@ -1478,7 +1484,7 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                Normally £19
+                                £19
                               </span>
                               <img
                                 src="/img/hair/muuhu-luxury-case.webp"
@@ -1508,7 +1514,7 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                Normally £79
+                                £79
                               </span>
                               <img
                                 src="/img/hair/muuhu-comb.webp"
@@ -1538,7 +1544,7 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                Normally £29
+                                £29
                               </span>
                               <img
                                 src="/img/hair/muuhu-expert-hair-ebook.webp"
@@ -1618,7 +1624,7 @@ export default function HairDryerAdvertorial({
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
 
                 <div className="text-2xl md:text-4xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans">
-                  {market.key === "ca" ? "Current Price" : "Now at 50% off"}
+                  {market.key === "ca" ? "Current Price" : "Now at 60% off"}
                 </div>
 
                 {/* Trustpilot-style Badge */}
