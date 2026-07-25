@@ -98,16 +98,16 @@ export const bestHairDryerProductContent = {
     descriptionContent: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          The Dyson Supersonic is the right Dyson comparison for a best hair
-          dryer ranking. It is a premium dryer rather than an Airwrap-style
-          styler, with Dyson&apos;s original fast-drying design,{" "}
+          The Dyson Supersonic Nural is the right Dyson comparison for a best
+          hair dryer ranking. It is a premium dryer rather than an Airwrap-style
+          styler, with Dyson&apos;s intelligent fast-drying design,{" "}
           <strong>no-extreme-heat</strong> positioning, strong brand recognition
-          and attachments engineered for straight and wavy hair routines.
+          and five attachments engineered for straight and wavy hair routines.
         </p>
         <p className="text-slate-600 leading-relaxed">
           Dyson&apos;s strengths are clear: fast controlled drying, a refined
-          feel, magnetic attachments, static reduction and a{" "}
-          <strong>2-year guarantee</strong>. The Straight+Wavy model uses
+          feel, magnetic attachments, static reduction, Nural sensor technology
+          and a <strong>2-year guarantee</strong>. The Straight+Wavy model uses
           Dyson&apos;s digital motor V9, spinning at up to{" "}
           <strong>110,000 RPM</strong>, with Air Multiplier technology to create
           a high-pressure jet of controlled air for fast drying and precision
@@ -115,7 +115,7 @@ export const bestHairDryerProductContent = {
         </p>
         <p className="text-slate-600 leading-relaxed">
           The reason it ranks behind Muuhu is value, not brand quality. At{" "}
-          <strong>&pound;329.99</strong>, it costs more than twice the Muuhu
+          <strong>&pound;299.99</strong>, it still costs around twice the Muuhu
           offer and remains a dryer-first purchase. It does not give shoppers
           the same complete 7-in-1 routine with brush heads, curlers, gifts and
           a 90-day money-back guarantee, so the extra spend is easiest to
@@ -134,9 +134,9 @@ export const bestHairDryerProductContent = {
           spins at up to 110,000rpm for quick, controlled airflow.
         </li>
         <li>
-          <strong>Useful Dryer Attachments:</strong> Includes styling
-          concentrator, diffuser, flyaway attachment and gentle air attachment
-          for straight and wavy routines.
+          <strong>Five Dryer Attachments:</strong> Includes smoothing nozzle,
+          flyaway smoother, styling concentrator, diffuser and gentle air
+          attachment for straight and wavy routines.
         </li>
         <li>
           <strong>Strong Finish Control:</strong> Designed for fast drying,
@@ -147,13 +147,13 @@ export const bestHairDryerProductContent = {
     consContent: (
       <>
         <li>
-          <strong>High Price: </strong> At &pound;329.99, it costs more than
+          <strong>High Price: </strong> At &pound;299.99, it costs around
           twice the price of our #1 pick.
         </li>
         <li>
-          <strong>Fewer Attachments: </strong>It includes only three styling
-          attachments, so buyers wanting brushes, auto-wrap curlers or a fuller
-          styling kit may need extra tools.
+          <strong>Dryer Attachments Only: </strong>The five attachments are
+          useful, but buyers wanting brush heads, auto-wrap curlers or a fuller
+          styling kit may still need extra tools.
         </li>
         <li>
           <strong>Premium Price Point:</strong> Dyson is a trusted premium

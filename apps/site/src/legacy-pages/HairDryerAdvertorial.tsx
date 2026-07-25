@@ -541,19 +541,20 @@ const bestHairDryerProducts: Product[] = [
   {
     id: 2,
     rank: "",
-    name: "Dyson Supersonic",
-    image: "/img/hair/dyson-supersonic.webp",
-    price: "£329.99",
-    rating: "4.6 / 5",
-    link: "#",
+    name: "Dyson Supersonic Nural",
+    image: "/img/hair/dyson-supersonic-nural.webp",
+    price: "£299.99",
+    originalPrice: "£399.99",
+    rating: "4.4 / 5",
+    link: "https://amzn.to/4yH7gW5",
     isWinner: false,
     ...bestHairDryerProductContent.dysonSupersonic,
     metrics: [
-      { label: "Drying Speed", value: 94 },
-      { label: "Heat Protection", value: 93 },
-      { label: "Frizz Control", value: 92 },
-      { label: "Attachment Value", value: 78 },
-      { label: "Value for Money", value: 58 },
+      { label: "Drying Speed", value: 95 },
+      { label: "Heat Protection", value: 95 },
+      { label: "Frizz Control", value: 93 },
+      { label: "Attachment Value", value: 86 },
+      { label: "Value for Money", value: 64 },
     ],
   },
   {
@@ -935,7 +936,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-        ? "/img/hair/hero_updated.png"
+        ? "/img/hair/hero_updated_nural.png"
         : market.key === "ca"
           ? "/img/hair/top5-uk.webp"
           : "/img/hair/top5-uk.webp";
