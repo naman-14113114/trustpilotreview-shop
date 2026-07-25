@@ -1069,7 +1069,7 @@ export default function HairDryerAdvertorial({
   const expertProfile = {
     name: "Amara Wright",
     title: "Haircare and hair style expert",
-    image: "/img/hair/doc_pic.webp",
+    image: "/img/hair/styler_image.webp",
     yearsExperience: 12,
     dryersReviewed: 22,
     testingHours: 240,
