@@ -564,7 +564,7 @@ const bestHairDryerProducts: Product[] = [
     image: "/img/hair/cloudenine.webp",
     price: "£229",
     rating: "4.5 / 5",
-    link: "#",
+    link: "https://amzn.to/4fmAX7o",
     isWinner: false,
     ...bestHairDryerProductContent.cloudNineAirshotPro,
     metrics: [
