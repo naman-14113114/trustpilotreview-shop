@@ -217,8 +217,65 @@ type Product = {
   descriptionContent?: React.ReactNode;
   prosContent?: React.ReactNode;
   consContent?: React.ReactNode;
+  attachments?: ProductAttachments;
   metrics: Array<{ label: string; value: number }>;
 };
+
+type ProductAttachments = {
+  includedCount: number;
+  images: string[];
+};
+
+const ATTACHMENT_SLOT_COUNT = 7;
+
+function IncludedAttachments({
+  attachments,
+}: {
+  attachments: ProductAttachments;
+}) {
+  const slots = Array.from(
+    { length: ATTACHMENT_SLOT_COUNT },
+    (_, index) => attachments.images[index],
+  );
+
+  return (
+    <div className="mb-8 rounded-3xl border border-emerald-200 bg-white p-4 md:p-6">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <h4 className="text-sm md:text-base font-extrabold uppercase tracking-wide text-emerald-700">
+          INCLUDED ATTACHMENTS
+        </h4>
+        <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm md:text-base font-extrabold text-emerald-700">
+          {attachments.includedCount} included
+        </span>
+      </div>
+      <div className="grid grid-cols-7 gap-1.5 md:gap-2.5">
+        {slots.map((image, index) =>
+          image ? (
+            <div
+              key={`attachment-${index}`}
+              className="flex aspect-square items-center justify-center rounded-2xl border border-emerald-100 bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(240,253,244,0.9)] md:p-2"
+            >
+              <img
+                src={image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full rounded-xl object-contain"
+              />
+            </div>
+          ) : (
+            <div
+              key={`missing-attachment-${index}`}
+              className="flex aspect-square items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 px-1 text-center text-[9px] font-semibold leading-tight text-slate-500 md:text-xs"
+            >
+              Not available
+            </div>
+          ),
+        )}
+      </div>
+    </div>
+  );
+}
 
 const baseProducts: Product[] = [
   {
@@ -573,6 +630,18 @@ const bestHairDryerProducts: Product[] = [
     link: "#",
     isWinner: true,
     ...bestHairDryerProductContent.muuhu,
+    attachments: {
+      includedCount: 7,
+      images: [
+        "/img/hair/attachments/muuhu-attachment-1.webp",
+        "/img/hair/attachments/muuhu-attachment-2.webp",
+        "/img/hair/attachments/muuhu-attachment-3.webp",
+        "/img/hair/attachments/muuhu-attachment-4.webp",
+        "/img/hair/attachments/muuhu-attachment-5.webp",
+        "/img/hair/attachments/muuhu-attachment-6.webp",
+        "/img/hair/attachments/muuhu-attachment-7.webp",
+      ],
+    },
     metrics: [
       { label: "Drying Speed", value: 97 },
       { label: "Heat Protection", value: 96 },
@@ -592,6 +661,16 @@ const bestHairDryerProducts: Product[] = [
     link: "https://amzn.to/4yH7gW5",
     isWinner: false,
     ...bestHairDryerProductContent.dysonSupersonic,
+    attachments: {
+      includedCount: 5,
+      images: [
+        "/img/hair/attachments/dyson-attachment-1.jpg",
+        "/img/hair/attachments/dyson-attachment-2.jpg",
+        "/img/hair/attachments/dyson-attachment-3.jpg",
+        "/img/hair/attachments/dyson-attachment-4.jpg",
+        "/img/hair/attachments/dyson-attachment-5.jpg",
+      ],
+    },
     metrics: [
       { label: "Drying Speed", value: 95 },
       { label: "Heat Protection", value: 95 },
@@ -610,6 +689,14 @@ const bestHairDryerProducts: Product[] = [
     link: "https://amzn.to/4fmAX7o",
     isWinner: false,
     ...bestHairDryerProductContent.cloudNineAirshotPro,
+    attachments: {
+      includedCount: 3,
+      images: [
+        "/img/hair/attachments/cloudnine-attachment-1.webp",
+        "/img/hair/attachments/cloudnine-attachment-2.webp",
+        "/img/hair/attachments/cloudnine-attachment-3.webp",
+      ],
+    },
     metrics: [
       { label: "Drying Speed", value: 91 },
       { label: "Heat Protection", value: 88 },
@@ -629,6 +716,15 @@ const bestHairDryerProducts: Product[] = [
     link: "https://amzn.to/4htIum3",
     isWinner: false,
     ...bestHairDryerProductContent.sharkSpeedStyleProFlex,
+    attachments: {
+      includedCount: 4,
+      images: [
+        "/img/hair/attachments/shark-attachment-1.webp",
+        "/img/hair/attachments/shark-attachment-2.webp",
+        "/img/hair/attachments/shark-attachment-3.webp",
+        "/img/hair/attachments/shark-attachment-4.webp",
+      ],
+    },
     metrics: [
       { label: "Drying Speed", value: 89 },
       { label: "Heat Protection", value: 87 },
@@ -647,6 +743,10 @@ const bestHairDryerProducts: Product[] = [
     link: "https://amzn.to/4xmMeuD",
     isWinner: false,
     ...bestHairDryerProductContent.ghdHelios,
+    attachments: {
+      includedCount: 1,
+      images: ["/img/hair/attachments/ghd-attachment-1.webp"],
+    },
     metrics: [
       { label: "Drying Speed", value: 90 },
       { label: "Heat Protection", value: 82 },
@@ -994,6 +1094,7 @@ export default function HairDryerAdvertorial({
       ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
       : `Top hair dryers comparison for ${market.titleCountry}`);
   const showBestHairRankRibbons = market.key === "uk" && !guide && !isThreeWay;
+  const showBestHairAttachments = market.key === "uk" && !guide && !isThreeWay;
   const heroImageClass = guide
     ? guide.heroImage.includes("top5-uk")
       ? "max-w-5xl aspect-[1536/461] object-cover"
@@ -1388,6 +1489,10 @@ export default function HairDryerAdvertorial({
                     content={product.descriptionContent}
                     isWinner={product.isWinner}
                   />
+
+                  {showBestHairAttachments && product.attachments && (
+                    <IncludedAttachments attachments={product.attachments} />
+                  )}
 
                   {/* Metrics */}
                   <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
