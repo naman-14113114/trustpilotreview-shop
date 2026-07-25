@@ -542,7 +542,7 @@ const bestHairDryerProducts: Product[] = [
     id: 2,
     rank: "",
     name: "Dyson Supersonic Nural",
-    image: "/img/hair/dyson-supersonic-nural.webp",
+    image: "/img/hair/dyson_hairdryer_new.webp",
     price: "£299.99",
     originalPrice: "£399.99",
     rating: "4.4 / 5",
@@ -583,7 +583,7 @@ const bestHairDryerProducts: Product[] = [
     price: "£169.99",
     originalPrice: "£169.99",
     rating: "4.6 / 5",
-    link: "#",
+    link: "https://amzn.to/4htIum3",
     isWinner: false,
     ...bestHairDryerProductContent.sharkSpeedStyleProFlex,
     metrics: [
@@ -601,7 +601,7 @@ const bestHairDryerProducts: Product[] = [
     image: "/img/hair/ghd.jpg",
     price: "£189",
     rating: "4.5 / 5",
-    link: "#",
+    link: "https://amzn.to/4xmMeuD",
     isWinner: false,
     ...bestHairDryerProductContent.ghdHelios,
     metrics: [
