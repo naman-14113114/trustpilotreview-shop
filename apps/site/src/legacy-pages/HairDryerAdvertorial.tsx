@@ -129,6 +129,49 @@ function shouldShowProductCta(product: Product) {
   return product.isWinner || product.link !== "#";
 }
 
+function RankRibbon({
+  rank,
+  featured = false,
+}: {
+  rank: string;
+  featured?: boolean;
+}) {
+  const outerSize = featured ? "h-[118px] w-[138px]" : "h-[96px] w-[112px]";
+  const triangleSize = featured ? "h-[108px] w-[128px]" : "h-[88px] w-[108px]";
+  const textBox = featured ? "h-[78px] w-[82px]" : "h-[64px] w-[68px]";
+  const textSize = featured ? "text-[2rem]" : "text-[1.55rem]";
+
+  return (
+    <div
+      aria-label={`Rank ${rank}`}
+      className={`pointer-events-none absolute left-0 top-0 z-30 overflow-visible rounded-tl-3xl ${outerSize}`}
+    >
+      {featured && (
+        <div
+          className={`absolute left-[7px] top-[7px] rounded-tl-3xl bg-emerald-950/30 blur-[1px] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <div
+        className={`absolute left-0 top-0 rounded-tl-3xl bg-gradient-to-br from-emerald-300 via-emerald-500 to-emerald-800 [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize} ${
+          featured
+            ? "shadow-[0_18px_28px_rgba(5,150,105,0.32),inset_0_2px_0_rgba(255,255,255,0.35),inset_-10px_-10px_16px_rgba(4,120,87,0.28)]"
+            : "shadow-[0_10px_18px_rgba(5,150,105,0.2),inset_0_1px_0_rgba(255,255,255,0.24)]"
+        }`}
+      />
+      {featured && (
+        <div
+          className={`absolute left-[2px] top-[2px] rounded-tl-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.16)_32%,rgba(255,255,255,0)_58%)] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <span
+        className={`absolute left-0 top-0 flex items-center justify-center font-serif font-black leading-none text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.32)] ${textBox} ${textSize}`}
+      >
+        {rank}
+      </span>
+    </div>
+  );
+}
+
 const criteria = [
   "Real drying speed and airflow confidence",
   "Heat protection and temperature control",
@@ -950,6 +993,7 @@ export default function HairDryerAdvertorial({
     (isThreeWay
       ? `Dyson vs Shark vs Muuhu comparison for ${market.titleCountry}`
       : `Top hair dryers comparison for ${market.titleCountry}`);
+  const showBestHairRankRibbons = market.key === "uk" && !guide && !isThreeWay;
   const heroImageClass = guide
     ? guide.heroImage.includes("top5-uk")
       ? "max-w-5xl aspect-[1536/461] object-cover"
@@ -1252,11 +1296,17 @@ export default function HairDryerAdvertorial({
 
         {/* Products List */}
         <div className="space-y-16">
-          {products.map((product) => (
+          {products.map((product, productIndex) => (
             <div
               key={product.id}
-              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? "border-emerald-500 ring-4 ring-emerald-50" : "border-slate-200"} p-6 md:p-10`}
+              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? "border-emerald-500 ring-4 ring-emerald-50" : "border-slate-200"} p-6 md:p-10 ${showBestHairRankRibbons ? "pt-24 md:pt-24 scroll-mt-28" : ""}`}
             >
+              {showBestHairRankRibbons && (
+                <RankRibbon
+                  rank={product.rank || `#${productIndex + 1}`}
+                  featured={productIndex === 0}
+                />
+              )}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
                 {/* Left Column: Image & Quick Stats */}
                 <div className="lg:col-span-4 flex flex-col items-center">
