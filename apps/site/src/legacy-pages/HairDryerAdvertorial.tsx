@@ -1185,7 +1185,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-        ? "/img/hair/hero_updated_nural.png"
+        ? "/img/hair/top-5-hair-dryer.png"
         : market.key === "ca"
           ? "/img/hair/top5-uk.webp"
           : "/img/hair/top5-uk.webp";
@@ -1207,7 +1207,9 @@ export default function HairDryerAdvertorial({
       : "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
     : isThreeWay
       ? "max-w-4xl aspect-[1400/960] object-contain bg-[#f8f4e6]"
-      : "max-w-5xl aspect-[1536/461] object-cover";
+      : market.key === "uk"
+        ? "max-w-5xl h-auto object-contain"
+        : "max-w-5xl aspect-[1536/461] object-cover";
   const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -1867,15 +1869,39 @@ export default function HairDryerAdvertorial({
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Left Image Area */}
-              <div className="relative flex justify-center">
-                <img
-                  src="/img/hair/about-trust-hair-dryer.webp"
-                  alt="Muuhu Hair Dryer Overview"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full max-w-[280px] md:max-w-[340px] h-auto object-contain drop-shadow-xl mx-auto rounded-2xl"
-                />
+              {/* Left Video Area */}
+              <div className="relative">
+                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                  <video
+                    ref={verdictVideoRef}
+                    className="block w-full"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label="Muuhu hair dryer product video"
+                    onPlay={() => setIsVerdictVideoPlaying(true)}
+                    onPause={() => setIsVerdictVideoPlaying(false)}
+                    onEnded={() => setIsVerdictVideoPlaying(false)}
+                  >
+                    <source
+                      src="/assets/hair-dryer-trustpilot-video.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <button
+                    type="button"
+                    aria-label="Play Muuhu hair dryer product video"
+                    onClick={playVerdictVideo}
+                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
+                      isVerdictVideoPlaying
+                        ? "pointer-events-none scale-90 opacity-0"
+                        : "scale-100 opacity-100"
+                    }`}
+                  >
+                    <Play size={30} fill="currentColor" className="ml-1" />
+                  </button>
+                </div>
               </div>
 
               {/* Right Content Area */}
