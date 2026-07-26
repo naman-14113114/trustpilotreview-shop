@@ -993,12 +993,77 @@ function getGuideProducts(guide: HairGuide) {
     );
 }
 
-function preventPlaceholderNavigation(
+const ATTRIBUTION_QUERY_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "msclkid",
+  "gclid",
+  "fbclid",
+] as const;
+
+type TrackingWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  uetq?: {
+    push: (...args: unknown[]) => unknown;
+  };
+};
+
+function prepareOutboundNavigation(
   event: React.MouseEvent<HTMLAnchorElement>,
   href: string,
+  placement = "comparison_page",
 ) {
   if (href === "#") {
     event.preventDefault();
+    return;
+  }
+
+  try {
+    const destination = new URL(href, window.location.href);
+    if (destination.hostname !== "uk.muuhu.com") return;
+
+    const current = new URL(window.location.href);
+    ATTRIBUTION_QUERY_KEYS.forEach((key) => {
+      const value = current.searchParams.get(key);
+      if (value && !destination.searchParams.has(key)) {
+        destination.searchParams.set(key, value);
+      }
+    });
+
+    if (!destination.searchParams.has("utm_source")) {
+      destination.searchParams.set("utm_source", "trustpilotreview");
+    }
+    if (!destination.searchParams.has("utm_medium")) {
+      destination.searchParams.set("utm_medium", "comparison");
+    }
+    if (!destination.searchParams.has("utm_campaign")) {
+      destination.searchParams.set("utm_campaign", "uk_hair_dryer_2026");
+    }
+
+    event.currentTarget.href = destination.toString();
+
+    const trackingWindow = window as TrackingWindow;
+    const payload = {
+      event_category: "comparison",
+      event_label: placement,
+      outbound_url: destination.toString(),
+      page_type: "best_hair_dryer_uk_2026",
+    };
+
+    trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
+    trackingWindow.dataLayer.push({
+      event: "muuhu_outbound_click",
+      ecommerce: null,
+      ...payload,
+    });
+
+    trackingWindow.uetq?.push("event", "muuhu_outbound_click", payload);
+    trackingWindow.uetq?.push("event", "affiliate_click", payload);
+  } catch {
+    // Keep the original native anchor navigation if attribution cannot be added.
   }
 }
 
@@ -1023,6 +1088,9 @@ function OutboundButton({
       aria-disabled={href === "#" ? true : undefined}
       data-outbound-button="true"
       data-loading="false"
+      onClick={(event) =>
+        prepareOutboundNavigation(event, href, ariaLabel)
+      }
       className={`relative ${className}`}
     >
       <span data-outbound-content="true">{children}</span>
@@ -1531,7 +1599,11 @@ export default function HairDryerAdvertorial({
                       <a
                         href={product.link}
                         onClick={(event) =>
-                          preventPlaceholderNavigation(event, product.link)
+                          prepareOutboundNavigation(
+                            event,
+                            product.link,
+                            `rank_${productIndex + 1}_image`,
+                          )
                         }
                         className="block w-full group"
                       >
@@ -1587,7 +1659,11 @@ export default function HairDryerAdvertorial({
                     <a
                       href={product.link}
                       onClick={(event) =>
-                        preventPlaceholderNavigation(event, product.link)
+                        prepareOutboundNavigation(
+                          event,
+                          product.link,
+                          `rank_${productIndex + 1}_title`,
+                        )
                       }
                       className="hover:text-emerald-600 transition-colors"
                     >
@@ -1744,6 +1820,13 @@ export default function HairDryerAdvertorial({
                           <a
                             href={MUUHU_PACKAGING_URL}
                             data-outbound="muuhu-hair-gift"
+                            onClick={(event) =>
+                              prepareOutboundNavigation(
+                                event,
+                                MUUHU_PACKAGING_URL,
+                                "free_gift_packaging",
+                              )
+                            }
                             className="block bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
                             aria-label="View Muuhu Premium Packaging"
                           >
@@ -1771,6 +1854,13 @@ export default function HairDryerAdvertorial({
                           <a
                             href={MUUHU_COMB_URL}
                             data-outbound="muuhu-hair-gift"
+                            onClick={(event) =>
+                              prepareOutboundNavigation(
+                                event,
+                                MUUHU_COMB_URL,
+                                "free_gift_comb",
+                              )
+                            }
                             className="block bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
                             aria-label="View Muuhu Comb"
                           >
@@ -1801,6 +1891,13 @@ export default function HairDryerAdvertorial({
                           <a
                             href={MUUHU_EBOOK_URL}
                             data-outbound="muuhu-hair-gift"
+                            onClick={(event) =>
+                              prepareOutboundNavigation(
+                                event,
+                                MUUHU_EBOOK_URL,
+                                "free_gift_ebook",
+                              )
+                            }
                             className="block bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
                             aria-label="View Muuhu Haircare E-Book"
                           >
