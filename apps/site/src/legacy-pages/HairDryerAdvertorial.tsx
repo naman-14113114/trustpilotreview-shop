@@ -20,6 +20,7 @@ import {
   type AdvertorialMarketKey,
   type ProductPriceKey,
 } from "@/lib/advertorialMarkets";
+import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import type { MarketContextProps } from "@/lib/marketContext";
 import {
   MUUHU_HAIR_URL,
@@ -1158,6 +1159,7 @@ export default function HairDryerAdvertorial({
   guide?: HairGuide;
 } & MarketContextProps) {
   const market = getAdvertorialMarket(marketKey);
+  const updatedDate = useMarketUpdatedDate(market, context.updatedDate);
   const isThreeWay = mode === "three-way";
   const allProducts = getProductsForMarket(market);
   const bestHairDryerProductsForMarket =
@@ -1241,7 +1243,8 @@ export default function HairDryerAdvertorial({
 
           <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
             <CheckCircle2 size={20} className="text-white shrink-0" />
-            Last updated – {context.updatedDate}
+            Last updated –{" "}
+            <span suppressHydrationWarning>{updatedDate}</span>
           </div>
         </div>
       </div>

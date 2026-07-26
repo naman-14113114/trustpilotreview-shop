@@ -19,6 +19,7 @@ import {
   type AdvertorialMarketKey,
   type ProductPriceKey,
 } from "@/lib/advertorialMarkets";
+import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import type { MarketContextProps } from "@/lib/marketContext";
 import { EXPERT_PROFILE } from "@/lib/expertProfile";
 import { getMobileProsCons } from "./mobileProsCons";
@@ -713,6 +714,7 @@ export default function Home({
   context,
 }: { market?: AdvertorialMarketKey } & MarketContextProps) {
   const market = getAdvertorialMarket(marketKey);
+  const updatedDate = useMarketUpdatedDate(market, context.updatedDate);
   const products = getProductsForMarket(market);
   const heroImage =
     market.key === "ca"
@@ -745,7 +747,7 @@ export default function Home({
 
           <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
             <CheckCircle2 size={20} className="text-white shrink-0" />
-            Last updated – {context.updatedDate}
+            Last updated – <span suppressHydrationWarning>{updatedDate}</span>
           </div>
         </div>
       </div>
