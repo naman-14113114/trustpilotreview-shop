@@ -223,56 +223,89 @@ type Product = {
 
 type ProductAttachments = {
   includedCount: number;
-  images: string[];
+  items: AttachmentItem[];
+  freeItems?: AttachmentItem[];
+  freeLabel?: string;
+};
+
+type AttachmentItem = {
+  image: string;
+  label: string;
 };
 
 const ATTACHMENT_SLOT_COUNT = 7;
+
+function attachmentCountLabel(count: number) {
+  return `${count} ${count === 1 ? "Attachment" : "Attachments"}`;
+}
+
+function AttachmentTable({
+  items,
+  columns,
+}: {
+  items: AttachmentItem[];
+  columns: 2 | 7;
+}) {
+  const slots = Array.from({ length: columns }, (_, index) => items[index]);
+
+  return (
+    <div
+      className={`mx-auto grid max-w-full overflow-hidden border border-slate-300 ${
+        columns === 7 ? "w-full grid-cols-7" : "w-[28.571428%] grid-cols-2"
+      }`}
+    >
+      {slots.map((item, index) => (
+        <div
+          key={item?.image ?? `empty-attachment-${index}`}
+          className="min-w-0 border-r border-slate-300 last:border-r-0"
+        >
+          {item ? (
+            <>
+              <div className="flex aspect-square items-center justify-center bg-white p-1.5 md:p-2">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="px-0.5 pb-1.5 text-center text-[7px] font-medium leading-tight text-slate-900 sm:text-[9px] md:px-1 md:text-xs">
+                {item.label}
+              </div>
+            </>
+          ) : (
+            <div className="aspect-square bg-white" aria-hidden="true" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function IncludedAttachments({
   attachments,
 }: {
   attachments: ProductAttachments;
 }) {
-  const slots = Array.from(
-    { length: ATTACHMENT_SLOT_COUNT },
-    (_, index) => attachments.images[index],
-  );
-
   return (
-    <div className="mb-8 rounded-3xl border border-emerald-200 bg-white p-4 md:p-6">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <h4 className="text-sm md:text-base font-extrabold uppercase tracking-wide text-emerald-700">
-          INCLUDED ATTACHMENTS
-        </h4>
-        <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm md:text-base font-extrabold text-emerald-700">
-          {attachments.includedCount} included
-        </span>
-      </div>
-      <div className="grid grid-cols-7 gap-1.5 md:gap-2.5">
-        {slots.map((image, index) =>
-          image ? (
-            <div
-              key={`attachment-${index}`}
-              className="flex aspect-square items-center justify-center rounded-2xl border border-emerald-100 bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(240,253,244,0.9)] md:p-2"
-            >
-              <img
-                src={image}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full rounded-xl object-contain"
-              />
-            </div>
-          ) : (
-            <div
-              key={`missing-attachment-${index}`}
-              className="flex aspect-square items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 px-1 text-center text-[9px] font-semibold leading-tight text-slate-500 md:text-xs"
-            >
-              Not available
-            </div>
-          ),
-        )}
-      </div>
+    <div className="mb-8 bg-white">
+      <h4 className="mb-5 text-center text-2xl font-bold text-slate-900 md:text-3xl">
+        {attachmentCountLabel(attachments.includedCount)}
+      </h4>
+      <AttachmentTable items={attachments.items} columns={ATTACHMENT_SLOT_COUNT} />
+
+      {attachments.freeItems?.length ? (
+        <div className="mt-8 text-center">
+          <div className="mb-1 text-3xl font-bold leading-none text-slate-900">
+            +
+          </div>
+          <h5 className="mb-5 text-xl font-bold text-slate-900 md:text-2xl">
+            {attachments.freeLabel}
+          </h5>
+          <AttachmentTable items={attachments.freeItems} columns={2} />
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -632,14 +665,46 @@ const bestHairDryerProducts: Product[] = [
     ...bestHairDryerProductContent.muuhu,
     attachments: {
       includedCount: 7,
-      images: [
-        "/img/hair/attachments/muuhu-attachment-1.webp",
-        "/img/hair/attachments/muuhu-attachment-2.webp",
-        "/img/hair/attachments/muuhu-attachment-3.webp",
-        "/img/hair/attachments/muuhu-attachment-4.webp",
-        "/img/hair/attachments/muuhu-attachment-5.webp",
-        "/img/hair/attachments/muuhu-attachment-6.webp",
-        "/img/hair/attachments/muuhu-attachment-7.webp",
+      items: [
+        {
+          image: "/img/hair/attachments/muuhu-attachment-1.webp",
+          label: "Diffuser",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-2.webp",
+          label: "Concentrator",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-3.webp",
+          label: "Round Brush",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-4.webp",
+          label: "Left Curler",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-5.webp",
+          label: "Right Curler",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-6.webp",
+          label: "Smoothing Brush",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-attachment-7.webp",
+          label: "Paddle Brush",
+        },
+      ],
+      freeLabel: "2 Free Attachments (using promo code: xyz)",
+      freeItems: [
+        {
+          image: "/img/hair/attachments/muuhu-extra-attachment-1.webp",
+          label: "Bonus Comb",
+        },
+        {
+          image: "/img/hair/attachments/muuhu-extra-attachment-2.webp",
+          label: "Bonus Nozzle",
+        },
       ],
     },
     metrics: [
@@ -663,12 +728,27 @@ const bestHairDryerProducts: Product[] = [
     ...bestHairDryerProductContent.dysonSupersonic,
     attachments: {
       includedCount: 5,
-      images: [
-        "/img/hair/attachments/dyson-attachment-1.jpg",
-        "/img/hair/attachments/dyson-attachment-2.jpg",
-        "/img/hair/attachments/dyson-attachment-3.jpg",
-        "/img/hair/attachments/dyson-attachment-4.jpg",
-        "/img/hair/attachments/dyson-attachment-5.jpg",
+      items: [
+        {
+          image: "/img/hair/attachments/dyson-attachment-1.jpg",
+          label: "Flyaway",
+        },
+        {
+          image: "/img/hair/attachments/dyson-attachment-2.jpg",
+          label: "Gentle Air",
+        },
+        {
+          image: "/img/hair/attachments/dyson-attachment-3.jpg",
+          label: "Diffuser",
+        },
+        {
+          image: "/img/hair/attachments/dyson-attachment-4.jpg",
+          label: "Wide-Tooth Comb",
+        },
+        {
+          image: "/img/hair/attachments/dyson-attachment-5.jpg",
+          label: "Concentrator",
+        },
       ],
     },
     metrics: [
@@ -691,10 +771,19 @@ const bestHairDryerProducts: Product[] = [
     ...bestHairDryerProductContent.cloudNineAirshotPro,
     attachments: {
       includedCount: 3,
-      images: [
-        "/img/hair/attachments/cloudnine-attachment-1.webp",
-        "/img/hair/attachments/cloudnine-attachment-2.webp",
-        "/img/hair/attachments/cloudnine-attachment-3.webp",
+      items: [
+        {
+          image: "/img/hair/attachments/cloudnine-attachment-1.webp",
+          label: "Diffuser",
+        },
+        {
+          image: "/img/hair/attachments/cloudnine-attachment-2.webp",
+          label: "Precision Nozzle",
+        },
+        {
+          image: "/img/hair/attachments/cloudnine-attachment-3.webp",
+          label: "Wide Nozzle",
+        },
       ],
     },
     metrics: [
@@ -718,11 +807,23 @@ const bestHairDryerProducts: Product[] = [
     ...bestHairDryerProductContent.sharkSpeedStyleProFlex,
     attachments: {
       includedCount: 4,
-      images: [
-        "/img/hair/attachments/shark-attachment-1.webp",
-        "/img/hair/attachments/shark-attachment-2.webp",
-        "/img/hair/attachments/shark-attachment-3.webp",
-        "/img/hair/attachments/shark-attachment-4.webp",
+      items: [
+        {
+          image: "/img/hair/attachments/shark-attachment-1.webp",
+          label: "QuickSmooth Brush",
+        },
+        {
+          image: "/img/hair/attachments/shark-attachment-2.webp",
+          label: "Diffuser",
+        },
+        {
+          image: "/img/hair/attachments/shark-attachment-3.webp",
+          label: "Smoothing Brush",
+        },
+        {
+          image: "/img/hair/attachments/shark-attachment-4.webp",
+          label: "Concentrator",
+        },
       ],
     },
     metrics: [
@@ -745,7 +846,12 @@ const bestHairDryerProducts: Product[] = [
     ...bestHairDryerProductContent.ghdHelios,
     attachments: {
       includedCount: 1,
-      images: ["/img/hair/attachments/ghd-attachment-1.webp"],
+      items: [
+        {
+          image: "/img/hair/attachments/ghd-attachment-1.webp",
+          label: "Concentrator",
+        },
+      ],
     },
     metrics: [
       { label: "Drying Speed", value: 90 },
