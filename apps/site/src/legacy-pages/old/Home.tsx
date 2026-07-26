@@ -32,7 +32,7 @@ function hairCardsForGroup(groupTitle: string, guides: HairGuideSlug[]) {
       href: '/best-hair-dryer-uk-2026',
       code: 'TOP 5',
       title: 'Best Hair Dryer UK 2026',
-      description: "Compare Muuhu, Dyson, Shark, ghd and L'Oreal for speed, styling range, heat control and value.",
+      description: "Compare Muuhu, Dyson Supersonic Nural, Cloud Nine, Shark SpeedStyle Pro and ghd for drying speed, heat protection, attachments and value.",
       image: hairImages.topFive
     },
     ...cards

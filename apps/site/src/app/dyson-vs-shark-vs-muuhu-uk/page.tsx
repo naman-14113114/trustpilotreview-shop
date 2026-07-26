@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
 import HairDryerAdvertorial from "@/legacy-pages/HairDryerAdvertorial";
 import { getUkPageContext } from "@/lib/page-context";
-import { metadataForPath } from "@/lib/metadata";
+import { getHairGuide, hairGuideMetadata } from "@/data/hairGuides";
 
-export const metadata: Metadata = metadataForPath("/dyson-vs-shark-vs-muuhu-uk");
+const slug = "dyson-vs-shark-vs-muuhu-uk";
+const guide = getHairGuide(slug);
+
+export const metadata = hairGuideMetadata(slug);
 
 export default function Page() {
   return (
     <HairDryerAdvertorial
       market="uk"
-      mode="three-way"
       context={getUkPageContext()}
+      guide={guide}
     />
   );
 }

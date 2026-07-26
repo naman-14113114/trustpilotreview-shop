@@ -10,10 +10,10 @@ export type HairGuideSlug =
   | "best-hair-dryer-frizzy-hair-uk-2026"
   | "best-hair-dryer-straight-hair-uk-2026"
   | "best-hair-dryer-damaged-hair-uk-2026"
-  | "best-dyson-airwrap-alternative-uk-2026"
-  | "best-shark-flexstyle-alternative-uk-2026"
-  | "muuhu-vs-dyson-airwrap-uk"
-  | "muuhu-vs-shark-flexstyle-uk"
+  | "best-dyson-supersonic-nural-alternative-uk-2026"
+  | "best-shark-speedstyle-pro-alternative-uk-2026"
+  | "muuhu-vs-dyson-supersonic-nural-uk"
+  | "muuhu-vs-shark-speedstyle-pro-uk"
   | "muuhu-vs-ghd-helios-uk"
   | "dyson-vs-shark-vs-muuhu-uk";
 
@@ -70,12 +70,13 @@ export type HairGuide = {
 };
 
 const images = {
-  muuhu: "/img/hair/muuhu_product_1x1.webp",
-  dyson: "/img/hair/dyson.webp",
-  shark: "/img/hair/shark.png",
+  muuhu: "/img/hair/muuhu-product-1a.webp",
+  dyson: "/img/hair/dyson_hairdryer_new.webp",
+  shark: "/img/hair/shark_hairdryer.webp",
+  cloudNine: "/img/hair/cloudenine.webp",
   ghd: "/img/hair/ghd.jpg",
   loreal: "/img/hair/loreal_new.webp",
-  topFive: "/img/hair/top5-uk.webp",
+  topFive: "/img/hair/top-5-hair-dryer.png",
   vsDyson: "/img/hair/vs-dyson.webp",
   vsShark: "/img/hair/vs-shark.webp",
   vsGhd: "/img/hair/vs-ghd.webp",
@@ -980,38 +981,39 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
     ],
   },
-  "best-dyson-airwrap-alternative-uk-2026": {
-    slug: "best-dyson-airwrap-alternative-uk-2026",
+  "best-dyson-supersonic-nural-alternative-uk-2026": {
+    slug: "best-dyson-supersonic-nural-alternative-uk-2026",
     group: "Brand Comparisons",
     cardCode: "DYSON ALT",
-    cardTitle: "Best Dyson Airwrap Alternative",
+    cardTitle: "Best Dyson Supersonic Nural Alternative",
     cardDescription:
-      "A value-led alternative page for shoppers who like Airwrap results but not the price.",
-    seoTitle: "Best Dyson Airwrap Alternative UK 2026",
+      "Compare Muuhu with Dyson Supersonic Nural, Shark, Cloud Nine and ghd for premium drying performance at a lower price.",
+    seoTitle: "Best Dyson Supersonic Nural Alternative UK 2026",
     seoDescription:
-      "Compare the best Dyson Airwrap alternatives in the UK, including Muuhu, Shark and ghd for price, attachments and styling value.",
+      "Compare the best Dyson Supersonic Nural alternatives in the UK for drying speed, heat protection, attachments, price and overall value.",
     eyebrow: "Dyson alternative guide",
-    headline: "Best Dyson Airwrap Alternative UK 2026",
+    headline: "Best Dyson Supersonic Nural Alternative UK 2026",
     subheadline:
-      "If you want Coanda-style curls, smoothing and blow-dry versatility without Dyson pricing, Muuhu is the strongest value alternative.",
+      "If you want fast controlled drying, heat protection and a polished finish without Dyson pricing, Muuhu is the strongest overall-value alternative.",
     heroImage: images.vsDyson,
-    heroAlt: "Muuhu compared with Dyson Airwrap",
+    heroAlt: "Muuhu compared with Dyson Supersonic Nural",
     quickTake:
-      "Dyson is still the prestige pick. Muuhu is the smarter value pick for buyers who want the main styling jobs covered at a much lower price.",
+      "Dyson Supersonic Nural is the premium benchmark for sensor-led drying. Muuhu is the smarter value pick for buyers who want fast drying plus a wider attachment routine at a much lower price.",
     intro: [
-      "The Dyson Airwrap built the category, so it deserves respect. But many UK shoppers are now asking a more practical question: what gets close to the routine without the premium price?",
-      "Muuhu ranks first as a Dyson alternative because it includes Coanda-style curlers, brushes, diffuser, concentrator, ionic care and intelligent heat control for £149.",
+      "The Dyson Supersonic Nural is a refined premium dryer with intelligent heat management, five magnetic attachments and excellent brand support. Its genuine strength is a controlled dryer-first experience rather than a full styling kit.",
+      "Muuhu ranks first as the overall alternative because it combines a 110,000 RPM motor, intelligent heat control, seven attachments, ionic care, a 2-year warranty and a 90-day guarantee for £149.",
     ],
     criteria: [
-      "Coanda-style curling capability",
+      "Fast controlled drying",
+      "Heat protection and sensor technology",
       "Attachment completeness",
-      "Drying and smoothing versatility",
+      "Smoothing and diffuser versatility",
       "Price compared with Dyson",
       "Warranty and return confidence",
     ],
     winnerBullets: [
-      "Muuhu gives the key Airwrap-style jobs: curl, wave, smooth, volumise and dry.",
-      "The price gap is the psychological unlock: £149 versus Dyson's typical £399.99 pricing.",
+      "Muuhu covers drying, smoothing, volume, diffusing and curl finishing in one seven-attachment kit.",
+      "The price gap is substantial: £149 versus the Dyson Supersonic Nural at £299.99.",
       "The 90-day guarantee makes the alternative easier to try.",
     ],
     comparisonRows: [
@@ -1096,38 +1098,39 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
     ],
   },
-  "best-shark-flexstyle-alternative-uk-2026": {
-    slug: "best-shark-flexstyle-alternative-uk-2026",
+  "best-shark-speedstyle-pro-alternative-uk-2026": {
+    slug: "best-shark-speedstyle-pro-alternative-uk-2026",
     group: "Brand Comparisons",
     cardCode: "SHARK ALT",
-    cardTitle: "Best Shark FlexStyle Alternative",
+    cardTitle: "Best Shark SpeedStyle Pro Alternative",
     cardDescription:
-      "A Shark alternative page focused on attachment count, value and complete styling.",
-    seoTitle: "Best Shark FlexStyle Alternative UK 2026",
+      "Compare Muuhu with Shark SpeedStyle Pro, Dyson, Cloud Nine and ghd for drying, attachments, heat care and value.",
+    seoTitle: "Best Shark SpeedStyle Pro Alternative UK 2026",
     seoDescription:
-      "Compare the best Shark FlexStyle alternatives in the UK, including Muuhu for attachment range, price and styling value.",
+      "Compare the best Shark SpeedStyle Pro alternatives in the UK for drying speed, attachments, heat care, price and overall value.",
     eyebrow: "Shark alternative guide",
-    headline: "Best Shark FlexStyle Alternative UK 2026",
+    headline: "Best Shark SpeedStyle Pro Alternative UK 2026",
     subheadline:
-      "Shark FlexStyle is strong, but Muuhu is the sharper value pick if you want a complete 7-in-1 styling kit for less.",
+      "Shark SpeedStyle Pro is a strong compact dryer, but Muuhu is the sharper overall-value pick if you want a wider 7-in-1 routine for less.",
     heroImage: images.vsShark,
-    heroAlt: "Muuhu compared with Shark FlexStyle",
+    heroAlt: "Muuhu compared with Shark SpeedStyle Pro",
     quickTake:
-      "Shark is a good mid-premium tool. Muuhu wins when the buyer compares price, attachment completeness and guarantee side by side.",
+      "Shark SpeedStyle Pro is a good compact dryer with four useful attachments. Muuhu wins when the buyer compares price, total routine coverage and guarantee side by side.",
     intro: [
-      "Shark FlexStyle is one of the most searched Airwrap alternatives in the UK, which means buyers already understand the multi-styler idea.",
-      "Muuhu ranks first as the Shark alternative because it keeps the same multi-use promise while pushing harder on included attachments and £149 pricing.",
+      "Shark SpeedStyle Pro is a practical dryer with high-velocity airflow, a folding handle, scalp-comfort mode and four attachments for smoothing, diffusing and focused drying.",
+      "Muuhu ranks first as the overall alternative because it adds brush styling and auto-wrap curl finishing to the dryer routine while keeping the current price at £149.",
     ],
     criteria: [
       "Attachment count and clarity",
-      "Dryer-to-styler versatility",
+      "Fast dryer performance",
+      "Heat and scalp protection",
       "Price against Shark bundles",
-      "Curling and smoothing coverage",
+      "Diffusing and smoothing coverage",
       "Warranty and trial confidence",
     ],
     winnerBullets: [
-      "Muuhu's seven-piece system is easy to understand from the first screen.",
-      "It usually undercuts Shark while still covering curls, waves, smoothing, volume and diffusing.",
+      "Muuhu's seven-attachment system is easy to understand from the first screen.",
+      "It undercuts Shark while covering drying, smoothing, volume, diffusing and curl finishing.",
       "The guarantee and warranty help close the trust gap against a bigger household name.",
     ],
     comparisonRows: [
@@ -1212,39 +1215,40 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
     ],
   },
-  "muuhu-vs-dyson-airwrap-uk": {
-    slug: "muuhu-vs-dyson-airwrap-uk",
+  "muuhu-vs-dyson-supersonic-nural-uk": {
+    slug: "muuhu-vs-dyson-supersonic-nural-uk",
     group: "Brand Comparisons",
     cardCode: "VS DYSON",
-    cardTitle: "Muuhu vs Dyson Airwrap",
+    cardTitle: "Muuhu vs Dyson Supersonic Nural",
     cardDescription:
-      "Direct two-product comparison for price, attachments, curls and buyer fit.",
-    seoTitle: "Muuhu vs Dyson Airwrap UK",
+      "Direct two-product comparison for drying speed, heat protection, attachments, price and buyer fit.",
+    seoTitle: "Muuhu vs Dyson Supersonic Nural UK",
     seoDescription:
-      "Compare Muuhu vs Dyson Airwrap in the UK for price, attachments, Coanda-style curling, warranty and value.",
+      "Compare Muuhu vs Dyson Supersonic Nural in the UK for drying speed, heat protection, attachments, warranty and value.",
     eyebrow: "Direct comparison",
-    headline: "Muuhu vs Dyson Airwrap UK",
+    headline: "Muuhu vs Dyson Supersonic Nural UK",
     subheadline:
-      "Dyson is the prestige pick. Muuhu is the value pick. Here is the comparison UK shoppers should see before paying premium pricing.",
+      "Dyson is the premium dryer benchmark. Muuhu is the wider-routine value pick. Here is the balanced comparison UK shoppers should see before paying premium pricing.",
     heroImage: images.vsDyson,
-    heroAlt: "Muuhu and Dyson Airwrap side by side",
+    heroAlt: "Muuhu and Dyson Supersonic Nural side by side",
     quickTake:
-      "The choice is not complicated: Dyson wins on brand prestige, while Muuhu wins on price-to-kit value.",
+      "Dyson wins on sensor-led refinement and brand prestige, while Muuhu wins on price, attachment range and money-back reassurance.",
     intro: [
-      "This page is for shoppers already deciding between Muuhu and Dyson Airwrap. The right answer depends on whether the buyer values brand prestige or practical value more.",
-      "Our verdict: Muuhu is the better first purchase for most value-conscious UK buyers because it gives a complete styling system at £149.",
+      "This page is for shoppers already deciding between Muuhu and Dyson Supersonic Nural. Dyson is a refined dryer-first system with five magnetic attachments and strong sensor technology.",
+      "Our verdict: Muuhu is the better first purchase for most value-conscious UK buyers because it gives fast controlled drying plus a complete seven-attachment styling system at £149.",
     ],
     criteria: [
       "Price difference",
       "Included attachment range",
-      "Curling and smoothing coverage",
+      "Heat protection and smoothing control",
+      "Diffuser and concentrated airflow",
       "Buyer confidence and returns",
       "Who each product is actually for",
     ],
     winnerBullets: [
       "Muuhu gives the better price-to-feature story.",
-      "Dyson gives the better brand prestige story.",
-      "For paid traffic, Muuhu should be framed as the smarter value decision, not as a Dyson clone.",
+      "Dyson gives the stronger premium dryer and sensor-technology story.",
+      "Muuhu should be framed as the broader value decision, not as a Dyson copy.",
     ],
     comparisonRows: [
       {
@@ -1323,38 +1327,39 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
     ],
   },
-  "muuhu-vs-shark-flexstyle-uk": {
-    slug: "muuhu-vs-shark-flexstyle-uk",
+  "muuhu-vs-shark-speedstyle-pro-uk": {
+    slug: "muuhu-vs-shark-speedstyle-pro-uk",
     group: "Brand Comparisons",
     cardCode: "VS SHARK",
-    cardTitle: "Muuhu vs Shark FlexStyle",
+    cardTitle: "Muuhu vs Shark SpeedStyle Pro",
     cardDescription:
-      "Direct Shark comparison with value, attachments and buyer confidence.",
-    seoTitle: "Muuhu vs Shark FlexStyle UK",
+      "Direct Shark comparison covering drying speed, heat care, attachments, value and buyer confidence.",
+    seoTitle: "Muuhu vs Shark SpeedStyle Pro UK",
     seoDescription:
-      "Compare Muuhu vs Shark FlexStyle in the UK for price, attachments, styling range and overall value.",
+      "Compare Muuhu vs Shark SpeedStyle Pro in the UK for drying speed, heat care, attachments, price and overall value.",
     eyebrow: "Direct comparison",
-    headline: "Muuhu vs Shark FlexStyle UK",
+    headline: "Muuhu vs Shark SpeedStyle Pro UK",
     subheadline:
-      "Shark is familiar and capable. Muuhu is the better value play when shoppers compare the full kit and current UK price.",
+      "Shark is compact, familiar and capable. Muuhu is the stronger overall-value choice when shoppers compare the full routine and current UK price.",
     heroImage: images.vsShark,
-    heroAlt: "Muuhu and Shark FlexStyle side by side",
+    heroAlt: "Muuhu and Shark SpeedStyle Pro side by side",
     quickTake:
-      "Shark has the brand familiarity advantage. Muuhu has the sharper price, clearer kit story and stronger direct-response offer.",
+      "Shark has the brand familiarity and compact-folding advantage. Muuhu has the sharper price, wider styling kit and longer money-back reassurance.",
     intro: [
-      "Muuhu and Shark are closer psychologically than Muuhu and Dyson: both appeal to shoppers who want multi-styling without paying top Dyson pricing.",
-      "The deciding factors are price, exact attachments and trust. Muuhu wins this comparison by making the complete kit and £149 offer easier to understand.",
+      "Muuhu and Shark both appeal to shoppers who want quick drying, smoothing and diffuser support without paying Dyson pricing. Shark adds a folding handle and scalp-comfort mode in a practical dryer-first package.",
+      "The deciding factors are price, exact attachments and routine coverage. Muuhu wins this comparison by adding brushes and curl finishing to the complete £149 kit.",
     ],
     criteria: [
       "Price versus included kit",
-      "Multi-styling range",
-      "Curling, smoothing and diffusing",
+      "Fast drying and airflow",
+      "Heat and scalp protection",
+      "Smoothing and diffusing",
       "Brand familiarity versus guarantee",
       "Ease of buying decision",
     ],
     winnerBullets: [
-      "Muuhu is simpler to position: seven attachments, £149, 90-day guarantee.",
-      "Shark is strong, but shoppers need to check the exact bundle and discount.",
+      "Muuhu is simple to position: seven attachments, £149 and a 90-day guarantee.",
+      "Shark is strong, with four useful attachments and a compact folding design.",
       "For ad traffic, clear value often beats brand familiarity.",
     ],
     comparisonRows: [
@@ -1647,6 +1652,246 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
     ],
   },
 };
+
+type CurrentHairProductKey =
+  | "muuhu"
+  | "dyson"
+  | "cloudNine"
+  | "shark"
+  | "ghd";
+
+const currentHairProducts: Record<
+  CurrentHairProductKey,
+  Omit<HairGuideProduct, "rank">
+> = {
+  muuhu: {
+    name: "Muuhu 7-in-1 High-Speed Hair Dryer",
+    image: images.muuhu,
+    price: "£149",
+    rating: "4.9 / 5",
+    badge: "Best value overall",
+    bestFor:
+      "Buyers who want fast drying, smoothing, volume, diffusing and curl finishing in one complete kit.",
+    summary:
+      "Muuhu combines a 110,000 RPM brushless motor, intelligent heat control and ionic care with seven included attachments. At £149, the 2-year warranty, 90-day money-back guarantee and current free-gift offer make it the clearest overall-value choice.",
+    pros: [
+      "Fast high-speed drying from a 110,000 RPM brushless motor.",
+      "Seven attachments cover diffusing, concentrated drying, smoothing, volume and curl finishing.",
+      "Intelligent heat control and negative-ion care support a smoother, lower-frizz finish.",
+      "A 2-year warranty and 90-day money-back guarantee reduce first-order risk.",
+    ],
+    watchouts: [
+      "Available online rather than through high-street demonstrations.",
+      "The auto-wrap curlers can take one or two sessions to master.",
+      "The strongest value depends on the current £149 sale remaining available.",
+    ],
+    metrics: [
+      { label: "Drying Speed", value: 97 },
+      { label: "Heat Protection", value: 96 },
+      { label: "Frizz Control", value: 95 },
+      { label: "Attachment Value", value: 98 },
+      { label: "Value for Money", value: 100 },
+    ],
+    isWinner: true,
+    link: MUUHU_HAIR_URL,
+  },
+  dyson: {
+    name: "Dyson Supersonic Nural",
+    image: images.dyson,
+    price: "£299.99",
+    rating: "4.4 / 5",
+    badge: "Premium dryer benchmark",
+    bestFor:
+      "Buyers prioritising Dyson refinement, sensor-led heat management and five magnetic dryer attachments.",
+    summary:
+      "Dyson Supersonic Nural is a premium dryer-first system with fast controlled airflow, Nural sensor technology, static reduction and five magnetic attachments. Its genuine strength is refinement and brand confidence, while its £299.99 price makes overall value the main trade-off.",
+    pros: [
+      "Dyson's digital motor V9 spins at up to 110,000 RPM for fast controlled drying.",
+      "Five magnetic attachments support smoothing, diffusing and focused drying.",
+      "Nural sensor technology and no-extreme-heat positioning strengthen the heat-care story.",
+      "Dyson offers strong brand recognition and polished after-sales support.",
+    ],
+    watchouts: [
+      "At £299.99, it costs around twice the current Muuhu price.",
+      "The package remains dryer-first rather than a complete brush-and-curler routine.",
+      "The return period is shorter than Muuhu's 90-day money-back guarantee.",
+    ],
+    metrics: [
+      { label: "Drying Speed", value: 95 },
+      { label: "Heat Protection", value: 95 },
+      { label: "Frizz Control", value: 93 },
+      { label: "Attachment Value", value: 86 },
+      { label: "Value for Money", value: 64 },
+    ],
+    link: "https://amzn.to/4yH7gW5",
+  },
+  cloudNine: {
+    name: "Cloud Nine Airshot Pro",
+    image: images.cloudNine,
+    price: "£229",
+    rating: "4.5 / 5",
+    badge: "Premium salon dryer",
+    bestFor:
+      "Buyers wanting a lightweight, dryer-first tool with a diffuser and precise nozzles.",
+    summary:
+      "Cloud Nine Airshot Pro is a focused premium dryer with a lightweight feel, ionic care, mineral-infused technology and three attachments. It is strong for smooth salon-style blow-dries, but at £229 it offers a narrower routine than Muuhu.",
+    pros: [
+      "A lightweight dryer feel makes longer blow-dry sessions more comfortable.",
+      "Ionic care and mineral-infused technology support smooth dryer-first performance.",
+      "Three attachments include a diffuser and two precise-drying nozzles.",
+      "Cloud Nine has credible salon positioning for buyers who want a dedicated dryer.",
+    ],
+    watchouts: [
+      "It costs £80 more than the current Muuhu offer.",
+      "It does not include a full seven-attachment brush and curler routine.",
+      "The trial story is less flexible than Muuhu's 90-day money-back guarantee.",
+    ],
+    metrics: [
+      { label: "Drying Speed", value: 91 },
+      { label: "Heat Protection", value: 88 },
+      { label: "Frizz Control", value: 89 },
+      { label: "Attachment Value", value: 76 },
+      { label: "Value for Money", value: 72 },
+    ],
+    link: "https://amzn.to/4fmAX7o",
+  },
+  shark: {
+    name: "Shark SpeedStyle Pro",
+    image: images.shark,
+    price: "£169.99",
+    rating: "4.6 / 5",
+    badge: "Compact practical pick",
+    bestFor:
+      "Buyers wanting a compact folding dryer with scalp-comfort features and four practical attachments.",
+    summary:
+      "Shark SpeedStyle Pro is a strong compact dryer with high-velocity airflow, a folding handle, Scalp Shield Mode and four useful attachments. It offers good dryer-first value at £169.99, though it does not match Muuhu's complete seven-attachment routine.",
+    pros: [
+      "High-velocity airflow supports fast wet-to-dry styling.",
+      "Four attachments cover concentrated drying, smoothing, diffusing and finishing.",
+      "Scalp Shield Mode is useful for more comfortable root drying.",
+      "The folding handle makes storage and travel more convenient.",
+    ],
+    watchouts: [
+      "It costs more than Muuhu while offering fewer styling options overall.",
+      "It does not include left and right auto-wrap curlers.",
+      "Shark's return window is shorter than Muuhu's 90-day guarantee.",
+    ],
+    metrics: [
+      { label: "Drying Speed", value: 89 },
+      { label: "Heat Protection", value: 87 },
+      { label: "Frizz Control", value: 86 },
+      { label: "Attachment Value", value: 74 },
+      { label: "Value for Money", value: 70 },
+    ],
+    link: "https://amzn.to/4htIum3",
+  },
+  ghd: {
+    name: "ghd Helios",
+    image: images.ghd,
+    price: "£189",
+    rating: "4.5 / 5",
+    badge: "Salon dryer pick",
+    bestFor:
+      "Buyers who want a trusted salon-style dryer and already own separate brushes and styling tools.",
+    summary:
+      "ghd Helios is a respected dryer-first choice with focused airflow, a premium feel and strong salon recognition. At £189 with one concentrator attachment, it suits buyers who want simplicity rather than a complete multi-attachment system.",
+    pros: [
+      "Strong salon recognition and a loyal UK customer base.",
+      "Focused airflow supports smooth, classic blow-dry routines.",
+      "The controls and dryer-only format are straightforward to understand.",
+      "A good fit for buyers who already own separate brushes and styling tools.",
+    ],
+    watchouts: [
+      "Only one concentrator attachment is included.",
+      "It costs more than Muuhu while covering fewer daily styling needs.",
+      "It does not include a diffuser, brush heads, curlers or the Muuhu gift bundle.",
+    ],
+    metrics: [
+      { label: "Drying Speed", value: 90 },
+      { label: "Heat Protection", value: 82 },
+      { label: "Frizz Control", value: 82 },
+      { label: "Attachment Value", value: 55 },
+      { label: "Value for Money", value: 60 },
+    ],
+    link: "https://amzn.to/4xmMeuD",
+  },
+};
+
+const guideProductOrder: Record<HairGuideSlug, CurrentHairProductKey[]> = {
+  "best-hair-dryer-curly-hair-uk-2026": [
+    "muuhu",
+    "shark",
+    "dyson",
+    "cloudNine",
+    "ghd",
+  ],
+  "best-hair-dryer-fine-hair-uk-2026": [
+    "muuhu",
+    "dyson",
+    "cloudNine",
+    "shark",
+    "ghd",
+  ],
+  "best-hair-dryer-thick-hair-uk-2026": [
+    "muuhu",
+    "dyson",
+    "shark",
+    "cloudNine",
+    "ghd",
+  ],
+  "best-hair-dryer-frizzy-hair-uk-2026": [
+    "muuhu",
+    "dyson",
+    "cloudNine",
+    "shark",
+    "ghd",
+  ],
+  "best-hair-dryer-straight-hair-uk-2026": [
+    "muuhu",
+    "ghd",
+    "dyson",
+    "cloudNine",
+    "shark",
+  ],
+  "best-hair-dryer-damaged-hair-uk-2026": [
+    "muuhu",
+    "dyson",
+    "shark",
+    "cloudNine",
+    "ghd",
+  ],
+  "best-dyson-supersonic-nural-alternative-uk-2026": [
+    "muuhu",
+    "dyson",
+    "shark",
+    "cloudNine",
+    "ghd",
+  ],
+  "best-shark-speedstyle-pro-alternative-uk-2026": [
+    "muuhu",
+    "shark",
+    "dyson",
+    "cloudNine",
+    "ghd",
+  ],
+  "muuhu-vs-dyson-supersonic-nural-uk": ["muuhu", "dyson"],
+  "muuhu-vs-shark-speedstyle-pro-uk": ["muuhu", "shark"],
+  "muuhu-vs-ghd-helios-uk": ["muuhu", "ghd"],
+  "dyson-vs-shark-vs-muuhu-uk": ["muuhu", "shark", "dyson"],
+};
+
+for (const slug of Object.keys(guideProductOrder) as HairGuideSlug[]) {
+  hairGuides[slug].products = guideProductOrder[slug].map((productKey, index) => {
+    const product = currentHairProducts[productKey];
+    return {
+      ...product,
+      rank: index + 1,
+      pros: [...product.pros],
+      watchouts: [...product.watchouts],
+      metrics: product.metrics.map((metric) => ({ ...metric })),
+    };
+  });
+}
 
 export const hairGuideSlugs = Object.keys(hairGuides) as HairGuideSlug[];
 

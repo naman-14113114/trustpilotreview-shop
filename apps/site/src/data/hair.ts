@@ -12,12 +12,11 @@ export const MUUHU_COMB_URL = "https://uk.muuhu.com/products/muuhu-comb";
 export const MUUHU_EBOOK_URL = "https://uk.muuhu.com/pages/haircare-ebook";
 
 export const hairImages = {
-  muuhu: "/img/hair/muuhu_product_1x1.webp",
-  dyson: "/img/hair/dyson.webp",
-  shark: "/img/hair/shark.png",
+  muuhu: "/img/hair/muuhu-product-1a.webp",
+  dyson: "/img/hair/dyson_hairdryer_new.webp",
+  shark: "/img/hair/shark_hairdryer.webp",
   ghd: "/img/hair/ghd.jpg",
-  loreal: "/img/hair/loreal_new.webp",
-  topFive: "/img/hair/top5-uk.webp",
+  topFive: "/img/hair/top-5-hair-dryer.png",
   vsDyson: "/img/hair/vs-dyson.webp",
   vsShark: "/img/hair/vs-shark.webp",
   vsGhd: "/img/hair/vs-ghd.webp",
@@ -175,7 +174,7 @@ export const hairGuideCards: GuideCard[] = [
   {
     title: "Best Hair Dryer UK 2026",
     description:
-      "Compare Muuhu, Dyson, Shark, ghd and L'Oreal for speed, styling range, heat control and value.",
+      "Compare Muuhu, Dyson Supersonic Nural, Cloud Nine, Shark SpeedStyle Pro and ghd for drying speed, heat protection, attachments and value.",
     href: "/best-hair-dryer-uk-2026",
     code: "TOP 5",
     group: "Hair Type Guides",

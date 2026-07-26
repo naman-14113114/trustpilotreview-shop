@@ -30,6 +30,26 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/best-dyson-airwrap-alternative-uk-2026",
+        destination: "/best-dyson-supersonic-nural-alternative-uk-2026",
+        permanent: true
+      },
+      {
+        source: "/best-shark-flexstyle-alternative-uk-2026",
+        destination: "/best-shark-speedstyle-pro-alternative-uk-2026",
+        permanent: true
+      },
+      {
+        source: "/muuhu-vs-dyson-airwrap-uk",
+        destination: "/muuhu-vs-dyson-supersonic-nural-uk",
+        permanent: true
+      },
+      {
+        source: "/muuhu-vs-shark-flexstyle-uk",
+        destination: "/muuhu-vs-shark-speedstyle-pro-uk",
+        permanent: true
+      },
       { source: "/new", destination: redirectToAdvertorial, permanent: true },
       { source: "/best-led-face-mask-in-uk", destination: redirectToAdvertorial, permanent: true },
       { source: "/best-red-light-therapy-mask", destination: redirectToAdvertorial, permanent: true },
