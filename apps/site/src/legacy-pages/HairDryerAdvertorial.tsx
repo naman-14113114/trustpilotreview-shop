@@ -657,7 +657,7 @@ const bestHairDryerProducts: Product[] = [
     id: 1,
     rank: "",
     name: "Muuhu 7-in-1 High-Speed Hair Dryer",
-    image: "/img/hair/muuhu_product_1x1.webp",
+    image: "/img/hair/muuhu-product-1a.webp",
     price: "£149",
     originalPrice: "£299",
     rating: "4.9 / 5",
