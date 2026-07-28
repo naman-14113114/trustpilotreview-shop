@@ -97,7 +97,7 @@
       "<div class='muuhu-exit-content'>",
       "<div class='muuhu-exit-kicker'>Before you go</div>",
       "<h2 class='muuhu-exit-title' id='muuhu-exit-title'>The #1 hair dryer pick is still 50% off.</h2>",
-      "<p class='muuhu-exit-copy'>If you were comparing hair dryers, do not leave without checking the Muuhu 7-in-1 High-Speed Hair Dryer & Styler. It covers fast drying, smoothing, diffuser drying, volume and curl finishing in one kit.</p>",
+      "<p class='muuhu-exit-copy'>If you were comparing hair dryers, do not leave without checking the Muuhu 7-in-1 High-Speed Hair Dryer & Styler. Its 1,400W motor, 3 temperature settings and 3 speed settings cover fast drying, smoothing, diffuser drying, volume and curl finishing in one kit.</p>",
       "<div class='muuhu-exit-offer'><div><span>Today on Muuhu</span><strong>£149 instead of £299</strong></div><span>Last check</span></div>",
       "<div class='muuhu-exit-actions'>",
       "<a class='muuhu-exit-cta' href='" + CTA_URL + "' data-outbound-button='true'>Claim 50% Off</a>",

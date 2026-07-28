@@ -323,12 +323,12 @@ const baseProducts: Product[] = [
     link: "#",
     isWinner: true,
     description: [
-      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer, a salon-grade device that outperforms far more expensive rivals with a 110,000 RPM brushless motor and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
+      "Our top pick is the Muuhu 7-in-1 High-Speed Hair Dryer, a salon-grade device with a 1,400W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
       "A major advantage is the complete styling system: a dedicated L-shaped base, left and right auto-wrap Coanda curlers, a smoothing brush, a round volumising brush, a concentrator nozzle, and a diffuser. Intelligent heat control and negative-ion technology dry hair fast while helping protect against heat damage, all from a UK 3-pin 220-240V plug.",
       "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £149, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 2-year warranty, and a 90-day money-back guarantee.",
     ],
     pros: [
-      "Class-Leading Motor: 110,000 RPM brushless motor for fast, high-airflow drying that rivals devices costing three times as much.",
+      "Controlled High-Speed Motor: 1,400W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for fast, adjustable drying.",
       "Complete 7-in-1 System: Seven attachments including two Coanda auto-wrap curlers, smoothing brush, round volumising brush, concentrator and diffuser, so one tool replaces a whole styling kit.",
       "Coanda Auto-Wrap: Left and right auto-wrap curlers draw hair in for salon-style curls and waves with no manual winding.",
       "Ionic + Intelligent Heat Control: Negative ions help reduce frizz while smart heat regulation helps protect hair from extreme heat damage.",
@@ -1276,7 +1276,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-        ? "/img/hair/top-5-hair-dryer.png"
+        ? "/img/hair/top-5-hair-dryer.webp"
         : market.key === "ca"
           ? "/img/hair/top5-uk.webp"
           : "/img/hair/top5-uk.webp";

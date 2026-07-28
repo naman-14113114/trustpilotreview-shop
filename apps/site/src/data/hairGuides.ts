@@ -76,7 +76,7 @@ const images = {
   cloudNine: "/img/hair/cloudenine.webp",
   ghd: "/img/hair/ghd.jpg",
   loreal: "/img/hair/loreal_new.webp",
-  topFive: "/img/hair/top-5-hair-dryer.png",
+  topFive: "/img/hair/top-5-hair-dryer.webp",
   vsDyson: "/img/hair/vs-dyson.webp",
   vsShark: "/img/hair/vs-shark.webp",
   vsGhd: "/img/hair/vs-ghd.webp",
@@ -139,6 +139,7 @@ function muuhuProduct(
     summary,
     pros: [
       ...pros,
+      "Uses 1,400W power with 3 temperature settings and 3 speed settings for controlled drying and styling.",
       "Includes seven attachments, including two Coanda-style auto-wrap curlers, a diffuser, smoothing brush, round brush and concentrator.",
       "Backed by a 2-year warranty and 90-day money-back guarantee, which lowers the risk for first-time buyers.",
     ],
@@ -1673,9 +1674,9 @@ const currentHairProducts: Record<
     bestFor:
       "Buyers who want fast drying, smoothing, volume, diffusing and curl finishing in one complete kit.",
     summary:
-      "Muuhu combines a 110,000 RPM brushless motor, intelligent heat control and ionic care with seven included attachments. At £149, the 2-year warranty, 90-day money-back guarantee and current free-gift offer make it the clearest overall-value choice.",
+      "Muuhu combines a 1,400W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings, intelligent heat control and ionic care with seven included attachments. At £149, the 2-year warranty, 90-day money-back guarantee and current free-gift offer make it the clearest overall-value choice.",
     pros: [
-      "Fast high-speed drying from a 110,000 RPM brushless motor.",
+      "Controlled high-speed drying from a 1,400W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings.",
       "Seven attachments cover diffusing, concentrated drying, smoothing, volume and curl finishing.",
       "Intelligent heat control and negative-ion care support a smoother, lower-frizz finish.",
       "A 2-year warranty and 90-day money-back guarantee reduce first-order risk.",

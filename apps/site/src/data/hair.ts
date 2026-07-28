@@ -16,7 +16,7 @@ export const hairImages = {
   dyson: "/img/hair/dyson_hairdryer_new.webp",
   shark: "/img/hair/shark_hairdryer.webp",
   ghd: "/img/hair/ghd.jpg",
-  topFive: "/img/hair/top-5-hair-dryer.png",
+  topFive: "/img/hair/top-5-hair-dryer.webp",
   vsDyson: "/img/hair/vs-dyson.webp",
   vsShark: "/img/hair/vs-shark.webp",
   vsGhd: "/img/hair/vs-ghd.webp",
@@ -54,7 +54,7 @@ export const muuhuHairProduct: RankedProduct = {
   badge: "Best value overall",
   bestFor: "Most UK shoppers comparing Dyson and Shark before buying.",
   summary:
-    "Muuhu is ranked No. 1 because it gives the clearest buying argument for UK shoppers: a 110,000 RPM high-speed motor, ionic care, intelligent heat control, seven attachments, two Coanda-style auto-wrap curlers, diffuser, smoothing brush, round brush, concentrator, 2-year warranty, 90-day guarantee and official free gifts at £149.",
+    "Muuhu is ranked No. 1 because it gives the clearest buying argument for UK shoppers: a 110,000 RPM high-speed motor, 1,400W power, 3 temperature settings, 3 speed settings, ionic care, intelligent heat control, seven attachments, two Coanda-style auto-wrap curlers, diffuser, smoothing brush, round brush, concentrator, 2-year warranty, 90-day guarantee and official free gifts at £149.",
   description: [
     "Muuhu is the strongest value choice in this three-way comparison because it covers the routine most buyers want in one box: fast drying, smoothing, volume, curls, waves, diffusing and concentrated blow-drying.",
     "The offer is also easy to understand from a paid-search landing page: £149, seven attachments, two Coanda-style curlers, a 2-year warranty, a 90-day money-back guarantee and the current Muuhu free-gift bundle.",
@@ -63,7 +63,7 @@ export const muuhuHairProduct: RankedProduct = {
   pros: [
     "Complete 7-in-1 system with drying, smoothing, round-brush volume, diffuser support, concentrator styling and Coanda-style curlers.",
     "Best price-to-kit ratio at £149 compared with higher-priced premium rivals.",
-    "110,000 RPM brushless motor gives a strong drying-speed story for thick, long and everyday hair routines.",
+    "1,400W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for controlled daily drying.",
     "Intelligent heat control and ionic care support a safer, smoother styling message.",
     "2-year warranty, 90-day guarantee and official free gifts reduce purchase hesitation.",
   ],

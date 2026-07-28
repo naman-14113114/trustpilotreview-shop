@@ -14,9 +14,11 @@ export const bestHairDryerProductContent = {
           For hair safety, both Dyson and Muuhu are strong choices, with
           controlled heat and smooth styling as their main strengths. Muuhu
           takes our #1 spot because it gives a similar premium drying experience
-          with a <strong>110,000 RPM</strong> brushless motor, while also
-          including more useful attachments like a diffuser, concentrator,
-          smoothing brush and round volumising brush at a much lower price.
+          with a <strong>1,400W, 110,000 RPM</strong> brushless motor and{" "}
+          <strong>3 temperature settings plus 3 speed settings</strong>, while
+          also including more useful attachments like a diffuser,
+          concentrator, smoothing brush and round volumising brush at a much
+          lower price.
         </p>
         <p className="text-slate-600 leading-relaxed">
           The biggest advantage is that Muuhu is not just a fast dryer. It also
@@ -41,9 +43,9 @@ export const bestHairDryerProductContent = {
     prosContent: (
       <>
         <li>
-          <strong>Fast High-Speed Drying:</strong> 110,000 RPM brushless motor
-          gives strong airflow for quick daily blow-dries without needing
-          premium-brand pricing.
+          <strong>Fast, Controlled Drying:</strong> The 1,400W, 110,000 RPM
+          brushless motor pairs 3 temperature settings with 3 speed settings
+          for quick daily blow-dries without premium-brand pricing.
         </li>
         <li>
           <strong>Complete Dryer Routine:</strong> Includes diffuser,
