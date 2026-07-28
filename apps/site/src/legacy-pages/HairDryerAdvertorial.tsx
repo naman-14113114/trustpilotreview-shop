@@ -1259,7 +1259,9 @@ export default function HairDryerAdvertorial({
     ? guideHeadlineTitle(guide)
     : isThreeWay
       ? "Dyson vs Shark vs Muuhu"
-      : "Best Hair Dryer";
+      : market.key === "uk"
+        ? "Top 5 Hair Dryers"
+        : "Best Hair Dryer";
   const heroAlt =
     guide?.heroAlt ??
     (isThreeWay
