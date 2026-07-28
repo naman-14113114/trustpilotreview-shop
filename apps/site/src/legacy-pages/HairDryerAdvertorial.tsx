@@ -1301,7 +1301,7 @@ export default function HairDryerAdvertorial({
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
             <span className="block">{headlineTitle}</span>
-            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
+            <span className="mt-2 flex items-center justify-center gap-2 font-sans text-base font-semibold leading-tight sm:text-lg md:mt-3 md:gap-2.5 md:text-xl lg:text-2xl">
               <MarketFlag market={market.flagKey} />
               <span>{market.headingCountry} - 2026</span>
             </span>
