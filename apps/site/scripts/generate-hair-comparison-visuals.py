@@ -159,7 +159,7 @@ def render_two_product(
     caption_font = font(SANS_BOLD, 20)
     draw_wrapped_centered_text(
         draw,
-        "Muuhu 7-in-1 High-Speed Hair Dryer",
+        "Muuhu AirPro",
         338,
         712,
         360,
@@ -221,7 +221,7 @@ def render_three_product() -> None:
             "rank": 1,
             "colour": EMERALD,
             "image": "muuhu-product-1a.webp",
-            "name": "Muuhu 7-in-1 High-Speed Hair Dryer",
+            "name": "Muuhu AirPro",
             "price": "£149",
             "caption": "Best value",
             "caption_colour": EMERALD,

@@ -33,7 +33,7 @@ export const bestHairDryerProductContent = {
           Trusted by <strong>over 16,000 customers</strong> with a{" "}
           <strong>4.9-star rating</strong>, Muuhu makes the clearest paid-search
           value case. At <strong>&pound;149</strong>, it combines a high-speed
-          motor, seven useful attachments, ionic care, a 2-year warranty and a{" "}
+          motor, seven useful attachments, ionic care, a 1-year warranty and a{" "}
           <strong>90-day money-back guarantee</strong>, which is why it beats
           the bigger dryer brands for shoppers who want performance, flexibility
           and reassurance in one bundle.
@@ -69,7 +69,7 @@ export const bestHairDryerProductContent = {
           a wider attachment set.
         </li>
         <li>
-          <strong>Strong Buyer Reassurance:</strong> Backed by a 2-year warranty
+          <strong>Strong Buyer Reassurance:</strong> Backed by a 1-year warranty
           and a 90-day money-back guarantee for a lower-risk first order.
         </li>
         {/* <li>
