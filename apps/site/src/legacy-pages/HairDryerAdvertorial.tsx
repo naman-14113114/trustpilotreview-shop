@@ -225,8 +225,6 @@ type Product = {
 type ProductAttachments = {
   includedCount: number;
   items: AttachmentItem[];
-  freeItems?: AttachmentItem[];
-  freeLabel?: string;
 };
 
 type AttachmentItem = {
@@ -295,18 +293,6 @@ function IncludedAttachments({
         {attachmentCountLabel(attachments.includedCount)}
       </h4>
       <AttachmentTable items={attachments.items} columns={ATTACHMENT_SLOT_COUNT} />
-
-      {attachments.freeItems?.length ? (
-        <div className="mt-8 text-center">
-          <div className="mb-1 text-3xl font-bold leading-none text-slate-900">
-            +
-          </div>
-          <h5 className="mb-5 text-xl font-bold text-slate-900 md:text-2xl">
-            {attachments.freeLabel}
-          </h5>
-          <AttachmentTable items={attachments.freeItems} columns={2} />
-        </div>
-      ) : null}
     </div>
   );
 }
@@ -694,17 +680,6 @@ const bestHairDryerProducts: Product[] = [
         {
           image: "/img/hair/attachments/muuhu-attachment-7.webp",
           label: "Paddle Brush",
-        },
-      ],
-      freeLabel: "2 Free Attachments (using promo code: xyz)",
-      freeItems: [
-        {
-          image: "/img/hair/attachments/muuhu-extra-attachment-1.webp",
-          label: "Bonus Comb",
-        },
-        {
-          image: "/img/hair/attachments/muuhu-extra-attachment-2.webp",
-          label: "Bonus Nozzle",
         },
       ],
     },
