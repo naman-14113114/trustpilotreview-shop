@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
 import "./globals.css";
+import "./pillow-comparison.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.trustpilotreview.shop"),

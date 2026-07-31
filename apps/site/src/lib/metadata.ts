@@ -55,6 +55,12 @@ const routeMetadata: Record<string, RouteMetadata> = {
     description:
       "Dyson vs Shark vs Muuhu UK comparison for price, attachments, styling range, warranty, free gifts and best buyer fit.",
     canonical: `${SITE_URL}/dyson-vs-shark-vs-muuhu-uk`
+  },
+  "/best-pillow-for-side-sleepers-uk-2026": {
+    title: "Top 5 Pillows for Side Sleepers UK (2026)",
+    description:
+      "Compare the top five pillows for side sleepers in the UK, including current prices, profile choices, materials, trials, guarantees, advantages and disadvantages.",
+    canonical: `${SITE_URL}/best-pillow-for-side-sleepers-uk-2026`
   }
 };
 

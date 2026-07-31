@@ -1,10 +1,14 @@
 ﻿# Trustpilot Review Shop Full AI Context
 
-> Extended AI-readable context for Trustpilot Review Shop, a UK-focused comparison site for LED face masks and at-home red light therapy devices.
+> Extended AI-readable context for Trustpilot Review Shop, a UK-focused comparison site for sleep products, LED face masks, and at-home red light therapy devices.
 
 ## Site Purpose
 
-Trustpilot Review Shop publishes buyer guides, comparison pages, and educational resources for people researching LED face masks in the United Kingdom. The main commercial topic is the best LED face mask UK search journey, especially for buyers comparing anti-ageing, acne, redness, skin tone, face coverage, neck coverage, price, and safety.
+Trustpilot Review Shop publishes buyer guides, comparison pages, and educational resources for people researching sleep and skincare products in the United Kingdom. The site covers high-intent comparisons such as pillows for side sleepers and LED face masks.
+
+## Side-Sleeper Pillow Guide
+
+- [Top 5 Pillows for Side Sleepers UK 2026](https://www.trustpilotreview.shop/best-pillow-for-side-sleepers-uk-2026): Compares Juujo CloudAlign, Groove Adjustable 2.0, Panda Memory Foam Bamboo, TEMPUR Original SmartCool, and REM-Fit 500 Cool Gel using current UK price, profile choice, materials, care, trials, guarantees, advantages, and disadvantages. Juujo is the editorial number-one pick at a checked single-pillow price of £49.99.
 
 The most important page is the 2026 UK comparison guide:
 
