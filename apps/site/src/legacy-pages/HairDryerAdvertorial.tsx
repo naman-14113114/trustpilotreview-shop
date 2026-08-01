@@ -309,12 +309,12 @@ const baseProducts: Product[] = [
     link: "#",
     isWinner: true,
     description: [
-      "Our top pick is the Muuhu AirPro, a salon-grade device with a 1,400W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
+      "Our top pick is the Muuhu AirPro, a salon-grade device with a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
       "A major advantage is the complete styling system: a dedicated L-shaped base, left and right auto-wrap Coanda curlers, a smoothing brush, a round volumising brush, a concentrator nozzle, and a diffuser. Intelligent heat control and negative-ion technology dry hair fast while helping protect against heat damage, all from a UK 3-pin 220-240V plug.",
       "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £149, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 1-year warranty, and a 90-day money-back guarantee.",
     ],
     pros: [
-      "Controlled High-Speed Motor: 1,400W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for fast, adjustable drying.",
+      "Controlled High-Speed Motor: 1,600W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for fast, adjustable drying.",
       "Complete 7-in-1 System: Seven attachments including two Coanda auto-wrap curlers, smoothing brush, round volumising brush, concentrator and diffuser, so one tool replaces a whole styling kit.",
       "Coanda Auto-Wrap: Left and right auto-wrap curlers draw hair in for salon-style curls and waves with no manual winding.",
       "Ionic + Intelligent Heat Control: Negative ions help reduce frizz while smart heat regulation helps protect hair from extreme heat damage.",
@@ -675,11 +675,11 @@ const bestHairDryerProducts: Product[] = [
         },
         {
           image: "/img/hair/attachments/muuhu-attachment-6.webp",
-          label: "Smoothing Brush",
+          label: "L-Shape Base Unit",
         },
         {
           image: "/img/hair/attachments/muuhu-attachment-7.webp",
-          label: "Paddle Brush",
+          label: "Smoothing Brush",
         },
       ],
     },
@@ -1835,22 +1835,22 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                £19
+                                £35
                               </span>
                               <img
                                 src="/img/hair/muuhu-luxury-case.webp"
-                                alt="Luxury Case"
+                                alt="Muuhu Premium Packaging"
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full aspect-square object-cover rounded-lg sm:rounded-xl"
                               />
                             </div>
                             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-                              Luxury Case
+                              Premium Packaging
                             </p>
                           </a>
 
-                          {/* Muuhu Comb */}
+                          {/* Muuhu ScalpPro */}
                           <a
                             href={MUUHU_COMB_URL}
                             data-outbound="muuhu-hair-gift"
@@ -1862,7 +1862,7 @@ export default function HairDryerAdvertorial({
                               )
                             }
                             className="block bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
-                            aria-label="View Muuhu Comb"
+                            aria-label="View Muuhu ScalpPro"
                           >
                             <div
                               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -1876,14 +1876,14 @@ export default function HairDryerAdvertorial({
                               </span>
                               <img
                                 src="/img/hair/muuhu-comb.webp"
-                                alt="Muuhu Comb"
+                                alt="Muuhu ScalpPro"
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full aspect-square object-cover rounded-lg sm:rounded-xl"
                               />
                             </div>
                             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-                              Muuhu Comb
+                              Muuhu ScalpPro
                             </p>
                           </a>
 
@@ -1909,18 +1909,18 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                £29
+                                £15
                               </span>
                               <img
                                 src="/img/hair/muuhu-expert-hair-ebook.webp"
-                                alt="Expert Hair E-Book"
+                                alt="Muuhu Haircare E-book"
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full aspect-square object-cover rounded-lg sm:rounded-xl"
                               />
                             </div>
                             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-                              Haircare E-Book
+                              Haircare E-book
                             </p>
                           </a>
                         </div>
