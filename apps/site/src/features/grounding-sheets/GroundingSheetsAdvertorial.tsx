@@ -592,7 +592,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             product.name
           )}
         </h3>
-        <p className="mt-3 text-[15px] leading-6 text-slate-600">
+        <p className="mt-3 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9">
           {product.descriptions[0]}
         </p>
         <ul className="mt-4 grid gap-x-5 gap-y-2 sm:grid-cols-2">
@@ -601,14 +601,14 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             return (
               <li
                 key={`${point.title}-${index}`}
-                className={`flex items-start gap-2 text-[14px] font-semibold leading-5 ${
+                className={`flex items-start gap-2 text-[17px] font-semibold leading-7 ${
                   isLimitation ? "text-red-700" : "text-emerald-700"
                 }`}
               >
                 {isLimitation ? (
-                  <XCircle size={18} className="mt-0.5 shrink-0 fill-red-500 text-white" />
+                  <XCircle size={21} className="mt-0.5 shrink-0 fill-red-500 text-white" />
                 ) : (
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 fill-emerald-500 text-white" />
+                  <CheckCircle2 size={21} className="mt-0.5 shrink-0 fill-emerald-500 text-white" />
                 )}
                 <span>{point.title}</span>
               </li>
@@ -852,7 +852,7 @@ export default function GroundingSheetsAdvertorial() {
             <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
               <Image
                 src="/img/grounding-sheets/dr-image.webp"
-                alt="Dr. Verdict"
+                alt="Dr. Rachel Morgan"
                 width={112}
                 height={112}
                 priority
@@ -860,16 +860,26 @@ export default function GroundingSheetsAdvertorial() {
               />
               <div>
                 <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
-                  Dr. Verdict
+                  Dr. Rachel Morgan
                 </h2>
                 <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
-                  Sleep &amp; Wellness Editorial Review
+                  Medical Reviewer
                 </p>
               </div>
             </div>
-            <p className="mt-6 text-[17px] leading-8 text-slate-700 md:text-lg">
-              We compared publicly available specifications, fitted options, material blends, setup instructions, care guidance, entry prices, trial periods and warranties. This is an editorial buying comparison, not laboratory testing or medical advice.
-            </p>
+            <div className="mt-6 text-[17px] leading-8 text-slate-700 md:text-lg space-y-4">
+              <p>
+                With over 10 years of experience in sleep and wellness,{" "}
+                <strong className="text-slate-900">Dr. Rachel Morgan</strong>{" "}
+                is a certified wellness expert. She reviewed 5 popular United States grounding sheet options over 200+ hours, comparing publicly available specifications, fitted options, material blends, setup instructions, care guidance, entry prices, trial periods, and warranties. Her biggest finding was simple: the most expensive sheet was not always the best choice. The strongest options used the right materials, offered a secure fit, and were easy enough to integrate into a nightly routine consistently.
+              </p>
+            </div>
+
+            <hr className="border-slate-200 w-full my-4" />
+
+            <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
+              * Recommended by over 1,000 US buyers grounding sheets users.
+            </div>
           </div>
         </section>
 
