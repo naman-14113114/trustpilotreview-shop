@@ -1,0 +1,245 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: Advertisement
+        - heading "Best Grounding Sheets" [level=1] [ref=e6]
+        - generic [ref=e7]: United States - 2026
+        - generic [ref=e8]: Last updated - July 31, 2026
+    - main [ref=e13]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - img "Sleep and wellness editorial reviewer" [ref=e17]
+          - generic [ref=e18]:
+            - heading "Sleep & Wellness Editorial Review" [level=2] [ref=e19]
+            - paragraph [ref=e20]: United States buying guide
+        - paragraph [ref=e21]: This guide compares publicly available product specifications, fitted sizes, materials, setup instructions, care guidance, current entry pricing, trial periods and warranties. It is an editorial comparison, not laboratory testing or medical advice.
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Grounding sheets come in two main formats. A fitted sheet wraps around the mattress like everyday bedding, while a flat sheet lies across the sleep surface and may need more adjustment. Before comparing prices, check the exact mattress dimensions, pocket depth and whether the quoted price is for Single, Twin, Queen or another size.
+        - paragraph [ref=e25]: The conductive fibres connect to a properly grounded wall outlet through a lead supplied by the manufacturer. Setup should be simple, but shoppers should still check the outlet, read the instructions and confirm that the cord and plug are intended for the United States. A grounding sheet is a wellness product and should not replace advice or treatment from a qualified healthcare professional.
+        - paragraph [ref=e26]: Care instructions and trial terms matter just as much as the fabric. Some detergents and fabric treatments can coat conductive fibres, so follow the maker's wash guidance. Juujo takes our top spot because it combines a fitted design, seven US sizes, a 90% cotton and 10% conductive silver blend, a $99 Single entry price, a 120-night trial and three useful extras in one clearly presented bundle.
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: 2026 comparison
+          - heading "Top 5 Grounding Sheets for US Shoppers" [level=2] [ref=e31]
+          - paragraph [ref=e32]: Entry prices were checked against the brands' current public product variants. Different colours, sizes and warranty choices can cost more.
+        - generic [ref=e33]:
+          - article [ref=e34]:
+            - generic [ref=e35]:
+              - generic [ref=e36]: "#1"
+              - img "Juujo Grounding Fitted Sheet product view" [ref=e37]
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - heading "Juujo Grounding Fitted Sheet" [level=3] [ref=e40]
+                - generic [ref=e41]: Best overall
+              - list [ref=e42]:
+                - listitem [ref=e43]:
+                  - generic [ref=e47]: Fitted design offered in seven US sizes
+                - listitem [ref=e48]:
+                  - generic [ref=e52]: 90% cotton and 10% conductive silver blend
+                - listitem [ref=e53]:
+                  - generic [ref=e57]: 120-night trial plus three included gifts
+            - generic [ref=e58]:
+              - generic [ref=e59]: $99
+              - generic [ref=e60]: Single
+              - link [ref=e61] [cursor=pointer]:
+                - /url: https://grounding.juujo.com/products/grounding-fitted-sheets
+          - article [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]: "#2"
+              - img "Terra Grounding Bed Sheet product view" [ref=e69]
+            - generic [ref=e70]:
+              - heading "Terra Grounding Bed Sheet" [level=3] [ref=e72]
+              - list [ref=e73]:
+                - listitem [ref=e74]:
+                  - generic [ref=e78]: Fitted options across common US bed sizes
+                - listitem [ref=e79]:
+                  - generic [ref=e83]: 95% cotton and 5% silver blend
+                - listitem [ref=e84]:
+                  - generic [ref=e88]: Shorter 30-night guarantee than Juujo
+            - generic [ref=e89]:
+              - generic [ref=e90]: $109.95
+              - generic [ref=e91]: Fitted Single
+          - article [ref=e92]:
+            - generic [ref=e93]:
+              - generic [ref=e94]: "#3"
+              - img "GroundLuxe Fitted Grounding Sheet product view" [ref=e95]
+            - generic [ref=e96]:
+              - heading "GroundLuxe Fitted Grounding Sheet" [level=3] [ref=e98]
+              - list [ref=e99]:
+                - listitem [ref=e100]:
+                  - generic [ref=e104]: 90% organic cotton and 10% silver fibre
+                - listitem [ref=e105]:
+                  - generic [ref=e109]: Fitted 14-inch pocket with several colour choices
+                - listitem [ref=e110]:
+                  - generic [ref=e114]: Higher starting price than the two leading picks
+            - generic [ref=e115]:
+              - generic [ref=e116]: $129.95
+              - generic [ref=e117]: Twin
+          - article [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e120]: "#4"
+              - img "GroundingWell Fitted Sheet product view" [ref=e121]
+            - generic [ref=e122]:
+              - heading "GroundingWell Fitted Sheet" [level=3] [ref=e124]
+              - list [ref=e125]:
+                - listitem [ref=e126]:
+                  - generic [ref=e130]: Fitted format with country-specific cord choices
+                - listitem [ref=e131]:
+                  - generic [ref=e135]: Multiple colours and standard bed sizes listed
+                - listitem [ref=e136]:
+                  - generic [ref=e140]: Entry price is over $50 above Juujo Single
+            - generic [ref=e141]:
+              - generic [ref=e142]: $149.90
+              - generic [ref=e143]: USA Twin
+          - article [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]: "#5"
+              - img "Premium Grounding Sheet product view" [ref=e147]
+            - generic [ref=e148]:
+              - heading "Premium Grounding Sheet" [level=3] [ref=e150]
+              - list [ref=e151]:
+                - listitem [ref=e152]:
+                  - generic [ref=e156]: Flat-sheet format works over existing bedding
+                - listitem [ref=e157]:
+                  - generic [ref=e161]: US cord and warranty variants are available
+                - listitem [ref=e162]:
+                  - generic [ref=e166]: Highest entry price in this comparison
+            - generic [ref=e167]:
+              - generic [ref=e168]: $208
+              - generic [ref=e169]: USA Single/Twin
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - text: Why Juujo ranks No. 1
+          - heading "A fitted sheet bundle with fewer buying compromises" [level=2] [ref=e173]
+          - paragraph [ref=e174]: Juujo brings together seven fitted US sizes, a 90% cotton and 10% conductive silver blend, straightforward setup, a 120-night trial and a $99 Single entry price. The included packaging, mat and app add practical value without changing the core fitted-sheet decision.
+        - img "Juujo 120-night trial information" [ref=e175]
+      - article [ref=e177]:
+        - heading "Best Overall Grounding Sheets" [level=2] [ref=e179]
+        - generic [ref=e180]:
+          - complementary [ref=e181]:
+            - generic [ref=e182]:
+              - img "Juujo Grounding Fitted Sheet on a mattress" [ref=e184]
+              - generic [ref=e185]:
+                - generic [ref=e186]: $99
+                - generic [ref=e187]: Single
+                - generic [ref=e188]:
+                  - generic "Five-star editorial rating" [ref=e189]
+                  - paragraph [ref=e200]: Editorial top pick
+                - link [ref=e201] [cursor=pointer]:
+                  - /url: https://grounding.juujo.com/products/grounding-fitted-sheets
+              - region [ref=e206]:
+                - generic [ref=e207]:
+                  - generic [ref=e208]: Included with Juujo
+                  - heading "Three Free Gifts" [level=3] [ref=e209]
+                  - paragraph [ref=e210]: $208 stated value
+                - generic [ref=e211]:
+                  - generic [ref=e212]:
+                    - generic [ref=e213]: FREE
+                    - img "Premium Packaging" [ref=e215]
+                    - paragraph [ref=e216]: Premium Packaging
+                  - generic [ref=e217]:
+                    - generic [ref=e218]: FREE
+                    - img "Grounding Mat" [ref=e220]
+                    - paragraph [ref=e221]: Grounding Mat
+                  - generic [ref=e222]:
+                    - generic [ref=e223]: FREE
+                    - img "Sleep Monitoring App" [ref=e225]
+                    - paragraph [ref=e226]: Sleep Monitoring App
+          - generic [ref=e227]:
+            - generic [ref=e228]: "#1 editorial pick"
+            - heading "Juujo Grounding Fitted Sheet" [level=2] [ref=e229]
+            - generic [ref=e230]:
+              - paragraph [ref=e231]: "Juujo starts with the format most shoppers already understand: a fitted sheet that wraps around the mattress. Seven US size choices make it easier to match the bed rather than adapting a universal flat panel. The 90% cotton and 10% conductive silver blend also gives this pick a familiar bedding-first proposition."
+              - paragraph [ref=e232]: "Setup follows the usual grounding-sheet process: fit the sheet, connect the lead and use a correctly grounded outlet in line with the supplied instructions. The 120-night trial stands out in a category where trial windows vary, and it gives buyers time to judge fit, comfort and daily use in their own bedroom."
+              - paragraph [ref=e233]: Value is the deciding factor. At $99 for Single, Juujo enters below Terra, GroundLuxe, GroundingWell and Premium Grounding in this comparison. Premium packaging, a grounding mat and access to the sleep monitoring app complete the strongest all-round bundle without relying on medical promises.
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - text: Editorial score
+                - generic [ref=e237]: 9.8/10
+              - generic [ref=e238]:
+                - generic "Five-star editorial rating" [ref=e239]
+                - paragraph [ref=e250]: Best overall value
+            - generic [ref=e251]:
+              - heading "Performance Metrics" [level=3] [ref=e252]
+              - generic [ref=e253]:
+                - generic [ref=e255]:
+                  - generic [ref=e256]: Fitted size choice
+                  - generic [ref=e257]: 99%
+                - generic [ref=e261]:
+                  - generic [ref=e262]: Material and comfort
+                  - generic [ref=e263]: 98%
+                - generic [ref=e267]:
+                  - generic [ref=e268]: Setup clarity
+                  - generic [ref=e269]: 95%
+                - generic [ref=e273]:
+                  - generic [ref=e274]: Trial confidence
+                  - generic [ref=e275]: 99%
+                - generic [ref=e279]:
+                  - generic [ref=e280]: Overall value
+                  - generic [ref=e281]: 98%
+            - generic [ref=e284]:
+              - generic [ref=e285]:
+                - heading "Pros" [level=3] [ref=e286]
+                - list [ref=e287]:
+                  - listitem [ref=e288]:
+                    - generic [ref=e291]:
+                      - strong [ref=e292]: "Seven fitted sizes:"
+                      - text: The range covers common US mattresses without making shoppers settle for a loose flat sheet.
+                  - listitem [ref=e293]:
+                    - generic [ref=e296]:
+                      - strong [ref=e297]: "Comfort-led material blend:"
+                      - text: The 90% cotton and 10% conductive silver construction balances a familiar sheet feel with conductive fibres.
+                  - listitem [ref=e298]:
+                    - generic [ref=e301]:
+                      - strong [ref=e302]: "Clear entry price:"
+                      - text: At $99 for Single, Juujo has the lowest stated starting price among the five products compared here.
+                  - listitem [ref=e303]:
+                    - generic [ref=e306]:
+                      - strong [ref=e307]: "Longer trial window:"
+                      - text: The 120-night trial gives buyers more time to assess fit, setup and everyday comfort at home.
+                  - listitem [ref=e308]:
+                    - generic [ref=e311]:
+                      - strong [ref=e312]: "Complete value bundle:"
+                      - text: Premium packaging, a grounding mat and access to the sleep monitoring app are included in the offer.
+              - generic [ref=e313]:
+                - heading "Cons" [level=3] [ref=e314]
+                - list [ref=e315]:
+                  - listitem [ref=e316]:
+                    - generic [ref=e321]:
+                      - strong [ref=e322]: "Online only:"
+                      - text: Juujo is purchased online, so shoppers cannot feel the fabric in a high-street store before ordering.
+                  - listitem [ref=e323]:
+                    - generic [ref=e328]:
+                      - strong [ref=e329]: "Grounded outlet required:"
+                      - text: The connection lead must be used with a correctly grounded outlet and the supplied instructions should be followed.
+                  - listitem [ref=e330]:
+                    - generic [ref=e335]:
+                      - strong [ref=e336]: "Care matters:"
+                      - text: Conductive fibres need conductivity-conscious washing, including avoiding products the care guide says may coat them.
+      - generic [ref=e338]:
+        - heading "Editor's Verdict" [level=2] [ref=e339]
+        - generic [ref=e340]:
+          - generic [ref=e342]:
+            - generic "Juujo grounding fitted sheet customer perspective video" [ref=e343]: Your browser does not support the video tag.
+            - button "Play customer perspective video" [ref=e344]
+          - generic [ref=e347]:
+            - generic [ref=e348]: Best value fitted pick
+            - heading "Juujo offers the clearest fitted-sheet value for US shoppers" [level=3] [ref=e352]
+            - paragraph [ref=e353]: The $99 Single price, seven fitted sizes, 90/10 cotton-and-silver blend, 120-night trial and three included gifts make Juujo the most complete starting point in this comparison.
+            - paragraph [ref=e354]: The video is a customer perspective and is not clinical evidence or a guarantee of individual results.
+            - link [ref=e355] [cursor=pointer]:
+              - /url: https://grounding.juujo.com/products/grounding-fitted-sheets
+    - contentinfo [ref=e360]:
+      - generic [ref=e361]:
+        - paragraph [ref=e362]: Best Grounding Sheets
+        - paragraph [ref=e363]: © 2026 Best Grounding Sheets. All rights reserved.
+        - generic [ref=e364]:
+          - paragraph [ref=e365]: Important disclosure
+          - paragraph [ref=e366]:
+            - strong [ref=e367]: "Affiliate disclosure:"
+            - text: We may receive compensation for clicks on or purchases of products featured on this site. This comes at no additional cost to you.
+          - paragraph [ref=e368]:
+            - strong [ref=e369]: "Individual experiences:"
+            - text: Grounding sheets are wellness products and experiences vary. This editorial guide does not provide medical advice or guarantee a particular outcome.
+  - alert [ref=e370]

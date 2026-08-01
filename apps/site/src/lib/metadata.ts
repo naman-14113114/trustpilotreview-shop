@@ -61,6 +61,12 @@ const routeMetadata: Record<string, RouteMetadata> = {
     description:
       "Compare the top five pillows for side sleepers in the UK, including current prices, profile choices, materials, trials, guarantees, advantages and disadvantages.",
     canonical: `${SITE_URL}/best-pillow-for-side-sleepers-uk-2026`
+  },
+  "/best-grounding-sheets-us-2026": {
+    title: "Best Grounding Sheets USA 2026 | Top 5 Fitted Sheet Comparison",
+    description:
+      "Compare five grounding sheets for US shoppers by fitted sizes, material blend, setup, care, entry price, trial period, warranty and overall editorial value.",
+    canonical: `${SITE_URL}/best-grounding-sheets-us-2026`
   }
 };
 

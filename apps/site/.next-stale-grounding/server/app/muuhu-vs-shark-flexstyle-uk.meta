@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/muuhu-vs-shark-flexstyle-uk/layout,_N_T_/muuhu-vs-shark-flexstyle-uk/page,_N_T_/muuhu-vs-shark-flexstyle-uk"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/muuhu-vs-shark-flexstyle-uk/__PAGE__",
+    "/muuhu-vs-shark-flexstyle-uk",
+    "/_index",
+    "/_head"
+  ]
+}

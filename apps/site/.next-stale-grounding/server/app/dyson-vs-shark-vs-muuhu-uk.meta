@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/dyson-vs-shark-vs-muuhu-uk/layout,_N_T_/dyson-vs-shark-vs-muuhu-uk/page,_N_T_/dyson-vs-shark-vs-muuhu-uk"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/dyson-vs-shark-vs-muuhu-uk/__PAGE__",
+    "/dyson-vs-shark-vs-muuhu-uk",
+    "/_index",
+    "/_head"
+  ]
+}

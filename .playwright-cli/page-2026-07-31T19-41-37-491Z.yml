@@ -1,0 +1,326 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - banner [ref=f1e3]:
+      - link "Trustpilot Review Shop" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+    - main [ref=f1e6]:
+      - generic [ref=f1e7]:
+        - generic [ref=f1e11]:
+          - generic [ref=f1e12]: Featured Article
+          - 'heading "A Beginner''s Guide to LED Light Therapy: What You Should Know Before Buying" [level=1] [ref=f1e13]'
+          - paragraph [ref=f1e14]: LED light therapy has grown rapidly in popularity over the past few years. But with so many devices on the market, where do you start? This guide walks through the basics of how LED masks work, what each colour is designed for, and what features matter most when you are shopping for one.
+          - link "Read Full Article" [ref=f1e15] [cursor=pointer]:
+            - /url: /blog/red-light-therapy-ultimate-guide
+        - generic [ref=f1e18]:
+          - heading "Latest Articles" [level=2] [ref=f1e20]
+          - generic [ref=f1e21]:
+            - link [ref=f1e22] [cursor=pointer]:
+              - /url: /blog/blue-red-light-blemish-prone-skin
+              - 'img "Blue and Red Light for Blemish-Prone Skin: A Practical Overview" [ref=f1e24]'
+              - generic [ref=f1e25]:
+                - generic [ref=f1e26]: March 5, 2026
+                - 'heading "Blue and Red Light for Blemish-Prone Skin: A Practical Overview" [level=3] [ref=f1e29]'
+                - paragraph [ref=f1e30]: If you have blemish-prone skin, you may have heard about LED light therapy as a non-chemical approach worth exploring. Here is a straightforward look at what blue and red LED light are commonly used for, and what to consider when choosing a device.
+                - generic [ref=f1e31]: Read Article
+            - link [ref=f1e34] [cursor=pointer]:
+              - /url: /blog/led-masks-for-mature-skin
+              - 'img "LED Masks and Mature Skin: What the Research Says and What to Consider" [ref=f1e36]'
+              - generic [ref=f1e37]:
+                - generic [ref=f1e38]: February 28, 2026
+                - 'heading "LED Masks and Mature Skin: What the Research Says and What to Consider" [level=3] [ref=f1e41]'
+                - paragraph [ref=f1e42]: Red and near-infrared LED light have been the subject of numerous studies exploring their effects on skin. If you have mature skin and are considering adding an LED mask to your routine, here is a balanced look at what is out there.
+                - generic [ref=f1e43]: Read Article
+            - link [ref=f1e46] [cursor=pointer]:
+              - /url: /blog/led-mask-face-neck-coverage-guide
+              - img "Why Neck Coverage Matters When Choosing an LED Mask" [ref=f1e48]
+              - generic [ref=f1e49]:
+                - generic [ref=f1e50]: February 15, 2026
+                - heading "Why Neck Coverage Matters When Choosing an LED Mask" [level=3] [ref=f1e53]
+                - paragraph [ref=f1e54]: When shopping for an LED mask, one detail that many buyers overlook is coverage area. Most masks stop at the jawline, but the neck is often the area that could benefit most from attention. Here is what to consider.
+                - generic [ref=f1e55]: Read Article
+            - link [ref=f1e58] [cursor=pointer]:
+              - /url: /blog/choosing-safe-led-mask
+              - 'img "How to Choose a Safe LED Mask: Certifications, Materials, and Red Flags" [ref=f1e60]'
+              - generic [ref=f1e61]:
+                - generic [ref=f1e62]: February 2, 2026
+                - 'heading "How to Choose a Safe LED Mask: Certifications, Materials, and Red Flags" [level=3] [ref=f1e65]'
+                - paragraph [ref=f1e66]: With LED masks available at every price point from £20 to £500+, safety becomes an important consideration. Here is how to evaluate an LED mask's safety credentials, what certifications to look for, and what red flags should make you think twice.
+                - generic [ref=f1e67]: Read Article
+            - link [ref=f1e70] [cursor=pointer]:
+              - /url: /blog/understanding-led-light-colours
+              - 'img "Understanding LED Light Colours: What Each Wavelength Is Used For" [ref=f1e72]'
+              - generic [ref=f1e73]:
+                - generic [ref=f1e74]: January 20, 2026
+                - 'heading "Understanding LED Light Colours: What Each Wavelength Is Used For" [level=3] [ref=f1e77]'
+                - paragraph [ref=f1e78]: LED masks come with different colour options, but what does each colour actually do? Here is a plain-English breakdown of the 7 most common LED wavelengths and what each one is typically associated with in skin care contexts.
+                - generic [ref=f1e79]: Read Article
+        - generic [ref=f1e83]:
+          - generic [ref=f1e84]:
+            - generic [ref=f1e85]: Expert Reviews
+            - heading "Comparisons & Guides" [level=2] [ref=f1e86]
+            - paragraph [ref=f1e87]: In-depth head-to-head comparisons and expert guides to help you choose the right LED face mask for your skin.
+          - generic [ref=f1e88]:
+            - link "Best LED Face Masks 2026 Top Pick Best LED Face Masks 2026 Our comprehensive ranking of the top 5 LED face masks available in the UK, tested over 200+ hours. Read More" [ref=f1e89] [cursor=pointer]:
+              - /url: /new-advertorial
+              - generic [ref=f1e90]:
+                - img "Best LED Face Masks 2026" [ref=f1e91]
+                - generic [ref=f1e92]: Top Pick
+              - generic [ref=f1e93]:
+                - heading "Best LED Face Masks 2026" [level=3] [ref=f1e94]
+                - paragraph [ref=f1e95]: Our comprehensive ranking of the top 5 LED face masks available in the UK, tested over 200+ hours.
+                - generic [ref=f1e96]: Read More
+            - link "CurrentBody vs Buudy Comparison CurrentBody vs Buudy Is the £400 CurrentBody mask worth it? We compare it head-to-head against the Buudy 7-Color LED Mask. Read More" [ref=f1e99] [cursor=pointer]:
+              - /url: /currentbody-vs-buudy
+              - generic [ref=f1e100]:
+                - img "CurrentBody vs Buudy" [ref=f1e101]
+                - generic [ref=f1e102]: Comparison
+              - generic [ref=f1e103]:
+                - heading "CurrentBody vs Buudy" [level=3] [ref=f1e104]
+                - paragraph [ref=f1e105]: Is the £400 CurrentBody mask worth it? We compare it head-to-head against the Buudy 7-Color LED Mask.
+                - generic [ref=f1e106]: Read More
+            - link "TheraFace vs Other Masks Comparison TheraFace vs Other Masks Therabody's £579 LED mask promises vibration therapy — but does it outperform the competition? Read More" [ref=f1e109] [cursor=pointer]:
+              - /url: /theraface-vs-other-masks
+              - generic [ref=f1e110]:
+                - img "TheraFace vs Other Masks" [ref=f1e111]
+                - generic [ref=f1e112]: Comparison
+              - generic [ref=f1e113]:
+                - heading "TheraFace vs Other Masks" [level=3] [ref=f1e114]
+                - paragraph [ref=f1e115]: Therabody's £579 LED mask promises vibration therapy — but does it outperform the competition?
+                - generic [ref=f1e116]: Read More
+            - link "Deluxeskin vs Buudy Comparison Deluxeskin vs Buudy A detailed breakdown of how the Deluxeskin LED mask compares to the Buudy 7-Color in every category. Read More" [ref=f1e119] [cursor=pointer]:
+              - /url: /deluxeskin-vs-buudy
+              - generic [ref=f1e120]:
+                - img "Deluxeskin vs Buudy" [ref=f1e121]
+                - generic [ref=f1e122]: Comparison
+              - generic [ref=f1e123]:
+                - heading "Deluxeskin vs Buudy" [level=3] [ref=f1e124]
+                - paragraph [ref=f1e125]: A detailed breakdown of how the Deluxeskin LED mask compares to the Buudy 7-Color in every category.
+                - generic [ref=f1e126]: Read More
+            - link "Qureskincare vs Buudy Comparison Qureskincare vs Buudy Can Qureskincare's LED mask compete with Buudy's 7 wavelengths and built-in neck coverage? Read More" [ref=f1e129] [cursor=pointer]:
+              - /url: /qureskincare-vs-buudy
+              - generic [ref=f1e130]:
+                - img "Qureskincare vs Buudy" [ref=f1e131]
+                - generic [ref=f1e132]: Comparison
+              - generic [ref=f1e133]:
+                - heading "Qureskincare vs Buudy" [level=3] [ref=f1e134]
+                - paragraph [ref=f1e135]: Can Qureskincare's LED mask compete with Buudy's 7 wavelengths and built-in neck coverage?
+                - generic [ref=f1e136]: Read More
+            - link "Silicone LED Mask Dangers Health Alert Silicone LED Mask Dangers Why silicone-based LED masks may be damaging your skin — the hidden dangers most brands won't tell you. Read More" [ref=f1e139] [cursor=pointer]:
+              - /url: /silicone-led-mask-dangers
+              - generic [ref=f1e140]:
+                - img "Silicone LED Mask Dangers" [ref=f1e141]
+                - generic [ref=f1e142]: Health Alert
+              - generic [ref=f1e143]:
+                - heading "Silicone LED Mask Dangers" [level=3] [ref=f1e144]
+                - paragraph [ref=f1e145]: Why silicone-based LED masks may be damaging your skin — the hidden dangers most brands won't tell you.
+                - generic [ref=f1e146]: Read More
+            - link "The £300 Neck Tax Industry Exposé The £300 Neck Tax Why buying a face-only LED mask might be a huge mistake, and how premium brands overcharge for neck coverage. Read More" [ref=f1e149] [cursor=pointer]:
+              - /url: /floating-head-warning
+              - generic [ref=f1e150]:
+                - img "The £300 Neck Tax" [ref=f1e151]
+                - generic [ref=f1e152]: Industry Exposé
+              - generic [ref=f1e153]:
+                - heading "The £300 Neck Tax" [level=3] [ref=f1e154]
+                - paragraph [ref=f1e155]: Why buying a face-only LED mask might be a huge mistake, and how premium brands overcharge for neck coverage.
+                - generic [ref=f1e156]: Read More
+            - link "The 2-Color Trap Industry Exposé The 2-Color Trap Why expensive masks that only offer Red and Near-Infrared light are leaving 70% of your skin concerns untreated. Read More" [ref=f1e159] [cursor=pointer]:
+              - /url: /missing-colors-expose
+              - generic [ref=f1e160]:
+                - img "The 2-Color Trap" [ref=f1e161]
+                - generic [ref=f1e162]: Industry Exposé
+              - generic [ref=f1e163]:
+                - heading "The 2-Color Trap" [level=3] [ref=f1e164]
+                - paragraph [ref=f1e165]: Why expensive masks that only offer Red and Near-Infrared light are leaving 70% of your skin concerns untreated.
+                - generic [ref=f1e166]: Read More
+            - link "The LED Density Scam Industry Exposé The LED Density Scam Is your £400 mask filled with 'dead zones'? Why hidden bulb counts could mean you're paying for a placebo. Read More" [ref=f1e169] [cursor=pointer]:
+              - /url: /led-density-scam
+              - generic [ref=f1e170]:
+                - img "The LED Density Scam" [ref=f1e171]
+                - generic [ref=f1e172]: Industry Exposé
+              - generic [ref=f1e173]:
+                - heading "The LED Density Scam" [level=3] [ref=f1e174]
+                - paragraph [ref=f1e175]: Is your £400 mask filled with 'dead zones'? Why hidden bulb counts could mean you're paying for a placebo.
+                - generic [ref=f1e176]: Read More
+            - link "The Celebrity Markup Industry Exposé The Celebrity Markup Are you paying for real clinical technology or just funding a celebrity's Instagram post? The truth behind £500 masks. Read More" [ref=f1e179] [cursor=pointer]:
+              - /url: /brand-name-premium
+              - generic [ref=f1e180]:
+                - img "The Celebrity Markup" [ref=f1e181]
+                - generic [ref=f1e182]: Industry Exposé
+              - generic [ref=f1e183]:
+                - heading "The Celebrity Markup" [level=3] [ref=f1e184]
+                - paragraph [ref=f1e185]: Are you paying for real clinical technology or just funding a celebrity's Instagram post? The truth behind £500 masks.
+                - generic [ref=f1e186]: Read More
+        - generic [ref=f1e190]:
+          - generic [ref=f1e191]:
+            - generic [ref=f1e192]: Sleep & Wellness Guide
+            - heading "Grounding Sheets Buying Guide" [level=2] [ref=f1e193]
+            - paragraph [ref=f1e194]: A US comparison of fitted sizes, materials, setup, care, trial periods and value across five grounding sheet options.
+          - link "Best Grounding Sheets US 2026 guide Top 5 US Best Grounding Sheets US 2026 Compare Juujo, Terra, GroundLuxe, GroundingWell and Premium Grounding by fitted format, material, setup, price and trial terms. Read Guide" [ref=f1e196] [cursor=pointer]:
+            - /url: /best-grounding-sheets-us-2026
+            - generic [ref=f1e197]:
+              - img "Best Grounding Sheets US 2026 guide" [ref=f1e198]
+              - generic [ref=f1e199]: Top 5 US
+            - generic [ref=f1e200]:
+              - heading "Best Grounding Sheets US 2026" [level=3] [ref=f1e201]
+              - paragraph [ref=f1e202]: Compare Juujo, Terra, GroundLuxe, GroundingWell and Premium Grounding by fitted format, material, setup, price and trial terms.
+              - generic [ref=f1e203]: Read Guide
+        - generic [ref=f1e207]:
+          - generic [ref=f1e208]:
+            - generic [ref=f1e209]: Hair Dryer Guides
+            - heading "Hair Dryer Buying Guides" [level=2] [ref=f1e210]
+            - paragraph [ref=f1e211]: UK hair dryer reviews and brand comparisons for shoppers comparing speed, styling range, heat control, attachments and value.
+          - generic [ref=f1e212]:
+            - generic [ref=f1e213]:
+              - generic [ref=f1e215]:
+                - heading "Hair Type Guides" [level=3] [ref=f1e216]
+                - paragraph [ref=f1e217]: Pages built for shoppers searching by hair concern, texture or styling outcome.
+              - generic [ref=f1e218]:
+                - link "Best Hair Dryer UK 2026 TOP 5 Best Hair Dryer UK 2026 Compare Muuhu, Dyson Supersonic Nural, Cloud Nine, Shark SpeedStyle Pro and ghd for drying speed, heat protection, attachments and value. Read More" [ref=f1e219] [cursor=pointer]:
+                  - /url: /best-hair-dryer-uk-2026
+                  - generic [ref=f1e220]:
+                    - img "Best Hair Dryer UK 2026" [ref=f1e221]
+                    - generic [ref=f1e222]: TOP 5
+                  - generic [ref=f1e223]:
+                    - heading "Best Hair Dryer UK 2026" [level=3] [ref=f1e224]
+                    - paragraph [ref=f1e225]: Compare Muuhu, Dyson Supersonic Nural, Cloud Nine, Shark SpeedStyle Pro and ghd for drying speed, heat protection, attachments and value.
+                    - generic [ref=f1e226]: Read More
+                - link "Best Hair Dryer for Curly Hair CURL Best Hair Dryer for Curly Hair Diffuser, curl definition, low heat and frizz control compared for UK curl routines. Read More" [ref=f1e229] [cursor=pointer]:
+                  - /url: /best-hair-dryer-curly-hair-uk-2026
+                  - generic [ref=f1e230]:
+                    - img "Best Hair Dryer for Curly Hair" [ref=f1e231]
+                    - generic [ref=f1e232]: CURL
+                  - generic [ref=f1e233]:
+                    - heading "Best Hair Dryer for Curly Hair" [level=3] [ref=f1e234]
+                    - paragraph [ref=f1e235]: Diffuser, curl definition, low heat and frizz control compared for UK curl routines.
+                    - generic [ref=f1e236]: Read More
+                - link "Best Hair Dryer for Fine Hair FINE Best Hair Dryer for Fine Hair Gentle airflow, root lift and volume styling for fine or flat hair. Read More" [ref=f1e239] [cursor=pointer]:
+                  - /url: /best-hair-dryer-fine-hair-uk-2026
+                  - generic [ref=f1e240]:
+                    - img "Best Hair Dryer for Fine Hair" [ref=f1e241]
+                    - generic [ref=f1e242]: FINE
+                  - generic [ref=f1e243]:
+                    - heading "Best Hair Dryer for Fine Hair" [level=3] [ref=f1e244]
+                    - paragraph [ref=f1e245]: Gentle airflow, root lift and volume styling for fine or flat hair.
+                    - generic [ref=f1e246]: Read More
+                - link "Best Hair Dryer for Thick Hair THICK Best Hair Dryer for Thick Hair Fast drying, airflow power and complete styling for thick or long hair. Read More" [ref=f1e249] [cursor=pointer]:
+                  - /url: /best-hair-dryer-thick-hair-uk-2026
+                  - generic [ref=f1e250]:
+                    - img "Best Hair Dryer for Thick Hair" [ref=f1e251]
+                    - generic [ref=f1e252]: THICK
+                  - generic [ref=f1e253]:
+                    - heading "Best Hair Dryer for Thick Hair" [level=3] [ref=f1e254]
+                    - paragraph [ref=f1e255]: Fast drying, airflow power and complete styling for thick or long hair.
+                    - generic [ref=f1e256]: Read More
+                - link "Best Hair Dryer for Frizzy Hair FRIZZ Best Hair Dryer for Frizzy Hair Ionic smoothing, flyaway control and gentle finishing for frizz-prone hair. Read More" [ref=f1e259] [cursor=pointer]:
+                  - /url: /best-hair-dryer-frizzy-hair-uk-2026
+                  - generic [ref=f1e260]:
+                    - img "Best Hair Dryer for Frizzy Hair" [ref=f1e261]
+                    - generic [ref=f1e262]: FRIZZ
+                  - generic [ref=f1e263]:
+                    - heading "Best Hair Dryer for Frizzy Hair" [level=3] [ref=f1e264]
+                    - paragraph [ref=f1e265]: Ionic smoothing, flyaway control and gentle finishing for frizz-prone hair.
+                    - generic [ref=f1e266]: Read More
+                - link "Best Hair Dryer for Straight Hair SLEEK Best Hair Dryer for Straight Hair Smooth blow-dries, shine and straight-hair finishing without buying several tools. Read More" [ref=f1e269] [cursor=pointer]:
+                  - /url: /best-hair-dryer-straight-hair-uk-2026
+                  - generic [ref=f1e270]:
+                    - img "Best Hair Dryer for Straight Hair" [ref=f1e271]
+                    - generic [ref=f1e272]: SLEEK
+                  - generic [ref=f1e273]:
+                    - heading "Best Hair Dryer for Straight Hair" [level=3] [ref=f1e274]
+                    - paragraph [ref=f1e275]: Smooth blow-dries, shine and straight-hair finishing without buying several tools.
+                    - generic [ref=f1e276]: Read More
+                - link "Best Hair Dryer for Damaged Hair CARE Best Hair Dryer for Damaged Hair Controlled heat and lower-stress styling for dry, bleached or colour-treated hair. Read More" [ref=f1e279] [cursor=pointer]:
+                  - /url: /best-hair-dryer-damaged-hair-uk-2026
+                  - generic [ref=f1e280]:
+                    - img "Best Hair Dryer for Damaged Hair" [ref=f1e281]
+                    - generic [ref=f1e282]: CARE
+                  - generic [ref=f1e283]:
+                    - heading "Best Hair Dryer for Damaged Hair" [level=3] [ref=f1e284]
+                    - paragraph [ref=f1e285]: Controlled heat and lower-stress styling for dry, bleached or colour-treated hair.
+                    - generic [ref=f1e286]: Read More
+            - generic [ref=f1e289]:
+              - generic [ref=f1e291]:
+                - heading "Brand Comparisons" [level=3] [ref=f1e292]
+                - paragraph [ref=f1e293]: Pages built for shoppers comparing Muuhu against Dyson, Shark and ghd before buying.
+              - generic [ref=f1e294]:
+                - link "Best Dyson Supersonic Nural Alternative DYSON ALT Best Dyson Supersonic Nural Alternative Compare Muuhu with Dyson Supersonic Nural, Shark, Cloud Nine and ghd for premium drying performance at a lower price. Read More" [ref=f1e295] [cursor=pointer]:
+                  - /url: /best-dyson-supersonic-nural-alternative-uk-2026
+                  - generic [ref=f1e296]:
+                    - img "Best Dyson Supersonic Nural Alternative" [ref=f1e297]
+                    - generic [ref=f1e298]: DYSON ALT
+                  - generic [ref=f1e299]:
+                    - heading "Best Dyson Supersonic Nural Alternative" [level=3] [ref=f1e300]
+                    - paragraph [ref=f1e301]: Compare Muuhu with Dyson Supersonic Nural, Shark, Cloud Nine and ghd for premium drying performance at a lower price.
+                    - generic [ref=f1e302]: Read More
+                - link "Best Shark SpeedStyle Pro Alternative SHARK ALT Best Shark SpeedStyle Pro Alternative Compare Muuhu with Shark SpeedStyle Pro, Dyson, Cloud Nine and ghd for drying, attachments, heat care and value. Read More" [ref=f1e305] [cursor=pointer]:
+                  - /url: /best-shark-speedstyle-pro-alternative-uk-2026
+                  - generic [ref=f1e306]:
+                    - img "Best Shark SpeedStyle Pro Alternative" [ref=f1e307]
+                    - generic [ref=f1e308]: SHARK ALT
+                  - generic [ref=f1e309]:
+                    - heading "Best Shark SpeedStyle Pro Alternative" [level=3] [ref=f1e310]
+                    - paragraph [ref=f1e311]: Compare Muuhu with Shark SpeedStyle Pro, Dyson, Cloud Nine and ghd for drying, attachments, heat care and value.
+                    - generic [ref=f1e312]: Read More
+                - link "Muuhu vs Dyson Supersonic Nural VS DYSON Muuhu vs Dyson Supersonic Nural Direct two-product comparison for drying speed, heat protection, attachments, price and buyer fit. Read More" [ref=f1e315] [cursor=pointer]:
+                  - /url: /muuhu-vs-dyson-supersonic-nural-uk
+                  - generic [ref=f1e316]:
+                    - img "Muuhu vs Dyson Supersonic Nural" [ref=f1e317]
+                    - generic [ref=f1e318]: VS DYSON
+                  - generic [ref=f1e319]:
+                    - heading "Muuhu vs Dyson Supersonic Nural" [level=3] [ref=f1e320]
+                    - paragraph [ref=f1e321]: Direct two-product comparison for drying speed, heat protection, attachments, price and buyer fit.
+                    - generic [ref=f1e322]: Read More
+                - link "Muuhu vs Shark SpeedStyle Pro VS SHARK Muuhu vs Shark SpeedStyle Pro Direct Shark comparison covering drying speed, heat care, attachments, value and buyer confidence. Read More" [ref=f1e325] [cursor=pointer]:
+                  - /url: /muuhu-vs-shark-speedstyle-pro-uk
+                  - generic [ref=f1e326]:
+                    - img "Muuhu vs Shark SpeedStyle Pro" [ref=f1e327]
+                    - generic [ref=f1e328]: VS SHARK
+                  - generic [ref=f1e329]:
+                    - heading "Muuhu vs Shark SpeedStyle Pro" [level=3] [ref=f1e330]
+                    - paragraph [ref=f1e331]: Direct Shark comparison covering drying speed, heat care, attachments, value and buyer confidence.
+                    - generic [ref=f1e332]: Read More
+                - link "Muuhu vs ghd Helios VS GHD Muuhu vs ghd Helios Dryer-only versus complete styling system comparison. Read More" [ref=f1e335] [cursor=pointer]:
+                  - /url: /muuhu-vs-ghd-helios-uk
+                  - generic [ref=f1e336]:
+                    - img "Muuhu vs ghd Helios" [ref=f1e337]
+                    - generic [ref=f1e338]: VS GHD
+                  - generic [ref=f1e339]:
+                    - heading "Muuhu vs ghd Helios" [level=3] [ref=f1e340]
+                    - paragraph [ref=f1e341]: Dryer-only versus complete styling system comparison.
+                    - generic [ref=f1e342]: Read More
+                - link "Dyson vs Shark vs Muuhu 3-WAY Dyson vs Shark vs Muuhu Fast three-way comparison for premium, mid-premium and best-value buyers. Read More" [ref=f1e345] [cursor=pointer]:
+                  - /url: /dyson-vs-shark-vs-muuhu-uk
+                  - generic [ref=f1e346]:
+                    - img "Dyson vs Shark vs Muuhu" [ref=f1e347]
+                    - generic [ref=f1e348]: 3-WAY
+                  - generic [ref=f1e349]:
+                    - heading "Dyson vs Shark vs Muuhu" [level=3] [ref=f1e350]
+                    - paragraph [ref=f1e351]: Fast three-way comparison for premium, mid-premium and best-value buyers.
+                    - generic [ref=f1e352]: Read More
+    - contentinfo [ref=f1e355]:
+      - generic [ref=f1e356]:
+        - paragraph [ref=f1e357]: Trustpilot Review Shop
+        - paragraph [ref=f1e358]: © 2026 Trustpilot Review Shop. All rights reserved.
+        - generic [ref=f1e359]:
+          - link "Privacy Policy" [ref=f1e360] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=f1e361] [cursor=pointer]:
+            - /url: /terms
+          - link "Affiliate Disclosure" [ref=f1e362] [cursor=pointer]:
+            - /url: /disclosure
+          - link "Contact Us" [ref=f1e363] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f1e364]:
+          - paragraph [ref=f1e365]: Important Disclosure
+          - paragraph [ref=f1e366]:
+            - strong [ref=f1e367]: "AFFILIATE DISCLOSURE:"
+            - text: This website contains product reviews and recommendations. We may receive compensation for clicks on or purchase of products featured on this site.
+            - strong [ref=f1e368]: Trustpilot Review Shop
+            - text: is a participant in affiliate marketing programs, and we may get paid a commission on editorially chosen products purchased through our links. This comes at no additional cost to you.
+          - paragraph [ref=f1e369]:
+            - strong [ref=f1e370]: "INDIVIDUAL RESULTS:"
+            - text: Results portrayed in our articles and user stories are illustrative and may not be the results that you achieve. Individual experiences can vary significantly from person to person.
+          - paragraph [ref=f1e371]:
+            - strong [ref=f1e372]: "DISCLAIMER:"
+            - text: The content on this website is for informational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified professional regarding any health concerns.
+  - alert [ref=f1e373]
