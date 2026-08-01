@@ -52,7 +52,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-slate-900 text-white pt-16 pb-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://img.thesitebase.net/10677/10677322/themes/177107744580dd01d13d.png')] bg-cover bg-center" />
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage:
+              "url('https://img.thesitebase.net/10677/10677322/themes/177107744580dd01d13d.png')",
+          }}
+        />
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1">
             <div className="inline-block bg-emerald-500 text-white px-4 py-1.5 rounded-full font-bold text-xs tracking-wide uppercase mb-6">Featured Article</div>

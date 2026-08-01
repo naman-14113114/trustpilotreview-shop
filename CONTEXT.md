@@ -992,3 +992,360 @@ or deployment-setting change occurred.
 - Git after the task remained `main` at HEAD/upstream `b18aaf4140f841574c14c2bc637ac8cf6c31e047`, ahead/behind `0/0`, with only this append-only `CONTEXT.md` history modified.
 - No commit, push, branch creation, pull request, GitHub action, Vercel action, or deployment occurred.
 - Remaining follow-up is the user's selection of one option or a precise hybrid. Immediately before implementation, all competitor prices, materials, formats, trials, returns, warranties, image rights, Juujo offer values, and outbound URLs must be refreshed from the current official sources.
+
+## 2026-08-01 10:59:36 +05:30 - Corrected the Best Grounding Sheets page to use the approved Hair Dryer advertorial system
+
+### Repository, branch, HEAD, and upstream reconciliation
+- The target repository was `E:\1st YEAR DTU\New folder\trustpilotreview-shop`, public preview domain `https://trustpilotreview-shop.vercel.app`, on branch `main`.
+- The user stated that they had already run lint and pushed the preceding grounding-page implementation to GitHub. Current state was therefore reconciled before editing instead of continuing from the older local checkout.
+- `git fetch` showed that local `main` was one commit behind `origin/main`. The worktree was clean, so a fast-forward-only update moved local HEAD from `a6b4e15` to `7b515b92fe5a6ac96a3301f4109476a13df65c2c` (`Sync Trustpilot hair data with Muuhu`). After the update, HEAD and `origin/main` matched at `0/0` ahead/behind.
+- The latest user/Naman/GitHub changes were preserved. No merge, rebase, reset, stash, discard, branch creation, or overwrite was used.
+
+### User request and practical meaning
+- The user rejected the first implementation of `/best-grounding-sheets-us-2026` because it did not faithfully follow the established `/best-hair-dryer-uk-2026` product-card presentation and TrustpilotReview visual language.
+- The correction had to remove the visible `Advertisement` label, enlarge the country line, add a United States flag, simplify the editor heading, add enough positive comparison points for Juujo, replace grey competitor bullets with genuine green Pros and red Cons, and make the reasons for Juujo's No. 1 position visible inside the comparison itself.
+- The Juujo product image and product title had to be clickable and use the exact destination `https://grounding.juujo.com/products/grounding-fitted-sheets`. CTA arrow wrapping had to be prevented.
+- The user explicitly rejected the compact Top 5 rows plus a second expanded winner section. The page needed one continuous sequence of five full Hair Dryer-style review cards, with Juujo as No. 1 and Terra, GroundLuxe, GroundingWell, and Premium Grounding as No. 2 through No. 5.
+- Juujo's left product rail had to remain sticky while the description, comparison bars, Pros, Cons, gift offer, and reassurance image move on the right, matching the interaction of the Best Hair Dryer page.
+- The page had to show Juujo's stated `4.9 / 5` rating rather than the invented-looking `9.8/10` editorial score. `Editorial top pick`, `Single`, and other size labels were not wanted in the visible card.
+- The three-gift offer had to use the large blue Hair Dryer offer treatment instead of three compressed miniature cards. The exact user-supplied 120-night artwork had to replace the incorrect prior image.
+- Competitor products had to use clean official product imagery rather than UGC, testimonial imagery, medical/claim graphics, or infographic-first creatives. Existing clean product packshots were retained where they already met this requirement.
+- Desktop, tablet, and phone responsiveness, link behaviour, route performance, the final verdict video, footer, disclosure, and sticky CTA remained protected.
+
+### Files and routes inspected
+- Governing files read before work: `E:\1st YEAR DTU\New folder\AGENTS.md`, `E:\1st YEAR DTU\New folder\CONTEXT.md`, and this repository `CONTEXT.md`.
+- Target route inspected locally and against the current production implementation: `/best-grounding-sheets-us-2026`.
+- Visual source-of-truth route and component inspected: `/best-hair-dryer-uk-2026` and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Grounding implementation inspected: `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` and the route under `apps/site/src/app/best-grounding-sheets-us-2026`.
+- Grounding assets under `apps/site/public/img/grounding-sheets` and the existing verdict video under `apps/site/public/videos/grounding-sheets` were inspected.
+- The exact user-supplied reassurance artwork was inspected at `E:\1st YEAR DTU\New folder\Bedsheets\Grounding Sheets\ChatGPT Image Jul 8, 2026, 06_00_52 PM.png` and matched the attached reference showing the bed, sleeping woman, refund copy, and `120 night` badge.
+
+### Files changed
+- Rebuilt `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` within the existing route boundary.
+- Added the exact supplied binary artwork at `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png` without changing or regenerating its content. The source and copied asset are `1254x1254` and the copied file is `2,228,920` bytes.
+- No homepage, Hair Dryer route, LED mask route, metadata file, sitemap, tracking script, checkout flow, shared component, dependency, or unrelated public asset was changed.
+
+### Detailed implementation
+- Replaced the visible advertisement label with the normal emerald masthead, retaining `Best Grounding Sheets` as the H1.
+- Changed the country line to a larger `United States - 2026` treatment with the United States flag and retained automatic date calculation in the `America/New_York` timezone.
+- Simplified the editorial card to `Wellness Editor` with the role `Sleep & Wellness Editorial Review`. The copy explains a public-information comparison and does not invent a doctor, clinician, laboratory, or clinical qualification.
+- Retained three readable opening paragraphs explaining fitted and flat sheet formats, conductive material, grounded-outlet setup, care, size fit, trial terms, and the factual Juujo value case.
+- Removed the previous compact five-row summary and the separate `Why Juujo Ranks No. 1` section. The page now moves directly from the editorial introduction into one `Top 5 Grounding Sheets for US Shoppers` sequence.
+- Rebuilt all five products as full advertorial cards with the same structure: rank ribbon, product image, price, rating, detailed description, performance bars, stacked emerald Pros, and stacked red Cons.
+- Product order remains exactly: `#1 Juujo Grounding Fitted Sheet`, `#2 Terra Grounding Bed Sheet`, `#3 GroundLuxe Fitted Grounding Sheet`, `#4 GroundingWell Fitted Sheet`, and `#5 Premium Grounding Sheet`.
+- Juujo's card retains the emerald winner border. Its left rail is `lg:sticky lg:top-8`, while the right rail contains the decision copy, exact supplied 120-night artwork, metrics, Pros, Cons, and the gift panel.
+- Juujo has seven visible green Pros and three genuine red Cons. The Pros cover the seven-option US fitted range, 90% cotton/10% conductive silver construction, $99 starting price, 120-night trial, complete gift bundle, clear setup, and practical nightly-use format. The Cons cover online-only purchase, the need for a correctly grounded outlet, and conductivity-conscious washing care.
+- Every competitor has a detailed, respectful description, visible green Pros, visible red Cons, and performance bars that explain the ranking. Grey comparison ticks were removed entirely.
+- The Juujo left rail now shows `$99`, five emerald stars, and `Overall rating 4.9 / 5`. It no longer displays `Single`, a size label, `Editorial top pick`, `Editorial score`, or `9.8/10`.
+- The Juujo product image and product title are links. Every Juujo CTA uses the exact approved URL `https://grounding.juujo.com/products/grounding-fitted-sheets`. CTA text and arrow use non-wrapping/fixed-size styling so the arrow cannot fall onto another line.
+- Competitor CTAs remain absent until the user supplies affiliate links. No fabricated competitor destination was introduced.
+- The exact 120-night image is rendered inside the Juujo card with `object-contain` and a stable square aspect ratio so the complete supplied artwork is visible without crop or zoom.
+- Rebuilt the Juujo offer as a full-width pale-blue panel matching the Hair Dryer page's gift hierarchy. It shows Premium Packaging, Grounding Mat, and Sleep Monitoring App as three readable image cards, the stated `$208` value, and a blue availability CTA.
+- Kept the deferred final portrait video/verdict section, disclosure, TrustpilotReview footer, and mobile sticky Juujo CTA.
+- All below-the-fold product images retain responsive dimensions, lazy loading, stable aspect ratios, and no new dependency. The page has one-column phone layouts and the intended two-column sticky layout at desktop widths.
+
+### Mistakes found, misunderstandings corrected, and safeguards
+- The first page mixed a compact Top 5 summary, a separate `Why Juujo` sales section, and a second expanded winner block. This duplicated the recommendation and departed from the approved Hair Dryer structure. The correction uses one full five-card sequence and removes the redundant section entirely.
+- The first page displayed `Advertisement` despite the user's newest instruction not to show it. The visible label was removed from this route.
+- The first editor heading was longer and more formal than the user wanted. It was reduced to a simple editorial identity without a false doctor presentation.
+- The first competitors used muted grey bullets and did not visibly explain their disadvantages. Every competitor now has emerald Pros and red Cons, preserving genuine strengths while making the ranking logic clear.
+- The first Juujo card used an editorial `9.8/10` score and `Editorial top pick`, which conflicted with the user's actual `4.9/5` rating instruction. Those labels were removed and replaced with exactly `Overall rating 4.9 / 5`.
+- The first implementation repeated `Single` and other size basis labels where the user did not want them. Visible size labels were removed from the product-card presentation.
+- The first gift panel was too small and visually cramped. It was replaced with the larger blue Hair Dryer offer structure, including full images and readable gift names.
+- The first implementation used the supplied 120-night artwork in a separate redundant section and then the user identified it as the wrong placement/presentation. The exact supplied file is now inside Juujo's full No. 1 review after the decision copy and before the performance comparison.
+- Stale screenshots initially examined during verification still showed the old advertisement label and old hybrid layout. They were correctly identified as pre-fix artifacts and were not treated as proof of the new build.
+- A Playwright full-page mobile screenshot repeated the masthead during image stitching. DOM checks proved there is exactly one H1 and one masthead, and a deliberate scroll-through confirmed this was a capture artifact rather than duplicated application markup.
+- The repository's webpack development path currently reports a pre-existing `globals.css` import resolution error (`Can't resolve './&'`). The production Turbopack build succeeds, so visual verification used `next start` against the successful production build instead of broadening scope into unrelated global CSS.
+
+### Verification completed
+- `pnpm --filter @trustpilotreview/site typecheck` completed successfully.
+- `pnpm --filter @trustpilotreview/site lint` completed successfully. In this package lint currently executes TypeScript validation.
+- `pnpm --filter @trustpilotreview/site build` completed successfully with Next.js `16.2.11`; `/best-grounding-sheets-us-2026` was statically generated.
+- `pnpm verify:parity` confirmed the legacy snapshot presence. Its live route smoke portion requires a running server and was therefore supplemented with direct production-server checks.
+- `next start -p 3014` served the built site successfully for visual verification.
+- Direct HEAD checks returned `200` for `/best-grounding-sheets-us-2026`, `/img/grounding-sheets/juujo-120-night-trial.png`, and `/videos/grounding-sheets/juujo-grounding-fitted-sheet-customer-review.mp4`.
+- Playwright checked `1440x1000`, `820x1180`, and `390x844`. Every viewport reported `scrollWidth === clientWidth`, so there is no horizontal page overflow.
+- Browser assertions found zero visible `Advertisement`, zero `9.8/10`, zero `Editorial top pick`, zero `Single`, one H1, one masthead, and eight intentional Juujo links using the exact approved destination.
+- A deliberate scroll-through loaded all ten authored images at both `390px` and `1440px` widths. Juujo, the trial image, all three gifts, Terra, GroundLuxe, GroundingWell, and Premium Grounding reported nonzero natural image widths.
+- Desktop visual inspection confirmed the sticky left product rail, complete right-side review data, large blue gifts panel, all five ranks, consistent Pros/Cons panels, final verdict, disclosure, and footer.
+- Tablet and mobile inspection confirmed the one-column order, readable product imagery and copy, stable CTAs, no overflow, and preserved sticky mobile CTA.
+- `git diff --check` completed without whitespace errors. The only line-ending output was Git's existing LF-to-CRLF warning on Windows.
+
+### Git state and publishing actions after the task
+- Branch remains `main` at HEAD `7b515b92fe5a6ac96a3301f4109476a13df65c2c`, with `origin/main` still at the same commit because this task did not publish.
+- Application Git state after cleanup contains only the intended modified component and the newly added exact trial image, plus this mandatory append-only context entry.
+- Playwright scripts, screenshots, browser logs, server logs, and the production verification process were removed/stopped after testing. Generated `next-env.d.ts` drift was restored to its repository value.
+- No commit, push, pull request, branch, Vercel action, direct deployment, promotion, rollback, or production-setting change occurred in this task.
+- Remaining uncertainty: competitor prices and commercial terms were intentionally not refreshed because this task corrected the approved visual/content structure rather than performing a new market-price audit. Their existing page values were preserved. Competitor affiliate CTAs remain intentionally absent until the user supplies exact links.
+
+## 2026-08-01 13:30:52 +05:30 - Fixed the local webpack development error on port 3000
+
+### Repository, branch, HEAD, and upstream reconciliation
+- The target repository was `E:\1st YEAR DTU\New folder\trustpilotreview-shop`, public preview domain `https://trustpilotreview-shop.vercel.app`, on branch `main`.
+- Before changing the fix, the governing workspace and repository instructions and both required context records were read in full. The repository remote was fetched and inspected without modifying local files.
+- Local HEAD and `origin/main` both resolved to `7b515b92fe5a6ac96a3301f4109476a13df65c2c` (`Sync Trustpilot hair data with Muuhu`), with ahead/behind state `0/0`.
+- Existing user work was present and protected: `CONTEXT.md`, generated `apps/site/next-env.d.ts`, `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`, and untracked `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`. None of those grounding-page changes or assets was edited, reverted, staged, committed, or published during this task.
+
+### User request and practical meaning
+- The user could not open the site locally after running `pnpm dev`; `http://localhost:3000` showed a Next.js webpack build overlay reporting `Module not found: Can't resolve './&'` from `src/app/globals.css`.
+- The practical requirement was to repair only the local development compilation path, preserve the recently corrected grounding page and every other current frontend decision, and leave a working development server on port `3000` so the user could immediately inspect the website.
+- No visual redesign, copy change, product-data change, link change, route change, dependency update, commit, push, or deployment was requested or permitted by the scope.
+
+### Files and generated state inspected
+- Inspected `apps/site/src/app/globals.css`, its Google Font imports, Tailwind import, and explicit Tailwind `@source` declarations.
+- Searched all source TypeScript, TSX, JSX, JavaScript, CSS, public output, and generated `.next*` state for the failing URL token and Tailwind arbitrary background-image utilities.
+- Inspected `apps/site/src/legacy-pages/old/Home.tsx`, which contained the source utility `bg-[url('https://img.thesitebase.net/10677/10677322/themes/177107744580dd01d13d.png')]`.
+- Inspected the generated webpack CSS-loader output. It showed that Tailwind had emitted the external URL as a malformed module request for `./&`, with a hash beginning `#x27;https://...`, proving that the error originated in generated Tailwind CSS rather than an actual CSS import named `./&`.
+- Inspected local `.next`, `.next-stale-webpack`, and `.next-stale-grounding` directories. `apps/site/.next-stale-grounding` is tracked by Git and contains compiled historical Tailwind class strings; Tailwind v4's automatic source detection was scanning this generated directory and reintroducing the removed malformed class.
+- Inspected every process listening on port `3000` and its parent chain before stopping anything. Only the confirmed `trustpilotreview-shop/apps/site` `pnpm run dev` -> `next dev --webpack` process chain was stopped and restarted.
+
+### Files changed and exact implementation
+- Changed `apps/site/src/legacy-pages/old/Home.tsx` only at the homepage hero texture element. The arbitrary Tailwind external-URL class was replaced with an inline React `backgroundImage` style using the exact same URL. The existing `absolute`, `inset-0`, `z-0`, `opacity-20`, `bg-cover`, and `bg-center` classes remain, so the visible image, placement, opacity, sizing, and crop behaviour are unchanged.
+- Changed `apps/site/src/app/globals.css` from `@import "tailwindcss";` to `@import "tailwindcss" source(none);`.
+- The existing explicit source declarations for `../components`, `../features`, `../legacy-pages`, and `../data` remain unchanged. These are the real application locations containing the Tailwind class usage. Disabling automatic discovery prevents generated and tracked `.next*` output from being interpreted as fresh Tailwind source while preserving every class used by the current routes.
+- No other source, content, asset, metadata, route, link, tracking, homepage section, grounding component, hair page, LED page, or dependency was changed.
+
+### Investigation mistakes, correction, and safeguards
+- The initial diagnostic hypothesis was that semicolons in the Playfair Display Google Fonts URL were being parsed incorrectly. Those semicolons were temporarily percent-encoded for one test, but the webpack failure continued. That experiment was immediately undone, and the font import is byte-for-byte back to its prior source form. The font URL is not part of the final fix.
+- The first source replacement removed the arbitrary URL utility from `Home.tsx`, but another clean webpack build still failed. The repeated error was not evidence that the replacement was wrong; Tailwind was scanning old compiled copies under `.next-stale-grounding` and `.next-stale-webpack`.
+- Generated caches were moved non-destructively to `C:\Users\sahil\AppData\Local\Temp\trustpilotreview-next-caches-20260801-125921` during diagnosis because recursive deletion was unnecessary and unsafe. When Git status revealed that `.next-stale-grounding` was tracked, it was restored exactly to its original repository path before the final fix and final verification. No tracked generated file remains deleted.
+- The user's original terminal process automatically recreated `.next` once during cleaning. Its complete process chain was identified by executable path and command line before being stopped, preventing unrelated Node or terminal processes from being killed.
+- The durable final build was deliberately run with the tracked `.next-stale-grounding` directory restored. Its success confirms the solution does not depend on deleting or hiding tracked repository content.
+
+### Verification completed
+- A clean `pnpm exec next build --webpack` completed successfully using Next.js `16.2.11`, compiled all application CSS, ran TypeScript, and generated all `37` static pages. The prior `Can't resolve './&'` error did not recur.
+- `pnpm --filter @trustpilotreview/site typecheck` completed successfully.
+- `pnpm --filter @trustpilotreview/site lint` completed successfully; this package currently maps lint to TypeScript validation.
+- `pnpm --filter @trustpilotreview/site build` completed successfully with Turbopack and generated all `37` application routes, including `/best-grounding-sheets-us-2026`.
+- After the final Tailwind source-control change, a second clean webpack production build was run with the tracked stale directory present and completed successfully.
+- A fresh `pnpm run dev` process was started with `next dev --webpack` on port `3000`. The server reported ready in approximately `685ms`.
+- Direct local HTTP checks returned `200` with no `Module not found` or `Build Error` content for `/`, `/best-grounding-sheets-us-2026`, and `/best-hair-dryer-uk-2026`.
+- `git diff --check` completed without whitespace errors. Git emitted only the repository's existing Windows LF-to-CRLF notices.
+- Final status was checked to confirm there are no `.next-stale-grounding` deletions and no unrelated source changes introduced by this repair.
+
+### Git state, publishing actions, and remaining notes
+- Branch remains `main` at HEAD `7b515b92fe5a6ac96a3301f4109476a13df65c2c`, matching `origin/main` at `0/0` ahead/behind before this local repair.
+- The only application source changes made by this task are `apps/site/src/app/globals.css` and `apps/site/src/legacy-pages/old/Home.tsx`, plus this mandatory append-only context record.
+- Existing grounding-page modifications, the supplied 120-night asset, and generated `next-env.d.ts` drift remain preserved exactly as found.
+- No commit, push, branch creation, pull request, GitHub action, Vercel action, direct deployment, promotion, rollback, or production-setting change occurred.
+- The local development server is intentionally left running at `http://localhost:3000` for the user's inspection.
+- No remaining compilation uncertainty was observed. The external hero texture still depends on its unchanged third-party URL being available at runtime, exactly as it did before this fix; this task did not replace or alter that asset.
+
+## 2026-08-01: Fix Localhost 3000 Start Error (Tailwind v4 `Module not found`)
+
+### User Intent and Protected Scope
+- **User Intent:** Fix terminal error preventing `pnpm dev` on localhost:3000 from starting, with strict instructions to make minimal changes.
+- **Protected Scope:** All application design, layout, tracking, content, and existing legacy pages.
+
+### Starting and Ending Git State
+- **Branch:** `main`
+- **Initial State:** Modified `CONTEXT.md`, `GroundingSheetsAdvertorial.tsx`, `Home.tsx` and untracked `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`.
+- **Ending State:** Added `apps/site/.gitignore`.
+- No commits or pushes were made.
+
+### Inspected and Changed Files
+- **Inspected:** `.next/dev/logs/next-development.log`, `apps/site/src/app/globals.css`, `apps/site/src/legacy-pages/old/Home.tsx`
+- **Changed:** Created `apps/site/.gitignore`.
+
+### Exact Data, Routes, Asset Paths, and Links
+- The `next-development.log` revealed `Module not found: Can't resolve './&'` in `globals.css`.
+- The root cause was Tailwind v4 automatically scanning legacy Vite build output in `apps/site/public/assets/`.
+- A minified JavaScript or CSS file contained HTML-encoded quotes (`&#x27;`) which Tailwind compiled into `bg-[url(&#x27;...&#x27;)]`, crashing the webpack build.
+
+### Mistakes and Corrections
+- Initially assumed the error originated in `globals.css` or `Home.tsx`. Found that `globals.css` was innocent and `Home.tsx` just contained a URL that matched what Tailwind found in `public/assets`.
+- Added `.gitignore` to explicitly tell Tailwind `ignore-walk` to ignore `public/assets`.
+
+### Verification Performed
+- Killed the existing ghost `pnpm dev` process running on port 3000.
+- Ran a clean `pnpm run build` which succeeded completely in 11.8s (Static generation worked).
+
+### Commit, Push, Branch, and Deployment Status
+- No changes committed. No push or deployment.
+
+## 2026-08-01 14:38:11 +05:30 - Corrected Grounding Page Structure Render-Only Review
+
+### Repository State Before and After the Task
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Intended public domain: `https://trustpilotreview-shop.vercel.app` for the current connected preview and `trustpilotreview.shop` for the eventual production site.
+- Branch: `main`.
+- HEAD: `7b515b92fe5a6ac96a3301f4109476a13df65c2c`.
+- Upstream: `origin/main`.
+- The cached local upstream reference matched HEAD. A fresh network fetch attempted earlier in this task failed because the machine could not resolve `github.com`, so remote freshness beyond the cached reference could not be proven.
+- Existing local changes were present before this render-only work and were preserved exactly: modified `CONTEXT.md`, `apps/site/next-env.d.ts`, `apps/site/src/app/globals.css`, `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`, and `apps/site/src/legacy-pages/old/Home.tsx`; untracked `apps/site/.gitignore` and `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`.
+- No application source, page, route, component, CSS, public asset, metadata, sitemap, link, or repository configuration was changed as part of this render-only review. This context entry is the only repository file content appended by this task.
+
+### User Request and Practical Meaning
+- The user rejected the previous grounding-page rebuild because it incorrectly converted all five compared products into full Hair Dryer-style advertorial cards.
+- The locked structure is now explicit: preserve the accepted masthead, country/date treatment, editorial reviewer card, and introductory paragraphs; then preserve a compact five-product comparison; then expand only Juujo in one full winner card; then show verdict, video, disclosure, footer, and mobile CTA in the eventual implementation.
+- The compact comparison must give Juujo substantially more green advantages and give every competitor a balanced set of genuine green strengths plus clear red-cross limitations. Grey ticks are forbidden. Competitor entries must remain compact and must not become full advertorial cards.
+- The expanded winner block must be Juujo only and should borrow the successful Best Hair Dryer No. 1 hierarchy: sticky left product rail on desktop, linked product image and name, `$99`, `4.9 / 5`, an unbroken official-site CTA, detailed right-side editorial copy, performance bars, stacked green Pros and red Cons, a large blue three-gift panel, the 120-night trial artwork, and the exact Juujo product destination.
+- The user explicitly requested five whole-page image renders before any implementation. Therefore touching website code was forbidden in this task.
+
+### Protected Areas
+- All current `trustpilotreview-shop` source and public files were protected.
+- The existing user/Naman/Antigravity edits listed in the Git status were protected and not overwritten, reformatted, staged, stashed, reset, reverted, or merged.
+- No existing Hair Dryer, LED mask, pillow, homepage, legacy route, favicon, affiliate link, checkout flow, tracking script, or deployment configuration was touched.
+- No commit, push, branch creation, pull request, direct Vercel deployment, or production promotion was allowed or performed.
+
+### Files and Routes Inspected
+- Read the governing workspace and repository instruction/context/design/product files before proceeding, as required by `AGENTS.md`.
+- Inspected the existing deterministic grounding concept file at `C:\Users\sahil\.codex\visualizations\2026\07\21\019f84c5-2b7e-7450-8ac2-5d968c45e9b7\grounding-page-concepts.html` to identify what could be reused without touching the repository.
+- Inspected available grounding-sheet assets under `apps/site/public/img/grounding-sheets` to ensure the previews used the current Juujo, competitor, gift, reviewer, trial, and video-poster artwork.
+- Inspected the current Git status, HEAD, upstream name, and recent repository context before generating any preview.
+
+### Render Files Created Outside the Repository
+- Created the standalone deterministic HTML preview at `C:\Users\sahil\.codex\visualizations\2026\07\21\019f84c5-2b7e-7450-8ac2-5d968c45e9b7\grounding-page-corrected-renders.html`.
+- Created five full-page screenshots outside the repository:
+  - `grounding-corrected-option-1.png`
+  - `grounding-corrected-option-2.png`
+  - `grounding-corrected-option-3.png`
+  - `grounding-corrected-option-4.png`
+  - `grounding-corrected-option-5.png`
+- All five previews preserve the same locked page hierarchy and vary only the compact Top 5 comparison treatment.
+- Option 1 uses the recommended ConsumerChoice-inspired three-column compact rows with a product image, explanation and points, and a restrained price/action rail.
+- Option 2 keeps the same hierarchy but gives the strength/limitation points a more visibly divided ledger treatment.
+- Option 3 is the densest compact scorecard and removes the short product-description paragraph from each row to prioritise scan speed.
+- Option 4 uses the roomiest competitor cards and larger copy for the older target audience while remaining compact relative to the expanded winner.
+- Option 5 uses subtle green/red point bands and a stronger editorial rank rail while keeping competitor cards compact.
+- Every preview gives Juujo seven green advantages, gives competitors three green strengths and three red-cross limitations, removes competitor CTAs until affiliate links exist, and contains only one expanded Juujo winner card.
+- Every Juujo image/title/button in the preview points conceptually to `https://grounding.juujo.com/products/grounding-fitted-sheets`; no live repository route or link was changed.
+
+### Mistake Recorded and Correction
+- Previous mistake: the compact five-product comparison was replaced by five full Hair Dryer-style cards. This erased the intended visual distinction between the quick comparison and the expanded Juujo winner and made every competitor look unnecessarily prominent.
+- Correction embodied in all five renders: the five-product section is compact again, competitor strengths and red-cross limitations are easy to scan, and only Juujo receives the full sticky-rail winner presentation below it.
+- Another previous misunderstanding was treating "follow the Hair Dryer page" as permission to copy its full-card treatment for every product. The user's actual meaning was to use the Hair Dryer winner-card treatment only for the detailed No. 1 Juujo section while retaining the grounding page's compact market-comparison rows above.
+
+### Verification Performed
+- Generated every option through Chromium using Playwright with a `1365x900` viewport and full-page capture.
+- Opened and visually inspected all five full-page screenshots.
+- Confirmed the accepted masthead, reviewer card, and introduction remain above the compact comparison.
+- Confirmed there is no 10-point criteria block, no redundant separate "Why Juujo ranks No. 1" band, no expanded competitor card, no grey competitor tick, no competitor CTA, and no separate oversized trial section.
+- Confirmed Juujo alone has the expanded winner block with `$99`, `4.9 / 5`, linked CTA treatment, metrics, stacked Pros/Cons, three gifts, the 120-night artwork, verdict, and final video section.
+- Application lint, typecheck, build, parity tests, route checks, mobile screenshots, and deployment checks were intentionally not run because this was a render-only approval step and no application code changed.
+
+### Git and Publishing State
+- Git status remained dirty only with the pre-existing user/external changes plus this append-only context entry.
+- No files were staged.
+- No commit was created.
+- No push was made.
+- No branch was created or changed.
+- No GitHub action, Vercel build, deployment, promotion, rollback, or production setting was triggered.
+
+### Remaining Decision and Follow-Up
+- The user must choose one of the five compact-comparison treatments before implementation begins.
+- After approval, implementation must start from the then-current repository state, re-run the full freshness audit, preserve all intervening user/Naman/Antigravity work, and modify only the grounding page sections explicitly approved by the user.
+- The implementation must include mobile and tablet verification, but no responsive implementation was performed during this render-only task.
+
+## 2026-08-01 15:31:53 +05:30 - Implemented Approved Option 1 Grounding Comparison and Left Local Preview Running
+
+### Repository, Branch, HEAD, Upstream, and Freshness Reconciliation
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Intended public preview domain: `https://trustpilotreview-shop.vercel.app`; the route changed by this task is `/best-grounding-sheets-us-2026`.
+- Branch: `main`.
+- HEAD: `7b515b92fe5a6ac96a3301f4109476a13df65c2c` (`Sync Trustpilot hair data with Muuhu`).
+- Upstream: `origin/main`.
+- A fresh `git fetch --all --prune` completed before editing. HEAD and `origin/main` were confirmed at ahead/behind `0/0`; no pull, merge, reset, checkout, rebase, stash, force operation, or history rewrite was performed.
+- The worktree was already dirty before this implementation. The pre-existing modified files were `CONTEXT.md`, generated `apps/site/next-env.d.ts`, `apps/site/src/app/globals.css`, `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`, and `apps/site/src/legacy-pages/old/Home.tsx`; the pre-existing untracked files were `apps/site/.gitignore` and `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`.
+- Those existing user/Naman/Antigravity changes were not reset, reverted, staged, committed, or overwritten. The final production build regenerated `apps/site/next-env.d.ts` back to its tracked repository form; that file was not manually edited in this task and no longer appears as modified.
+
+### User Request and Exact Practical Meaning
+- The user approved corrected render Option 1 and asked for implementation locally only.
+- The approved page must not use one full Hair Dryer-style card for every compared product. The first five products must remain a compact ConsumerChoice-inspired comparison, followed by one detailed Hair Dryer-style winner section for Juujo only.
+- The masthead must not contain an announcement or advertisement bar. `United States - 2026` must have the same large serif heading scale as `Best Grounding Sheets`, and it must use a proper visible US flag rather than small country text or an unreliable emoji.
+- The detailed Juujo section must reproduce the Best Hair Dryer desktop scrolling behaviour: its left image, price, rating, and CTA rail remains sticky while the longer right-side description, performance metrics, Pros/Cons, gifts, and trial content scrolls.
+- There must be no `Editor's Verdict` or `Editor Verdict` section immediately above the final video.
+- Every Juujo winner button in this page must say exactly `Official Website`, not `Visit Official Website`.
+- The user explicitly prohibited a commit, push, branch, pull request, or deployment. The completed route had to remain available at local port `3000` for immediate inspection.
+- The user required lint and production build checks and did not want a source error merely hidden by a browser that happened to keep rendering an older working bundle.
+
+### Protected Scope
+- No existing Hair Dryer page, LED mask page, pillow page, legacy product page, homepage section outside the already-present grounding card, favicon, tracking script, affiliate URL, checkout flow, sitemap, robots file, shared styling system, or deployment configuration was changed by this implementation.
+- The approved grounding page copy, product order, competitor prices, supplied image paths, video path, reviewer portrait, exact Juujo URL, and existing metadata were preserved except where the approved Option 1 structure explicitly required their presentation to change.
+- Competitor outbound buttons remain absent because the user has not supplied the four Amazon affiliate URLs.
+- No new dependency was installed and no generated package or lockfile was changed.
+
+### Files and Routes Inspected
+- Read the complete workspace `AGENTS.md` and `CONTEXT.md`, repository `AGENTS.md` and `CONTEXT.md`, and the repository `DESIGN.md` and `PRODUCT.md` before editing.
+- Inspected `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` as the target implementation.
+- Inspected `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx` to copy only the approved sticky left-rail behaviour and market-flag treatment, not its five-full-card product structure.
+- Inspected `apps/site/src/components/MarketFlag.tsx` and reused its existing `us` SVG treatment after Chromium demonstrated that the raw flag emoji rendered as the letters `US`.
+- Inspected `apps/site/src/app/globals.css` and `apps/site/src/legacy-pages/old/Home.tsx` only to understand and preserve the separate local development fix already present before this task.
+- Inspected `/img/grounding-sheets/juujo-grounding-fitted-sheet.webp`, `/img/grounding-sheets/juujo-120-night-trial.png`, the four competitor packshots, three gift assets, the reviewer portrait, and the video/poster paths through the rendered page.
+- Inspected the local route `http://localhost:3000/best-grounding-sheets-us-2026` at desktop, tablet, and phone widths.
+
+### Files Changed by This Task
+- Changed `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`.
+- Appended this historical task record to `CONTEXT.md` and removed one trailing space from a much older context bullet so `git diff --check` could pass without changing its wording or historical meaning.
+- Added `.playwright-cli/` to the local-only `.git/info/exclude` file so browser verification screenshots and logs generated during this task do not pollute Git status. This local exclusion is not tracked and will not be committed or pushed.
+- No other application source or asset was created, renamed, deleted, or edited by this task.
+
+### Exact Implementation Details
+- Removed the old grounding `RankRibbon` and old full `ProductCard` presentation that incorrectly expanded all five products.
+- Added `CompactComparisonCard` for the five-product summary. On desktop it uses the approved three-column hierarchy: product image and rank, editorial description plus points, then price/action rail. On smaller screens it stacks cleanly without horizontal overflow.
+- Juujo remains rank `#1`, receives the emerald winner border and rank treatment, and displays seven green checked advantages. Its image, title, and `Official Website` button link to exactly `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- Terra, GroundLuxe, GroundingWell, and Premium Grounding remain ranks `#2` through `#5`. Each compact competitor entry displays exactly three genuine green strengths and exactly three red-cross limitations. Grey ticks were removed. No competitor receives an active CTA; the restrained price rail says `Reviewed pick` and `Retailer link coming later`.
+- Added `JuujoWinnerSection` after the compact comparison. The section starts with the emerald `BEST OVERALL GROUNDING SHEETS` bar and contains only Juujo.
+- The winner's desktop left rail uses `lg:sticky lg:top-8`. It contains the linked Juujo image, `$99`, five green stars, `Overall rating 4.9 / 5`, and the exact `Official Website` CTA. The rail stays in view while the taller right column scrolls, matching the behaviour of the accepted Best Hair Dryer winner card.
+- The winner's right column keeps three substantial editorial paragraphs, five emerald performance bars, a stacked emerald Pros panel, a stacked red Cons panel, the existing blue three-gift panel, and the supplied 120-night-trial artwork.
+- Removed the redundant separate `Why Juujo ranks No. 1` band because the detailed winner section now performs that job without repeating the same claim immediately above itself.
+- Removed the separate editorial-score panel and `9.8/10` treatment. The visible winner rating now uses the user-approved `4.9 / 5` presentation.
+- Removed size labels such as `Single` from the compact price rail and winner price treatment. The existing editorial introduction may still explain the `$99` starting offer in prose, but no size label is attached to the displayed product price.
+- Replaced the final `Editor's Verdict` card with a direct dark video section headed `See how the fitted sheet is used at home`. The video remains present and deferred, and the section states that it is a customer perspective rather than medical evidence.
+- All visible Juujo CTAs in the compact row, detailed winner, trial area, video section, and mobile sticky bar use the exact Juujo product URL. The requested button wording is `Official Website`; the mobile sticky CTA retains its previously approved action wording.
+- The masthead contains no announcement or advertisement bar. Both heading lines use the same `clamp(2.15rem,8vw,4rem)` serif scale.
+- Replaced the raw US flag emoji with the existing `MarketFlag` SVG component because the first Chromium verification rendered the emoji as the text `US`. The flag is grouped with `United States` so mobile wrapping keeps the flag attached to the country name; `- 2026` may wrap as a centred second line on narrow phones.
+- No `Advertisement`, `Announcement`, `Editor's Verdict`, or `Visit Official Website` text remains in the grounding component.
+
+### Mistakes, Misunderstandings, and Corrections Recorded
+- Earlier mistake: all five products had been converted into large Hair Dryer-style cards. That made competitors too prominent, removed the quick comparison hierarchy, and contradicted the user's instruction that only the section below the compact Top 5 should resemble the Hair Dryer winner card.
+- Correction: restored a compact five-row comparison and expanded only Juujo in one detailed winner block.
+- Earlier mistake: the page included a redundant `Why Juujo ranks No. 1` section and a separate editorial-score treatment. The user considered this unnecessary because the detailed Juujo block already explains the winner.
+- Correction: removed both pieces and consolidated the case for Juujo inside the single expanded winner section.
+- Earlier mistake: the supplied 120-night-trial artwork was not used in the approved position, the gift presentation did not match the expected blue winner-panel hierarchy, and the page displayed size labels the user did not want near price.
+- Correction: the supplied trial artwork is inside the detailed Juujo winner, the blue three-gift panel is retained in that same winner, and visible size labels were removed from the comparison price treatments.
+- Verification-discovered issue in this task: the raw `🇺🇸` emoji rendered as the literal letters `US` in Chromium, causing `US United States - 2026`.
+- Correction: reused the stable SVG `MarketFlag` component and grouped it with the country name. A second phone screenshot confirmed a clean flag and intentional two-line country/year wrap.
+- An older context line contained trailing whitespace and caused `git diff --check` to report an error even though application source was valid.
+- Correction: removed only the trailing space, preserving the full historical sentence and all append-only context detail.
+
+### Commands and Automated Verification
+- `git fetch --all --prune` completed successfully before editing.
+- `git rev-list --left-right --count "HEAD...@{upstream}"` returned `0 0` before and after implementation.
+- `pnpm --filter @trustpilotreview/site typecheck` passed with `tsc --noEmit` and exit code `0`.
+- `pnpm --filter @trustpilotreview/site lint` passed with exit code `0`; this repository's site lint script currently maps to TypeScript checking.
+- `pnpm --filter @trustpilotreview/site build` passed with Next.js `16.2.11`. Compilation, TypeScript, page-data collection, and generation of all `37/37` static pages completed successfully. `/best-grounding-sheets-us-2026` is listed as a statically prerendered route.
+- `git diff --check` passed after the old context-only trailing space was removed. The remaining messages are Windows LF-to-CRLF warnings, not source errors.
+- A local HTTP request to `http://localhost:3000/best-grounding-sheets-us-2026` returned `200`, contained the expected `Official Website` content, and contained no `Build Error` or `Module not found` overlay text.
+- Source and rendered-response searches confirmed no announcement text, advertisement label, editor-verdict heading, or `Visit Official Website` wording remains on the page.
+
+### Browser and Responsive Verification
+- Used Playwright against the real local development route, not a detached HTML mock.
+- Desktop verification used `1440x1000`. The masthead, compact comparison, detailed winner, CTA text, linked product content, and flag rendered correctly with no console errors.
+- Desktop overflow measurement returned `scrollWidth: 1440` and `clientWidth: 1440`, confirming no horizontal page overflow.
+- The winner heading was scrolled into view and the page was then scrolled another `760px`. The Juujo image/price/rating/CTA rail remained visible while the right-side description and metrics advanced, confirming the intended sticky behaviour.
+- Tablet verification used `820x1180`. Compact cards retained the three-column hierarchy where space allowed, the detailed winner stacked safely, and overflow measurement returned `scrollWidth: 820` and `clientWidth: 820`.
+- Phone verification used `390x844`. Cards stacked into a single column, the heading and SVG flag wrapped cleanly, the winner image stayed uncropped, and overflow measurement returned `scrollWidth: 390` and `clientWidth: 390`.
+- Playwright reported zero browser console errors. One development-only Next Image LCP advisory appeared when automated checks scrolled directly to the Juujo image; it is not a runtime error or build failure, and changing lazy-loading priority for a below-the-fold comparison image would work against the page's performance goal.
+- The generated Playwright screenshots and logs were intentionally kept outside tracked Git state through `.git/info/exclude`; they are local verification artefacts only.
+
+### Local Preview and Runtime State
+- The Next.js development server is intentionally left running on port `3000`.
+- The verified URL is `http://localhost:3000/best-grounding-sheets-us-2026`.
+- Port `3000` is listening through Node process ID `23344` at the final runtime check.
+- The local HTTP response remains `200` after the production build and browser verification.
+
+### Git State and Publishing Actions After the Task
+- Branch remains `main` at HEAD `7b515b92fe5a6ac96a3301f4109476a13df65c2c`, with `origin/main` at the same commit and ahead/behind `0/0`.
+- Final visible Git state still includes the preserved local work: modified `CONTEXT.md`, `apps/site/src/app/globals.css`, `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`, and `apps/site/src/legacy-pages/old/Home.tsx`; untracked `apps/site/.gitignore` and `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`.
+- No file was staged.
+- No commit was created.
+- No push was made.
+- No branch or pull request was created.
+- No GitHub workflow, Vercel deployment, direct deployment, promotion, rollback, environment-variable update, or production setting was triggered.
+
+### Anything Not Tested and Remaining Uncertainty
+- The four competitor affiliate links were not tested because the user has not supplied them and the page deliberately renders no competitor CTA.
+- A real checkout was not initiated because this task concerns the review landing page and the exact Juujo destination URL was verified without placing an order.
+- `verify:parity` was not rerun because this task changes a real React route that intentionally differs from legacy HTML and the user specifically required lint and build verification. Existing legacy route files were not changed by this implementation.
+- Competitor prices and commercial terms were not re-researched in this implementation pass. The user approved Option 1 using the current page data, and this task changed presentation and hierarchy rather than performing a new market audit.
