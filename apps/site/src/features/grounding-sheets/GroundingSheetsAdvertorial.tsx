@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   Check,
   CheckCircle2,
+  ChevronRight,
   Play,
   Star,
   XCircle,
@@ -364,14 +365,17 @@ const gifts = [
   {
     name: "Premium Packaging",
     image: "/img/grounding-sheets/juujo-premium-packaging-gift.webp",
+    value: "$39",
   },
   {
     name: "Grounding Mat",
     image: "/img/grounding-sheets/juujo-grounding-mat-gift.webp",
+    value: "$99",
   },
   {
     name: "Sleep Monitoring App",
     image: "/img/grounding-sheets/juujo-sleep-monitoring-app-gift.webp",
+    value: "$70",
   },
 ];
 
@@ -471,45 +475,74 @@ function ProsCons({ pros, cons }: { pros: ComparisonPoint[]; cons: ComparisonPoi
 
 function GiftPanel() {
   return (
-    <section className="relative mt-10 overflow-hidden rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 shadow-lg shadow-blue-100/60 md:p-8">
+    <div className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50">
+      {/* Animated background elements */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-200/40 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+
       <div className="relative z-10">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-100 px-3 py-1 text-sm font-bold uppercase tracking-wider text-blue-700">
-          Included with Juujo
+        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
+          <span className="text-lg">💡</span> Editor's Tip
         </div>
-        <h4 className="mb-3 text-2xl font-extrabold leading-tight text-slate-900 md:text-3xl">
-          Three Free Gifts
+
+        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+          Active Offer Found: $208 in{" "}
+          <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
+            FREE GIFTS
+          </span>
         </h4>
-        <p className="mb-8 text-base leading-relaxed text-slate-700 md:text-lg">
-          The current Juujo bundle includes premium packaging, a grounding mat and access to the sleep monitoring app. Combined stated value: <strong>$208</strong>.
+
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
+          While doing our research, we found that Juujo is currently running a limited-time sale where you can get these premium accessories bundled for free with every fitted sheet purchase.
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {gifts.map((gift) => (
-            <div key={gift.name} className="relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-3 text-center shadow-sm">
-              <span className="absolute right-2 top-2 z-10 rounded-full bg-blue-600 px-2.5 py-1 text-[11px] font-black text-white">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
+          {gifts.map((gift, i) => (
+            <div key={gift.name} className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+              <div 
+                className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
                 FREE
-              </span>
-              <div className="relative aspect-square overflow-hidden rounded-xl bg-slate-50">
-                <Image
-                  src={gift.image}
-                  alt={gift.name}
-                  fill
-                  sizes="(max-width: 639px) 80vw, (max-width: 1023px) 28vw, 180px"
-                  className="object-cover"
-                />
               </div>
-              <p className="mt-3 min-h-12 text-sm font-bold leading-snug text-slate-900 md:text-base">
+              <div className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
+                <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                  Normally {gift.value}
+                </span>
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={gift.image}
+                    alt={gift.name}
+                    fill
+                    sizes="(max-width: 639px) 30vw, 150px"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
                 {gift.name}
               </p>
             </div>
           ))}
         </div>
 
-        <OfficialButton className="mt-7 w-full bg-blue-600 text-base shadow-blue-500/25 hover:bg-blue-700 md:text-lg">
-          Check Availability <ArrowUpRight size={20} className="shrink-0" />
-        </OfficialButton>
+        <a
+          href={JUUJO_URL}
+          aria-label="Check Availability"
+          className="block mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-base sm:text-lg md:text-xl text-center py-3.5 sm:py-4 md:py-5 rounded-2xl shadow-xl shadow-blue-600/30 transition-all hover:scale-[1.02] relative overflow-hidden group border-2 border-blue-500"
+        >
+          <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
+            Check Availability{" "}
+            <ChevronRight size={20} className="sm:hidden" />
+            <ChevronRight size={24} className="hidden sm:block" />
+          </span>
+          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+        </a>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -758,16 +791,14 @@ function DeferredVerdictVideo() {
           className="block aspect-[9/16] w-full object-cover"
           controls
           playsInline
-          preload="none"
-          poster="/img/grounding-sheets/juujo-grounding-fitted-sheet-video-poster.webp"
+          preload="metadata"
+          poster="/assets/grounding-video-poster.webp"
           aria-label="Juujo grounding fitted sheet customer perspective video"
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           onEnded={() => setIsPlaying(false)}
         >
-          {shouldLoad && (
-            <source src="/assets/juujo-grounding-fitted-sheet-customer-review.mp4" type="video/mp4" />
-          )}
+          <source src="/assets/grounding-best-5-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <button
@@ -816,8 +847,8 @@ export default function GroundingSheetsAdvertorial() {
           <div className="mx-auto max-w-5xl rounded-sm border border-slate-100 bg-white p-6 text-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] md:p-8">
             <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
               <Image
-                src="/img/grounding-sheets/sleep-wellness-editorial-review.webp"
-                alt="Sleep and wellness editorial reviewer"
+                src="/img/grounding-sheets/dr-image.webp"
+                alt="Dr. Verdict"
                 width={112}
                 height={112}
                 priority
@@ -825,7 +856,7 @@ export default function GroundingSheetsAdvertorial() {
               />
               <div>
                 <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
-                  Wellness Editor
+                  Dr. Verdict
                 </h2>
                 <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
                   Sleep &amp; Wellness Editorial Review
@@ -879,18 +910,37 @@ export default function GroundingSheetsAdvertorial() {
         <section className="bg-slate-900 px-4 py-14 text-white md:py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(250px,360px)_1fr] md:gap-14">
             <DeferredVerdictVideo />
-            <div className="text-center md:text-left">
-              <p className="text-xs font-black uppercase tracking-[0.14em] text-emerald-300">
-                Grounding sheet video
-              </p>
-              <h2 className="mt-3 font-serif text-3xl font-bold leading-tight md:text-4xl">
-                See how the fitted sheet is used at home
-              </h2>
-              <p className="mt-5 text-[17px] leading-8 text-slate-300 md:text-lg">
-                Watch the supplied customer video after reviewing the comparison. The portrait recording is presented as a customer perspective, not clinical evidence or a guarantee of individual results.
-              </p>
-              <OfficialButton className="mt-7 w-full rounded-md md:w-auto md:px-9">
-                Official Website <ArrowUpRight size={20} className="shrink-0" />
+            <div className="flex flex-col justify-center text-center">
+              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 font-serif tracking-tight">
+                <b>Juujo Grounding Fitted Sheet</b>
+              </h3>
+
+              <div className="w-28 md:w-32 h-[1px] bg-emerald-500 mx-auto mb-5 md:mb-6"></div>
+
+              <div className="text-2xl md:text-4xl font-bold text-emerald-400 mb-5 md:mb-8 font-sans">
+                Now at 50% off
+              </div>
+
+              {/* Trustpilot-style Badge */}
+              <div className="border border-slate-700 bg-slate-800/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="font-bold text-base md:text-lg text-white font-sans">
+                    Excellent
+                  </span>
+                  <div className="flex items-center gap-0.5 text-[#00b67a]">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={22} fill="currentColor" strokeWidth={1} />
+                    ))}
+                  </div>
+                </div>
+                <div className="text-xs md:text-sm text-slate-300 flex items-center justify-center gap-1 font-sans">
+                  Rated 4.9 / 5 on <Star size={18} fill="#00b67a" strokeWidth={1} className="text-[#00b67a]" />{" "}
+                  <span className="font-bold text-white">Trustpilot</span>
+                </div>
+              </div>
+
+              <OfficialButton className="mx-auto w-full max-w-[240px] md:w-auto md:max-w-none text-sm md:text-xl font-bold font-sans tracking-wide py-3.5 md:py-4 px-6 md:px-12 rounded-full shadow-[0_8px_20px_rgba(16,185,129,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                CHECK AVAILABILITY
               </OfficialButton>
             </div>
           </div>
