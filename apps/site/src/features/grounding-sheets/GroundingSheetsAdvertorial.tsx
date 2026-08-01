@@ -63,34 +63,17 @@ const rankedSheets: RankedSheet[] = [
       { label: "Overall value", value: 98 },
     ],
     pros: [
-      {
-        title: "Seven fitted options",
-        body: "A broad US range makes it easier to match the mattress without settling for a loose flat sheet.",
-      },
-      {
-        title: "Comfort-led blend",
-        body: "The 90% cotton and 10% conductive silver construction balances familiar bedding comfort with conductive fibres.",
-      },
-      {
-        title: "Secure fitted format",
-        body: "Elasticated edges help the sheet stay smooth and in place through normal overnight movement.",
-      },
-      {
-        title: "Clear starting price",
-        body: "At $99, Juujo has the lowest displayed entry price among the five products compared here.",
-      },
-      {
-        title: "120-night trial",
-        body: "The longer home trial gives buyers more time to judge fit, fabric feel, setup and everyday use.",
-      },
-      {
-        title: "Straightforward setup",
-        body: "The fitted sheet and connection lead create a simple bedding routine when used with a correctly grounded outlet.",
-      },
-      {
-        title: "Complete bundle",
-        body: "Premium packaging, a grounding mat and access to the sleep monitoring app add useful value to the main sheet.",
-      },
+      { title: "Free and fast shipping", body: "" },
+      { title: "Giving 3 free gifts", body: "" },
+      { title: "Reduces Inflammation", body: "" },
+      { title: "Improves Mood", body: "" },
+      { title: "Better Sleep Quality", body: "" },
+      { title: "Relieves Muscle Soreness", body: "" },
+      { title: "Cost-Effective Solution", body: "" },
+      { title: "Energy Boost", body: "" },
+      { title: "Easy Integration", body: "" },
+      { title: "Durable Material", body: "" },
+      { title: "Eco-Friendly Design", body: "" },
     ],
     cons: [
       {
@@ -547,9 +530,16 @@ function GiftPanel() {
 }
 
 function CompactComparisonCard({ product }: { product: RankedSheet }) {
-  const comparisonPoints = product.winner
-    ? product.pros
-    : [...product.pros.slice(0, 3), ...product.cons.slice(0, 3)];
+  const pointsToDisplay = product.winner
+    ? [
+        ...product.pros.map((p) => ({ ...p, isLimitation: false })),
+        { title: "Regularly runs out of stock", body: "", isLimitation: true },
+        { title: "Expensive outside of sale periods", body: "", isLimitation: true },
+      ]
+    : [
+        ...product.pros.slice(0, 3).map((p) => ({ ...p, isLimitation: false })),
+        ...product.cons.slice(0, 3).map((p) => ({ ...p, isLimitation: true })),
+      ];
 
   return (
     <article
@@ -593,10 +583,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
       )}
 
       <div className="border-t border-slate-200 px-5 py-6 md:border-l md:border-t-0 md:px-6">
-        <p className="text-xs font-black uppercase tracking-[0.1em] text-emerald-700">
-          {product.winner ? "Best overall" : `#${product.rank} reviewed pick`}
-        </p>
-        <h3 className="mt-2 font-serif text-2xl font-bold leading-tight text-slate-950">
+        <h3 className="font-serif text-2xl font-bold leading-tight text-slate-950">
           {product.winner ? (
             <a href={JUUJO_URL} className="transition-colors hover:text-emerald-700">
               {product.name}
@@ -609,8 +596,8 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
           {product.descriptions[0]}
         </p>
         <ul className="mt-4 grid gap-x-5 gap-y-2 sm:grid-cols-2">
-          {comparisonPoints.map((point, index) => {
-            const isLimitation = !product.winner && index >= 3;
+          {pointsToDisplay.map((point, index) => {
+            const isLimitation = point.isLimitation;
             return (
               <li
                 key={`${point.title}-${index}`}
@@ -631,29 +618,46 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
       </div>
 
       <div className="flex flex-col items-center justify-center border-t border-slate-200 bg-slate-50 px-5 py-6 text-center md:border-l md:border-t-0">
-        <span className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">
-          Starting price
-        </span>
-        <strong className="mt-2 font-serif text-3xl text-slate-950">{product.price}</strong>
+        {product.winner ? (
+          <div className="mt-2 flex items-center justify-center gap-2">
+            <span className="text-xl md:text-2xl font-bold text-slate-400 line-through decoration-red-500/50 decoration-2">
+              $199
+            </span>
+            <span className="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
+              {product.price}
+            </span>
+          </div>
+        ) : (
+          <div className="mt-2 flex items-center justify-center gap-2">
+            <span className="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
+              {product.price}
+            </span>
+          </div>
+        )}
         {product.winner ? (
           <>
             <div className="mt-2">
-              <EditorialStars size={20} label={`${product.ratingLabel} ${product.rating}`} />
+              <EditorialStars size={20} label="5 out of 5 stars" />
             </div>
             <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
               Overall rating 4.9 / 5
             </span>
             <OfficialButton className="mt-4 w-full rounded-md px-4 text-[15px]">
-              Official Website <ArrowUpRight size={18} className="shrink-0" />
+              Official Website <ArrowUpRight size={18} className="shrink-0 inline-block ml-1" />
             </OfficialButton>
+            <div className="mt-3 w-full rounded-md bg-[#df4e45] py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
+              50% OFF<br />
+              Sale Ends:<br />
+              {formatNewYorkDate()}
+            </div>
           </>
         ) : (
           <>
-            <span className="mt-4 text-xs font-bold uppercase tracking-wide text-slate-500">
-              Reviewed pick
-            </span>
-            <span className="mt-2 text-xs leading-5 text-slate-500">
-              Retailer link coming later
+            <div className="mt-2">
+              <EditorialStars size={20} label={`Overall rating ${product.rating}`} />
+            </div>
+            <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+              Overall rating {product.rating} / 5
             </span>
           </>
         )}

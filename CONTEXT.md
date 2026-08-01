@@ -1407,6 +1407,17 @@ or deployment-setting change occurred.
 - Added estimated individual values to the `gifts` array (`$39`, `$99`, `$70`) to total the `$208` stated value so they appear as "Normally $X" over the gift images just like on the LED mask page.
 - Replaced the generic `OfficialButton` inside the free gifts section with a custom-styled `<a>` tag matching the `OutboundButton` (blue gradient, rounded-2xl, shimmer animation, ChevronRight icon) from the LED mask page to strictly mirror the "Check Availability" button style.
 
+#### Comparison Card Styling Updates
+- Removed the `#1 Best overall` and `#2 Reviewed pick` badge text from above the product titles in `CompactComparisonCard`.
+- Removed the "Starting price" text label above the price.
+- Updated the winner's pricing layout to show a strikethrough compare price (`$199`) next to the current price (`$99`).
+- Added a red "50% OFF | Sale Ends: [Today's Date]" box immediately below the Official Website button for the winner's card, matching the style from the competitor screenshot.
+- Fixed a TypeScript error in `EditorialStars` by passing a valid string label.
+- Updated competitor cards (`!product.winner`) to use the exact same bold `$X` price styling as the winner (but without a strikethrough compare price).
+- Added the `EditorialStars` rating component and `Overall rating X / 5` text to the competitor cards, matching the Hair Dryer page style, replacing the old "Retailer link coming later" text. No buttons were added to competitor cards.
+- Added two explicit limitations (cross points) to the Juujo winner card: "Regularly runs out of stock" and "Expensive outside of sale periods". Adjusted `CompactComparisonCard` rendering logic so these render with red X icons alongside the green checkmarks.
+- Replaced the previous 7 descriptive "Pros" for the Juujo winner card with 11 concise ticks as requested (e.g. "Free and fast shipping", "Giving 3 free gifts", "Reduces Inflammation", "Better Sleep Quality", etc.) to match the competitor layout exactly.
+
 #### Verification Performed and Skipped
 - Executed `pnpm --filter @trustpilotreview/site typecheck` successfully.
 - No new assets were created or deleted; only TSX markup was updated.
