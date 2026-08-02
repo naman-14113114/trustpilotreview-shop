@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type MouseEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+  type ReactNode,
+} from "react";
 import {
   ArrowUpRight,
   Check,
@@ -67,17 +73,34 @@ const rankedSheets: RankedSheet[] = [
       { label: "Overall value", value: 98 },
     ],
     pros: [
-      { title: "Reduces Inflammation", body: "" },
-      { title: "Improves Mood", body: "" },
-      { title: "Better Sleep Quality", body: "" },
-      { title: "Relieves Muscle Soreness", body: "" },
-      { title: "Free and fast shipping", body: "" },
-      { title: "Cost-Effective Solution", body: "" },
-      { title: "Includes 3 free gifts", body: "" },
-      { title: "Energy Boost", body: "" },
-      { title: "Easy Integration", body: "" },
-      { title: "Durable Material", body: "" },
-      { title: "Eco-Friendly Design", body: "" },
+      {
+        title: "Seven fitted sizes",
+        body: "The range covers common US mattresses without making shoppers settle for a loose flat sheet.",
+      },
+      {
+        title: "Comfort-led material blend",
+        body: "The 90% cotton and 10% conductive silver construction balances a familiar sheet feel with conductive fibres.",
+      },
+      {
+        title: "Clear entry price",
+        body: "At $99 for Single, Juujo has the lowest stated starting price among the five products compared here.",
+      },
+      {
+        title: "Longer trial window",
+        body: "The 120-night trial gives buyers more time to assess fit, setup and everyday comfort at home.",
+      },
+      {
+        title: "Complete value bundle",
+        body: "Premium packaging, a grounding mat and access to the sleep monitoring app are included in the offer.",
+      },
+      {
+        title: "Easy setup",
+        body: "The included connection lead makes it straightforward to plug into a standard grounded outlet without needing special tools.",
+      },
+      {
+        title: "Durable elastic edge",
+        body: "Designed with strong elastic to ensure the fitted sheet stays firmly in place even for active sleepers.",
+      },
     ],
     cons: [
       {
@@ -89,8 +112,8 @@ const rankedSheets: RankedSheet[] = [
         body: "The lead must be connected to a correctly grounded outlet in line with the supplied instructions.",
       },
       {
-        title: "Care matters",
-        body: "Conductive fibres require the recommended washing routine to avoid coating or damaging the material.",
+        title: "Sale Price Matters",
+        body: "For $199, some buyers may think twice. At the current $99 offer, it feels like a much smarter purchase.",
       },
     ],
   },
@@ -375,9 +398,13 @@ function formatNewYorkDate() {
   }).format(new Date());
 }
 
-
-
-function OfficialButton({ children, className = "" }: { children: ReactNode; className?: string }) {
+function OfficialButton({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const prepareNavigation = (event: MouseEvent<HTMLAnchorElement>) => {
     const button = event.currentTarget;
     button.dataset.loading = "true";
@@ -392,13 +419,18 @@ function OfficialButton({ children, className = "" }: { children: ReactNode; cla
       data-outbound-button="true"
       data-loading="false"
       aria-busy="false"
-      className={`relative inline-flex justify-center items-center px-8 py-4 text-lg md:text-xl font-bold text-white bg-emerald-500 rounded-full overflow-hidden group hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-emerald-500/30 ${className}`}
+      className={`relative inline-flex min-h-12 items-center justify-center overflow-hidden rounded-full bg-emerald-500 px-6 py-3.5 text-center text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:-translate-y-0.5 hover:bg-emerald-600 ${className}`}
     >
-      <span data-outbound-content="true" className="relative z-10 flex items-center justify-center gap-2">
-        {children} <ChevronRight size={24} />
+      <span
+        data-outbound-content="true"
+        className="inline-flex items-center justify-center gap-2"
+      >
+        {children}
       </span>
-      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
-      <span data-outbound-loader="true" className="absolute inset-0 z-20 hidden items-center justify-center bg-emerald-600">
+      <span
+        data-outbound-loader="true"
+        className="absolute inset-0 hidden items-center justify-center bg-emerald-600 opacity-0 transition-opacity aria-[busy=true]:opacity-100"
+      >
         <OutboundLoader />
       </span>
     </a>
@@ -425,17 +457,29 @@ function MetricBar({ label, value }: Metric) {
   );
 }
 
-function ProsCons({ pros, cons }: { pros: ComparisonPoint[]; cons: ComparisonPoint[] }) {
+function ProsCons({
+  pros,
+  cons,
+}: {
+  pros: ComparisonPoint[];
+  cons: ComparisonPoint[];
+}) {
   return (
     <div className="mb-8 flex flex-col gap-6">
       <section className="overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50/50">
-        <h4 className="bg-emerald-500 px-4 py-3 text-center text-2xl font-bold text-white">Pros</h4>
+        <h4 className="bg-emerald-500 px-4 py-3 text-center text-2xl font-bold text-white">
+          Pros
+        </h4>
         <ul className="space-y-4 p-5 md:p-6">
           {pros.map((item) => (
-            <li key={item.title} className="flex items-start gap-3 text-[17px] leading-7 text-slate-700">
+            <li
+              key={item.title}
+              className="flex items-start gap-3 text-[17px] leading-7 text-slate-700"
+            >
               <Check size={21} className="mt-1 shrink-0 text-emerald-500" />
               <span>
-                <strong className="text-slate-950">{item.title}:</strong> {item.body}
+                <strong className="text-slate-950">{item.title}:</strong>{" "}
+                {item.body}
               </span>
             </li>
           ))}
@@ -443,13 +487,19 @@ function ProsCons({ pros, cons }: { pros: ComparisonPoint[]; cons: ComparisonPoi
       </section>
 
       <section className="overflow-hidden rounded-2xl border border-red-100 bg-red-50/50">
-        <h4 className="bg-red-500 px-4 py-3 text-center text-2xl font-bold text-white">Cons</h4>
+        <h4 className="bg-red-500 px-4 py-3 text-center text-2xl font-bold text-white">
+          Cons
+        </h4>
         <ul className="space-y-4 p-5 md:p-6">
           {cons.map((item) => (
-            <li key={item.title} className="flex items-start gap-3 text-[17px] leading-7 text-slate-700">
+            <li
+              key={item.title}
+              className="flex items-start gap-3 text-[17px] leading-7 text-slate-700"
+            >
               <XCircle size={21} className="mt-1 shrink-0 text-red-500" />
               <span>
-                <strong className="text-slate-950">{item.title}:</strong> {item.body}
+                <strong className="text-slate-950">{item.title}:</strong>{" "}
+                {item.body}
               </span>
             </li>
           ))}
@@ -482,13 +532,18 @@ function GiftPanel() {
         </h4>
 
         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-          While doing our research, we found that Juujo is currently running a limited-time sale where you can get these premium accessories bundled for free with every fitted sheet purchase.
+          While doing our research, we found that Juujo is currently running a
+          limited-time sale where you can get these premium accessories bundled
+          for free with every fitted sheet purchase.
         </p>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
           {gifts.map((gift, i) => (
-            <div key={gift.name} className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-              <div 
+            <div
+              key={gift.name}
+              className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
+            >
+              <div
                 className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
@@ -521,8 +576,7 @@ function GiftPanel() {
           className="block mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-base sm:text-lg md:text-xl text-center py-3.5 sm:py-4 md:py-5 rounded-2xl shadow-xl shadow-blue-600/30 transition-all hover:scale-[1.02] relative overflow-hidden group border-2 border-blue-500"
         >
           <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
-            Check Availability{" "}
-            <ChevronRight size={20} className="sm:hidden" />
+            Check Availability <ChevronRight size={20} className="sm:hidden" />
             <ChevronRight size={24} className="hidden sm:block" />
           </span>
           <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
@@ -535,9 +589,23 @@ function GiftPanel() {
 function CompactComparisonCard({ product }: { product: RankedSheet }) {
   const pointsToDisplay = product.winner
     ? [
-        ...product.pros.map((p) => ({ ...p, isLimitation: false })),
+        { title: "Reduces Inflammation", body: "", isLimitation: false },
+        { title: "Improves Mood", body: "", isLimitation: false },
+        { title: "Better Sleep Quality", body: "", isLimitation: false },
+        { title: "Relieves Muscle Soreness", body: "", isLimitation: false },
+        { title: "Free and fast shipping", body: "", isLimitation: false },
+        { title: "Cost-Effective Solution", body: "", isLimitation: false },
+        { title: "Giving 3 free gifts", body: "", isLimitation: false },
+        { title: "Energy Boost", body: "", isLimitation: false },
+        { title: "Easy Integration", body: "", isLimitation: false },
+        { title: "Durable Material", body: "", isLimitation: false },
+        { title: "Eco-Friendly Design", body: "", isLimitation: false },
         { title: "Regularly runs out of stock", body: "", isLimitation: true },
-        { title: "Expensive outside of sale periods", body: "", isLimitation: true },
+        {
+          title: "Expensive outside of sale periods",
+          body: "",
+          isLimitation: true,
+        },
       ]
     : [
         ...product.pros.slice(0, 3).map((p) => ({ ...p, isLimitation: false })),
@@ -588,7 +656,10 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
       <div className="border-t border-slate-200 px-5 py-6 md:border-l md:border-t-0 md:px-6">
         <h3 className="text-center text-3xl font-bold leading-tight text-slate-950">
           {product.winner ? (
-            <a href={JUUJO_URL} className="transition-colors hover:text-emerald-700">
+            <a
+              href={JUUJO_URL}
+              className="transition-colors hover:text-emerald-700"
+            >
               {product.name}
             </a>
           ) : (
@@ -609,9 +680,15 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
                 }`}
               >
                 {isLimitation ? (
-                  <XCircle size={21} className="mt-0.5 shrink-0 fill-red-500 text-white" />
+                  <XCircle
+                    size={21}
+                    className="mt-0.5 shrink-0 fill-red-500 text-white"
+                  />
                 ) : (
-                  <CheckCircle2 size={21} className="mt-0.5 shrink-0 fill-emerald-500 text-white" />
+                  <CheckCircle2
+                    size={21}
+                    className="mt-0.5 shrink-0 fill-emerald-500 text-white"
+                  />
                 )}
                 <span>{point.title}</span>
               </li>
@@ -645,12 +722,15 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
               Overall rating 4.9 / 5
             </span>
-            <OfficialButton className="mt-4 w-full text-base">
-              Official Website
+            <OfficialButton className="mt-4 w-full rounded-md px-4 text-[15px]">
+              Official Website{" "}
+              <ArrowUpRight size={18} className="shrink-0 inline-block ml-1" />
             </OfficialButton>
             <div className="mt-3 w-full rounded-md bg-[#df4e45] py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
-              50% OFF<br />
-              Sale Ends:<br />
+              50% OFF
+              <br />
+              Sale Ends:
+              <br />
               {formatNewYorkDate()}
             </div>
           </>
@@ -680,8 +760,12 @@ function JuujoWinnerSection() {
         </h2>
         <article className="grid items-start border-2 border-t-0 border-emerald-500 bg-white lg:grid-cols-12">
           <aside className="border-b border-slate-200 p-6 md:p-8 lg:col-span-4 lg:self-stretch lg:border-b-0 lg:border-r">
-            <div className="flex w-full flex-col items-center lg:sticky lg:top-8">
-              <a href={JUUJO_URL} className="block w-full" aria-label={`Open ${product.name}`}>
+            <div className="flex w-full flex-col items-center lg:sticky lg:top-8 lg:pb-8">
+              <a
+                href={JUUJO_URL}
+                className="block w-full"
+                aria-label={`Open ${product.name}`}
+              >
                 <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-white">
                   <Image
                     src={product.image}
@@ -694,7 +778,9 @@ function JuujoWinnerSection() {
               </a>
               <div className="mt-5 text-center w-full">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <span className="text-3xl font-extrabold text-slate-900">{product.price}</span>
+                  <span className="text-3xl font-extrabold text-slate-900">
+                    {product.price}
+                  </span>
                   {product.originalPrice && (
                     <span className="text-lg text-slate-400 line-through font-medium">
                       {product.originalPrice}
@@ -704,17 +790,22 @@ function JuujoWinnerSection() {
                 <div className="mt-3 flex justify-center">
                   <GreenStarRating rating={4.9} size={27} />
                 </div>
-                <p className="mt-2 text-base font-semibold text-slate-500">Overall rating 4.9 / 5</p>
+                <p className="mt-2 text-base font-semibold text-slate-500">
+                  Overall rating 4.9 / 5
+                </p>
               </div>
-              <OfficialButton className="mt-6 hidden w-full lg:inline-flex">
-                Official Website
+              <OfficialButton className="mt-6 hidden w-full rounded-md text-lg lg:inline-flex">
+                Official Website <ArrowUpRight size={20} className="shrink-0" />
               </OfficialButton>
             </div>
           </aside>
 
           <div className="p-6 md:p-9 lg:col-span-8 lg:p-10">
             <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
-              <a href={JUUJO_URL} className="transition-colors hover:text-emerald-700">
+              <a
+                href={JUUJO_URL}
+                className="transition-colors hover:text-emerald-700"
+              >
                 {product.name}
               </a>
             </h2>
@@ -725,7 +816,9 @@ function JuujoWinnerSection() {
             </div>
 
             <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 md:p-7">
-              <h3 className="mb-6 font-serif text-2xl font-bold text-slate-900">Performance Metrics</h3>
+              <h3 className="mb-6 font-serif text-2xl font-bold text-slate-900">
+                Performance Metrics
+              </h3>
               <div className="space-y-5">
                 {product.metrics.map((metric) => (
                   <MetricBar key={metric.label} {...metric} />
@@ -749,9 +842,13 @@ function JuujoWinnerSection() {
                 className="aspect-square w-full rounded-md object-contain"
               />
               <div>
-                <h3 className="font-serif text-2xl font-bold text-slate-950">120-night home trial</h3>
+                <h3 className="font-serif text-2xl font-bold text-slate-950">
+                  120-night home trial
+                </h3>
                 <p className="mt-3 text-[17px] leading-8 text-slate-700">
-                  Assess the fitted feel, mattress fit and everyday setup in your own bedroom with a longer evaluation window than a quick first-night decision.
+                  Assess the fitted feel, mattress fit and everyday setup in
+                  your own bedroom with a longer evaluation window than a quick
+                  first-night decision.
                 </p>
               </div>
             </section>
@@ -798,7 +895,10 @@ function DeferredVerdictVideo() {
   };
 
   return (
-    <div ref={sectionRef} className="relative mx-auto w-full max-w-[260px] md:max-w-[320px]">
+    <div
+      ref={sectionRef}
+      className="relative mx-auto w-full max-w-[260px] md:max-w-[320px]"
+    >
       <div className="relative overflow-hidden rounded-[1.5rem] border border-[#dfd1bd] bg-black shadow-xl">
         <video
           ref={videoRef}
@@ -879,9 +979,18 @@ export default function GroundingSheetsAdvertorial() {
             </div>
             <div className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg space-y-4">
               <p>
-                With <strong>over 10 years</strong> of experience in sleep and wellness,{" "}
-                <strong className="text-slate-900">Dr. Rachel Morgan</strong>{" "}
-                is a certified wellness expert. She reviewed 20 popular United States grounding sheet options over 200+ hours, comparing publicly available specifications, fitted options, material blends, setup instructions, care guidance, entry prices, trial periods, and warranties. Her biggest finding was simple: the most expensive sheet was not always the best choice. The strongest options used the right materials, offered a secure fit, and were easy enough to integrate into a nightly routine consistently.
+                With <strong>over 10 years</strong> of experience in sleep and
+                wellness,{" "}
+                <strong className="text-slate-900">Dr. Rachel Morgan</strong> is
+                a certified wellness expert. She reviewed 20 popular United
+                States grounding sheet options over 200+ hours, comparing
+                publicly available specifications, fitted options, material
+                blends, setup instructions, care guidance, entry prices, trial
+                periods, and warranties. Her biggest finding was simple: the
+                most expensive sheet was not always the best choice. The
+                strongest options used the right materials, offered a secure
+                fit, and were easy enough to integrate into a nightly routine
+                consistently.
               </p>
             </div>
 
@@ -896,10 +1005,27 @@ export default function GroundingSheetsAdvertorial() {
         <section className="px-4 py-12 md:py-16">
           <div className="mx-auto max-w-5xl space-y-6 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9">
             <p>
-              <strong>Grounding sheets</strong> are a breakthrough in natural wellness. During our testing, we found that connecting the body to the Earth's electric field overnight provides real, measurable health benefits. Sleeping on these conductive materials actively helps <strong>reduce inflammation, ease muscle stiffness, and support deeper, more restorative sleep</strong>. It is a simple, effortless way to help your body heal and wake up with a natural energy boost.
+              <strong>Grounding sheets</strong> are a breakthrough in natural
+              wellness. During our testing, we found that connecting the body to
+              the Earth's electric field overnight provides real, measurable
+              health benefits. Sleeping on these conductive materials actively
+              helps{" "}
+              <strong>
+                reduce inflammation, ease muscle stiffness, and support deeper,
+                more restorative sleep
+              </strong>
+              . It is a simple, effortless way to help your body heal and wake
+              up with a natural energy boost.
             </p>
             <p>
-              When evaluating the best grounding sheets, we <strong>prioritized material quality</strong>, everyday ease of use, and their ability to deliver genuine grounding benefits. Whether you are new to earthing or simply looking to upgrade your current routine, these sheets are designed to enhance your wellness while you rest. Our in-depth reviews below will help you make an informed choice for better health and more rejuvenating sleep.
+              When evaluating the best grounding sheets, we{" "}
+              <strong>prioritized material quality</strong>, everyday ease of
+              use, and their ability to deliver genuine grounding benefits.
+              Whether you are new to earthing or simply looking to upgrade your
+              current routine, these sheets are designed to enhance your
+              wellness while you rest. Our in-depth reviews below will help you
+              make an informed choice for better health and more rejuvenating
+              sleep.
             </p>
           </div>
         </section>
@@ -928,59 +1054,83 @@ export default function GroundingSheetsAdvertorial() {
 
         <JuujoWinnerSection />
 
-        <section className="bg-slate-900 px-4 py-14 text-white md:py-20">
-          <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(250px,360px)_1fr] md:gap-14">
-            <DeferredVerdictVideo />
-            <div className="flex flex-col justify-center text-center">
-              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 tracking-tight">
-                <b>Juujo Grounding Fitted Sheet</b>
-              </h3>
+        <div className="mt-20 md:mt-24 mb-16 relative max-w-sm md:max-w-5xl mx-auto px-4">
+          <div className="bg-[#f8f4e6] rounded-[1.5rem] md:rounded-[2rem] p-5 pb-6 md:p-12 md:pb-8 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] border border-[#e8dccb] relative z-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
+              Editor's Verdict
+            </h2>
+            <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(250px,360px)_1fr] md:gap-14">
+              <DeferredVerdictVideo />
+              <div className="flex flex-col justify-center text-center">
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 tracking-tight">
+                  <b>Juujo Grounding Fitted Sheet</b>
+                </h3>
 
-              <div className="w-28 md:w-32 h-[1px] bg-emerald-500 mx-auto mb-5 md:mb-6"></div>
+                <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
 
-              <div className="text-2xl md:text-4xl font-bold text-emerald-400 mb-5 md:mb-8 font-sans">
-                Now at 50% off
-              </div>
+                <div className="text-2xl md:text-4xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans">
+                  Now at 50% off
+                </div>
 
-              {/* Trustpilot-style Badge */}
-              <div className="border border-slate-700 bg-slate-800/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="font-bold text-base md:text-lg text-white font-sans">
-                    Excellent
-                  </span>
-                  <div className="flex items-center gap-0.5 text-[#00b67a]">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={22} fill="currentColor" strokeWidth={1} />
-                    ))}
+                {/* Trustpilot-style Badge */}
+                <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="font-bold text-base md:text-lg text-black font-sans">
+                      Excellent
+                    </span>
+                    <div className="flex items-center gap-0.5 text-[#00b67a]">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          size={22}
+                          fill="currentColor"
+                          strokeWidth={1}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+                    Rated 4.9 / 5 on{" "}
+                    <Star
+                      size={18}
+                      fill="#00b67a"
+                      strokeWidth={1}
+                      className="text-[#00b67a]"
+                    />{" "}
+                    <span className="font-bold text-black">Trustpilot</span>
                   </div>
                 </div>
-                <div className="text-xs md:text-sm text-slate-300 flex items-center justify-center gap-1 font-sans">
-                  Rated 4.9 / 5 on <Star size={18} fill="#00b67a" strokeWidth={1} className="text-[#00b67a]" />{" "}
-                  <span className="font-bold text-white">Trustpilot</span>
-                </div>
-              </div>
 
-              <OfficialButton className="mx-auto w-full max-w-[240px] md:w-auto md:max-w-none text-sm md:text-xl font-bold font-sans tracking-wide py-3.5 md:py-4 px-6 md:px-12 rounded-full shadow-[0_8px_20px_rgba(16,185,129,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
-                CHECK AVAILABILITY
-              </OfficialButton>
+                <OfficialButton className="mx-auto w-full max-w-[240px] md:w-auto md:max-w-none text-sm md:text-xl font-bold font-sans tracking-wide py-3.5 md:py-4 px-6 md:px-12 rounded-full shadow-[0_8px_20px_rgba(16,185,129,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                  CHECK AVAILABILITY
+                </OfficialButton>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       <footer className="border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
         <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-          <p className="mb-2 text-lg font-bold text-slate-800">Best Grounding Sheets</p>
-          <p className="mb-6">&copy; 2026 Best Grounding Sheets. All rights reserved.</p>
+          <p className="mb-2 text-lg font-bold text-slate-800">
+            Best Grounding Sheets
+          </p>
+          <p className="mb-6">
+            &copy; 2026 Best Grounding Sheets. All rights reserved.
+          </p>
           <div className="mx-auto max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-6 text-left text-sm leading-relaxed text-slate-700 md:p-7">
             <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
               Important disclosure
             </p>
             <p className="mb-4">
-              <strong>Affiliate disclosure:</strong> We may receive compensation for clicks on or purchases of products featured on this site. This comes at no additional cost to you.
+              <strong>Affiliate disclosure:</strong> We may receive compensation
+              for clicks on or purchases of products featured on this site. This
+              comes at no additional cost to you.
             </p>
             <p>
-              <strong>Individual experiences:</strong> Grounding sheets are wellness products and experiences vary. This editorial guide does not provide medical advice or guarantee a particular outcome.
+              <strong>Individual experiences:</strong> Grounding sheets are
+              wellness products and experiences vary. This editorial guide does
+              not provide medical advice or guarantee a particular outcome.
             </p>
           </div>
         </div>
@@ -988,7 +1138,8 @@ export default function GroundingSheetsAdvertorial() {
 
       <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center border-t border-slate-200 bg-white p-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] md:hidden">
         <OfficialButton className="w-full text-[15px] sm:text-base">
-          View Our #1 Grounding Sheet <ArrowUpRight size={18} className="shrink-0" />
+          View Our #1 Grounding Sheet{" "}
+          <ArrowUpRight size={18} className="shrink-0" />
         </OfficialButton>
       </div>
     </div>
