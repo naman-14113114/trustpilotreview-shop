@@ -30,13 +30,12 @@ export const bestHairDryerProductContent = {
           with heat.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          Trusted by <strong>over 16,000 customers</strong> with a{" "}
-          <strong>4.9-star rating</strong>, Muuhu makes the clearest paid-search
-          value case. At <strong>&pound;149</strong>, it combines a high-speed
-          motor, seven useful attachments, ionic care, a 1-year warranty and a{" "}
-          <strong>90-day money-back guarantee</strong>, which is why it beats
-          the bigger dryer brands for shoppers who want performance, flexibility
-          and reassurance in one bundle.
+          At <strong>&pound;149</strong>, Muuhu combines a high-speed motor, seven
+          included attachments, ionic care, a 1-year warranty and a{" "}
+          <strong>90-day money-back guarantee</strong>. It ranks first for the
+          broadest drying and styling routine at the lowest current price in this
+          five-product shortlist. Shoppers who want only a familiar dedicated
+          dryer may still prefer Dyson, Cloud Nine, Shark or ghd.
         </p>
       </>
     ),
@@ -85,13 +84,13 @@ export const bestHairDryerProductContent = {
           high-street shops.
         </li>
         <li>
-          <strong>Limited Stock:</strong> Popular demand means the &pound;149
-          launch price may sell out.
+          <strong>Less Established Brand:</strong> Muuhu does not have the same
+          long-standing UK recognition as Dyson, ghd or Cloud Nine.
         </li>
         <li>
-          <strong>Sale Price Matters:</strong> For &pound;299, some buyers may
-          think twice. At the current <strong>&pound;149</strong> offer, it
-          feels like a much smarter purchase.
+          <strong>Bigger Kit to Store:</strong> Seven attachments give more
+          flexibility, but they also take up more storage space than a simple
+          dryer-and-nozzle setup.
         </li>
       </>
     ),
