@@ -311,7 +311,7 @@ const baseProducts: Product[] = [
     description: [
       "Our top pick is the Muuhu AirPro, a salon-grade device with a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
       "A major advantage is the complete styling system: a dedicated L-shaped base, left and right auto-wrap Coanda curlers, a smoothing brush, a round volumising brush, a concentrator nozzle, and a diffuser. Intelligent heat control and negative-ion technology dry hair fast while helping protect against heat damage, all from a UK 3-pin 220-240V plug.",
-      "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £149, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 1-year warranty, and a 90-day money-back guarantee.",
+      "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £149, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 2-year warranty, and a 90-day money-back guarantee.",
     ],
     pros: [
       "Controlled High-Speed Motor: 1,600W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for fast, adjustable drying.",
@@ -319,7 +319,7 @@ const baseProducts: Product[] = [
       "Coanda Auto-Wrap: Left and right auto-wrap curlers draw hair in for salon-style curls and waves with no manual winding.",
       "Ionic + Intelligent Heat Control: Negative ions help reduce frizz while smart heat regulation helps protect hair from extreme heat damage.",
       "Outstanding Value: At £149 (was £299), it undercuts premium stylers by £200-£350 while including more attachments.",
-      "Strong Assurance: Backed by a 1-year warranty and a 90-day money-back guarantee for a lower-risk trial.",
+      "Strong Assurance: Backed by a 2-year warranty and a 90-day money-back guarantee for a lower-risk trial.",
       "UK Ready: Supplied for UK 220-240V with a standard 3-pin plug, no travel adapter needed.",
     ],
     cons: [
@@ -359,7 +359,7 @@ const baseProducts: Product[] = [
       "Very High Price: At £399.99 it is dramatically more expensive than the £149 top pick for comparable core styling.",
       "Fewer Attachments: Standard bundles include fewer total attachments than the seven-piece system in our top pick.",
       "No Free Gift Bundle: Does not include the complimentary accessory and guide bundle offered with our top pick.",
-      "Shorter Assurance: Warranty and trial terms are narrower than the 1-year warranty and 90-day guarantee on our top pick.",
+      "Shorter Assurance: Warranty and trial terms are narrower than the 2-year warranty and 90-day guarantee on our top pick.",
     ],
     metrics: [
       { label: "Drying Speed", value: 92 },
@@ -393,7 +393,7 @@ const baseProducts: Product[] = [
       "Higher Price: At £199 it costs more than our £149 top pick while including fewer attachments.",
       "No Auto-Wrap Curlers: Lacks the pair of Coanda auto-wrap curlers in our top pick.",
       "Smaller Attachment Set: Does not match the seven-piece completeness of our top pick.",
-      "Weaker Assurance: Trial and warranty terms are narrower than the 1-year warranty and 90-day guarantee on our top pick.",
+      "Weaker Assurance: Trial and warranty terms are narrower than the 2-year warranty and 90-day guarantee on our top pick.",
     ],
     metrics: [
       { label: "Drying Speed", value: 88 },
@@ -850,7 +850,7 @@ const bestHairDecisionDetails: Record<number, BestHairDecisionDetail> = {
       "1,600W / 110,000 RPM",
       "7 included attachments",
       "90-day money-back guarantee",
-      "1-year warranty",
+      "2-year warranty",
     ],
   },
   2: {
@@ -976,7 +976,7 @@ function guideProductDescription(product: HairGuideProduct, guide: HairGuide) {
     return [
       `${product.summary} For ${intent}, that combination matters because buyers need a dryer that handles the specific routine without forcing them to purchase several separate tools.`,
       `${guide.quickTake} Muuhu is positioned as the No. 1 pick after weighting ${comparisonFocus}. Its diffuser, concentrator, brushes and left/right curlers let the page adapt the recommendation to the search intent while keeping the underlying product specifications consistent.`,
-      `The deciding points are practical: ${guide.winnerBullets.join(" ")} The £149 offer, official £129 gift bundle, 1-year warranty and 90-day guarantee make the recommendation easier to trust without dismissing the genuine strengths of the established brands.`,
+      `The deciding points are practical: ${guide.winnerBullets.join(" ")} The £149 offer, official £129 gift bundle, 2-year warranty and 90-day guarantee make the recommendation easier to trust without dismissing the genuine strengths of the established brands.`,
     ];
   }
 
@@ -986,7 +986,7 @@ function guideProductDescription(product: HairGuideProduct, guide: HairGuide) {
       .join(" and ")
       .toLowerCase()} directly shape the buyer's result.`,
     `${product.name} has a clear place in the comparison for ${product.bestFor.toLowerCase()} It is treated as a credible option because its established strengths, current UK price and included attachments may be the better fit for a shopper who values its particular dryer-first experience.`,
-    `Muuhu moves ahead on the combined buying case rather than by attacking that strength. When we weight ${comparisonFocus}, Muuhu's £149 seven-attachment kit, £129 gift offer, 1-year warranty and 90-day guarantee make the decision easier for value-focused shoppers. ${guide.winnerBullets[0]}`,
+    `Muuhu moves ahead on the combined buying case rather than by attacking that strength. When we weight ${comparisonFocus}, Muuhu's £149 seven-attachment kit, £129 gift offer, 2-year warranty and 90-day guarantee make the decision easier for value-focused shoppers. ${guide.winnerBullets[0]}`,
   ];
 }
 
@@ -1379,109 +1379,14 @@ export default function HairDryerAdvertorial({
 
       <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-12 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
-          {isBestHairLanding ? (
-            <div className="mb-10 grid items-stretch gap-6 text-left md:mb-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
-              <div className="order-2 flex flex-col justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-3 shadow-sm lg:order-1 lg:p-5">
-                <img
-                  src={heroImage}
-                  alt={heroAlt}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="h-auto w-full rounded-2xl object-contain"
-                />
-                <p className="px-2 pb-1 pt-3 text-center text-xs font-semibold text-slate-500">
-                  Compared: Muuhu, Dyson, Cloud Nine, Shark and ghd
-                </p>
-                <div className="mt-4 grid grid-cols-3 gap-2">
-                  {[
-                    ["5", "UK models"],
-                    ["£149", "Winning price"],
-                    ["1-7", "Attachments"],
-                  ].map(([value, label]) => (
-                    <div
-                      key={label}
-                      className="rounded-xl border border-slate-200 bg-white p-3 text-center"
-                    >
-                      <p className="text-lg font-black text-slate-900">{value}</p>
-                      <p className="text-[11px] font-bold uppercase tracking-wide text-slate-500">
-                        {label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <section className="order-1 flex flex-col rounded-3xl border-2 border-emerald-500 bg-[#fbf7ef] p-5 shadow-[0_20px_50px_-24px_rgba(6,95,70,0.45)] sm:p-7 lg:order-2 lg:p-8">
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                  <span className="rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
-                    Best overall for drying + styling
-                  </span>
-                  <span className="text-sm font-bold text-emerald-800">#1 of 5</span>
-                </div>
-                <div className="mb-4 sm:hidden">
-                  <CTAButton
-                    href={market.muuhuUrl ?? "#"}
-                    text="View £149 Muuhu Offer"
-                    className="w-full"
-                  />
-                </div>
-                <div className="grid flex-1 items-center gap-4 sm:grid-cols-[0.9fr_1.1fr]">
-                  <img
-                    src="/img/hair/muuhu-product-1a.webp"
-                    alt="Muuhu AirPro hair dryer and styling attachments"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    className="mx-auto aspect-square w-full max-w-[260px] rounded-2xl object-contain"
-                  />
-                  <div>
-                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-emerald-700">
-                      Editor&apos;s top pick
-                    </p>
-                    <h2 className="font-serif text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-                      Muuhu AirPro
-                    </h2>
-                    <div className="my-3 flex items-baseline gap-3">
-                      <span className="text-3xl font-black text-slate-950">&pound;149</span>
-                      <span className="text-lg font-semibold text-slate-400 line-through">&pound;299</span>
-                    </div>
-                    <ul className="mb-5 space-y-2 text-sm font-semibold leading-snug text-slate-700 sm:text-[15px]">
-                      {[
-                        "1,600W brushless motor with 110,000 RPM airflow",
-                        "7 attachments for drying, diffusing, smoothing and curl finishing",
-                        "90-day money-back guarantee plus 1-year warranty",
-                      ].map((fact) => (
-                        <li key={fact} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                          <span>{fact}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="hidden sm:block">
-                  <CTAButton
-                    href={market.muuhuUrl ?? "#"}
-                    text="See Muuhu's £149 Offer"
-                    className="mt-2 w-full"
-                  />
-                </div>
-                <p className="mt-3 text-center text-xs font-medium text-slate-500">
-                  Opens the official Muuhu UK website
-                </p>
-              </section>
-            </div>
-          ) : (
-            <img
-              src={heroImage}
-              alt={heroAlt}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${heroImageClass}`}
-            />
-          )}
+          <img
+            src={heroImage}
+            alt={heroAlt}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${heroImageClass}`}
+          />
 
           <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">

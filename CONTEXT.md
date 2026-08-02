@@ -1538,3 +1538,42 @@ or deployment-setting change occurred.
 #### Remaining External Work
 - The Microsoft Ads conversion goal still needs account-side confirmation that it listens for `muuhu_outbound_click` or `affiliate_click`.
 - Automatic Vercel Git deployments should be repaired by aligning GitHub author access with the actual Vercel project team. This release did not change ownership, team access, aliases, or Git integration settings.
+
+### August 02, 2026: Restore normal Hair Dryer hero and update Muuhu warranty to 2 years
+
+#### User Intent and Scope
+- After reviewing the newly published split winner hero, the user rejected that design and asked to restore the normal hero used previously.
+- The user also stated that the Muuhu warranty must be 2 years.
+- This revision changes the active TrustpilotReview hair-page implementation only. It does not alter the protected static reference assets, product order, prices, gifts, outbound URL, tracking event names, or other product specifications.
+
+#### Files Changed
+- `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - Removed the entire two-column comparison/winner hero, including the `UK models`, `Winning price`, attachment statistic, duplicate Muuhu product panel, and hero-specific desktop/mobile offer buttons.
+  - Restored the original single full-width `/img/hair/top-5-hair-dryer.webp` hero with the existing rounded border and shadow treatment on the main route.
+  - Updated every active Muuhu/top-pick warranty comparison in the shared hair advertorial renderer from 1 year to 2 years.
+- `apps/site/src/data/bestHairDryerProductContent.tsx`
+  - Updated the Muuhu description and buyer-reassurance advantage to a 2-year warranty.
+- `apps/site/src/data/hair.ts`
+  - Updated all three Muuhu offer/warranty statements to 2 years.
+- `apps/site/src/data/hairGuides.ts`
+  - Updated Muuhu warranty references across hair-type guides and direct comparison pages from 1 year to 2 years.
+
+#### Consistency Check
+- Nineteen active Muuhu/top-pick warranty references now say `2-year warranty`.
+- No `1-year warranty` reference remains in the active TrustpilotReview hair-page source.
+- The only remaining one-year wording under `apps/site/src` is a generic legacy educational sentence in `apps/site/src/data/old/articles.ts`; it does not describe Muuhu and was intentionally left unchanged.
+- The main route still uses the exact high-intent H1 `Best Hair Dryer`, the top-five quick decision guide, transparent methodology, factual product panels, and the existing sticky mobile CTA.
+
+#### Verification
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with all 37 static pages generated.
+- `PARITY_BASE_URL=http://localhost:3017 corepack pnpm verify:parity` smoke-tested seven routes successfully.
+- The local production route returned HTTP `200`.
+- Playwright desktop `1440x900` and mobile `390x844` checks confirmed the full-width hero asset, removal of the split-hero copy, visible 2-year warranty, absence of 1-year Muuhu warranty text, zero horizontal overflow, and no console or page errors.
+- Desktop outbound-click QA preserved `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid` on the Muuhu destination. Tracking code was not changed.
+
+#### Commit, Push, and Deployment Status
+- No file is staged.
+- No commit was created.
+- No push, pull request, Vercel deployment, production promotion, or Microsoft Ads mutation was performed because this follow-up request did not explicitly authorise publication.
+- The verified revision remains local in the detached worktree `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802`.
