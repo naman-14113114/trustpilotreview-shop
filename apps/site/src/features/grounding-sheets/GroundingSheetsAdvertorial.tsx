@@ -54,7 +54,7 @@ const rankedSheets: RankedSheet[] = [
   {
     rank: 1,
     name: "Juujo Grounding Fitted Sheet",
-    image: "/img/grounding-sheets/juujo-grounding-fitted-sheet.webp",
+    image: "/img/grounding-sheets/best-page-image.webp",
     price: "$99",
     originalPrice: "$199",
     rating: "4.9 / 5",
@@ -120,7 +120,7 @@ const rankedSheets: RankedSheet[] = [
   {
     rank: 2,
     name: "Terra Grounding Bed Sheet",
-    image: "/img/grounding-sheets/terra-grounding-bed-sheet.webp",
+    image: "/img/grounding-sheets/terra-grounding-bed-sheet-new.webp",
     price: "$109.95",
     rating: "4.6 / 5",
     ratingLabel: "Editorial rating",
@@ -637,7 +637,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             height={360}
             sizes="(max-width: 767px) 82vw, 215px"
             priority
-            className="h-44 w-full rounded-md object-contain transition-transform duration-300 hover:scale-[1.02]"
+            className="h-44 w-full rounded-xl object-contain transition-transform duration-300 hover:scale-[1.02]"
           />
         </a>
       ) : (
@@ -648,7 +648,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             width={360}
             height={360}
             sizes="(max-width: 767px) 82vw, 215px"
-            className="h-44 w-full rounded-md object-contain"
+            className="h-44 w-full rounded-xl object-contain"
           />
         </div>
       )}
@@ -766,9 +766,9 @@ function JuujoWinnerSection() {
                 className="block w-[90%]"
                 aria-label={`Open ${product.name}`}
               >
-                <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-white">
+                <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white">
                   <Image
-                    src={product.image}
+                    src="/img/grounding-sheets/best-page-image.webp"
                     alt={`${product.name} product view`}
                     fill
                     sizes="(max-width: 1023px) 90vw, 330px"
