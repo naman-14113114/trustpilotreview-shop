@@ -1428,3 +1428,68 @@ or deployment-setting change occurred.
 
 #### Commit, Push, Branch, and Deployment Status
 - No commit, push, branch, or Vercel deployment was triggered. All changes remain local on the machine.
+
+### August 02, 2026: Best Hair Dryer UK Bing landing-page and Muuhu conversion pass
+
+#### User Intent and Evidence
+- The user asked for the recommended conversion changes to be implemented on `/best-hair-dryer-uk-2026` after comparing it with Best Products Reviews, Quality Reviewer, and the better-converting Buudy comparison page.
+- The user then supplied a Microsoft Ads keyword diagnostic for exact-match `best hair dryer`: quality score `8/10`, expected click-through rate `Above average`, ad relevance `Above average`, and landing-page experience only `Average`.
+- The implementation therefore focused on first-screen keyword relevance, decision speed, Muuhu visual hierarchy, editorial transparency, mobile CTA visibility, and claim credibility. It did not change the campaign, keyword, bid, Microsoft Ads goal, or any other route.
+
+#### Starting Git State and Isolation
+- Work was performed in the clean detached worktree `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802` at `origin/main` commit `71d8733e91835c1cf0317ced86fa655055ec2e6e`.
+- A temporary branch named `agent/hair-cro-20260802` was accidentally created before any project file was edited. The mistake was detected immediately; the clean worktree and unused branch were removed, and the worktree was recreated detached at the same `origin/main` commit. No branch remains from this task.
+- The older dirty `trustpilot-led-mask-replica` checkout and the existing hair/offer worktrees were not edited.
+- The external instruction paths under `E:\1st YEAR DTU\New folder\...` referenced by the repository manual were checked but were not present on this machine. The repository `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, and the full existing `CONTEXT.md` were used.
+
+#### Files Changed
+- `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - Changed the UK page H1 to the exact high-intent phrase `Best Hair Dryer`, while retaining `United Kingdom - 2026` and the dynamic update date.
+  - Added a concise above-fold affiliate disclosure.
+  - Replaced the passive comparison-only hero for this route with a two-column decision hero. The authentic existing comparison image remains on the left and the authentic Muuhu product image is visually dominant in a bordered winner panel on the right.
+  - Added the first-screen `Best overall for drying + styling` positioning, Muuhu price `£149` versus `£299`, `1,600W / 110,000 RPM`, seven attachments, the 90-day money-back guarantee, and the 1-year warranty.
+  - Added dedicated desktop and mobile Muuhu offer CTAs. The mobile CTA appears inside the initial 390x844 viewport before the product image; the existing sticky CTA remains available.
+  - Added a responsive `Top five hair dryers at a glance` decision guide with rank, best-for label, current price, two factual comparison points, a direct Muuhu offer CTA, and in-page review links for competitors.
+  - Preserved the fixed ranking order: Muuhu, Dyson, Cloud Nine, Shark, ghd.
+  - Changed the reviewer role on this route to `Haircare buying editor` and replaced unsupported certification, 12-year expertise, 22-dryer, 240-hour, and 1,000-user recommendation claims with a transparent published-information methodology and a comparable-lab-data limitation.
+  - Replaced the long generic introduction with two search-intent paragraphs explaining drying performance, hair-type fit, and why Muuhu wins this shortlist.
+  - Replaced unexplained percentage performance bars on this route with factual product panels. Other hair routes retain their existing metrics behavior.
+  - Added explicit `Best for` positioning and visible numbered product headings to every ranked product card.
+  - Switched below-fold competitor product images to lazy loading and used `object-contain` for the Muuhu winner packshot to avoid product distortion.
+  - Relabelled route-specific rating copy as editorial rather than implying an unlinked Trustpilot rating in the bottom verdict.
+- `apps/site/src/data/bestHairDryerProductContent.tsx`
+  - Removed the unlinked `over 16,000 customers` claim from Muuhu editorial copy.
+  - Kept the current verified offer structure: `£149`, seven attachments, 1-year warranty, and 90-day money-back guarantee.
+  - Replaced `Limited Stock` and speculative sell-out wording with honest limitations: Muuhu is a less established UK brand and its seven-piece kit needs more storage.
+
+#### Protected Data, Assets, Links, and Tracking
+- Target route only: `/best-hair-dryer-uk-2026`.
+- Muuhu official destination remains `https://uk.muuhu.com/products/muuhu-hair-dryer`.
+- Existing product assets were reused without generation or modification, including `/img/hair/top-5-hair-dryer.webp` and `/img/hair/muuhu-product-1a.webp`.
+- Muuhu remains 1600W in visible copy. Gift data and URLs were not changed: Premium Packaging `£35`, Muuhu ScalpPro `£79`, and Haircare E-book `£15`, total `£129`.
+- Native anchor navigation remains immediate. A test landing URL containing `msclkid`, `utm_source`, `utm_medium`, and `utm_campaign` preserved all four parameters on the Muuhu destination.
+- Microsoft UET tag `211072489` emitted both `muuhu_outbound_click` and `affiliate_click` custom requests after the hero CTA click. Existing event names were deliberately preserved.
+- No conversion value or currency was added because the intended Muuhu conversion value has not been supplied. Microsoft Ads must use one of the existing event names for the configured goal if outbound clicks are intended to count as conversions.
+
+#### Verification Performed
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed. This package script is the repository's TypeScript lint check.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with all 37 static pages generated, including `/best-hair-dryer-uk-2026`.
+- `corepack pnpm verify:parity` passed from `apps/site`; with `PARITY_BASE_URL=http://localhost:3017`, it smoke-tested seven routes successfully.
+- Production-mode local route returned HTTP `200` on port `3017`.
+- Playwright checks passed at `1440x900` and `390x844`: the primary Muuhu CTA was inside the initial viewport, document width matched viewport width, no console errors or page errors were recorded, the new quick guide and methodology caveat were present, and removed unsupported claims were absent from the rendered route.
+- All 30 local image URLs referenced by the rendered page returned successful HTTP responses.
+- Browser click QA confirmed the destination `https://uk.muuhu.com/products/muuhu-hair-dryer?utm_source=bing&utm_medium=cpc&utm_campaign=best-hair-dryer&msclkid=qa-msclkid` and Microsoft UET custom requests with event actions `muuhu_outbound_click` and `affiliate_click`.
+- `git diff --check` passed.
+- The monorepo-root `corepack pnpm lint` and root `corepack pnpm verify:parity` wrappers were also attempted but the task runner launched a globally installed pnpm `11.0.8` instead of the repository-required `11.1.1`. The same required site checks passed when invoked directly with Corepack from the site package, so no package-manager configuration was changed.
+
+#### Commit, Push, Branch, and Deployment Status
+- No file is staged.
+- No commit was created.
+- No push was made.
+- No branch or pull request remains from this task.
+- No Vercel deployment, GitHub workflow, direct deployment, promotion, rollback, environment-variable update, or Microsoft Ads mutation was triggered. The completed implementation remains local in the detached worktree because the user did not explicitly authorise repository publishing or deployment in this request.
+
+#### Remaining External Work
+- In Microsoft Ads, confirm that the conversion goal listens for `muuhu_outbound_click` or `affiliate_click`; the page sends both, but this task did not modify the advertising account.
+- Use a separate ad group or future landing route for `multi-styler`, `Dyson Airwrap alternative`, and similar styling-led terms rather than weakening this page's exact `best hair dryer` relevance.

@@ -838,6 +838,59 @@ const bestHairDryerProducts: Product[] = [
   },
 ];
 
+type BestHairDecisionDetail = {
+  bestFor: string;
+  facts: string[];
+};
+
+const bestHairDecisionDetails: Record<number, BestHairDecisionDetail> = {
+  1: {
+    bestFor: "Best overall: drying + styling",
+    facts: [
+      "1,600W / 110,000 RPM",
+      "7 included attachments",
+      "90-day money-back guarantee",
+      "1-year warranty",
+    ],
+  },
+  2: {
+    bestFor: "Best luxury dryer",
+    facts: [
+      "110,000 RPM V9 motor",
+      "5 included attachments",
+      "2-year guarantee",
+      "Dedicated premium dryer",
+    ],
+  },
+  4: {
+    bestFor: "Best lightweight salon dryer",
+    facts: [
+      "1,600W motor",
+      "3 included attachments",
+      "Approx. 0.4kg",
+      "Dryer-first design",
+    ],
+  },
+  3: {
+    bestFor: "Best compact dryer",
+    facts: [
+      "4 included attachments",
+      "Approx. 0.68kg",
+      "Scalp Shield mode",
+      "Folding handle",
+    ],
+  },
+  5: {
+    bestFor: "Best familiar salon brand",
+    facts: [
+      "Dedicated salon dryer",
+      "1 included nozzle",
+      "Dryer-first routine",
+      "Recognisable UK brand",
+    ],
+  },
+};
+
 const prosLabels = [
   "Best fit",
   "Styling range",
@@ -1225,6 +1278,7 @@ export default function HairDryerAdvertorial({
   const market = getAdvertorialMarket(marketKey);
   const updatedDate = useMarketUpdatedDate(market, context.updatedDate);
   const isThreeWay = mode === "three-way";
+  const isBestHairLanding = !guide && !isThreeWay && market.key === "uk";
   const allProducts = getProductsForMarket(market);
   const bestHairDryerProductsForMarket =
     getBestHairDryerProductsForMarket(market);
@@ -1240,7 +1294,9 @@ export default function HairDryerAdvertorial({
       : criteria;
   const expertProfile = {
     name: "Amara Wright",
-    title: "Haircare and hair style expert",
+    title: isBestHairLanding
+      ? "Haircare buying editor"
+      : "Haircare and hair style expert",
     image: "/img/hair/styler_image.webp",
     yearsExperience: 12,
     dryersReviewed: 22,
@@ -1260,7 +1316,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "Dyson vs Shark vs Muuhu"
       : market.key === "uk"
-        ? "Top 5 Hair Dryers"
+        ? "Best Hair Dryer"
         : "Best Hair Dryer";
   const heroAlt =
     guide?.heroAlt ??
@@ -1312,19 +1368,120 @@ export default function HairDryerAdvertorial({
             Last updated –{" "}
             <span suppressHydrationWarning>{updatedDate}</span>
           </div>
+          {isBestHairLanding && (
+            <p className="mx-auto mt-3 max-w-2xl text-xs font-medium leading-relaxed text-emerald-50 md:text-sm">
+              Editorial buying comparison. We may earn commission from featured
+              links at no extra cost to you.
+            </p>
+          )}
         </div>
       </div>
 
       <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-12 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
-          <img
-            src={heroImage}
-            alt={heroAlt}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${heroImageClass}`}
-          />
+          {isBestHairLanding ? (
+            <div className="mb-10 grid items-stretch gap-6 text-left md:mb-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
+              <div className="order-2 flex flex-col justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-3 shadow-sm lg:order-1 lg:p-5">
+                <img
+                  src={heroImage}
+                  alt={heroAlt}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-auto w-full rounded-2xl object-contain"
+                />
+                <p className="px-2 pb-1 pt-3 text-center text-xs font-semibold text-slate-500">
+                  Compared: Muuhu, Dyson, Cloud Nine, Shark and ghd
+                </p>
+                <div className="mt-4 grid grid-cols-3 gap-2">
+                  {[
+                    ["5", "UK models"],
+                    ["£149", "Winning price"],
+                    ["1-7", "Attachments"],
+                  ].map(([value, label]) => (
+                    <div
+                      key={label}
+                      className="rounded-xl border border-slate-200 bg-white p-3 text-center"
+                    >
+                      <p className="text-lg font-black text-slate-900">{value}</p>
+                      <p className="text-[11px] font-bold uppercase tracking-wide text-slate-500">
+                        {label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <section className="order-1 flex flex-col rounded-3xl border-2 border-emerald-500 bg-[#fbf7ef] p-5 shadow-[0_20px_50px_-24px_rgba(6,95,70,0.45)] sm:p-7 lg:order-2 lg:p-8">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                  <span className="rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
+                    Best overall for drying + styling
+                  </span>
+                  <span className="text-sm font-bold text-emerald-800">#1 of 5</span>
+                </div>
+                <div className="mb-4 sm:hidden">
+                  <CTAButton
+                    href={market.muuhuUrl ?? "#"}
+                    text="View £149 Muuhu Offer"
+                    className="w-full"
+                  />
+                </div>
+                <div className="grid flex-1 items-center gap-4 sm:grid-cols-[0.9fr_1.1fr]">
+                  <img
+                    src="/img/hair/muuhu-product-1a.webp"
+                    alt="Muuhu AirPro hair dryer and styling attachments"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="mx-auto aspect-square w-full max-w-[260px] rounded-2xl object-contain"
+                  />
+                  <div>
+                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-emerald-700">
+                      Editor&apos;s top pick
+                    </p>
+                    <h2 className="font-serif text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+                      Muuhu AirPro
+                    </h2>
+                    <div className="my-3 flex items-baseline gap-3">
+                      <span className="text-3xl font-black text-slate-950">&pound;149</span>
+                      <span className="text-lg font-semibold text-slate-400 line-through">&pound;299</span>
+                    </div>
+                    <ul className="mb-5 space-y-2 text-sm font-semibold leading-snug text-slate-700 sm:text-[15px]">
+                      {[
+                        "1,600W brushless motor with 110,000 RPM airflow",
+                        "7 attachments for drying, diffusing, smoothing and curl finishing",
+                        "90-day money-back guarantee plus 1-year warranty",
+                      ].map((fact) => (
+                        <li key={fact} className="flex items-start gap-2">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                          <span>{fact}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="hidden sm:block">
+                  <CTAButton
+                    href={market.muuhuUrl ?? "#"}
+                    text="See Muuhu's £149 Offer"
+                    className="mt-2 w-full"
+                  />
+                </div>
+                <p className="mt-3 text-center text-xs font-medium text-slate-500">
+                  Opens the official Muuhu UK website
+                </p>
+              </section>
+            </div>
+          ) : (
+            <img
+              src={heroImage}
+              alt={heroAlt}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className={`w-full mx-auto rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12 ${heroImageClass}`}
+            />
+          )}
 
           <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
@@ -1375,6 +1532,17 @@ export default function HairDryerAdvertorial({
                     Muuhu made the strongest first-click case for shoppers who
                     want a complete kit at a clearer price.
                   </p>
+                ) : isBestHairLanding ? (
+                  <p>
+                    <strong className="text-slate-900">{expertProfile.name}</strong>{" "}
+                    compared the five shortlisted models using published product
+                    specifications, included attachments, current UK prices,
+                    warranty and return terms, and buyer-facing product
+                    information. The recommendation prioritises drying
+                    performance, heat control, hair-type fit and value. Where
+                    directly comparable laboratory measurements were not
+                    available, we did not invent them.
+                  </p>
                 ) : market.key === "ca" ? (
                   <p>
                     Our editorial team compared 22 of the most popular hair
@@ -1408,7 +1576,12 @@ export default function HairDryerAdvertorial({
 
               <hr className="border-slate-200 w-full mb-4" />
 
-              {market.key === "ca" ? null : (
+              {market.key === "ca" ? null : isBestHairLanding ? (
+                <div className="text-xs italic text-slate-600 md:text-right md:text-sm">
+                  * Editorial recommendation based on current UK product
+                  information and offer terms checked {updatedDate}.
+                </div>
+              ) : (
                 <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
                   * Recommended by over 1,000 {market.buyerLabel} hair styling
                   users.
@@ -1420,6 +1593,71 @@ export default function HairDryerAdvertorial({
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        {isBestHairLanding && (
+          <section className="mb-12 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm md:mb-16">
+            <div className="border-b border-slate-200 bg-slate-900 px-5 py-5 text-white md:px-8">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                Quick decision guide
+              </p>
+              <h2 className="mt-1 font-serif text-2xl font-black md:text-3xl">
+                The top five hair dryers at a glance
+              </h2>
+            </div>
+            <div className="divide-y divide-slate-200">
+              {products.map((product, productIndex) => {
+                const decision = bestHairDecisionDetails[product.id];
+                return (
+                  <div
+                    key={`quick-${product.id}`}
+                    className={`grid gap-4 p-5 md:grid-cols-[58px_1.2fr_0.85fr_100px_160px] md:items-center md:px-8 ${
+                      product.isWinner ? "bg-emerald-50/60" : "bg-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between md:block">
+                      <span className="font-serif text-2xl font-black text-emerald-700">
+                        #{productIndex + 1}
+                      </span>
+                      <span className="text-lg font-black text-slate-900 md:hidden">
+                        {product.price}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-extrabold text-slate-950">
+                        {product.name}
+                      </h3>
+                      <p className="mt-1 text-sm font-bold text-emerald-700">
+                        {decision?.bestFor}
+                      </p>
+                    </div>
+                    <p className="text-sm font-medium leading-relaxed text-slate-600">
+                      {decision?.facts.slice(0, 2).join(" · ")}
+                    </p>
+                    <span className="hidden text-lg font-black text-slate-900 md:block">
+                      {product.price}
+                    </span>
+                    {product.isWinner ? (
+                      <OutboundButton
+                        href={product.link}
+                        ariaLabel="Quick comparison Muuhu £149 offer"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-emerald-600 px-4 py-2.5 text-sm font-extrabold text-white shadow-md transition-colors hover:bg-emerald-700"
+                      >
+                        View &pound;149 offer
+                      </OutboundButton>
+                    ) : (
+                      <a
+                        href={`#product-${product.id}`}
+                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-300 px-4 py-2.5 text-sm font-bold text-slate-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
+                      >
+                        Read review
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
         {/* Intro */}
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
           {guide ? (
@@ -1462,6 +1700,24 @@ export default function HairDryerAdvertorial({
                 Below, we use the same review structure as our full Best Hair
                 Dryer ranking, but focus only on the three products buyers are
                 most likely to compare side by side.
+              </p>
+            </>
+          ) : isBestHairLanding ? (
+            <>
+              <p>
+                The best hair dryer should dry quickly without making heat,
+                frizz or arm fatigue harder to manage. The right choice also
+                depends on your hair type: curly hair needs a useful diffuser,
+                while smooth blow-dries need controlled airflow and a
+                concentrator.
+              </p>
+              <p>
+                Muuhu AirPro ranks first for the strongest balance of dryer
+                performance, hair-type attachments and current price. It combines
+                a 1,600W, 110,000 RPM motor with seven attachments for &pound;149.
+                Dyson remains the luxury dryer choice, while Cloud Nine, Shark
+                and ghd suit shoppers who prefer a more familiar dryer-first
+                format.
               </p>
             </>
           ) : (
@@ -1543,6 +1799,15 @@ export default function HairDryerAdvertorial({
                 strongest first choice for buyers balancing performance, styling
                 range, confidence and price.
               </>
+            ) : isBestHairLanding ? (
+              <>
+                We compared published specifications, current UK prices,
+                included accessories, warranty and return terms, and
+                buyer-facing product information. Percentage scores have been
+                removed because the brands do not publish directly comparable
+                laboratory results. The ranking below uses product facts and
+                clearly states which buyer each model suits best.
+              </>
             ) : market.key === "ca" ? (
               <>
                 We compared these hair dryers based on published specifications,
@@ -1577,6 +1842,7 @@ export default function HairDryerAdvertorial({
           {products.map((product, productIndex) => (
             <div
               key={product.id}
+              id={`product-${product.id}`}
               data-product-card="true"
               data-product-name={product.name}
               className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? "border-emerald-500 ring-4 ring-emerald-50" : "border-slate-200"} p-6 md:p-10 ${showBestHairRankRibbons ? "pt-24 md:pt-24 scroll-mt-28" : ""}`}
@@ -1592,8 +1858,14 @@ export default function HairDryerAdvertorial({
                 <div className="lg:col-span-4 flex flex-col items-center">
                   <div className="lg:sticky lg:top-8 w-full flex flex-col items-center">
                     <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center lg:hidden">
-                      {product.rank} {product.name}
+                      {product.rank || `#${productIndex + 1}`} {product.name}
                     </h2>
+
+                    {isBestHairLanding && (
+                      <p className="mb-4 rounded-full bg-emerald-50 px-4 py-2 text-center text-xs font-extrabold uppercase tracking-wide text-emerald-700 lg:hidden">
+                        {bestHairDecisionDetails[product.id]?.bestFor}
+                      </p>
+                    )}
 
                     <div className="relative w-full mb-6">
                       <a
@@ -1610,9 +1882,13 @@ export default function HairDryerAdvertorial({
                         <img
                           src={product.image}
                           alt={product.name}
-                          loading="eager"
+                          loading={productIndex === 0 ? "eager" : "lazy"}
                           decoding="async"
-                          className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
+                          className={`w-full aspect-square rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300 ${
+                            isBestHairLanding && product.isWinner
+                              ? "bg-[#fbf7ef] object-contain p-2"
+                              : "object-cover"
+                          }`}
                         />
                       </a>
                     </div>
@@ -1635,7 +1911,8 @@ export default function HairDryerAdvertorial({
                         className="mb-2"
                       />
                       <p className="text-sm font-medium text-slate-500">
-                        Overall rating {product.rating}
+                        {isBestHairLanding ? "Editorial rating" : "Overall rating"}{" "}
+                        {product.rating}
                       </p>
                     </div>
 
@@ -1667,9 +1944,15 @@ export default function HairDryerAdvertorial({
                       }
                       className="hover:text-emerald-600 transition-colors"
                     >
-                      {product.rank} {product.name}
+                      {product.rank || `#${productIndex + 1}`} {product.name}
                     </a>
                   </h2>
+
+                  {isBestHairLanding && (
+                    <p className="mb-5 hidden w-fit rounded-full bg-emerald-50 px-4 py-2 text-sm font-extrabold uppercase tracking-wide text-emerald-700 lg:block">
+                      {bestHairDecisionDetails[product.id]?.bestFor}
+                    </p>
+                  )}
 
                   <ExpandableDescription
                     description={product.description}
@@ -1682,20 +1965,39 @@ export default function HairDryerAdvertorial({
                   )}
 
                   {/* Metrics */}
-                  <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
-                    <h4 className="font-bold text-slate-900 mb-6 text-lg">
-                      Performance Metrics
-                    </h4>
-                    <div className="space-y-3">
-                      {product.metrics.map((metric, idx) => (
-                        <MetricBar
-                          key={idx}
-                          label={metric.label}
-                          value={metric.value}
-                        />
-                      ))}
+                  {isBestHairLanding ? (
+                    <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6">
+                      <h4 className="mb-4 text-lg font-bold text-slate-900">
+                        Key product facts
+                      </h4>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {bestHairDecisionDetails[product.id]?.facts.map((fact) => (
+                          <div
+                            key={fact}
+                            className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white p-3 text-sm font-semibold text-slate-700"
+                          >
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                            <span>{fact}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
+                      <h4 className="font-bold text-slate-900 mb-6 text-lg">
+                        Performance Metrics
+                      </h4>
+                      <div className="space-y-3">
+                        {product.metrics.map((metric, idx) => (
+                          <MetricBar
+                            key={idx}
+                            label={metric.label}
+                            value={metric.value}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Mobile Pros & Cons disabled - using unified layout */}
                   {/* <MobileProsCons productId={product.id} marketKey={market.key} fallbackPros={product.pros} fallbackCons={product.cons} /> */}
@@ -2016,17 +2318,16 @@ export default function HairDryerAdvertorial({
                   {market.key === "ca" ? "Current Price" : "Now at 50% off"}
                 </div>
 
-                {/* Trustpilot-style Badge */}
+                {/* Editorial rating badge */}
                 <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="font-bold text-base md:text-lg text-black font-sans">
-                      Excellent
+                      Editor&apos;s top pick
                     </span>
                     <GreenStarRating rating={5} size={22} />
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
-                    Rated 4.9 / 5 on <GreenStarIcon size={18} />{" "}
-                    <span className="font-bold text-black">Trustpilot</span>
+                    Editorial rating 4.9 / 5 <GreenStarIcon size={18} />
                   </div>
                 </div>
 
