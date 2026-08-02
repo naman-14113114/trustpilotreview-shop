@@ -1985,3 +1985,27 @@ or deployment-setting change occurred.
 - Local development log files were never intended for staging or publication.
 - No commit had yet been created at this checkpoint.
 - No push, branch creation, pull request, Vercel CLI deployment, dashboard deployment, production promotion, or deployment-setting change had yet occurred at this checkpoint.
+
+## 2026-08-02 21:08:00 +05:30 - Grounding guide publication result
+
+### Git publication
+- The verified feature was committed directly on the existing `main` branch as explicitly requested.
+- Feature commit: `5faa685ffd6f2db719fa6e04aabcd3745d4774e8` (`feat: add US grounding sheet guide collection`).
+- The feature commit contains exactly the scoped repository files recorded in the preceding implementation entry: fourteen routes, typed guide data, shared renderer, eight grounding assets, homepage groups, sitemap URLs, and repository context history.
+- `git push origin main` completed successfully and advanced GitHub `origin/main` from `1737edef716c7b19ee96f5ff16d1e641040f93a0` to `5faa685ffd6f2db719fa6e04aabcd3745d4774e8`.
+- `git ls-remote origin refs/heads/main` independently confirmed the remote branch at `5faa685ffd6f2db719fa6e04aabcd3745d4774e8`.
+- No feature branch or pull request was created because the user explicitly requested a direct clean push to `main`.
+
+### Vercel and public-route verification
+- No Vercel CLI deployment, dashboard deployment, production promotion, alias edit, domain edit, project-setting edit, team edit, or Git-integration edit was performed.
+- The GitHub-connected Vercel project reacted to the `main` push without manual deployment.
+- `https://trustpilotreview-shop.vercel.app/best-grounding-mats-us-2026` returned HTTP `200` after the push.
+- The rendered Vercel preview HTML contains `Best Grounding Mats`, confirming that the `200` response is the new page rather than a soft fallback.
+- `https://www.trustpilotreview.shop/best-grounding-mats-us-2026` also returned HTTP `200`, but its HTML did not contain `Best Grounding Mats`, and the custom-domain homepage did not contain the new route href. This indicates that the custom domain currently serves a different deployment/content source or a fallback route. That domain relationship was not changed because the task prohibited direct Vercel changes and requested GitHub-triggered deployment only.
+- The confirmed public preview for this release is therefore `https://trustpilotreview-shop.vercel.app` until the owner aligns the custom domain with this GitHub-connected project.
+
+### Local preview and final state before the publication-record commit
+- The local Next.js development server was restarted at `http://localhost:3000` with its stdout/stderr logs stored under the Windows temporary directory, not inside the repository.
+- `http://localhost:3000/best-grounding-mats-us-2026` returned HTTP `200` after the restart.
+- Temporary `.grounding-dev.log` and `.grounding-dev.err.log` files were removed from the repository and were not staged or committed.
+- The repository was clean and aligned immediately after the feature commit/push. This publication record is the only new repository change that remains to be committed in a small append-only documentation commit.
