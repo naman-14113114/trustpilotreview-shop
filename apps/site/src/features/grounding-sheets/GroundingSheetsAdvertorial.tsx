@@ -183,7 +183,7 @@ const rankedSheets: RankedSheet[] = [
   {
     rank: 3,
     name: "GroundLuxe Fitted Grounding Sheet",
-    image: "/img/grounding-sheets/groundluxe-fitted-grounding-sheet.webp",
+    image: "/img/grounding-sheets/groundluxe-fitted-grounding-sheet-review.jpg",
     price: "$129.95",
     rating: "4.5 / 5",
     ratingLabel: "Editorial rating",
