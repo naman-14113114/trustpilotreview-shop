@@ -141,7 +141,7 @@ function muuhuProduct(
       ...pros,
       "Uses 1,600W power with 3 temperature settings and 3 speed settings for controlled drying and styling.",
       "Includes seven attachments, including two Coanda-style auto-wrap curlers, a diffuser, smoothing brush, round brush and concentrator.",
-      "Backed by a 1-year warranty and 90-day money-back guarantee, which lowers the risk for first-time buyers.",
+      "Backed by a 2-year warranty and 90-day money-back guarantee, which lowers the risk for first-time buyers.",
     ],
     watchouts: [
       "Only available online, so shoppers who want a high-street demo may prefer a store-stocked brand.",
@@ -337,7 +337,7 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
       {
         feature: "Value",
-        muuhu: "£149 with 1-year warranty",
+        muuhu: "£149 with 2-year warranty",
         competitor: "Usually £189 to £399.99+",
         whyItMatters: "A complete kit at a lower price is easier to justify.",
       },
@@ -1002,7 +1002,7 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       "Dyson Supersonic Nural is the premium benchmark for sensor-led drying. Muuhu is the smarter value pick for buyers who want fast drying plus a wider attachment routine at a much lower price.",
     intro: [
       "The Dyson Supersonic Nural is a refined premium dryer with intelligent heat management, five magnetic attachments and excellent brand support. Its genuine strength is a controlled dryer-first experience rather than a full styling kit.",
-      "Muuhu ranks first as the overall alternative because it combines a 110,000 RPM motor, intelligent heat control, seven attachments, ionic care, a 1-year warranty and a 90-day guarantee for £149.",
+      "Muuhu ranks first as the overall alternative because it combines a 110,000 RPM motor, intelligent heat control, seven attachments, ionic care, a 2-year warranty and a 90-day guarantee for £149.",
     ],
     criteria: [
       "Fast controlled drying",
@@ -1150,7 +1150,7 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
       {
         feature: "Trust route",
-        muuhu: "1-year warranty and 90-day guarantee",
+        muuhu: "2-year warranty and 90-day guarantee",
         competitor: "Established retail brand",
         whyItMatters:
           "Muuhu needs assurance to compete with brand familiarity.",
@@ -1272,7 +1272,7 @@ export const hairGuides: Record<HairGuideSlug, HairGuide> = {
       },
       {
         feature: "Assurance",
-        muuhu: "1-year warranty and 90-day guarantee",
+        muuhu: "2-year warranty and 90-day guarantee",
         competitor: "Premium brand support",
         whyItMatters: "Assurance helps a smaller brand compete.",
       },
@@ -1674,12 +1674,12 @@ const currentHairProducts: Record<
     bestFor:
       "Buyers who want fast drying, smoothing, volume, diffusing and curl finishing in one complete kit.",
     summary:
-      "Muuhu combines a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings, intelligent heat control and ionic care with seven included attachments. At £149, the 1-year warranty, 90-day money-back guarantee and current free-gift offer make it the clearest overall-value choice.",
+      "Muuhu combines a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings, intelligent heat control and ionic care with seven included attachments. At £149, the 2-year warranty, 90-day money-back guarantee and current free-gift offer make it the clearest overall-value choice.",
     pros: [
       "Controlled high-speed drying from a 1,600W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings.",
       "Seven attachments cover diffusing, concentrated drying, smoothing, volume and curl finishing.",
       "Intelligent heat control and negative-ion care support a smoother, lower-frizz finish.",
-      "A 1-year warranty and 90-day money-back guarantee reduce first-order risk.",
+      "A 2-year warranty and 90-day money-back guarantee reduce first-order risk.",
     ],
     watchouts: [
       "Available online rather than through high-street demonstrations.",

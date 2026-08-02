@@ -31,7 +31,7 @@ export const bestHairDryerProductContent = {
         </p>
         <p className="text-slate-600 leading-relaxed">
           At <strong>&pound;149</strong>, Muuhu combines a high-speed motor, seven
-          included attachments, ionic care, a 1-year warranty and a{" "}
+          included attachments, ionic care, a 2-year warranty and a{" "}
           <strong>90-day money-back guarantee</strong>. It ranks first for the
           broadest drying and styling routine at the lowest current price in this
           five-product shortlist. Shoppers who want only a familiar dedicated
@@ -68,7 +68,7 @@ export const bestHairDryerProductContent = {
           a wider attachment set.
         </li>
         <li>
-          <strong>Strong Buyer Reassurance:</strong> Backed by a 1-year warranty
+          <strong>Strong Buyer Reassurance:</strong> Backed by a 2-year warranty
           and a 90-day money-back guarantee for a lower-risk first order.
         </li>
         {/* <li>
