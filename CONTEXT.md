@@ -1428,3 +1428,189 @@ or deployment-setting change occurred.
 
 #### Commit, Push, Branch, and Deployment Status
 - No commit, push, branch, or Vercel deployment was triggered. All changes remain local on the machine.
+
+### August 02, 2026: Best Hair Dryer UK Bing landing-page and Muuhu conversion pass
+
+#### User Intent and Evidence
+- The user asked for the recommended conversion changes to be implemented on `/best-hair-dryer-uk-2026` after comparing it with Best Products Reviews, Quality Reviewer, and the better-converting Buudy comparison page.
+- The user then supplied a Microsoft Ads keyword diagnostic for exact-match `best hair dryer`: quality score `8/10`, expected click-through rate `Above average`, ad relevance `Above average`, and landing-page experience only `Average`.
+- The implementation therefore focused on first-screen keyword relevance, decision speed, Muuhu visual hierarchy, editorial transparency, mobile CTA visibility, and claim credibility. It did not change the campaign, keyword, bid, Microsoft Ads goal, or any other route.
+
+#### Starting Git State and Isolation
+- Work was performed in the clean detached worktree `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802` at `origin/main` commit `71d8733e91835c1cf0317ced86fa655055ec2e6e`.
+- A temporary branch named `agent/hair-cro-20260802` was accidentally created before any project file was edited. The mistake was detected immediately; the clean worktree and unused branch were removed, and the worktree was recreated detached at the same `origin/main` commit. No branch remains from this task.
+- The older dirty `trustpilot-led-mask-replica` checkout and the existing hair/offer worktrees were not edited.
+- The external instruction paths under `E:\1st YEAR DTU\New folder\...` referenced by the repository manual were checked but were not present on this machine. The repository `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, and the full existing `CONTEXT.md` were used.
+
+#### Files Changed
+- `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - Changed the UK page H1 to the exact high-intent phrase `Best Hair Dryer`, while retaining `United Kingdom - 2026` and the dynamic update date.
+  - Added a concise above-fold affiliate disclosure.
+  - Replaced the passive comparison-only hero for this route with a two-column decision hero. The authentic existing comparison image remains on the left and the authentic Muuhu product image is visually dominant in a bordered winner panel on the right.
+  - Added the first-screen `Best overall for drying + styling` positioning, Muuhu price `£149` versus `£299`, `1,600W / 110,000 RPM`, seven attachments, the 90-day money-back guarantee, and the 1-year warranty.
+  - Added dedicated desktop and mobile Muuhu offer CTAs. The mobile CTA appears inside the initial 390x844 viewport before the product image; the existing sticky CTA remains available.
+  - Added a responsive `Top five hair dryers at a glance` decision guide with rank, best-for label, current price, two factual comparison points, a direct Muuhu offer CTA, and in-page review links for competitors.
+  - Preserved the fixed ranking order: Muuhu, Dyson, Cloud Nine, Shark, ghd.
+  - Changed the reviewer role on this route to `Haircare buying editor` and replaced unsupported certification, 12-year expertise, 22-dryer, 240-hour, and 1,000-user recommendation claims with a transparent published-information methodology and a comparable-lab-data limitation.
+  - Replaced the long generic introduction with two search-intent paragraphs explaining drying performance, hair-type fit, and why Muuhu wins this shortlist.
+  - Replaced unexplained percentage performance bars on this route with factual product panels. Other hair routes retain their existing metrics behavior.
+  - Added explicit `Best for` positioning and visible numbered product headings to every ranked product card.
+  - Switched below-fold competitor product images to lazy loading and used `object-contain` for the Muuhu winner packshot to avoid product distortion.
+  - Relabelled route-specific rating copy as editorial rather than implying an unlinked Trustpilot rating in the bottom verdict.
+- `apps/site/src/data/bestHairDryerProductContent.tsx`
+  - Removed the unlinked `over 16,000 customers` claim from Muuhu editorial copy.
+  - Kept the current verified offer structure: `£149`, seven attachments, 1-year warranty, and 90-day money-back guarantee.
+  - Replaced `Limited Stock` and speculative sell-out wording with honest limitations: Muuhu is a less established UK brand and its seven-piece kit needs more storage.
+
+#### Protected Data, Assets, Links, and Tracking
+- Target route only: `/best-hair-dryer-uk-2026`.
+- Muuhu official destination remains `https://uk.muuhu.com/products/muuhu-hair-dryer`.
+- Existing product assets were reused without generation or modification, including `/img/hair/top-5-hair-dryer.webp` and `/img/hair/muuhu-product-1a.webp`.
+- Muuhu remains 1600W in visible copy. Gift data and URLs were not changed: Premium Packaging `£35`, Muuhu ScalpPro `£79`, and Haircare E-book `£15`, total `£129`.
+- Native anchor navigation remains immediate. A test landing URL containing `msclkid`, `utm_source`, `utm_medium`, and `utm_campaign` preserved all four parameters on the Muuhu destination.
+- Microsoft UET tag `211072489` emitted both `muuhu_outbound_click` and `affiliate_click` custom requests after the hero CTA click. Existing event names were deliberately preserved.
+- No conversion value or currency was added because the intended Muuhu conversion value has not been supplied. Microsoft Ads must use one of the existing event names for the configured goal if outbound clicks are intended to count as conversions.
+
+#### Verification Performed
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed. This package script is the repository's TypeScript lint check.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with all 37 static pages generated, including `/best-hair-dryer-uk-2026`.
+- `corepack pnpm verify:parity` passed from `apps/site`; with `PARITY_BASE_URL=http://localhost:3017`, it smoke-tested seven routes successfully.
+- Production-mode local route returned HTTP `200` on port `3017`.
+- Playwright checks passed at `1440x900` and `390x844`: the primary Muuhu CTA was inside the initial viewport, document width matched viewport width, no console errors or page errors were recorded, the new quick guide and methodology caveat were present, and removed unsupported claims were absent from the rendered route.
+- All 30 local image URLs referenced by the rendered page returned successful HTTP responses.
+- Browser click QA confirmed the destination `https://uk.muuhu.com/products/muuhu-hair-dryer?utm_source=bing&utm_medium=cpc&utm_campaign=best-hair-dryer&msclkid=qa-msclkid` and Microsoft UET custom requests with event actions `muuhu_outbound_click` and `affiliate_click`.
+- `git diff --check` passed.
+- The monorepo-root `corepack pnpm lint` and root `corepack pnpm verify:parity` wrappers were also attempted but the task runner launched a globally installed pnpm `11.0.8` instead of the repository-required `11.1.1`. The same required site checks passed when invoked directly with Corepack from the site package, so no package-manager configuration was changed.
+
+#### Commit, Push, Branch, and Deployment Status
+- No file is staged.
+- No commit was created.
+- No push was made.
+- No branch or pull request remains from this task.
+- No Vercel deployment, GitHub workflow, direct deployment, promotion, rollback, environment-variable update, or Microsoft Ads mutation was triggered. The completed implementation remains local in the detached worktree because the user did not explicitly authorise repository publishing or deployment in this request.
+
+#### Remaining External Work
+- In Microsoft Ads, confirm that the conversion goal listens for `muuhu_outbound_click` or `affiliate_click`; the page sends both, but this task did not modify the advertising account.
+- Use a separate ad group or future landing route for `multi-styler`, `Dyson Airwrap alternative`, and similar styling-led terms rather than weakening this page's exact `best hair dryer` relevance.
+
+### August 02, 2026: Publish Best Hair Dryer UK conversion update
+
+#### User Authorisation and GitHub Publication
+- The user explicitly requested `publish it`, authorising commit, push, merge, and production deployment of the previously reviewed Best Hair Dryer UK changes.
+- Only the intended files were committed: `CONTEXT.md`, `apps/site/src/data/bestHairDryerProductContent.tsx`, and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Release branch: `agent/hair-dryer-bing-cro-20260802`.
+- Scoped release commit: `3eecdde686d76a2c38b0938b05f5212a12afb716` (`feat: improve hair dryer landing conversion`).
+- GitHub pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/1`.
+- The draft pull request was marked ready and squash-merged into `main`.
+- Published `main` merge commit: `eea0407d3a08871f40acfb4f8e65b93d86987f87` (`feat: improve hair dryer landing conversion (#1)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview deployment: `https://trustpilot-led-mask-replica-opmiij4k3-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_7RVP7xp38NwBzjVkeY4kkY3MUcge`.
+- The preview build completed successfully with Next.js `16.2.11`, TypeScript, and all 37 static routes.
+- The exact preview artifact was promoted to production rather than rebuilt from an unverified source.
+- Production deployment: `https://trustpilot-led-mask-replica-897vg10ge-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_Eojg22CXzH2kEUNVvfeJ5rZquWG4`.
+- Production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Git Integration Finding
+- GitHub's Vercel check failed with `Git author namananya5-ship-it must have access to the project on Vercel to create deployments` and referenced a different Vercel team (`sahiljainsj004-5015's projects`, team ID `team_PDfDX2A1CVbbl54ylaGSqqim`).
+- The preserved production project is owned by `Elato Test's projects`, and the authenticated Vercel CLI session had direct access to it. The release therefore used the verified direct preview-and-promote workflow without relinking or replacing the production project.
+- The failing stale Git check did not block the GitHub merge or the direct production release. Future automatic Git deployments will remain unreliable until the Git author/team access mapping is corrected.
+
+#### Live Production Verification
+- Live target: `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026`.
+- The live custom-domain route returned HTTP `200` on desktop `1440x900` and mobile `390x844`.
+- The rendered H1 is `Best Hair Dryer` with `United Kingdom - 2026`.
+- The primary Muuhu offer CTA is visible inside the initial viewport at both tested sizes.
+- Document overflow was `0` pixels at both sizes.
+- All locally hosted page images returned successful responses; no broken image was found.
+- No browser console error or uncaught page error was recorded.
+- Removed unsupported claims remained absent, and the new top-five quick decision guide was present.
+- A live Muuhu click preserved `msclkid=publish-qa`, `utm_source=bing`, `utm_medium=cpc`, and `utm_campaign=best-hair-dryer` on the official destination.
+- Microsoft UET emitted both `muuhu_outbound_click` and `affiliate_click` as custom events on the live page.
+- Vercel production error-log scan for the prior hour returned `No logs found`, meaning no error-level runtime entries were present at verification time.
+
+#### Remaining External Work
+- The Microsoft Ads conversion goal still needs account-side confirmation that it listens for `muuhu_outbound_click` or `affiliate_click`.
+- Automatic Vercel Git deployments should be repaired by aligning GitHub author access with the actual Vercel project team. This release did not change ownership, team access, aliases, or Git integration settings.
+
+### August 02, 2026: Restore normal Hair Dryer hero and update Muuhu warranty to 2 years
+
+#### User Intent and Scope
+- After reviewing the newly published split winner hero, the user rejected that design and asked to restore the normal hero used previously.
+- The user also stated that the Muuhu warranty must be 2 years.
+- This revision changes the active TrustpilotReview hair-page implementation only. It does not alter the protected static reference assets, product order, prices, gifts, outbound URL, tracking event names, or other product specifications.
+
+#### Files Changed
+- `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - Removed the entire two-column comparison/winner hero, including the `UK models`, `Winning price`, attachment statistic, duplicate Muuhu product panel, and hero-specific desktop/mobile offer buttons.
+  - Restored the original single full-width `/img/hair/top-5-hair-dryer.webp` hero with the existing rounded border and shadow treatment on the main route.
+  - Updated every active Muuhu/top-pick warranty comparison in the shared hair advertorial renderer from 1 year to 2 years.
+- `apps/site/src/data/bestHairDryerProductContent.tsx`
+  - Updated the Muuhu description and buyer-reassurance advantage to a 2-year warranty.
+- `apps/site/src/data/hair.ts`
+  - Updated all three Muuhu offer/warranty statements to 2 years.
+- `apps/site/src/data/hairGuides.ts`
+  - Updated Muuhu warranty references across hair-type guides and direct comparison pages from 1 year to 2 years.
+
+#### Consistency Check
+- Nineteen active Muuhu/top-pick warranty references now say `2-year warranty`.
+- No `1-year warranty` reference remains in the active TrustpilotReview hair-page source.
+- The only remaining one-year wording under `apps/site/src` is a generic legacy educational sentence in `apps/site/src/data/old/articles.ts`; it does not describe Muuhu and was intentionally left unchanged.
+- The main route still uses the exact high-intent H1 `Best Hair Dryer`, the top-five quick decision guide, transparent methodology, factual product panels, and the existing sticky mobile CTA.
+
+#### Verification
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with all 37 static pages generated.
+- `PARITY_BASE_URL=http://localhost:3017 corepack pnpm verify:parity` smoke-tested seven routes successfully.
+- The local production route returned HTTP `200`.
+- Playwright desktop `1440x900` and mobile `390x844` checks confirmed the full-width hero asset, removal of the split-hero copy, visible 2-year warranty, absence of 1-year Muuhu warranty text, zero horizontal overflow, and no console or page errors.
+- Desktop outbound-click QA preserved `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid` on the Muuhu destination. Tracking code was not changed.
+
+#### Commit, Push, and Deployment Status
+- No file is staged.
+- No commit was created.
+- No push, pull request, Vercel deployment, production promotion, or Microsoft Ads mutation was performed because this follow-up request did not explicitly authorise publication.
+- The verified revision remains local in the detached worktree `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802`.
+
+### August 02, 2026: Publish corrected Hair Dryer hero and 2-year Muuhu warranty
+
+#### User Authorisation and GitHub Publication
+- The user explicitly requested `publish it`, authorising commit, push, merge, and production deployment of the verified normal-hero and warranty correction.
+- Only the intended files were committed: `CONTEXT.md`, `apps/site/src/data/bestHairDryerProductContent.tsx`, `apps/site/src/data/hair.ts`, `apps/site/src/data/hairGuides.ts`, and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Release branch: `agent/restore-hair-hero-warranty-20260802`.
+- Scoped release commit: `ae421511d4c45a5ff2c13b4440533fc5a7628267` (`fix: restore hair hero and update warranty`).
+- GitHub pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/3`.
+- The draft pull request was marked ready and squash-merged into `main`.
+- Published application merge commit: `af7002da550552977da1e5980feef4db34e59f8c` (`Restore hair dryer hero and update Muuhu warranty (#3)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview deployment: `https://trustpilot-led-mask-replica-os1bc170k-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_D39fX59VkJtnaSBRKzq2ETp3hyXH`.
+- The preview build completed successfully with Next.js `16.2.11`, TypeScript, and all 37 static routes.
+- The exact verified preview artifact was promoted to production.
+- Production deployment: `https://trustpilot-led-mask-replica-cqi2ivbf2-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_Ws3jKyxZxSmaAtHmnpjJMpdWVm7o`.
+- Production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Live Production Verification
+- Live target: `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026`.
+- The live custom-domain route returned HTTP `200` on desktop `1440x1050` and mobile `390x844`.
+- The page uses the approved `/img/hair/top-5-hair-dryer.webp` hero at 1152 pixels wide on desktop and 358 pixels wide on mobile; the rejected split-hero comparison copy and winning-price metric are absent.
+- The rendered page contains the 2-year Muuhu warranty and no 1-year Muuhu warranty wording.
+- Document overflow was `0` pixels at both sizes. No broken content image, browser console error, or uncaught page error was recorded.
+- A live browser click test preserved `msclkid=codex-live-qa-20260802`, `utm_source=codex-live-qa`, `utm_medium=qa`, and `utm_campaign=hair-hero-release` on the official Muuhu destination.
+- The live page emitted `muuhu_outbound_click` in `dataLayer` and both `muuhu_outbound_click` and `affiliate_click` through Microsoft UET.
+- Vercel production error-log scan for the prior hour returned `No logs found`, meaning no error-level runtime entries were present at verification time.
+
+#### Git Integration Finding
+- The existing automatic GitHub/Vercel check remains unreliable because it references a different Vercel team and Git-author access mapping.
+- This release used the authenticated direct preview-and-promote workflow against the preserved production project. No project, team, alias, domain, or Git-integration setting was changed.
