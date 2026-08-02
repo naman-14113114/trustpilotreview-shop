@@ -1539,6 +1539,107 @@ or deployment-setting change occurred.
 - The Microsoft Ads conversion goal still needs account-side confirmation that it listens for `muuhu_outbound_click` or `affiliate_click`.
 - Automatic Vercel Git deployments should be repaired by aligning GitHub author access with the actual Vercel project team. This release did not change ownership, team access, aliases, or Git integration settings.
 
+### August 02, 2026 18:05:29 +05:30: TrustpilotReview freshness update after user's GitHub/local changes
+
+#### User request and practical meaning
+- The user asked Codex to update memory for `trustpilotreview-shop` because they had made changes and pushed through GitHub, and to also scan the overall `E:\1st YEAR DTU\New folder` workspace for local changes so future work continues from the newest real state rather than old chat memory.
+- This was a reconciliation and context-recording task only. The practical meaning was to read the current instruction and context files, fetch GitHub, identify the latest TrustpilotReview commit, inspect local dirtiness, scan sibling repositories, and record the exact baseline for the next task.
+- No code, page layout, copy, images, video, links, metadata, tracking, route, sitemap, dependency, or deployment setting was to be changed.
+
+#### Repository, branch, HEAD, upstream state, and remote status
+- Target repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Public preview domain remembered for this repository: `https://trustpilotreview-shop.vercel.app`; production custom domain history also references `https://www.trustpilotreview.shop`.
+- Branch: `main`.
+- Remote: `origin https://github.com/naman-14113114/trustpilotreview-shop.git`.
+- HEAD after fetch: `1737edef716c7b19ee96f5ff16d1e641040f93a0`.
+- Short HEAD: `1737ede`.
+- Upstream: `origin/main`.
+- Ahead/behind after `git fetch --all --prune`: `0/0`.
+- Worktree before this context append: clean, with no staged changes, no unstaged changes, and no untracked files.
+- A fast-forward pull was not needed because local `main` already matched GitHub `origin/main`.
+- Fetch discovered existing remote agent branches but did not change local files:
+  - `origin/agent/document-hair-hero-release-20260802`
+  - `origin/agent/hair-dryer-bing-cro-20260802`
+  - `origin/agent/hair-dryer-publish-record-20260802`
+  - `origin/agent/restore-hair-hero-warranty-20260802`
+
+#### Latest TrustpilotReview commits understood during this update
+- Latest commit on `main`: `1737ede feat: add GroundingSheetsAdvertorial component and review image asset`.
+- Latest commit effect:
+  - Created `apps/site/public/img/grounding-sheets/groundluxe-fitted-grounding-sheet-review.jpg`.
+  - Deleted `apps/site/public/img/grounding-sheets/groundluxe-fitted-grounding-sheet.webp`.
+  - Updated `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` by one line so GroundLuxe now uses `/img/grounding-sheets/groundluxe-fitted-grounding-sheet-review.jpg`.
+- Recent grounding-page commit stack since `7b515b92fe5a6ac96a3301f4109476a13df65c2c` includes repeated changes to `GroundingSheetsAdvertorial.tsx`, grounding assets, the Dr. Rachel Morgan reviewer image, the grounding verdict video, gift-panel presentation, comparison card styling, and the current GroundLuxe review image path.
+- Current searched source facts in `GroundingSheetsAdvertorial.tsx`:
+  - `GroundLuxe Fitted Grounding Sheet` image path is `/img/grounding-sheets/groundluxe-fitted-grounding-sheet-review.jpg`.
+  - Juujo buttons in the grounding page show `Official Website`.
+  - The page contains `BEST OVERALL GROUNDING SHEETS`.
+  - The current grounding video source is `/assets/grounding-best-5-video.mp4`.
+  - The current reviewer image is `/img/grounding-sheets/dr-image.webp`.
+  - The reviewer name in source is `Dr. Rachel Morgan`.
+  - The 120-night asset currently referenced in the component is `/img/grounding-sheets/juujo-120-night-risk-free-trial-grounding-sheet.webp`.
+
+#### Current grounding asset inventory observed
+- `apps/site/public/img/grounding-sheets/best-page-image.webp`
+- `apps/site/public/img/grounding-sheets/dr-image.webp`
+- `apps/site/public/img/grounding-sheets/groundingwell-fitted-sheet.webp`
+- `apps/site/public/img/grounding-sheets/groundluxe-fitted-grounding-sheet-review.jpg`
+- `apps/site/public/img/grounding-sheets/juujo-120-night-risk-free-trial-grounding-sheet.webp`
+- `apps/site/public/img/grounding-sheets/juujo-120-night-trial.png`
+- `apps/site/public/img/grounding-sheets/juujo-120-night-trial.webp`
+- `apps/site/public/img/grounding-sheets/juujo-grounding-mat-gift.webp`
+- `apps/site/public/img/grounding-sheets/juujo-premium-packaging-gift.webp`
+- `apps/site/public/img/grounding-sheets/juujo-sleep-monitoring-app-gift.webp`
+- `apps/site/public/img/grounding-sheets/premium-grounding-sheet.webp`
+- `apps/site/public/img/grounding-sheets/terra-grounding-bed-sheet-new.webp`
+- `apps/site/public/assets/grounding-best-5-video.mp4`
+- `apps/site/public/assets/grounding-video-poster.webp`
+
+#### Workspace-wide repository scan performed from `E:\1st YEAR DTU\New folder`
+- `Buudy-Vercel`: `main`, `71398fc9`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `design-md-chrome`: `main`, `8e07614`, upstream `origin/main`, ahead/behind `0/0`, one untracked local item `?? .vscode/`.
+- `Juujo-Vercel`: `main`, `4d4265e`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `Miroooo-Vercel`: `main`, `ae69b72`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu`: `main`, `6c4e0d6`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu-app`: `main`, `083aa68`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu-store`: `main`, `43dcce88`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `Muuhu-Vercel`: `main`, `941326a`, no upstream displayed, clean.
+- `the-global-edit`: `main`, `ef88a7b`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `trustpilot-led-mask-replica`: `main`, `3d130fa`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `trustpilotreview-shop`: `main`, `1737ede`, upstream `origin/main`, ahead/behind `0/0`, clean before this context append.
+- `uk.Buudy Vercel Deployment`: `main`, `5925442`, upstream `origin/main`, ahead/behind `0/0`, clean.
+
+#### Commands and checks used
+- Read governing files before state work:
+  - `E:\1st YEAR DTU\New folder\AGENTS.md`
+  - `E:\1st YEAR DTU\New folder\CONTEXT.md`
+  - `E:\1st YEAR DTU\New folder\trustpilotreview-shop\AGENTS.md`
+  - `E:\1st YEAR DTU\New folder\trustpilotreview-shop\CONTEXT.md`
+  - `E:\1st YEAR DTU\New folder\trustpilotreview-shop\DESIGN.md`
+  - `E:\1st YEAR DTU\New folder\trustpilotreview-shop\PRODUCT.md`
+- Ran `git status --short --branch`, `git remote -v`, `git fetch --all --prune`, `git rev-list --left-right --count HEAD..."@{upstream}"`, `git log --oneline --decorate`, and `git show --stat --oneline --decorate --summary HEAD` in `trustpilotreview-shop`.
+- Ran a workspace repository scan over every direct child directory with a `.git` folder, fetching each remote and recording branch, HEAD, upstream, ahead/behind, dirty count, and latest commit subject.
+- Searched `GroundingSheetsAdvertorial.tsx` for current grounding-page facts including GroundLuxe, Dr. Rachel Morgan, Official Website, video path, and Juujo trial asset path.
+- Listed current grounding image and grounding video assets.
+
+#### Mistakes prevented and current operating reminder
+- The main mistake being prevented is continuing from older chat memory after the user or Naman has already edited and pushed through GitHub.
+- For the next TrustpilotReview task, start from `main` at `1737ede` unless a fresh fetch shows something newer.
+- The newest local/GitHub state includes the GroundLuxe `.jpg` image path, the Dr. Rachel Morgan reviewer source strings, the current grounding video file, the current 120-night asset reference, and the published hair-dryer warranty/normal-hero history. Do not resurrect older asset names or old compact/full-card grounding layouts from prior chat memory without rechecking source.
+
+#### Verification not performed
+- No lint, typecheck, build, route smoke test, Playwright screenshot, or Vercel check was run because this task did not change application code or frontend output.
+- No live page was opened because the user asked for repository/GitHub and local-state memory refresh, not visual QA.
+
+#### Git, commit, push, and deployment status
+- Before appending this context entry, `trustpilotreview-shop` was clean and exactly synced with `origin/main` at `1737edef716c7b19ee96f5ff16d1e641040f93a0`.
+- This task intentionally creates only documentation/context changes.
+- No application file was changed.
+- No file was staged.
+- No commit was created.
+- No push was made.
+- No branch, pull request, GitHub action, Vercel deployment, direct deployment, production promotion, rollback, or deployment setting change occurred.
+
 ### August 02, 2026: Restore normal Hair Dryer hero and update Muuhu warranty to 2 years
 
 #### User Intent and Scope
@@ -1614,3 +1715,273 @@ or deployment-setting change occurred.
 #### Git Integration Finding
 - The existing automatic GitHub/Vercel check remains unreliable because it references a different Vercel team and Git-author access mapping.
 - This release used the authenticated direct preview-and-promote workflow against the preserved production project. No project, team, alias, domain, or Git-integration setting was changed.
+
+### August 02, 2026 18:43 IST: US grounding-sheet expansion market research and page-candidate planning
+
+#### Repository and Git state
+- Target repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Intended public domains considered during this research: `https://www.trustpilotreview.shop` and the current Vercel preview domain used by the user, `https://trustpilotreview-shop.vercel.app`.
+- Branch: `main`.
+- Local HEAD at the start and end of the research: `1737edef716c7b19ee96f5ff16d1e641040f93a0`.
+- Upstream: `origin/main`.
+- A fresh remote fetch had already been completed for this task. Git reported ahead/behind `0/0` and local HEAD matched the fetched `origin/main` reference.
+- `CONTEXT.md` was already locally modified by the required earlier context-recording work. That user/external work was preserved. No application source, route, component, asset, metadata, sitemap, or styling file was changed.
+
+#### User request and practical meaning
+- The user requested research and discussion only. They explicitly asked for deep current US Google/Bing grounding-sheet market knowledge, at least 15 possible follow-up page ideas, an overview of what each page would contain, reasons for choosing each page, and a recommendation of which eight should be created first.
+- The user did not authorise implementation. The practical scope was therefore to inspect current repository/business context, study current competitor and search-market patterns, identify conversion opportunities and advertising-policy risks, and return a prioritised content architecture. Touching page code, homepage code, assets, Git history, or production was forbidden.
+- The existing `/best-grounding-sheets-us-2026` page remains the commercial fitted-sheet cornerstone. New ideas must not merely duplicate its generic fitted-sheet search intent or create internal keyword cannibalisation.
+- Future pages must continue using TrustpilotReview's current emerald, slate, white, serif-heading visual system. Juujo's storefront colours or branded storefront layout must not leak into the review publication.
+- Future homepage additions should reuse the current card visual language and group grounding content by reader intent instead of redesigning the homepage.
+
+#### Existing business and page facts reconfirmed
+- The current primary Juujo destination remains `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- The current fitted-sheet comparison order remains Juujo, Terra, GroundLuxe, GroundingWell, and Premium Grounding.
+- The current Juujo comparison proposition is a fitted design, seven US sizes, 90% cotton and 10% conductive silver, a `$99` entry offer, a 120-night trial, and the Premium Packaging, Grounding Mat, and Sleep Monitoring App bundle.
+- Terra is a close paid-search competitor with a fitted format, 95% organic cotton and 5% conductive silver, multiple colours, six to seven listed US sizes depending on the current variant display, and a 30-night satisfaction guarantee. Search snapshots showed a `$159.95` offer, but every future implementation must re-check live pricing immediately before publication.
+- GroundLuxe is a strong premium fitted-sheet competitor with 90% organic cotton and 10% silver-fibre content, 400 thread count, six principal sizes, an approximately 13-14-inch standard pocket, a 15-foot grounding cord and outlet tester, and 60-day returns. Search snapshots showed approximately `$169.95`; that price must be refreshed before implementation.
+- GroundingWell is a fitted-sheet competitor with 95% organic cotton and 5% conductive silver, five principal US mattress sizes, free shipping, care restrictions intended to preserve silver-thread conductivity, and a 90-day guarantee. Search snapshots showed approximately `$179.90`; that price must be refreshed before implementation.
+- Premium Grounding is a materially different flat/under-sheet proposition using a 316L stainless-steel conductive weave. Its defensible strengths are a 90-day return period and 3-year warranty. It should not be described as an equivalent fitted-sheet product.
+- Earthbound is also materially different because its promoted sleep product is closer to a grounding mattress pad/system than a conventional fitted conductive sheet. Any Juujo-versus-Earthbound page must make that format difference explicit instead of pretending they are identical products.
+
+#### US search and advertising-market findings
+- Current advertorial competition is aggressive. ConsumersChoice, ConsumerTestedReports, CustomerChoice, and similar pages use large scores, claimed testing, strong symptom promises, customer counts, urgency, discounts, and winner language. Those patterns explain their conversion design but are not a reliable factual or advertising-policy template.
+- Current brand sellers including Terra, GroundingWell, Premium Grounding, Earthbound, and GroundLuxe compete on format, conductive material, cotton composition, number of mattress sizes, setup accessories, care burden, trial length, warranty, colours, and entry price.
+- The most commercially useful market segmentation is by product format and practical ownership need: fitted versus flat, sheet versus mat, mattress fit, sleeping temperature, setup/outlet verification, and conductive-fabric care.
+- Search results confirm dedicated demand for `grounding sheet vs grounding mat`, `fitted vs flat grounding sheet`, `best grounding sheets for hot sleepers`, deep-mattress/adjustable-bed fit, outlet testing, washing/care, silver-fibre percentages, and brand-versus-brand comparisons.
+- Symptom-led terms such as back pain, inflammation, insomnia, aches, and recovery are visible in ads, product pages, testimonials, forums, and advertorials. However, authoritative sources describe the evidence as preliminary, limited, methodologically weak, small-sample, or conflicted. These terms should not become direct `best product to treat condition` advertorials without product-specific competent and reliable scientific evidence.
+- Sleep Foundation explains that grounding products normally connect through the ground port, that outlet testing matters because a three-prong receptacle may not actually be grounded, and that fitted sheets, flat sheets, and mats serve different use patterns. It also states that more rigorous research is needed and that many alleged health effects are not established.
+- FTC Health Products Compliance Guidance requires express and implied health-benefit claims to be truthful, non-misleading, and supported by competent and reliable scientific evidence. The FTC specifically warns that imagery, testimonials, medical styling, and surrounding context can imply claims even where the exact sentence is qualified.
+- Google's unreliable-claims/misrepresentation policy rejects misleading destinations and unproven cure claims. Microsoft requires close ad-to-landing-page relevance and rejects fake-news-style or unsourced claims. These policies make direct `best grounding sheets for back pain` and `best grounding sheets for inflammation` sales pages materially riskier than evidence-led educational pages.
+- Customer trust is also a market issue: forum discussions repeatedly question whether grounding review sites are paid promotions and ask for real evidence. TrustpilotReview can differentiate by being precise about format, price, published specifications, return terms, and limitations while still making Juujo's value case strongly.
+
+#### Fifteen candidate page concepts evaluated
+1. `/best-flat-grounding-sheets-us-2026`: a five-product flat/half-sheet comparison covering coverage area, tuck/slip behaviour, portability, conductive material, care, price, and return terms. Juujo should appear only as a clearly labelled fitted alternative unless Juujo launches a genuine flat sheet.
+2. `/best-grounding-mats-us-2026`: a five-product mat comparison covering material, usable area, desk/bed use, cleaning, cord length, outlet tester, portability, trial, and price. It should link to an exact Juujo mat offer if one exists; a fitted sheet must not be mislabelled as a mat.
+3. `/best-grounding-sheets-for-hot-sleepers-us-2026`: a fitted-sheet comparison centred on cotton proportion, weave, surface coverage, moisture/heat comfort, washing, fitted security, and bedroom heat-management context. It must not promise that grounding itself cools the body.
+4. `/best-grounding-sheets-for-deep-mattresses-us-2026`: a fit-led comparison covering pocket depth, mattress dimensions, toppers, corner security, cable placement, and returns for poor fit. Juujo can rank only after its supported pocket-depth specification is confirmed.
+5. `/best-grounding-sheets-for-adjustable-beds-us-2026`: a fit and movement guide covering split king versus single-sheet setups, independent bed sides, cord slack, snap location, bunching, mattress articulation, and return policies. It should not claim universal compatibility without brand-specific fit data.
+6. `/juujo-vs-terra-grounding-sheet`: a two-product direct comparison only, covering fitted size range, 90/10 versus 95/5 composition, colours, price, trial, care, included setup items, warranty/returns, and which shopper each suits. Juujo's conversion case is value, size breadth, 10% conductive-silver blend, bundle, and 120-night trial; Terra retains genuine strengths such as colour choice and established paid-search visibility.
+7. `/juujo-vs-groundluxe-grounding-sheet`: a two-product direct comparison only. GroundLuxe's 400TC organic-cotton and 10% silver-fibre proposition must be acknowledged. Juujo's strongest comparison points are lower entry price, seven-size range, longer trial, and included bundle rather than pretending GroundLuxe has no strengths.
+8. `/juujo-vs-groundingwell-grounding-sheet`: a two-product comparison of 90/10 versus 95/5 composition, seven versus five principal sizes, price, setup, wash restrictions, shipping, trial, and bundle value. Do not repeat GroundingWell's unsupported symptom claims as editorial fact.
+9. `/juujo-vs-premium-grounding-sheet`: a fitted-versus-flat comparison. Premium Grounding's stainless-steel construction, 3-year warranty, and 90-day return window are genuine strengths; Juujo's case is fitted full-mattress convenience, cotton feel, lower entry price, seven sizes, 120-night trial, and bundle value.
+10. `/juujo-vs-earthbound-grounding-system`: a fitted conductive sheet versus grounding mattress-pad/system comparison. Cover direct skin contact, regular-sheet layering, wash burden, replacement expectations, fit, price, and guarantee. The format difference must be the central decision, not hidden.
+11. `/fitted-vs-flat-grounding-sheets`: an evergreen buying guide comparing stay-put fit, mattress compatibility, partner use, travel, laundry, direct contact area, setup, and typical cost. It can finish with a compact, disclosed Juujo fitted recommendation rather than a fabricated five-product ranking.
+12. `/grounding-sheet-vs-grounding-mat`: an evergreen format-choice guide covering overnight versus daytime use, contact area, comfort, portability, maintenance, space, price, and setup. It can route fitted-sheet readers to Juujo and mat readers to the correct Juujo mat page if available.
+13. `/how-to-set-up-and-test-a-grounding-sheet`: a high-trust setup guide covering outlet-ground verification, the ground port versus powered slots, supplied safety resistor/cord instructions, connector placement, cable routing, older-home limitations, storm/manufacturer precautions, and troubleshooting. It must tell users to follow the product manual and use a qualified electrician when outlet grounding is uncertain.
+14. `/how-to-wash-and-care-for-grounding-sheets`: an ownership guide covering mild detergent, avoiding bleach/fabric softener/oily products, temperature and drying instructions, lotions/oils, connector care, conductivity checks, and the rule that each manufacturer's instructions override generic advice.
+15. `/grounding-sheets-for-back-pain-and-inflammation-evidence`: an evidence explainer rather than a `best products for treatment` page. It should separate customer anecdotes, proposed mechanisms, small preliminary studies, limitations, conflicts, and what has not been proven. It must state that the product is not a treatment and advise readers with persistent symptoms to seek appropriate medical care.
+
+#### Recommended first eight and the reasoning captured for future implementation
+- First priority: `/juujo-vs-terra-grounding-sheet`, because Terra is the closest current paid-search competitor and creates the clearest high-intent comparison route.
+- Second: `/juujo-vs-groundluxe-grounding-sheet`, because GroundLuxe has a genuinely strong 10% silver/400TC premium specification and Juujo needs a credible value-versus-premium answer.
+- Third: `/best-grounding-sheets-for-hot-sleepers-us-2026`, because it is distinct from the generic fitted-sheet page, maps to practical bedding concerns, and lets Juujo's cotton-heavy construction compete without a medical promise.
+- Fourth: `/fitted-vs-flat-grounding-sheets`, because format uncertainty appears repeatedly in search and directly supports Juujo's fitted proposition.
+- Fifth: `/grounding-sheet-vs-grounding-mat`, because it captures broad category comparison demand and can route visitors to the correct Juujo format.
+- Sixth: `/how-to-set-up-and-test-a-grounding-sheet`, because setup doubt and ungrounded outlets are major purchase objections and this page can strengthen buyer confidence without making a health promise.
+- Seventh: `/best-flat-grounding-sheets-us-2026`, but only if the destination and winner are a genuine flat-sheet offer. If Juujo does not sell one, use it as a neutral guide with Juujo labelled `best fitted alternative`, not a false No. 1 flat sheet.
+- Eighth: `/best-grounding-mats-us-2026`, but only if the CTA points to a genuine standalone Juujo mat product. If the mat is only a free gift, defer this paid landing page rather than mismatching ad intent.
+- The GroundingWell, Premium Grounding, and Earthbound direct comparisons are valuable second-wave pages. Deep-mattress and adjustable-bed pages require exact Juujo fit/pocket specifications before publication. The symptom/evidence page is suitable as supporting education, not as an initial paid-search sales landing page.
+
+#### Locked page-family and homepage presentation guidance
+- Commercial `Best` pages should reuse the current grounding advertorial shell: emerald masthead, editor card, readable introduction, compact ranked comparison, one expanded winner block, sticky left product rail on desktop, performance metrics, stacked Pros/Cons, blue gift panel when applicable, video/verdict area, disclosure, footer, and mobile CTA.
+- Direct-versus pages must show only the named two products. They should not include unrelated five-product rankings. Use at least ten decision rows, balanced `choose this if` guidance, real competitor strengths, and a strong but fact-based Juujo value verdict.
+- Knowledge pages should use the same TrustpilotReview typography, palette, editor/disclosure treatment, and footer but should be editorial articles rather than fake rankings. They should not use invented scores, fake testing, condition-treatment promises, or medical-looking endorsements.
+- The homepage grounding area should become `Grounding & Earthing Guides` while retaining the existing card styling. Recommended groups are `Shop by Format & Fit` and `Comparisons & How It Works`. The current Best Grounding Sheets card remains the lead card. Desktop can use three columns, tablet two, and phone one without redesigning the broader homepage.
+
+#### Sources and routes inspected
+- Repository files and records: workspace `AGENTS.md`, workspace `CONTEXT.md`, repository `AGENTS.md`, repository `CONTEXT.md`, `DESIGN.md`, `PRODUCT.md`, current grounding-page data/component references, current homepage grounding-card references, and current Git history/status.
+- Current market/advertorial examples: ConsumersChoice grounding sheets, ConsumerTestedReports grounding sheets, CustomerChoice grounding bed sheets, Consumer Health Digest grounding sheets, Latest Consumer Reports bed sheets, Earthbound, Terra/The Grounding Co, BareEarth offer pages, Premium Grounding, GroundLuxe, and GroundingWell.
+- Authoritative or cautionary references: Sleep Foundation's grounding-sheet explainer, FTC Health Products Compliance Guidance, Google Ads unreliable-claims/misrepresentation guidance, and Microsoft Advertising landing-page relevance guidance.
+- Additional intent research covered hot sleepers, deep mattresses, adjustable beds, fitted versus flat sheets, sheet versus mat, outlet testing, washing/care, silver content, direct competitor comparisons, pain, inflammation, sleep, and evidence quality.
+
+#### Verification, mistakes prevented, and remaining uncertainty
+- No lint, typecheck, build, screenshot, route smoke test, or deployment test was run because no application file changed and the user explicitly requested research/discussion only.
+- The analysis deliberately did not copy competitor medical claims, invented testing, testimonials, review counts, urgency, or scarcity into the proposed content plan.
+- The analysis did not recommend ranking a fitted Juujo sheet as the best flat sheet or best standalone mat. Doing so would create ad-to-landing-page mismatch and a misleading product-format claim.
+- Exact Juujo pocket depth, exact current standalone mat URL/price, and whether Juujo has a genuine flat-sheet product remain unconfirmed. These are mandatory inputs before implementing deep-mattress, adjustable-bed, flat-sheet, or mat paid landing pages.
+- Competitor prices, variants, warranties, and return terms are changeable market data and must be refreshed from official pages immediately before implementation.
+- No code, page content, asset, route, metadata, sitemap, homepage card, tracking, CTA, or production setting was changed.
+- No file was staged. No commit, push, branch, pull request, Vercel deployment, production promotion, ad-platform change, or browser-account action occurred.
+
+## 2026-08-02 19:01:54 +05:30 - Revised indirect-conversion grounding content architecture (research only)
+
+### Repository and Git state
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Branch: `main`.
+- HEAD: `1737edef716c7b19ee96f5ff16d1e641040f93a0`.
+- Upstream: `origin/main`; ahead/behind after fetch and reconciliation: `0/0`.
+- The only locally modified repository file before this task was `CONTEXT.md`, containing mandatory append-only context records from prior tasks. It was preserved and extended. No application file was modified.
+
+### User request and practical meaning
+- The user rejected the previous candidate-page list because it was too generic and not sufficiently conversion-led. The user does not want another set dominated by direct brand comparisons, ordinary format pages, certifications, or cautious generic education.
+- The requested strategy is editorial content that starts with a real buyer fear, mistake, objection, or quality question and indirectly leads the reader to Juujo. Examples explicitly requested by the user were a page about fake grounding sheets and a page explaining why price matters less than quality and comfort.
+- The practical commercial objective is to define the buying criteria in a way that Juujo naturally satisfies: fitted construction, seven US sizes, 90% cotton and 10% conductive silver, comfort for nightly use, a 120-night trial, a `$99` entry offer, complete setup/bundle value, and the three stated gifts.
+- This task was discussion and market/content planning only. The user explicitly prohibited coding or page creation.
+
+### Revised fifteen-page set
+1. `/how-to-spot-fake-grounding-sheets` - Explain warning signs such as missing material percentages, vague size data, no cord/setup information, copied imagery, hidden care instructions, weak return terms, and miracle-led copy. The page should not label a named competitor fake; it should give a checklist and then show how a transparent Juujo listing answers it.
+2. `/cheap-vs-quality-grounding-sheets` - Compare initial price with cotton comfort, conductive weave, fitted construction, sizing, setup completeness, care, trial terms, and likely replacement cost. The indirect conversion message is that the best value is the sheet a customer can comfortably keep using, not merely the lowest checkout price.
+3. `/grounding-sheet-comfort-guide` - Make comfort the primary buying criterion: cotton percentage, breathability, surface texture, fitted security, bunching, mattress feel, heat retention, and nightly consistency. Juujo's 90% cotton fitted design becomes the natural recommendation without turning the page into a ranking.
+4. `/5-percent-vs-10-percent-silver-grounding-sheets` - Explain what advertised conductive-material percentages can and cannot tell a buyer, including ambiguity around fibre construction, distribution, comfort, care, and durability. Juujo's declared 10% conductive silver becomes a clear comparison point, but the page must not claim that 10% is automatically twice as effective as 5%.
+5. `/why-grounding-sheets-stop-working-after-washing` - Cover bleach, fabric softener, harsh detergent, body oils, high heat, conductive-fibre care, cable checks, and conductivity retesting. The conversion path is care transparency and a product whose ownership instructions are clear before purchase.
+6. `/grounding-sheet-fit-and-pocket-depth-guide` - Explain slipping, bunching, corners popping off, mattress dimensions, toppers, pocket depth, elastic, cable placement, and fitted versus flat construction. Juujo's seven fitted US sizes become the answer to a frequent ownership frustration.
+7. `/grounding-sheet-durability-and-lifetime-cost` - Compare purchase price with washing tolerance, conductive-material retention, return window, support, replacement frequency, and total cost over time. Juujo should win through reduced buying risk and bundle/trial value rather than an unsupported lifespan claim.
+8. `/complete-grounding-sheet-kit-checklist` - Define what a buyer should expect to receive and verify: fitted sheet, grounding cord, safe connection information, outlet/test instructions, care guide, support, packaging, trial terms, and useful extras. The Juujo product and its Premium Packaging, Grounding Mat, and Sleep Monitoring App become the most complete proposition.
+9. `/grounding-sheet-buying-mistakes` - Cover buying the wrong size, assuming every outlet is grounded, confusing fitted and flat sheets, choosing by claims alone, ignoring care restrictions, comparing material percentages without context, and overlooking return conditions. Each mistake should end with a practical action that maps to Juujo's visible product information.
+10. `/amazon-vs-specialist-grounding-sheets` - Compare generic marketplace listings with specialist-brand accountability, stable specifications, material disclosure, size support, setup guidance, returns, warranty/trial clarity, and customer support. Do not claim all Amazon sheets are fake or inferior; teach what evidence the buyer should require from either channel.
+11. `/how-to-test-grounding-sheet-conductivity` - Explain the distinction between checking the wall outlet, checking the cord/connection, and checking the conductive sheet surface; include common troubleshooting and washing-related issues. The page can move readers to Juujo through clear setup ownership rather than a health-result promise.
+12. `/grounding-sheet-materials-compared` - Compare cotton/silver blends, polyester-based fabrics, carbon and stainless-steel approaches for comfort, heat, texture, drape, washing, fitted availability, and durability trade-offs. Juujo's 90/10 cotton-silver blend is positioned as the balanced nightly-use choice.
+13. `/grounding-sheet-trial-period-guide` - Explain why an at-home trial can matter more than a short review impression: fit, comfort, setup, laundering restrictions, return conditions, shipping deductions, restocking terms, and support. Juujo's 120-night trial becomes a strong reassurance point.
+14. `/grounding-sheet-reviews-vs-product-quality` - Teach readers not to use review volume alone. Cover repeated wording, incentives, relevance to the exact variant, verified specifications, material transparency, return protection, size fit, and ownership details. Juujo is judged on tangible product and offer facts rather than invented review counts.
+15. `/grounding-sheet-quality-checklist` - Build the master conversion page around a clear checklist covering format, material disclosure, cotton comfort, conductive content, fitted size choice, mattress fit, cord and setup, outlet checks, washing care, trial, support, and total bundle value. The final comparison should show that Juujo checks the most important boxes without presenting fabricated laboratory results.
+
+### Recommended first eight and funnel logic
+- Recommended first eight: fake grounding sheets; cheap versus quality; comfort; 5% versus 10% silver; washing/conductivity loss; fit and pocket depth; complete kit checklist; and the master quality checklist.
+- These eight were selected because they form a connected persuasion funnel. The fake-sheet page creates healthy scepticism; cheap-versus-quality reframes price; comfort and fit make fitted cotton construction important; silver-content and washing pages make material/care transparency important; the complete-kit page makes included value important; and the quality checklist consolidates those criteria into a direct reason to choose Juujo.
+- The master checklist should be the central internal-link destination. Every supporting article should link to one or two relevant supporting articles and then to the current Juujo fitted-sheet page using the existing public destination `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- When these pages are implemented later, the homepage should group them as practical buyer-help content rather than display thirteen repetitive `Best` cards. Suitable group labels are `Avoid Buying Mistakes`, `Quality, Comfort & Materials`, and `Setup, Care & Testing`, while the current `Best Grounding Sheets US 2026` page remains the main commercial comparison.
+
+### Protected areas, files inspected, and files changed
+- Protected areas: all application code, routes, page data, homepage cards, assets, metadata, sitemap, CTAs, tracking, existing Grounding Sheets page, all Hair Dryer pages, all LED mask pages, and production settings.
+- Files and records inspected: workspace `AGENTS.md`, workspace `CONTEXT.md`, repository `AGENTS.md`, repository `CONTEXT.md`, `DESIGN.md`, `PRODUCT.md`, current Git status, remote relationship, and recent repository history. Existing market research and official competitor findings recorded in the immediately preceding context entry were reused rather than repeating live crawling unnecessarily.
+- File changed: `E:\1st YEAR DTU\New folder\trustpilotreview-shop\CONTEXT.md`, solely to append this mandatory task record. No application file changed.
+
+### Mistakes prevented and content boundaries
+- The earlier list leaned too heavily on direct-versus pages, format pages, and broad search categories. That did not match the user's desired psychology. This replacement list begins with buyer doubts and practical ownership problems, then makes Juujo's factual attributes the answer.
+- Named competitors must not be called fake without evidence. The fake-grounding-sheet page should evaluate listing transparency and warning signs, not make unsupported fraud accusations.
+- A 10% silver label must not be described as automatically twice as effective as 5%; the useful comparison is transparency, distribution, comfort, care, and construction.
+- These ideas do not require invented certifications, laboratory results, customer counts, medical endorsements, or claims to treat pain, insomnia, inflammation, or disease.
+
+### Verification and publishing status
+- No lint, typecheck, build, screenshot, or route test was run because no application file changed and the user explicitly requested ideation only.
+- Git status was reconciled before making the recommendation. The branch remained aligned with `origin/main` at application HEAD `1737edef716c7b19ee96f5ff16d1e641040f93a0`.
+- No code, component, content page, route, asset, homepage card, URL, metadata, sitemap, CTA, tracking integration, deployment setting, or production page was changed.
+- No file was staged. No commit, push, pull, merge, rebase, reset, stash, branch, pull request, Vercel deployment, production promotion, or ad-platform action occurred.
+- Remaining implementation inputs include final route selection, whether all article CTAs should go directly to Juujo or first to the Best Grounding Sheets comparison, and confirmation of any pocket-depth or included-kit details not currently documented. These do not block the present ideation response.
+
+## 2026-08-02 20:54:11 +05:30 - Implemented the 14-page US grounding-sheet guide expansion before publication
+
+### Repository, branch, HEAD, upstream, and reconciliation state
+- Target repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Intended public domain: `https://www.trustpilotreview.shop`; the repository is also connected to the current Vercel preview/production workflow through GitHub.
+- Branch: `main`.
+- Starting application HEAD: `1737edef716c7b19ee96f5ff16d1e641040f93a0` (`1737ede feat: add GroundingSheetsAdvertorial component and review image asset`).
+- Remote: `origin https://github.com/naman-14113114/trustpilotreview-shop.git`.
+- A fresh `git fetch --all --prune` was run before implementation and again during verification. Before publication, local `main` and `origin/main` remained aligned at ahead/behind `0/0`.
+- The repository `CONTEXT.md` already contained uncommitted append-only research and page-planning records from the immediately preceding grounding tasks. Those records were deliberately preserved and extended. They are directly related to this expansion and are intended to be included with the feature publication.
+- No stash, reset, rebase, checkout-based discard, destructive merge, or overwrite was used.
+
+### User request and practical meaning
+- The user explicitly approved implementation of fourteen new US grounding-sheet pages and requested that the existing `/best-grounding-sheets-us-2026` route remain the source of truth for presentation, page identity, Juujo facts, and conversion direction.
+- The practical requirement was not fourteen free-form landing pages. It was one typed content system with three locked page families: ranked guides, direct two-product comparisons, and knowledge guides.
+- Commercial ranked and comparison pages must place Juujo first, show Juujo's factual value case, and render only the Juujo destination CTA. Competitor buttons must not exist until the user supplies affiliate URLs.
+- Direct-comparison pages must contain only Juujo and the named competitor. They must not inherit unrelated five-product rankings.
+- Knowledge pages must use editorial sections, tables, checklists, and a restrained Juujo recommendation block instead of pretending to rank five products.
+- The public Juujo destination is locked to `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- Shared Juujo facts were kept consistent throughout: seven fitted US sizes, 90% cotton, 10% conductive silver, `$99`, 120-night trial, Premium Packaging, Grounding Mat, and Sleep Monitoring App.
+- The existing Hair Dryer, LED mask, pillow, and legacy route families were protected. No existing Hair Dryer or LED-mask component was edited.
+- The user explicitly requested a clean direct commit and push to `origin/main` after complete verification. No direct Vercel deployment is permitted; deployment remains GitHub-triggered.
+
+### Page architecture implemented
+- Added `apps/site/src/data/groundingGuides.ts` as the typed grounding content/configuration source.
+- The data layer defines the guide template, slug, metadata, masthead, introduction, products where applicable, twelve direct-comparison rows where applicable, knowledge sections/tables/checklists, winner copy, performance metrics, Pros, Cons, final verdict, and homepage group.
+- Added `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx` as the reusable renderer for all fourteen pages.
+- The shared renderer includes the existing emerald masthead, US flag, automatic New York date, Sleep & Wellness Editorial Review card, source-page typography, introduction, page-family-specific body, footer, disclosure, and mobile sticky Juujo CTA.
+- Ranked pages render five compact product cards and expand only Juujo into the full sticky winner presentation with performance bars, stacked green Pros, stacked red Cons, three-gift panel, 120-night trial panel, verdict, and official-site CTA.
+- Direct comparisons render exactly two full-width product cards after the twelve-point comparison table, followed by one expanded Juujo winner section. The first implementation briefly placed the two already internally split product cards in a two-column outer grid, which cramped descriptions and Pros/Cons. This was corrected to a full-width vertical stack before publication.
+- Knowledge pages render structured editorial sections with ordered steps, checklists, warning lists, and tables, followed by a restrained Juujo recommendation and final verdict.
+- `OfficialButton` is used only for Juujo. No competitor CTA, inactive button, empty placeholder button, or competitor external URL is present in the new configuration.
+- The Juujo winner rail uses desktop sticky positioning while mobile and tablet layouts remain normally stacked.
+- The shared above-fold Juujo image was explicitly marked eager after the browser identified it as the LCP image. This affects delivery priority only and does not alter the rendered image.
+- Tablet testing exposed that square product packshots expanded to nearly the full stacked-card width, causing excessive vertical white areas. The stacked product rail was constrained to `max-w-sm` below the desktop grid breakpoint and remains unconstrained in the established desktop columns.
+- The footer initially used a generic `Grounding Sheet Buying Guides` identity. It was corrected to `Best Grounding Sheets`, matching the established source page identity.
+
+### Routes added
+- `/grounding-sheets-for-back-pain-and-inflammation-evidence`
+- `/juujo-vs-groundingwell-grounding-sheet`
+- `/best-flat-grounding-sheets-us-2026`
+- `/best-grounding-mats-us-2026`
+- `/best-grounding-sheets-for-hot-sleepers-us-2026`
+- `/juujo-vs-terra-grounding-sheet`
+- `/how-to-test-grounding-sheet-conductivity`
+- `/grounding-sheet-buying-mistakes`
+- `/grounding-sheet-durability-and-lifetime-cost`
+- `/complete-grounding-sheet-kit-checklist`
+- `/fake-grounding-sheets-how-to-spot-them`
+- `/cheap-vs-quality-grounding-sheets`
+- `/5-percent-vs-10-percent-silver-grounding-sheets`
+- `/grounding-sheet-washing-and-conductivity-loss`
+- Each route has an explicit App Router `page.tsx` wrapper that retrieves its approved typed guide configuration and exports its own metadata and canonical URL.
+
+### Homepage and sitemap changes
+- Updated `apps/site/src/legacy-pages/old/Home.tsx` to display all fifteen grounding routes, including the existing Best Grounding Sheets page.
+- Homepage cards are grouped exactly as requested:
+  - `Best Picks & Comparisons`
+  - `Quality & Buying Guides`
+  - `Setup, Care & Evidence`
+- Existing homepage card styling, emerald accents, hover behaviour, responsive grid, and unrelated homepage sections remain intact.
+- Updated `apps/site/public/sitemap.xml` with the fourteen new canonical `https://www.trustpilotreview.shop/...` URLs and `2026-08-02` last-modified dates.
+- Existing sitemap entries and metadata for previously published routes were not rewritten.
+
+### New official product assets
+- Added `apps/site/public/img/grounding-sheets/grounding-co-flat-sheet.webp`.
+- Added `apps/site/public/img/grounding-sheets/earthinglife-10-percent-silver-flat-sheet.webp`.
+- Added `apps/site/public/img/grounding-sheets/organic-earthing-bamboo-flat-sheet.webp`.
+- Added `apps/site/public/img/grounding-sheets/groundingwell-bedsheet.webp`.
+- Added `apps/site/public/img/grounding-sheets/earthing-universal-mat-kit.webp`.
+- Added `apps/site/public/img/grounding-sheets/groundingwell-grounding-mat.webp`.
+- Added `apps/site/public/img/grounding-sheets/grounding-co-universal-mat.webp`.
+- Added `apps/site/public/img/grounding-sheets/hooga-grounding-mat.webp`.
+- The first Grounding.co flat-sheet and mat source selections contained promotional overlays. Before publication, both were replaced with clean official product imagery taken from the official Grounding.co Shopify product data and cropped without the promotional text, doctor styling, warranty graphics, or UGC presentation.
+- Existing Juujo, Terra, GroundLuxe, GroundingWell, Premium Grounding, editor, gift, and 120-night assets were reused without renaming or overwriting their established public paths.
+
+### Current price and product handling
+- Official-market values captured for the guide content were Grounding.co flat `$79.95`, EarthingLife flat `$99.99`, Organic Earthing bamboo `Price varies by size`, GroundingWell bedsheet `$99`, Earthing Universal Mat `$69.99`, GroundingWell mat `$69.90`, Grounding.co mat `$69.95`, Hooga mat `$25`, Terra standard `$109.95`, and Terra cooling `$189.95`.
+- Where an official lowest price could not be safely represented as one stable amount, the page uses `Price varies by size` rather than inventing a number.
+- Juujo remains visibly identified as a fitted-sheet option on the flat-sheet page and as a sheet-and-mat bundle on the mat page. The copy does not falsely relabel the product format.
+- The back-pain/inflammation route separates theories, reported experiences, evidence limitations, and product claims; it does not promise treatment or guaranteed medical outcomes.
+- The conductivity-testing route explicitly warns readers not to insert multimeter probes into live outlet slots.
+
+### Verification performed and evidence
+- Ran `pnpm lint`: passed all three scoped package tasks with no errors.
+- Ran `pnpm typecheck`: passed all three scoped package tasks with no errors.
+- Ran `pnpm build`: passed. Next.js `16.2.11` generated 51 static pages, including every new grounding route.
+- Ran `pnpm verify:parity`: passed the preserved-snapshot check.
+- Ran `PARITY_BASE_URL=http://localhost:3000 pnpm verify:parity`: passed and smoke-tested the seven preserved legacy parity routes.
+- Performed an explicit HTTP smoke test against all fifteen grounding routes on `http://localhost:3000`; every route returned `200`.
+- Parsed the rendered homepage and confirmed all fifteen grounding route hrefs are present.
+- Parsed the sitemap and confirmed zero grounding routes are missing.
+- Searched the new data and renderer for external URLs. The only product destination in the new guide source is `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- Browser verification used a running Next.js Webpack development server on port `3000` and Playwright CLI session `grounding-expansion`.
+- Captured and inspected:
+  - direct comparison at `1440x1000`
+  - ranked guide at `820x1180`
+  - knowledge guide at `390x844`
+- The direct comparison now shows only Juujo and Terra as full-width cards plus the expanded Juujo winner; the knowledge mobile layout has no horizontal overflow; the ranked tablet layout keeps product images controlled and readable.
+- Browser console inspection found no runtime errors. The only observed development warning was the LCP loading hint for the Juujo source image, which was corrected by eager-loading that existing image.
+- Ran `git diff --check` before context publication. No whitespace error was reported.
+- A production build rewrote `apps/site/next-env.d.ts` from the tracked development route-type import to the build route-type import. That generated-only change was restored with a one-line patch and is excluded from the feature scope.
+
+### Files and areas changed
+- Changed: repository `CONTEXT.md` by append-only additions.
+- Changed: `apps/site/public/sitemap.xml`.
+- Changed: `apps/site/src/legacy-pages/old/Home.tsx`.
+- Added: `apps/site/src/data/groundingGuides.ts`.
+- Added: `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`.
+- Added: fourteen explicit route directories under `apps/site/src/app` matching the route list above.
+- Added: eight clean product assets under `apps/site/public/img/grounding-sheets` matching the asset list above.
+- Protected and unchanged: existing Hair Dryer route files, LED-mask route files, pillow files, legacy snapshots, tracking integrations, favicon, existing grounding advertorial component, existing page metadata, and existing affiliate links.
+
+### Tests not performed and remaining uncertainty
+- No real competitor affiliate-link click test was possible because competitor affiliate URLs were intentionally not supplied and competitor buttons intentionally do not render.
+- No direct Vercel deployment or dashboard promotion was performed; GitHub-triggered deployment is the required publication path.
+- Official competitor prices and product availability can change after publication and should be refreshed before using a specific page in a paid campaign.
+- The content uses the user-approved product facts and editorial positioning. It does not represent the performance-bar percentages as laboratory results.
+
+### Git, commit, push, and deployment state at this checkpoint
+- Application work was complete and verified locally at this checkpoint.
+- The expected scoped source, assets, homepage, sitemap, and context changes were unstaged pending one final fetch/reconciliation.
+- Local development log files were never intended for staging or publication.
+- No commit had yet been created at this checkpoint.
+- No push, branch creation, pull request, Vercel CLI deployment, dashboard deployment, production promotion, or deployment-setting change had yet occurred at this checkpoint.

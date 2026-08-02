@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { articles } from '@/data/old/articles';
 import { hairImages } from '@/data/hair';
 import { hairGuideGroups, hairGuides, type HairGuideSlug } from '@/data/hairGuides';
+import { groundingGuideGroups } from '@/data/groundingGuides';
 import { Calendar, ChevronRight } from 'lucide-react';
 
 function hairGuideImage(slug: HairGuideSlug) {
@@ -231,37 +232,45 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block bg-emerald-500 text-white px-4 py-1.5 rounded-full font-bold text-xs tracking-wide uppercase mb-4">Sleep &amp; Wellness Guide</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif">Grounding Sheets Buying Guide</h2>
-            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">A US comparison of fitted sizes, materials, setup, care, trial periods and value across five grounding sheet options.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif">Grounding Sheets Buying Guides</h2>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">US rankings, comparisons and practical guides covering fit, materials, setup, care and complete bundle value.</p>
           </div>
 
-          <div className="mx-auto max-w-xl">
-            <Link
-              to="/best-grounding-sheets-us-2026"
-              className="group flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="h-64 overflow-hidden relative border-b border-slate-100 bg-slate-50">
-                <img
-                  src="/img/grounding-sheets/juujo-grounding-fitted-sheet.webp"
-                  alt="Best Grounding Sheets US 2026 guide"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500 text-white">
-                  Top 5 US
+          <div className="space-y-14">
+            {groundingGuideGroups.map((group) => (
+              <div key={group.title}>
+                <div className="mb-7 border-b border-slate-300 pb-4">
+                  <h3 className="font-serif text-2xl font-bold text-slate-900 md:text-3xl">{group.title}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600 md:text-base">{group.description}</p>
+                </div>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.pages.map((page) => (
+                    <Link
+                      key={page.href}
+                      to={page.href}
+                      className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    >
+                      <div className="relative h-52 overflow-hidden border-b border-slate-100 bg-slate-50">
+                        <img
+                          src={page.image}
+                          alt={page.title}
+                          loading="lazy"
+                          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute left-3 top-3 rounded-full bg-emerald-500 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">{page.code}</div>
+                      </div>
+                      <div className="flex flex-grow flex-col p-6">
+                        <h4 className="mb-3 font-serif text-xl font-bold leading-tight text-slate-900 transition-colors group-hover:text-emerald-600 md:text-2xl">{page.title}</h4>
+                        <p className="mb-6 text-sm leading-relaxed text-slate-600">{page.description}</p>
+                        <div className="mt-auto flex items-center text-sm font-bold text-emerald-600">
+                          Read Guide <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 font-serif group-hover:text-emerald-600 transition-colors leading-tight">
-                  Best Grounding Sheets US 2026
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  Compare Juujo, Terra, GroundLuxe, GroundingWell and Premium Grounding by fitted format, material, setup, price and trial terms.
-                </p>
-                <div className="mt-auto flex items-center text-emerald-600 font-bold text-sm">
-                  Read Guide <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
+            ))}
           </div>
         </div>
       </section>
