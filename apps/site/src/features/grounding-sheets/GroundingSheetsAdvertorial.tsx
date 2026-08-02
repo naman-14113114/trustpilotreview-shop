@@ -356,10 +356,6 @@ const rankedSheets: RankedSheet[] = [
         body: "It is the most expensive starting option in this five-product comparison.",
       },
       {
-        title: "Different fabric feel",
-        body: "The steel-based weave is a different proposition from the cotton-led fitted sheets above it.",
-      },
-      {
         title: "Less complete fitted choice",
         body: "It does not offer Juujo's seven-option fitted range.",
       },
@@ -758,7 +754,7 @@ function JuujoWinnerSection() {
         <h2 className="rounded-t-lg bg-emerald-500 px-6 py-5 text-center font-serif text-3xl font-bold text-white md:text-4xl">
           BEST OVERALL GROUNDING SHEETS
         </h2>
-        <article className="grid items-start border-2 border-t-0 border-emerald-500 bg-white lg:grid-cols-12">
+        <article className="grid items-start rounded-b-lg border-2 border-t-0 border-emerald-500 bg-white lg:grid-cols-12">
           <aside className="border-b border-slate-200 p-6 md:p-8 lg:col-span-4 lg:self-stretch lg:border-b-0 lg:border-r">
             <div className="flex w-full flex-col items-center lg:sticky lg:top-8 lg:pb-8">
               <a
@@ -834,7 +830,7 @@ function JuujoWinnerSection() {
 
             <section className="mt-8 grid items-center gap-6 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:grid-cols-[220px_1fr] md:p-5">
               <Image
-                src="/img/grounding-sheets/juujo-120-night-trial.png"
+                src="/img/grounding-sheets/juujo-120-night-risk-free-trial-grounding-sheet.webp"
                 alt="Juujo 120-night risk-free trial"
                 width={1254}
                 height={1254}
