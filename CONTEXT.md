@@ -1493,3 +1493,48 @@ or deployment-setting change occurred.
 #### Remaining External Work
 - In Microsoft Ads, confirm that the conversion goal listens for `muuhu_outbound_click` or `affiliate_click`; the page sends both, but this task did not modify the advertising account.
 - Use a separate ad group or future landing route for `multi-styler`, `Dyson Airwrap alternative`, and similar styling-led terms rather than weakening this page's exact `best hair dryer` relevance.
+
+### August 02, 2026: Publish Best Hair Dryer UK conversion update
+
+#### User Authorisation and GitHub Publication
+- The user explicitly requested `publish it`, authorising commit, push, merge, and production deployment of the previously reviewed Best Hair Dryer UK changes.
+- Only the intended files were committed: `CONTEXT.md`, `apps/site/src/data/bestHairDryerProductContent.tsx`, and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Release branch: `agent/hair-dryer-bing-cro-20260802`.
+- Scoped release commit: `3eecdde686d76a2c38b0938b05f5212a12afb716` (`feat: improve hair dryer landing conversion`).
+- GitHub pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/1`.
+- The draft pull request was marked ready and squash-merged into `main`.
+- Published `main` merge commit: `eea0407d3a08871f40acfb4f8e65b93d86987f87` (`feat: improve hair dryer landing conversion (#1)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview deployment: `https://trustpilot-led-mask-replica-opmiij4k3-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_7RVP7xp38NwBzjVkeY4kkY3MUcge`.
+- The preview build completed successfully with Next.js `16.2.11`, TypeScript, and all 37 static routes.
+- The exact preview artifact was promoted to production rather than rebuilt from an unverified source.
+- Production deployment: `https://trustpilot-led-mask-replica-897vg10ge-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_Eojg22CXzH2kEUNVvfeJ5rZquWG4`.
+- Production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Git Integration Finding
+- GitHub's Vercel check failed with `Git author namananya5-ship-it must have access to the project on Vercel to create deployments` and referenced a different Vercel team (`sahiljainsj004-5015's projects`, team ID `team_PDfDX2A1CVbbl54ylaGSqqim`).
+- The preserved production project is owned by `Elato Test's projects`, and the authenticated Vercel CLI session had direct access to it. The release therefore used the verified direct preview-and-promote workflow without relinking or replacing the production project.
+- The failing stale Git check did not block the GitHub merge or the direct production release. Future automatic Git deployments will remain unreliable until the Git author/team access mapping is corrected.
+
+#### Live Production Verification
+- Live target: `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026`.
+- The live custom-domain route returned HTTP `200` on desktop `1440x900` and mobile `390x844`.
+- The rendered H1 is `Best Hair Dryer` with `United Kingdom - 2026`.
+- The primary Muuhu offer CTA is visible inside the initial viewport at both tested sizes.
+- Document overflow was `0` pixels at both sizes.
+- All locally hosted page images returned successful responses; no broken image was found.
+- No browser console error or uncaught page error was recorded.
+- Removed unsupported claims remained absent, and the new top-five quick decision guide was present.
+- A live Muuhu click preserved `msclkid=publish-qa`, `utm_source=bing`, `utm_medium=cpc`, and `utm_campaign=best-hair-dryer` on the official destination.
+- Microsoft UET emitted both `muuhu_outbound_click` and `affiliate_click` as custom events on the live page.
+- Vercel production error-log scan for the prior hour returned `No logs found`, meaning no error-level runtime entries were present at verification time.
+
+#### Remaining External Work
+- The Microsoft Ads conversion goal still needs account-side confirmation that it listens for `muuhu_outbound_click` or `affiliate_click`.
+- Automatic Vercel Git deployments should be repaired by aligning GitHub author access with the actual Vercel project team. This release did not change ownership, team access, aliases, or Git integration settings.
