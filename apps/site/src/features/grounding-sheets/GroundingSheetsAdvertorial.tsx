@@ -582,6 +582,49 @@ function GiftPanel() {
   );
 }
 
+function RankRibbon({
+  rank,
+  featured = false,
+}: {
+  rank: string;
+  featured?: boolean;
+}) {
+  const outerSize = featured ? "h-[118px] w-[138px]" : "h-[96px] w-[112px]";
+  const triangleSize = featured ? "h-[108px] w-[128px]" : "h-[88px] w-[108px]";
+  const textBox = featured ? "h-[78px] w-[82px]" : "h-[64px] w-[68px]";
+  const textSize = featured ? "text-[2rem]" : "text-[1.55rem]";
+
+  return (
+    <div
+      aria-label={`Rank ${rank}`}
+      className={`pointer-events-none absolute left-0 top-0 z-30 overflow-visible rounded-tl-lg ${outerSize}`}
+    >
+      {featured && (
+        <div
+          className={`absolute left-[7px] top-[7px] rounded-tl-lg bg-emerald-950/30 blur-[1px] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <div
+        className={`absolute left-0 top-0 rounded-tl-lg bg-gradient-to-br from-emerald-300 via-emerald-500 to-emerald-800 [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize} ${
+          featured
+            ? "shadow-[0_18px_28px_rgba(5,150,105,0.32),inset_0_2px_0_rgba(255,255,255,0.35),inset_-10px_-10px_16px_rgba(4,120,87,0.28)]"
+            : "shadow-[0_10px_18px_rgba(5,150,105,0.2),inset_0_1px_0_rgba(255,255,255,0.24)]"
+        }`}
+      />
+      {featured && (
+        <div
+          className={`absolute left-[2px] top-[2px] rounded-tl-lg bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.16)_32%,rgba(255,255,255,0)_58%)] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <span
+        className={`absolute left-0 top-0 flex items-center justify-center font-serif font-black leading-none text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.32)] ${textBox} ${textSize}`}
+      >
+        {rank}
+      </span>
+    </div>
+  );
+}
+
 function CompactComparisonCard({ product }: { product: RankedSheet }) {
   const pointsToDisplay = product.winner
     ? [
@@ -616,9 +659,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
           : "border-slate-200"
       }`}
     >
-      <div className="absolute left-0 top-0 z-10 flex h-12 w-[76px] items-center bg-emerald-500 pl-4 text-2xl font-bold text-white [clip-path:polygon(0_0,100%_0,76%_100%,0_100%)]">
-        #{product.rank}
-      </div>
+      <RankRibbon rank={`#${product.rank}`} featured={product.winner} />
 
       {product.winner ? (
         <a
