@@ -1577,3 +1577,40 @@ or deployment-setting change occurred.
 - No commit was created.
 - No push, pull request, Vercel deployment, production promotion, or Microsoft Ads mutation was performed because this follow-up request did not explicitly authorise publication.
 - The verified revision remains local in the detached worktree `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802`.
+
+### August 02, 2026: Publish corrected Hair Dryer hero and 2-year Muuhu warranty
+
+#### User Authorisation and GitHub Publication
+- The user explicitly requested `publish it`, authorising commit, push, merge, and production deployment of the verified normal-hero and warranty correction.
+- Only the intended files were committed: `CONTEXT.md`, `apps/site/src/data/bestHairDryerProductContent.tsx`, `apps/site/src/data/hair.ts`, `apps/site/src/data/hairGuides.ts`, and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Release branch: `agent/restore-hair-hero-warranty-20260802`.
+- Scoped release commit: `ae421511d4c45a5ff2c13b4440533fc5a7628267` (`fix: restore hair hero and update warranty`).
+- GitHub pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/3`.
+- The draft pull request was marked ready and squash-merged into `main`.
+- Published application merge commit: `af7002da550552977da1e5980feef4db34e59f8c` (`Restore hair dryer hero and update Muuhu warranty (#3)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview deployment: `https://trustpilot-led-mask-replica-os1bc170k-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_D39fX59VkJtnaSBRKzq2ETp3hyXH`.
+- The preview build completed successfully with Next.js `16.2.11`, TypeScript, and all 37 static routes.
+- The exact verified preview artifact was promoted to production.
+- Production deployment: `https://trustpilot-led-mask-replica-cqi2ivbf2-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_Ws3jKyxZxSmaAtHmnpjJMpdWVm7o`.
+- Production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Live Production Verification
+- Live target: `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026`.
+- The live custom-domain route returned HTTP `200` on desktop `1440x1050` and mobile `390x844`.
+- The page uses the approved `/img/hair/top-5-hair-dryer.webp` hero at 1152 pixels wide on desktop and 358 pixels wide on mobile; the rejected split-hero comparison copy and winning-price metric are absent.
+- The rendered page contains the 2-year Muuhu warranty and no 1-year Muuhu warranty wording.
+- Document overflow was `0` pixels at both sizes. No broken content image, browser console error, or uncaught page error was recorded.
+- A live browser click test preserved `msclkid=codex-live-qa-20260802`, `utm_source=codex-live-qa`, `utm_medium=qa`, and `utm_campaign=hair-hero-release` on the official Muuhu destination.
+- The live page emitted `muuhu_outbound_click` in `dataLayer` and both `muuhu_outbound_click` and `affiliate_click` through Microsoft UET.
+- Vercel production error-log scan for the prior hour returned `No logs found`, meaning no error-level runtime entries were present at verification time.
+
+#### Git Integration Finding
+- The existing automatic GitHub/Vercel check remains unreliable because it references a different Vercel team and Git-author access mapping.
+- This release used the authenticated direct preview-and-promote workflow against the preserved production project. No project, team, alias, domain, or Git-integration setting was changed.
