@@ -74,10 +74,6 @@ const rankedSheets: RankedSheet[] = [
     ],
     pros: [
       {
-        title: "Seven fitted sizes",
-        body: "The range covers common US mattresses without making shoppers settle for a loose flat sheet.",
-      },
-      {
         title: "Comfort-led material blend",
         body: "The 90% cotton and 10% conductive silver construction balances a familiar sheet feel with conductive fibres.",
       },
@@ -94,6 +90,10 @@ const rankedSheets: RankedSheet[] = [
         body: "Premium packaging, a grounding mat and access to the sleep monitoring app are included in the offer.",
       },
       {
+        title: "Seven fitted sizes",
+        body: "The range covers common US mattresses without making shoppers settle for a loose flat sheet.",
+      },
+      {
         title: "Easy setup",
         body: "The included connection lead makes it straightforward to plug into a standard grounded outlet without needing special tools.",
       },
@@ -104,12 +104,12 @@ const rankedSheets: RankedSheet[] = [
     ],
     cons: [
       {
-        title: "Online only",
-        body: "Shoppers cannot feel the fabric in a high-street store before ordering.",
+        title: "Online Only",
+        body: "Available to buy online, not in high-street shops.",
       },
       {
-        title: "Grounded outlet required",
-        body: "The lead must be connected to a correctly grounded outlet in line with the supplied instructions.",
+        title: "Limited Stock",
+        body: "High demand means certain fitted sheet sizes can occasionally sell out.",
       },
       {
         title: "Sale Price Matters",
@@ -763,7 +763,7 @@ function JuujoWinnerSection() {
             <div className="flex w-full flex-col items-center lg:sticky lg:top-8 lg:pb-8">
               <a
                 href={JUUJO_URL}
-                className="block w-full"
+                className="block w-[90%]"
                 aria-label={`Open ${product.name}`}
               >
                 <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-white">
