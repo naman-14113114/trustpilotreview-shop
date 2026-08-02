@@ -107,31 +107,50 @@ function PageHeader({ guide }: { guide: GroundingGuide }) {
   );
 }
 
-function EditorCard({ summary }: { summary: string }) {
+function EditorCard() {
   return (
     <section className="border-b border-slate-200 bg-white px-4 py-10 md:py-14">
       <div className="mx-auto max-w-5xl rounded-sm border border-slate-100 bg-white p-6 text-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] md:p-8">
         <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
           <Image
             src="/img/grounding-sheets/dr-image.webp"
-            alt="Sleep and wellness editorial reviewer"
+            alt="Dr. Rachel Morgan"
             width={112}
             height={112}
             priority
             className="h-24 w-24 rounded-full object-cover md:h-28 md:w-28"
           />
           <div>
-            <h2 className="font-serif text-2xl font-bold text-slate-950 md:text-3xl">
-              Sleep &amp; Wellness Editorial Review
+            <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
+              Dr. Rachel Morgan
             </h2>
             <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
-              US Grounding Sheet Guide
+              Medical Reviewer
             </p>
           </div>
         </div>
-        <p className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg md:leading-9">
-          {summary}
-        </p>
+        <div className="mt-6 space-y-4 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg">
+          <p>
+            With <strong>over 10 years</strong> of experience in sleep and
+            wellness,{" "}
+            <strong className="text-slate-900">Dr. Rachel Morgan</strong> is
+            a certified wellness expert. She reviewed 20 popular United
+            States grounding sheet options over 200+ hours, comparing
+            publicly available specifications, fitted options, material
+            blends, setup instructions, care guidance, entry prices, trial
+            periods, and warranties. Her biggest finding was simple: the
+            most expensive sheet was not always the best choice. The
+            strongest options used the right materials, offered a secure
+            fit, and were easy enough to integrate into a nightly routine
+            consistently.
+          </p>
+        </div>
+
+        <hr className="my-4 w-full border-slate-200" />
+
+        <div className="text-center text-xs italic text-slate-600 md:text-right md:text-sm">
+          * Recommended by over 1,000 US buyers grounding sheets users.
+        </div>
       </div>
     </section>
   );
@@ -478,7 +497,7 @@ export default function GroundingGuidePage({ guide }: { guide: GroundingGuide })
     <div className="min-h-screen bg-slate-50 pb-24 font-sans text-slate-800 md:pb-0">
       <PageHeader guide={guide} />
       <main>
-        <EditorCard summary={guide.editorSummary} />
+        <EditorCard />
         <Introduction paragraphs={guide.intro} />
         {guide.template === "ranked" && <RankedContent guide={guide} />}
         {guide.template === "comparison" && (

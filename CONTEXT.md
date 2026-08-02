@@ -2009,3 +2009,49 @@ or deployment-setting change occurred.
 - `http://localhost:3000/best-grounding-mats-us-2026` returned HTTP `200` after the restart.
 - Temporary `.grounding-dev.log` and `.grounding-dev.err.log` files were removed from the repository and were not staged or committed.
 - The repository was clean and aligned immediately after the feature commit/push. This publication record is the only new repository change that remains to be committed in a small append-only documentation commit.
+## 2026-08-02 22:40:48 +05:30 - Fix shared grounding guide editor card text
+
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Branch and HEAD before the edit: `main` at `8a0ffcf`.
+- Upstream before the edit: `origin/main` at `8a0ffcf`; local branch was aligned with upstream after `git fetch --all --prune`.
+- Initial working tree before the edit: clean.
+- User request: the user showed `/grounding-sheet-durability-and-lifetime-cost` and was angry that the doctor/editor section on the newly created grounding pages used the wrong heading, role, and page-specific summary. The visible bad text was `Sleep & Wellness Editorial Review`, `US Grounding Sheet Guide`, and custom guide copy such as `No honest guide can guarantee a universal lifespan...`.
+- Practical interpretation: every newly created grounding guide that renders the shared doctor/editor card must use the exact approved card from `/best-grounding-sheets-us-2026`, not guide-specific editorial summaries. The approved main page card uses `Dr. Rachel Morgan`, `Medical Reviewer`, the 10-years sleep-and-wellness paragraph, the same portrait `/img/grounding-sheets/dr-image.webp`, and the italic recommendation line. This was a template consistency fix, not a content rewrite for product rankings or guide bodies.
+- Protected areas: no changes to `/best-grounding-sheets-us-2026`, homepage cards, grounding guide data, product rankings, Juujo URL, competitor information, CTAs, gifts, metadata, sitemap, Hair Dryer pages, LED mask pages, pillow pages, legacy route handler, assets, footer, or responsive layout beyond the shared editor card content.
+- Files inspected:
+  - `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` to copy the approved main Best Grounding Sheets editor card text, role, image alt text, paragraph, divider, and recommendation line.
+  - `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx` to locate the shared guide `EditorCard`.
+  - `apps/site/src/data/groundingGuides.ts` to confirm each guide still had `editorSummary` strings that were driving the wrong visible card copy.
+- Files changed:
+  - `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`.
+- Implementation details:
+  - Changed `EditorCard({ summary })` to `EditorCard()` so the shared card no longer renders per-page `guide.editorSummary` text.
+  - Updated the image alt text from `Sleep and wellness editorial reviewer` to `Dr. Rachel Morgan`.
+  - Replaced the card heading `Sleep & Wellness Editorial Review` with `Dr. Rachel Morgan`.
+  - Replaced the role label `US Grounding Sheet Guide` with `Medical Reviewer`.
+  - Replaced the single `{summary}` paragraph with the approved paragraph from the main page: `With over 10 years of experience in sleep and wellness, Dr. Rachel Morgan is a certified wellness expert...`.
+  - Added the same divider and italic line used on the main page: `* Recommended by over 1,000 US buyers grounding sheets users.`
+  - Updated the render call from `<EditorCard summary={guide.editorSummary} />` to `<EditorCard />`.
+  - Left `editorSummary` fields in `groundingGuides.ts` unchanged because removing them would broaden the data contract change and was not necessary for the visible fix. They are no longer rendered by the shared editor card.
+- Mistake recorded for future avoidance: the newly created grounding guide template incorrectly made the doctor/editor card depend on each guide's local `editorSummary`, causing inconsistent headings and page-specific copy across the 14 new pages. The user expects repeated trust/editor sections to be copied exactly from the latest approved main Best page unless they explicitly request different copy. Future grounding pages should not invent alternate editor-card titles, role labels, doctor labels, or summaries.
+- Commands and verification:
+  - `git status --short --branch` showed `## main...origin/main` clean before editing.
+  - `git fetch --all --prune` had already confirmed the branch was current before editing.
+  - `pnpm --filter @trustpilotreview/site typecheck` passed.
+  - `pnpm --filter @trustpilotreview/site lint` passed.
+  - `pnpm --filter @trustpilotreview/site build` passed and generated 51 static pages, including the 14 new grounding guide routes and `/best-grounding-sheets-us-2026`.
+  - `rg -n "Sleep & Wellness Editorial Review|US Grounding Sheet Guide|<EditorCard|function EditorCard" apps/site/src/features/grounding-sheets` confirmed the wrong editor-card strings were removed from the shared component and only `<EditorCard />` remains.
+  - A generated HTML scan under `apps/site/.next` confirmed grounding route output now contains `Dr. Rachel Morgan`, `Medical Reviewer`, and the approved paragraph. The scan output was very large because it matched generated HTML; the important check was that the bad shared card text was no longer in the built route output.
+  - `next build` temporarily changed `apps/site/next-env.d.ts` from `./.next/dev/types/routes.d.ts` to `./.next/types/routes.d.ts`; this was reverted because it was a generated build side effect outside the task scope.
+- Not tested:
+  - No browser screenshot was captured in this turn. The fix was verified through source, TypeScript/lint/build, and generated HTML because the requested change was a shared text/card template correction.
+- Git state after the work:
+  - `main` remains at `8a0ffcf`, aligned with `origin/main`.
+  - Working tree has one intended modified file: `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`.
+- Commit, push, branch, deployment actions:
+  - No commit was created.
+  - No push was performed.
+  - No branch was created.
+  - No Vercel deployment was triggered manually.
+- Remaining uncertainty and follow-up:
+  - If the user wants this fix live, it still needs to be committed and pushed to `origin/main` or otherwise published through the existing GitHub-triggered Vercel workflow.
