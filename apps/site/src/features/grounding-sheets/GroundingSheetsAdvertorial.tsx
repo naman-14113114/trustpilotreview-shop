@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
-import { GreenStarRating } from "@/components/GreenStarRating";
+import { GreenStarRating, GreenStarIcon } from "@/components/GreenStarRating";
 import { motion } from "motion/react";
 
 const JUUJO_URL =
@@ -1078,25 +1078,10 @@ export default function GroundingSheetsAdvertorial() {
                     <span className="font-bold text-base md:text-lg text-black font-sans">
                       Excellent
                     </span>
-                    <div className="flex items-center gap-0.5 text-[#00b67a]">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star
-                          key={i}
-                          size={22}
-                          fill="currentColor"
-                          strokeWidth={1}
-                        />
-                      ))}
-                    </div>
+                    <GreenStarRating rating={5} size={22} gap={2} />
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
-                    Rated 4.9 / 5 on{" "}
-                    <Star
-                      size={18}
-                      fill="#00b67a"
-                      strokeWidth={1}
-                      className="text-[#00b67a]"
-                    />{" "}
+                    Rated 4.9 / 5 on <GreenStarIcon size={18} />{" "}
                     <span className="font-bold text-black">Trustpilot</span>
                   </div>
                 </div>
