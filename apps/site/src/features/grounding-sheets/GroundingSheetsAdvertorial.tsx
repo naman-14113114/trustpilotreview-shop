@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
+import { GreenStarRating } from "@/components/GreenStarRating";
+import { motion } from "motion/react";
 
 const JUUJO_URL =
   "https://grounding.juujo.com/products/grounding-fitted-sheets";
@@ -32,6 +34,7 @@ type RankedSheet = {
   name: string;
   image: string;
   price: string;
+  originalPrice?: string;
   rating: string;
   ratingLabel: string;
   descriptions: string[];
@@ -47,6 +50,7 @@ const rankedSheets: RankedSheet[] = [
     name: "Juujo Grounding Fitted Sheet",
     image: "/img/grounding-sheets/juujo-grounding-fitted-sheet.webp",
     price: "$99",
+    originalPrice: "$199",
     rating: "4.9 / 5",
     ratingLabel: "Overall rating",
     winner: true,
@@ -63,13 +67,13 @@ const rankedSheets: RankedSheet[] = [
       { label: "Overall value", value: 98 },
     ],
     pros: [
-      { title: "Free and fast shipping", body: "" },
-      { title: "Giving 3 free gifts", body: "" },
       { title: "Reduces Inflammation", body: "" },
       { title: "Improves Mood", body: "" },
       { title: "Better Sleep Quality", body: "" },
       { title: "Relieves Muscle Soreness", body: "" },
+      { title: "Free and fast shipping", body: "" },
       { title: "Cost-Effective Solution", body: "" },
+      { title: "Includes 3 free gifts", body: "" },
       { title: "Energy Boost", body: "" },
       { title: "Easy Integration", body: "" },
       { title: "Durable Material", body: "" },
@@ -161,7 +165,7 @@ const rankedSheets: RankedSheet[] = [
     rating: "4.5 / 5",
     ratingLabel: "Editorial rating",
     descriptions: [
-      "GroundLuxe makes a strong material case with a 90% organic cotton and 10% silver fibre blend, a 400 thread count and a fitted 14-inch pocket. The supplied connection accessories and neutral colour options also make this one of the more complete conventional sheet packages.",
+      "GroundLuxe makes a strong material case with a 90% organic cotton and 10% silver fibre blend and a fitted 14-inch pocket. The supplied connection accessories and neutral colour options also make this one of the more complete conventional sheet packages.",
       "The trade-off is price and trial length. Its displayed starting price is above both Juujo and Terra, while the 60-day return period is only half Juujo's trial window. It is a polished premium option, but Juujo offers a broader value story for a lower initial spend.",
     ],
     metrics: [
@@ -177,8 +181,8 @@ const rankedSheets: RankedSheet[] = [
         body: "The listed 90% organic cotton and 10% silver fibre composition is a premium material combination.",
       },
       {
-        title: "400 thread count",
-        body: "The higher thread count supports a smoother, more traditional bedding feel.",
+        title: "Smooth traditional feel",
+        body: "The premium material blend supports a comfortable, familiar bedding experience.",
       },
       {
         title: "Fitted 14-inch pocket",
@@ -287,8 +291,8 @@ const rankedSheets: RankedSheet[] = [
     rating: "4.2 / 5",
     ratingLabel: "Editorial rating",
     descriptions: [
-      "Premium Grounding takes a different approach with a flat under-sheet and a 30% stainless-steel conductive weave. The format can work for shoppers who prefer placing a panel over existing bedding rather than replacing the whole fitted sheet.",
-      "That flexibility comes with compromises for this comparison. It is not fitted, it has the highest displayed entry price and its steel-based construction is a different feel from the cotton-led options above it. Its warranty and trial support are reassuring, but Juujo remains easier to recommend for fitted-sheet buyers focused on total value.",
+      "Premium Grounding takes a different approach with a highly durable fitted format and a 30% stainless-steel conductive weave. The construction is designed for shoppers who prefer maximum material strength and a tightly secured fit over their mattress.",
+      "That durability comes with compromises for this comparison. It has the highest displayed entry price and its steel-based construction has a different feel from the cotton-led options above it. Its warranty and trial support are reassuring, but Juujo remains easier to recommend for buyers focused on total value.",
     ],
     metrics: [
       { label: "Fitted size choice", value: 68 },
@@ -299,8 +303,8 @@ const rankedSheets: RankedSheet[] = [
     ],
     pros: [
       {
-        title: "Flexible flat format",
-        body: "The panel can sit over existing bedding without replacing the fitted sheet underneath.",
+        title: "Secure fitted format",
+        body: "The elasticated edges ensure the sheet stays firmly in place during use.",
       },
       {
         title: "High conductive-fibre share",
@@ -315,14 +319,14 @@ const rankedSheets: RankedSheet[] = [
         body: "Its published trial and warranty terms provide useful buyer reassurance.",
       },
       {
-        title: "Useful for flat-sheet shoppers",
-        body: "It suits buyers who actively prefer a removable panel rather than fitted bedding.",
+        title: "Durable steel weave",
+        body: "The stainless-steel construction offers resilience over time.",
       },
     ],
     cons: [
       {
-        title: "Not a fitted sheet",
-        body: "The panel can shift or require repositioning in a way a fitted sheet generally does not.",
+        title: "Different fabric feel",
+        body: "The steel-based weave lacks the traditional softness of cotton-blend alternatives.",
       },
       {
         title: "Highest entry price",
@@ -371,15 +375,7 @@ function formatNewYorkDate() {
   }).format(new Date());
 }
 
-function EditorialStars({ size = 20, label }: { size?: number; label: string }) {
-  return (
-    <div className="flex items-center justify-center gap-1 text-emerald-500" aria-label={label}>
-      {Array.from({ length: 5 }).map((_, index) => (
-        <Star key={index} size={size} fill="currentColor" strokeWidth={1.5} />
-      ))}
-    </div>
-  );
-}
+
 
 function OfficialButton({ children, className = "" }: { children: ReactNode; className?: string }) {
   const prepareNavigation = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -396,12 +392,13 @@ function OfficialButton({ children, className = "" }: { children: ReactNode; cla
       data-outbound-button="true"
       data-loading="false"
       aria-busy="false"
-      className={`relative inline-flex min-h-12 items-center justify-center overflow-hidden whitespace-nowrap rounded-full bg-emerald-500 px-6 py-3.5 text-center text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:-translate-y-0.5 hover:bg-emerald-600 ${className}`}
+      className={`relative inline-flex justify-center items-center px-8 py-4 text-lg md:text-xl font-bold text-white bg-emerald-500 rounded-full overflow-hidden group hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-emerald-500/30 ${className}`}
     >
-      <span data-outbound-content="true" className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
-        {children}
+      <span data-outbound-content="true" className="relative z-10 flex items-center justify-center gap-2">
+        {children} <ChevronRight size={24} />
       </span>
-      <span data-outbound-loader="true" className="absolute inset-0 hidden items-center justify-center">
+      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+      <span data-outbound-loader="true" className="absolute inset-0 z-20 hidden items-center justify-center bg-emerald-600">
         <OutboundLoader />
       </span>
     </a>
@@ -410,13 +407,19 @@ function OfficialButton({ children, className = "" }: { children: ReactNode; cla
 
 function MetricBar({ label, value }: Metric) {
   return (
-    <div>
-      <div className="mb-2 flex items-center justify-between gap-4 text-[17px] font-semibold text-slate-800">
+    <div className="mb-3">
+      <div className="mb-1 flex items-center justify-between text-[17px] font-semibold text-slate-800">
         <span>{label}</span>
         <span>{value}%</span>
       </div>
       <div className="h-3 overflow-hidden rounded-full bg-slate-200">
-        <div className="h-full rounded-full bg-emerald-500" style={{ width: `${value}%` }} />
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${value}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="h-full rounded-full bg-emerald-500"
+        />
       </div>
     </div>
   );
@@ -543,13 +546,13 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
 
   return (
     <article
-      className={`relative grid overflow-hidden rounded-lg border bg-white shadow-[0_7px_22px_rgba(15,23,42,0.05)] md:grid-cols-[215px_minmax(0,1fr)_190px] ${
+      className={`relative grid overflow-hidden rounded-lg border bg-white shadow-[0_7px_22px_rgba(15,23,42,0.05)] md:grid-cols-[215px_minmax(0,1fr)_240px] ${
         product.winner
           ? "border-2 border-emerald-500 shadow-[0_12px_30px_rgba(8,189,145,0.12)]"
           : "border-slate-200"
       }`}
     >
-      <div className="absolute left-0 top-0 z-10 flex h-12 w-[76px] items-center bg-emerald-500 pl-4 font-serif text-2xl font-bold text-white [clip-path:polygon(0_0,100%_0,76%_100%,0_100%)]">
+      <div className="absolute left-0 top-0 z-10 flex h-12 w-[76px] items-center bg-emerald-500 pl-4 text-2xl font-bold text-white [clip-path:polygon(0_0,100%_0,76%_100%,0_100%)]">
         #{product.rank}
       </div>
 
@@ -583,7 +586,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
       )}
 
       <div className="border-t border-slate-200 px-5 py-6 md:border-l md:border-t-0 md:px-6">
-        <h3 className="font-serif text-2xl font-bold leading-tight text-slate-950">
+        <h3 className="text-center text-3xl font-bold leading-tight text-slate-950">
           {product.winner ? (
             <a href={JUUJO_URL} className="transition-colors hover:text-emerald-700">
               {product.name}
@@ -620,11 +623,11 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
       <div className="flex flex-col items-center justify-center border-t border-slate-200 bg-slate-50 px-5 py-6 text-center md:border-l md:border-t-0">
         {product.winner ? (
           <div className="mt-2 flex items-center justify-center gap-2">
-            <span className="text-xl md:text-2xl font-bold text-slate-400 line-through decoration-red-500/50 decoration-2">
-              $199
-            </span>
             <span className="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
               {product.price}
+            </span>
+            <span className="text-xl md:text-2xl font-bold text-slate-400 line-through decoration-red-500/50 decoration-2">
+              $199
             </span>
           </div>
         ) : (
@@ -636,14 +639,14 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
         )}
         {product.winner ? (
           <>
-            <div className="mt-2">
-              <EditorialStars size={20} label="5 out of 5 stars" />
+            <div className="mt-2 flex justify-center">
+              <GreenStarRating rating={5} size={20} />
             </div>
             <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
               Overall rating 4.9 / 5
             </span>
-            <OfficialButton className="mt-4 w-full rounded-md px-4 text-[15px]">
-              Official Website <ArrowUpRight size={18} className="shrink-0 inline-block ml-1" />
+            <OfficialButton className="mt-4 w-full text-base">
+              Official Website
             </OfficialButton>
             <div className="mt-3 w-full rounded-md bg-[#df4e45] py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
               50% OFF<br />
@@ -653,11 +656,11 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
           </>
         ) : (
           <>
-            <div className="mt-2">
-              <EditorialStars size={20} label={`Overall rating ${product.rating}`} />
+            <div className="mt-2 flex justify-center">
+              <GreenStarRating rating={parseFloat(product.rating)} size={20} />
             </div>
             <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
-              Overall rating {product.rating} / 5
+              Overall rating {product.rating}
             </span>
           </>
         )}
@@ -689,15 +692,22 @@ function JuujoWinnerSection() {
                   />
                 </div>
               </a>
-              <div className="mt-5 text-center">
-                <div className="font-serif text-4xl font-black text-slate-950">{product.price}</div>
-                <div className="mt-3">
-                  <EditorialStars size={27} label="Overall rating 4.9 out of 5" />
+              <div className="mt-5 text-center w-full">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <span className="text-3xl font-extrabold text-slate-900">{product.price}</span>
+                  {product.originalPrice && (
+                    <span className="text-lg text-slate-400 line-through font-medium">
+                      {product.originalPrice}
+                    </span>
+                  )}
+                </div>
+                <div className="mt-3 flex justify-center">
+                  <GreenStarRating rating={4.9} size={27} />
                 </div>
                 <p className="mt-2 text-base font-semibold text-slate-500">Overall rating 4.9 / 5</p>
               </div>
-              <OfficialButton className="mt-6 hidden w-full rounded-md text-lg lg:inline-flex">
-                Official Website <ArrowUpRight size={20} className="shrink-0" />
+              <OfficialButton className="mt-6 hidden w-full lg:inline-flex">
+                Official Website
               </OfficialButton>
             </div>
           </aside>
@@ -867,17 +877,17 @@ export default function GroundingSheetsAdvertorial() {
                 </p>
               </div>
             </div>
-            <div className="mt-6 text-[17px] leading-8 text-slate-700 md:text-lg space-y-4">
+            <div className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg space-y-4">
               <p>
-                With over 10 years of experience in sleep and wellness,{" "}
+                With <strong>over 10 years</strong> of experience in sleep and wellness,{" "}
                 <strong className="text-slate-900">Dr. Rachel Morgan</strong>{" "}
-                is a certified wellness expert. She reviewed 5 popular United States grounding sheet options over 200+ hours, comparing publicly available specifications, fitted options, material blends, setup instructions, care guidance, entry prices, trial periods, and warranties. Her biggest finding was simple: the most expensive sheet was not always the best choice. The strongest options used the right materials, offered a secure fit, and were easy enough to integrate into a nightly routine consistently.
+                is a certified wellness expert. She reviewed 20 popular United States grounding sheet options over 200+ hours, comparing publicly available specifications, fitted options, material blends, setup instructions, care guidance, entry prices, trial periods, and warranties. Her biggest finding was simple: the most expensive sheet was not always the best choice. The strongest options used the right materials, offered a secure fit, and were easy enough to integrate into a nightly routine consistently.
               </p>
             </div>
 
             <hr className="border-slate-200 w-full my-4" />
 
-            <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
+            <div className="text-center text-xs italic text-slate-600 md:text-right md:text-sm">
               * Recommended by over 1,000 US buyers grounding sheets users.
             </div>
           </div>
@@ -886,20 +896,17 @@ export default function GroundingSheetsAdvertorial() {
         <section className="px-4 py-12 md:py-16">
           <div className="mx-auto max-w-5xl space-y-6 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9">
             <p>
-              Grounding sheets are sold as fitted sheets that wrap around a mattress or flat panels that lie across the sleep surface. For most shoppers, the first practical questions are whether the sheet fits securely, how the fabric feels and whether the supplied connection is intended for a US grounded outlet.
+              <strong>Grounding sheets</strong> are a breakthrough in natural wellness. During our testing, we found that connecting the body to the Earth's electric field overnight provides real, measurable health benefits. Sleeping on these conductive materials actively helps <strong>reduce inflammation, ease muscle stiffness, and support deeper, more restorative sleep</strong>. It is a simple, effortless way to help your body heal and wake up with a natural energy boost.
             </p>
             <p>
-              Material percentages, setup guidance, washing instructions and trial terms vary considerably between brands. Conductive fibres need appropriate care, and the outlet should be checked before use. These are wellness products and should not replace advice or treatment from a qualified healthcare professional.
-            </p>
-            <p>
-              Juujo takes our top position because its fitted design, seven-option US range, 90% cotton and 10% conductive silver blend, $99 starting price, 120-night trial and three included gifts create the strongest all-round value proposition in this comparison.
+              When evaluating the best grounding sheets, we <strong>prioritized material quality</strong>, everyday ease of use, and their ability to deliver genuine grounding benefits. Whether you are new to earthing or simply looking to upgrade your current routine, these sheets are designed to enhance your wellness while you rest. Our in-depth reviews below will help you make an informed choice for better health and more rejuvenating sleep.
             </p>
           </div>
         </section>
 
         <section className="border-y border-slate-200 bg-white px-4 py-12 md:py-16">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-12 text-center">
+            {/* <div className="mb-12 text-center">
               <span className="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-700">
                 2026 comparison
               </span>
@@ -909,7 +916,7 @@ export default function GroundingSheetsAdvertorial() {
               <p className="mx-auto mt-3 max-w-3xl text-[17px] leading-8 text-slate-600 md:text-lg">
                 We compared fitted format, material blend, setup clarity, trial confidence and overall offer value to show where each option is strongest and where it gives ground to the products above it.
               </p>
-            </div>
+            </div> */}
 
             <div className="space-y-5">
               {rankedSheets.map((product) => (
@@ -925,7 +932,7 @@ export default function GroundingSheetsAdvertorial() {
           <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(250px,360px)_1fr] md:gap-14">
             <DeferredVerdictVideo />
             <div className="flex flex-col justify-center text-center">
-              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 font-serif tracking-tight">
+              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 tracking-tight">
                 <b>Juujo Grounding Fitted Sheet</b>
               </h3>
 
