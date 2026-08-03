@@ -2055,3 +2055,30 @@ or deployment-setting change occurred.
   - No Vercel deployment was triggered manually.
 - Remaining uncertainty and follow-up:
   - If the user wants this fix live, it still needs to be committed and pushed to `origin/main` or otherwise published through the existing GitHub-triggered Vercel workflow.
+
+### August 03, 2026: Remove the Best Hair Dryer summarized ranking section
+
+#### User Feedback and Scope
+- The user reported that visitors were not scrolling beyond the summarized ranking at the top of `/best-hair-dryer-uk-2026` and were not reaching Muuhu.
+- The requested correction was to remove that summarized ranking from the main Top 5 Hair Dryer page.
+- The approved full-width hero, editorial introduction, five detailed ranked product cards, Muuhu's first-place position, 2-year warranty, product data, prices, and outbound tracking were kept unchanged.
+
+#### Implementation
+- Removed the entire `Quick decision guide / The top five hair dryers at a glance` section from `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Removed the summary-only Muuhu `View £149 offer` button and the four summary-only `Read review` jump links with that section.
+- Kept `bestHairDecisionDetails` because its buyer-fit labels and factual points are still used inside the five detailed product cards.
+- The main content now begins with the editorial introduction and then proceeds to the one continuous five-product review sequence, with Muuhu AirPro first.
+- This entry supersedes the earlier August 02 note that said the main route still used the top-five quick decision guide.
+
+#### Verification
+- `git diff --check` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed and generated all 51 routes, including `/best-hair-dryer-uk-2026`.
+- Production-mode Playwright checks passed at desktop `1440x1050` and mobile `390x844`.
+- Both viewports returned HTTP `200`, contained no summarized-ranking headings, began the main content with the editorial introduction, rendered five detailed product cards, and kept Muuhu AirPro first.
+- The approved hero rendered at 1152 pixels wide on desktop and 358 pixels wide on mobile. Both viewports had zero horizontal overflow, no broken content images, no console errors, and no uncaught page errors.
+- Desktop outbound-click QA preserved UTM parameters and `msclkid` on the Muuhu destination and emitted both `muuhu_outbound_click` and `affiliate_click`.
+
+#### Publication Status
+- No commit, push, pull request, Vercel deployment, production promotion, or advertising-account mutation was performed because this request did not explicitly authorise publication.
+- The verified correction remains local in `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802`.
