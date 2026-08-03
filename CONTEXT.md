@@ -2082,3 +2082,40 @@ or deployment-setting change occurred.
 #### Publication Status
 - No commit, push, pull request, Vercel deployment, production promotion, or advertising-account mutation was performed because this request did not explicitly authorise publication.
 - The verified correction remains local in `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802`.
+
+### August 03, 2026: Publish the Best Hair Dryer summary removal
+
+#### User Authorisation and GitHub Publication
+- The user explicitly requested `publish it`, authorising commit, push, merge, and production deployment of the verified summary-removal change.
+- Release branch: `agent/remove-hair-summary-20260803`.
+- Scoped release commit: `e3a0d19517fad044f7c4b4e4fce3b9bc30bbe353` (`fix: remove hair dryer summary ranking`).
+- GitHub pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/5`.
+- The draft pull request was marked ready and squash-merged into `main`.
+- Published application merge commit: `f8ae17d16cc0f7bb14d4f358d114653061d27aaf` (`Remove Best Hair Dryer summary ranking (#5)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview deployment: `https://trustpilot-led-mask-replica-qn4ntyqkn-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_fFa1Jfof3aUz67aZwpTjSVxy7iBP`.
+- The preview build completed successfully with Next.js `16.2.11`, TypeScript, and all 51 static routes.
+- The exact READY preview artifact was promoted to production.
+- Production deployment: `https://trustpilot-led-mask-replica-civaprcnj-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_9oKfdjqh5vS7aCiH2ftnJRJEMAjP`.
+- Production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Live Production Verification
+- Live target: `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026`.
+- The live route returned HTTP `200` on desktop `1440x1050` and mobile `390x844`.
+- The `Quick decision guide / The top five hair dryers at a glance` section was absent on both viewports.
+- The main content began with the editorial introduction and then rendered five detailed product cards with Muuhu AirPro first.
+- The approved full-width hero remained at 1152 pixels wide on desktop and 358 pixels wide on mobile. The page retained the 2-year Muuhu warranty and contained no old 1-year Muuhu warranty text.
+- Both viewports had zero horizontal overflow, no broken content images, no browser console errors, and no uncaught page errors.
+- A live Muuhu click preserved `msclkid=summary-removal-live-qa`, `utm_source=codex-live-qa`, `utm_medium=qa`, and `utm_campaign=summary-removal-release` on the official destination.
+- The live page emitted `muuhu_outbound_click` in `dataLayer` and both `muuhu_outbound_click` and `affiliate_click` through Microsoft UET.
+- Vercel production error-log scan for the prior hour returned `No logs found`, meaning no error-level runtime entries were present at verification time.
+
+#### Git Integration Finding
+- The existing automatic GitHub/Vercel check remained `UNSTABLE` because it still references the stale Git-author/team access mapping recorded in the earlier releases.
+- This release used the authenticated direct preview-and-promote workflow against the preserved production project. No project, team, alias, domain, or Git-integration setting was changed.
