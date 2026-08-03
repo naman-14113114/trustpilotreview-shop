@@ -2119,3 +2119,29 @@ or deployment-setting change occurred.
 #### Git Integration Finding
 - The existing automatic GitHub/Vercel check remained `UNSTABLE` because it still references the stale Git-author/team access mapping recorded in the earlier releases.
 - This release used the authenticated direct preview-and-promote workflow against the preserved production project. No project, team, alias, domain, or Git-integration setting was changed.
+
+### August 03, 2026: Refresh all Buudy comparison and buyer-guide pages
+
+#### User Feedback and Scope
+- The user reported that the approved Best 5 LED Mask page looked current, while the related Buudy pages such as CurrentBody vs Buudy still used an old design and stale data.
+- The existing public paths were preserved. No Best 5, Hair Dryer, checkout, domain, project, tracking asset, or unrelated route was redesigned.
+
+#### Implementation
+- Replaced nine independently rendered legacy pages with one shared editorial template based on the approved Best 5 visual system: emerald masthead, strong product imagery, evidence strip, concise verdict, factual comparison cards, buyer takeaways, FAQ, disclosure, and mobile sticky Buudy CTA.
+- Refreshed `/currentbody-vs-buudy`, `/deluxeskin-vs-buudy`, `/qureskincare-vs-buudy`, `/theraface-vs-other-masks`, `/silicone-led-mask-dangers`, `/floating-head-warning`, `/missing-colors-expose`, `/led-density-scam`, and `/brand-name-premium`.
+- Added a shared product/data registry using official product-page facts checked on 3 August 2026. Buudy now consistently shows £179, £449 reference price, 192 LEDs, seven visible colours plus 830nm near-infrared, integrated face-and-neck coverage, four intensity levels, cordless use, 90-day guarantee, and the current three-gift bundle with £128 stated value.
+- Replaced all old Buudy destinations with `https://www.buudy.co.uk/products/buudy-led-mask`.
+- Removed unsupported fake testing/expert/medical-certification language and rewrote sensational danger/scam claims as factual buyer guidance.
+- Added unique metadata and canonicals for all nine pages and refreshed the homepage comparison cards to use the current titles, descriptions, images, and Best 5 route.
+
+#### Verification
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed and generated all 51 static routes.
+- Production-mode browser QA covered all nine pages at 1440px and representative comparison/guide pages at 390x844.
+- Every route returned HTTP 200, rendered exactly one expected H1, used its own title and canonical, contained the current Buudy facts and URL, and had zero horizontal overflow, no broken content images, no internal console errors, and no uncaught page errors.
+- The mobile sticky CTA was visible on all representative mobile checks.
+- A real Buudy CTA click emitted `buudy_outbound_click` and `affiliate_click` with value 660 INR and preserved `msclkid=codex-qa-click` on the official destination.
+
+#### Publication Status
+- Publication was explicitly authorised on 3 August 2026 after the local desktop/mobile review.
+- Release through the existing GitHub repository and preserved `trustpilot-led-mask-replica` Vercel project; do not create or relink a project, change an alias/domain, or mutate the advertising account as part of this page refresh.

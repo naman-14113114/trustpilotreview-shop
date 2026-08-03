@@ -4,6 +4,7 @@ import { articles } from '@/data/old/articles';
 import { hairImages } from '@/data/hair';
 import { hairGuideGroups, hairGuides, type HairGuideSlug } from '@/data/hairGuides';
 import { groundingGuideGroups } from '@/data/groundingGuides';
+import { buudyEditorialHomeCards } from '@/data/buudyEditorialPages';
 import { Calendar, ChevronRight } from 'lucide-react';
 
 function hairGuideImage(slug: HairGuideSlug) {
@@ -123,78 +124,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Best LED Face Masks 2026",
-                description: "Our comprehensive ranking of the top 5 LED face masks available in the UK, tested over 200+ hours.",
-                image: "https://img.thesitebase.net/10677/10677322/themes/177107744580dd01d13d.png",
-                link: "/new-advertorial",
-                badge: "Top Pick"
-              },
-              {
-                title: "CurrentBody vs Buudy",
-                description: "Is the £400 CurrentBody mask worth it? We compare it head-to-head against the Buudy 7-Color LED Mask.",
-                image: "https://img.thesitebase.net/10677/10677322/themes/176872504642f0322d65.jpeg",
-                link: "/currentbody-vs-buudy",
-                badge: "Comparison"
-              },
-              {
-                title: "TheraFace vs Other Masks",
-                description: "Therabody's £579 LED mask promises vibration therapy — but does it outperform the competition?",
-                image: "https://img.thesitebase.net/10677/10677322/themes/177107817340059938e3.jpeg",
-                link: "/theraface-vs-other-masks",
-                badge: "Comparison"
-              },
-              {
-                title: "Deluxeskin vs Buudy",
-                description: "A detailed breakdown of how the Deluxeskin LED mask compares to the Buudy 7-Color in every category.",
-                image: "https://lawngreen-kingfisher-468763.hostingersite.com/wp-content/uploads/2026/02/57-w-1.webp",
-                link: "/deluxeskin-vs-buudy",
-                badge: "Comparison"
-              },
-              {
-                title: "Qureskincare vs Buudy",
-                description: "Can Qureskincare's LED mask compete with Buudy's 7 wavelengths and built-in neck coverage?",
-                image: "https://lawngreen-kingfisher-468763.hostingersite.com/wp-content/uploads/2026/02/57-w-1.webp",
-                link: "/qureskincare-vs-buudy",
-                badge: "Comparison"
-              },
-              {
-                title: "Silicone LED Mask Dangers",
-                description: "Why silicone-based LED masks may be damaging your skin — the hidden dangers most brands won't tell you.",
-                image: "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
-                link: "/silicone-led-mask-dangers",
-                badge: "Health Alert"
-              },
-              {
-                title: "The £300 Neck Tax",
-                description: "Why buying a face-only LED mask might be a huge mistake, and how premium brands overcharge for neck coverage.",
-                image: "/img/neck_led_mask_1774237229811.png",
-                link: "/floating-head-warning",
-                badge: "Industry Exposé"
-              },
-              {
-                title: "The 2-Color Trap",
-                description: "Why expensive masks that only offer Red and Near-Infrared light are leaving 70% of your skin concerns untreated.",
-                image: "/img/seven_colors_mask_1774237479088.png",
-                link: "/missing-colors-expose",
-                badge: "Industry Exposé"
-              },
-              {
-                title: "The LED Density Scam",
-                description: "Is your £400 mask filled with 'dead zones'? Why hidden bulb counts could mean you're paying for a placebo.",
-                image: "/img/dense_led_macro_1774237501628.png",
-                link: "/led-density-scam",
-                badge: "Industry Exposé"
-              },
-              {
-                title: "The Celebrity Markup",
-                description: "Are you paying for real clinical technology or just funding a celebrity's Instagram post? The truth behind £500 masks.",
-                image: "/img/luxury_mask_markup_1774237538064.png",
-                link: "/brand-name-premium",
-                badge: "Industry Exposé"
-              },
-            ].map((card, idx) => (
+            {buudyEditorialHomeCards.map((card, idx) => (
               <Link 
                 key={idx} 
                 to={card.link} 
@@ -203,8 +133,7 @@ export default function Home() {
                 <div className="h-48 overflow-hidden relative border-b border-slate-100">
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                   <div className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${
-                    card.badge === 'Health Alert' ? 'bg-red-500 text-white' : 
-                    card.badge === 'Top Pick' ? 'bg-emerald-500 text-white' : 
+                    card.badge === 'Top 5' ? 'bg-emerald-500 text-white' :
                     'bg-slate-800 text-white'
                   }`}>
                     {card.badge}

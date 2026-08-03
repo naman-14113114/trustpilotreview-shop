@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { articles } from "@/data/old/articles";
+import { buudyEditorialPages } from "@/data/buudyEditorialPages";
 import { SITE_NAME, SITE_URL } from "@/lib/brand";
 
 const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
@@ -67,7 +68,17 @@ const routeMetadata: Record<string, RouteMetadata> = {
     description:
       "Compare five grounding sheets for US shoppers by fitted sizes, material blend, setup, care, entry price, trial period, warranty and overall editorial value.",
     canonical: `${SITE_URL}/best-grounding-sheets-us-2026`
-  }
+  },
+  ...Object.fromEntries(
+    buudyEditorialPages.map((page) => [
+      page.path,
+      {
+        title: page.metaTitle,
+        description: page.metaDescription,
+        canonical: `${SITE_URL}${page.path}`
+      }
+    ])
+  )
 };
 
 const legalTitles: Record<string, string> = {
