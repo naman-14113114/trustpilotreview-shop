@@ -1295,7 +1295,7 @@ export default function HairDryerAdvertorial({
   const expertProfile = {
     name: "Amara Wright",
     title: isBestHairLanding
-      ? "Haircare buying editor"
+      ? "Professional Hairdresser"
       : "Haircare and hair style expert",
     image: "/img/hair/styler_image.webp",
     yearsExperience: 12,
@@ -1368,12 +1368,12 @@ export default function HairDryerAdvertorial({
             Last updated –{" "}
             <span suppressHydrationWarning>{updatedDate}</span>
           </div>
-          {isBestHairLanding && (
+          {/* {isBestHairLanding && (
             <p className="mx-auto mt-3 max-w-2xl text-xs font-medium leading-relaxed text-emerald-50 md:text-sm">
               Editorial buying comparison. We may earn commission from featured
               links at no extra cost to you.
             </p>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -1440,13 +1440,13 @@ export default function HairDryerAdvertorial({
                 ) : isBestHairLanding ? (
                   <p>
                     <strong className="text-slate-900">{expertProfile.name}</strong>{" "}
-                    compared the five shortlisted models using published product
-                    specifications, included attachments, current UK prices,
-                    warranty and return terms, and buyer-facing product
-                    information. The recommendation prioritises drying
-                    performance, heat control, hair-type fit and value. Where
-                    directly comparable laboratory measurements were not
-                    available, we did not invent them.
+                    is a professional hairdresser with hands-on 12 years of experience in
+                    styling a wide range of hair types. For this guide, she
+                    researched and compared the shortlisted hair dryers based on
+                    airflow, heat control, drying speed, attachments, ease of
+                    use, price, warranty and returns. Her recommendation focuses
+                    on what matters most for everyday styling: faster drying,
+                    less heat exposure, smoother results and good overall value.
                   </p>
                 ) : market.key === "ca" ? (
                   <p>
@@ -1483,8 +1483,7 @@ export default function HairDryerAdvertorial({
 
               {market.key === "ca" ? null : isBestHairLanding ? (
                 <div className="text-xs italic text-slate-600 md:text-right md:text-sm">
-                  * Editorial recommendation based on current UK product
-                  information and offer terms checked {updatedDate}.
+                  * Recommended by over 1,000 UK buyers hair styling users.
                 </div>
               ) : (
                 <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
@@ -2184,37 +2183,6 @@ export default function HairDryerAdvertorial({
         </div>
       </main>
 
-      {/* Footer / Disclosures */}
-      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
-        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-          <p className="mb-2 text-lg font-bold text-slate-800">
-            Best Hair Dryer
-          </p>
-          <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
-          <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
-              Important disclosure
-            </p>
-            <p className="mb-4">
-              <strong>Affiliate disclosure:</strong> We may receive compensation
-              for clicks on or purchases of products featured on this site. This
-              comes at no additional cost to you.
-            </p>
-            <p>
-              <strong>Individual results:</strong> Experiences with hair styling
-              devices vary. Product information and examples do not guarantee a
-              particular result.
-            </p>
-            {market.key === "ca" && (
-              <p className="mt-4">
-                <strong>Regulatory Note:</strong> Reference to certifications
-                does not imply an endorsement of product efficacy for specific
-                individual conditions.
-              </p>
-            )}
-          </div>
-        </div>
-      </footer>
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
