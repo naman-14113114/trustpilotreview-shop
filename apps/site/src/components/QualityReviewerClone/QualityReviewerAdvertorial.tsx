@@ -1,9 +1,9 @@
 "use client";
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import FaqAccordion from './FaqAccordion';
 import QualityReviewerCard from './QualityReviewerCard';
 import { qualityReviewerProducts } from '../../data/qualityReviewerHairDryers';
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Play } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
@@ -11,6 +11,23 @@ import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
 export default function QualityReviewerAdvertorial() {
   const market = getAdvertorialMarket("uk");
   const updatedDate = useMarketUpdatedDate(market, "4 August 2026");
+  
+  const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
+  const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const playVerdictVideo = () => {
+    const video = verdictVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+      setIsVerdictVideoPlaying(true);
+    } else {
+      video.pause();
+      setIsVerdictVideoPlaying(false);
+    }
+  };
+
   // Map the data to the shape expected by QualityReviewerCard
   const products = qualityReviewerProducts.map((p) => {
     const parsePercentage = (s: string) => {
@@ -70,7 +87,7 @@ export default function QualityReviewerAdvertorial() {
         </div>
       </div>
 
-      <main className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <main className="max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         {/* Author Block */}
         <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800 mb-12 relative z-10 font-sans">
           <div className="flex flex-col md:block items-center text-center md:text-left w-full">
@@ -150,25 +167,24 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Green Box: Criteria */}
-        <div className="border-[3px] border-[#83D221] p-8 md:p-10 mb-12 bg-white">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">
+        <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
+          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] md:text-[36px] font-bold text-[#3A3A3A] mb-8">
             We've Rated The Hair Dryers On 8 Criteria:
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <ul className="flex flex-col gap-6">
             {['Drying Time', 'Results (How The Hair Looked After)', 'Amount Of Heat/Speed Settings', 'Weight', 'Noise Level', 'Size And Compactness', 'Durability', 'Value For Money'].map((item, idx) => (
-              <li key={idx} className="flex items-center gap-4 text-[18px] font-bold text-[#3A3A3A] font-sans">
-                <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="#83D221">
-                  <circle cx="12" cy="12" r="10" fill="#83D221"/>
-                  <path d="M10 17l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#FFF"/>
+              <li key={idx} className="flex items-start gap-4 md:gap-5 text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide">
+                <svg className="shrink-0 mt-1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3A3A3A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                {item}
+                <span className="leading-tight">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Green Box: 7 Reasons */}
-        <div className="border-[3px] border-[#83D221] p-8 md:p-10 mb-12 bg-white">
+        <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
            <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">7 Reasons To Get A Hollow Inlet Hair Dryer</h2>
            <div className="flex flex-col gap-2">
              <FaqAccordion type="look" title="Shields Your Tresses From Heat Damage" content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks." />
@@ -182,7 +198,7 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Green Box: What to Look For */}
-        <div className="border-[3px] border-[#83D221] p-8 md:p-10 mb-12 bg-white">
+        <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
            <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">What To Look For</h2>
            <div className="flex flex-col gap-2">
              <FaqAccordion type="look" title="High Airflow (M/S) Rather Than Wattage" content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!" />
@@ -193,7 +209,7 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Red Box: What to Avoid */}
-        <div className="border-[3px] border-[#dc143c] p-8 md:p-10 mb-12 bg-white">
+        <div className="border-2 border-[#dc143c] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
            <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">What To Avoid</h2>
            <div className="flex flex-col gap-2">
              <FaqAccordion type="avoid" title="Limited Heat And Speed Options" content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent." />
@@ -222,25 +238,83 @@ export default function QualityReviewerAdvertorial() {
            ))}
         </div>
 
-        <div className="my-20 flex justify-center text-center">
-           <p className="text-[18px] font-sans text-[#4B4F58]">
-             Have questions? Email us at <br className="sm:hidden" />
-             <a href="mailto:contact@quality-reviewer.com" className="text-[#393BE7] underline font-bold mt-2 inline-block">
-               contact@quality-reviewer.com
-             </a>
-           </p>
+        {/* Video Section from previous page */}
+        <div className="mt-16 mb-20">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
+            {market.key === "ca" ? "Editor's Pick" : "Editor's Verdict"}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center bg-white p-6 md:p-8 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-gray-100">
+            {/* Left Video Area */}
+            <div className="relative">
+              <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                <video
+                  ref={verdictVideoRef}
+                  className="block w-full"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label="Muuhu AirPro product video"
+                  onPlay={() => setIsVerdictVideoPlaying(true)}
+                  onPause={() => setIsVerdictVideoPlaying(false)}
+                  onEnded={() => setIsVerdictVideoPlaying(false)}
+                >
+                  <source
+                    src="/assets/hair-dryer-trustpilot-video.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+                <button
+                  type="button"
+                  aria-label="Play Muuhu AirPro product video"
+                  onClick={playVerdictVideo}
+                  className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
+                    isVerdictVideoPlaying
+                      ? "pointer-events-none scale-90 opacity-0"
+                      : "scale-100 opacity-100"
+                  }`}
+                >
+                  <Play size={30} fill="currentColor" className="ml-1" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Content Area */}
+            <div className="flex flex-col justify-center text-center">
+              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight text-center">
+                <b>Muuhu AirPro</b>
+              </h3>
+
+              <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
+
+              <div className="text-2xl md:text-3xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans text-center">
+                {market.key === "ca" ? "Current Price" : "Now at 50% off"}
+              </div>
+
+              {/* Editorial rating badge */}
+              <div className="border border-gray-200 bg-gray-50 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="font-bold text-base md:text-lg text-black font-sans">
+                    Editor&apos;s top pick
+                  </span>
+                </div>
+                <div className="text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+                  Editorial rating 4.9 / 5
+                </div>
+              </div>
+
+              <a
+                href={market.muuhuUrl ?? "#"}
+                aria-label="Check Availability"
+                className="mx-auto w-full max-w-[240px] bg-[#393BE7] hover:bg-[#2022d4] text-white text-lg font-bold font-sans tracking-wide py-4 px-6 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase"
+              >
+                CHECK AVAILABILITY
+              </a>
+            </div>
+          </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-[#DDDDDD] py-10 mt-12 text-center text-[15px] text-[#050505] font-sans">
-        <div className="flex justify-center gap-6 mb-6">
-          <a href="#" className="hover:underline font-bold">Terms of Service</a> |
-          <a href="#" className="hover:underline font-bold">Privacy Policy</a> |
-          <a href="#" className="hover:underline font-bold">Contact Us</a>
-        </div>
-        <p className="text-[#4B4F58]">&copy; 2026 Quality Reviewer. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

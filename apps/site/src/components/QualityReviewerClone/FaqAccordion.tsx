@@ -14,16 +14,14 @@ export default function FaqAccordion({ title, content, type }: Props) {
 
   const Icon = isLook
     ? () => (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-          <polyline points="22 4 12 14.01 9 11.01"/>
+        <svg className="shrink-0 mt-1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       )
     : () => (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="15" y1="9" x2="9" y2="15"/>
-          <line x1="9" y1="9" x2="15" y2="15"/>
+        <svg className="shrink-0 mt-1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       );
 
@@ -31,13 +29,11 @@ export default function FaqAccordion({ title, content, type }: Props) {
     <div className="border-b border-gray-200 last:border-0 my-1">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-4 text-left focus:outline-none"
+        className="w-full flex items-start justify-between py-4 text-left focus:outline-none"
       >
-        <div className="flex items-center gap-3">
-          <div className="shrink-0">
-             <Icon />
-          </div>
-          <span style={{ color }} className="font-bold text-xl">{title}</span>
+        <div className="flex items-start gap-4 md:gap-5 pr-4">
+          <Icon />
+          <span className="text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide leading-tight">{title}</span>
         </div>
         <div style={{ color }} className="shrink-0 ml-4">
           {isOpen ? (
