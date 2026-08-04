@@ -1349,7 +1349,7 @@ export default function HairDryerAdvertorial({
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
       <Script
-        src="/assets/muuhu-hair-dryer-exit-popup.js"
+        src="/assets/muuhu-hair-dryer-exit-popup.js?v=20260804-129"
         strategy="afterInteractive"
       />
       {/* Header / Hero */}
