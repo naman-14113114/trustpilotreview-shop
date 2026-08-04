@@ -46,9 +46,9 @@ export const bestHairDryerProductContent = {
         </li>
         <li>
           <strong>7 Attachments Included:</strong> Every order ships with all
-          seven attachments — diffuser, concentrator, smoothing brush, round
+          seven attachments - diffuser, concentrator, smoothing brush, round
           volumising brush, left and right auto-wrap curlers and an L-shaped
-          base — no extras to buy separately.
+          base - no extras to buy separately.
         </li>
         <li>
           <strong>Certified for UK Safety:</strong> CE Certified, UKCA Approved
@@ -199,7 +199,7 @@ export const bestHairDryerProductContent = {
         <li>
           <strong>Strict Return Conditions: </strong> Despite the luxury price
           tag, returning it requires all original packaging and accessories in
-          perfect condition. A missing piece of cardboard can jeopardize your
+          pristine condition. A missing piece of cardboard can jeopardize your
           refund.
         </li>
         <li>
