@@ -644,8 +644,8 @@ const bestHairDryerProducts: Product[] = [
     rank: "",
     name: "Muuhu AirPro",
     image: "/img/hair/muuhu-product-1a.webp",
-    price: "£149",
-    originalPrice: "£299",
+    price: "£129",
+    originalPrice: "£259",
     rating: "4.9 / 5",
     link: "#",
     isWinner: true,
@@ -1554,7 +1554,7 @@ export default function HairDryerAdvertorial({
               <p>
                 Muuhu AirPro ranks first for the strongest balance of dryer
                 performance, hair-type attachments and current price. It combines
-                a 1,600W, 110,000 RPM motor with seven attachments for &pound;149.
+                a 1,600W, 110,000 RPM motor with seven attachments for &pound;129.
                 Dyson remains the luxury dryer choice, while Cloud Nine, Shark
                 and ghd suit shoppers who prefer a more familiar dryer-first
                 format.
