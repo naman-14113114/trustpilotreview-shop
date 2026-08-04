@@ -2193,3 +2193,53 @@ or deployment-setting change occurred.
 #### Git Integration Finding
 - The automatic GitHub/Vercel status check continued to fail because it references the stale Git-author/team access mapping already documented in prior releases.
 - Authenticated direct preview deployment and promotion succeeded against the preserved production project. No Vercel project, alias, domain, Git-integration configuration, or advertising-account setting was changed.
+
+### August 04, 2026: Publish GitHub hair Top 5 changes without changing other hair routes
+
+#### User Intent and Protected Scope
+- The owner asked to publish the latest changes from `naman-14113114/trustpilotreview-shop` to `https://www.trustpilotreview.shop/best-hair-dryer-uk-2026` and then clarified that the changes must apply only to the Top 5 Hair Dryer page.
+- Protected scope included every other hair buyer guide and direct-comparison route, plus all LED-mask, Buudy, checkout, tracking, domain, and unrelated site behaviour.
+- The working checkout was `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802` with remote `https://github.com/naman-14113114/trustpilotreview-shop.git`.
+
+#### Freshness Audit and Incoming GitHub Changes
+- The previously published application baseline was `6716026`. The latest owner-authored GitHub stack advanced `origin/main` to `178bdf1` through commits `aeb907e`, `aca33b4`, `532b8f3`, `288cfbc`, `37c79f3`, and `178bdf1`.
+- The incoming stack changed `apps/site/public/img/hair/muuhu-product-1a.webp`, `apps/site/src/data/bestHairDryerProductContent.tsx`, and `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- The changes introduced a new Muuhu image, revised editorial/expert framing, expanded product pros and cons, a larger Best Hair Dryer title, removal of the Best Hair Dryer footer, and a current 1-year Muuhu warranty.
+- The official Muuhu UK product page was checked before publication. It showed the £129 / £259 offer, 90-day guarantee, 1-year warranty, 16,000+ reviews, 4.9 rating, 7-in-1 attachment system, companion app, and CE/UKCA/RoHS references. The current 1-year warranty therefore intentionally superseded the older 2-year Top 5 copy.
+
+#### Scope Leak Found and Corrected
+- The incoming edits were not route-isolated: `HairDryerAdvertorial.tsx`, `bestHairDryerProductContent.tsx`, and `muuhu-product-1a.webp` are also used by hair guide routes. Publishing them unchanged would have altered competitor/guide pages despite the owner's explicit Top 5-only instruction.
+- Added `apps/site/src/data/bestHairDryerLandingProductContent.tsx` for the new Top 5 product review content.
+- Added `apps/site/public/img/hair/muuhu-product-1a-best-hair.webp` for the new Top 5 Muuhu product image.
+- Restored `apps/site/src/data/bestHairDryerProductContent.tsx` and `apps/site/public/img/hair/muuhu-product-1a.webp` for other hair routes.
+- Updated `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx` so the new content, new image, larger title treatment, footer removal, and 1-year decision fact are conditional on `isBestHairLanding` only.
+- Representative protected-route checks used `/best-hair-dryer-curly-hair-uk-2026` and confirmed its shared image, prior content, and footer remained unchanged.
+- A browser-helper setup added `.gstack/` to `.gitignore` during QA. That unrelated operational edit was removed before publication and was not committed.
+
+#### Verification
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed and generated all 51 routes.
+- `PARITY_BASE_URL=http://localhost:3023 corepack pnpm verify:parity` passed its seven-route production-mode smoke test.
+- Built-output assertions confirmed that the Top 5 route contains the new image, revised intro and cons, 1-year warranty, and no footer, while the protected guide route contains the shared image, no landing-only content, and its footer.
+- Live production QA returned HTTP 200 at desktop `1440x900` and mobile `390x844`. The real Playwright viewports had no console errors, no uncaught application errors, and exactly zero horizontal overflow (`scrollWidth === innerWidth`).
+- The updated Top 5 hero and expert card rendered correctly at both viewports. The first raw Chrome mobile screenshot was misleading because Chrome used a 500px minimum layout viewport and cropped it to 390px; a true Playwright 390px viewport disproved the apparent overflow, so no unnecessary layout edit was made.
+- A live mobile CTA click navigated immediately to `https://uk.muuhu.com/products/muuhu-hair-dryer` and preserved `utm_source=codex-live-qa`, `utm_medium=qa`, `utm_campaign=github-sync`, and `msclkid=codex-live-qa`.
+- A production error-log scan for deployment `dpl_BW1pJbtT6rf3TeR52woN23fpkZo9` returned no error-level entries.
+
+#### GitHub Publication
+- Scoped release branch: `agent/deploy-hair-top5-20260804`.
+- Scoped implementation commit: `3de17103d0093a5c82cbfc617b2bd75c9d4f226f` (`fix: scope hair dryer updates to top five page`).
+- Pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/13`.
+- Pull request #13 was squash-merged into `main` as `a49dc1b33c13121839ea7702b2100d6b0021cb06` (`Scope latest hair dryer changes to the Top 5 page (#13)`).
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Authenticated preview: `https://trustpilot-led-mask-replica-ii42hjqzj-elato-tests-projects.vercel.app`.
+- Preview deployment ID: `dpl_4xL9cYLJSdrwtKU3SMGV4QMp66dD`.
+- The exact READY preview artifact was promoted to production.
+- Production deployment: `https://trustpilot-led-mask-replica-kwsffew62-elato-tests-projects.vercel.app`.
+- Production deployment ID: `dpl_BW1pJbtT6rf3TeR52woN23fpkZo9`.
+- `https://www.trustpilotreview.shop` was verified to resolve to that deployment and the target route returned the updated Top 5 output.
+- Existing aliases and the Vercel project were preserved. The stale automatic GitHub/Vercel author-team check still failed, so the authenticated direct preview-and-promote workflow was used without relinking or replacing the project.
