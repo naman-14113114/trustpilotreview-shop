@@ -88,6 +88,11 @@ export const bestHairDryerProductContent = {
           a wider attachment set.
         </li>
         <li>
+          <strong>Free Companion App: </strong> Includes a dedicated haircare
+          and styling app to help you master different blowout techniques and
+          get the most out of your new tool.
+        </li>
+        <li>
           <strong>Free Gifts with Every Order: </strong> Current orders include
           bonus free gifts at checkout, adding extra value on top of the
           already-reduced price.
