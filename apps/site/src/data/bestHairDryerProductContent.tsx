@@ -33,8 +33,7 @@ export const bestHairDryerProductContent = {
           seven included attachments, ionic care, a 1-year warranty and a{" "}
           <strong>90-day money-back guarantee</strong>. It ranks first for the
           broadest drying and styling routine at the lowest current price in
-          this five-product shortlist. Shoppers who want only a familiar
-          dedicated dryer may still prefer Dyson, Cloud Nine, Shark or ghd.
+          this five-product shortlist.
         </p>
       </>
     ),
@@ -131,11 +130,10 @@ export const bestHairDryerProductContent = {
         <p className="text-slate-600 leading-relaxed">
           Dyson&apos;s strengths are clear: fast controlled drying, a refined
           feel, magnetic attachments, static reduction, Nural sensor technology
-          and a <strong>2-year guarantee</strong>. The Straight+Wavy model uses
-          Dyson&apos;s digital motor V9, spinning at up to{" "}
-          <strong>110,000 RPM</strong>, with Air Multiplier technology to create
-          a high-pressure jet of controlled air for fast drying and precision
-          styling.
+          and a 2-year guarantee. The Straight+Wavy model uses Dyson&apos;s
+          digital motor V9, spinning at up to <strong>110,000 RPM</strong>, with
+          Air Multiplier technology to create a high-pressure jet of controlled
+          air for fast drying and precision styling.
         </p>
         <p className="text-slate-600 leading-relaxed">
           The reason it ranks behind Muuhu is value, not brand quality. At{" "}
@@ -192,6 +190,18 @@ export const bestHairDryerProductContent = {
         <li>
           <strong>Fewer Extras Included:</strong> It does not come with the same
           added accessories and haircare extras offered with our top pick.
+        </li>
+        <li>
+          <strong>Strict Return Conditions: </strong> Despite the luxury price
+          tag, returning it requires all original packaging and accessories in
+          perfect condition. A missing piece of cardboard can jeopardize your
+          refund.
+        </li>
+        <li>
+          <strong>Expensive Accessory Ecosystem: </strong> At &pound;299.99, you
+          are locked into their ecosystem. If you ever want to add new
+          attachments later, you will pay a significant premium, and they are
+          often not backward-compatible with older models.
         </li>
       </>
     ),
@@ -282,6 +292,27 @@ export const bestHairDryerProductContent = {
           practical and compact, but Cloud Nine has the cleaner salon-dryer
           positioning for buyers who want a dedicated premium dryer.
         </li>
+        <li>
+          <strong>Plastic Build Quality: </strong> The lightweight body feels
+          more budget-friendly in hand compared to the metal-finish feel of
+          premium dryers like Dyson or Cloud Nine.
+        </li>
+        <li>
+          <strong>Brand Perception Gap: </strong> Shark is mainly known for
+          vacuum cleaners and kitchen appliances, so some buyers question
+          whether their haircare engineering matches dedicated beauty brands.
+        </li>
+        <li>
+          <strong>No Ionic Certification Shown: </strong> While Shark mentions
+          ionic technology, detailed independent ion-output measurements are not
+          publicly listed the way they are for some competitors.
+        </li>
+        <li>
+          <strong>Limited Styling Versatility: </strong> The four attachments
+          cover drying and smoothing well, but buyers who want volume brushes,
+          curling or a complete styling routine will need to purchase additional
+          tools separately.
+        </li>
       </>
     ),
   },
@@ -356,6 +387,17 @@ export const bestHairDryerProductContent = {
           but Muuhu&apos;s 90-day money-back guarantee is easier for hesitant
           shoppers.
         </li>
+        <li>
+          <strong>Hidden Return Shipping Fees: </strong> Unlike brands that
+          offer risk-free trials, buyers changing their mind may find return
+          shipping costs automatically deducted from their final refund amount.
+        </li>
+        <li>
+          <strong>Strict Packaging Requirements for Returns: </strong> To get a
+          full refund, the dryer and all gifts must be returned completely
+          unmarked in their original pristine packaging, making it difficult to
+          genuinely test the product before committing.
+        </li>
       </>
     ),
   },
@@ -376,7 +418,7 @@ export const bestHairDryerProductContent = {
           keeps the routine straightforward and reliable.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          The limitation is value for a new buyer starting from scratch. At
+          The limitation is value for a new buyer starting from scratch. At{" "}
           <strong>&pound;189</strong>, it costs more than Muuhu but gives far
           fewer options in the box. It is a strong dryer, not a complete
           routine, so it ranks fifth behind products that give more attachment
@@ -407,24 +449,42 @@ export const bestHairDryerProductContent = {
     consContent: (
       <>
         <li>
-          <strong>Dryer Only: </strong> It does not include Muuhu&apos;s wider
-          brush, diffuser, concentrator and auto-wrap styling system.
-        </li>
-        <li>
-          <strong>Limited Included Attachments: </strong> The out-of-box routine
-          is narrower than Muuhu, Dyson, Cloud Nine and Shark.
-        </li>
-        <li>
           <strong>Higher Price for Less Coverage: </strong> At &pound;189, it
           costs more than Muuhu while solving fewer daily styling needs.
         </li>
         <li>
+          <strong>Limited Attachments: </strong> Ships without brushes,
+          diffuser, curlers or a styling system, fewer in-box attachments than
+          every other pick.
+        </li>
+        {/* <li>
           <strong>No Curl or Volume Bundle: </strong> Buyers may need separate
           tools for waves, volume and a more finished salon look.
-        </li>
+        </li> */}
         <li>
           <strong>No Free Gift Bundle: </strong> Misses the premium packaging,
           comb and haircare guide offer included with Muuhu.
+        </li>
+        <li>
+          <strong>Heavy for Daily Use: </strong> At around 0.78kg, it is
+          noticeably heavier than Cloud Nine and Shark, which can cause arm
+          fatigue during longer blow-dry sessions on thick or long hair.
+        </li>
+        <li>
+          <strong>No Money-Back Guarantee: </strong> ghd does not offer a trial
+          period or money-back guarantee, meaning buyers commit fully at
+          checkout with no easy way to test for personal satisfaction.
+        </li>
+        <li>
+          <strong>Outdated Motor Technology: </strong> The Helios uses an older
+          brushless motor design that lacks the newer RPM speeds and heat
+          regulation found in recently launched competitors.
+        </li>
+        <li>
+          <strong>Poor Value for First-Time Buyers: </strong> At &pound;189 with
+          only the dryer and a single nozzle in the box, new buyers must spend
+          significantly more to assemble a complete styling routine compared to
+          products that include everything out of the box.
         </li>
       </>
     ),
