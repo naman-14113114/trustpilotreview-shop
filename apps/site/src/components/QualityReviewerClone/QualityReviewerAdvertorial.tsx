@@ -42,7 +42,7 @@ export default function QualityReviewerAdvertorial() {
       rank: p.id,
       name: p.name,
       brand: p.brand || '',
-      brandUrl: '#',
+      brandUrl: 'https://uk.muuhu.com/products/muuhu-hair-dryer',
       imageUrl: p.image_path,
       votes: '865',
       score: p.rating_overall,
@@ -66,7 +66,7 @@ export default function QualityReviewerAdvertorial() {
           ))}
         </>
       ),
-      learnMoreUrl: '#',
+      learnMoreUrl: 'https://uk.muuhu.com/products/muuhu-hair-dryer',
     };
   });
 
@@ -134,7 +134,7 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Hero Image */}
         <div className="w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl">
-           <img src="/img/hair/muuhu-hair-dryer-banner.webp" alt="Muuhu Hair Dryer Banner" className="w-full h-auto object-cover" />
+           <a href="https://uk.muuhu.com/products/muuhu-hair-dryer" className="block hover:opacity-90 transition-opacity"><img src="/img/hair/muuhu-hair-dryer-banner.webp" alt="Muuhu Hair Dryer Banner" className="w-full h-auto object-cover" /></a>
         </div>
 
         {/* Writer's Note */}
@@ -399,7 +399,7 @@ export default function QualityReviewerAdvertorial() {
               </div>
 
               <a
-                href={market.muuhuUrl ?? "#"}
+                href="https://uk.muuhu.com/products/muuhu-hair-dryer"
                 aria-label="Check Availability"
                 className="mx-auto w-full max-w-[240px] bg-[#393BE7] hover:bg-[#2022d4] text-white text-lg font-bold font-sans tracking-wide py-4 px-6 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase"
               >

@@ -38,7 +38,7 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
             By <a href={product.brandUrl} className="text-[#008BFF] hover:underline font-bold">{product.brand}</a>
           </div>
         </div>
-        <div className="shrink-0 ml-4 relative w-[60px] h-[60px] md:w-[75px] md:h-[75px]">
+        <div className="shrink-0 ml-4 relative w-[80px] h-[80px] md:w-[100px] md:h-[100px]">
           <Image src={`/images/quality-reviewer/badge-${product.rank}.png`} alt={`Rank ${product.rank}`} fill className="object-contain" />
         </div>
       </div>
@@ -47,9 +47,9 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
       <div className="border border-[#EEEEEE] rounded-sm p-6 flex flex-col md:flex-row items-center justify-between gap-8 mt-8 mb-10">
         {/* Left: Image */}
         <div className="w-full md:w-1/3 flex justify-center">
-          <div className="relative w-[250px] h-[250px]">
+          <a href={product.learnMoreUrl} className="relative w-[250px] h-[250px] block cursor-pointer hover:opacity-90 transition-opacity">
             <Image src={product.imageUrl} alt={product.name} fill className="object-contain" />
-          </div>
+          </a>
         </div>
 
         {/* Middle: Rating Circle */}

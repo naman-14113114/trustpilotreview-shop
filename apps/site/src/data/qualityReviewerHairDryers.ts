@@ -38,15 +38,20 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       value_for_money: "9.8/10",
     },
     pros: [
-      "Controlled High-Speed Motor: 1,600W, 110,000 RPM brushless motor with 3 temperature settings and 3 speed settings for fast, adjustable drying.",
-      "Complete 7-in-1 System: Seven attachments including two Coanda auto-wrap curlers, smoothing brush, round volumising brush, concentrator and diffuser.",
-      "Ionic + Intelligent Heat Control: Negative ions help reduce frizz while smart heat regulation helps protect hair from extreme heat damage.",
-      "Outstanding Value: At £129 (was £259), it undercuts premium stylers by £200-£350 while including more attachments."
+      "Rated 4.9 out of 5 by over 16,000 customers across the UK.",
+      "Includes all seven attachments with no additional accessories to purchase.",
+      "CE certified, UKCA approved and RoHS compliant.",
+      "Powerful 1,600W, 110,000 RPM motor for fast everyday styling.",
+      "Covers straight, wavy, curly and thicker hair styling routines.",
+      "Intelligent heat control and negative ions help reduce heat damage and frizz.",
+      "Costs less than Dyson, Shark, Cloud Nine and ghd at just £129.",
+      "Comes with complimentary free gifts on current orders.",
+      "Backed by a generous 90-day money-back guarantee."
     ],
     cons: [
-      "Online Only: Available to buy online, not in high-street shops.",
-      "Limited Stock: Popular demand means the £129 launch price may sell out.",
-      "Slight Learning Curve: The Coanda auto-wrap curlers take a use or two to master."
+      "Available exclusively online and not sold in high-street shops.",
+      "Limited stock means the current £129 price may not remain available for long.",
+      "The Coanda auto-wrap curlers may take a couple of uses to master."
     ],
     review: [
       "Our top pick is the Muuhu AirPro, a salon-grade device with a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
