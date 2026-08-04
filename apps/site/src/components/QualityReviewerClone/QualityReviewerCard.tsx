@@ -93,12 +93,12 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
           <div>
             <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-5 uppercase">Pros</h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-1">
               {product.pros.map((pro, i) => (
                 <li key={i} className="flex items-start gap-4 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[18px]">
-                  <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="#83D221">
-                    <circle cx="12" cy="12" r="10" fill="#83D221"/>
-                    <path d="M10 17l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#FFF"/>
+                  <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#83D221" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9 12l2 2 4-4" />
                   </svg>
                   <span>{pro}</span>
                 </li>
@@ -107,12 +107,13 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
           </div>
           <div>
             <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-5 uppercase">Cons</h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-1">
               {product.cons.map((con, i) => (
                 <li key={i} className="flex items-start gap-4 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[18px]">
-                  <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="#dc143c">
-                    <circle cx="12" cy="12" r="10" fill="#dc143c"/>
-                    <path d="M15.89 8.11C15.5 7.72 14.87 7.72 14.48 8.11L12 10.59 9.52 8.11C9.13 7.72 8.5 7.72 8.11 8.11C7.72 8.5 7.72 9.13 8.11 9.52L10.59 12 8.11 14.48C7.72 14.87 7.72 15.5 8.11 15.89C8.5 16.28 9.13 16.28 9.52 15.89L12 13.41 14.48 15.89C14.87 16.28 15.5 16.28 15.89 15.89C16.28 15.5 16.28 14.87 15.89 14.48L13.41 12 15.89 9.52C16.28 9.13 16.28 8.5 15.89 8.11Z" fill="#FFF"/>
+                  <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea1045" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M15 9l-6 6" />
+                    <path d="M9 9l6 6" />
                   </svg>
                   <span>{con}</span>
                 </li>
