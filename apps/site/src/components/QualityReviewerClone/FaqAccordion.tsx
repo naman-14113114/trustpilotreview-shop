@@ -4,15 +4,31 @@ import React, { useState } from 'react';
 interface Props {
   title: string;
   content: React.ReactNode;
-  type: 'look' | 'avoid';
+  type: 'look' | 'avoid' | 'reason';
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
-export default function FaqAccordion({ title, content, type }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function FaqAccordion({ title, content, type, isOpen: controlledIsOpen, onToggle }: Props) {
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const isLook = type === 'look';
-  const color = isLook ? '#078a47' : '#dc143c'; 
+  const isReason = type === 'reason';
+  
+  // Tick and +/- icon color
+  const color = isLook ? '#2aa359' : (isReason ? '#3A3A3A' : '#ea1045'); 
 
-  const Icon = isLook
+  const isControlled = controlledIsOpen !== undefined;
+  const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
+
+  const handleToggle = () => {
+    if (isControlled && onToggle) {
+      onToggle();
+    } else {
+      setInternalIsOpen(!isOpen);
+    }
+  };
+
+  const Icon = (isLook || isReason)
     ? () => (
         <svg className="shrink-0 mt-1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
@@ -28,31 +44,37 @@ export default function FaqAccordion({ title, content, type }: Props) {
   return (
     <div className="border-b border-gray-200 last:border-0 my-1">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         className="w-full flex items-start justify-between py-4 text-left focus:outline-none"
       >
         <div className="flex items-start gap-4 md:gap-5 pr-4">
           <Icon />
-          <span className="text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide leading-tight">{title}</span>
+          <span style={{ color }} className="text-[22px] md:text-[26px] font-bold font-[family-name:var(--font-oswald)] tracking-wide leading-tight">{title}</span>
         </div>
-        <div style={{ color }} className="shrink-0 ml-4">
+        <div style={{ color }} className="shrink-0 ml-4 transition-transform duration-300">
           {isOpen ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
           ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"/>
               <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
           )}
         </div>
       </button>
-      {isOpen && (
-        <div className="pb-5 pl-10 text-[18px] text-[#4B4F58] font-[family-name:var(--font-arimo)] leading-relaxed">
-          {content}
+      <div 
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="pb-5 pl-12 text-[18px] text-[#4B4F58] font-[family-name:var(--font-arimo)] leading-relaxed font-bold">
+            {content}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

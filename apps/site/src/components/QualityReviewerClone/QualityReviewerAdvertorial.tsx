@@ -15,6 +15,10 @@ export default function QualityReviewerAdvertorial() {
   const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
+  const [openReason, setOpenReason] = useState<number>(0);
+  const [openLook, setOpenLook] = useState<number>(0);
+  const [openAvoid, setOpenAvoid] = useState<number>(0);
+
   const playVerdictVideo = () => {
     const video = verdictVideoRef.current;
     if (!video) return;
@@ -168,7 +172,7 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Green Box: Criteria */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] md:text-[36px] font-bold text-[#3A3A3A] mb-8">
+          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] md:text-[36px] font-bold text-[#3A3A3A] text-center mb-8">
             We've Rated The Hair Dryers On 8 Criteria:
           </h2>
           <ul className="flex flex-col gap-6">
@@ -185,37 +189,127 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Green Box: 7 Reasons */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">7 Reasons To Get A Hollow Inlet Hair Dryer</h2>
+           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] text-center mb-6">7 Reasons To Get A Hollow Inlet Hair Dryer</h2>
            <div className="flex flex-col gap-2">
-             <FaqAccordion type="look" title="Shields Your Tresses From Heat Damage" content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks." />
-             <FaqAccordion type="look" title="Salon-Standard Blowouts In Half Your Usual Drying Time" content="Thanks to innovative airflow multiplication technology, hollow hair dryers generate up to 15 times the wind velocity of conventional models, ultimately bringing the drying process down to a mere 9 minutes for a full head of hair!" />
-             <FaqAccordion type="look" title="Eradicate Frizz Entirely With Enhanced Negative Ions" content="By pairing a forceful breeze with sophisticated anion technology, you will notice the advantages of negative ions as never before. Frizz becomes a thing of the past, whilst a consistently sleek and lustrous shine is guaranteed after every blow-dry." />
-             <FaqAccordion type="look" title="A Lightweight Build Spares You From Aching Arms" content="Since the air intake is positioned at the base, the entire dryer feels considerably lighter and far simpler to manoeuvre. This means an end to fatigued arms, whilst also making the device exceptionally convenient to pack for your travels." />
-             <FaqAccordion type="look" title="Reduced Noise Levels Won't Disturb Your Household" content="As a rule, hollow inlet models operate at a much lower volume compared to standard hair dryers. This occurs because the internal motor of a hollow air dryer must inherently be brushless, meaning there are fewer loose components rattling around to generate excessive noise." />
-             <FaqAccordion type="look" title="Suitable For Every Single Hair Type" content="Given that hollow dryers produce such immense airflow power, they feature a broader spectrum of speed options. Furthermore, the integrated microcomputer allows brands to easily provide highly precise heat adjustments. This precision is essential for achieving a tailored blowout that suits your specific hair type and leaves it looking flawless." />
-             <FaqAccordion type="look" title="Keeps More Money In Your Wallet" content="If you were to tally up your expenditure on keratin treatments and professional blow-dries over recent years, the total would likely far exceed the premium cost of a hollow air dryer. If you can manage the initial investment, you are assured of saving both your hard-earned cash and your hair's health! (Not forgetting that the hours previously wasted on endless drying are incredibly valuable, too!)" />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Shields Your Tresses From Heat Damage" 
+                 content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks." 
+                 isOpen={openReason === 0}
+                 onToggle={() => setOpenReason(openReason === 0 ? -1 : 0)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Salon-Standard Blowouts In Half Your Usual Drying Time" 
+                 content="Thanks to innovative airflow multiplication technology, hollow hair dryers generate up to 15 times the wind velocity of conventional models, ultimately bringing the drying process down to a mere 9 minutes for a full head of hair!" 
+                 isOpen={openReason === 1}
+                 onToggle={() => setOpenReason(openReason === 1 ? -1 : 1)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Eradicate Frizz Entirely With Enhanced Negative Ions" 
+                 content="By pairing a forceful breeze with sophisticated anion technology, you will notice the advantages of negative ions as never before. Frizz becomes a thing of the past, whilst a consistently sleek and lustrous shine is guaranteed after every blow-dry." 
+                 isOpen={openReason === 2}
+                 onToggle={() => setOpenReason(openReason === 2 ? -1 : 2)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="A Lightweight Build Spares You From Aching Arms" 
+                 content="Since the air intake is positioned at the base, the entire dryer feels considerably lighter and far simpler to manoeuvre. This means an end to fatigued arms, whilst also making the device exceptionally convenient to pack for your travels." 
+                 isOpen={openReason === 3}
+                 onToggle={() => setOpenReason(openReason === 3 ? -1 : 3)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Reduced Noise Levels Won't Disturb Your Household" 
+                 content="As a rule, hollow inlet models operate at a much lower volume compared to standard hair dryers. This occurs because the internal motor of a hollow air dryer must inherently be brushless, meaning there are fewer loose components rattling around to generate excessive noise." 
+                 isOpen={openReason === 4}
+                 onToggle={() => setOpenReason(openReason === 4 ? -1 : 4)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Suitable For Every Single Hair Type" 
+                 content="Given that hollow dryers produce such immense airflow power, they feature a broader spectrum of speed options. Furthermore, the integrated microcomputer allows brands to easily provide highly precise heat adjustments. This precision is essential for achieving a tailored blowout that suits your specific hair type and leaves it looking flawless." 
+                 isOpen={openReason === 5}
+                 onToggle={() => setOpenReason(openReason === 5 ? -1 : 5)} 
+               />
+             <FaqAccordion 
+                 type="reason" 
+                 title="Keeps More Money In Your Wallet" 
+                 content="If you were to tally up your expenditure on keratin treatments and professional blow-dries over recent years, the total would likely far exceed the premium cost of a hollow air dryer. If you can manage the initial investment, you are assured of saving both your hard-earned cash and your hair's health! (Not forgetting that the hours previously wasted on endless drying are incredibly valuable, too!)" 
+                 isOpen={openReason === 6}
+                 onToggle={() => setOpenReason(openReason === 6 ? -1 : 6)} 
+               />
            </div>
         </div>
 
         {/* Green Box: What to Look For */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">What To Look For</h2>
+           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#2aa359] text-center mb-6">What To Look For</h2>
            <div className="flex flex-col gap-2">
-             <FaqAccordion type="look" title="High Airflow (M/S) Rather Than Wattage" content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!" />
-             <FaqAccordion type="look" title="Smart Temperature Regulation" content="Should you desire complete safeguarding against heat damage whilst drying, it is imperative to seek out a model equipped with active temperature monitoring. Typically, this is an advantage exclusive to hollow air devices, given that integrating such sensors into the layout of a conventional dryer is remarkably difficult." />
-             <FaqAccordion type="look" title="Negative Ion Technology To Tackle Frizz" content="You have undoubtedly come across frizz-fighting buzzwords like tourmaline, ceramic, and negative ions. Based on our extensive trials, negative ions remain unparalleled for subduing unruly frizz and leaving you with sleek, glossy tresses. Moreover, when paired with an intense airflow (m/s), you can be virtually certain that frizzy strands will be banished for good." />
-             <FaqAccordion type="look" title="Delayed Cooling Shutdown System" content="Many traditional hair dryer motors are constructed in a manner that causes rapid degradation with frequent usage. Specifically, when a motor transitions from intense heat to cold in a brief timeframe, it deteriorates much faster. Certain contemporary models employ a phased shutdown mechanism that gradually cools the heating element after being switched off, ensuring minimal wear and tear on the internal components." />
+             <FaqAccordion 
+                 type="look" 
+                 title="High Airflow (M/S) Rather Than Wattage" 
+                 content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!" 
+                 isOpen={openLook === 0}
+                 onToggle={() => setOpenLook(openLook === 0 ? -1 : 0)} 
+               />
+             <FaqAccordion 
+                 type="look" 
+                 title="Smart Temperature Regulation" 
+                 content="Should you desire complete safeguarding against heat damage whilst drying, it is imperative to seek out a model equipped with active temperature monitoring. Typically, this is an advantage exclusive to hollow air devices, given that integrating such sensors into the layout of a conventional dryer is remarkably difficult." 
+                 isOpen={openLook === 1}
+                 onToggle={() => setOpenLook(openLook === 1 ? -1 : 1)} 
+               />
+             <FaqAccordion 
+                 type="look" 
+                 title="Negative Ion Technology To Tackle Frizz" 
+                 content="You have undoubtedly come across frizz-fighting buzzwords like tourmaline, ceramic, and negative ions. Based on our extensive trials, negative ions remain unparalleled for subduing unruly frizz and leaving you with sleek, glossy tresses. Moreover, when paired with an intense airflow (m/s), you can be virtually certain that frizzy strands will be banished for good." 
+                 isOpen={openLook === 2}
+                 onToggle={() => setOpenLook(openLook === 2 ? -1 : 2)} 
+               />
+             <FaqAccordion 
+                 type="look" 
+                 title="Delayed Cooling Shutdown System" 
+                 content="Many traditional hair dryer motors are constructed in a manner that causes rapid degradation with frequent usage. Specifically, when a motor transitions from intense heat to cold in a brief timeframe, it deteriorates much faster. Certain contemporary models employ a phased shutdown mechanism that gradually cools the heating element after being switched off, ensuring minimal wear and tear on the internal components." 
+                 isOpen={openLook === 3}
+                 onToggle={() => setOpenLook(openLook === 3 ? -1 : 3)} 
+               />
            </div>
         </div>
 
         {/* Red Box: What to Avoid */}
-        <div className="border-2 border-[#dc143c] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] mb-6">What To Avoid</h2>
+        <div className="border-2 border-[#ea1045] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
+           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#ea1045] text-center mb-6">What To Avoid</h2>
            <div className="flex flex-col gap-2">
-             <FaqAccordion type="avoid" title="Limited Heat And Speed Options" content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent." />
-             <FaqAccordion type="avoid" title="Bulky And Cumbersome Designs" content="How frequently have you felt as though you have completed a rigorous upper body workout just from drying your hair? The majority of conventional dryers remain quite heavy and rather awkward to hold. Fortunately, many recent models spare you this discomfort by utilising lightweight materials and cleverly distributing the bulk down into the handle grip, rather than leaving it top-heavy." />
-             <FaqAccordion type="avoid" title="An Absence Of Styling Attachments" content="If your goal is a versatile hair dryer that allows you to execute any look with absolute precision, you must check for the included accessory nozzles. A diffuser alongside a sleek concentrator nozzle ought to be the bare minimum to guarantee you can sculpt your hair precisely to your liking." />
-             <FaqAccordion type="avoid" title="Excessively Loud Motors" content="Have you ever felt as though you were standing on an airport runway whilst blow-drying your hair? Truthfully, that comparison is not too much of an exaggeration. Most dryers manufactured prior to 2016 produce noise levels hovering between 90 and 110 decibels, which rivals the roar of an aeroplane taking flight. Thanks to recent leaps in motor technology, modern alternatives are virtually half as noisy, allowing you to dry your hair early in the morning without rousing the entire household!" />
+             <FaqAccordion 
+                 type="avoid" 
+                 title="Limited Heat And Speed Options" 
+                 content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent." 
+                 isOpen={openAvoid === 0}
+                 onToggle={() => setOpenAvoid(openAvoid === 0 ? -1 : 0)} 
+               />
+             <FaqAccordion 
+                 type="avoid" 
+                 title="Bulky And Cumbersome Designs" 
+                 content="How frequently have you felt as though you have completed a rigorous upper body workout just from drying your hair? The majority of conventional dryers remain quite heavy and rather awkward to hold. Fortunately, many recent models spare you this discomfort by utilising lightweight materials and cleverly distributing the bulk down into the handle grip, rather than leaving it top-heavy." 
+                 isOpen={openAvoid === 1}
+                 onToggle={() => setOpenAvoid(openAvoid === 1 ? -1 : 1)} 
+               />
+             <FaqAccordion 
+                 type="avoid" 
+                 title="An Absence Of Styling Attachments" 
+                 content="If your goal is a versatile hair dryer that allows you to execute any look with absolute precision, you must check for the included accessory nozzles. A diffuser alongside a sleek concentrator nozzle ought to be the bare minimum to guarantee you can sculpt your hair precisely to your liking." 
+                 isOpen={openAvoid === 2}
+                 onToggle={() => setOpenAvoid(openAvoid === 2 ? -1 : 2)} 
+               />
+             <FaqAccordion 
+                 type="avoid" 
+                 title="Excessively Loud Motors" 
+                 content="Have you ever felt as though you were standing on an airport runway whilst blow-drying your hair? Truthfully, that comparison is not too much of an exaggeration. Most dryers manufactured prior to 2016 produce noise levels hovering between 90 and 110 decibels, which rivals the roar of an aeroplane taking flight. Thanks to recent leaps in motor technology, modern alternatives are virtually half as noisy, allowing you to dry your hair early in the morning without rousing the entire household!" 
+                 isOpen={openAvoid === 3}
+                 onToggle={() => setOpenAvoid(openAvoid === 3 ? -1 : 3)} 
+               />
            </div>
         </div>
 
