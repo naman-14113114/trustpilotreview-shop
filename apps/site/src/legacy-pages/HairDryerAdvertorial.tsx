@@ -302,7 +302,7 @@ const baseProducts: Product[] = [
     id: 1,
     rank: "#1",
     name: "Muuhu AirPro",
-    image: "/img/hair/muuhu_product_1x1.webp",
+    image: "/img/hair/muuhu-airpro-hair-dryer.webp",
     price: "£149",
     originalPrice: "£299",
     rating: "4.9 / 5",
