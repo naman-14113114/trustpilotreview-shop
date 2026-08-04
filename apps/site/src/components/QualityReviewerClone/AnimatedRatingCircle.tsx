@@ -30,7 +30,7 @@ export default function AnimatedRatingCircle({ votes, score, percentage }: Props
 
   return (
     <div className="relative flex flex-col items-center justify-center">
-      <svg ref={circleRef} className="transform -rotate-90" width="250" height="250" viewBox="0 0 250 250">
+      <svg ref={circleRef} className="transform -rotate-90 group cursor-pointer" width="250" height="250" viewBox="0 0 250 250">
         <circle
           cx="125" cy="125" r={radius}
           fill="transparent"
@@ -40,15 +40,14 @@ export default function AnimatedRatingCircle({ votes, score, percentage }: Props
         <circle
           cx="125" cy="125" r={radius}
           fill="transparent"
-          stroke="#83D221"
           strokeWidth="10"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          className="transition-all duration-[1500ms] ease-out"
+          className="transition-all duration-[1500ms] ease-out stroke-[#83D221] group-hover:stroke-[#3878ff]"
           strokeLinecap="round"
         />
       </svg>
-      <div className="absolute flex flex-col items-center justify-center font-[family-name:var(--font-oswald)]">
+      <div className="absolute flex flex-col items-center justify-center font-[family-name:var(--font-oswald)] pointer-events-none">
         <span className="text-[14px] text-gray-500 uppercase tracking-widest">{votes} Votes</span>
         <span className="text-[42px] font-bold text-[#3A3A3A] leading-none mt-1">{score}</span>
       </div>
