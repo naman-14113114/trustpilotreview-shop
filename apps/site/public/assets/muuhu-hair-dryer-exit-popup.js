@@ -46,6 +46,10 @@
     return;
   }
 
+  var offerPriceText = window.location.pathname.indexOf("/best-hair-dryer-uk-2026") === 0
+    ? "£129 instead of £259"
+    : "£149 instead of £299";
+
   var armed = false;
   var shown = false;
   var lastScrollY = window.scrollY || 0;
@@ -98,7 +102,7 @@
       "<div class='muuhu-exit-kicker'>Before you go</div>",
       "<h2 class='muuhu-exit-title' id='muuhu-exit-title'>The #1 hair dryer pick is still 50% off.</h2>",
       "<p class='muuhu-exit-copy'>If you were comparing hair dryers, do not leave without checking the Muuhu AirPro. Its 1,400W motor, 3 temperature settings and 3 speed settings cover fast drying, smoothing, diffuser drying, volume and curl finishing in one kit.</p>",
-      "<div class='muuhu-exit-offer'><div><span>Today on Muuhu</span><strong>£149 instead of £299</strong></div><span>Last check</span></div>",
+      "<div class='muuhu-exit-offer'><div><span>Today on Muuhu</span><strong>" + offerPriceText + "</strong></div><span>Last check</span></div>",
       "<div class='muuhu-exit-actions'>",
       "<a class='muuhu-exit-cta' href='" + CTA_URL + "' data-outbound-button='true'>Claim 50% Off</a>",
       "<button class='muuhu-exit-secondary' type='button' data-muuhu-exit-close='true'>Keep Reading</button>",

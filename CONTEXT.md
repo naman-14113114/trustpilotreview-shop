@@ -2145,3 +2145,51 @@ or deployment-setting change occurred.
 #### Publication Status
 - Publication was explicitly authorised on 3 August 2026 after the local desktop/mobile review.
 - Release through the existing GitHub repository and preserved `trustpilot-led-mask-replica` Vercel project; do not create or relink a project, change an alias/domain, or mutate the advertising account as part of this page refresh.
+
+### August 04, 2026: Publish the Muuhu Best Hair Dryer £129 offer
+
+#### User Intent and Scope
+- The owner confirmed that the Muuhu Hair Dryer price is now £129 and explicitly requested publication of the corrected Best Hair Dryer page.
+- Scope was restricted to `/best-hair-dryer-uk-2026`. The other Muuhu hair-guide pages retained their existing offer data.
+- The official Muuhu UK product page was checked before editing and showed £129 with a £259 reference price. Its live gift values remained £35 premium packaging, £79 Muuhu ScalpPro, and £15 Haircare E-Book.
+
+#### Implementation
+- Updated the Best Hair Dryer Muuhu product card from £149 / £299 to £129 / £259 in `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`.
+- Updated the Best Hair Dryer editorial copy and price comparisons in `apps/site/src/data/bestHairDryerProductContent.tsx`, including the £100 Cloud Nine price gap and the wording that Dyson costs more than twice the current Muuhu offer.
+- After the first publication, a targeted production review found that `apps/site/public/assets/muuhu-hair-dryer-exit-popup.js` still contained £149 / £299. The value was not present in the normal page DOM because the popup only mounts after exit intent.
+- Made the popup offer route-aware: `/best-hair-dryer-uk-2026` now shows £129 instead of £259, while the other eligible hair-guide routes retain their previous popup offer.
+- Live browser QA then exposed an immutable browser-cache issue on the unchanged popup asset URL. Versioned the script include as `/assets/muuhu-hair-dryer-exit-popup.js?v=20260804-129` so returning visitors load the current popup code.
+
+#### GitHub Publication
+- Main price pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/8`.
+- Main price merge commit: `c294101210434af22bf06d50dfdf83f7ee9cb427` (`fix: update Muuhu hair dryer price to £129 (#8)`).
+- Popup pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/10`.
+- Popup merge commit: `b360351647470f3c9c646fa3c52a3730ca19f1f7` (`fix: update Best Hair Dryer exit popup price`).
+- Cache-bust pull request: `https://github.com/naman-14113114/trustpilotreview-shop/pull/11`.
+- Final merge commit: `e3ea1bec9dcaa9ad17700ada29355a53e3ed793a` (`fix: bust cached Muuhu popup asset`).
+- Pull request #9 was closed and replaced by #10 because the repository's earlier squash merge made the reused branch display already-merged files. PR #10 was recreated directly from merged `main` and contained only the popup asset.
+
+#### Verification
+- `node --check apps/site/public/assets/muuhu-hair-dryer-exit-popup.js` passed.
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed repeatedly and generated all 51 routes.
+- Local production browser QA exercised the real scroll-up exit-intent trigger and confirmed `£129 instead of £259` in the popup.
+- The final production page returned HTTP 200 and loaded the versioned popup asset.
+- Desktop `1440x900` and mobile `390x844` live checks confirmed £129, £259, the 2-year warranty, the £100 Cloud Nine comparison, no visible £149, zero horizontal overflow, no broken content images, and no browser console warnings or errors.
+- The live exit-intent popup showed `£129 instead of £259` on desktop and fit within the 390px mobile viewport. The old `£149 instead of £299` popup text was absent.
+- The popup CTA navigated immediately to the official Muuhu UK hair-dryer product with the exit-popup campaign parameters.
+- The final Vercel production error-log scan returned no error-level entries.
+
+#### Vercel Release
+- Preserved project: `elato-tests-projects/trustpilot-led-mask-replica`.
+- Preserved project ID: `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`.
+- Final preview deployment: `https://trustpilot-led-mask-replica-atnd4aznb-elato-tests-projects.vercel.app`.
+- Final preview deployment ID: `dpl_AjDFEfXmUSdJ19zWnoJYy1TM8b5Z`.
+- Final production deployment: `https://trustpilot-led-mask-replica-80cj8ate4-elato-tests-projects.vercel.app`.
+- Final production deployment ID: `dpl_23rSs4PqM1h44Bywg7CNwbiCaRN1`.
+- Final production status: `Ready`.
+- Preserved aliases: `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, `https://trustpilot-led-mask-replica.vercel.app`, and `https://trustpilot-led-mask-replica-elato-tests-projects.vercel.app`.
+
+#### Git Integration Finding
+- The automatic GitHub/Vercel status check continued to fail because it references the stale Git-author/team access mapping already documented in prior releases.
+- Authenticated direct preview deployment and promotion succeeded against the preserved production project. No Vercel project, alias, domain, Git-integration configuration, or advertising-account setting was changed.

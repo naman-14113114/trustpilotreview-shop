@@ -30,7 +30,7 @@ export const bestHairDryerProductContent = {
           with heat.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          At <strong>&pound;149</strong>, Muuhu combines a high-speed motor, seven
+          At <strong>&pound;129</strong>, Muuhu combines a high-speed motor, seven
           included attachments, ionic care, a 2-year warranty and a{" "}
           <strong>90-day money-back guarantee</strong>. It ranks first for the
           broadest drying and styling routine at the lowest current price in this
@@ -63,7 +63,7 @@ export const bestHairDryerProductContent = {
           finish than simple high-heat dryers.
         </li>
         <li>
-          <strong>Best Value Bundle:</strong> At &pound;149 (was &pound;299), it
+          <strong>Best Value Bundle:</strong> At &pound;129 (was &pound;259), it
           costs less than Dyson, Cloud Nine, Shark and ghd while giving shoppers
           a wider attachment set.
         </li>
@@ -116,7 +116,7 @@ export const bestHairDryerProductContent = {
         </p>
         <p className="text-slate-600 leading-relaxed">
           The reason it ranks behind Muuhu is value, not brand quality. At{" "}
-          <strong>&pound;299.99</strong>, it still costs around twice the Muuhu
+          <strong>&pound;299.99</strong>, it still costs more than twice the Muuhu
           offer and remains a dryer-first purchase. It does not give shoppers
           the same complete 7-in-1 routine with brush heads, curlers, gifts and
           a 90-day money-back guarantee, so the extra spend is easiest to
@@ -237,7 +237,7 @@ export const bestHairDryerProductContent = {
       <>
         <li>
           <strong>Still Costs More: </strong> At &pound;169.99, it sits above
-          the &pound;149 top pick while offering fewer styling options overall.
+          the &pound;129 top pick while offering fewer styling options overall.
         </li>
         <li>
           <strong>No Auto-Wrap Curlers: </strong> It covers drying, smoothing,
@@ -312,7 +312,7 @@ export const bestHairDryerProductContent = {
       <>
         <li>
           <strong>Higher Price Than Muuhu:</strong> At &pound;229, it costs
-          &pound;80 more than the &pound;149 top pick.
+          &pound;100 more than the &pound;129 top pick.
         </li>
         <li>
           <strong>Not a Complete 7-in-1 System:</strong> Strong as a dryer, but
