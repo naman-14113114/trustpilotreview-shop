@@ -28,6 +28,7 @@ import {
   type HairGuideProduct,
 } from "@/data/hairGuides";
 import { bestHairDryerProductContent } from "@/data/bestHairDryerProductContent";
+import { bestHairDryerLandingProductContent } from "@/data/bestHairDryerLandingProductContent";
 import { getMobileProsCons } from "./mobileProsCons";
 
 const MUUHU_PACKAGING_URL = "https://uk.muuhu.com/pages/premium-packaging";
@@ -601,14 +602,14 @@ function getBestHairDryerProductsForMarket(
   market: AdvertorialMarket,
 ): Product[] {
   if (market.key === "uk") {
-    return bestHairDryerProducts.map((product) =>
+    return bestHairDryerLandingProducts.map((product) =>
       product.isWinner
         ? { ...product, link: market.muuhuUrl ?? product.link }
         : product,
     );
   }
 
-  return bestHairDryerProducts.map((product) =>
+  return bestHairDryerLandingProducts.map((product) =>
     localizeBaseProduct(product, market),
   );
 }
@@ -838,6 +839,30 @@ const bestHairDryerProducts: Product[] = [
   },
 ];
 
+const bestHairDryerLandingProducts: Product[] = bestHairDryerProducts.map(
+  (product) => {
+    const content =
+      product.id === 1
+        ? bestHairDryerLandingProductContent.muuhu
+        : product.id === 2
+          ? bestHairDryerLandingProductContent.dysonSupersonic
+          : product.id === 3
+            ? bestHairDryerLandingProductContent.sharkSpeedStyleProFlex
+            : product.id === 4
+              ? bestHairDryerLandingProductContent.cloudNineAirshotPro
+              : bestHairDryerLandingProductContent.ghdHelios;
+
+    return {
+      ...product,
+      ...content,
+      image:
+        product.id === 1
+          ? "/img/hair/muuhu-product-1a-best-hair.webp"
+          : product.image,
+    };
+  },
+);
+
 type BestHairDecisionDetail = {
   bestFor: string;
   facts: string[];
@@ -850,7 +875,7 @@ const bestHairDecisionDetails: Record<number, BestHairDecisionDetail> = {
       "1,600W / 110,000 RPM",
       "7 included attachments",
       "90-day money-back guarantee",
-      "2-year warranty",
+      "1-year warranty",
     ],
   },
   2: {
@@ -1357,7 +1382,13 @@ export default function HairDryerAdvertorial({
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
             <span className="block">{headlineTitle}</span>
-            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
+            <span
+              className={
+                isBestHairLanding
+                  ? "mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3"
+                  : "mt-2 flex items-center justify-center gap-2 font-sans text-base font-semibold leading-tight sm:text-lg md:mt-3 md:gap-2.5 md:text-xl lg:text-2xl"
+              }
+            >
               <MarketFlag market={market.flagKey} />
               <span>{market.headingCountry} - 2026</span>
             </span>
@@ -2200,6 +2231,38 @@ export default function HairDryerAdvertorial({
         </div>
       </main>
 
+      {!isBestHairLanding && (
+        <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
+          <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
+            <p className="mb-2 text-lg font-bold text-slate-800">
+              Best Hair Dryer
+            </p>
+            <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
+            <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
+                Important disclosure
+              </p>
+              <p className="mb-4">
+                <strong>Affiliate disclosure:</strong> We may receive compensation
+                for clicks on or purchases of products featured on this site. This
+                comes at no additional cost to you.
+              </p>
+              <p>
+                <strong>Individual results:</strong> Experiences with hair styling
+                devices vary. Product information and examples do not guarantee a
+                particular result.
+              </p>
+              {market.key === "ca" && (
+                <p className="mt-4">
+                  <strong>Regulatory Note:</strong> Reference to certifications
+                  does not imply an endorsement of product efficacy for specific
+                  individual conditions.
+                </p>
+              )}
+            </div>
+          </div>
+        </footer>
+      )}
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
