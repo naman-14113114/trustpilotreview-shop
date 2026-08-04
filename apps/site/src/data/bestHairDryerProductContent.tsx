@@ -16,9 +16,8 @@ export const bestHairDryerProductContent = {
           takes our #1 spot because it gives a similar premium drying experience
           with a <strong>1,600W, 110,000 RPM</strong> brushless motor and{" "}
           <strong>3 temperature settings plus 3 speed settings</strong>, while
-          also including more useful attachments like a diffuser,
-          concentrator, smoothing brush and round volumising brush at a much
-          lower price.
+          also including more useful attachments like a diffuser, concentrator,
+          smoothing brush and round volumising brush at a much lower price.
         </p>
         <p className="text-slate-600 leading-relaxed">
           The biggest advantage is that Muuhu is not just a fast dryer. It also
@@ -30,21 +29,37 @@ export const bestHairDryerProductContent = {
           with heat.
         </p>
         <p className="text-slate-600 leading-relaxed">
-          At <strong>&pound;129</strong>, Muuhu combines a high-speed motor, seven
-          included attachments, ionic care, a 2-year warranty and a{" "}
+          At <strong>&pound;129</strong>, Muuhu combines a high-speed motor,
+          seven included attachments, ionic care, a 1-year warranty and a{" "}
           <strong>90-day money-back guarantee</strong>. It ranks first for the
-          broadest drying and styling routine at the lowest current price in this
-          five-product shortlist. Shoppers who want only a familiar dedicated
-          dryer may still prefer Dyson, Cloud Nine, Shark or ghd.
+          broadest drying and styling routine at the lowest current price in
+          this five-product shortlist. Shoppers who want only a familiar
+          dedicated dryer may still prefer Dyson, Cloud Nine, Shark or ghd.
         </p>
       </>
     ),
     prosContent: (
       <>
         <li>
-          <strong>Fast, Controlled Drying:</strong> The 1,600W, 110,000 RPM
-          brushless motor pairs 3 temperature settings with 3 speed settings
-          for quick daily blow-dries without premium-brand pricing.
+          <strong>Proven Results:</strong> Rated 4.9 out of 5 by over 16,000
+          customers, making it one of the highest-rated hair stylers available
+          in the UK right now.
+        </li>
+        <li>
+          <strong>7 Attachments Included:</strong> Every order ships with all
+          seven attachments — diffuser, concentrator, smoothing brush, round
+          volumising brush, left and right auto-wrap curlers and an L-shaped
+          base — no extras to buy separately.
+        </li>
+        <li>
+          <strong>Certified for UK Safety:</strong> CE Certified, UKCA Approved
+          and RoHS Compliant, so it meets UK and European product safety and
+          environmental standards.
+        </li>
+        <li>
+          <strong>Fast Results:</strong> The 1,600W, 110,000 RPM brushless motor
+          pairs 3 temperature settings with 3 speed settings for quick daily
+          blow-dries without premium-brand pricing.
         </li>
         <li>
           <strong>Complete Dryer Routine:</strong> Includes diffuser,
@@ -52,29 +67,37 @@ export const bestHairDryerProductContent = {
           straight, wavy, curly and thicker hair routines better than dryer-only
           rivals.
         </li>
-        <li>
+        {/* <li>
           <strong>Extra Styling Flexibility:</strong> Left and right auto-wrap
           curlers add curls and waves when needed, but the main value still
           starts with fast drying and smooth finishing.
-        </li>
+        </li> */}
         <li>
-          <strong>Frizz and Heat Care:</strong> Negative ions help reduce static
+          <strong>Safe and Effective:</strong> Intelligent heat control prevents
+          extreme temperatures from reaching the hair, while negative-ion
+          technology reduces static and frizz delivering salon-quality results
+          without the risk of heat damage from prolonged use.
+        </li>
+        {/* <li>
+          <strong>Frizz and Heat Care: </strong> Negative ions help reduce static
           and flyaways, while intelligent heat regulation supports a gentler
           finish than simple high-heat dryers.
-        </li>
+        </li> */}
         <li>
-          <strong>Best Value Bundle:</strong> At &pound;129 (was &pound;259), it
+          <strong>Cost-Effective: </strong> At &pound;129 (was &pound;259), it
           costs less than Dyson, Cloud Nine, Shark and ghd while giving shoppers
           a wider attachment set.
         </li>
         <li>
-          <strong>Strong Buyer Reassurance:</strong> Backed by a 2-year warranty
-          and a 90-day money-back guarantee for a lower-risk first order.
+          <strong>Free Gifts with Every Order: </strong> Current orders include
+          bonus free gifts at checkout, adding extra value on top of the
+          already-reduced price.
         </li>
-        {/* <li>
-          <strong>UK Ready:</strong> Supplied for UK 220-240V with a standard
-          3-pin plug, no travel adapter needed.
-        </li> */}
+        <li>
+          <strong>90-Day Money-Back Guarantee: </strong> Muuhu offers a generous
+          90-day trial period to test for results. If you're not satisfied, you
+          get a full refund.
+        </li>
       </>
     ),
     consContent: (
@@ -116,11 +139,11 @@ export const bestHairDryerProductContent = {
         </p>
         <p className="text-slate-600 leading-relaxed">
           The reason it ranks behind Muuhu is value, not brand quality. At{" "}
-          <strong>&pound;299.99</strong>, it still costs more than twice the Muuhu
-          offer and remains a dryer-first purchase. It does not give shoppers
-          the same complete 7-in-1 routine with brush heads, curlers, gifts and
-          a 90-day money-back guarantee, so the extra spend is easiest to
-          justify only if Dyson prestige matters most.
+          <strong>&pound;299.99</strong>, it still costs more than twice the
+          Muuhu offer and remains a dryer-first purchase. It does not give
+          shoppers the same complete 7-in-1 routine with brush heads, curlers,
+          gifts and a 90-day money-back guarantee, so the extra spend is easiest
+          to justify only if Dyson prestige matters most.
         </p>
       </>
     ),
@@ -148,8 +171,8 @@ export const bestHairDryerProductContent = {
     consContent: (
       <>
         <li>
-          <strong>High Price: </strong> At &pound;299.99, it costs around
-          twice the price of our #1 pick.
+          <strong>High Price: </strong> At &pound;299.99, it costs around twice
+          the price of our #1 pick.
         </li>
         <li>
           <strong>Dryer Attachments Only: </strong>The five attachments are
@@ -355,9 +378,9 @@ export const bestHairDryerProductContent = {
         <p className="text-slate-600 leading-relaxed">
           The limitation is value for a new buyer starting from scratch. At
           <strong>&pound;189</strong>, it costs more than Muuhu but gives far
-          fewer options in the box. It is a strong dryer, not a complete routine,
-          so it ranks fifth behind products that give more attachment coverage
-          and buyer reassurance for the money.
+          fewer options in the box. It is a strong dryer, not a complete
+          routine, so it ranks fifth behind products that give more attachment
+          coverage and buyer reassurance for the money.
         </p>
       </>
     ),
