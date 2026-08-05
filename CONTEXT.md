@@ -6997,3 +6997,15 @@ or deployment-setting change occurred.
   - Linked the #1 product name heading (`1. Muuhu AirPro`) to `https://uk.muuhu.com/products/muuhu-hair-dryer` while keeping headings 2 through 5 as non-linked text.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Removed Duplicate Divider Line After Progress Bars
+- **User Intent & Protected Scope:** Remove duplicate horizontal divider line below the performance progress bars across all product cards so only a single clean separator line is shown.
+- **Starting Git State:** `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/AnimatedRatingBar.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Removed the redundant `<hr className="border-[#CCCCCC] mb-10" />` that was rendering underneath the bottom border of the last `AnimatedRatingBar`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

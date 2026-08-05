@@ -94,9 +94,6 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
           ))}
         </div>
 
-        {/* Thin line */}
-        <hr className="border-[#CCCCCC] mb-10" />
-
         {/* Split Content */}
         <div className="flex flex-col lg:flex-row gap-10 mb-10">
           {/* Pros & Cons */}
