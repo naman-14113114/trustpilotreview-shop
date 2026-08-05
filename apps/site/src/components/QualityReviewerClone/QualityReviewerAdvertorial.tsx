@@ -290,55 +290,55 @@ export default function QualityReviewerAdvertorial() {
         {/* Green Box: 7 Reasons */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] text-center mb-6">
-            7 Reasons To Get A Hollow Inlet Hair Dryer
+            7 Reasons To Get A High-Speed Brushless Motor Hair Dryer
           </h2>
           <div className="flex flex-col gap-2">
             <FaqAccordion
               type="reason"
-              title="Shields Your Tresses From Heat Damage"
-              content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks."
+              title="Dries Your Hair In Half The Time Of A Standard Dryer"
+              content="High-speed brushless motors spin at 80,000–110,000 RPM, generating immense concentrated airflow that cuts full-head drying time down to around 5–9 minutes. Traditional AC and DC motors top out at roughly 20,000 RPM, meaning your arm aches and your hair overheats long before you are even finished."
               isOpen={openReason === 0}
               onToggle={() => setOpenReason(openReason === 0 ? -1 : 0)}
             />
             <FaqAccordion
               type="reason"
-              title="Salon-Standard Blowouts In Half Your Usual Drying Time"
-              content="Thanks to innovative airflow multiplication technology, hollow hair dryers generate up to 15 times the wind velocity of conventional models, ultimately bringing the drying process down to a mere 9 minutes for a full head of hair!"
+              title="Protects Your Hair With Intelligent Heat Control"
+              content="Because brushless motors are digitally controlled, manufacturers can embed a microprocessor that measures outlet temperature up to 40 times per second. If heat spikes, the system adjusts instantly — preventing the kind of sustained high-temperature damage that causes split ends, breakage and colour fade."
               isOpen={openReason === 1}
               onToggle={() => setOpenReason(openReason === 1 ? -1 : 1)}
             />
             <FaqAccordion
               type="reason"
-              title="Eradicate Frizz Entirely With Enhanced Negative Ions"
-              content="By pairing a forceful breeze with sophisticated anion technology, you will notice the advantages of negative ions as never before. Frizz becomes a thing of the past, whilst a consistently sleek and lustrous shine is guaranteed after every blow-dry."
+              title="Eliminates Frizz With Negative Ion Technology"
+              content="High-speed airflow paired with a negative-ion generator produces over 200 million negative ions per second, neutralising static electricity and sealing the hair cuticle shut. The result is smoother, shinier hair from every single blow-dry — without relying on serums or post-dry products."
               isOpen={openReason === 2}
               onToggle={() => setOpenReason(openReason === 2 ? -1 : 2)}
             />
             <FaqAccordion
               type="reason"
-              title="A Lightweight Build Spares You From Aching Arms"
-              content="Since the air intake is positioned at the base, the entire dryer feels considerably lighter and far simpler to manoeuvre. This means an end to fatigued arms, whilst also making the device exceptionally convenient to pack for your travels."
+              title="Whisper-Quiet Operation Won't Disturb Your Household"
+              content="Brushless motors have no carbon brushes grinding against a commutator — the main source of noise in traditional dryers. This engineering advantage means high-speed dryers operate at 59–65 dB, roughly the volume of a normal conversation, compared to 75–85 dB from older motors."
               isOpen={openReason === 3}
               onToggle={() => setOpenReason(openReason === 3 ? -1 : 3)}
             />
             <FaqAccordion
               type="reason"
-              title="Reduced Noise Levels Won't Disturb Your Household"
-              content="As a rule, hollow inlet models operate at a much lower volume compared to standard hair dryers. This occurs because the internal motor of a hollow air dryer must inherently be brushless, meaning there are fewer loose components rattling around to generate excessive noise."
+              title="Ultra-Lightweight Design Means No More Aching Arms"
+              content="Brushless motors are significantly smaller and lighter than traditional motors. This lets manufacturers redistribute weight and produce dryers under 500g — roughly the weight of a small water bottle. Longer styling sessions become comfortable rather than exhausting, and the compact form makes packing for travel effortless."
               isOpen={openReason === 4}
               onToggle={() => setOpenReason(openReason === 4 ? -1 : 4)}
             />
             <FaqAccordion
               type="reason"
-              title="Suitable For Every Single Hair Type"
-              content="Given that hollow dryers produce such immense airflow power, they feature a broader spectrum of speed options. Furthermore, the integrated microcomputer allows brands to easily provide highly precise heat adjustments. This precision is essential for achieving a tailored blowout that suits your specific hair type and leaves it looking flawless."
+              title="Built To Last 10x The Lifespan Of A Traditional Motor"
+              content="Carbon brushes in conventional motors wear down with every use and typically fail within 1–3 years. Brushless motors eliminate this wear point entirely, routinely lasting 8–10+ years of daily use. That is thousands of blow-dries without motor degradation, and many brushless dryers now include extended warranties to back that confidence."
               isOpen={openReason === 5}
               onToggle={() => setOpenReason(openReason === 5 ? -1 : 5)}
             />
             <FaqAccordion
               type="reason"
-              title="Keeps More Money In Your Wallet"
-              content="If you were to tally up your expenditure on keratin treatments and professional blow-dries over recent years, the total would likely far exceed the premium cost of a hollow air dryer. If you can manage the initial investment, you are assured of saving both your hard-earned cash and your hair's health! (Not forgetting that the hours previously wasted on endless drying are incredibly valuable, too!)"
+              title="More Settings, More Precision - Suitable For Every Hair Type"
+              content="Digital brushless motors allow manufacturers to offer far more granular speed and temperature combinations than traditional dryers. Whether your hair is fine and fragile, thick and curly, or colour-treated and heat-sensitive, a high-speed brushless dryer gives you the exact airflow and heat pairing your hair type needs."
               isOpen={openReason === 6}
               onToggle={() => setOpenReason(openReason === 6 ? -1 : 6)}
             />
