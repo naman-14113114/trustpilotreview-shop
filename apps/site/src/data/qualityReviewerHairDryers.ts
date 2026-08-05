@@ -86,9 +86,13 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "Strong airflow measuring 50 m/s"
     ],
     cons: [
-      "Carries the steepest price tag in our review",
+      "Much more expensive than top pick",
       "Noticeably heavy at 816g",
+      "No free gifts included",
+      "Fewer attachments than #1 pick",
       "Quite loud during operation (74dB)",
+      "No companion app support",
+      "Shorter money-back guarantee",
       "Cumbersome for travel"
     ],
     review: [
@@ -119,10 +123,15 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "Includes three styling attachments"
     ],
     cons: [
+      "No free gifts with order",
+      "Fewer attachments included",
+      "Expensive compared to top pick",
       "Lacks negative ion conditioning",
+      "No mobile app connectivity",
+      "Hidden return and restocking fees",
+      "Shorter money-back guarantee period",
       "Emits noticeable noise (78dB)",
-      "Missing a delayed shutdown feature",
-      "Highly expensive"
+      "Missing delayed shutdown feature"
     ],
     review: [
       "Earning third place in our assessment, the Gama IQ Perfetto is a fascinating contender. As the lightest hair dryer we tested, it offers effortless handling for drying and styling—a feature we thoroughly appreciated.",
@@ -151,11 +160,16 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "Provides 10 versatile heat and speed settings"
     ],
     cons: [
+      "Fewer styling attachments than #1 pick",
+      "Substantially pricier than top pick",
+      "Subject to hidden return fees",
       "Noticeably heavy at 500g",
+      "No complimentary gifts included",
       "Lacks automatic temperature regulation",
-      "Quite loud (74dB)",
-      "Does not include a diffuser",
-      "Misses a delayed shutdown mechanism"
+      "Less money-back guarantee coverage",
+      "No smart app support",
+      "Quite loud during use (74dB)",
+      "Does not include a diffuser"
     ],
     review: [
       "Securing the fourth spot is the T3 Cura Luxe, another much-discussed hair dryer that warranted a thorough evaluation. Performance was commendable, offering a respectable 10 heat and speed configurations—though fewer than some alternatives.",
@@ -184,9 +198,15 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "Delivers a very capable airflow of 42 m/s"
     ],
     cons: [
+      "Extremely expensive compared to top pick",
+      "Significantly fewer attachments",
+      "No free bonus gifts",
+      "Hidden return shipping and fees",
       "Diffuser attachment is not included",
-      "Somewhat heavy (526g)",
-      "Lacks a delayed shutdown feature"
+      "Shorter trial & money-back window",
+      "Somewhat heavy at 526g",
+      "No companion mobile app",
+      "Lacks delayed shutdown feature"
     ],
     review: [
       "The Harry Josh Ultra Light proved to be a solid performer in our trials. Equipped with 12 distinct setting combinations and reliable airflow, it allowed us to craft an array of stunning hairstyles.",

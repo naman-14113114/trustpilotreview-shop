@@ -7130,3 +7130,18 @@ or deployment-setting change occurred.
   - Tightened vertical margins on title, divider, price line, rating badge, and button.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Varied Common Cons to Products #2-#5
+- **User Intent & Protected Scope:** Add common competitive cons across products 2-5 (Dyson, Gama IQ, T3, Harry Josh) with varied order and single-line concise wording. Do not change #1 Muuhu. Exclude hidden return fees from Dyson while including it for products 3-5. No CSS changes.
+- **Starting Git State:** `qualityReviewerHairDryers.ts` modified.
+- **Inspected Files:**
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+- **Changed Files:**
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+- **Changes Made:**
+  - Added short single-line bullets for: more expensive than top pick, no free gifts, no companion app, shorter money-back guarantee, fewer attachments than top pick.
+  - Added hidden return fees to Gama IQ, T3, and Harry Josh (omitted from Dyson).
+  - Shuffled and varied ordering across products 2, 3, 4, and 5.
+  - Left Muuhu AirPro (#1) untouched.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
