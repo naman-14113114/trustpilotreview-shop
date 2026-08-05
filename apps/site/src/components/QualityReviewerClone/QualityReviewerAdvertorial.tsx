@@ -353,91 +353,96 @@ export default function QualityReviewerAdvertorial() {
         <p className="text-[18px] leading-[1.375] mb-12 text-[#4B4F58]">
           Over the past few years, we have rigorously tested 48 distinct hair dryers. The following 5 models represent the absolute finest on the market, chosen based upon our expert evaluations combined with genuine consumer feedback:
         </p>
+      </main>
 
-        {/* Product List */}
-        <div className="space-y-20">
-           {products.map((product: any, idx: number) => (
-              <QualityReviewerCard key={idx} product={product} />
-           ))}
-        </div>
+      {/* Grey Background Section for 5 Dryers and Video */}
+      <div className="bg-[#f4f4f4] py-12 md:py-16">
+        <div className="max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Product List */}
+          <div className="space-y-12 md:space-y-16">
+             {products.map((product: any, idx: number) => (
+                <QualityReviewerCard key={idx} product={product} />
+             ))}
+          </div>
 
-        {/* Video Section from previous page */}
-        <div className="mt-16 mb-20">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
-            {market.key === "ca" ? "Editor's Pick" : "Editor's Verdict"}
-          </h2>
+          {/* Video Section from previous page */}
+          <div className="mt-16 mb-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
+              {market.key === "ca" ? "Editor's Pick" : "Editor's Verdict"}
+            </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center bg-white p-6 md:p-8 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-gray-100">
-            {/* Left Video Area */}
-            <div className="relative">
-              <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
-                <video
-                  ref={verdictVideoRef}
-                  className="block w-full"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  aria-label="Muuhu AirPro product video"
-                  onPlay={() => setIsVerdictVideoPlaying(true)}
-                  onPause={() => setIsVerdictVideoPlaying(false)}
-                  onEnded={() => setIsVerdictVideoPlaying(false)}
-                >
-                  <source
-                    src="/assets/hair-dryer-trustpilot-video.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-                <button
-                  type="button"
-                  aria-label="Play Muuhu AirPro product video"
-                  onClick={playVerdictVideo}
-                  className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
-                    isVerdictVideoPlaying
-                      ? "pointer-events-none scale-90 opacity-0"
-                      : "scale-100 opacity-100"
-                  }`}
-                >
-                  <Play size={30} fill="currentColor" className="ml-1" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Content Area */}
-            <div className="flex flex-col justify-center text-center">
-              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight text-center">
-                <b>Muuhu AirPro</b>
-              </h3>
-
-              <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
-
-              <div className="text-2xl md:text-3xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans text-center">
-                {market.key === "ca" ? "Current Price" : "Now at 50% off"}
-              </div>
-
-              {/* Editorial rating badge */}
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="font-bold text-base md:text-lg text-black font-sans">
-                    Editor&apos;s top pick
-                  </span>
-                </div>
-                <div className="text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
-                  Editorial rating 4.9 / 5
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center bg-white p-6 md:p-8 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-gray-100">
+              {/* Left Video Area */}
+              <div className="relative">
+                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                  <video
+                    ref={verdictVideoRef}
+                    className="block w-full"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label="Muuhu AirPro product video"
+                    onPlay={() => setIsVerdictVideoPlaying(true)}
+                    onPause={() => setIsVerdictVideoPlaying(false)}
+                    onEnded={() => setIsVerdictVideoPlaying(false)}
+                  >
+                    <source
+                      src="/assets/hair-dryer-trustpilot-video.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <button
+                    type="button"
+                    aria-label="Play Muuhu AirPro product video"
+                    onClick={playVerdictVideo}
+                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
+                      isVerdictVideoPlaying
+                        ? "pointer-events-none scale-90 opacity-0"
+                        : "scale-100 opacity-100"
+                    }`}
+                  >
+                    <Play size={30} fill="currentColor" className="ml-1" />
+                  </button>
                 </div>
               </div>
 
-              <a
-                href="https://uk.muuhu.com/products/muuhu-hair-dryer"
-                aria-label="Check Availability"
-                className="mx-auto w-full max-w-[240px] bg-[#393BE7] hover:bg-[#2022d4] text-white text-lg font-bold font-sans tracking-wide py-4 px-6 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase"
-              >
-                CHECK AVAILABILITY
-              </a>
+              {/* Right Content Area */}
+              <div className="flex flex-col justify-center text-center">
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight text-center">
+                  <b>Muuhu AirPro</b>
+                </h3>
+
+                <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
+
+                <div className="text-2xl md:text-3xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans text-center">
+                  {market.key === "ca" ? "Current Price" : "Now at 50% off"}
+                </div>
+
+                {/* Editorial rating badge */}
+                <div className="border border-gray-200 bg-gray-50 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="font-bold text-base md:text-lg text-black font-sans">
+                      Editor&apos;s top pick
+                    </span>
+                  </div>
+                  <div className="text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+                    Editorial rating 4.9 / 5
+                  </div>
+                </div>
+
+                <a
+                  href="https://uk.muuhu.com/products/muuhu-hair-dryer"
+                  aria-label="Check Availability"
+                  className="mx-auto w-full max-w-[240px] bg-[#393BE7] hover:bg-[#2022d4] text-white text-lg font-bold font-sans tracking-wide py-4 px-6 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase"
+                >
+                  CHECK AVAILABILITY
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

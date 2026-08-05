@@ -6773,3 +6773,68 @@ or deployment-setting change occurred.
   - Added `id="ranking"` and `scroll-mt-6` to the "THE 5 BEST HAIR DRYERS IN 2026" banner.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Grey Background Layout for Ranking Products and Video Section
+- **User Intent & Protected Scope:** Match the grey background layout starting directly below the subtitle paragraph ("Over the past few years, we have rigorously tested 48 distinct hair dryers...") as shown in the quality-reviewer screenshot. Display all 5 product cards and the video section inside this grey background in clean white card table format without altering HTML copy/data.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `QualityReviewerAdvertorial.tsx`
+  - `QualityReviewerCard.tsx`
+  - User-provided screenshot from `quality-reviewer.com/best-uk/`
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - In `QualityReviewerAdvertorial.tsx`, closed `<main>` directly after the subtitle text paragraph and created a full-width light grey section (`bg-[#f4f4f4] py-12 md:py-16`) with centered `max-w-[950px]` container housing all 5 product cards (`QualityReviewerCard`) and the Editor's Verdict / Video section.
+  - In `QualityReviewerCard.tsx`, styled the card as a distinct padded white container (`bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-[#E2E8F0] p-6 md:p-8`) with top dark purple accent line (`h-[6px] bg-[#3601FF]`), and added vertical dividing borders (`md:border-l border-[#EEEEEE]`) to cleanly structure the 3-column rating/grade table format matching the reference screenshot.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Clear Divider Lines to Performance Bars and Split Columns
+- **User Intent & Protected Scope:** Add clear divider lines matching the reference screenshot from quality-reviewer, specifically adding horizontal divider lines to the performance bars (`AnimatedRatingBar`) and ensuring all section dividers (table, bars, pros/cons vs review) are sharp and clearly defined.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` and `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `AnimatedRatingBar.tsx`
+  - `QualityReviewerCard.tsx`
+  - User-provided screenshot from `quality-reviewer.com/best-uk/`
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/AnimatedRatingBar.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - In `AnimatedRatingBar.tsx`, added `py-3.5 border-b border-[#EEEEEE]` to each rating bar row so every performance bar item has a clean horizontal dividing line underneath it.
+  - In `QualityReviewerCard.tsx`, ensured the vertical dividing line between Pros/Cons and Review stretches full-height (`self-stretch`).
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Darkened Divider Lines to High-Contrast Visible Grey (#CCCCCC)
+- **User Intent & Protected Scope:** The previous `#EEEEEE` divider lines were too faint/dull against the white card background. Strengthen the border lines to a crisp, clearly visible grey (`#CCCCCC`) matching quality-reviewer's table and progress bar divider lines.
+- **Starting Git State:** `AnimatedRatingBar.tsx` and `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `AnimatedRatingBar.tsx`
+  - `QualityReviewerCard.tsx`
+  - QualityReviewer live reference screenshot
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/AnimatedRatingBar.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Replaced faint `border-[#EEEEEE]` / `bg-[#EEEEEE]` with crisp `border-[#CCCCCC]` and `bg-[#CCCCCC]` across:
+    - Rating bar bottom divider lines in `AnimatedRatingBar.tsx`
+    - 3-column table outer borders and inner column vertical divider lines in `QualityReviewerCard.tsx`
+    - Horizontal divider `<hr>` below progress bars in `QualityReviewerCard.tsx`
+    - Vertical full-height divider between Pros/Cons and Review in `QualityReviewerCard.tsx`
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated 3-Column Rating Table to Complete Seamless Grid Format
+- **User Intent & Protected Scope:** Transform the 3-column table into a complete seamless table grid matching the quality-reviewer screenshot where vertical divider lines connect unbroken from top border to bottom border with zero padding gaps, and progress bars span full card width.
+- **Starting Git State:** `AnimatedRatingBar.tsx` and `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `QualityReviewerCard.tsx`
+  - QualityReviewer screenshot showing edge-to-edge 3-column table
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Restructured table container into `grid grid-cols-1 md:grid-cols-3 border border-[#CCCCCC]`.
+  - Moved cell padding (`p-6 md:p-8`) inside each grid column and applied `border-t md:border-t-0 md:border-l border-[#CCCCCC]` so vertical dividers run continuously and seamlessly from top to bottom.
+  - Adjusted rating progress bars container to `w-full` ensuring full-width alignment with the table directly above.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
