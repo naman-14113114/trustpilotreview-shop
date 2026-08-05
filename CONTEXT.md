@@ -6950,3 +6950,35 @@ or deployment-setting change occurred.
   - Adjusted margin on `Muuhu AirPro` product name.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Fixed Verdict Trustpilot Card, Single-Line CTA, and Removed White Bottom Footer
+- **User Intent & Protected Scope:** Remove white bar/footer showing below the page, restore the authentic Trustpilot green stars rating badge above "Check Availability" in the verdict box from the previous page, and ensure "CHECK AVAILABILITY" button is displayed on a single line.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - `apps/site/src/components/GreenStarRating.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Removed `pb-20` on the outer white wrapper to eliminate the bottom white footer strip below the grey section, and set grey container padding to `pt-12 pb-20 md:pt-16 md:pb-24`.
+  - Imported and restored `GreenStarRating` and `GreenStarIcon` in the Editorial top pick card in the verdict section.
+  - Set `CHECK AVAILABILITY` button to `w-auto px-8 sm:px-10 whitespace-nowrap` to keep the text in one single line.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added 1:15 Frame Video Poster Thumbnail
+- **User Intent & Protected Scope:** Extract the exact video frame at 1:15 from `hair-dryer-trustpilot-video.mp4` and set it as the thumbnail / poster for the product video in the verdict section.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` and `HairDryerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - `apps/site/public/assets/hair-dryer-trustpilot-video.mp4`
+- **Changed Files:**
+  - `apps/site/public/assets/hair-dryer-video-poster.webp` (New asset extracted via ffmpeg at 00:01:15)
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+- **Changes Made:**
+  - Extracted HD frame at 00:01:15 from `hair-dryer-trustpilot-video.mp4` to `/assets/hair-dryer-video-poster.webp`.
+  - Added `poster="/assets/hair-dryer-video-poster.webp"` to the `<video>` elements in both `QualityReviewerAdvertorial.tsx` and `HairDryerAdvertorial.tsx`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

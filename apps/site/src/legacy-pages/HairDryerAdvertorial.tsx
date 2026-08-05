@@ -2167,6 +2167,7 @@ export default function HairDryerAdvertorial({
                     controls
                     playsInline
                     preload="metadata"
+                    poster="/assets/hair-dryer-video-poster.webp"
                     aria-label="Muuhu AirPro product video"
                     onPlay={() => setIsVerdictVideoPlaying(true)}
                     onPause={() => setIsVerdictVideoPlaying(false)}

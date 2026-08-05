@@ -4,6 +4,7 @@ import FaqAccordion from "./FaqAccordion";
 import QualityReviewerCard from "./QualityReviewerCard";
 import { qualityReviewerProducts } from "../../data/qualityReviewerHairDryers";
 import { CheckCircle2, Play } from "lucide-react";
+import { GreenStarRating, GreenStarIcon } from "@/components/GreenStarRating";
 import { MarketFlag } from "@/components/MarketFlag";
 import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
@@ -97,7 +98,7 @@ export default function QualityReviewerAdvertorial() {
   });
 
   return (
-    <div className="bg-[#ffffff] text-[#4B4F58] font-[family-name:var(--font-arimo)] pb-20">
+    <div className="bg-[#ffffff] text-[#4B4F58] font-[family-name:var(--font-arimo)]">
       {/* Header / Hero */}
       <div className="bg-[#83D221] border-b border-[#73C211] pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -438,7 +439,7 @@ export default function QualityReviewerAdvertorial() {
       </main>
 
       {/* Grey Background Section for 5 Dryers and Video */}
-      <div className="bg-[#f4f4f4] py-12 md:py-16">
+      <div className="bg-[#f4f4f4] pt-12 pb-20 md:pt-16 md:pb-24">
         <div className="max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Product List */}
           <div className="space-y-12 md:space-y-16">
@@ -463,6 +464,7 @@ export default function QualityReviewerAdvertorial() {
                     controls
                     playsInline
                     preload="metadata"
+                    poster="/assets/hair-dryer-video-poster.webp"
                     aria-label="Muuhu AirPro product video"
                     onPlay={() => setIsVerdictVideoPlaying(true)}
                     onPause={() => setIsVerdictVideoPlaying(false)}
@@ -501,22 +503,23 @@ export default function QualityReviewerAdvertorial() {
                   {market.key === "ca" ? "Current Price" : "Now at 50% off"}
                 </div>
 
-                {/* Editorial rating badge */}
-                <div className="border border-gray-200 bg-gray-50 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+                {/* Editorial rating badge with Trustpilot styling */}
+                <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="font-bold text-base md:text-lg text-black font-sans">
                       Editor&apos;s top pick
                     </span>
+                    <GreenStarRating rating={5} size={22} />
                   </div>
-                  <div className="text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
-                    Editorial rating 4.9 / 5
+                  <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+                    Editorial rating 4.9 / 5 <GreenStarIcon size={18} />
                   </div>
                 </div>
 
                 <a
                   href="https://uk.muuhu.com/products/muuhu-hair-dryer"
                   aria-label="Check Availability"
-                  className="mx-auto w-full max-w-[240px] bg-[#393BE7] hover:bg-[#2022d4] text-white text-lg font-bold font-sans tracking-wide py-4 px-6 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase"
+                  className="mx-auto w-auto bg-[#393BE7] hover:bg-[#2022d4] text-white text-base sm:text-lg font-bold font-sans tracking-wide py-4 px-8 sm:px-10 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase whitespace-nowrap"
                 >
                   CHECK AVAILABILITY
                 </a>
