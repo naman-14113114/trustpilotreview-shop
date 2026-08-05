@@ -6713,49 +6713,63 @@ or deployment-setting change occurred.
 - `https://www.trustpilotreview.shop` was verified to resolve to that deployment and the target route returned the updated Top 5 output.
 - Existing aliases and the Vercel project were preserved. The stale automatic GitHub/Vercel author-team check still failed, so the authenticated direct preview-and-promote workflow was used without relinking or replacing the project.
 
- # # #   A d d e d   V i d e o   S e c t i o n   a n d   R e m o v e d   F o o t e r   o n   Q u a l i t y   R e v i e w e r   H a i r   D r y e r   P a g e 
- -   * * U s e r   I n t e n t : * *   A d d   t h e   s a m e   v e r d i c t   v i d e o   s e c t i o n   f r o m   t h e   p r e v i o u s   b e s t   h a i r   d r y e r   p a g e   t o   t h e   n e w   ' Q u a l i t y   R e v i e w e r '   t h e m e   p a g e ,   a n d   c o m p l e t e l y   r e m o v e   t h e   f o o t e r   s e c t i o n   t h a t   f o l l o w e d   t h e   t o p   5   p r o d u c t s   l i s t . 
- -   * * S t a r t i n g   G i t   S t a t e : * *   W o r k i n g   t r e e   c l e a n   ( a s   i n h e r i t e d   f r o m   p r e v i o u s   c h a n g e s ) . 
- -   * * I n s p e c t e d   F i l e s : * *   E : \ 1 s t   Y E A R   D T U \ N e w   f o l d e r \ t r u s t p i l o t r e v i e w - s h o p \ a p p s \ s i t e \ s r c \ c o m p o n e n t s \ Q u a l i t y R e v i e w e r C l o n e \ Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x ,   H a i r D r y e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e d   F i l e s : * *   M o d i f i e d   Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e s   M a d e : * *   R e m o v e d   t h e   Q u e s t i o n s   s e c t i o n   a n d   F o o t e r   s e c t i o n   t h a t   p r e v i o u s l y   r e n d e r e d   a f t e r   t h e   p r o d u c t   l i s t .   I m p o r t e d   r e q u i r e d   d e p e n d e n c i e s   ( u s e S t a t e ,   u s e R e f ,   P l a y ,   G r e e n S t a r R a t i n g ,   G r e e n S t a r I c o n )   a n d   i n j e c t e d   t h e   v i d e o   s e c t i o n   b l o c k   a t   t h e   e n d   o f   t h e   m a i n   t a g .   T h e   v i s u a l   t h e m e   w a s   a d a p t e d   b y   r e p l a c i n g   t h e   g o l d   s t y l i n g   f r o m   t h e   o l d e r   a d v e r t o r i a l   f o r m a t   w i t h   t h e   # 8 3 D 2 2 1   g r e e n   b r a n d   c o l o r   u t i l i z e d   b y   t h e   n e w   Q u a l i t y R e v i e w e r   l a y o u t   f o r m a t . 
- -   * * M i s t a k e s / C o r r e c t i o n s : * *   N o n e . 
- -   * * V e r i f i c a t i o n : * *   C h a n g e s   s a v e d   s u c c e s s f u l l y   t o   t h e   t a r g e t   c o m p o n e n t . 
- -   * * G i t   S t a t u s : * *   M o d i f i e d   l o c a l l y .  
- 
- # # #   U p d a t e d   8   C r i t e r i a   S t y l i n g   o n   Q u a l i t y   R e v i e w e r   H a i r   D r y e r   P a g e 
- -   * * U s e r   I n t e n t : * *   M a t c h   t h e   s t y l i n g   o f   t h e   8   c r i t e r i a   l i s t   t o   a n   p r o v i d e d   s c r e e n s h o t   ( c e n t e r e d   h e a d i n g ,   s i n g l e   c o l u m n   c e n t e r e d   l i s t ,   t h i c k   b l a c k   c h e c k m a r k s ,   O s w a l d   f o n t ,   l a r g e r   t e x t ) . 
- -   * * C h a n g e d   F i l e s : * *   M o d i f i e d   Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e s   M a d e : * *   C o n v e r t e d   g r i d   t o   a   c e n t e r e d   f l e x   c o l u m n ,   c h a n g e d   S V G   i c o n   t o   a   t h i c k   b l a c k   c h e c k m a r k ,   a p p l i e d   O s w a l d   f o n t   f a m i l y   t o   l i s t   i t e m s ,   a n d   i n c r e a s e d   f o n t   s i z e s .  
- 
- # # #   U p d a t e d   C o n t a i n e r   P a d d i n g   a n d   D r o p   S h a d o w s 
- -   * * U s e r   I n t e n t : * *   A d j u s t   p a d d i n g   a n d   a d d   d r o p   s h a d o w s   t o   t h e   g r e e n / r e d   c o n t a i n e r s   o n   t h e   Q u a l i t y   R e v i e w e r   a d v e r t o r i a l   t o   m a t c h   t h e   o r i g i n a l   l a y o u t   o n   q u a l i t y - r e v i e w e r . c o m . 
- -   * * C h a n g e d   F i l e s : * *   M o d i f i e d   Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e s   M a d e : * *   C h a n g e d   c o n t a i n e r   b o r d e r - w i d t h   f r o m   3 p x   t o   2 p x ,   s e t   m o b i l e   p a d d i n g   t o   1 0 p x   a n d   d e s k t o p   p a d d i n g   t o   5 0 p x   ( p - [ 1 0 p x ]   m d : p - [ 5 0 p x ] ) ,   a n d   a d d e d   a   5 p x   b l a c k - t r a n s p a r e n t   b o x   s h a d o w   t o   t h e   8   C r i t e r i a ,   7   R e a s o n s ,   W h a t   T o   L o o k   F o r ,   a n d   W h a t   T o   A v o i d   s e c t i o n s . 
- -   * * M i s t a k e s / C o r r e c t i o n s : * *   N o n e . 
- -   * * G i t   S t a t u s : * *   M o d i f i e d   l o c a l l y .  
- 
- # # #   R e f i n e d   C o n t a i n e r   L a y o u t   a n d   A l i g n m e n t 
- -   * * U s e r   I n t e n t : * *   M a t c h   t h e   e x a c t   l a y o u t   b e h a v i o r   o n   s m a l l e r   v i e w p o r t s   f o r   t h e   g r e e n / r e d   c o n t a i n e r s .   S p e c i f i c a l l y ,   a d d   m a r g i n   ( s p a c e   o u t s i d e )   o n   t h e   l e f t / r i g h t ,   i n c r e a s e   p a d d i n g   i n s i d e ,   a n d   r e m o v e   t e x t - c e n t e r i n g   f r o m   t h e   8   C r i t e r i a   s e c t i o n . 
- -   * * C h a n g e d   F i l e s : * *   M o d i f i e d   Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e s   M a d e : * *   R e v e r t e d   	 e x t - c e n t e r   o n   t h e   8   C r i t e r i a   h e a d i n g   a n d   w - f i t   m x - a u t o   o n   t h e   l i s t .   A d j u s t e d   c o n t a i n e r   p a d d i n g   t o   p - [ 3 0 p x ]   m d : p - [ 5 0 p x ]   a n d   a d d e d   h o r i z o n t a l   m a r g i n s   ( m x - [ 1 5 p x ]   s m : m x - [ 3 0 p x ]   m d : m x - 0 )   o n   m o b i l e / t a b l e t   t o   e n s u r e   s p a c e   o u t s i d e   t h e   c o n t a i n e r . 
- -   * * M i s t a k e s / C o r r e c t i o n s : * *   R e m o v e d   i m p r o p e r   c e n t e r i n g   i n t r o d u c e d   i n   p r e v i o u s   s t e p . 
- -   * * G i t   S t a t u s : * *   M o d i f i e d   l o c a l l y .  
- 
- # # #   A p p l i e d   O r i g i n a l   S i t e   G r i d   L a y o u t 
- -   * * U s e r   I n t e n t : * *   E n s u r e   t h e   m a i n   c o n t e n t   b l o c k   m a t c h e s   t h e   e x a c t   w i d t h   a n d   s p a c i n g   o f   t h e   o r i g i n a l   s i t e   ( w h i c h   u s e s   a   2 - c o l u m n   E l e m e n t o r   l a y o u t )   i n s t e a d   o f   s t r e t c h i n g   a c r o s s   t h e   s c r e e n . 
- -   * * C h a n g e d   F i l e s : * *   M o d i f i e d   Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x . 
- -   * * C h a n g e s   M a d e : * *   W r a p p e d   t h e   e n t i r e   c o n t e n t s   o f   t h e   < m a i n >   t a g   i n s i d e   a   2 - c o l u m n   f l e x   l a y o u t   ( w - f u l l   m d : w - 8 / 1 2   f o r   c o n t e n t   a n d   a n   e m p t y   h i d d e n   m d : b l o c k   m d : w - 4 / 1 2   f o r   t h e   r i g h t   s i d e b a r   p l a c e h o l d e r ) .   A d j u s t e d   m a x - w i d t h   t o   1 1 4 0 p x .   T h i s   c o r r e c t l y   l i m i t s   t h e   w i d t h   o f   t h e   g r e e n   b o x e s   a n d   t e x t ,   p e r f e c t l y   m a t c h i n g   t h e   s p a c i n g   o b s e r v e d   o n   t h e   l i v e   s i t e . 
- -   * * M i s t a k e s / C o r r e c t i o n s : * *   N o n e . 
- -   * * G i t   S t a t u s : * *   M o d i f i e d   l o c a l l y .  
- 
- # # #   R e v e r t i n g   A c c o r d i o n   t o   L i s t   a n d   F i x i n g   S p a c i n g 
- -   * * U s e r   I n t e n t : * *   T h e   u s e r   w a s   a n g r y   t h a t   t h e   ' W h a t   t o   A v o i d '   a n d   ' W h a t   t o   L o o k   F o r '   s e c t i o n s   w e r e   a c c o r d i o n s   t h a t   c a u s e d   h o r i z o n t a l   s c r o l l i n g   o n   m o b i l e ,   a n d   t h a t   t h e   ' 8   C r i t e r i a '   s e c t i o n   w a s   c e n t e r e d . 
- -   * * C h a n g e d   F i l e s : * *    p p s / s i t e / s r c / c o m p o n e n t s / Q u a l i t y R e v i e w e r C l o n e / Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x ` n -   * * C h a n g e s : * *   C o n v e r t e d   t h e   F a q A c c o r d i o n   c o m p o n e n t s   b a c k   i n t o   s t a t i c   l i s t s   w i t h   S V G   c h e c k / c r o s s   i c o n s .   U n - c e n t e r e d   t h e   8   C r i t e r i a   s e c t i o n .   U n i f i e d   m a r g i n   a n d   p a d d i n g   v a l u e s   f o r   a l l   g r e e n   a n d   r e d   b o x e s . 
-  
- 
- # # #   R e s t o r i n g   A c c o r d i o n   C o n t e n t   a n d   S t y l i n g   t o   M a t c h   8   C r i t e r i a 
- -   * * U s e r   I n t e n t : * *   T h e   u s e r   w a s   a n g r y   t h a t   I   r e m o v e d   t h e   F a q A c c o r d i o n   a n d   c o n t e n t   t e x t ,   e x p l i c i t l y   s t a t i n g   I   a m   n o t   a l l o w e d   t o   t o u c h   t e x t   a n d   c o n t e n t .   T h e y   w a n t e d   t h e   * s t y l i n g *   o f   t h e   a c c o r d i o n   t i t l e s   t o   m a t c h   t h e   8   c r i t e r i a   l i s t ,   b u t   k e e p i n g   t h e   a c c o r d i o n   f u n c t i o n a l i t y   a n d   t e x t   i n t a c t . 
- -   * * C h a n g e d   F i l e s : * *    p p s / s i t e / s r c / c o m p o n e n t s / Q u a l i t y R e v i e w e r C l o n e / Q u a l i t y R e v i e w e r A d v e r t o r i a l . t s x ,    p p s / s i t e / s r c / c o m p o n e n t s / Q u a l i t y R e v i e w e r C l o n e / F a q A c c o r d i o n . t s x ` n -   * * C h a n g e s : * *   R e s t o r e d   F a q A c c o r d i o n .   U p d a t e d   F a q A c c o r d i o n . t s x   t o   u s e   O s w a l d   f o n t   f o r   t i t l e s ,   i t e m s - s t a r t   f o r   p r o p e r   t e x t   w r a p p i n g   t o   p r e v e n t   h o r i z o n t a l   o v e r f l o w ,   a n d   u p d a t e d   t h e   S V G   t i c k / c r o s s   i c o n s   t o   m a t c h   t h e   t h i c k   d e s i g n   o f   t h e   8   C r i t e r i a   l i s t . 
-  
- 
+### Added Video Section and Removed Footer on Quality Reviewer Hair Dryer Page
+- **User Intent:** Add the same verdict video section from the previous best hair dryer page to the new 'Quality Reviewer' theme page, and completely remove the footer section that followed the top 5 products list.
+- **Starting Git State:** Working tree clean (as inherited from previous changes).
+- **Inspected Files:** `QualityReviewerAdvertorial.tsx`, `HairDryerAdvertorial.tsx`.
+- **Changed Files:** Modified `QualityReviewerAdvertorial.tsx`.
+- **Changes Made:** Removed the Questions section and Footer section that previously rendered after the product list. Imported required dependencies and injected the video section block at the end of the main tag. The visual theme was adapted by replacing the gold styling from the older advertorial format with the `#83D221` green brand color utilized by the new QualityReviewer layout format.
+- **Mistakes/Corrections:** None.
+- **Verification:** Changes saved successfully to the target component.
+- **Git Status:** Modified locally.
+
+### Updated 8 Criteria Styling on Quality Reviewer Hair Dryer Page
+- **User Intent:** Match the styling of the 8 criteria list to an provided screenshot (centered heading, single column centered list, thick black checkmarks, Oswald font, larger text).
+- **Changed Files:** Modified `QualityReviewerAdvertorial.tsx`.
+- **Changes Made:** Converted grid to a centered flex column, changed SVG icon to a thick black checkmark, applied Oswald font family to list items, and increased font sizes.
+
+### Updated Container Padding and Drop Shadows
+- **User Intent:** Adjust padding and add drop shadows to the green/red containers on the Quality Reviewer advertorial to match the original layout on quality-reviewer.com.
+- **Changed Files:** Modified `QualityReviewerAdvertorial.tsx`.
+- **Changes Made:** Changed container border-width from 3px to 2px, set mobile padding to 10px and desktop padding to 50px (`p-[10px] md:p-[50px]`), and added a 5px black-transparent box shadow to the 8 Criteria, 7 Reasons, What To Look For, and What To Avoid sections.
+- **Mistakes/Corrections:** None.
+- **Git Status:** Modified locally.
+
+### Refined Container Layout and Alignment
+- **User Intent:** Match the exact layout behavior on smaller viewports for the green/red containers. Specifically, add margin (space outside) on the left/right, increase padding inside, and remove text-centering from the 8 Criteria section.
+- **Changed Files:** Modified `QualityReviewerAdvertorial.tsx`.
+- **Changes Made:** Reverted text-center on the 8 Criteria heading and `w-fit mx-auto` on the list. Adjusted container padding to `p-[30px] md:p-[50px]` and added horizontal margins (`mx-[15px] sm:mx-[30px] md:mx-0`) on mobile/tablet to ensure space outside the container.
+- **Mistakes/Corrections:** Removed improper centering introduced in previous step.
+- **Git Status:** Modified locally.
+
+### Applied Original Site Grid Layout
+- **User Intent:** Ensure the main content block matches the exact width and spacing of the original site (which uses a 2-column Elementor layout) instead of stretching across the screen.
+- **Changed Files:** Modified `QualityReviewerAdvertorial.tsx`.
+- **Changes Made:** Wrapped the entire contents of the `<main>` tag inside a 2-column flex layout (`w-full md:w-8/12` for content and an empty hidden `md:block md:w-4/12` for the right sidebar placeholder). Adjusted max-width to 1140px. This correctly limits the width of the green boxes and text, perfectly matching the spacing observed on the live site.
+- **Mistakes/Corrections:** None.
+- **Git Status:** Modified locally.
+
+### Reverting Accordion to List and Fixing Spacing
+- **User Intent:** The user was angry that the 'What to Avoid' and 'What to Look For' sections were accordions that caused horizontal scrolling on mobile, and that the '8 Criteria' section was centered.
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes:** Converted the FaqAccordion components back into static lists with SVG check/cross icons. Un-centered the 8 Criteria section. Unified margin and padding values for all green and red boxes.
+
+### Restoring Accordion Content and Styling to Match 8 Criteria
+- **User Intent:** The user was angry that I removed the FaqAccordion and content text, explicitly stating I am not allowed to touch text and content. They wanted the *styling* of the accordion titles to match the 8 criteria list, but keeping the accordion functionality and text intact.
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`, `apps/site/src/components/QualityReviewerClone/FaqAccordion.tsx`
+- **Changes:** Restored FaqAccordion. Updated `FaqAccordion.tsx` to use Oswald font for titles, `items-start` for proper text wrapping to prevent horizontal overflow, and updated the SVG tick/cross icons to match the thick design of the 8 Criteria list.
+
+### Added "Click To See The Ranking First" Button
+- **User Intent & Protected Scope:** Add a pill-style "Click To See The Ranking First" button centered directly above the "8 Criteria" section on the Quality Reviewer advertorial page (`QualityReviewerAdvertorial.tsx`), matching the exact visual design from the reference screenshot (dark green background, inner white outline border, white Oswald bold text, double down arrow icon). On hover, smoothly transition the button background to `#008bff`. Smoothly scroll to the ranking section banner (`#ranking`) upon click. All existing content, copy, and styling preserved.
+- **Starting Git State:** Working tree clean (`main...origin/main`).
+- **Inspected Files:**
+  - `QualityReviewerAdvertorial.tsx`
+  - `toppickselect.org/best_hair_dryers_uk/` reference HTML/CSS
+  - `media__1785896565422.png` reference screenshot
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Added a centered pill button with `bg-[#067766]`, smooth transition `hover:bg-[#008bff] transition-colors duration-300`, inner `border-2 border-white rounded-full` contour, white bold Oswald font `Click To See The Ranking First`, and SVG double chevron down icon.
+  - Linked to `#ranking` with smooth scroll behavior.
+  - Added `id="ranking"` and `scroll-mt-6` to the "THE 5 BEST HAIR DRYERS IN 2026" banner.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

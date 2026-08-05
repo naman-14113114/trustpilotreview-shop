@@ -151,7 +151,7 @@ export default function QualityReviewerAdvertorial() {
             Naturally, selecting the proper hair dryer is no different.
           </p>
           <p>
-            When you purchase inferior blow dryers (which inevitably tend to be the cheaper choices), you should anticipate heat damage, a constant struggle with static, and dedicating over half an hour to drying.
+            <strong>When you purchase inferior blow dryers (which inevitably tend to be the cheaper choices), you should anticipate heat damage, a constant struggle with static, and dedicating over half an hour to drying.</strong>
           </p>
           <p>
             The majority of individuals are quite astounded to learn that spending on a premium hair dryer enables them to achieve incredible, salon-standard blowouts daily in under 15 minutes, entirely free from heat-induced harm!
@@ -160,7 +160,7 @@ export default function QualityReviewerAdvertorial() {
             Whenever I advise a client to invest in a superior hair dryer, I frequently hear the question:
           </p>
           <p>
-            "Is it genuinely worth the expense?"
+            <strong>"Is it genuinely worth the expense?"</strong>
           </p>
           <p>
             Truthfully, if my primary goal were solely to line my own pockets, I would never even raise the subject.
@@ -168,6 +168,35 @@ export default function QualityReviewerAdvertorial() {
           <p>
             Each time a client returns to my chair for another keratin treatment due to frizz or heat damage, it ultimately results in more profit for my business.
           </p>
+        </div>
+
+        {/* Click To See The Ranking First Button */}
+        <div className="flex justify-center my-10">
+          <a
+            href="#ranking"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('ranking');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="group inline-flex items-center justify-center bg-[#067766] hover:bg-[#008bff] transition-colors duration-300 rounded-full p-[3px] shadow-[0_4px_12px_rgba(0,0,0,0.15)] text-decoration-none cursor-pointer"
+          >
+            <span className="border-2 border-white rounded-full px-6 py-2.5 sm:px-8 sm:py-3 flex items-center justify-center gap-3">
+              <span className="font-[family-name:var(--font-oswald)] text-white text-[20px] sm:text-[24px] md:text-[28px] font-bold tracking-wide leading-none select-none">
+                Click To See The Ranking First
+              </span>
+              <svg
+                aria-hidden="true"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white shrink-0"
+                viewBox="0 0 320 512"
+                fill="currentColor"
+              >
+                <path d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z" />
+              </svg>
+            </span>
+          </a>
         </div>
 
         {/* Green Box: Criteria */}
@@ -314,7 +343,7 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Blue Banner */}
-        <div className="bg-[#008BFF] w-full py-6 mb-12 text-center">
+        <div id="ranking" className="bg-[#008BFF] w-full py-6 mb-12 text-center scroll-mt-6">
           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#FFFFFF] uppercase tracking-wider m-0 leading-none">
             THE 5 BEST HAIR DRYERS IN 2026
           </h2>
