@@ -7145,3 +7145,37 @@ or deployment-setting change occurred.
   - Left Muuhu AirPro (#1) untouched.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Protected Muuhu Microsoft Ads Offline-Conversion Feed
+- **User Intent & Protected Scope:** Reproduce the existing Buudy Microsoft Ads offline-conversion workflow for Muuhu without requesting or using Microsoft Ads account access. Reconcile the customer's supplied Microsoft click ID against the just-created PlusBase order, prepare the one-off upload CSV, and make future Muuhu orders available through a protected HTTPS CSV feed.
+- **Starting Git State:** Clean detached worktree created from `origin/main` at `794801391bbef4da89ad59fccca60078116f8849`; the owner's separate dirty hair-CRO worktree was not modified.
+- **Inspected Systems:**
+  - Muuhu PlusBase `orders.json` API.
+  - Live `/best-hair-dryer-uk-2026` page, outbound destination, `muuhu_outbound_click`, `affiliate_click`, and `msclkid` handling.
+  - Existing Buudy offline-conversion CSV conventions and Microsoft Ads offline-conversion requirements.
+  - Vercel project `trustpilot-led-mask-replica` (`prj_moC6YhuDufmzdh8NrYZGqndONmtJ`).
+- **Changed Files:**
+  - `apps/site/src/app/api/conversions/muuhu-bing-ads/route.ts`
+  - `apps/site/.env.example`
+  - `CONTEXT.md`
+- **Changes Made:**
+  - Added a Node-runtime, force-dynamic, no-store CSV endpoint at `/api/conversions/muuhu-bing-ads`.
+  - Protected the feed with a timing-safe comparison against `MUUHU_BING_OFFLINE_FEED_SECRET`; credentials remain server-only and are not committed or exposed to client bundles.
+  - Added PlusBase order retrieval using `MUUHU_SHOPBASE_STORE_URL`, `MUUHU_SHOPBASE_API_KEY`, and `MUUHU_SHOPBASE_PASSWORD`.
+  - Extracts valid 32-character Microsoft click IDs from ShopBase line-item properties, note attributes, landing URLs, or referring URLs.
+  - Emits Microsoft's offline-import format with the distinct conversion goal name `Muuhu UK - Purchase`, UTC time-zone metadata, actual order value, and actual order currency.
+  - Includes non-cancelled `authorized` and `paid` orders because the verified Muuhu order is currently `authorized` in PlusBase; cancelled orders are excluded.
+  - Added `X-Conversion-Count` and a downloadable CSV filename for operational verification.
+  - Created the one-order upload artifact outside the repository at `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\muuhu-microsoft-offline-conversion-2026-08-05.csv` without storing PlusBase credentials in that file.
+- **Order Reconciliation:** PlusBase order `#plb10683798_1001` was created at `2026-08-05T07:47:21Z`, is non-cancelled and `authorized`, totals `162.84 USD`, and its line-item attribution exactly matches the customer-supplied Microsoft click ID. No customer PII or secret values are recorded here.
+- **Production Configuration:** Added the four required environment variables to the Production environment of the confirmed Vercel project. Values were not printed into source or documentation.
+- **Deployment:** Production deployment `dpl_7imfoRf8D9uct3kR2sTHkr1YzTUv` was built and promoted to `https://www.trustpilotreview.shop`.
+- **Verification:**
+  - `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+  - `corepack pnpm --filter @trustpilotreview/site lint` passed.
+  - `corepack pnpm --filter @trustpilotreview/site build` passed with `/api/conversions/muuhu-bing-ads` listed as a dynamic route.
+  - An unauthenticated production feed request returns `401`.
+  - An authenticated production feed request returns `200`, `Content-Type: text/csv`, `X-Conversion-Count: 1`, and the reconciled row for `Muuhu UK - Purchase`, `8/5/2026 7:47:21 AM`, `162.84`, `USD`.
+  - The production hair-dryer comparison page returns `200`, retains the Muuhu UK product destination, both UET event names, and Microsoft click-ID handling.
+- **Microsoft Ads Boundary:** The conversion was prepared but not uploaded because the owner explicitly withheld Ads account access. The remaining account-side action is to create/select the exact offline goal `Muuhu UK - Purchase` and upload the prepared CSV or configure a scheduled import using the protected URL plus its secret query parameter.
+- **Security Follow-up:** The PlusBase credentials were supplied in chat. Rotate them after handoff and update the Vercel environment variables immediately so the protected feed continues working.
