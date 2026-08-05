@@ -6838,3 +6838,57 @@ or deployment-setting change occurred.
   - Adjusted rating progress bars container to `w-full` ensuring full-width alignment with the table directly above.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Sticky Bottom CTA Button Visible on All Devices
+- **User Intent & Protected Scope:** Add a sticky bottom CTA button (like on previous best pages) with text "Take me to the winning hair dryer", but visible on all devices (not just mobile), styled with the exact green color `#067766` and without any hover color change effect.
+- **Starting Git State:** `QualityReviewerCard.tsx`, `AnimatedRatingBar.tsx`, `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Added bottom padding `pb-20` to the root container to prevent bottom content overlap.
+  - Added fixed bottom CTA bar: `fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-sm border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 flex items-center justify-center`.
+  - Styled the button with `bg-[#067766] hover:bg-[#067766] text-white px-6 py-3.5 rounded-full font-bold text-[14px] sm:text-base` linking to `https://uk.muuhu.com/products/muuhu-hair-dryer`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Sticky CTA Button: Floating Button (No White Background), Increased Size & Font, Single Line
+- **User Intent & Protected Scope:** Increase the sticky button size and text size inside it, keep all text in a single line, and remove the white background bar behind it so only the floating green button is visible and sticky across all devices.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Removed the white container background, borders, and backdrop-blur.
+  - Made the wrapper a floating click-through container (`pointer-events-none fixed bottom-4 sm:bottom-6 left-0 right-0 z-50 flex items-center justify-center`).
+  - Increased button padding (`px-6 sm:px-10 py-4 sm:py-4.5`) and font size (`text-[15px] sm:text-[18px] md:text-[20px] font-bold whitespace-nowrap`).
+  - Added shadow `shadow-[0_8px_30px_rgba(0,0,0,0.25)]` for crisp contrast against any scrolling background.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Sticky CTA Button to Full Container Width, Bold & All Capital Letters
+- **User Intent & Protected Scope:** Expand the sticky button width so it spans full width matching the main content container (`max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8`), format all text inside the button in all-capital letters (`TAKE ME TO THE WINNING HAIR DRYER`), and make it bold and clearly visible.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Placed the button inside a centered container matching `max-w-[950px] mx-auto w-full px-4 sm:px-6 lg:px-8` with `block w-full`.
+  - Set font weight to `font-extrabold` and text to uppercase `TAKE ME TO THE WINNING HAIR DRYER` with `tracking-wider`.
+  - Retained clean `#067766` background, pill shape `rounded-full`, and smooth shimmer effect.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Sticky CTA Button Border Radius to 8px
+- **User Intent & Protected Scope:** Keep the sticky button square with slightly rounded corners (border radius of 8px, `rounded-[8px]`) rather than a full pill shape (`rounded-full`), while preserving the full container width, bold uppercase text, and green color `#067766`.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Updated button corner radius from `rounded-full` to `rounded-[8px]`.
+  - Maintained `w-full` inside `max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8`.
+  - Maintained bold uppercase text: `TAKE ME TO THE WINNING HAIR DRYER`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

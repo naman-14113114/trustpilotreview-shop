@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useRef } from 'react';
-import FaqAccordion from './FaqAccordion';
-import QualityReviewerCard from './QualityReviewerCard';
-import { qualityReviewerProducts } from '../../data/qualityReviewerHairDryers';
+import React, { useState, useRef } from "react";
+import FaqAccordion from "./FaqAccordion";
+import QualityReviewerCard from "./QualityReviewerCard";
+import { qualityReviewerProducts } from "../../data/qualityReviewerHairDryers";
 import { CheckCircle2, Play } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
@@ -11,7 +11,7 @@ import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
 export default function QualityReviewerAdvertorial() {
   const market = getAdvertorialMarket("uk");
   const updatedDate = useMarketUpdatedDate(market, "4 August 2026");
-  
+
   const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -35,27 +35,53 @@ export default function QualityReviewerAdvertorial() {
   // Map the data to the shape expected by QualityReviewerCard
   const products = qualityReviewerProducts.map((p) => {
     const parsePercentage = (s: string) => {
-      const num = parseFloat(s.split('/')[0]);
+      const num = parseFloat(s.split("/")[0]);
       return isNaN(num) ? 0 : num * 10;
     };
     return {
       rank: p.id,
       name: p.name,
-      brand: p.brand || '',
-      brandUrl: 'https://uk.muuhu.com/products/muuhu-hair-dryer',
+      brand: p.brand || "",
+      brandUrl: "https://uk.muuhu.com/products/muuhu-hair-dryer",
       imageUrl: p.image_path,
-      votes: '865',
+      votes: "865",
       score: p.rating_overall,
       percentage: parsePercentage(p.rating_overall),
       grade: p.total_grade,
-      price: p.price.replace('GBP', '').trim().startsWith('£') ? p.price : `£${p.price.replace(' GBP', '').trim()}`,
-      originalPrice: p.original_price ? (p.original_price.replace('GBP', '').trim().startsWith('£') ? p.original_price : `£${p.original_price.replace(' GBP', '').trim()}`) : undefined,
+      price: p.price.replace("GBP", "").trim().startsWith("£")
+        ? p.price
+        : `£${p.price.replace(" GBP", "").trim()}`,
+      originalPrice: p.original_price
+        ? p.original_price.replace("GBP", "").trim().startsWith("£")
+          ? p.original_price
+          : `£${p.original_price.replace(" GBP", "").trim()}`
+        : undefined,
       bars: [
-        { label: 'DRYING TIME', score: p.sub_scores.drying_time, percentage: parsePercentage(p.sub_scores.drying_time) },
-        { label: 'HEAT & SPEED SETTINGS', score: p.sub_scores.heat_speed_settings, percentage: parsePercentage(p.sub_scores.heat_speed_settings) },
-        { label: 'TEMPERATURE CONTROL', score: p.sub_scores.temperature_control, percentage: parsePercentage(p.sub_scores.temperature_control) },
-        { label: 'NOISE LEVEL', score: p.sub_scores.noise_level, percentage: parsePercentage(p.sub_scores.noise_level) },
-        { label: 'VALUE FOR MONEY', score: p.sub_scores.value_for_money, percentage: parsePercentage(p.sub_scores.value_for_money) },
+        {
+          label: "DRYING TIME",
+          score: p.sub_scores.drying_time,
+          percentage: parsePercentage(p.sub_scores.drying_time),
+        },
+        {
+          label: "HEAT & SPEED SETTINGS",
+          score: p.sub_scores.heat_speed_settings,
+          percentage: parsePercentage(p.sub_scores.heat_speed_settings),
+        },
+        {
+          label: "TEMPERATURE CONTROL",
+          score: p.sub_scores.temperature_control,
+          percentage: parsePercentage(p.sub_scores.temperature_control),
+        },
+        {
+          label: "NOISE LEVEL",
+          score: p.sub_scores.noise_level,
+          percentage: parsePercentage(p.sub_scores.noise_level),
+        },
+        {
+          label: "VALUE FOR MONEY",
+          score: p.sub_scores.value_for_money,
+          percentage: parsePercentage(p.sub_scores.value_for_money),
+        },
       ],
       pros: p.pros,
       cons: p.cons,
@@ -66,12 +92,12 @@ export default function QualityReviewerAdvertorial() {
           ))}
         </>
       ),
-      learnMoreUrl: 'https://uk.muuhu.com/products/muuhu-hair-dryer',
+      learnMoreUrl: "https://uk.muuhu.com/products/muuhu-hair-dryer",
     };
   });
 
   return (
-    <div className="bg-[#ffffff] text-[#4B4F58] font-[family-name:var(--font-arimo)]">
+    <div className="bg-[#ffffff] text-[#4B4F58] font-[family-name:var(--font-arimo)] pb-20">
       {/* Header / Hero */}
       <div className="bg-[#83D221] border-b border-[#73C211] pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -85,8 +111,7 @@ export default function QualityReviewerAdvertorial() {
 
           <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
             <CheckCircle2 size={20} className="text-white shrink-0" />
-            Last updated –{" "}
-            <span suppressHydrationWarning>{updatedDate}</span>
+            Last updated – <span suppressHydrationWarning>{updatedDate}</span>
           </div>
         </div>
       </div>
@@ -113,14 +138,14 @@ export default function QualityReviewerAdvertorial() {
 
             <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
               <p>
-                <strong className="text-slate-900">Amara Wright</strong>{" "}
-                is a professional hairdresser with hands-on 12 years of experience in
+                <strong className="text-slate-900">Amara Wright</strong> is a
+                professional hairdresser with hands-on 12 years of experience in
                 styling a wide range of hair types. For this guide, she
                 researched and compared the shortlisted hair dryers based on
-                airflow, heat control, drying speed, attachments, ease of
-                use, price, warranty and returns. Her recommendation focuses
-                on what matters most for everyday styling: faster drying,
-                less heat exposure, smoother results and good overall value.
+                airflow, heat control, drying speed, attachments, ease of use,
+                price, warranty and returns. Her recommendation focuses on what
+                matters most for everyday styling: faster drying, less heat
+                exposure, smoother results and good overall value.
               </p>
             </div>
 
@@ -134,39 +159,62 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Hero Image */}
         <div className="w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl">
-           <a href="https://uk.muuhu.com/products/muuhu-hair-dryer" className="block hover:opacity-90 transition-opacity"><img src="/img/hair/muuhu-hair-dryer-banner.webp" alt="Muuhu Hair Dryer Banner" className="w-full h-auto object-cover" /></a>
+          <a
+            href="https://uk.muuhu.com/products/muuhu-hair-dryer"
+            className="block hover:opacity-90 transition-opacity"
+          >
+            <img
+              src="/img/hair/muuhu-hair-dryer-banner.webp"
+              alt="Muuhu Hair Dryer Banner"
+              className="w-full h-auto object-cover"
+            />
+          </a>
         </div>
 
         {/* Writer's Note */}
         <p className="italic underline mb-8 font-serif text-[18px] text-[#4B4F58]">
-          Editor's note: Should you be hunting for a budget-friendly alternative that requires upwards of 45 minutes to scorch your hair whilst leaving you fighting daily frizz, this guide will not be for you.
+          Editor's note: Should you be hunting for a budget-friendly alternative
+          that requires upwards of 45 minutes to scorch your hair whilst leaving
+          you fighting daily frizz, this guide will not be for you.
         </p>
 
         {/* Body Text */}
         <div className="space-y-6 text-[18px] leading-[1.375] mb-12">
           <p>
-            If there is a singular truth I have gathered over two decades of styling women's hair to look magnificent, it is that our chosen tools can absolutely make or break our tresses.
+            If there is a singular truth I have gathered over two decades of
+            styling women's hair to look magnificent, it is that our chosen
+            tools can absolutely make or break our tresses.
+          </p>
+          <p>Naturally, selecting the proper hair dryer is no different.</p>
+          <p>
+            <strong>
+              When you purchase inferior blow dryers (which inevitably tend to
+              be the cheaper choices), you should anticipate heat damage, a
+              constant struggle with static, and dedicating over half an hour to
+              drying.
+            </strong>
           </p>
           <p>
-            Naturally, selecting the proper hair dryer is no different.
+            The majority of individuals are quite astounded to learn that
+            spending on a premium hair dryer enables them to achieve incredible,
+            salon-standard blowouts daily in under 15 minutes, entirely free
+            from heat-induced harm!
           </p>
           <p>
-            <strong>When you purchase inferior blow dryers (which inevitably tend to be the cheaper choices), you should anticipate heat damage, a constant struggle with static, and dedicating over half an hour to drying.</strong>
-          </p>
-          <p>
-            The majority of individuals are quite astounded to learn that spending on a premium hair dryer enables them to achieve incredible, salon-standard blowouts daily in under 15 minutes, entirely free from heat-induced harm!
-          </p>
-          <p>
-            Whenever I advise a client to invest in a superior hair dryer, I frequently hear the question:
+            Whenever I advise a client to invest in a superior hair dryer, I
+            frequently hear the question:
           </p>
           <p>
             <strong>"Is it genuinely worth the expense?"</strong>
           </p>
           <p>
-            Truthfully, if my primary goal were solely to line my own pockets, I would never even raise the subject.
+            Truthfully, if my primary goal were solely to line my own pockets, I
+            would never even raise the subject.
           </p>
           <p>
-            Each time a client returns to my chair for another keratin treatment due to frizz or heat damage, it ultimately results in more profit for my business.
+            Each time a client returns to my chair for another keratin treatment
+            due to frizz or heat damage, it ultimately results in more profit
+            for my business.
           </p>
         </div>
 
@@ -176,9 +224,9 @@ export default function QualityReviewerAdvertorial() {
             href="#ranking"
             onClick={(e) => {
               e.preventDefault();
-              const el = document.getElementById('ranking');
+              const el = document.getElementById("ranking");
               if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
+                el.scrollIntoView({ behavior: "smooth" });
               }
             }}
             className="group inline-flex items-center justify-center bg-[#067766] hover:bg-[#008bff] transition-colors duration-300 rounded-full p-[3px] shadow-[0_4px_12px_rgba(0,0,0,0.15)] text-decoration-none cursor-pointer"
@@ -205,9 +253,31 @@ export default function QualityReviewerAdvertorial() {
             We've Rated The Hair Dryers On 8 Criteria:
           </h2>
           <ul className="flex flex-col gap-6">
-            {['Drying Time', 'Results (How The Hair Looked After)', 'Amount Of Heat/Speed Settings', 'Weight', 'Noise Level', 'Size And Compactness', 'Durability', 'Value For Money'].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-4 md:gap-5 text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide">
-                <svg className="shrink-0 mt-1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3A3A3A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+            {[
+              "Drying Time",
+              "Results (How The Hair Looked After)",
+              "Amount Of Heat/Speed Settings",
+              "Weight",
+              "Noise Level",
+              "Size And Compactness",
+              "Durability",
+              "Value For Money",
+            ].map((item, idx) => (
+              <li
+                key={idx}
+                className="flex items-start gap-4 md:gap-5 text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide"
+              >
+                <svg
+                  className="shrink-0 mt-1"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#3A3A3A"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span className="leading-tight">{item}</span>
@@ -218,132 +288,141 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Green Box: 7 Reasons */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] text-center mb-6">7 Reasons To Get A Hollow Inlet Hair Dryer</h2>
-           <div className="flex flex-col gap-2">
-             <FaqAccordion 
-                 type="reason" 
-                 title="Shields Your Tresses From Heat Damage" 
-                 content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks." 
-                 isOpen={openReason === 0}
-                 onToggle={() => setOpenReason(openReason === 0 ? -1 : 0)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="Salon-Standard Blowouts In Half Your Usual Drying Time" 
-                 content="Thanks to innovative airflow multiplication technology, hollow hair dryers generate up to 15 times the wind velocity of conventional models, ultimately bringing the drying process down to a mere 9 minutes for a full head of hair!" 
-                 isOpen={openReason === 1}
-                 onToggle={() => setOpenReason(openReason === 1 ? -1 : 1)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="Eradicate Frizz Entirely With Enhanced Negative Ions" 
-                 content="By pairing a forceful breeze with sophisticated anion technology, you will notice the advantages of negative ions as never before. Frizz becomes a thing of the past, whilst a consistently sleek and lustrous shine is guaranteed after every blow-dry." 
-                 isOpen={openReason === 2}
-                 onToggle={() => setOpenReason(openReason === 2 ? -1 : 2)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="A Lightweight Build Spares You From Aching Arms" 
-                 content="Since the air intake is positioned at the base, the entire dryer feels considerably lighter and far simpler to manoeuvre. This means an end to fatigued arms, whilst also making the device exceptionally convenient to pack for your travels." 
-                 isOpen={openReason === 3}
-                 onToggle={() => setOpenReason(openReason === 3 ? -1 : 3)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="Reduced Noise Levels Won't Disturb Your Household" 
-                 content="As a rule, hollow inlet models operate at a much lower volume compared to standard hair dryers. This occurs because the internal motor of a hollow air dryer must inherently be brushless, meaning there are fewer loose components rattling around to generate excessive noise." 
-                 isOpen={openReason === 4}
-                 onToggle={() => setOpenReason(openReason === 4 ? -1 : 4)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="Suitable For Every Single Hair Type" 
-                 content="Given that hollow dryers produce such immense airflow power, they feature a broader spectrum of speed options. Furthermore, the integrated microcomputer allows brands to easily provide highly precise heat adjustments. This precision is essential for achieving a tailored blowout that suits your specific hair type and leaves it looking flawless." 
-                 isOpen={openReason === 5}
-                 onToggle={() => setOpenReason(openReason === 5 ? -1 : 5)} 
-               />
-             <FaqAccordion 
-                 type="reason" 
-                 title="Keeps More Money In Your Wallet" 
-                 content="If you were to tally up your expenditure on keratin treatments and professional blow-dries over recent years, the total would likely far exceed the premium cost of a hollow air dryer. If you can manage the initial investment, you are assured of saving both your hard-earned cash and your hair's health! (Not forgetting that the hours previously wasted on endless drying are incredibly valuable, too!)" 
-                 isOpen={openReason === 6}
-                 onToggle={() => setOpenReason(openReason === 6 ? -1 : 6)} 
-               />
-           </div>
+          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] text-center mb-6">
+            7 Reasons To Get A Hollow Inlet Hair Dryer
+          </h2>
+          <div className="flex flex-col gap-2">
+            <FaqAccordion
+              type="reason"
+              title="Shields Your Tresses From Heat Damage"
+              content="Owing to the hollow architecture, manufacturers can now embed a microcomputer to continually assess the temperature of the expelled airflow. Should the breeze become excessively hot, the microcomputer instinctively regulates the heat downwards, entirely preventing damage to your locks."
+              isOpen={openReason === 0}
+              onToggle={() => setOpenReason(openReason === 0 ? -1 : 0)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="Salon-Standard Blowouts In Half Your Usual Drying Time"
+              content="Thanks to innovative airflow multiplication technology, hollow hair dryers generate up to 15 times the wind velocity of conventional models, ultimately bringing the drying process down to a mere 9 minutes for a full head of hair!"
+              isOpen={openReason === 1}
+              onToggle={() => setOpenReason(openReason === 1 ? -1 : 1)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="Eradicate Frizz Entirely With Enhanced Negative Ions"
+              content="By pairing a forceful breeze with sophisticated anion technology, you will notice the advantages of negative ions as never before. Frizz becomes a thing of the past, whilst a consistently sleek and lustrous shine is guaranteed after every blow-dry."
+              isOpen={openReason === 2}
+              onToggle={() => setOpenReason(openReason === 2 ? -1 : 2)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="A Lightweight Build Spares You From Aching Arms"
+              content="Since the air intake is positioned at the base, the entire dryer feels considerably lighter and far simpler to manoeuvre. This means an end to fatigued arms, whilst also making the device exceptionally convenient to pack for your travels."
+              isOpen={openReason === 3}
+              onToggle={() => setOpenReason(openReason === 3 ? -1 : 3)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="Reduced Noise Levels Won't Disturb Your Household"
+              content="As a rule, hollow inlet models operate at a much lower volume compared to standard hair dryers. This occurs because the internal motor of a hollow air dryer must inherently be brushless, meaning there are fewer loose components rattling around to generate excessive noise."
+              isOpen={openReason === 4}
+              onToggle={() => setOpenReason(openReason === 4 ? -1 : 4)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="Suitable For Every Single Hair Type"
+              content="Given that hollow dryers produce such immense airflow power, they feature a broader spectrum of speed options. Furthermore, the integrated microcomputer allows brands to easily provide highly precise heat adjustments. This precision is essential for achieving a tailored blowout that suits your specific hair type and leaves it looking flawless."
+              isOpen={openReason === 5}
+              onToggle={() => setOpenReason(openReason === 5 ? -1 : 5)}
+            />
+            <FaqAccordion
+              type="reason"
+              title="Keeps More Money In Your Wallet"
+              content="If you were to tally up your expenditure on keratin treatments and professional blow-dries over recent years, the total would likely far exceed the premium cost of a hollow air dryer. If you can manage the initial investment, you are assured of saving both your hard-earned cash and your hair's health! (Not forgetting that the hours previously wasted on endless drying are incredibly valuable, too!)"
+              isOpen={openReason === 6}
+              onToggle={() => setOpenReason(openReason === 6 ? -1 : 6)}
+            />
+          </div>
         </div>
 
         {/* Green Box: What to Look For */}
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#2aa359] text-center mb-6">What To Look For</h2>
-           <div className="flex flex-col gap-2">
-             <FaqAccordion 
-                 type="look" 
-                 title="High Airflow (M/S) Rather Than Wattage" 
-                 content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!" 
-                 isOpen={openLook === 0}
-                 onToggle={() => setOpenLook(openLook === 0 ? -1 : 0)} 
-               />
-             <FaqAccordion 
-                 type="look" 
-                 title="Smart Temperature Regulation" 
-                 content="Should you desire complete safeguarding against heat damage whilst drying, it is imperative to seek out a model equipped with active temperature monitoring. Typically, this is an advantage exclusive to hollow air devices, given that integrating such sensors into the layout of a conventional dryer is remarkably difficult." 
-                 isOpen={openLook === 1}
-                 onToggle={() => setOpenLook(openLook === 1 ? -1 : 1)} 
-               />
-             <FaqAccordion 
-                 type="look" 
-                 title="Negative Ion Technology To Tackle Frizz" 
-                 content="You have undoubtedly come across frizz-fighting buzzwords like tourmaline, ceramic, and negative ions. Based on our extensive trials, negative ions remain unparalleled for subduing unruly frizz and leaving you with sleek, glossy tresses. Moreover, when paired with an intense airflow (m/s), you can be virtually certain that frizzy strands will be banished for good." 
-                 isOpen={openLook === 2}
-                 onToggle={() => setOpenLook(openLook === 2 ? -1 : 2)} 
-               />
-             <FaqAccordion 
-                 type="look" 
-                 title="Delayed Cooling Shutdown System" 
-                 content="Many traditional hair dryer motors are constructed in a manner that causes rapid degradation with frequent usage. Specifically, when a motor transitions from intense heat to cold in a brief timeframe, it deteriorates much faster. Certain contemporary models employ a phased shutdown mechanism that gradually cools the heating element after being switched off, ensuring minimal wear and tear on the internal components." 
-                 isOpen={openLook === 3}
-                 onToggle={() => setOpenLook(openLook === 3 ? -1 : 3)} 
-               />
-           </div>
+          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#2aa359] text-center mb-6">
+            What To Look For
+          </h2>
+          <div className="flex flex-col gap-2">
+            <FaqAccordion
+              type="look"
+              title="High Airflow (M/S) Rather Than Wattage"
+              content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!"
+              isOpen={openLook === 0}
+              onToggle={() => setOpenLook(openLook === 0 ? -1 : 0)}
+            />
+            <FaqAccordion
+              type="look"
+              title="Smart Temperature Regulation"
+              content="Should you desire complete safeguarding against heat damage whilst drying, it is imperative to seek out a model equipped with active temperature monitoring. Typically, this is an advantage exclusive to hollow air devices, given that integrating such sensors into the layout of a conventional dryer is remarkably difficult."
+              isOpen={openLook === 1}
+              onToggle={() => setOpenLook(openLook === 1 ? -1 : 1)}
+            />
+            <FaqAccordion
+              type="look"
+              title="Negative Ion Technology To Tackle Frizz"
+              content="You have undoubtedly come across frizz-fighting buzzwords like tourmaline, ceramic, and negative ions. Based on our extensive trials, negative ions remain unparalleled for subduing unruly frizz and leaving you with sleek, glossy tresses. Moreover, when paired with an intense airflow (m/s), you can be virtually certain that frizzy strands will be banished for good."
+              isOpen={openLook === 2}
+              onToggle={() => setOpenLook(openLook === 2 ? -1 : 2)}
+            />
+            <FaqAccordion
+              type="look"
+              title="Delayed Cooling Shutdown System"
+              content="Many traditional hair dryer motors are constructed in a manner that causes rapid degradation with frequent usage. Specifically, when a motor transitions from intense heat to cold in a brief timeframe, it deteriorates much faster. Certain contemporary models employ a phased shutdown mechanism that gradually cools the heating element after being switched off, ensuring minimal wear and tear on the internal components."
+              isOpen={openLook === 3}
+              onToggle={() => setOpenLook(openLook === 3 ? -1 : 3)}
+            />
+          </div>
         </div>
 
         {/* Red Box: What to Avoid */}
         <div className="border-2 border-[#ea1045] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#ea1045] text-center mb-6">What To Avoid</h2>
-           <div className="flex flex-col gap-2">
-             <FaqAccordion 
-                 type="avoid" 
-                 title="Limited Heat And Speed Options" 
-                 content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent." 
-                 isOpen={openAvoid === 0}
-                 onToggle={() => setOpenAvoid(openAvoid === 0 ? -1 : 0)} 
-               />
-             <FaqAccordion 
-                 type="avoid" 
-                 title="Bulky And Cumbersome Designs" 
-                 content="How frequently have you felt as though you have completed a rigorous upper body workout just from drying your hair? The majority of conventional dryers remain quite heavy and rather awkward to hold. Fortunately, many recent models spare you this discomfort by utilising lightweight materials and cleverly distributing the bulk down into the handle grip, rather than leaving it top-heavy." 
-                 isOpen={openAvoid === 1}
-                 onToggle={() => setOpenAvoid(openAvoid === 1 ? -1 : 1)} 
-               />
-             <FaqAccordion 
-                 type="avoid" 
-                 title="An Absence Of Styling Attachments" 
-                 content="If your goal is a versatile hair dryer that allows you to execute any look with absolute precision, you must check for the included accessory nozzles. A diffuser alongside a sleek concentrator nozzle ought to be the bare minimum to guarantee you can sculpt your hair precisely to your liking." 
-                 isOpen={openAvoid === 2}
-                 onToggle={() => setOpenAvoid(openAvoid === 2 ? -1 : 2)} 
-               />
-             <FaqAccordion 
-                 type="avoid" 
-                 title="Excessively Loud Motors" 
-                 content="Have you ever felt as though you were standing on an airport runway whilst blow-drying your hair? Truthfully, that comparison is not too much of an exaggeration. Most dryers manufactured prior to 2016 produce noise levels hovering between 90 and 110 decibels, which rivals the roar of an aeroplane taking flight. Thanks to recent leaps in motor technology, modern alternatives are virtually half as noisy, allowing you to dry your hair early in the morning without rousing the entire household!" 
-                 isOpen={openAvoid === 3}
-                 onToggle={() => setOpenAvoid(openAvoid === 3 ? -1 : 3)} 
-               />
-           </div>
+          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#ea1045] text-center mb-6">
+            What To Avoid
+          </h2>
+          <div className="flex flex-col gap-2">
+            <FaqAccordion
+              type="avoid"
+              title="Limited Heat And Speed Options"
+              content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent."
+              isOpen={openAvoid === 0}
+              onToggle={() => setOpenAvoid(openAvoid === 0 ? -1 : 0)}
+            />
+            <FaqAccordion
+              type="avoid"
+              title="Bulky And Cumbersome Designs"
+              content="How frequently have you felt as though you have completed a rigorous upper body workout just from drying your hair? The majority of conventional dryers remain quite heavy and rather awkward to hold. Fortunately, many recent models spare you this discomfort by utilising lightweight materials and cleverly distributing the bulk down into the handle grip, rather than leaving it top-heavy."
+              isOpen={openAvoid === 1}
+              onToggle={() => setOpenAvoid(openAvoid === 1 ? -1 : 1)}
+            />
+            <FaqAccordion
+              type="avoid"
+              title="An Absence Of Styling Attachments"
+              content="If your goal is a versatile hair dryer that allows you to execute any look with absolute precision, you must check for the included accessory nozzles. A diffuser alongside a sleek concentrator nozzle ought to be the bare minimum to guarantee you can sculpt your hair precisely to your liking."
+              isOpen={openAvoid === 2}
+              onToggle={() => setOpenAvoid(openAvoid === 2 ? -1 : 2)}
+            />
+            <FaqAccordion
+              type="avoid"
+              title="Excessively Loud Motors"
+              content="Have you ever felt as though you were standing on an airport runway whilst blow-drying your hair? Truthfully, that comparison is not too much of an exaggeration. Most dryers manufactured prior to 2016 produce noise levels hovering between 90 and 110 decibels, which rivals the roar of an aeroplane taking flight. Thanks to recent leaps in motor technology, modern alternatives are virtually half as noisy, allowing you to dry your hair early in the morning without rousing the entire household!"
+              isOpen={openAvoid === 3}
+              onToggle={() => setOpenAvoid(openAvoid === 3 ? -1 : 3)}
+            />
+          </div>
         </div>
 
         {/* Blue Banner */}
-        <div id="ranking" className="bg-[#008BFF] w-full py-6 mb-12 text-center scroll-mt-6">
+        <div
+          id="ranking"
+          className="bg-[#008BFF] w-full py-6 mb-12 text-center scroll-mt-6"
+        >
           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#FFFFFF] uppercase tracking-wider m-0 leading-none">
             THE 5 BEST HAIR DRYERS IN 2026
           </h2>
@@ -351,7 +430,10 @@ export default function QualityReviewerAdvertorial() {
 
         {/* Subtitle text paragraph */}
         <p className="text-[18px] leading-[1.375] mb-12 text-[#4B4F58]">
-          Over the past few years, we have rigorously tested 48 distinct hair dryers. The following 5 models represent the absolute finest on the market, chosen based upon our expert evaluations combined with genuine consumer feedback:
+          Over the past few years, we have rigorously tested 48 distinct hair
+          dryers. The following 5 models represent the absolute finest on the
+          market, chosen based upon our expert evaluations combined with genuine
+          consumer feedback:
         </p>
       </main>
 
@@ -360,9 +442,9 @@ export default function QualityReviewerAdvertorial() {
         <div className="max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Product List */}
           <div className="space-y-12 md:space-y-16">
-             {products.map((product: any, idx: number) => (
-                <QualityReviewerCard key={idx} product={product} />
-             ))}
+            {products.map((product: any, idx: number) => (
+              <QualityReviewerCard key={idx} product={product} />
+            ))}
           </div>
 
           {/* Video Section from previous page */}
@@ -441,6 +523,22 @@ export default function QualityReviewerAdvertorial() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Sticky Floating CTA Button (All Devices) */}
+      <div className="fixed bottom-4 sm:bottom-6 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[950px] mx-auto w-full">
+          <a
+            href="https://uk.muuhu.com/products/muuhu-hair-dryer"
+            aria-label="Take me to the winning hair dryer"
+            className="pointer-events-auto block w-full text-center bg-[#067766] hover:bg-[#067766] text-white py-4 sm:py-4.5 px-4 rounded-[8px] font-extrabold text-[15px] sm:text-[18px] md:text-[20px] shadow-[0_8px_30px_rgba(0,0,0,0.3)] tracking-wider uppercase whitespace-nowrap relative overflow-hidden group active:scale-[0.99] transition-transform"
+          >
+            <span className="relative z-10 whitespace-nowrap">
+              TAKE ME TO THE WINNING HAIR DRYER
+            </span>
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_2s_infinite]" />
+          </a>
         </div>
       </div>
     </div>
