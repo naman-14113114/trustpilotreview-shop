@@ -137,10 +137,110 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
 
         {/* CTA Button */}
         <div className="flex justify-center mt-10">
-          <a href={product.learnMoreUrl} className="bg-[#008BFF] text-[#FFFFFF] font-bold text-xl py-4 px-16 rounded hover:bg-blue-600 transition-colors">
+          <a href={product.learnMoreUrl} className="bg-[#008BFF] text-[#FFFFFF] font-bold text-xl py-4 px-16 rounded-[8px] hover:bg-blue-600 transition-colors">
             Learn More
           </a>
         </div>
+
+        {/* Free Gifts Discovery Section (Rank 1 / Muuhu only) */}
+        {product.rank === 1 && (
+          <div className="mt-12 border-2 border-[#008BFF] bg-blue-50/40 rounded-[8px] p-6 md:p-8 relative overflow-hidden shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-[#008BFF] px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
+              <span className="text-base">💡</span> Editor&apos;s Tip
+            </div>
+
+            <h3 className="font-[family-name:var(--font-oswald)] text-[26px] md:text-[30px] font-bold text-[#3A3A3A] mb-3 leading-tight uppercase">
+              Active Offer Found: £129 in{" "}
+              <span className="text-[#008BFF] bg-blue-100 px-2 py-0.5 rounded inline-block">
+                FREE GIFTS
+              </span>
+            </h3>
+
+            <p className="text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[16px] md:text-[18px] leading-relaxed mb-8">
+              While researching, we found Muuhu is running a limited-time offer bundling these 3 premium accessories free with every hair dryer purchase.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+              {/* Gift 1: Premium Packaging */}
+              <a
+                href={product.learnMoreUrl}
+                className="bg-white rounded-[8px] p-4 border border-[#CCCCCC] hover:border-[#008BFF] shadow-sm text-center transform hover:-translate-y-1 transition-all relative block group"
+              >
+                <div className="absolute -top-2.5 -right-2.5 bg-[#008BFF] text-white font-bold text-xs sm:text-sm px-3 py-1 rounded-full shadow-md z-20">
+                  FREE
+                </div>
+                <div className="relative mb-3 rounded-md overflow-hidden bg-gray-50 border border-slate-100 aspect-square">
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-700 font-bold line-through z-10 bg-white/95 px-2.5 py-0.5 rounded-full text-xs shadow-sm whitespace-nowrap">
+                    £35
+                  </span>
+                  <img
+                    src="/img/hair/muuhu-luxury-case.webp"
+                    alt="Premium Packaging"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="font-[family-name:var(--font-oswald)] font-bold text-[#3A3A3A] text-base md:text-lg leading-tight uppercase">
+                  Premium Packaging
+                </p>
+              </a>
+
+              {/* Gift 2: Muuhu ScalpPro */}
+              <a
+                href={product.learnMoreUrl}
+                className="bg-white rounded-[8px] p-4 border border-[#CCCCCC] hover:border-[#008BFF] shadow-sm text-center transform hover:-translate-y-1 transition-all relative block group"
+              >
+                <div className="absolute -top-2.5 -right-2.5 bg-[#008BFF] text-white font-bold text-xs sm:text-sm px-3 py-1 rounded-full shadow-md z-20">
+                  FREE
+                </div>
+                <div className="relative mb-3 rounded-md overflow-hidden bg-gray-50 border border-slate-100 aspect-square">
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-700 font-bold line-through z-10 bg-white/95 px-2.5 py-0.5 rounded-full text-xs shadow-sm whitespace-nowrap">
+                    £79
+                  </span>
+                  <img
+                    src="/img/hair/muuhu-comb.webp"
+                    alt="Muuhu ScalpPro"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="font-[family-name:var(--font-oswald)] font-bold text-[#3A3A3A] text-base md:text-lg leading-tight uppercase">
+                  Muuhu ScalpPro
+                </p>
+              </a>
+
+              {/* Gift 3: Haircare E-Book */}
+              <a
+                href={product.learnMoreUrl}
+                className="bg-white rounded-[8px] p-4 border border-[#CCCCCC] hover:border-[#008BFF] shadow-sm text-center transform hover:-translate-y-1 transition-all relative block group"
+              >
+                <div className="absolute -top-2.5 -right-2.5 bg-[#008BFF] text-white font-bold text-xs sm:text-sm px-3 py-1 rounded-full shadow-md z-20">
+                  FREE
+                </div>
+                <div className="relative mb-3 rounded-md overflow-hidden bg-gray-50 border border-slate-100 aspect-square">
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-700 font-bold line-through z-10 bg-white/95 px-2.5 py-0.5 rounded-full text-xs shadow-sm whitespace-nowrap">
+                    £15
+                  </span>
+                  <img
+                    src="/img/hair/muuhu-expert-hair-ebook.webp"
+                    alt="Haircare E-book"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="font-[family-name:var(--font-oswald)] font-bold text-[#3A3A3A] text-base md:text-lg leading-tight uppercase">
+                  Haircare E-book
+                </p>
+              </a>
+            </div>
+
+            <div className="flex justify-center">
+              <a
+                href={product.learnMoreUrl}
+                className="w-full sm:w-auto text-center bg-[#008BFF] hover:bg-blue-600 text-white font-[family-name:var(--font-oswald)] font-bold text-lg md:text-xl py-3.5 px-8 md:px-12 rounded-[8px] shadow-md transition-colors uppercase tracking-wider"
+              >
+                Check If Free Gifts Are Still Available &rarr;
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

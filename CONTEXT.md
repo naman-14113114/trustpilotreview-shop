@@ -6892,3 +6892,22 @@ or deployment-setting change occurred.
   - Maintained bold uppercase text: `TAKE ME TO THE WINNING HAIR DRYER`.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added 3 Free Gifts Section Below Learn More Inside White Container
+- **User Intent & Protected Scope:** Inside the same white card container for Product 1 (Muuhu Hair Dryer), add the 3 Free Gifts discovery section from the previous advertorial page styled to match the new quality-reviewer theme/design. Ensure every free gift link directs users to the Muuhu Hair Dryer page (`https://uk.muuhu.com/products/muuhu-hair-dryer`).
+- **Starting Git State:** `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+  - `apps/site/src/data/hair.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Added the 3 Free Gifts discovery box underneath the `Learn More` button for `product.rank === 1`.
+  - Displayed the 3 gifts:
+    1. Premium Packaging (£35, `/img/hair/muuhu-luxury-case.webp`)
+    2. Muuhu ScalpPro (£79, `/img/hair/muuhu-comb.webp`)
+    3. Haircare E-book (£15, `/img/hair/muuhu-expert-hair-ebook.webp`)
+  - Styled with Oswald/Arimo typography, blue `#008BFF` accents, rounded `rounded-[8px]` cards, and "FREE" badges.
+  - Linked all gift cards and the bottom "Check If Free Gifts Are Still Available" button directly to `product.learnMoreUrl` (`https://uk.muuhu.com/products/muuhu-hair-dryer`).
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
