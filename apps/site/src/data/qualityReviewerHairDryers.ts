@@ -50,6 +50,7 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "12 Different Heat And Speed Settings",
       "Rated 4.9/5 by 16,000+ UK Customers",
       "Free Gifts with Current Orders",
+      "Smart App Companion",
       "90-Day Money-Back Guarantee",
     ],
     cons: [
@@ -61,7 +62,7 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
       "A major advantage is the complete styling system: a dedicated L-shaped base, left and right auto-wrap Coanda curlers, a smoothing brush, a round volumising brush, a concentrator nozzle, and a diffuser. Intelligent heat control and negative-ion technology dry hair fast while helping protect against heat damage.",
       "Trusted by over 16,000 customers with a 4.9-star rating, this styler delivers salon results at home. Currently priced at £129, it offers the best value on the market, combining a 110,000 RPM motor, seven attachments, ionic care, a 2-year warranty, and a 90-day money-back guarantee."
     ],
-    image_path: "/img/hair/muuhu-airpro-hair-dryer.webp"
+    image_path: "/img/hair/muuhu-airpro-hair-dryer.png"
   },
   {
     id: 2,

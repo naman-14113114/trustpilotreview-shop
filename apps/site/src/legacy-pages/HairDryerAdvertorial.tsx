@@ -1322,7 +1322,7 @@ export default function HairDryerAdvertorial({
     title: isBestHairLanding
       ? "Professional Hairdresser"
       : "Haircare and hair style expert",
-    image: "/img/hair/styler_image.webp",
+    image: "/img/hair/amara-wright-hairdresser.webp",
     yearsExperience: 12,
     dryersReviewed: 22,
     testingHours: 240,

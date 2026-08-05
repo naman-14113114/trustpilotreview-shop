@@ -7032,3 +7032,101 @@ or deployment-setting change occurred.
   - Set list item layout to `flex items-center gap-3` with `gap-1` on the list so that adjacent circular icons nearly touch vertically while remaining centered with text.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated #1 Muuhu Product Card Image to SEO-Named New Asset
+- **User Intent & Protected Scope:** Replace previous #1 Muuhu hair dryer product image with user-provided `trustpilot_muuhu_image.webp` under the SEO-optimized name `muuhu-airpro-hair-dryer.webp`.
+- **Starting Git State:** `QualityReviewerCard.tsx` and `qualityReviewerHairDryers.ts` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:**
+  - `apps/site/public/img/hair/muuhu-airpro-hair-dryer.webp`
+- **Changes Made:**
+  - Replaced `apps/site/public/img/hair/muuhu-airpro-hair-dryer.webp` with the new image from `E:\1st YEAR DTU\New folder\hair Dryer\hair dryer compressed images\trustpilot_muuhu_image.webp`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Synced Fresh SEO Image Asset Across Both Main Table Card & Desktop Sticky Card
+- **User Intent & Protected Scope:** Ensure the new Muuhu hair dryer product image (`trustpilot_muuhu_image.webp`) is applied on BOTH places (main product card table on the left AND desktop sticky widget on the right).
+- **Starting Git State:** `apps/site/public/img/hair/muuhu-airpro-hair-dryer.webp` modified.
+- **Inspected Files:**
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:**
+  - `apps/site/public/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp`
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Copied new asset to `/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp`.
+  - Updated `qualityReviewerHairDryers.ts` line 64 and `QualityReviewerAdvertorial.tsx` line 564 to use the fresh SEO URL `/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp`.
+  - Added `unoptimized` to `<Image>` in `QualityReviewerCard.tsx` to prevent Next.js image cache from serving stale images.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Container Image for #1 Muuhu to trustpilot_muuhu_image.png
+- **User Intent & Protected Scope:** Replace the #1 Muuhu product card image with the background-removed PNG `E:\1st YEAR DTU\New folder\hair Dryer\trustpilot_muuhu_image.png` using a clean SEO name `/img/hair/muuhu-airpro-hair-dryer.png`.
+- **Starting Git State:** `qualityReviewerHairDryers.ts`, `QualityReviewerCard.tsx` modified.
+- **Inspected Files:**
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:**
+  - `apps/site/public/img/hair/muuhu-airpro-hair-dryer.png`
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Copied `trustpilot_muuhu_image.png` to `/img/hair/muuhu-airpro-hair-dryer.png`.
+  - Updated `qualityReviewerHairDryers.ts` to reference `/img/hair/muuhu-airpro-hair-dryer.png`.
+  - Replaced Next.js `<Image>` with direct `<img>` tag in `QualityReviewerCard.tsx` for immediate raw asset rendering without server caching.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Hairdresser / Reviewer Profile Image with SEO Naming
+- **User Intent & Protected Scope:** Replace hairdresser / reviewer image above the article with `E:\1st YEAR DTU\New folder\hair Dryer\hair dryer compressed images\ChatGPT Image Aug 5, 2026, 09_38_48 AM.webp` renamed according to Muuhu SEO.
+- **Starting Git State:** `QualityReviewerCard.tsx`, `qualityReviewerHairDryers.ts` modified.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+- **Changed Files:**
+  - `apps/site/public/img/hair/amara-wright-hairdresser.webp`
+  - `apps/site/public/img/hair/styler_image.webp`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/HairDryerAdvertorial.tsx`
+- **Changes Made:**
+  - Copied source image to `/img/hair/amara-wright-hairdresser.webp` and overwrote `/img/hair/styler_image.webp`.
+  - Updated `QualityReviewerAdvertorial.tsx` (line 126) and `HairDryerAdvertorial.tsx` (line 1325) to reference `/img/hair/amara-wright-hairdresser.webp` with descriptive alt `Amara Wright - Professional Hairdresser`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Removed Hover Opacity/Overlay from Hero and Product Images
+- **User Intent & Protected Scope:** Keep affiliate links intact on the hero banner image and product card images, but eliminate any opacity dimming or hover overlay effects so texture/brightness remain completely natural.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx`, `QualityReviewerCard.tsx` modified.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Removed `hover:opacity-90 transition-opacity` from the hero banner image link in `QualityReviewerAdvertorial.tsx` (line 165).
+  - Removed `hover:opacity-90 transition-opacity` from product card image link in `QualityReviewerCard.tsx` (line 60).
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Reduced Bottom Padding & Spacing in Verdict Section
+- **User Intent & Protected Scope:** Tighten and reduce the bottom padding and empty space in the Editor's Verdict section and container card.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Reduced outer grey section padding from `pt-12 pb-20 md:pt-16 md:pb-24` to `pt-10 pb-8 md:pt-14 md:pb-10`.
+  - Reduced section wrapper margin from `mt-16 mb-8` to `mt-12 mb-2`.
+  - Reduced white card padding from `p-6 md:p-8` to `p-5 md:py-6 md:px-8`.
+  - Tightened vertical margins on title, divider, price line, rating badge, and button.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

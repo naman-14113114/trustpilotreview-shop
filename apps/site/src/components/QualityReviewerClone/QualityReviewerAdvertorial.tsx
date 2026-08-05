@@ -123,8 +123,8 @@ export default function QualityReviewerAdvertorial() {
           <div className="flex flex-col md:block items-center text-center md:text-left w-full">
             <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
               <img
-                src="/img/hair/styler_image.webp"
-                alt="Amara Wright"
+                src="/img/hair/amara-wright-hairdresser.webp"
+                alt="Amara Wright - Professional Hairdresser"
                 className="w-24 h-24 md:w-24 md:h-24 rounded-full object-cover mb-2 md:mb-0"
               />
               <div>
@@ -162,7 +162,7 @@ export default function QualityReviewerAdvertorial() {
         <div className="w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl">
           <a
             href="https://uk.muuhu.com/products/muuhu-hair-dryer"
-            className="block hover:opacity-90 transition-opacity"
+            className="block"
           >
             <img
               src="/img/hair/muuhu-hair-dryer-banner.webp"
@@ -439,7 +439,7 @@ export default function QualityReviewerAdvertorial() {
       </main>
 
       {/* Grey Background Section for 5 Dryers and Video */}
-      <div className="bg-[#f4f4f4] pt-12 pb-20 md:pt-16 md:pb-24">
+      <div className="bg-[#f4f4f4] pt-10 pb-8 md:pt-14 md:pb-10">
         <div className="max-w-[950px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Product List */}
           <div className="space-y-12 md:space-y-16">
@@ -449,12 +449,12 @@ export default function QualityReviewerAdvertorial() {
           </div>
 
           {/* Video Section from previous page */}
-          <div className="mt-16 mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
+          <div className="mt-12 mb-2">
+            <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-8 font-serif tracking-wide">
               {market.key === "ca" ? "Editor's Pick" : "Editor's Verdict"}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center bg-white p-6 md:p-8 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center bg-white p-5 md:py-6 md:px-8 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-gray-100">
               {/* Left Video Area */}
               <div className="relative">
                 <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
@@ -493,19 +493,19 @@ export default function QualityReviewerAdvertorial() {
 
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
-                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight text-center">
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3 font-serif tracking-tight text-center">
                   <b>Muuhu AirPro</b>
                 </h3>
 
-                <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
+                <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-3 md:mb-4"></div>
 
-                <div className="text-2xl md:text-3xl font-bold text-[#8b1528] mb-5 md:mb-8 font-sans text-center">
+                <div className="text-2xl md:text-3xl font-bold text-[#8b1528] mb-4 md:mb-5 font-sans text-center">
                   {market.key === "ca" ? "Current Price" : "Now at 50% off"}
                 </div>
 
                 {/* Editorial rating badge with Trustpilot styling */}
-                <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
-                  <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="border border-gray-200 bg-white/70 rounded-xl p-2.5 md:p-3 mx-auto mb-4 md:mb-5 inline-block shadow-sm">
+                  <div className="flex items-center justify-center gap-2 mb-1.5">
                     <span className="font-bold text-base md:text-lg text-black font-sans">
                       Editor&apos;s top pick
                     </span>
@@ -519,7 +519,7 @@ export default function QualityReviewerAdvertorial() {
                 <a
                   href="https://uk.muuhu.com/products/muuhu-hair-dryer"
                   aria-label="Check Availability"
-                  className="mx-auto w-auto bg-[#393BE7] hover:bg-[#2022d4] text-white text-base sm:text-lg font-bold font-sans tracking-wide py-4 px-8 sm:px-10 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase whitespace-nowrap"
+                  className="mx-auto w-auto bg-[#393BE7] hover:bg-[#2022d4] text-white text-base sm:text-lg font-bold font-sans tracking-wide py-3 px-8 sm:px-10 rounded shadow-[0_4px_10px_rgba(57,59,231,0.4)] transition-all flex items-center justify-center text-center uppercase whitespace-nowrap"
                 >
                   CHECK AVAILABILITY
                 </a>
@@ -561,7 +561,7 @@ export default function QualityReviewerAdvertorial() {
             {/* Product Image (Large, No Inner Card/Border) */}
             <div className="w-28 h-28 2xl:w-32 2xl:h-32 mx-auto mb-2 flex items-center justify-center">
               <img
-                src="/img/hair/muuhu-airpro-hair-dryer.webp"
+                src="/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp"
                 alt="Muuhu AirPro"
                 className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
               />

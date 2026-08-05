@@ -57,8 +57,8 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
         <div className="border border-[#CCCCCC] grid grid-cols-1 md:grid-cols-3 mt-8 mb-10">
           {/* Left: Image */}
           <div className="flex items-center justify-center p-6 md:p-8">
-            <a href={product.learnMoreUrl} className="relative w-[250px] h-[250px] block cursor-pointer hover:opacity-90 transition-opacity">
-              <Image src={product.imageUrl} alt={product.name} fill className="object-contain" />
+            <a href={product.learnMoreUrl} className="relative w-[250px] h-[250px] flex items-center justify-center cursor-pointer">
+              <img src={product.imageUrl} alt={product.name} className="w-full h-full object-contain" />
             </a>
           </div>
 
