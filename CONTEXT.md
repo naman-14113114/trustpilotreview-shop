@@ -7009,3 +7009,26 @@ or deployment-setting change occurred.
   - Removed the redundant `<hr className="border-[#CCCCCC] mb-10" />` that was rendering underneath the bottom border of the last `AnimatedRatingBar`.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Compacted Pros and Cons Spacing to Match Original Reference
+- **User Intent & Protected Scope:** Adjust Pros and Cons bullet spacing in CSS to be compact and tightly spaced like the quality-reviewer reference design.
+- **Starting Git State:** `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Reduced list gap to `gap-1.5`, set `leading-[1.3]`, adjusted icon spacing to `gap-3`, aligned icon with `mt-[1px]`, and adjusted section heading margin to `mb-3`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Increased Pros & Cons Bullet Icon Size and Boldness
+- **User Intent & Protected Scope:** Increase the checkmark and cross bullet icon size (to 26px) with bold stroke (2.5) and tight `gap-1` spacing so that adjacent icons nearly touch each other vertically, matching the quality-reviewer design.
+- **Starting Git State:** `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Increased SVG dimensions to `width="26" height="26"` with `strokeWidth="2.5"`.
+  - Set list item layout to `flex items-center gap-3` with `gap-1` on the list so that adjacent circular icons nearly touch vertically while remaining centered with text.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

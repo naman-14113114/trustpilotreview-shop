@@ -97,15 +97,15 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
         {/* Split Content */}
         <div className="flex flex-col lg:flex-row gap-10 mb-10">
           {/* Pros & Cons */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
+          <div className="w-full lg:w-1/2 flex flex-col gap-6">
             <div>
-              <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-5 uppercase">Pros</h3>
+              <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-3 uppercase">Pros</h3>
               <ul className="flex flex-col gap-1">
                 {product.pros.map((pro, i) => (
-                  <li key={i} className="flex items-start gap-4 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[18px]">
-                    <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#83D221" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9 12l2 2 4-4" />
+                  <li key={i} className="flex items-center gap-3 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[17px] md:text-[18px] leading-tight">
+                    <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#83D221" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="9.5" />
+                      <path d="M8 12.5l3 3 5.5-5.5" />
                     </svg>
                     <span>{pro}</span>
                   </li>
@@ -113,14 +113,13 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
               </ul>
             </div>
             <div>
-              <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-5 uppercase">Cons</h3>
+              <h3 className="font-[family-name:var(--font-oswald)] text-[32px] font-semibold text-[#3A3A3A] mb-3 uppercase">Cons</h3>
               <ul className="flex flex-col gap-1">
                 {product.cons.map((con, i) => (
-                  <li key={i} className="flex items-start gap-4 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[18px]">
-                    <svg className="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea1045" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M15 9l-6 6" />
-                      <path d="M9 9l6 6" />
+                  <li key={i} className="flex items-center gap-3 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-[17px] md:text-[18px] leading-tight">
+                    <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ea1045" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="9.5" />
+                      <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" />
                     </svg>
                     <span>{con}</span>
                   </li>
