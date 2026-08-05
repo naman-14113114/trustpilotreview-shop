@@ -6982,3 +6982,18 @@ or deployment-setting change occurred.
   - Added `poster="/assets/hair-dryer-video-poster.webp"` to the `<video>` elements in both `QualityReviewerAdvertorial.tsx` and `HairDryerAdvertorial.tsx`.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Muuhu Hair Dryer Links to All 5 Votes Rating Circles & #1 Product Heading
+- **User Intent & Protected Scope:** Add link to Muuhu hair dryer page (`https://uk.muuhu.com/products/muuhu-hair-dryer`) on all 5 rating circle / votes components with clean styling and no hover color changes, and add link to the #1 product title heading only (not on competitor headings).
+- **Starting Git State:** `AnimatedRatingCircle.tsx` and `QualityReviewerCard.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/AnimatedRatingCircle.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changed Files:**
+  - `apps/site/src/components/QualityReviewerClone/AnimatedRatingCircle.tsx`
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerCard.tsx`
+- **Changes Made:**
+  - Wrapped `AnimatedRatingCircle` inside an `<a>` tag linking to `https://uk.muuhu.com/products/muuhu-hair-dryer`, removed the color-shifting hover effect on the SVG stroke to keep it clean and simple.
+  - Linked the #1 product name heading (`1. Muuhu AirPro`) to `https://uk.muuhu.com/products/muuhu-hair-dryer` while keeping headings 2 through 5 as non-linked text.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.

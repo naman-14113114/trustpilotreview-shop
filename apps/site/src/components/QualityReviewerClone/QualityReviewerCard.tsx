@@ -33,7 +33,16 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
         <div className="flex justify-between items-start mb-2">
           <div>
             <h2 className="text-[#3601FF] font-[family-name:var(--font-oswald)] text-[32px] font-semibold leading-tight">
-              {product.rank}. {product.name}
+              {product.rank === 1 ? (
+                <a
+                  href={product.learnMoreUrl}
+                  className="hover:underline text-[#3601FF]"
+                >
+                  {product.rank}. {product.name}
+                </a>
+              ) : (
+                <>{product.rank}. {product.name}</>
+              )}
             </h2>
             <div className="mt-1 text-[#4B4F58] font-[family-name:var(--font-arimo)] text-lg">
               By <a href={product.brandUrl} className="text-[#008BFF] hover:underline font-bold">{product.brand}</a>

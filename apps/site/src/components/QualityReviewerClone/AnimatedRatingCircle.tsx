@@ -5,9 +5,15 @@ interface Props {
   votes: string | number;
   score: string;
   percentage: number;
+  href?: string;
 }
 
-export default function AnimatedRatingCircle({ votes, score, percentage }: Props) {
+export default function AnimatedRatingCircle({
+  votes,
+  score,
+  percentage,
+  href = "https://uk.muuhu.com/products/muuhu-hair-dryer"
+}: Props) {
   const radius = 111;
   const circumference = 2 * Math.PI * radius;
   const [offset, setOffset] = useState(circumference);
@@ -29,28 +35,41 @@ export default function AnimatedRatingCircle({ votes, score, percentage }: Props
   }, [percentage, circumference]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center">
-      <svg ref={circleRef} className="transform -rotate-90 group cursor-pointer" width="250" height="250" viewBox="0 0 250 250">
+    <a
+      href={href}
+      className="relative flex flex-col items-center justify-center cursor-pointer block no-underline"
+    >
+      <svg
+        ref={circleRef}
+        className="transform -rotate-90 block"
+        width="250"
+        height="250"
+        viewBox="0 0 250 250"
+      >
         <circle
-          cx="125" cy="125" r={radius}
+          cx="125"
+          cy="125"
+          r={radius}
           fill="transparent"
           stroke="#4682b426"
           strokeWidth="14"
         />
         <circle
-          cx="125" cy="125" r={radius}
+          cx="125"
+          cy="125"
+          r={radius}
           fill="transparent"
           strokeWidth="10"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          className="transition-all duration-[1500ms] ease-out stroke-[#83D221] group-hover:stroke-[#3878ff]"
+          className="transition-all duration-[1500ms] ease-out stroke-[#3878ff]"
           strokeLinecap="round"
         />
       </svg>
-      <div className="absolute flex flex-col items-center justify-center font-[family-name:var(--font-oswald)] pointer-events-none">
+      <div className="absolute flex flex-col items-center justify-center font-[family-name:var(--font-oswald)]">
         <span className="text-[14px] text-gray-500 uppercase tracking-widest">{votes} Votes</span>
         <span className="text-[42px] font-bold text-[#3A3A3A] leading-none mt-1">{score}</span>
       </div>
-    </div>
+    </a>
   );
 }
