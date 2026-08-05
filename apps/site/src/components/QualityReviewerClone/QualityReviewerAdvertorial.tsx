@@ -526,18 +526,55 @@ export default function QualityReviewerAdvertorial() {
         </div>
       </div>
 
-      {/* Sticky Floating CTA Button (All Devices) */}
-      <div className="fixed bottom-4 sm:bottom-6 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8">
+      {/* Mobile & Tablet Bottom Sticky CTA */}
+      <div className="xl:hidden fixed bottom-4 sm:bottom-6 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6">
         <div className="max-w-[950px] mx-auto w-full">
           <a
             href="https://uk.muuhu.com/products/muuhu-hair-dryer"
             aria-label="Take me to the winning hair dryer"
-            className="pointer-events-auto block w-full text-center bg-[#067766] hover:bg-[#067766] text-white py-4 sm:py-4.5 px-4 rounded-[8px] font-extrabold text-[15px] sm:text-[18px] md:text-[20px] shadow-[0_8px_30px_rgba(0,0,0,0.3)] tracking-wider uppercase whitespace-nowrap relative overflow-hidden group active:scale-[0.99] transition-transform"
+            className="pointer-events-auto block w-full text-center bg-[#067766] hover:bg-[#067766] text-white py-4 sm:py-4.5 px-4 rounded-[8px] font-extrabold text-[15px] sm:text-[18px] shadow-[0_8px_30px_rgba(0,0,0,0.3)] tracking-wider uppercase whitespace-nowrap relative overflow-hidden group active:scale-[0.99] transition-transform"
           >
             <span className="relative z-10 whitespace-nowrap">
               TAKE ME TO THE WINNING HAIR DRYER
             </span>
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_2s_infinite]" />
+          </a>
+        </div>
+      </div>
+
+      {/* Desktop Sticky Box in Right Blank Space */}
+      <div className="hidden xl:block fixed bottom-8 right-4 2xl:right-10 z-50 w-[190px] 2xl:w-[220px]">
+        <div className="relative">
+          {/* Top Overlapping Winner Badge */}
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white text-[#067766] font-extrabold text-[12px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md z-30 whitespace-nowrap border border-[#067766]/20">
+            <strong>#1</strong> WINNER
+          </div>
+
+          <a
+            href="https://uk.muuhu.com/products/muuhu-hair-dryer"
+            aria-label="Take me to the winning hair dryer"
+            className="block bg-[#067766] hover:bg-[#055f52] text-white pt-6 pb-4 px-4 2xl:px-5 rounded-[8px] shadow-[0_10px_35px_rgba(0,0,0,0.35)] border-2 border-white/20 text-center transition-all hover:scale-[1.03] group relative overflow-hidden"
+          >
+            {/* Product Image (Large, No Inner Card/Border) */}
+            <div className="w-28 h-28 2xl:w-32 2xl:h-32 mx-auto mb-2 flex items-center justify-center">
+              <img
+                src="/img/hair/muuhu-airpro-hair-dryer.webp"
+                alt="Muuhu AirPro"
+                className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            {/* Product Name */}
+            <div className="font-[family-name:var(--font-oswald)] font-bold text-base 2xl:text-lg uppercase tracking-wide leading-tight mb-3">
+              Muuhu AirPro
+            </div>
+
+            {/* Button (Compact, No Arrow) */}
+            <div className="bg-white text-[#067766] font-extrabold text-xs 2xl:text-[13px] py-2 px-3 rounded-[6px] uppercase tracking-wider shadow group-hover:bg-gray-100 transition-colors">
+              VISIT WINNING SITE
+            </div>
+
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
           </a>
         </div>
       </div>

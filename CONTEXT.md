@@ -6911,3 +6911,42 @@ or deployment-setting change occurred.
   - Linked all gift cards and the bottom "Check If Free Gifts Are Still Available" button directly to `product.learnMoreUrl` (`https://uk.muuhu.com/products/muuhu-hair-dryer`).
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Added Desktop Sticky Box Widget in Right Blank Space (Gutter)
+- **User Intent & Protected Scope:** Utilize the blank space available on desktop to the right of the main white container (beyond the 950px container) by displaying a sticky floating square box widget pointing to the winning site (`https://uk.muuhu.com/products/muuhu-hair-dryer`). For mobile/tablet, preserve the bottom sticky button.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+  - `apps/site/src/data/qualityReviewerHairDryers.ts`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Added desktop-only (`hidden xl:block`) sticky widget pinned in the right blank space (`fixed bottom-8 right-4 2xl:right-10 z-50 w-[190px] 2xl:w-[220px]`).
+  - Styled with green `#067766` background, `rounded-[8px]`, `#1 WINNER` badge, Muuhu AirPro product thumbnail (`/img/hair/muuhu-airpro-hair-dryer.webp`), bold Oswald typography, and `VISIT WINNING SITE →` button.
+  - Kept mobile/tablet bottom sticky button for smaller viewports (`xl:hidden`).
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Refined Desktop Sticky Widget (Overlapping Top Badge, Bigger Image, Compact Text Without Arrow)
+- **User Intent & Protected Scope:** Remove container/border around image and increase image size in the desktop sticky widget; remove arrow from "VISIT WINNING SITE" to make button compact; position "#1 WINNER" badge overlapping the top center of the card.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Placed the `★ #1 WINNER` badge floating above the top edge center (`absolute -top-3.5 left-1/2 -translate-x-1/2`).
+  - Removed container and border around product image and enlarged image to `w-28 h-28 2xl:w-32 2xl:h-32`.
+  - Removed arrow `&rarr;` from button text and made button compact `VISIT WINNING SITE`.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Removed Subtitle from Desktop Sticky Widget
+- **User Intent & Protected Scope:** Remove the "Ranked #1 Best Hair Dryer" subtitle text from the desktop sticky widget to keep it clean and focused.
+- **Starting Git State:** `QualityReviewerAdvertorial.tsx` modified locally.
+- **Inspected Files:**
+  - `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changed Files:** `apps/site/src/components/QualityReviewerClone/QualityReviewerAdvertorial.tsx`
+- **Changes Made:**
+  - Removed `<div className="text-white/85 font-[family-name:var(--font-arimo)] text-[11px] 2xl:text-xs mb-3 font-medium">Ranked #1 Best Hair Dryer</div>`.
+  - Adjusted margin on `Muuhu AirPro` product name.
+- **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
