@@ -39,7 +39,6 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
     },
     pros: [
       "7 Attachments Included",
-      "Hollow Air Inlet",
       "Excellent Value for Money",
       "Quick Drying Performance",
       "CE, UKCA & RoHS compliant.",
@@ -55,7 +54,8 @@ export const qualityReviewerProducts: QualityReviewerProduct[] = [
     ],
     cons: [
       "Can Only Be Purchased Online",
-      "Limited Stock at the Current £129 Price",
+      "Sells out quickly during sales",
+      "Free app requires the purchase of Dryer",
     ],
     review: [
       "Our top pick is the Muuhu AirPro, a salon-grade device with a 1,600W, 110,000 RPM brushless motor, 3 temperature settings, 3 speed settings and seven professional attachments, including two Coanda auto-wrap curlers for effortless curls and waves.",
