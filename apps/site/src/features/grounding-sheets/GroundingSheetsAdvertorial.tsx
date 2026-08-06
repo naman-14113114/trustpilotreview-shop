@@ -705,16 +705,16 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             product.name
           )}
         </h3>
-        <p className="mt-3 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9">
+        <p className="mt-3 text-[17px] leading-8 text-slate-700 md:text-[18px] md:leading-9">
           {product.descriptions[0]}
         </p>
-        <ul className="mt-4 grid gap-x-5 gap-y-2 sm:grid-cols-2">
+        <ul className="mt-2.5 grid gap-x-5 gap-y-1.5 sm:grid-cols-2">
           {pointsToDisplay.map((point, index) => {
             const isLimitation = point.isLimitation;
             return (
               <li
                 key={`${point.title}-${index}`}
-                className={`flex items-start gap-2 text-[17px] font-semibold leading-7 ${
+                className={`flex items-start gap-2 text-[17px] md:text-[18px] font-semibold leading-7 ${
                   isLimitation ? "text-red-700" : "text-emerald-700"
                 }`}
               >
@@ -758,7 +758,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             <div className="mt-2 flex justify-center">
               <GreenStarRating rating={5} size={20} />
             </div>
-            <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+            <span className="mt-2 text-[18px] font-semibold text-slate-500">
               Overall rating 4.9 / 5
             </span>
             <OfficialButton className="mt-4 w-full rounded-md px-2 sm:px-3 text-[17px] whitespace-nowrap">
@@ -766,7 +766,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
               <ArrowUpRight size={19} className="shrink-0 inline-block ml-1" />
             </OfficialButton>
             <div className="mt-3 w-full rounded-md bg-blue-600 py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
-              50% OFF
+              <span className="text-[17px]">50% OFF</span>
               <br />
               Sale Ends:
               <br />
