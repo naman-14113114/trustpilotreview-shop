@@ -778,7 +778,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             <div className="mt-2 flex justify-center">
               <GreenStarRating rating={parseFloat(product.rating)} size={20} />
             </div>
-            <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+            <span className="mt-2 text-[18px] font-semibold text-slate-500">
               Overall rating {product.rating}
             </span>
           </>

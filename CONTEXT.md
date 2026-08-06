@@ -7303,3 +7303,16 @@ or deployment-setting change occurred.
   - Left the surrounding date text at 	ext-[13px] so it doesn't wrap onto an additional line.
 - **Verification:** Verified the Tailwind span classes applied properly without breaking layout.
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Increased Rating Text Size for Remaining Products
+- **User Intent & Protected Scope:** Apply the same 18px text size increase to the "Overall rating" text for the rest of the 4 ranked products, not just the #1 winner.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased font size for the non-winner rating text from 	ext-xs (12px) to 	ext-[18px] inside the mapping logic.
+  - Removed leading-5 line-height constraint to match the earlier change.
+- **Verification:** Verified Tailwind font-size class applied correctly.
+- **Git Status:** Modified locally. No commit or push performed per rules.
