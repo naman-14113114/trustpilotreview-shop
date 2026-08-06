@@ -7145,3 +7145,84 @@ or deployment-setting change occurred.
   - Left Muuhu AirPro (#1) untouched.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+### Replaced Verdict Video and Removed Footer on Grounding Sheet Page
+- **User Intent & Protected Scope:** Replace the verdict video with a new one named according to juujo seo, delete the old video, and remove the footer below it on the best grounding sheet page. Do minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Copied Grounding_sheets best 5 video - 2.mp4 to public/assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Deleted the older video public/assets/grounding-best-5-video.mp4.
+  - Updated <source> src in GroundingSheetsAdvertorial.tsx to /assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Removed the <footer> block entirely from GroundingSheetsAdvertorial.tsx.
+- **Verification:** Ran pnpm --filter @trustpilotreview/site typecheck (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Video Thumbnail for Grounding Sheet Page
+- **User Intent & Protected Scope:** Extract a thumbnail image from the 3:06 frame of the new video and update the video poster to use it. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Extracted 3:06 frame from juujo-grounding-fitted-sheet-review.mp4 using fmpeg to public/assets/juujo-grounding-fitted-sheet-review-poster.webp.
+  - Updated <video poster="..."> in GroundingSheetsAdvertorial.tsx to reference the new thumbnail /assets/juujo-grounding-fitted-sheet-review-poster.webp.
+- **Verification:** Ran fmpeg to verify the image creation.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Header Text Size on Grounding Sheet Page
+- **User Intent & Protected Scope:** Match the size of the "United States - 2026" text under the header in the grounding sheet page to the proportional size (72%) found in the LED mask page header. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Combined the "Best Grounding Sheets" heading and the "United States - 2026" subheading into a single <h1> tag.
+  - Applied 	ext-[0.72em] to the country/year line so its font size is relatively smaller (72%) compared to the main header, perfectly matching the design from the LED mask page.
+- **Verification:** Changes logically sound and structure directly mirrors QualityReviewerAdvertorial.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated 50% OFF Card Color and Dynamic Date
+- **User Intent & Protected Scope:** Change the 50% OFF card background color to match the green Official Website button. Update the dynamic date shown on this card to be one day ahead of the current date (e.g., if today is August 6, show August 7). Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Updated ormatNewYorkDate function to accept an optional daysToAdd argument and applied standard JS date math.
+  - Changed the "Sale Ends:" call to ormatNewYorkDate(1) to show tomorrow's date.
+  - Changed the red background class g-[#df4e45] on the "50% OFF" card to g-emerald-500 (which matches the Official Website button's color).
+- **Verification:** Logic checked for date incrementing, matches expected output.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Corrected 50% OFF Card Color to Blue
+- **User Intent & Protected Scope:** Correct the 50% OFF card color to match the *blue* "Check Availability" button rather than the green "Official Website" button.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Changed g-emerald-500 to g-blue-600 on the "50% OFF" card to precisely match the user's requested blue color from the Check Availability button.
+- **Verification:** Matched tailwind class g-blue-600 from line 574.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Increased Official Website Button Text Size
+- **User Intent & Protected Scope:** Increase the text size of the Official Website button above the 50% OFF card, adjust padding, and prevent the arrow from wrapping to the next line.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased button text from 	ext-[15px] to 	ext-[17px].
+  - Added whitespace-nowrap to prevent the text and arrow from wrapping.
+  - Reduced horizontal padding from px-4 to px-2 sm:px-3 to accommodate the larger text within the sidebar container without pushing boundaries.
+  - Increased arrow size slightly to match new font size.
+- **Verification:** Changes are contained strictly within the button's Tailwind classes.
+- **Git Status:** Modified locally. No commit or push performed per rules.
