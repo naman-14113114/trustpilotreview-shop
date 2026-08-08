@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
-import HairDryerAdvertorial from "@/legacy-pages/HairDryerAdvertorial";
-import { getUkPageContext } from "@/lib/page-context";
-import { metadataForPath } from "@/lib/metadata";
+import QualityReviewerAdvertorial from "../../components/QualityReviewerClone/QualityReviewerAdvertorial";
 
-export const metadata: Metadata = metadataForPath("/best-hair-dryer-uk-2026");
-
-export default function Page() {
-  return <HairDryerAdvertorial market="uk" context={getUkPageContext()} />;
+export default function BestHairDryerInUK2026() {
+  return (
+    <QualityReviewerAdvertorial
+      heroImageSrc="/img/hair/muuhu-diffuser-model-main.png"
+      heroImageAlt="Muuhu AirPro diffuser dispersing air evenly to reduce frizz and define curls and waves"
+      constrainHeroImage
+      showMuuhuAttachments
+    />
+  );
 }
