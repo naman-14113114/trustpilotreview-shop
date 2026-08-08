@@ -7331,3 +7331,15 @@ or deployment-setting change occurred.
 - **Verification:** Replaced the file directly via copy. Confirmed git tracks the modified file.
 - **Git Status:** Modified locally. No commit, push, branch, or deployment performed per rules.
 
+### Add Pros & Cons for Grounding Sheets Products
+- **User Intent & Protected Scope:** Add two short single-line cons ("no free gift", "no 120-night guarantee") to the 4 competitors and two short pros ("120-night money back guarantee", "Antimicrobial Properties") to the Juujo winner. Do not touch CSS or layout.
+- **Starting Git State:** On branch main. Modified files not related to this task.
+- **Inspected Files:**
+  - apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Exact Data/Assets:** Added 2 entries to pros for rank 1 product, and 2 entries to cons for ranks 2-5 products in ankedSheets array.
+- **Mistakes and Corrections:** None.
+- **Verification:** Verified changes are within the data structure and don't touch CSS/layout.
+- **Git Status:** Modified locally. No commit, push, branch, or deployment performed per rules.
+

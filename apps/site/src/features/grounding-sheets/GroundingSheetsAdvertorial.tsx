@@ -101,6 +101,14 @@ const rankedSheets: RankedSheet[] = [
         title: "Durable elastic edge",
         body: "Designed with strong elastic to ensure the fitted sheet stays firmly in place even for active sleepers.",
       },
+      {
+        title: "120-night money back guarantee",
+        body: "Provides a risk-free trial.",
+      },
+      {
+        title: "Antimicrobial properties",
+        body: "Helps keep the sheet fresh.",
+      },
     ],
     cons: [
       {
@@ -159,10 +167,6 @@ const rankedSheets: RankedSheet[] = [
     ],
     cons: [
       {
-        title: "Shorter trial",
-        body: "The 30-night guarantee provides considerably less home-evaluation time than Juujo's 120-night trial.",
-      },
-      {
         title: "Higher starting price",
         body: "Terra enters above Juujo before comparing the additional items included with the top pick.",
       },
@@ -171,12 +175,16 @@ const rankedSheets: RankedSheet[] = [
         body: "Its listed 5% silver blend is lower than the 10% blend used by Juujo and GroundLuxe.",
       },
       {
-        title: "Narrower complete offer",
+        title: "No free bonus gifts",
         body: "There is no equivalent three-gift package included in the comparison offer.",
       },
       {
         title: "Outlet check still required",
         body: "Like every corded grounding sheet here, it depends on a suitable grounded outlet and correct setup.",
+      },
+      {
+        title: "Missing 120-night trial",
+        body: "The 30-night guarantee provides considerably less home-evaluation time than Juujo's 120-night trial.",
       },
     ],
   },
@@ -226,20 +234,20 @@ const rankedSheets: RankedSheet[] = [
         body: "GroundLuxe costs more at the starting point than both Juujo and Terra in this comparison.",
       },
       {
-        title: "Shorter trial window",
-        body: "Its 60-day return period gives buyers less evaluation time than Juujo's 120-night trial.",
-      },
-      {
         title: "Fewer fitted choices",
         body: "Juujo publishes a broader seven-option US size range.",
       },
       {
-        title: "No comparable gift bundle",
+        title: "Lacks free gift bundle",
         body: "The standard offer does not match Juujo's packaging, mat and app extras.",
       },
       {
         title: "Specific washing routine",
         body: "The silver-fibre fabric still needs conductivity-conscious care.",
+      },
+      {
+        title: "Does not offer 120-night guarantee",
+        body: "Its 60-day return period gives buyers less evaluation time than Juujo's 120-night trial.",
       },
     ],
   },
@@ -293,16 +301,16 @@ const rankedSheets: RankedSheet[] = [
         body: "The listed 5% silver blend is below the 10% blend used by Juujo and GroundLuxe.",
       },
       {
-        title: "Shorter than Juujo's trial",
-        body: "The 90-day period still gives less home-evaluation time than 120 nights.",
-      },
-      {
-        title: "No three-gift package",
+        title: "Zero free gifts included",
         body: "The standard offer does not include the same extras as the top-ranked bundle.",
       },
       {
         title: "Care requirements",
         body: "The conductive material needs the manufacturer's recommended wash routine.",
+      },
+      {
+        title: "No extended 120-night trial",
+        body: "The 90-day period still gives less home-evaluation time than 120 nights.",
       },
     ],
   },
@@ -360,8 +368,12 @@ const rankedSheets: RankedSheet[] = [
         body: "It does not offer Juujo's seven-option fitted range.",
       },
       {
-        title: "No comparable extras",
+        title: "Doesn't come with free gifts",
         body: "The standard offer does not match Juujo's three included gifts.",
+      },
+      {
+        title: "Lacks Juujo's 120-night guarantee",
+        body: "Lacks Juujo's longer trial.",
       },
     ],
   },
@@ -641,6 +653,8 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
         { title: "Easy Integration", body: "", isLimitation: false },
         { title: "Durable Material", body: "", isLimitation: false },
         { title: "Eco-Friendly Design", body: "", isLimitation: false },
+        { title: "Antimicrobial Properties", body: "", isLimitation: false },
+        { title: "120-night money back guarantee", body: "", isLimitation: false },
         { title: "Regularly runs out of stock", body: "", isLimitation: true },
         {
           title: "Expensive outside of sale periods",
@@ -649,8 +663,8 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
         },
       ]
     : [
-        ...product.pros.slice(0, 3).map((p) => ({ ...p, isLimitation: false })),
-        ...product.cons.slice(0, 3).map((p) => ({ ...p, isLimitation: true })),
+        ...product.pros.map((p) => ({ ...p, isLimitation: false })),
+        ...product.cons.map((p) => ({ ...p, isLimitation: true })),
       ];
 
   return (
