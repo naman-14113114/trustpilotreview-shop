@@ -54,7 +54,7 @@ const rankedSheets: RankedSheet[] = [
   {
     rank: 1,
     name: "Juujo Grounding Fitted Sheet",
-    image: "/img/grounding-sheets/best-page-image.webp",
+    image: "/img/grounding-sheets/juujo-120-night-risk-free-trial-grounding-sheet.webp",
     price: "$99",
     originalPrice: "$199",
     rating: "4.9 / 5",
