@@ -3,9 +3,7 @@ import QualityReviewerAdvertorial from "../../components/QualityReviewerClone/Qu
 export default function BestHairDryerInUK2026() {
   return (
     <QualityReviewerAdvertorial
-      heroImageSrc="/img/hair/muuhu-diffuser-model-main.png"
-      heroImageAlt="Muuhu AirPro diffuser dispersing air evenly to reduce frizz and define curls and waves"
-      constrainHeroImage
+      topProductImageSrc="/img/hair/muuhu-airpro-model-no-text.png"
       showMuuhuAttachments
     />
   );
