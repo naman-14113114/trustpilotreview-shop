@@ -105,7 +105,7 @@ export default function QualityReviewerCard({
           {/* Left: Image */}
           <div className="flex items-center justify-center p-6 md:p-8">
             <a href={product.learnMoreUrl} className="relative w-[250px] h-[250px] flex items-center justify-center cursor-pointer">
-              <img src={product.imageUrl} alt={product.name} className="w-full h-full object-contain" />
+              <img src={product.imageUrl} alt={product.name} className="max-h-full max-w-full object-contain" />
             </a>
           </div>
 
