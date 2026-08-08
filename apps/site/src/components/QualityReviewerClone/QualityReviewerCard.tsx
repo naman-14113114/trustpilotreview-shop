@@ -22,7 +22,54 @@ interface ProductProps {
   learnMoreUrl: string;
 }
 
-export default function QualityReviewerCard({ product }: { product: ProductProps }) {
+const muuhuAttachments = [
+  { image: "/img/hair/attachments/muuhu-attachment-1.webp", label: "Diffuser" },
+  { image: "/img/hair/attachments/muuhu-attachment-2.webp", label: "Concentrator" },
+  { image: "/img/hair/attachments/muuhu-attachment-3.webp", label: "Round Brush" },
+  { image: "/img/hair/attachments/muuhu-attachment-4.webp", label: "Left Curler" },
+  { image: "/img/hair/attachments/muuhu-attachment-5.webp", label: "Right Curler" },
+  { image: "/img/hair/attachments/muuhu-attachment-6.webp", label: "L-Shape Base Unit" },
+  { image: "/img/hair/attachments/muuhu-attachment-7.webp", label: "Smoothing Brush" },
+];
+
+function MuuhuAttachments() {
+  return (
+    <div className="mb-10 bg-white">
+      <h3 className="mb-5 text-center text-2xl font-bold text-slate-900 md:text-3xl">
+        7 Attachments
+      </h3>
+      <div className="mx-auto grid w-full max-w-full grid-cols-7 overflow-hidden border border-slate-300">
+        {muuhuAttachments.map((attachment) => (
+          <div
+            key={attachment.image}
+            className="min-w-0 border-r border-slate-300 last:border-r-0"
+          >
+            <div className="flex aspect-square items-center justify-center bg-white p-1.5 md:p-2">
+              <img
+                src={attachment.image}
+                alt={attachment.label}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="px-0.5 pb-1.5 text-center text-[7px] font-medium leading-tight text-slate-900 sm:text-[9px] md:px-1 md:text-xs">
+              {attachment.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function QualityReviewerCard({
+  product,
+  showMuuhuAttachments = false,
+}: {
+  product: ProductProps;
+  showMuuhuAttachments?: boolean;
+}) {
   return (
     <section className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-[#E2E8F0] overflow-hidden">
       {/* Thick dark purple line */}
@@ -58,7 +105,7 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
           {/* Left: Image */}
           <div className="flex items-center justify-center p-6 md:p-8">
             <a href={product.learnMoreUrl} className="relative w-[250px] h-[250px] flex items-center justify-center cursor-pointer">
-              <img src={product.imageUrl} alt={product.name} className="w-full h-full object-contain" />
+              <img src={product.imageUrl} alt={product.name} className="max-h-full max-w-full object-contain" />
             </a>
           </div>
 
@@ -93,6 +140,8 @@ export default function QualityReviewerCard({ product }: { product: ProductProps
             <AnimatedRatingBar key={idx} label={bar.label} score={bar.score} percentage={bar.percentage} />
           ))}
         </div>
+
+        {showMuuhuAttachments && product.rank === 1 && <MuuhuAttachments />}
 
         {/* Split Content */}
         <div className="flex flex-col lg:flex-row gap-10 mb-10">

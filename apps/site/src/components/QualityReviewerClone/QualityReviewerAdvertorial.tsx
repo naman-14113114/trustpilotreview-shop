@@ -9,7 +9,23 @@ import { MarketFlag } from "@/components/MarketFlag";
 import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
 
-export default function QualityReviewerAdvertorial() {
+type QualityReviewerAdvertorialProps = {
+  heroImageSrc?: string;
+  heroImageAlt?: string;
+  constrainHeroImage?: boolean;
+  showMuuhuAttachments?: boolean;
+  topProductImageSrc?: string;
+  stickyWinnerImageSrc?: string;
+};
+
+export default function QualityReviewerAdvertorial({
+  heroImageSrc = "/img/hair/muuhu-hair-dryer-banner.webp",
+  heroImageAlt = "Muuhu Hair Dryer Banner",
+  constrainHeroImage = false,
+  showMuuhuAttachments = false,
+  topProductImageSrc,
+  stickyWinnerImageSrc,
+}: QualityReviewerAdvertorialProps) {
   const market = getAdvertorialMarket("uk");
   const updatedDate = useMarketUpdatedDate(market, "4 August 2026");
 
@@ -44,7 +60,7 @@ export default function QualityReviewerAdvertorial() {
       name: p.name,
       brand: p.brand || "",
       brandUrl: "https://uk.muuhu.com/products/muuhu-hair-dryer",
-      imageUrl: p.image_path,
+      imageUrl: topProductImageSrc && p.id === 1 ? topProductImageSrc : p.image_path,
       votes: "865",
       score: p.rating_overall,
       percentage: parsePercentage(p.rating_overall),
@@ -159,14 +175,18 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl">
+        <div
+          className={`w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl ${
+            constrainHeroImage ? "max-w-[760px] mx-auto" : ""
+          }`}
+        >
           <a
             href="https://uk.muuhu.com/products/muuhu-hair-dryer"
             className="block"
           >
             <img
-              src="/img/hair/muuhu-hair-dryer-banner.webp"
-              alt="Muuhu Hair Dryer Banner"
+              src={heroImageSrc}
+              alt={heroImageAlt}
               className="w-full h-auto object-cover"
             />
           </a>
@@ -444,7 +464,11 @@ export default function QualityReviewerAdvertorial() {
           {/* Product List */}
           <div className="space-y-12 md:space-y-16">
             {products.map((product: any, idx: number) => (
-              <QualityReviewerCard key={idx} product={product} />
+              <QualityReviewerCard
+                key={idx}
+                product={product}
+                showMuuhuAttachments={showMuuhuAttachments}
+              />
             ))}
           </div>
 
@@ -561,7 +585,7 @@ export default function QualityReviewerAdvertorial() {
             {/* Product Image (Large, No Inner Card/Border) */}
             <div className="w-28 h-28 2xl:w-32 2xl:h-32 mx-auto mb-2 flex items-center justify-center">
               <img
-                src="/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp"
+                src={stickyWinnerImageSrc ?? "/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp"}
                 alt="Muuhu AirPro"
                 className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
               />
