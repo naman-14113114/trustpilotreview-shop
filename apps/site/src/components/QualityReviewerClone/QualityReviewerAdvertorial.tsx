@@ -9,7 +9,19 @@ import { MarketFlag } from "@/components/MarketFlag";
 import { useMarketUpdatedDate } from "@/lib/useMarketUpdatedDate";
 import { getAdvertorialMarket } from "@/lib/advertorialMarkets";
 
-export default function QualityReviewerAdvertorial() {
+type QualityReviewerAdvertorialProps = {
+  heroImageSrc?: string;
+  heroImageAlt?: string;
+  constrainHeroImage?: boolean;
+  showMuuhuAttachments?: boolean;
+};
+
+export default function QualityReviewerAdvertorial({
+  heroImageSrc = "/img/hair/muuhu-hair-dryer-banner.webp",
+  heroImageAlt = "Muuhu Hair Dryer Banner",
+  constrainHeroImage = false,
+  showMuuhuAttachments = false,
+}: QualityReviewerAdvertorialProps) {
   const market = getAdvertorialMarket("uk");
   const updatedDate = useMarketUpdatedDate(market, "4 August 2026");
 
@@ -159,14 +171,18 @@ export default function QualityReviewerAdvertorial() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl">
+        <div
+          className={`w-full overflow-hidden mb-12 relative rounded-3xl shadow-xl ${
+            constrainHeroImage ? "max-w-[760px] mx-auto" : ""
+          }`}
+        >
           <a
             href="https://uk.muuhu.com/products/muuhu-hair-dryer"
             className="block"
           >
             <img
-              src="/img/hair/muuhu-hair-dryer-banner.webp"
-              alt="Muuhu Hair Dryer Banner"
+              src={heroImageSrc}
+              alt={heroImageAlt}
               className="w-full h-auto object-cover"
             />
           </a>
@@ -444,7 +460,11 @@ export default function QualityReviewerAdvertorial() {
           {/* Product List */}
           <div className="space-y-12 md:space-y-16">
             {products.map((product: any, idx: number) => (
-              <QualityReviewerCard key={idx} product={product} />
+              <QualityReviewerCard
+                key={idx}
+                product={product}
+                showMuuhuAttachments={showMuuhuAttachments}
+              />
             ))}
           </div>
 

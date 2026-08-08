@@ -7179,3 +7179,76 @@ or deployment-setting change occurred.
   - The production hair-dryer comparison page returns `200`, retains the Muuhu UK product destination, both UET event names, and Microsoft click-ID handling.
 - **Microsoft Ads Boundary:** The conversion was prepared but not uploaded because the owner explicitly withheld Ads account access. The remaining account-side action is to create/select the exact offline goal `Muuhu UK - Purchase` and upload the prepared CSV or configure a scheduled import using the protected URL plus its secret query parameter.
 - **Security Follow-up:** The PlusBase credentials were supplied in chat. Rotate them after handoff and update the Vercel environment variables immediately so the protected feed continues working.
+
+### August 05, 2026: Copy the QualityReviewer hair page exactly onto the existing Best Hair Dryer route
+
+#### User Intent and Protected Scope
+- The owner rejected the current production design of `/best-hair-dryer-uk-2026` and requested that it use `https://trustpilotreview-shop.vercel.app/best-hair-dryer-in-uk-2026` exactly as-is, with the code pasted without visual or content reinterpretation.
+- Application scope was restricted to `/best-hair-dryer-uk-2026`. The reference route `/best-hair-dryer-in-uk-2026`, all other hair guides and comparisons, LED-mask routes, grounding routes, homepage, shared tracking, assets, and deployment configuration were protected.
+- The user did not explicitly request publication in this turn. No commit, push, pull request, Vercel deployment, promotion, or custom-domain change was authorised or performed.
+
+#### Freshness Reconciliation
+- Work continued in `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802` with remote `https://github.com/naman-14113114/trustpilotreview-shop.git`.
+- The checkout began detached at documentation commit `903ad9b9f30fcbf63a878ba7bb8625fdd00c2666` and was clean.
+- A fresh `git fetch --all --prune` found that `origin/main` had advanced by 20 commits to `794801391bbef4da89ad59fccca60078116f8849`.
+- The incoming stack begins at `8937b710e843e219260abef2951d258ce941ecab` (`Created new Best Hair Dryer page (cloned Quality-review)`) and adds the reference route, its route layout, `QualityReviewerClone` components, `qualityReviewerHairDryers.ts`, and the new hair imagery. Later commits through `7948013` refined the card design, ratings, video, gifts, sticky winner control, editor verdict, product imagery, content, pros/cons, and the seven-reasons section.
+- Because the worktree was clean, it was moved non-destructively to detached `origin/main` at `7948013`. No user work was overwritten, stashed, reset, rebased, or discarded.
+- The external instruction/context paths under `E:\1st YEAR DTU\New folder\...` referenced by this repository were checked but do not exist on this machine. The complete local `AGENTS.md`, `CONTEXT.md`, `DESIGN.md`, and `PRODUCT.md` were read before editing.
+
+#### Exact Implementation
+- Replaced `apps/site/src/app/best-hair-dryer-uk-2026/page.tsx` with the exact source content of `apps/site/src/app/best-hair-dryer-in-uk-2026/page.tsx`.
+- Added `apps/site/src/app/best-hair-dryer-uk-2026/layout.tsx` with the exact source content of `apps/site/src/app/best-hair-dryer-in-uk-2026/layout.tsx`.
+- Both routes now render the same `QualityReviewerAdvertorial` component and use the same Oswald, Arimo, and Abril Fatface route font/layout wrapper.
+- Normalized text comparison confirmed the target page source and target layout source are exactly identical to the two reference route files. The only byte-level difference in the working files is Windows CRLF versus patch-created LF line endings; Git normalizes this and the TypeScript/React content is identical.
+- No shared component, product-data file, public asset, other route, tracking script, sitemap entry, or homepage link was edited.
+
+#### Reference and Visual Verification
+- The live reference URL returned HTTP `200` and matched `/best-hair-dryer-in-uk-2026` as its Vercel route.
+- Captured the live reference at desktop `1440x1000` and mobile `390x844` before implementation.
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with Next.js `16.2.11` and generated all 52 static routes, including both hair routes.
+- The root parity wrapper first failed because it launched globally installed pnpm `11.0.8` instead of the repository-required `11.1.1`. The required check was rerun from `apps/site`, where `PARITY_BASE_URL=http://localhost:3025 corepack pnpm verify:parity` passed and smoke-tested seven routes.
+- A production server was started at `http://localhost:3025`. Both the reference and target routes returned HTTP `200` at desktop and mobile widths.
+- Browser DOM QA confirmed both routes have exactly identical visible text, link lists, computed H1/main/image typography and geometry, document width, document height, page title, description, and lack of canonical metadata.
+- Both routes had zero horizontal overflow, no browser console errors, and no uncaught page errors at `1440x1000` and `390x844`.
+- Stabilized screenshot comparison against the live Vercel reference produced zero changed pixels at desktop and mobile. Local reference-versus-target first-viewport comparison also produced zero changed pixels at both sizes.
+- Full-page local screenshots have identical dimensions: `1440x15311` on desktop and `390x23375` on mobile. Tiny non-visual full-page pixel differences came from asynchronous anti-aliasing/intersection timing; visible text, layout geometry, scroll height, computed styles, and route source were identical.
+- The five Next Image badge requests and their direct PNG assets returned HTTP `200` locally and on Vercel. Initial `naturalWidth=0` readings occurred because those below-fold images were still lazy and had not entered the viewport, not because the assets were broken.
+- The build-generated `apps/site/next-env.d.ts` change was restored to its tracked development import and is not part of the task diff.
+
+#### Exact-Copy Concerns Preserved by Request
+- The reference page inherits the generic site title `Trustpilot Review Shop | LED Face Mask Reviews & Buyer Guides`, the generic LED-mask meta description, and no canonical link. Copying the route exactly removes the previous route-specific metadata from `/best-hair-dryer-uk-2026`.
+- A real mobile CTA click showed that the reference implementation navigates to `https://uk.muuhu.com/products/muuhu-hair-dryer` but drops incoming `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid`. Microsoft UET page requests still loaded, but cross-domain attribution parameters were not preserved.
+- These SEO/tracking behaviours were deliberately not corrected because the owner explicitly requested no difference from the reference. They should be confirmed or separately authorised before publication if preserving paid-search attribution and route-specific metadata is more important than behavioural identity.
+
+#### Final Git and Runtime State
+- Application HEAD remains detached at `794801391bbef4da89ad59fccca60078116f8849`, matching freshly fetched `origin/main` before the local route copy.
+- Intended application changes are limited to the modified target `page.tsx` and new target `layout.tsx`; this `CONTEXT.md` append is the required documentation change.
+- No file was staged. No commit, push, branch, pull request, GitHub action, Vercel deployment, production promotion, alias/domain edit, or ad-platform mutation occurred.
+- Local production preview remains available at `http://localhost:3025/best-hair-dryer-uk-2026` for owner review.
+
+### August 05, 2026: Add the owner-supplied Muuhu hero and restore the seven-attachment section
+
+#### User Intent and Scope
+- The owner approved publication of the new `/best-hair-dryer-uk-2026` design and requested two route-specific changes before release: replace the lead Muuhu banner with the supplied diffuser image and restore the seven-attachment section from the previous Top 5 page.
+- The reference route `/best-hair-dryer-in-uk-2026` and every other route remain protected. Shared components accept opt-in props so their default rendering remains unchanged.
+
+#### Implementation
+- Added the supplied `1254x1254` PNG unchanged as `apps/site/public/img/hair/muuhu-diffuser-model-main.png`; source and copied-file SHA-256 values both equal `4A549CB65F1C186BA4FD232A6429C7CEFB2C4DA5B8C8B06A8EDC6E5CF57DEC66`.
+- Added optional hero-image, hero-alt, image-constraint, and Muuhu-attachment props to `QualityReviewerAdvertorial`. The existing banner remains the default, which preserves the reference route.
+- Configured only `/best-hair-dryer-uk-2026` to use the supplied image, constrain its desktop width to `760px`, and render the attachment section.
+- Recreated the previous page's seven-column attachment strip inside the number-one Muuhu card with the same existing images and labels: Diffuser, Concentrator, Round Brush, Left Curler, Right Curler, L-Shape Base Unit, and Smoothing Brush.
+- The attachment strip is opt-in and rank-gated, so it does not appear on products 2-5 or on `/best-hair-dryer-in-uk-2026`.
+
+#### Local Verification
+- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
+- `corepack pnpm --filter @trustpilotreview/site lint` passed.
+- `corepack pnpm --filter @trustpilotreview/site build` passed with Next.js `16.2.11` and all 52 static routes.
+- `PARITY_BASE_URL=http://localhost:3025 corepack pnpm verify:parity` passed and smoke-tested seven routes.
+- Production-mode browser QA passed at desktop `1440x1000` and mobile `390x844`: HTTP `200`, correct supplied hero asset at natural size `1254x1254`, one seven-attachment section, all seven attachment assets loaded, zero horizontal overflow, zero console errors, and zero uncaught page errors.
+- Browser QA of `/best-hair-dryer-in-uk-2026` confirmed it still uses `/img/hair/muuhu-hair-dryer-banner.webp` and contains no seven-attachment section.
+
+#### Release State
+- Work is isolated on branch `codex/hair-top5-image-attachments` from current `origin/main` commit `794801391bbef4da89ad59fccca60078116f8849`.
+- GitHub publication, Vercel production deployment, promotion, and custom-domain verification are the next authorised steps in this same request.
