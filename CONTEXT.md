@@ -7316,3 +7316,18 @@ or deployment-setting change occurred.
   - Removed leading-5 line-height constraint to match the earlier change.
 - **Verification:** Verified Tailwind font-size class applied correctly.
 - **Git Status:** Modified locally. No commit or push performed per rules.
+### Replace Dr. Rachel Morgan Image
+- **User Intent & Protected Scope:** Replace the Dr. Rachel Morgan image on the Grounding Sheets pages with a compressed image provided at a local path, keeping the same filename and doing minimal changes without touching CSS.
+- **Starting Git State:** On branch main.
+- **Inspected Files:**
+  - apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+  - apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx
+- **Changed Files:**
+  - apps/site/public/img/grounding-sheets/dr-image.webp (Replaced with external image)
+- **Exact Data/Assets:** 
+  - Source image: "E:\1st YEAR DTU\New folder\Bedsheets\Grounding Sheets\Grounding Sheets compress images\Dr_image.webp"
+  - Destination image: pps/site/public/img/grounding-sheets/dr-image.webp
+- **Mistakes and Corrections:** None.
+- **Verification:** Replaced the file directly via copy. Confirmed git tracks the modified file.
+- **Git Status:** Modified locally. No commit, push, branch, or deployment performed per rules.
+
