@@ -15,6 +15,7 @@ type QualityReviewerAdvertorialProps = {
   constrainHeroImage?: boolean;
   showMuuhuAttachments?: boolean;
   topProductImageSrc?: string;
+  stickyWinnerImageSrc?: string;
 };
 
 export default function QualityReviewerAdvertorial({
@@ -23,6 +24,7 @@ export default function QualityReviewerAdvertorial({
   constrainHeroImage = false,
   showMuuhuAttachments = false,
   topProductImageSrc,
+  stickyWinnerImageSrc,
 }: QualityReviewerAdvertorialProps) {
   const market = getAdvertorialMarket("uk");
   const updatedDate = useMarketUpdatedDate(market, "4 August 2026");
@@ -583,7 +585,7 @@ export default function QualityReviewerAdvertorial({
             {/* Product Image (Large, No Inner Card/Border) */}
             <div className="w-28 h-28 2xl:w-32 2xl:h-32 mx-auto mb-2 flex items-center justify-center">
               <img
-                src={topProductImageSrc ?? "/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp"}
+                src={stickyWinnerImageSrc ?? "/img/hair/muuhu-airpro-7-in-1-hair-dryer.webp"}
                 alt="Muuhu AirPro"
                 className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
               />
