@@ -549,9 +549,10 @@ function GiftPanel() {
 
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
           {gifts.map((gift, i) => (
-            <div
+            <a
+              href={JUUJO_URL}
               key={gift.name}
-              className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative"
+              className="block bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative cursor-pointer"
             >
               <div
                 className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -576,7 +577,7 @@ function GiftPanel() {
               <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
                 {gift.name}
               </p>
-            </div>
+            </a>
           ))}
         </div>
 

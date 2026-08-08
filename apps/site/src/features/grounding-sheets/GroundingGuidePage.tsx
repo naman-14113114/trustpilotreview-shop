@@ -290,14 +290,14 @@ function GiftPanel() {
       <p className="mt-1 text-center text-base font-bold text-blue-700">$208 stated value</p>
       <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4">
         {gifts.map((gift) => (
-          <div key={gift.name} className="relative border border-blue-100 bg-white p-2 text-center shadow-sm sm:p-3">
+          <a href={JUUJO_GROUNDING_URL} key={gift.name} className="block relative border border-blue-100 bg-white p-2 text-center shadow-sm sm:p-3 cursor-pointer">
             <span className="absolute right-1 top-1 z-10 rounded-full bg-blue-600 px-2 py-0.5 text-[9px] font-black text-white sm:text-xs">FREE</span>
             <div className="relative aspect-square w-full overflow-hidden rounded-md bg-slate-50">
               <Image src={gift.image} alt={gift.name} fill sizes="(max-width: 639px) 28vw, 150px" className="object-cover" />
             </div>
             <p className="mt-2 text-[11px] font-extrabold leading-tight text-slate-900 sm:text-base">{gift.name}</p>
             <p className="mt-1 text-[10px] text-slate-400 line-through sm:text-xs">{gift.value}</p>
-          </div>
+          </a>
         ))}
       </div>
     </section>
