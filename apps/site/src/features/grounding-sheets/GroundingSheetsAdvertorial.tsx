@@ -385,13 +385,15 @@ const gifts = [
   },
 ];
 
-function formatNewYorkDate() {
+function formatNewYorkDate(daysToAdd: number = 0) {
+  const date = new Date();
+  date.setDate(date.getDate() + daysToAdd);
   return new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     month: "long",
     day: "numeric",
     year: "numeric",
-  }).format(new Date());
+  }).format(date);
 }
 
 function OfficialButton({
@@ -703,16 +705,16 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             product.name
           )}
         </h3>
-        <p className="mt-3 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9">
+        <p className="mt-3 text-[17px] leading-8 text-slate-700 md:text-[18px] md:leading-9">
           {product.descriptions[0]}
         </p>
-        <ul className="mt-4 grid gap-x-5 gap-y-2 sm:grid-cols-2">
+        <ul className="mt-2.5 grid gap-x-5 gap-y-1.5 sm:grid-cols-2">
           {pointsToDisplay.map((point, index) => {
             const isLimitation = point.isLimitation;
             return (
               <li
                 key={`${point.title}-${index}`}
-                className={`flex items-start gap-2 text-[17px] font-semibold leading-7 ${
+                className={`flex items-start gap-2 text-[17px] md:text-[18px] font-semibold leading-7 ${
                   isLimitation ? "text-red-700" : "text-emerald-700"
                 }`}
               >
@@ -756,19 +758,19 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             <div className="mt-2 flex justify-center">
               <GreenStarRating rating={5} size={20} />
             </div>
-            <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+            <span className="mt-2 text-[18px] font-semibold text-slate-500">
               Overall rating 4.9 / 5
             </span>
-            <OfficialButton className="mt-4 w-full rounded-md px-4 text-[15px]">
+            <OfficialButton className="mt-4 w-full rounded-md px-2 sm:px-3 text-[17px] whitespace-nowrap">
               Official Website{" "}
-              <ArrowUpRight size={18} className="shrink-0 inline-block ml-1" />
+              <ArrowUpRight size={19} className="shrink-0 inline-block ml-1" />
             </OfficialButton>
-            <div className="mt-3 w-full rounded-md bg-[#df4e45] py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
-              50% OFF
+            <div className="mt-3 w-full rounded-md bg-blue-600 py-2 text-center text-[13px] font-bold leading-snug text-white shadow-sm">
+              <span className="text-[17px]">50% OFF</span>
               <br />
               Sale Ends:
               <br />
-              {formatNewYorkDate()}
+              {formatNewYorkDate(1)}
             </div>
           </>
         ) : (
@@ -776,7 +778,7 @@ function CompactComparisonCard({ product }: { product: RankedSheet }) {
             <div className="mt-2 flex justify-center">
               <GreenStarRating rating={parseFloat(product.rating)} size={20} />
             </div>
-            <span className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+            <span className="mt-2 text-[18px] font-semibold text-slate-500">
               Overall rating {product.rating}
             </span>
           </>
@@ -943,13 +945,13 @@ function DeferredVerdictVideo() {
           controls
           playsInline
           preload="metadata"
-          poster="/assets/grounding-video-poster.webp"
+          poster="/assets/juujo-grounding-fitted-sheet-review-poster.webp"
           aria-label="Juujo grounding fitted sheet customer perspective video"
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           onEnded={() => setIsPlaying(false)}
         >
-          <source src="/assets/grounding-best-5-video.mp4" type="video/mp4" />
+          <source src="/assets/juujo-grounding-fitted-sheet-review.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <button
@@ -975,15 +977,12 @@ export default function GroundingSheetsAdvertorial() {
       <header className="border-b border-emerald-600 bg-emerald-500 px-4 py-8 md:py-11">
         <div className="mx-auto max-w-6xl text-center text-white">
           <h1 className="font-serif text-[clamp(2.15rem,8vw,4rem)] font-extrabold leading-[1.03] tracking-normal">
-            Best Grounding Sheets
-          </h1>
-          <div className="mt-3 text-center font-serif text-[clamp(2.15rem,8vw,4rem)] font-extrabold leading-[1.03] tracking-normal">
-            <span className="inline-flex items-center gap-2 whitespace-nowrap align-middle md:gap-3">
+            <span className="block">Best Grounding Sheets</span>
+            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
               <MarketFlag market="us" />
-              <span>United States</span>
+              <span>United States - 2026</span>
             </span>
-            <span className="whitespace-nowrap"> - 2026</span>
-          </div>
+          </h1>
           <div className="mt-5 flex items-center justify-center gap-2 text-base font-bold md:text-lg">
             <CheckCircle2 size={20} />
             <span>
@@ -1132,31 +1131,7 @@ export default function GroundingSheetsAdvertorial() {
         </div>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
-        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-          <p className="mb-2 text-lg font-bold text-slate-800">
-            Best Grounding Sheets
-          </p>
-          <p className="mb-6">
-            &copy; 2026 Best Grounding Sheets. All rights reserved.
-          </p>
-          <div className="mx-auto max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-6 text-left text-sm leading-relaxed text-slate-700 md:p-7">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
-              Important disclosure
-            </p>
-            <p className="mb-4">
-              <strong>Affiliate disclosure:</strong> We may receive compensation
-              for clicks on or purchases of products featured on this site. This
-              comes at no additional cost to you.
-            </p>
-            <p>
-              <strong>Individual experiences:</strong> Grounding sheets are
-              wellness products and experiences vary. This editorial guide does
-              not provide medical advice or guarantee a particular outcome.
-            </p>
-          </div>
-        </div>
-      </footer>
+
 
       <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center border-t border-slate-200 bg-white p-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] md:hidden">
         <OfficialButton className="w-full text-[15px] sm:text-base">

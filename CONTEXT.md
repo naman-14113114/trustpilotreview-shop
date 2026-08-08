@@ -7145,6 +7145,89 @@ or deployment-setting change occurred.
   - Left Muuhu AirPro (#1) untouched.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
+<<<<<<< HEAD
+### Replaced Verdict Video and Removed Footer on Grounding Sheet Page
+- **User Intent & Protected Scope:** Replace the verdict video with a new one named according to juujo seo, delete the old video, and remove the footer below it on the best grounding sheet page. Do minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Copied Grounding_sheets best 5 video - 2.mp4 to public/assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Deleted the older video public/assets/grounding-best-5-video.mp4.
+  - Updated <source> src in GroundingSheetsAdvertorial.tsx to /assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Removed the <footer> block entirely from GroundingSheetsAdvertorial.tsx.
+- **Verification:** Ran pnpm --filter @trustpilotreview/site typecheck (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Video Thumbnail for Grounding Sheet Page
+- **User Intent & Protected Scope:** Extract a thumbnail image from the 3:06 frame of the new video and update the video poster to use it. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Extracted 3:06 frame from juujo-grounding-fitted-sheet-review.mp4 using fmpeg to public/assets/juujo-grounding-fitted-sheet-review-poster.webp.
+  - Updated <video poster="..."> in GroundingSheetsAdvertorial.tsx to reference the new thumbnail /assets/juujo-grounding-fitted-sheet-review-poster.webp.
+- **Verification:** Ran fmpeg to verify the image creation.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Header Text Size on Grounding Sheet Page
+- **User Intent & Protected Scope:** Match the size of the "United States - 2026" text under the header in the grounding sheet page to the proportional size (72%) found in the LED mask page header. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Combined the "Best Grounding Sheets" heading and the "United States - 2026" subheading into a single <h1> tag.
+  - Applied 	ext-[0.72em] to the country/year line so its font size is relatively smaller (72%) compared to the main header, perfectly matching the design from the LED mask page.
+- **Verification:** Changes logically sound and structure directly mirrors QualityReviewerAdvertorial.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated 50% OFF Card Color and Dynamic Date
+- **User Intent & Protected Scope:** Change the 50% OFF card background color to match the green Official Website button. Update the dynamic date shown on this card to be one day ahead of the current date (e.g., if today is August 6, show August 7). Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Updated ormatNewYorkDate function to accept an optional daysToAdd argument and applied standard JS date math.
+  - Changed the "Sale Ends:" call to ormatNewYorkDate(1) to show tomorrow's date.
+  - Changed the red background class g-[#df4e45] on the "50% OFF" card to g-emerald-500 (which matches the Official Website button's color).
+- **Verification:** Logic checked for date incrementing, matches expected output.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Corrected 50% OFF Card Color to Blue
+- **User Intent & Protected Scope:** Correct the 50% OFF card color to match the *blue* "Check Availability" button rather than the green "Official Website" button.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Changed g-emerald-500 to g-blue-600 on the "50% OFF" card to precisely match the user's requested blue color from the Check Availability button.
+- **Verification:** Matched tailwind class g-blue-600 from line 574.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Increased Official Website Button Text Size
+- **User Intent & Protected Scope:** Increase the text size of the Official Website button above the 50% OFF card, adjust padding, and prevent the arrow from wrapping to the next line.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased button text from 	ext-[15px] to 	ext-[17px].
+  - Added whitespace-nowrap to prevent the text and arrow from wrapping.
+  - Reduced horizontal padding from px-4 to px-2 sm:px-3 to accommodate the larger text within the sidebar container without pushing boundaries.
+  - Increased arrow size slightly to match new font size.
+- **Verification:** Changes are contained strictly within the button's Tailwind classes.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+=======
 
 ### Added Protected Muuhu Microsoft Ads Offline-Conversion Feed
 - **User Intent & Protected Scope:** Reproduce the existing Buudy Microsoft Ads offline-conversion workflow for Muuhu without requesting or using Microsoft Ads account access. Reconcile the customer's supplied Microsoft click ID against the just-created PlusBase order, prepare the one-off upload CSV, and make future Muuhu orders available through a protected HTTPS CSV feed.
@@ -7179,76 +7262,57 @@ or deployment-setting change occurred.
   - The production hair-dryer comparison page returns `200`, retains the Muuhu UK product destination, both UET event names, and Microsoft click-ID handling.
 - **Microsoft Ads Boundary:** The conversion was prepared but not uploaded because the owner explicitly withheld Ads account access. The remaining account-side action is to create/select the exact offline goal `Muuhu UK - Purchase` and upload the prepared CSV or configure a scheduled import using the protected URL plus its secret query parameter.
 - **Security Follow-up:** The PlusBase credentials were supplied in chat. Rotate them after handoff and update the Vercel environment variables immediately so the protected feed continues working.
+>>>>>>> 3d68c10420d77fadb8509016c96b771c4d640baa
 
-### August 05, 2026: Copy the QualityReviewer hair page exactly onto the existing Best Hair Dryer route
+### Bullet List Text Size and Spacing Adjusted
+- **User Intent & Protected Scope:** Increase the text size of the feature bullets to match the 18px size of the paragraph above them on desktop, without increasing the overall height of the card. Adjust the spacing between the bullets and paragraph.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Standardized paragraph text size to md:text-[18px] for clarity.
+  - Increased bullet text size from 	ext-[17px] to 	ext-[17px] md:text-[18px] so it exactly matches the 18px paragraph text on desktop screens.
+  - Reduced the top margin of the bullet list from mt-4 to mt-2.5 and the vertical gap between bullets from gap-y-2 to gap-y-1.5. This tightening exactly offsets the 1px text size increase per line, ensuring the overall card height does not increase.
+- **Verification:** Verified Tailwind spacing and font-size utility classes.
+- **Git Status:** Modified locally. No commit or push performed per rules.
 
-#### User Intent and Protected Scope
-- The owner rejected the current production design of `/best-hair-dryer-uk-2026` and requested that it use `https://trustpilotreview-shop.vercel.app/best-hair-dryer-in-uk-2026` exactly as-is, with the code pasted without visual or content reinterpretation.
-- Application scope was restricted to `/best-hair-dryer-uk-2026`. The reference route `/best-hair-dryer-in-uk-2026`, all other hair guides and comparisons, LED-mask routes, grounding routes, homepage, shared tracking, assets, and deployment configuration were protected.
-- The user did not explicitly request publication in this turn. No commit, push, pull request, Vercel deployment, promotion, or custom-domain change was authorised or performed.
+### Increased Rating Text Size
+- **User Intent & Protected Scope:** Increase the text size of the "Overall rating" text below the stars to 18px.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased font size for the rating text from 	ext-xs (12px) to 	ext-[18px].
+  - Removed leading-5 so the text inherits the default line height, preventing the text from looking cramped at the larger size.
+- **Verification:** Verified Tailwind font-size class applied correctly.
+- **Git Status:** Modified locally. No commit or push performed per rules.
 
-#### Freshness Reconciliation
-- Work continued in `C:\Users\NAMAN KHARBANDA\OneDrive\Desktop\trustpilot\trustpilotreview-hair-cro-20260802` with remote `https://github.com/naman-14113114/trustpilotreview-shop.git`.
-- The checkout began detached at documentation commit `903ad9b9f30fcbf63a878ba7bb8625fdd00c2666` and was clean.
-- A fresh `git fetch --all --prune` found that `origin/main` had advanced by 20 commits to `794801391bbef4da89ad59fccca60078116f8849`.
-- The incoming stack begins at `8937b710e843e219260abef2951d258ce941ecab` (`Created new Best Hair Dryer page (cloned Quality-review)`) and adds the reference route, its route layout, `QualityReviewerClone` components, `qualityReviewerHairDryers.ts`, and the new hair imagery. Later commits through `7948013` refined the card design, ratings, video, gifts, sticky winner control, editor verdict, product imagery, content, pros/cons, and the seven-reasons section.
-- Because the worktree was clean, it was moved non-destructively to detached `origin/main` at `7948013`. No user work was overwritten, stashed, reset, rebased, or discarded.
-- The external instruction/context paths under `E:\1st YEAR DTU\New folder\...` referenced by this repository were checked but do not exist on this machine. The complete local `AGENTS.md`, `CONTEXT.md`, `DESIGN.md`, and `PRODUCT.md` were read before editing.
+### Increased "50% OFF" Text Size in Card
+- **User Intent & Protected Scope:** Increase the text size of ONLY the "50% OFF" text within the blue card to match the 17px size of the Official Website button, without causing the card text to wrap onto additional lines.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Wrapped the "50% OFF" text inside a <span className="text-[17px]"> to explicitly increase its size to match the button.
+  - Left the surrounding date text at 	ext-[13px] so it doesn't wrap onto an additional line.
+- **Verification:** Verified the Tailwind span classes applied properly without breaking layout.
+- **Git Status:** Modified locally. No commit or push performed per rules.
 
-#### Exact Implementation
-- Replaced `apps/site/src/app/best-hair-dryer-uk-2026/page.tsx` with the exact source content of `apps/site/src/app/best-hair-dryer-in-uk-2026/page.tsx`.
-- Added `apps/site/src/app/best-hair-dryer-uk-2026/layout.tsx` with the exact source content of `apps/site/src/app/best-hair-dryer-in-uk-2026/layout.tsx`.
-- Both routes now render the same `QualityReviewerAdvertorial` component and use the same Oswald, Arimo, and Abril Fatface route font/layout wrapper.
-- Normalized text comparison confirmed the target page source and target layout source are exactly identical to the two reference route files. The only byte-level difference in the working files is Windows CRLF versus patch-created LF line endings; Git normalizes this and the TypeScript/React content is identical.
-- No shared component, product-data file, public asset, other route, tracking script, sitemap entry, or homepage link was edited.
-
-#### Reference and Visual Verification
-- The live reference URL returned HTTP `200` and matched `/best-hair-dryer-in-uk-2026` as its Vercel route.
-- Captured the live reference at desktop `1440x1000` and mobile `390x844` before implementation.
-- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
-- `corepack pnpm --filter @trustpilotreview/site lint` passed.
-- `corepack pnpm --filter @trustpilotreview/site build` passed with Next.js `16.2.11` and generated all 52 static routes, including both hair routes.
-- The root parity wrapper first failed because it launched globally installed pnpm `11.0.8` instead of the repository-required `11.1.1`. The required check was rerun from `apps/site`, where `PARITY_BASE_URL=http://localhost:3025 corepack pnpm verify:parity` passed and smoke-tested seven routes.
-- A production server was started at `http://localhost:3025`. Both the reference and target routes returned HTTP `200` at desktop and mobile widths.
-- Browser DOM QA confirmed both routes have exactly identical visible text, link lists, computed H1/main/image typography and geometry, document width, document height, page title, description, and lack of canonical metadata.
-- Both routes had zero horizontal overflow, no browser console errors, and no uncaught page errors at `1440x1000` and `390x844`.
-- Stabilized screenshot comparison against the live Vercel reference produced zero changed pixels at desktop and mobile. Local reference-versus-target first-viewport comparison also produced zero changed pixels at both sizes.
-- Full-page local screenshots have identical dimensions: `1440x15311` on desktop and `390x23375` on mobile. Tiny non-visual full-page pixel differences came from asynchronous anti-aliasing/intersection timing; visible text, layout geometry, scroll height, computed styles, and route source were identical.
-- The five Next Image badge requests and their direct PNG assets returned HTTP `200` locally and on Vercel. Initial `naturalWidth=0` readings occurred because those below-fold images were still lazy and had not entered the viewport, not because the assets were broken.
-- The build-generated `apps/site/next-env.d.ts` change was restored to its tracked development import and is not part of the task diff.
-
-#### Exact-Copy Concerns Preserved by Request
-- The reference page inherits the generic site title `Trustpilot Review Shop | LED Face Mask Reviews & Buyer Guides`, the generic LED-mask meta description, and no canonical link. Copying the route exactly removes the previous route-specific metadata from `/best-hair-dryer-uk-2026`.
-- A real mobile CTA click showed that the reference implementation navigates to `https://uk.muuhu.com/products/muuhu-hair-dryer` but drops incoming `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid`. Microsoft UET page requests still loaded, but cross-domain attribution parameters were not preserved.
-- These SEO/tracking behaviours were deliberately not corrected because the owner explicitly requested no difference from the reference. They should be confirmed or separately authorised before publication if preserving paid-search attribution and route-specific metadata is more important than behavioural identity.
-
-#### Final Git and Runtime State
-- Application HEAD remains detached at `794801391bbef4da89ad59fccca60078116f8849`, matching freshly fetched `origin/main` before the local route copy.
-- Intended application changes are limited to the modified target `page.tsx` and new target `layout.tsx`; this `CONTEXT.md` append is the required documentation change.
-- No file was staged. No commit, push, branch, pull request, GitHub action, Vercel deployment, production promotion, alias/domain edit, or ad-platform mutation occurred.
-- Local production preview remains available at `http://localhost:3025/best-hair-dryer-uk-2026` for owner review.
-
-### August 05, 2026: Add the owner-supplied Muuhu hero and restore the seven-attachment section
-
-#### User Intent and Scope
-- The owner approved publication of the new `/best-hair-dryer-uk-2026` design and requested two route-specific changes before release: replace the lead Muuhu banner with the supplied diffuser image and restore the seven-attachment section from the previous Top 5 page.
-- The reference route `/best-hair-dryer-in-uk-2026` and every other route remain protected. Shared components accept opt-in props so their default rendering remains unchanged.
-
-#### Implementation
-- Added the supplied `1254x1254` PNG unchanged as `apps/site/public/img/hair/muuhu-diffuser-model-main.png`; source and copied-file SHA-256 values both equal `4A549CB65F1C186BA4FD232A6429C7CEFB2C4DA5B8C8B06A8EDC6E5CF57DEC66`.
-- Added optional hero-image, hero-alt, image-constraint, and Muuhu-attachment props to `QualityReviewerAdvertorial`. The existing banner remains the default, which preserves the reference route.
-- Configured only `/best-hair-dryer-uk-2026` to use the supplied image, constrain its desktop width to `760px`, and render the attachment section.
-- Recreated the previous page's seven-column attachment strip inside the number-one Muuhu card with the same existing images and labels: Diffuser, Concentrator, Round Brush, Left Curler, Right Curler, L-Shape Base Unit, and Smoothing Brush.
-- The attachment strip is opt-in and rank-gated, so it does not appear on products 2-5 or on `/best-hair-dryer-in-uk-2026`.
-
-#### Local Verification
-- `corepack pnpm --filter @trustpilotreview/site typecheck` passed.
-- `corepack pnpm --filter @trustpilotreview/site lint` passed.
-- `corepack pnpm --filter @trustpilotreview/site build` passed with Next.js `16.2.11` and all 52 static routes.
-- `PARITY_BASE_URL=http://localhost:3025 corepack pnpm verify:parity` passed and smoke-tested seven routes.
-- Production-mode browser QA passed at desktop `1440x1000` and mobile `390x844`: HTTP `200`, correct supplied hero asset at natural size `1254x1254`, one seven-attachment section, all seven attachment assets loaded, zero horizontal overflow, zero console errors, and zero uncaught page errors.
-- Browser QA of `/best-hair-dryer-in-uk-2026` confirmed it still uses `/img/hair/muuhu-hair-dryer-banner.webp` and contains no seven-attachment section.
-
-#### Release State
-- Work is isolated on branch `codex/hair-top5-image-attachments` from current `origin/main` commit `794801391bbef4da89ad59fccca60078116f8849`.
-- GitHub publication, Vercel production deployment, promotion, and custom-domain verification are the next authorised steps in this same request.
+### Increased Rating Text Size for Remaining Products
+- **User Intent & Protected Scope:** Apply the same 18px text size increase to the "Overall rating" text for the rest of the 4 ranked products, not just the #1 winner.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased font size for the non-winner rating text from 	ext-xs (12px) to 	ext-[18px] inside the mapping logic.
+  - Removed leading-5 line-height constraint to match the earlier change.
+- **Verification:** Verified Tailwind font-size class applied correctly.
+- **Git Status:** Modified locally. No commit or push performed per rules.
