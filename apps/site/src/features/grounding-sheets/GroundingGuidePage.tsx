@@ -24,19 +24,19 @@ import {
 
 const gifts = [
   {
-    name: "Premium Packaging",
-    image: "/img/grounding-sheets/juujo-premium-packaging-gift.webp",
-    value: "$79",
-  },
-  {
     name: "Grounding Mat",
-    image: "/img/grounding-sheets/juujo-grounding-mat-gift.webp",
-    value: "$59",
+    image: "/img/grounding-sheets/grounding_mat_gift.png",
+    value: "$99",
   },
   {
-    name: "Sleep Monitoring App",
-    image: "/img/grounding-sheets/juujo-sleep-monitoring-app-gift.webp",
-    value: "$70",
+    name: "Premium Eye Mask",
+    image: "/img/grounding-sheets/juujo-premium-eye-mask.png",
+    value: "$69",
+  },
+  {
+    name: "Grounding Pillowcase",
+    image: "/img/grounding-sheets/juujo-grounding-pillowcase-gift.webp",
+    value: "$49",
   },
 ] as const;
 

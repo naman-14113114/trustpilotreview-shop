@@ -381,19 +381,19 @@ const rankedSheets: RankedSheet[] = [
 
 const gifts = [
   {
-    name: "Premium Packaging",
-    image: "/img/grounding-sheets/juujo-premium-packaging-gift.webp",
-    value: "$39",
-  },
-  {
     name: "Grounding Mat",
-    image: "/img/grounding-sheets/juujo-grounding-mat-gift.webp",
-    value: "$99",
+    image: "/img/grounding-sheets/grounding_mat_gift.png",
+    value: "$69",
   },
   {
-    name: "Sleep Monitoring App",
-    image: "/img/grounding-sheets/juujo-sleep-monitoring-app-gift.webp",
-    value: "$70",
+    name: "Premium Eye Mask",
+    image: "/img/grounding-sheets/juujo-premium-eye-mask.png",
+    value: "$69",
+  },
+  {
+    name: "Grounding Pillowcase",
+    image: "/img/grounding-sheets/juujo-grounding-pillowcase-gift.webp",
+    value: "$49",
   },
 ];
 
@@ -535,7 +535,7 @@ function GiftPanel() {
         </div>
 
         <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          Active Offer Found: $208 in{" "}
+          Active Offer Found: $187 in{" "}
           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
             FREE GIFTS
           </span>
