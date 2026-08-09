@@ -5,6 +5,7 @@ export default function BestHairDryerInUK2026() {
     <QualityReviewerAdvertorial
       topProductImageSrc="/img/hair/muuhu-airpro-product-card-closeup.png"
       stickyWinnerImageSrc="/img/hair/muuhu-airpro-model-no-text.png"
+      reducePreRankingScroll
       showMuuhuAttachments
     />
   );
