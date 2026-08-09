@@ -33,8 +33,8 @@ export default function QualityReviewerAdvertorial({
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const [openReason, setOpenReason] = useState<number>(0);
-  const [openLook, setOpenLook] = useState<number>(0);
-  const [openAvoid, setOpenAvoid] = useState<number>(0);
+  const [openLook, setOpenLook] = useState<number>(-1);
+  const [openAvoid, setOpenAvoid] = useState<number>(-1);
 
   const playVerdictVideo = () => {
     const video = verdictVideoRef.current;
@@ -269,11 +269,11 @@ export default function QualityReviewerAdvertorial({
         </div>
 
         {/* Green Box: Criteria */}
-        <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] md:text-[36px] font-bold text-[#3A3A3A] text-center mb-8">
+        <div className="mb-6 rounded-xl border border-[#83D221]/60 bg-[#f8fff1] px-4 py-4 shadow-[0_2px_8px_rgba(0,0,0,0.08)] md:px-5">
+          <h2 className="mb-3 text-center font-[family-name:var(--font-oswald)] text-[24px] font-bold text-[#3A3A3A] md:text-[28px]">
             We've Rated The Hair Dryers On 8 Criteria:
           </h2>
-          <ul className="flex flex-col gap-6">
+          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "Drying Time",
               "Results (How The Hair Looked After)",
@@ -286,12 +286,12 @@ export default function QualityReviewerAdvertorial({
             ].map((item, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-4 md:gap-5 text-[22px] md:text-[26px] font-bold text-[#3A3A3A] font-[family-name:var(--font-oswald)] tracking-wide"
+                className="flex items-center gap-2 rounded-lg border border-[#83D221]/35 bg-white px-3 py-2 font-[family-name:var(--font-oswald)] text-[16px] font-bold tracking-wide text-[#3A3A3A] md:text-[18px]"
               >
                 <svg
-                  className="shrink-0 mt-1"
-                  width="28"
-                  height="28"
+                  className="shrink-0"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#3A3A3A"
@@ -308,6 +308,7 @@ export default function QualityReviewerAdvertorial({
         </div>
 
         {/* Green Box: 7 Reasons */}
+        {false && (
         <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
           <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#3A3A3A] text-center mb-6">
             7 Reasons To Get A High-Speed Brushless Motor Hair Dryer
@@ -364,14 +365,17 @@ export default function QualityReviewerAdvertorial({
             />
           </div>
         </div>
+        )}
 
         {/* Green Box: What to Look For */}
-        <div className="border-2 border-[#83D221] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#2aa359] text-center mb-6">
+        <div className="mb-8 grid gap-5 md:grid-cols-2">
+        <div className="border-2 border-[#83D221] bg-white p-4 shadow-[0_2px_8px_rgba(0,0,0,0.12)] md:p-5">
+          <h2 className="mb-3 text-center font-[family-name:var(--font-oswald)] text-[26px] font-bold text-[#2aa359] md:text-[30px]">
             What To Look For
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col">
             <FaqAccordion
+              compact
               type="look"
               title="High Airflow (M/S) Rather Than Wattage"
               content="Traditionally, a hair dryer's strength was gauged by its wattage consumption. Whilst logical historically, modern motors can now generate significantly more force than older models sharing the identical wattage. Consequently, the most reliable metric to observe is the airflow velocity in metres per second (m/s). Our findings indicate that devices delivering at least 50 m/s can slash the average consumer's drying routine by a full 50%!"
@@ -379,6 +383,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenLook(openLook === 0 ? -1 : 0)}
             />
             <FaqAccordion
+              compact
               type="look"
               title="Smart Temperature Regulation"
               content="Should you desire complete safeguarding against heat damage whilst drying, it is imperative to seek out a model equipped with active temperature monitoring. Typically, this is an advantage exclusive to hollow air devices, given that integrating such sensors into the layout of a conventional dryer is remarkably difficult."
@@ -386,6 +391,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenLook(openLook === 1 ? -1 : 1)}
             />
             <FaqAccordion
+              compact
               type="look"
               title="Negative Ion Technology To Tackle Frizz"
               content="You have undoubtedly come across frizz-fighting buzzwords like tourmaline, ceramic, and negative ions. Based on our extensive trials, negative ions remain unparalleled for subduing unruly frizz and leaving you with sleek, glossy tresses. Moreover, when paired with an intense airflow (m/s), you can be virtually certain that frizzy strands will be banished for good."
@@ -393,6 +399,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenLook(openLook === 2 ? -1 : 2)}
             />
             <FaqAccordion
+              compact
               type="look"
               title="Delayed Cooling Shutdown System"
               content="Many traditional hair dryer motors are constructed in a manner that causes rapid degradation with frequent usage. Specifically, when a motor transitions from intense heat to cold in a brief timeframe, it deteriorates much faster. Certain contemporary models employ a phased shutdown mechanism that gradually cools the heating element after being switched off, ensuring minimal wear and tear on the internal components."
@@ -403,12 +410,13 @@ export default function QualityReviewerAdvertorial({
         </div>
 
         {/* Red Box: What to Avoid */}
-        <div className="border-2 border-[#ea1045] p-[30px] md:p-[50px] mb-12 bg-white shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[32px] font-bold text-[#ea1045] text-center mb-6">
+        <div className="border-2 border-[#ea1045] bg-white p-4 shadow-[0_2px_8px_rgba(0,0,0,0.12)] md:p-5">
+          <h2 className="mb-3 text-center font-[family-name:var(--font-oswald)] text-[26px] font-bold text-[#ea1045] md:text-[30px]">
             What To Avoid
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col">
             <FaqAccordion
+              compact
               type="avoid"
               title="Limited Heat And Speed Options"
               content="A common fallacy amongst shoppers regarding wattage is the belief that a specific wattage bracket corresponds to each hair type. Provided you own a sufficiently powerful dryer equipped with ample settings, this simply is not true. Having access to a vast array of speed and temperature combinations ensures you can pinpoint the exact airflow required to make your hair look absolutely magnificent."
@@ -416,6 +424,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenAvoid(openAvoid === 0 ? -1 : 0)}
             />
             <FaqAccordion
+              compact
               type="avoid"
               title="Bulky And Cumbersome Designs"
               content="How frequently have you felt as though you have completed a rigorous upper body workout just from drying your hair? The majority of conventional dryers remain quite heavy and rather awkward to hold. Fortunately, many recent models spare you this discomfort by utilising lightweight materials and cleverly distributing the bulk down into the handle grip, rather than leaving it top-heavy."
@@ -423,6 +432,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenAvoid(openAvoid === 1 ? -1 : 1)}
             />
             <FaqAccordion
+              compact
               type="avoid"
               title="An Absence Of Styling Attachments"
               content="If your goal is a versatile hair dryer that allows you to execute any look with absolute precision, you must check for the included accessory nozzles. A diffuser alongside a sleek concentrator nozzle ought to be the bare minimum to guarantee you can sculpt your hair precisely to your liking."
@@ -430,6 +440,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenAvoid(openAvoid === 2 ? -1 : 2)}
             />
             <FaqAccordion
+              compact
               type="avoid"
               title="Excessively Loud Motors"
               content="Have you ever felt as though you were standing on an airport runway whilst blow-drying your hair? Truthfully, that comparison is not too much of an exaggeration. Most dryers manufactured prior to 2016 produce noise levels hovering between 90 and 110 decibels, which rivals the roar of an aeroplane taking flight. Thanks to recent leaps in motor technology, modern alternatives are virtually half as noisy, allowing you to dry your hair early in the morning without rousing the entire household!"
@@ -437,6 +448,7 @@ export default function QualityReviewerAdvertorial({
               onToggle={() => setOpenAvoid(openAvoid === 3 ? -1 : 3)}
             />
           </div>
+        </div>
         </div>
 
         {/* Blue Banner */}
