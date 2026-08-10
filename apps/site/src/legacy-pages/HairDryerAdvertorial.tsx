@@ -1332,7 +1332,7 @@ export default function HairDryerAdvertorial({
     : isThreeWay
       ? "/img/hair/vs-dyson-shark-muuhu.webp"
       : market.key === "uk"
-        ? "/img/hair/top-5-hair-dryer.webp"
+        ? "/img/hair/top-5-hair-dryer-green-hero.png"
         : market.key === "ca"
           ? "/img/hair/top5-uk.webp"
           : "/img/hair/top5-uk.webp";
