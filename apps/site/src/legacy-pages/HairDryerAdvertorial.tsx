@@ -875,7 +875,7 @@ const bestHairDecisionDetails: Record<number, BestHairDecisionDetail> = {
       "1,600W / 110,000 RPM",
       "7 included attachments",
       "90-day money-back guarantee",
-      "1-year warranty",
+      "2-year warranty",
     ],
   },
   2: {
