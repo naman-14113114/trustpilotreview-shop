@@ -6,9 +6,9 @@ import "./pillow-comparison.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.trustpilotreview.shop"),
-  title: "Trustpilot Review Shop | LED Face Mask Reviews & Buyer Guides",
+  title: "Trustpilot Review Shop | Practical UK Buyer Guides",
   description:
-    "UK-focused LED face mask reviews, buyer guides, and red light therapy comparisons covering wavelengths, safety, face and neck coverage, and value.",
+    "Practical UK buyer guides with clear criteria, transparent disclosures and useful questions to consider before making a purchase.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" }
