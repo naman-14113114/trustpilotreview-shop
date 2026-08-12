@@ -69,6 +69,12 @@ const routeMetadata: Record<string, RouteMetadata> = {
       "Compare five grounding sheets for US shoppers by fitted sizes, material blend, setup, care, entry price, trial period, warranty and overall editorial value.",
     canonical: `${SITE_URL}/best-grounding-sheets-us-2026`
   },
+  "/best-grounding-sheets-in-us-2026": {
+    title: "Best Grounding Sheets in US 2026 | Top 5 Compared",
+    description:
+      "Detailed US grounding sheet comparison of Juujo, Terra, GroundingWell, Premium Grounding and BareEarth by fit, materials, setup, reviews, returns and value.",
+    canonical: `${SITE_URL}/best-grounding-sheets-in-us-2026`
+  },
   ...Object.fromEntries(
     buudyEditorialPages.map((page) => [
       page.path,

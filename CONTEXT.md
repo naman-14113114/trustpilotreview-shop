@@ -7343,3 +7343,208 @@ or deployment-setting change occurred.
 - **Verification:** Verified changes are within the data structure and don't touch CSS/layout.
 - **Git Status:** Modified locally. No commit, push, branch, or deployment performed per rules.
 
+## 2026-08-12 19:53:51 +05:30 - Workspace and TrustpilotReview memory refresh before Best Grounding Sheets changes
+
+### User request and practical meaning
+
+- The user asked to update memory for the complete `E:\1st YEAR DTU\New folder` workspace, including local and GitHub repository state, with special attention to `trustpilotreview-shop`.
+- The user stated they had just taken the latest pull locally from GitHub and wanted Codex to verify that directly before future changes to the Best Grounding Sheets pages.
+- This was a read-only state and source-truth refresh. No application source, route, page copy, asset, metadata, tracking, checkout, Vercel, GitHub publication, or production setting was to be changed in this turn.
+- The next likely work area is the US grounding-sheet page family, especially `/best-grounding-sheets-us-2026` and related guide pages.
+
+### Context and files read
+
+- Read workspace `AGENTS.md` in full.
+- Read workspace `CONTEXT.md` in explicit chunks because direct full output was truncated.
+- Read this repository `AGENTS.md`, this complete `CONTEXT.md` in chunks, `DESIGN.md`, and `PRODUCT.md`.
+- Read current TrustpilotReview grounding sources:
+  - `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`
+  - `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`
+  - `apps/site/src/data/groundingGuides.ts`
+  - `apps/site/src/app/best-grounding-sheets-us-2026/page.tsx`
+  - current grounding route wrappers under `apps/site/src/app`
+  - `apps/site/src/legacy-pages/old/Home.tsx`
+  - `apps/site/src/app/layout.tsx`
+  - `apps/site/src/lib/metadata.ts`
+- Read Juujo governing and product files because TrustpilotReview grounding pages depend on the current Juujo product truth:
+  - `Juujo-Vercel\AGENTS.md`
+  - `Juujo-Vercel\CONTEXT.md`
+  - `Juujo-Vercel\DESIGN.md`
+  - `Juujo-Vercel\PRODUCT.md`
+  - current US `products.ts`, `GroundingBuyBox.tsx`, `cart.ts`, checkout prepare route, and sitemap.
+
+### TrustpilotReview Git state verified
+
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`.
+- Branch: `main`.
+- Remote: `https://github.com/naman-14113114/trustpilotreview-shop.git`.
+- After `git fetch --all --prune`, local `HEAD`, `origin/main`, and `origin/HEAD` all resolve to `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`.
+- Ahead/behind after fetch: `0/0`.
+- Latest commit: `80e2fd1 Remove product catalogue from homepage (#24)`, authored/committed on 2026-08-11 23:56:12 +05:30.
+- The user's local pull is confirmed: this repository is no longer ten commits behind the remote, unlike the prior workspace record.
+- Dirty state before this context append: exactly one modified generated file, `apps/site/next-env.d.ts`.
+- The `next-env.d.ts` diff is the known Next.js generated import flip from `./.next/dev/types/routes.d.ts` to `./.next/types/routes.d.ts`; no product/content/source decision was inferred from it and it was not reverted because the task was memory refresh only.
+- No staged or untracked files were present before this context append.
+
+### Current TrustpilotReview changes since the older local baseline
+
+- The old remembered local TrustpilotReview baseline from the previous workspace entry was `0b032125c3aa02eff55248ab1a42d796e995e159`.
+- The current local/GitHub baseline is ten commits newer at `80e2fd1`.
+- Commit stack from `0b03212` to `80e2fd1`:
+  - `a665707 Reduce UK hair dryer pre-ranking scroll`.
+  - `f04ea55 fix: scope hair dryer pre-ranking compression`.
+  - `99022b8 Merge pull request #20 from naman-14113114/codex/hair-scroll-scope-target-page`.
+  - `3d09505 fix: use hybrid hair dryer top five layout`.
+  - `78257ce Merge pull request #21 from naman-14113114/codex/hair-hybrid-cro`.
+  - `b08595a feat: use green hair dryer top five hero`.
+  - `b2cacb7 Merge pull request #22 from naman-14113114/codex/use-green-hair-hero`.
+  - `9e55cf1 fix: swap Shark and Dyson hair dryer images`.
+  - `2315402 Merge pull request #23 from naman-14113114/codex/hair-product-image-swaps`.
+  - `80e2fd1 Remove product catalogue from homepage (#24)`.
+- Diff from old `0b03212` to current `80e2fd1`: 11 files changed, with new hair assets `dyson-supersonic-nural-no-attachments-card.webp`, `shark-speedstyle-pro-flat-card.webp`, and `top-5-hair-dryer-green-hero.png`; hair page and QualityReviewerClone changes; and homepage/layout/metadata changes.
+- Latest commit `80e2fd1` changed only `apps/site/src/app/layout.tsx`, `apps/site/src/legacy-pages/old/Home.tsx`, and `apps/site/src/lib/metadata.ts`.
+- Current homepage no longer renders the previous product catalogue/cards. It is now a compact editorial trust page headed `Clearer choices start with better questions.`, with disclosure/contact links and no direct grounding guide/card links found by source search.
+
+### Current Best Grounding Sheets source truth
+
+- Main route remains `/best-grounding-sheets-us-2026`, with metadata title `Best Grounding Sheets USA 2026 | Top 5 Fitted Sheet Comparison` and canonical `https://www.trustpilotreview.shop/best-grounding-sheets-us-2026`.
+- Main component is `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`.
+- Current ranking in the main page source:
+  1. `Juujo Grounding Fitted Sheet`
+  2. `Terra Grounding Bed Sheet`
+  3. `GroundLuxe Fitted Grounding Sheet`
+  4. `GroundingWell Fitted Sheet`
+  5. `Premium Grounding Sheet`
+- Current visible Juujo values in this source include `$99`, original `$199`, `4.9 / 5`, `Official Website` CTAs, `BEST OVERALL GROUNDING SHEETS`, and destination `https://grounding.juujo.com/products/grounding-fitted-sheets`.
+- Current reviewer card uses `/img/grounding-sheets/dr-image.webp`, visible name `Dr. Rachel Morgan`, role `Medical Reviewer`, and the existing 10-years/200-hours review paragraph.
+- Current main-page gift panel says `Active Offer Found: $187 in FREE GIFTS` and maps gifts to `Grounding Mat`, `Premium Eye Mask`, and `Grounding Pillowcase` with images:
+  - `/img/grounding-sheets/grounding_mat_gift.png`
+  - `/img/grounding-sheets/juujo-premium-eye-mask.png`
+  - `/img/grounding-sheets/juujo-grounding-pillowcase-gift.webp`
+- Current bottom video source in the main page is `/assets/juujo-grounding-fitted-sheet-review.mp4` with poster `/assets/juujo-grounding-fitted-sheet-review-poster.webp`. Older context notes mentioning `/assets/grounding-best-5-video.mp4` are no longer the current source truth for this component.
+- Current source contains strong claim copy such as `reduce inflammation`, `Reduces Inflammation`, `Better Sleep Quality`, `Relieves Muscle Soreness`, `Energy Boost`, and `Antimicrobial Properties`. These were observed only; no compliance/content edit was made.
+
+### Current grounding guide family source truth
+
+- Current data source: `apps/site/src/data/groundingGuides.ts`.
+- Current shared renderer: `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`.
+- Current guide slugs in source:
+  - `/grounding-sheets-for-back-pain-and-inflammation-evidence`
+  - `/juujo-vs-groundingwell-grounding-sheet`
+  - `/best-flat-grounding-sheets-us-2026`
+  - `/best-grounding-mats-us-2026`
+  - `/best-grounding-sheets-for-hot-sleepers-us-2026`
+  - `/juujo-vs-terra-grounding-sheet`
+  - `/how-to-test-grounding-sheet-conductivity`
+  - `/grounding-sheet-buying-mistakes`
+  - `/grounding-sheet-durability-and-lifetime-cost`
+  - `/complete-grounding-sheet-kit-checklist`
+  - `/fake-grounding-sheets-how-to-spot-them`
+  - `/cheap-vs-quality-grounding-sheets`
+  - `/5-percent-vs-10-percent-silver-grounding-sheets`
+  - `/grounding-sheet-washing-and-conductivity-loss`
+- Shared guide gift strip currently uses `Grounding Mat`, `Premium Eye Mask`, and `Grounding Pillowcase`.
+- The guide data still uses Juujo's planned comparison facts such as `$99`, seven US sizes, 120-night trial, and 90% cotton / 10% conductive silver language.
+- Direct-comparison pages must continue to contain only the named products, per repository rules.
+
+### Juujo current state relevant to Trustpilot grounding pages
+
+- Juujo repository: `E:\1st YEAR DTU\New folder\Juujo-Vercel`.
+- Branch and remote state after the workspace sweep: `main` at `6f9de98b80e967db155a6f3755cf0041bd3ee0c5`, aligned `0/0` with `origin/main`, clean.
+- Latest Juujo commit: `6f9de98 feat: implement checkout preparation API, sitemap generation, and grounding product buy box component.`
+- This confirms the previous local Premium Sleep Mask URL consolidation was published to GitHub. The latest commit includes the context entry and the five US source files from that fix.
+- Current Juujo US fitted-sheet source has real per-size pricing: Single `$99`, Twin `$149`, Twin XL `$159`, Full `$169`, Queen `$169`, King `$189`, and Cali King `$189`.
+- Current Juujo US product data still has a material field `95% organic cotton, 5% conductive silver fibre`, while TrustpilotReview grounding pages currently use 90/10 language and Juujo source has historical mixed material wording. Confirm the desired material claim before editing comparison copy.
+- Current Juujo fitted-sheet free gifts in the buy box/cart flow are Grounding Mat, Premium Sleep Mask, and Grounding Pillowcase. The gift checkout marker is `gift-sleep-mask` mapped to `FREE_SLEEPING_MASK`.
+- Current TrustpilotReview grounding pages still say `Premium Eye Mask` in gift panels, which is a source-truth mismatch with the current Juujo storefront. It was recorded but not changed in this memory-refresh task.
+
+### Whole-workspace repository sweep after fetch
+
+- `Buudy-Vercel`: `main`, `a880080dec7457ce6c73e9342bf3fe84a3c4078b`, upstream `origin/main`, ahead/behind `0/0`, clean. Latest commit `fix: make this whole repo up to date according to buudy.co.uk one, add all things here now with all latest changes`.
+- `design-md-chrome`: `main`, `8e07614fb18752ab1ee14dd65a8ff93e63c9b13b`, upstream `origin/main`, ahead/behind `0/0`, dirty only because of untracked `.vscode/settings.json`; preserve it.
+- `Juujo-Vercel`: `main`, `6f9de98b80e967db155a6f3755cf0041bd3ee0c5`, upstream `origin/main`, ahead/behind `0/0`, clean. Its origin remote contains an embedded credential in local Git config and must remain sanitized in output.
+- `Miroooo-Vercel`: `main`, `ae69b72b85ba86ac9821a9fece65519fc859aef6`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu`: `main`, `6c4e0d6b169eb8369518da8d48a84f2de76f3c97`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu-app`: `main`, `083aa68952fc21d0d067954ce932f13569763ad1`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `muuhu-store`: `main`, `f4786b7a1424527bb2859d8b1838783ea00953dd`, upstream `origin/main`, ahead/behind `0/0`, clean. Latest commit fixes UK header visibility and VideoReviews loading speed.
+- `Muuhu-Vercel`: `main`, `941326af615635a2ab23d42b4990c0210fa0128b`, no upstream or remote configured, clean.
+- `the-global-edit`: `main`, `232f105872963306d2532ccb9a731c3f3481d740`, upstream `origin/main`, ahead/behind `0/0`, dirty only because of its existing modified `CONTEXT.md` from the earlier fast-forward record.
+- `trustpilot-led-mask-replica`: `main`, `3d130fa7841a6e02b7fb65111eaa932eaaa217c3`, upstream `origin/main`, ahead/behind `0/0`, clean.
+- `trustpilotreview-shop`: `main`, `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`, upstream `origin/main`, ahead/behind `0/0`, dirty before this append only because of generated `apps/site/next-env.d.ts`.
+- `uk.Buudy Vercel Deployment`: `main`, `2426d79be4ccae73682e0d3d16a0c33d324a70ff`, upstream `origin/main`, ahead/behind `0/0`, clean.
+
+### Verification and actions not taken
+
+- Commands run included context reads, `git status --short --branch`, sanitized remote inspection, `git fetch --all --prune`, `git rev-list --left-right --count`, recent `git log`, `git show --stat`, diff/name-status inspection, untracked-file inspection, and targeted `rg`/source reads.
+- No lint, typecheck, build, browser screenshot, live route check, Vercel inspection, checkout, order, or ad-platform check was run because this was a memory/source-state refresh and no application file was edited.
+- No source code, route, page content, asset, metadata, tracking, checkout, package, or deployment file was intentionally changed.
+- No file was staged.
+- No commit was created.
+- No push was made.
+- No branch or pull request was created.
+- No pull, merge, rebase, stash, reset, Vercel deployment, production promotion, domain/alias/environment change, PlusBase action, Microsoft Ads action, payment, or order occurred.
+
+### Final state and follow-up
+
+- After this append, `trustpilotreview-shop` is expected to show `CONTEXT.md` modified plus the pre-existing generated `apps/site/next-env.d.ts` modification.
+- The workspace context ledger is also being appended for the whole-folder state update.
+- For the next Best Grounding Sheets edit, start from TrustpilotReview `80e2fd1`, preserve the generated `next-env.d.ts` unless explicitly cleaning generated drift, and re-check whether the user wants the Trustpilot gift wording updated from `Premium Eye Mask` to Juujo's current `Premium Sleep Mask`.
+- Before any factual copy change, confirm whether the comparison page should continue using 90/10 cotton-silver language or align with the current Juujo product data field that still says 95/5.
+
+## 2026-08-12 21:24:11 +05:30 - New detailed `/best-grounding-sheets-in-us-2026` page implemented locally
+
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`, intended public domain `https://www.trustpilotreview.shop`.
+- Branch and upstream state before editing: `main`, HEAD `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`, upstream `origin/main`, ahead/behind `0/0` after `git fetch --all --prune`. Latest commit remained `80e2fd1 Remove product catalogue from homepage (#24)`.
+- Dirty state before this task's edits: `CONTEXT.md` already modified from the prior memory-refresh append and generated `apps/site/next-env.d.ts` already modified with the known Next route-types import flip. Both were preserved and not reverted.
+- User request: implement a new public page at `/best-grounding-sheets-in-us-2026` using the old BestLedFaceMask / best-hair-dryer detailed ranked-card style, while keeping the current grounding header/editor framing, Juujo winner section, gift offer style, sticky mobile CTA, and same verdict video. Do not redirect, replace, or edit `/best-grounding-sheets-us-2026`.
+- Practical scope: add the new page, new data/component, BareEarth local evidence/product assets, metadata/canonical, sitemap, and llms entries only. Protected areas were the existing `/best-grounding-sheets-us-2026` route/component, other grounding guide routes, checkout, tracking, product data outside this new page, prices outside this page, redirects, deployment settings, commits, pushes, PRs, and production.
+- Required context and design instructions read before implementation: workspace `AGENTS.md`, workspace `CONTEXT.md`, repository `AGENTS.md`, repository `CONTEXT.md`, `DESIGN.md`, `PRODUCT.md`, `design-taste-frontend` skill, Vercel Next.js skill with relevant `file-conventions`, `metadata`, and `image` references, and the Playwright skill.
+- Source pages checked live for factual basis: BareEarth Trustpilot, BareEarth offer page, GroundingWell product page, GroundingWell Trustpilot, Terra product page, The Grounding Co Trustpilot, Premium Grounding product page, and Premium Grounding Trustpilot.
+- Source facts used: BareEarth public Trustpilot showed 1.3 TrustScore, 99 reviews and 90% one-star share; BareEarth offer page claimed 4.9 / 201,191+ grounded customers plus 90-day refund language and a 10% silver blend; Terra source showed 95% cotton / 5% silver, $159.95 display and broad wellness claims; Terra Trustpilot showed 16% one-star share; GroundingWell source showed panel format and 90-day guarantee; GroundingWell Trustpilot showed 20% one-star share; Premium Grounding source showed flat under-sheet format, 30% stainless steel and $249 entry pricing; Premium Grounding Trustpilot showed a small public review base and support/return complaint themes in one-star reviews.
+- Files/routes inspected: `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx`, `apps/site/src/features/grounding-sheets/GroundingGuidePage.tsx`, `apps/site/src/app/best-grounding-sheets-us-2026/page.tsx`, old QualityReviewer/hair comparison components, `apps/site/src/lib/metadata.ts`, `apps/site/public/sitemap.xml`, `apps/site/public/llms.txt`, `apps/site/public/llms-full.txt`, package/tsconfig files, `MarketFlag`, `OutboundLoader`, and `GreenStarRating`.
+- Files changed: added `apps/site/src/features/grounding-sheets/GroundingSheetsInUsAdvertorial.tsx`; added `apps/site/src/app/best-grounding-sheets-in-us-2026/page.tsx`; updated `apps/site/src/lib/metadata.ts`; updated `apps/site/public/sitemap.xml`; updated `apps/site/public/llms.txt`; updated `apps/site/public/llms-full.txt`; added `apps/site/public/img/grounding-sheets/bareearth-grounding-sheet.webp`; added `apps/site/public/img/grounding-sheets/bareearth-trustpilot-score-distribution.png`; appended this `CONTEXT.md` entry.
+- New route behavior: `/best-grounding-sheets-in-us-2026` renders five detailed old-style ranked cards in this order: #1 Juujo Grounding Fitted Sheet, #2 Terra Grounding Bed Sheet, #3 GroundingWell Bedsheet, #4 Premium Grounding Sheets, #5 BareEarth Grounding Sheets. GroundLuxe is absent from the new page.
+- New criteria section: visible title `We evaluated grounding sheets based on 10 criteria` with fitted stability, conductive material, silver or steel composition, setup clarity, care durability, trial and returns, price and bundle value, shipping and stock clarity, customer-review risk, and best US buyer fit.
+- New competitor copy: Terra has at least eight cons including 30-night guarantee, threshold free shipping, 95/5 blend, $159.95 displayed price, stock messaging, broad wellness claims, 16% one-star Trustpilot share and return/care review themes. GroundingWell has at least seven cons including 95/5 blend, 104.3 x 19.7 inch panel format, strict care, 90-day guarantee, 20% one-star Trustpilot share, mixed results/material concerns and panel-shift risk. Premium Grounding has at least eight cons including $249 entry price, flat under-sheet format, stainless-steel feel, limited dimensions, Twin free-sheet exclusion note, small Trustpilot review base, return/support complaints and wellness-expectation caution. BareEarth has nine cons including 1.3 TrustScore, 90% one-star share, on-page/public-review claim mismatch, refund/restocking complaints, support complaints, delayed/incorrect/missing-item themes, quality/conductivity themes, medical-style wellness language and aggressive landing-page caution.
+- CTA/link details: all Juujo CTAs point to `https://grounding.juujo.com/products/grounding-fitted-sheets`. BareEarth #5 CTA uses the full user-provided offer URL with `uid=3061`, `oid=858`, `affid=96`, `source_id=solus_bgs`, and the supplied `sub`/`utm`/`msclkid` parameters. Competitor source links point to the public product/Trustpilot sources checked.
+- Media details: new BareEarth product image was downloaded from preferred source `https://cdn.29next.store/media/bareearth/uploads/carousel-2.webp` into `apps/site/public/img/grounding-sheets/bareearth-grounding-sheet.webp`. BareEarth Trustpilot screenshot was captured from Trustpilot, cropped to the score/distribution area, and saved as `apps/site/public/img/grounding-sheets/bareearth-trustpilot-score-distribution.png` with visible attribution/link text on the page. Temporary full-page/candidate screenshots were removed.
+- Juujo section details: new page uses `Premium Sleep Mask` wording in the free-gift panel, not `Premium Eye Mask`. The winner section keeps the Juujo image/gift/winner style and the verdict video uses `/assets/juujo-grounding-fitted-sheet-review.mp4` with poster `/assets/juujo-grounding-fitted-sheet-review-poster.webp`.
+- Metadata/discovery: `metadataForPath` now includes `/best-grounding-sheets-in-us-2026` with title `Best Grounding Sheets in US 2026 | Top 5 Compared`, description, and canonical. `sitemap.xml` includes the new URL with `lastmod` `2026-08-12`, weekly changefreq and priority `0.9`. `llms.txt` and `llms-full.txt` include new AI-readable entries for the route, ranking, criteria and key cautions.
+- Mistakes/corrections: the first BareEarth Trustpilot screenshot crop was too broad and did not show the distribution cleanly, so a full-page Trustpilot screenshot was taken and recropped to the `1.3` score plus one-star distribution area. A temporary leftover sentence mentioning GroundLuxe in the new BareEarth review body was removed so GroundLuxe is absent from the new page. PowerShell treated an unquoted `@{upstream}` expression as syntax during one status command; the upstream count was rerun correctly with quotes and showed `0/0`. Temporary Trustpilot screenshot files were removed, leaving only the final proof image.
+- Verification commands passed: `git diff --check` passed with line-ending warnings only; `pnpm --filter @trustpilotreview/site typecheck` passed; `pnpm --filter @trustpilotreview/site lint` passed; `pnpm --filter @trustpilotreview/site build` passed on Next.js 16.2.11 and generated `/best-grounding-sheets-in-us-2026` as a static route.
+- Browser verification: local Next dev server ran at `http://localhost:3100` and was stopped after verification. Playwright desktop and mobile screenshots were captured to `C:\Users\sahil\AppData\Local\Temp\trustpilotreview-grounding-verify\`. Inspected screenshots included `best-grounding-sheets-in-us-2026-desktop.png`, `best-grounding-sheets-in-us-2026-mobile.png`, `mobile-sticky-viewport.png`, `desktop-bareearth-section.png`, `desktop-video-section.png`, and `old-route-unchanged-check.png`.
+- Browser results: new route returned `200`; old `/best-grounding-sheets-us-2026` returned `200`; five `data-testid="old-style-ranked-card"` cards rendered; GroundLuxe was absent from the new route HTML; BareEarth CTA exact URL matched after HTML decoding; Juujo CTA exact URL matched; BareEarth Trustpilot proof image appeared through Next's encoded image URL and in screenshot; verdict video source/poster were present; sticky mobile CTA was visible and fixed at the bottom of the mobile viewport; no text overlap was observed in desktop/mobile screenshots.
+- Old route protection verification: no diff exists in `apps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx` or `apps/site/src/app/best-grounding-sheets-us-2026/page.tsx`, and the old route rendered successfully in Playwright. It was not redirected or replaced.
+- Not tested: no production deployment, production URL, Vercel preview, affiliate redirect click-through after leaving the site, checkout, payment, order, ad-platform event, or external analytics verification was run. External source pages were read for facts only.
+- Git state after work before this context append: branch `main`, HEAD `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`, upstream `origin/main`, ahead/behind `0/0`. Modified/untracked files were the intended new page files/assets and discovery edits, plus pre-existing `CONTEXT.md` and generated `apps/site/next-env.d.ts`.
+- Publishing state: no commit, push, branch, pull request, pull, merge, rebase, stash, reset, Vercel deployment, production promotion, rollback, domain/alias/environment change, checkout, payment, order, or ad-platform change occurred.
+- Remaining uncertainty/follow-up: production remains unchanged until the user explicitly requests commit/push/deploy. Existing generated `apps/site/next-env.d.ts` drift remains preserved. Existing `/best-grounding-sheets-us-2026` and shared guide pages still say `Premium Eye Mask`; only the new `/best-grounding-sheets-in-us-2026` page uses `Premium Sleep Mask` as requested.
+
+## 2026-08-12 22:12:58 +05:30 - New grounding page corrected to the exact Best LED Face Mask design system
+
+- Repository: `E:\1st YEAR DTU\New folder\trustpilotreview-shop`, intended public domain `https://www.trustpilotreview.shop`.
+- Branch and upstream state before editing: `main`, HEAD `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`, upstream `origin/main`, ahead/behind `0/0` after `git fetch --all --prune`. Latest commit remained `80e2fd1 Remove product catalogue from homepage (#24)`.
+- Starting worktree: the prior new-page implementation remained local and unstaged in `CONTEXT.md`, `apps/site/public/llms-full.txt`, `apps/site/public/llms.txt`, `apps/site/public/sitemap.xml`, `apps/site/src/lib/metadata.ts`, the two new BareEarth assets, the new route directory, and `GroundingSheetsInUsAdvertorial.tsx`. `apps/site/next-env.d.ts` was not dirty at this task's initial audit.
+- User correction: the new `/best-grounding-sheets-in-us-2026` page did not follow the supplied live `/best-led-face-mask-uk-2026` design closely enough. The user required the LED-mask page's exact palette, layout and editorial rhythm, grounding-sheet data only, all paragraph copy at 18px for a 40+ audience, and no duplicate #1 section at the end.
+- Practical scope: correct only the new route's presentation component. Preserve its grounding ranking, evidence, competitor pros/cons, exact outbound URLs, BareEarth assets, metadata/sitemap/llms additions and verdict media. Do not edit the existing `/best-grounding-sheets-us-2026`, the live LED-mask source, shared grounding guides, checkout, tracking or any other route.
+- Required files read before editing: workspace `AGENTS.md` and complete workspace `CONTEXT.md`; repository `AGENTS.md`, complete repository `CONTEXT.md`, `DESIGN.md`, `PRODUCT.md`; `design-taste-frontend`, Vercel Next.js and Playwright skill instructions; Next.js image guidance; the live Best LED Face Mask page; and `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx` as the code-level visual source of truth.
+- Reference inspection: Playwright opened `https://trustpilotreview-shop.vercel.app/best-led-face-mask-uk-2026` at 1440x1000. The source and rendered page established the required structure: bright emerald masthead, centered serif headline, country/year and updated row, wide five-product hero, white reviewer panel, slate article canvas, introductory copy, white 10-criteria panel, five continuous detailed ranked cards, sticky left product rail, green Pros and red Cons, blue gift offer inside #1, cream verdict panel and rounded mobile CTA.
+- File changed for the design correction: `apps/site/src/features/grounding-sheets/GroundingSheetsInUsAdvertorial.tsx`. This task also appends the repository and workspace context ledgers. No metadata, sitemap, llms, route-page or image asset content needed another correction.
+- Removed incorrect presentation: dark forest masthead, cream page canvas, compact table-like product cards, separate repeated Juujo winner section, extra footer and square-edged mobile CTA. The new page now follows the LED-mask visual hierarchy rather than merely borrowing isolated card details.
+- New first viewport: bright `emerald-500` masthead with serif `Best Grounding Sheets` headline, US flag/year, updated row, five-image grounding product comparison strip and wide Dr. Rachel Morgan reviewer panel. Every visual is a real local grounding product/reviewer asset.
+- Ranked-card result: exactly five detailed cards render in order #1 Juujo, #2 Terra, #3 GroundingWell, #4 Premium Grounding and #5 BareEarth. The #1 editor-choice marker appears once. Juujo's free-gift offer is inside card #1; there is no repeated ranked/winner section after card #5.
+- Readability result: every rendered `<p>` computes to `18px` on desktop and at the 390px mobile viewport. Product review copy, criteria explanation, reviewer text, metric values, Pros, Cons, BareEarth attribution and verdict copy use readable line heights. Small uppercase labels remain labels rather than paragraph copy.
+- Preserved grounding content: 10 grounding-specific criteria, all detailed competitor Pros/Cons, BareEarth 1.3 TrustScore and 90% one-star evidence, linked local Trustpilot screenshot, exact user-provided BareEarth affiliate URL, exact Juujo fitted-sheet URL, `Premium Sleep Mask` gift wording, and the existing Juujo verdict video/poster paths.
+- CTA/media verification: all Juujo test IDs resolved only to `https://grounding.juujo.com/products/grounding-fitted-sheets`; BareEarth CTA resolved to the complete supplied URL including `uid=3061`, `oid=858`, `affid=96`, source/sub/utm/msclkid values; the BareEarth proof image loaded at natural width 360; all product/gift/reviewer images loaded; verdict video reached ready state 4 and retained `/assets/juujo-grounding-fitted-sheet-review.mp4` plus `/assets/juujo-grounding-fitted-sheet-review-poster.webp`.
+- Desktop visual checks: inspected `desktop-top.png`, `desktop-card-one.png`, `desktop-pros-gifts.png` and `desktop-verdict.png` under `C:\Users\sahil\AppData\Local\Temp\trustpilot-grounding-redesign-20260812`. The page matched the reference rhythm across the first viewport, sticky product rail, Pros/Cons, in-card gifts and final verdict. No horizontal overflow or incoherent text overlap was observed.
+- Mobile visual checks: inspected `mobile-top.png`, `mobile-card-one.png` and `mobile-card-one-2.png` at 390x844. Document width remained 390, horizontal overflow was false, sticky CTA display was `flex`, its text fit its box, card count was five and editor-choice count was one. The small Next dev indicator visually covered only the far-left edge of the fixed CTA in development; that indicator is not part of the production page.
+- Final clean browser reload: local route title was `Best Grounding Sheets in US 2026 | Top 5 Compared`; console contained only React DevTools/HMR informational lines, with zero page errors and no image preload warning after removing the redundant below-fold Juujo image priority flag.
+- Old-route protection: `git diff --name-only` returned no changes for `apps/site/src/app/best-grounding-sheets-us-2026` or its existing grounding comparison component. `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx` was inspected but not edited.
+- Verification passed: `git diff --check` passed with only existing CRLF conversion warnings; `pnpm --filter @trustpilotreview/site typecheck` passed; `pnpm --filter @trustpilotreview/site lint` passed; and a fresh `pnpm --filter @trustpilotreview/site build` passed on Next.js 16.2.11 with `/best-grounding-sheets-in-us-2026` prerendered as a static route.
+- Test/tool corrections: one Playwright `run-code` command had Windows quoting issues and was replaced by supported `eval` checks. The first attempted dev command passed an extra separator and exited; the corrected attempt found an already-running Next server for this repository at `http://localhost:3000`, so it exited under Next's lock and the existing server was preserved and used. The build temporarily changed `apps/site/next-env.d.ts` to `.next/types/routes.d.ts`; because this task generated that out-of-scope change, it was restored to its exact pre-build `.next/dev/types/routes.d.ts` line and no diff remains in that file.
+- Local preview state: the user's pre-existing development server remains available at `http://localhost:3000/best-grounding-sheets-in-us-2026`. Playwright browser sessions were closed after verification; no extra Next server from this task remains running.
+- Not tested: no new-page production deployment, Vercel preview, production URL, external affiliate landing after leaving the local site, checkout, payment, order, ad event or analytics conversion was tested. Outbound destinations were verified from rendered anchor hrefs without navigating away.
+- Final Git state before this append: `main` at `80e2fd1d0aa380e8bfd849aa79b4bd91347a360e`, aligned `0/0` with `origin/main`. Dirty files remain the intended prior new-route/discovery/assets work plus append-only context changes; `apps/site/next-env.d.ts` is clean.
+- Publishing state: no commit, push, branch, pull request, pull, merge, rebase, stash, reset, Vercel deployment, production promotion, rollback, domain/alias/environment change, checkout, payment, order or ad-platform change occurred.
+- Remaining uncertainty/follow-up: the correction is local only until separately authorized publishing. The new page now follows the Best LED Face Mask design; the older `/best-grounding-sheets-us-2026` remains intentionally unchanged.
+
