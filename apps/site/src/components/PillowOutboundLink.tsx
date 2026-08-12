@@ -46,14 +46,19 @@ export function PillowOutboundLink({
 
     const trackerWindow = window as typeof window & {
       dataLayer?: Array<Record<string, unknown>>;
-      uetq?: Array<Record<string, unknown>>;
+      uetq?: unknown[];
     };
 
     trackerWindow.dataLayer = trackerWindow.dataLayer || [];
     trackerWindow.dataLayer.push({ event: "juujo_outbound_click", ...payload });
     trackerWindow.dataLayer.push({ event: "affiliate_click", ...payload });
     trackerWindow.uetq = trackerWindow.uetq || [];
-    trackerWindow.uetq.push({ ec: "outbound", ea: "juujo_outbound_click", ...payload });
+    trackerWindow.uetq.push("event", "juujo_outbound_click", {
+      event_category: "outbound",
+      event_label: "Juujo CloudAlign Pillow",
+      outbound_url: href,
+      source_page: window.location.pathname,
+    });
   }
 
   return (

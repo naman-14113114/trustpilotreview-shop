@@ -1,17 +1,21 @@
 export type PillowComparisonProduct = {
   rank: number;
   name: string;
+  shortName: string;
   image: string;
   imageAlt: string;
   price: string;
-  score: string;
+  previousPrice?: string;
+  score: number;
   badge: string;
   bestFor: string;
   summary: string;
   specifications: Array<[string, string]>;
   pros: string[];
   cons: string[];
+  whyBelowWinner?: string;
   sourceUrl: string;
+  availabilityNote?: string;
   isWinner?: boolean;
 };
 
@@ -19,167 +23,193 @@ export const juujoProductUrl =
   process.env.NEXT_PUBLIC_JUUJO_PRODUCT_URL ||
   "https://juujo-uk.vercel.app/products/juujo-cloudalign-pillow";
 
+export const checkedDate = "12 August 2026";
+
 export const pillowProducts: PillowComparisonProduct[] = [
   {
     rank: 1,
     name: "Juujo CloudAlign Pillow",
-    image: "/img/pillows/juujo-cloudalign.png",
+    shortName: "Juujo",
+    image: "/img/pillows/juujo-side-sleeper.png",
     imageAlt:
-      "Plain white Juujo CloudAlign pillows showing the sculpted surface and side profile",
-    price: "£49.99",
-    score: "9.7 / 10",
+      "Side sleeper resting on the sculpted white Juujo CloudAlign pillow",
+    price: "From \u00A349.99",
+    previousPrice: "\u00A3100",
+    score: 4.9,
     badge: "Best overall",
     bestFor:
-      "Side sleepers who want defined shoulder space, a choice of profile and strong bundle value.",
+      "Side sleepers who want dedicated shoulder space, two finished height choices and strong bundle value.",
     summary:
-      "CloudAlign takes the most purpose-built approach in this group. Its central cradle, neck channels, side-sleeper wings and arm space are shaped into one stable memory-foam surface. Regular and High profiles make the fit easier to judge, while four washable-cover colours and straightforward bundle pricing give it a clearer buying proposition than most specialist pillows.",
+      "CloudAlign is the most purpose-built side-sleeper design in this comparison. Its wide 68.5 cm surface combines a central cradle, raised neck support and contoured shoulder-and-arm zones in one stable memory-foam shape. Regular and High profiles make the choice clearer than rebuilding a pillow layer by layer, while four colour options make it easier to match existing bedding.",
     specifications: [
-      ["Size", "68.5 × 37 cm"],
-      ["Profiles", "Regular 8.9 cm / High 10.9 cm"],
+      ["Size", "68.5 x 37 cm"],
+      ["Height choices", "Regular 8.9 cm / High 10.9 cm"],
       ["Core", "High-density memory foam"],
-      ["Cover", "Removable, machine washable at 30°C"],
+      ["Cover", "Removable; machine washable at 30 C"],
       ["Delivery", "Free tracked UK delivery"],
     ],
     pros: [
-      "Six defined zones for the head, neck, shoulders and arms.",
-      "Regular and High profile choices instead of a single fixed height.",
-      "White, Grey, Baby Blue and Navy Blue cover colours.",
-      "Strong two-pillow and four-pillow bundle pricing.",
+      "Sculpted zones create dedicated space for the head, neck, shoulders and arms.",
+      "Regular and High profiles avoid a one-height-fits-all decision.",
+      "White, Grey, Baby Blue and Navy cover colours are available.",
+      "Two-pillow and four-pillow bundles reduce the per-pillow price.",
     ],
     cons: [
-      "Available online only.",
-      "A sculpted pillow can take a few nights to feel familiar.",
+      "Sold online, so there is no in-store feel test before ordering.",
+      "Its sculpted shape may not fit every standard pillowcase neatly.",
+      "High and coloured variants can cost more than the entry price.",
     ],
-    sourceUrl:
-      "https://juujo-uk.vercel.app/products/juujo-cloudalign-pillow",
+    sourceUrl: juujoProductUrl,
     isWinner: true,
   },
   {
     rank: 2,
     name: "Groove Adjustable Memory Foam Pillow 2.0",
+    shortName: "Groove",
     image: "/img/pillows/groove-adjustable.jpg",
-    imageAlt: "Groove Adjustable Memory Foam Pillow 2.0",
-    price: "£45",
-    score: "9.1 / 10",
-    badge: "Best adjustable",
-    bestFor: "Sleepers who want to add or remove layers to tune pillow height.",
+    imageAlt:
+      "Groove Adjustable Memory Foam Pillow with its removable foam layers exposed",
+    price: "\u00A340.50 sale",
+    previousPrice: "\u00A345",
+    score: 4.5,
+    badge: "Best manual adjustment",
+    bestFor:
+      "Buyers who are happy to remove foam panels and experiment with height and groove depth.",
     summary:
-      "Groove offers the broadest manual adjustment range. Four removable panels create petite, regular and tall configurations, which is useful when shoulder depth is hard to estimate before buying. The trade-off is setup complexity: finding the right layer combination takes more effort than choosing a finished Regular or High profile.",
+      "Groove offers the broadest manual adjustment in the group. Four removable panels create five height-and-depth combinations, which is useful when shoulder depth is difficult to judge. That flexibility comes with more setup: the cover must be opened and the panel combination changed until the fit feels right.",
     specifications: [
-      ["Size", "60 × 35 cm"],
-      ["Height", "Adjustable from 4 to 13 cm"],
-      ["Core", "PU bamboo memory foam"],
-      ["Trial", "100 nights"],
-      ["Warranty", "2 years"],
+      ["Size", "60 x 35 cm"],
+      ["Height range", "4-13 cm across five combinations"],
+      ["Core", "PU bamboo memory foam and removable panels"],
+      ["Cover", "Machine washable at 30 C"],
+      ["Trial / warranty", "100 nights / 2 years"],
     ],
     pros: [
-      "Multiple height and groove combinations.",
-      "Removable cover can be machine washed at 30°C.",
-      "100-night trial and 2-year manufacturer warranty.",
+      "Five height-and-depth combinations cover a wide range of frames.",
+      "100-night sleep trial offers more time to tune the setup.",
+      "Current sale price is the lowest in this comparison.",
     ],
     cons: [
-      "Layer setup is less immediate than a finished profile.",
-      "Only one main colour treatment.",
+      "Finding the right setup requires opening the pillow and moving foam panels.",
+      "Its 60 x 35 cm footprint is smaller than Juujo's 68.5 x 37 cm surface.",
+      "The main product is offered in one neutral colour treatment.",
     ],
+    whyBelowWinner:
+      "Groove is the stronger choice for maximum manual adjustment, but Juujo is easier to select and use: choose Regular or High and the finished sculpted surface is ready without storing or rearranging inserts.",
     sourceUrl:
       "https://www.groovepillows.co.uk/products/groove-adjustable-pillow",
   },
   {
     rank: 3,
-    name: "Panda Memory Foam Bamboo Pillow",
-    image: "/img/pillows/panda-bamboo.jpg",
-    imageAlt: "Panda Memory Foam Bamboo Pillow",
-    price: "£44.95",
-    score: "8.8 / 10",
-    badge: "Best long guarantee",
-    bestFor: "Buyers who prefer a familiar rectangular pillow and bamboo cover.",
-    summary:
-      "Panda keeps the traditional pillow shape while using a medium-firm memory-foam core and a removable bamboo-blend cover. It is a credible all-position option with an unusually long registered guarantee, but it does not provide the dedicated shoulder wings or profile choice offered by the more sculpted designs.",
-    specifications: [
-      ["Size", "60 × 40 × 12 cm"],
-      ["Weight", "1.8 kg"],
-      ["Core", "Third-generation memory foam"],
-      ["Trial", "30 nights"],
-      ["Guarantee", "Up to 10 years with registration"],
-    ],
-    pros: [
-      "Familiar rectangular shape fits standard bedding easily.",
-      "Removable bamboo-blend cover.",
-      "30-night trial and long registered guarantee.",
-    ],
-    cons: [
-      "Single fixed 12 cm height.",
-      "No dedicated shoulder or arm zones.",
-    ],
-    sourceUrl:
-      "https://pandalondon.com/products/bamboo-memory-foam-pillow",
-  },
-  {
-    rank: 4,
     name: "TEMPUR Original SmartCool Pillow",
+    shortName: "TEMPUR",
     image: "/img/pillows/tempur-smartcool.jpg",
-    imageAlt: "TEMPUR Original SmartCool ergonomic pillow",
-    price: "£149",
-    score: "8.6 / 10",
+    imageAlt: "TEMPUR Original SmartCool contoured pillow",
+    price: "From \u00A3165",
+    score: 4.3,
     badge: "Premium material pick",
-    bestFor: "Buyers who prioritise TEMPUR material and established brand support.",
+    bestFor:
+      "Buyers who prioritise TEMPUR material, a cool-touch cover and established brand support.",
     summary:
-      "TEMPUR is the premium-brand option, with three sizes, a contoured shape and a removable SmartCool cover. The product is well specified and backed by a 30-night trial and 3-year guarantee, but its current selling price is roughly three times Juujo's single-pillow price.",
+      "TEMPUR combines its pressure-responsive material with a removable SmartCool cover and three fixed size options. It is a polished premium choice for side and back sleepers, but the 61 x 31 cm surface is narrower and the entry price is more than three times Juujo's starting price.",
     specifications: [
-      ["Size range", "61 × 31 cm; three height options"],
-      ["Feel", "Medium firm"],
-      ["Cover", "Removable, washable up to 40°C"],
-      ["Trial", "30 nights"],
-      ["Guarantee", "3 years"],
+      ["Size", "61 x 31 cm"],
+      ["Height choices", "10/7, 11.5/8.5 or 13/10 cm"],
+      ["Feel", "Medium firm TEMPUR material"],
+      ["Cover", "Removable; washable up to 40 C"],
+      ["Trial / guarantee", "30 nights / 3 years"],
     ],
     pros: [
-      "Three size options.",
-      "Established premium material and brand support.",
-      "30-night pillow trial and 3-year guarantee.",
+      "Three fixed height sizes cover medium through extra-large profiles.",
+      "SmartCool cover is removable and machine washable.",
+      "30-night pillow trial and 3-year guarantee are clearly published.",
     ],
     cons: [
-      "Highest price in this comparison.",
-      "Narrower shape with no dedicated arm space.",
+      "From \u00A3165, it is the most expensive option in this ranking.",
+      "The 31 cm depth is the narrowest sleep surface in the comparison.",
+      "Its contour does not create dedicated arm or shoulder-wing space.",
     ],
+    whyBelowWinner:
+      "TEMPUR has the strongest premium-brand case, but the price gap is substantial. Juujo gives side sleepers a wider surface, dedicated shoulder geometry and two simple profiles from \u00A349.99.",
     sourceUrl:
       "https://uk.tempur.com/pillows/tempur-ergonomic-pillows-UKORIGINALSC.html",
   },
   {
-    rank: 5,
-    name: "REM-Fit 500 Cool Gel Pillow",
-    image: "/img/pillows/remfit-cool-gel.jpg",
-    imageAlt: "REM-Fit 500 Cool Gel Pillow",
-    price: "£59.99",
-    score: "8.3 / 10",
+    rank: 4,
+    name: "Simba Hybrid Pillow",
+    shortName: "Simba",
+    image: "/img/pillows/simba-hybrid.png",
+    imageAlt: "Simba Hybrid Pillow with mesh airflow border",
+    price: "\u00A3109",
+    score: 4.1,
     badge: "Best cooling focus",
-    bestFor: "Hot sleepers who prioritise a gel-infused foam surface.",
+    bestFor:
+      "Hot sleepers who prefer a familiar rectangular pillow and adjustable loose fill.",
     summary:
-      "REM-Fit's 500 Cool Gel model puts temperature management ahead of shape customisation. Its gel-infused memory foam, washable cover and 100-night trial make a solid case for hot sleepers, but it provides a conventional rectangular surface rather than dedicated side-sleeper zones.",
+      "Simba's Hybrid Pillow uses removable foam Nanocubes, a cushioned outer sleeve and Stratos-treated cover fabric. Height and firmness can be changed, but doing so means opening the pillow, removing loose fill and keeping the supplied storage bag. The traditional rectangle also lacks dedicated shoulder or arm zones.",
     specifications: [
-      ["Core", "Gel-infused memory foam"],
-      ["Cover", "Removable and washable"],
-      ["Delivery", "Free UK delivery"],
-      ["Trial", "100 nights"],
-      ["Guarantee", "Up to 5 years with protector"],
+      ["Size", "70 x 45 cm"],
+      ["Height", "Adjustable with removable Nanocubes"],
+      ["Core", "Foam Nanocubes and Simba Renew fibres"],
+      ["Cover", "Zip-off washable cover"],
+      ["Delivery", "Free next-working-day to most UK postcodes"],
     ],
     pros: [
-      "Cooling-focused gel-infused memory foam.",
-      "Removable washable cover.",
-      "100-night trial and free UK delivery.",
+      "Loose-fill adjustment changes both height and firmness.",
+      "Stratos cover treatment and mesh border focus on airflow.",
+      "Generous standard-pillow footprint works with familiar bedding.",
     ],
     cons: [
-      "Single rectangular sleep surface.",
-      "Guarantee length depends on the protector terms.",
+      "Costs more than twice Juujo's starting price.",
+      "Changing height requires handling and storing loose foam cubes.",
+      "Rectangular construction provides no dedicated shoulder or arm space.",
     ],
-    sourceUrl:
-      "https://www.rem-fit.co.uk/products/rem-fit-500-cool-gel-pillow-1",
+    whyBelowWinner:
+      "Simba suits shoppers who want a conventional cooling pillow. For a side-sleeper-first purchase, Juujo's defined contour is more targeted and its starting price is materially lower.",
+    sourceUrl: "https://simbasleep.com/products/simba-hybrid-pillow",
+  },
+  {
+    rank: 5,
+    name: "Panda Hybrid Bamboo Pillow",
+    shortName: "Panda",
+    image: "/img/pillows/panda-hybrid.jpg",
+    imageAlt: "Panda Hybrid Bamboo Pillow beside its retail packaging",
+    price: "\u00A376.46 sale",
+    previousPrice: "\u00A389.95",
+    score: 3.9,
+    badge: "Best bamboo cover",
+    bestFor:
+      "Buyers who want a medium-firm rectangular pillow with a washable bamboo cover.",
+    summary:
+      "Panda combines a charcoal-infused memory-foam core with a quilted bamboo cover and a medium-firm feel. Its 70 x 40 cm size is generous and the published 10-year guarantee is strong, but the fixed 13 cm height leaves less room to match different shoulder widths or sleeping positions.",
+    specifications: [
+      ["Size", "70 x 40 x 13 cm"],
+      ["Weight", "2.2 kg"],
+      ["Core", "Charcoal-infused memory foam"],
+      ["Cover", "Bamboo cover; cool wash up to 30 C"],
+      ["Trial / guarantee", "30 nights / 10 years"],
+    ],
+    pros: [
+      "Removable bamboo cover and airflow channels support easy care.",
+      "30-night trial and 10-year guarantee are clearly published.",
+      "Large 70 x 40 cm rectangular surface.",
+    ],
+    cons: [
+      "One fixed 13 cm height can be too high for smaller frames.",
+      "No dedicated side-sleeper wings or central head cradle.",
+      "The official page was marked unavailable when checked.",
+    ],
+    whyBelowWinner:
+      "Panda offers excellent cover materials and a long guarantee, but Juujo gives shoppers two height choices, side-sleeper-specific geometry and a lower starting price. Panda was also unavailable on its official page at our latest check.",
+    sourceUrl: "https://pandalondon.com/products/hybrid-bamboo-pillow",
+    availabilityNote: "Official page marked unavailable when checked",
   },
 ];
 
 export const methodologyPoints = [
-  "Current UK selling price and clarity of the full offer",
-  "Side-sleeper shoulder clearance and available height choice",
-  "Core construction, shape stability and cover care",
-  "Trial, guarantee, delivery and returns information",
-  "Ease of selecting the right option before purchase",
+  ["Side-sleeper geometry", "30%", "Shoulder clearance, head cradle and neck support"],
+  ["Height and fit", "25%", "Profile choice and clarity before ordering"],
+  ["Offer and value", "20%", "Current UK price, bundle value and availability"],
+  ["Materials and care", "15%", "Core construction, cover removal and washing"],
+  ["Buyer protection", "10%", "Published delivery, trial and guarantee terms"],
 ] as const;
