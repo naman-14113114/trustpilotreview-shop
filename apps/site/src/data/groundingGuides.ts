@@ -141,7 +141,7 @@ function juujoProduct(summary: string): GroundingProduct {
   return {
     rank: 1,
     name: "Juujo Grounding Fitted Sheet",
-    image: "/img/grounding-sheets/best-page-image.webp",
+    image: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     price: "$99",
     rating: 4.9,
     summary,
@@ -562,7 +562,7 @@ export const groundingGuides: Record<GroundingGuideSlug, GroundingGuide> = {
     cardTitle: "Grounding Sheet Buying Mistakes",
     cardDescription: "Eight mistakes that turn a promising sheet into a poor fit, incomplete setup or difficult return.",
     cardCode: "BUYING",
-    cardImage: "/img/grounding-sheets/best-page-image.webp",
+    cardImage: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     editorSummary: "The most expensive mistakes happen before checkout: unclear fit, missing setup parts, weak return terms and care requirements the buyer did not expect.",
     intro: [
       "Grounding sheets look simple, but format, sizing, material, outlet compatibility and care can change the daily experience. A low price does not help if the product moves, cannot connect or is difficult to return.",
@@ -703,7 +703,7 @@ export const groundingGuides: Record<GroundingGuideSlug, GroundingGuide> = {
     cardTitle: "5% vs 10% Silver Grounding Sheets",
     cardDescription: "What silver percentage can tell you, what it cannot prove, and why construction and care still matter.",
     cardCode: "MATERIALS",
-    cardImage: "/img/grounding-sheets/best-page-image.webp",
+    cardImage: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     editorSummary: "Silver percentage is a useful specification, but it must be read with weave design, distribution, test method, comfort and care instructions.",
     intro: [
       "A 10% silver sheet contains a higher declared silver proportion than a 5% sheet, but that does not automatically mean twice the conductivity, twice the durability or twice the personal result.",
@@ -732,7 +732,7 @@ export const groundingGuides: Record<GroundingGuideSlug, GroundingGuide> = {
     cardTitle: "Washing & Conductivity Loss",
     cardDescription: "Protect conductive fibres by controlling residue, bleach, softener, dryer sheets, oils and drying heat.",
     cardCode: "CARE",
-    cardImage: "/img/grounding-sheets/best-page-image.webp",
+    cardImage: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     editorSummary: "Most care problems come from coatings, harsh chemistry or heat rather than ordinary washing itself. Manufacturer instructions remain the final authority for each sheet.",
     intro: [
       "Conductive bedding collects sweat, skin oils and detergent just like ordinary sheets. Washing is important, but the wrong products can coat the contact surface or damage conductive fibres.",

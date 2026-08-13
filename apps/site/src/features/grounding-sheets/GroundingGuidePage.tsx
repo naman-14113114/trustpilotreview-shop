@@ -442,7 +442,7 @@ function KnowledgeContent({ guide }: { guide: GroundingGuide }) {
           <a href={JUUJO_GROUNDING_URL} className="block" aria-label="Open Juujo Grounding Fitted Sheet">
             <div className="relative mx-auto aspect-square w-full max-w-[260px] overflow-hidden rounded-lg bg-white">
               <Image
-                src="/img/grounding-sheets/best-page-image.webp"
+                src="/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp"
                 alt="Juujo Grounding Fitted Sheet"
                 fill
                 sizes="260px"

@@ -93,7 +93,7 @@ const products: RankedProduct[] = [
     rank: 1,
     name: "Juujo Grounding Fitted Sheet",
     brand: "Juujo",
-    image: "/img/grounding-sheets/best-page-image.webp",
+    image: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     price: "$99",
     compareAt: "$199",
     rating: 4.9,
@@ -364,8 +364,8 @@ function BareEarthProof() {
         />
       </div>
       <p className="mt-3 text-[18px] leading-7 text-red-900/80">
-        Captured from Trustpilot. Reviews are user opinions;
-        use the linked profile for the latest public record.
+        Captured from Trustpilot. Reviews are user opinions; use the linked
+        profile for the latest public record.
       </p>
     </div>
   );
@@ -487,6 +487,11 @@ function GiftPanel({
   loadingTarget: string | null;
   setLoadingTarget: (target: string) => void;
 }) {
+  const [maskColor, setMaskColor] = useState<"green" | "black" | "pink">(
+    "green",
+  );
+  const [pillowColor, setPillowColor] = useState<"white" | "grey">("white");
+
   return (
     <div className="relative mt-10 overflow-hidden rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5 shadow-xl shadow-blue-100/50 md:p-8">
       <div className="relative z-10">
@@ -504,33 +509,163 @@ function GiftPanel({
           with the sheet purchase.
         </p>
         <div className="mb-8 grid grid-cols-3 gap-2 sm:gap-6">
-          {gifts.map((gift) => (
-            <a
-              key={gift.name}
-              href={JUUJO_URL}
-              rel="noopener noreferrer sponsored"
-              className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4"
+          {/* Grounding Mat */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $69
+              </span>
+              <Image
+                src="/img/grounding-sheets/juujo-grounding-mat-gift.webp"
+                alt="Grounding Mat"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Grounding Mat
+            </span>
+          </a>
+
+          {/* Premium Sleep Mask */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.2s" }}
             >
-              <span className="absolute -right-1 -top-2 z-20 rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-black text-white shadow-lg sm:-right-2 sm:-top-4 sm:px-4 sm:py-1.5 sm:text-base">
-                FREE
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $69
               </span>
-              <span className="block overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
-                <Image
-                  src={gift.image}
-                  alt={gift.name}
-                  width={260}
-                  height={260}
-                  className="aspect-square w-full object-cover"
-                />
+              <Image
+                src={
+                  maskColor === "green"
+                    ? "/img/grounding-sheets/juujo-premium-eye-mask.png"
+                    : maskColor === "black"
+                      ? "/img/grounding-sheets/juujo-sleep-mask-black.png"
+                      : "/img/grounding-sheets/juujo-sleep-mask-pink.png"
+                }
+                alt="Premium Sleep Mask"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Premium Sleep Mask
+            </span>
+            <div className="mt-2 flex justify-center gap-1.5 sm:gap-2">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("green");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-[#0b5f54] border ${
+                  maskColor === "green"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Green"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("black");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-black border ${
+                  maskColor === "black"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Black"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("pink");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-[#d9a5b3] border ${
+                  maskColor === "pink"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Pink"
+              />
+            </div>
+          </a>
+
+          {/* Grounding Pillowcase */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.4s" }}
+            >
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $49
               </span>
-              <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
-                {gift.name}
-              </span>
-              <span className="mt-1 block text-[10px] font-bold text-blue-700 sm:text-sm">
-                {gift.value}
-              </span>
-            </a>
-          ))}
+              <Image
+                src={
+                  pillowColor === "white"
+                    ? "/img/grounding-sheets/juujo-grounding-pillowcase-gift.webp"
+                    : "/img/grounding-sheets/juujo-pillowcase-grey.png"
+                }
+                alt="Grounding Pillowcase"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Grounding Pillowcase
+            </span>
+            <div className="mt-2 flex justify-center gap-1.5 sm:gap-2">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPillowColor("white");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-white border ${
+                  pillowColor === "white"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-300"
+                }`}
+                aria-label="White"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPillowColor("grey");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-gray-400 border ${
+                  pillowColor === "grey"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-300"
+                }`}
+                aria-label="Grey"
+              />
+            </div>
+          </a>
         </div>
         <OfficialButton
           href={JUUJO_URL}
@@ -538,7 +673,7 @@ function GiftPanel({
           loadingTarget={loadingTarget}
           setLoadingTarget={setLoadingTarget}
           testId="juujo-cta-gifts"
-          className="rounded-2xl border-2 border-blue-500 bg-blue-600 shadow-blue-600/30"
+          className=""
         >
           Check Availability
         </OfficialButton>
@@ -672,7 +807,6 @@ function ProductCard({
                 {product.ctaLabel}
               </OfficialButton>
             )}
-
           </div>
         </aside>
 
@@ -708,80 +842,76 @@ function ProductCard({
           </div>
 
           <div className="flex flex-col gap-6 mb-8">
-                    {/* Pros */}
-                    <div className="bg-emerald-50/50 rounded-2xl px-3 py-5 md:p-6 border border-emerald-100">
-                      <h4 className="bg-emerald-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
-                        Pros
-                      </h4>
-                      <ul className="space-y-4">
-                        {product.pros.map((pro, idx) => {
-                          const [bold, ...rest] = pro.split(":");
-                          return (
-                            <li
-                              key={idx}
-                              className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
-                            >
-                              <Check
-                                size={20}
-                                className="text-emerald-500 shrink-0 mt-1"
-                              />
-                              <span>
-                                {rest.length > 0 ? (
-                                  <>
-                                    <strong className="text-slate-900">
-                                      {bold}:
-                                    </strong>
-                                    {rest.join(":")}
-                                  </>
-                                ) : (
-                                  pro
-                                )}
-                              </span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
+            {/* Pros */}
+            <div className="bg-emerald-50/50 rounded-2xl px-3 py-5 md:p-6 border border-emerald-100">
+              <h4 className="bg-emerald-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+                Pros
+              </h4>
+              <ul className="space-y-4">
+                {product.pros.map((pro, idx) => {
+                  const [bold, ...rest] = pro.split(":");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
+                    >
+                      <Check
+                        size={20}
+                        className="text-emerald-500 shrink-0 mt-1"
+                      />
+                      <span>
+                        {rest.length > 0 ? (
+                          <>
+                            <strong className="text-slate-900">{bold}:</strong>
+                            {rest.join(":")}
+                          </>
+                        ) : (
+                          pro
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
-                    {/* Cons */}
-                    <div className="bg-red-50/50 rounded-2xl px-3 py-5 md:p-6 border border-red-100">
-                      <h4 className="bg-red-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
-                        Cons
-                      </h4>
-                      <ul className="space-y-4">
-                        {product.cons.map((con, idx) => {
-                          const [bold, ...rest] = con.split(":");
-                          return (
-                            <li
-                              key={idx}
-                              className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
-                            >
-                              <XCircle
-                                size={20}
-                                className="text-red-500 shrink-0 mt-1"
-                              />
-                              <span>
-                                {rest.length > 0 ? (
-                                  <>
-                                    <strong className="text-slate-900">
-                                      {bold}:
-                                    </strong>
-                                    <span
-                                      dangerouslySetInnerHTML={{
-                                        __html: rest.join(":"),
-                                      }}
-                                    />
-                                  </>
-                                ) : (
-                                  <span dangerouslySetInnerHTML={{ __html: con }} />
-                                )}
-                              </span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
+            {/* Cons */}
+            <div className="bg-red-50/50 rounded-2xl px-3 py-5 md:p-6 border border-red-100">
+              <h4 className="bg-red-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+                Cons
+              </h4>
+              <ul className="space-y-4">
+                {product.cons.map((con, idx) => {
+                  const [bold, ...rest] = con.split(":");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
+                    >
+                      <XCircle
+                        size={20}
+                        className="text-red-500 shrink-0 mt-1"
+                      />
+                      <span>
+                        {rest.length > 0 ? (
+                          <>
+                            <strong className="text-slate-900">{bold}:</strong>
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: rest.join(":"),
+                              }}
+                            />
+                          </>
+                        ) : (
+                          <span dangerouslySetInnerHTML={{ __html: con }} />
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
 
           {isJuujo ? (
             <GiftPanel
@@ -864,7 +994,6 @@ function DeferredVerdictVideo() {
             >
               <Play className="ml-1 h-8 w-8 fill-current" />
             </button>
-
           </div>
           <p className="mx-auto mt-4 max-w-[320px] text-center text-[18px] leading-7 text-slate-600">
             See the fitted construction, connection cord and full-sheet setup in
@@ -935,71 +1064,69 @@ export default function GroundingSheetsInUsAdvertorial() {
 
       <main className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="mx-auto max-w-5xl rounded-sm border border-slate-100 bg-white p-6 text-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] md:p-8 mb-10 md:mb-14">
-            <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
-              <Image
-                src="/img/grounding-sheets/dr-image.webp"
-                alt="Dr. Rachel Morgan"
-                width={112}
-                height={112}
-                priority
-                className="h-24 w-24 rounded-full object-cover md:h-28 md:w-28"
-              />
-              <div>
-                <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
-                  Dr. Rachel Morgan
-                </h2>
-                <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
-                  Medical Reviewer
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg space-y-4">
-              <p>
-                With <strong>over 10 years</strong> of experience in sleep and
-                wellness,{" "}
-                <strong className="text-slate-900">Dr. Rachel Morgan</strong> is
-                a certified wellness expert. She reviewed 20 popular United
-                States grounding sheet options over 200+ hours, comparing
-                publicly available specifications, fitted options, material
-                blends, setup instructions, care guidance, entry prices, trial
-                periods, and warranties. Her biggest finding was simple: the
-                most expensive sheet was not always the best choice. The
-                strongest options used the right materials, offered a secure
-                fit, and were easy enough to integrate into a nightly routine
-                consistently.
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
+            <Image
+              src="/img/grounding-sheets/dr-image.webp"
+              alt="Dr. Rachel Morgan"
+              width={112}
+              height={112}
+              priority
+              className="h-24 w-24 rounded-full object-cover md:h-28 md:w-28"
+            />
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
+                Dr. Rachel Morgan
+              </h2>
+              <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
+                Medical Reviewer
               </p>
             </div>
-
-            <hr className="border-slate-200 w-full my-4" />
-
-            <div className="text-center text-xs italic text-slate-600 md:text-right md:text-sm">
-              * Recommended by over 1,000 US buyers grounding sheets users.
-            </div>
           </div>
+          <div className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg space-y-4">
+            <p>
+              With <strong>over 10 years</strong> of experience in sleep and
+              wellness,{" "}
+              <strong className="text-slate-900">Dr. Rachel Morgan</strong> is a
+              certified wellness expert. She reviewed 20 popular United States
+              grounding sheet options over 200+ hours, comparing publicly
+              available specifications, fitted options, material blends, setup
+              instructions, care guidance, entry prices, trial periods, and
+              warranties. Her biggest finding was simple: the most expensive
+              sheet was not always the best choice. The strongest options used
+              the right materials, offered a secure fit, and were easy enough to
+              integrate into a nightly routine consistently.
+            </p>
+          </div>
+
+          <hr className="border-slate-200 w-full my-4" />
+
+          <div className="text-center text-xs italic text-slate-600 md:text-right md:text-sm">
+            * Recommended by over 1,000 US buyers grounding sheets users.
+          </div>
+        </div>
         <section className="mx-auto mb-10 max-w-5xl space-y-6 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9 md:mb-14">
-            <p>
-              <strong>Grounding sheets</strong> are a breakthrough in natural
-              wellness. During our testing, we found that connecting the body to
-              the Earth's electric field overnight provides real, measurable
-              health benefits. Sleeping on these conductive materials actively
-              helps{" "}
-              <strong>
-                reduce inflammation, ease muscle stiffness, and support deeper,
-                more restorative sleep
-              </strong>
-              . It is a simple, effortless way to help your body heal and wake
-              up with a natural energy boost.
-            </p>
-            <p>
-              When evaluating the best grounding sheets, we{" "}
-              <strong>prioritized material quality</strong>, everyday ease of
-              use, and their ability to deliver genuine grounding benefits.
-              Whether you are new to earthing or simply looking to upgrade your
-              current routine, these sheets are designed to enhance your
-              wellness while you rest. Our in-depth reviews below will help you
-              make an informed choice for better health and more rejuvenating
-              sleep.
-            </p>
+          <p>
+            <strong>Grounding sheets</strong> are a breakthrough in natural
+            wellness. During our testing, we found that connecting the body to
+            the Earth's electric field overnight provides real, measurable
+            health benefits. Sleeping on these conductive materials actively
+            helps{" "}
+            <strong>
+              reduce inflammation, ease muscle stiffness, and support deeper,
+              more restorative sleep
+            </strong>
+            . It is a simple, effortless way to help your body heal and wake up
+            with a natural energy boost.
+          </p>
+          <p>
+            When evaluating the best grounding sheets, we{" "}
+            <strong>prioritized material quality</strong>, everyday ease of use,
+            and their ability to deliver genuine grounding benefits. Whether you
+            are new to earthing or simply looking to upgrade your current
+            routine, these sheets are designed to enhance your wellness while
+            you rest. Our in-depth reviews below will help you make an informed
+            choice for better health and more rejuvenating sleep.
+          </p>
         </section>
 
         <EvaluationCriteria />
