@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
-import { GreenStarRating } from "@/components/GreenStarRating";
+import { GreenStarRating, GreenStarIcon } from "@/components/GreenStarRating";
 
 const JUUJO_URL =
   "https://grounding.juujo.com/products/grounding-fitted-sheets";
@@ -282,7 +282,7 @@ const products: RankedProduct[] = [
     name: "BareEarth Grounding Sheets",
     brand: "BareEarth",
     image: "/img/grounding-sheets/bareearth-new.png",
-    price: "50% off offer",
+    price: "$109.99",
     rating: 2.1,
     ratingLabel: "Editorial rating",
     grade: "D",
@@ -346,14 +346,9 @@ function BareEarthProof() {
       data-testid="bareearth-trustpilot-proof"
       className="rounded-2xl border border-red-200 bg-red-50/60 p-4 md:p-5"
     >
-      <a
-        href={BAREEARTH_TRUSTPILOT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[18px] font-bold leading-7 text-red-800 underline underline-offset-4"
-      >
+      <p className="text-[18px] font-bold leading-7 text-red-800">
         Public Trustpilot profile: 1.3 TrustScore and 90% one-star reviews
-      </a>
+      </p>
       <div className="mt-4 overflow-hidden rounded-xl border border-red-200 bg-white">
         <Image
           src="/img/grounding-sheets/bareearth-trustpilot-score-distribution.png"
@@ -995,10 +990,6 @@ function DeferredVerdictVideo() {
               <Play className="ml-1 h-8 w-8 fill-current" />
             </button>
           </div>
-          <p className="mx-auto mt-4 max-w-[320px] text-center text-[18px] leading-7 text-slate-600">
-            See the fitted construction, connection cord and full-sheet setup in
-            the same Juujo product walkthrough used in our review.
-          </p>
         </div>
 
         <div className="flex flex-col justify-center text-center">
@@ -1009,16 +1000,17 @@ function DeferredVerdictVideo() {
           <div className="mb-5 text-3xl font-bold text-[#8b1528] md:mb-8 md:text-4xl">
             Now from $99
           </div>
-          <div className="mx-auto mb-6 inline-block rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm md:mb-8">
-            <div className="mb-2 flex items-center justify-center gap-2">
-              <span className="text-[18px] font-bold text-black">
+          <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="font-bold text-base md:text-lg text-black font-sans">
                 Excellent
               </span>
-              <GreenStarRating rating={4.9} size={22} />
+              <GreenStarRating rating={5} size={22} />
             </div>
-            <p className="text-[18px] leading-7 text-slate-600">
-              Our #1 grounding-sheet pick for US buyers
-            </p>
+            <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+              Rated 4.9 / 5 on <GreenStarIcon size={18} />{" "}
+              <span className="font-bold text-black">Trustpilot</span>
+            </div>
           </div>
           <a
             href={JUUJO_URL}
