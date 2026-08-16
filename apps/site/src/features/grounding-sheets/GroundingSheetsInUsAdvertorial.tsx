@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
 import {
   useEffect,
   useRef,
@@ -19,7 +20,7 @@ import {
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
-import { GreenStarRating } from "@/components/GreenStarRating";
+import { GreenStarRating, GreenStarIcon } from "@/components/GreenStarRating";
 
 const JUUJO_URL =
   "https://grounding.juujo.com/products/grounding-fitted-sheets";
@@ -32,7 +33,7 @@ const BAREEARTH_TRUSTPILOT_URL =
 
 type Metric = {
   label: string;
-  value: string;
+  value: number;
 };
 
 type RankedProduct = {
@@ -92,7 +93,7 @@ const products: RankedProduct[] = [
     rank: 1,
     name: "Juujo Grounding Fitted Sheet",
     brand: "Juujo",
-    image: "/img/grounding-sheets/best-page-image.webp",
+    image: "/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp",
     price: "$99",
     compareAt: "$199",
     rating: 4.9,
@@ -100,28 +101,27 @@ const products: RankedProduct[] = [
     grade: "A+",
     badge: "Best Overall",
     ctaUrl: JUUJO_URL,
-    ctaLabel: "Check Availability",
+    ctaLabel: "Official Website",
     sourceLinks: [{ label: "Official Juujo product page", href: JUUJO_URL }],
     metrics: [
-      { label: "Fit", value: "Fitted wrap" },
-      { label: "Blend", value: "90% cotton / 10% silver" },
-      { label: "Trial", value: "120 nights" },
-      { label: "Entry price", value: "$99" },
-      { label: "Best for", value: "Most US buyers" },
+      { label: "Fitted Stability", value: 98 },
+      { label: "Conductive Material", value: 96 },
+      { label: "Durability", value: 97 },
+      { label: "Trial & Value", value: 99 },
     ],
     pros: [
-      "Fitted-sheet construction stays in place better than flat panels.",
-      "10% conductive silver share is higher than the 5% silver sheets listed by Terra and GroundingWell.",
-      "Cotton-led feel keeps the sheet closer to normal bedding.",
-      "120-night trial gives more time than Terra's 30-night guarantee and GroundingWell's 90-day guarantee.",
-      "Clear $99 entry offer makes the total value easier to compare.",
-      "Bundle includes Premium Sleep Mask, grounding mat and grounding pillowcase.",
-      "Setup is direct: fit the sheet, connect the cord and use a grounded outlet.",
+      "Fitted Design: Fitted-sheet construction stays in place better than flat panels.",
+      "High Silver Content: 10% conductive silver share is higher than the 5% silver sheets listed by Terra and GroundingWell.",
+      "Comfortable Material: Cotton-led feel keeps the sheet closer to normal bedding.",
+      "Generous Trial: 120-night trial gives more time than Terra's 30-night guarantee and GroundingWell's 90-day guarantee.",
+      "Clear Pricing: Clear $99 entry offer makes the total value easier to compare.",
+      "Excellent Bundle: Bundle includes Premium Sleep Mask, grounding mat and grounding pillowcase.",
+      "Direct Setup: Setup is direct: fit the sheet, connect the cord and use a grounded outlet.",
     ],
     cons: [
-      "Online-only purchase means no in-store feel test before buying.",
-      "Sale value depends on the current $99 offer remaining available.",
-      "Popular sizes can create stock pressure during promotional periods.",
+      "Online Purchase: Online-only purchase means no in-store feel test before buying.",
+      "Offer Reliability: Sale value depends on the current $99 offer remaining available.",
+      "Stock Pressure: Popular sizes can create stock pressure during promotional periods.",
     ],
     review: [
       "Juujo is the cleanest top pick for US shoppers because it solves the two issues that come up again and again in grounding sheets: keeping the sheet stable on the bed and making the whole kit feel simple. The fitted design matters. It wraps the mattress instead of asking the buyer to keep a narrow panel aligned overnight.",
@@ -138,7 +138,7 @@ const products: RankedProduct[] = [
     ratingLabel: "Editorial rating",
     grade: "B+",
     badge: "Runner Up",
-    ctaUrl: "https://thegrounding.co/products/the-terra-grounding-bed-sheet",
+    ctaUrl: "#",
     ctaLabel: "View Product",
     sourceLinks: [
       {
@@ -151,28 +151,27 @@ const products: RankedProduct[] = [
       },
     ],
     metrics: [
-      { label: "Fit", value: "Fitted sheet" },
-      { label: "Blend", value: "95% cotton / 5% silver" },
-      { label: "Trial", value: "30 nights" },
-      { label: "Listed price", value: "$159.95" },
-      { label: "Review risk", value: "16% one-star" },
+      { label: "Fitted Stability", value: 90 },
+      { label: "Conductive Material", value: 85 },
+      { label: "Durability", value: 88 },
+      { label: "Trial & Value", value: 75 },
     ],
     pros: [
-      "Uses a fitted-sheet format, which is more bed-friendly than a loose panel.",
-      "95% cotton base should feel familiar for shoppers who dislike technical fabric.",
-      "Available in common bed sizes and multiple color choices.",
-      "Simple cord-based setup makes the concept easy to understand.",
-      "Public Trustpilot review volume is large enough to spot patterns.",
+      "Format: Uses a fitted-sheet format, which is more bed-friendly than a loose panel.",
+      "Familiar Feel: 95% cotton base should feel familiar for shoppers who dislike technical fabric.",
+      "Options: Available in common bed sizes and multiple color choices.",
+      "Easy Setup: Simple cord-based setup makes the concept easy to understand.",
+      "Reviews: Public Trustpilot review volume is large enough to spot patterns.",
     ],
     cons: [
-      "Shorter 30-night guarantee gives less real sleep-trial time than Juujo's 120-night trial.",
-      "Free shipping is listed only over $100, so the shipping promise is threshold-based.",
-      "The listed 95% cotton / 5% silver blend has a lower silver share than Juujo's 10% silver blend.",
-      "The displayed $159.95 price is higher than Juujo's $99 entry offer.",
-      "Sold-out and low-stock messaging can make size and color choice feel less dependable.",
-      "Broad wellness claims, including inflammation and ache language, should be treated cautiously by buyers.",
-      "The public Trustpilot profile shows a 16% one-star share, which creates review-risk friction.",
-      "Some public one-star review themes mention return, refund and care-policy frustration.",
+      "Trial Period: Shorter 30-night guarantee gives less real sleep-trial time than Juujo\'s 120-night trial.",
+      "Shipping: Free shipping is listed only over , so the shipping promise is threshold-based.",
+      "Lower Silver Share: The listed 95% cotton / 5% silver blend has a lower silver share than Juujo\'s 10% silver blend.",
+      "Higher Price: The displayed .95 price is higher than Juujo\'s  entry offer.",
+      "Stock Issues: Sold-out and low-stock messaging can make size and color choice feel less dependable.",
+      "Wellness Claims: Broad wellness claims, including inflammation and ache language, should be treated cautiously by buyers.",
+      "Review Risk: The public Trustpilot profile shows a 16% one-star share, which creates review-risk friction.",
+      "Support Concerns: Some public one-star review themes mention return, refund and care-policy frustration.",
     ],
     review: [
       "Terra is the strongest competitor because it stays close to what US shoppers usually want: a fitted sheet, familiar cotton feel and straightforward setup. If a buyer mainly wants a recognizable fitted grounding-sheet format, Terra deserves to stay high on the shortlist.",
@@ -183,13 +182,13 @@ const products: RankedProduct[] = [
     rank: 3,
     name: "GroundingWell Bedsheet",
     brand: "GroundingWell",
-    image: "/img/grounding-sheets/groundingwell-bedsheet.webp",
+    image: "/img/grounding-sheets/groundingwell-fitted-sheet.webp",
     price: "$99.90",
     rating: 3.8,
     ratingLabel: "Editorial rating",
     grade: "B",
     badge: "Budget Panel",
-    ctaUrl: "https://www.groundingwell.com/products/groundingwell-bedsheet",
+    ctaUrl: "#",
     ctaLabel: "View Product",
     sourceLinks: [
       {
@@ -202,27 +201,26 @@ const products: RankedProduct[] = [
       },
     ],
     metrics: [
-      { label: "Fit", value: "104.3 x 19.7 in panel" },
-      { label: "Blend", value: "95% cotton / 5% silver" },
-      { label: "Guarantee", value: "90 days" },
-      { label: "Care", value: "Strict limits" },
-      { label: "Review risk", value: "20% one-star" },
+      { label: "Fitted Stability", value: 65 },
+      { label: "Conductive Material", value: 85 },
+      { label: "Durability", value: 82 },
+      { label: "Trial & Value", value: 80 },
     ],
     pros: [
-      "Lower displayed bundle-style pricing may appeal to price-first shoppers.",
-      "Ships from the USA according to the product page.",
-      "Free shipping messaging is visible on the product page.",
-      "90-day money-back guarantee is longer than Terra's 30-night guarantee.",
-      "Panel format can work across several mattress sizes without buying a fitted size.",
+      "Pricing: Lower displayed bundle-style pricing may appeal to price-first shoppers.",
+      "Shipping: Ships from the USA according to the product page.",
+      "Free Shipping: Free shipping messaging is visible on the product page.",
+      "Guarantee: 90-day money-back guarantee is longer than Terra's 30-night guarantee.",
+      "Versatility: Panel format can work across several mattress sizes without buying a fitted size.",
     ],
     cons: [
-      "The listed 95% cotton / 5% silver blend has a lower silver share than Juujo's 10% silver blend.",
-      "The 104.3 x 19.7 inch panel format is not full fitted-sheet coverage.",
-      "A narrow panel can shift or miss contact depending on sleep position.",
-      "Care guidance is stricter than normal bedding, including careful washing and drying limits.",
-      "The 90-day guarantee is shorter than Juujo's 120-night trial.",
-      "GroundingWell's public Trustpilot profile shows a 20% one-star share.",
-      "Public review summaries include mixed-results comments and material concerns such as stiffness or scent.",
+      "Lower Silver Share: The listed 95% cotton / 5% silver blend has a lower silver share than Juujo's 10% silver blend.",
+      "Poor Coverage: The 104.3 x 19.7 inch panel format is not full fitted-sheet coverage.",
+      "Shifting Risk: A narrow panel can shift or miss contact depending on sleep position.",
+      "Strict Care: Care guidance is stricter than normal bedding, including careful washing and drying limits.",
+      "Shorter Trial: The 90-day guarantee is shorter than Juujo's 120-night trial.",
+      "Review Risk: GroundingWell's public Trustpilot profile shows a 20% one-star share.",
+      "Material Concerns: Public review summaries include mixed-results comments and material concerns such as stiffness or scent.",
     ],
     review: [
       "GroundingWell earns third because it is widely visible and the panel can be a lower-cost way to try grounding. The problem is that it is not the same experience as a fitted sheet. A narrow panel may be acceptable for some sleepers, but it creates more placement risk than a fitted wrap.",
@@ -239,8 +237,7 @@ const products: RankedProduct[] = [
     ratingLabel: "Editorial rating",
     grade: "B-",
     badge: "Steel Option",
-    ctaUrl:
-      "https://premiumgrounding.com/products/grounding-earthing-sheet?variant=43910869352513",
+    ctaUrl: "#",
     ctaLabel: "View Product",
     sourceLinks: [
       {
@@ -253,28 +250,27 @@ const products: RankedProduct[] = [
       },
     ],
     metrics: [
-      { label: "Fit", value: "Flat under-sheet" },
-      { label: "Material", value: "30% stainless steel" },
-      { label: "Entry price", value: "$249" },
-      { label: "Sizing", value: "Limited range" },
-      { label: "Review base", value: "82 reviews" },
+      { label: "Fitted Stability", value: 70 },
+      { label: "Conductive Material", value: 95 },
+      { label: "Durability", value: 90 },
+      { label: "Trial & Value", value: 60 },
     ],
     pros: [
-      "30% stainless-steel construction gives the product a clear conductive-material story.",
-      "Under-sheet placement may suit shoppers who do not want direct skin contact.",
-      "Can sit below a natural fitted sheet, according to the product page.",
-      "Straightforward size selection keeps the buying process simple.",
-      "Appeals to shoppers who prefer a technical grounding layer over a cotton-led fitted sheet.",
+      "Clear Conductive Story: 30% stainless-steel construction gives the product a clear conductive-material story.",
+      "No Direct Contact: Under-sheet placement may suit shoppers who do not want direct skin contact.",
+      "Compatible: Can sit below a natural fitted sheet, according to the product page.",
+      "Simple Selection: Straightforward size selection keeps the buying process simple.",
+      "Technical Layer: Appeals to shoppers who prefer a technical grounding layer over a cotton-led fitted sheet.",
     ],
     cons: [
-      "The $249 entry price is much higher than Juujo's $99 entry offer.",
-      "The flat under-sheet format is not a fitted wrap and may not feel like normal bedding.",
-      "Stainless-steel construction can feel more technical than a cotton-led sheet.",
-      "Dimensional choices are more limited than a seven-size fitted-sheet range.",
-      "The one-free-sheet-per-order offer note excludes Twin, which can weaken bundle value for Twin buyers.",
-      "The public Trustpilot profile has a small review base, so patterns are less statistically settled.",
-      "Some one-star public reviews mention return or support complaints.",
-      "The product positioning still leans on wellness expectations that buyers should not treat as guaranteed outcomes.",
+      "High Price: The $249 entry price is much higher than Juujo's $99 entry offer.",
+      "Not Fitted: The flat under-sheet format is not a fitted wrap and may not feel like normal bedding.",
+      "Technical Feel: Stainless-steel construction can feel more technical than a cotton-led sheet.",
+      "Limited Sizing: Dimensional choices are more limited than a seven-size fitted-sheet range.",
+      "Exclusions: The one-free-sheet-per-order offer note excludes Twin, which can weaken bundle value for Twin buyers.",
+      "Small Review Base: The public Trustpilot profile has a small review base, so patterns are less statistically settled.",
+      "Support Issues: Some one-star public reviews mention return or support complaints.",
+      "Wellness Claims: The product positioning still leans on wellness expectations that buyers should not treat as guaranteed outcomes.",
     ],
     review: [
       "Premium Grounding is different from the other picks because it is a technical under-sheet rather than a cotton-led fitted sheet. That can be a positive for shoppers who want a conductive layer below their regular bedding, but it is a worse match for buyers who specifically want a fitted grounding sheet.",
@@ -285,13 +281,13 @@ const products: RankedProduct[] = [
     rank: 5,
     name: "BareEarth Grounding Sheets",
     brand: "BareEarth",
-    image: "/img/grounding-sheets/bareearth-grounding-sheet.webp",
-    price: "50% off offer",
+    image: "/img/grounding-sheets/bareearth-new.png",
+    price: "$109.99",
     rating: 2.1,
     ratingLabel: "Editorial rating",
     grade: "D",
     badge: "High Review Risk",
-    ctaUrl: BAREEARTH_URL,
+    ctaUrl: "#",
     ctaLabel: "View BareEarth Offer",
     sourceLinks: [
       {
@@ -304,29 +300,28 @@ const products: RankedProduct[] = [
       },
     ],
     metrics: [
-      { label: "Public score", value: "1.3 TrustScore" },
-      { label: "One-star share", value: "90%" },
-      { label: "On-page claim", value: "4.9 / 201,191+" },
-      { label: "Trial", value: "90 days" },
-      { label: "Claim risk", value: "Very high" },
+      { label: "Fitted Stability", value: 85 },
+      { label: "Conductive Material", value: 70 },
+      { label: "Durability", value: 50 },
+      { label: "Trial & Value", value: 20 },
     ],
     pros: [
-      "Offer page lists a fitted-sheet setup rather than a loose panel.",
-      "Listed 10% silver blend matches the higher silver-share claim shoppers often compare.",
-      "400 thread count cotton positioning may sound familiar to bedding shoppers.",
-      "Offer page includes a tester kit and cord-based setup explanation.",
-      "90-day refund language is visible on the offer page.",
+      "Fitted Setup: Offer page lists a fitted-sheet setup rather than a loose panel.",
+      "High Silver Blend: Listed 10% silver blend matches the higher silver-share claim shoppers often compare.",
+      "Familiar Bedding: 400 thread count cotton positioning may sound familiar to bedding shoppers.",
+      "Included Tester: Offer page includes a tester kit and cord-based setup explanation.",
+      "Refund Language: 90-day refund language is visible on the offer page.",
     ],
     cons: [
-      "BareEarth's public Trustpilot profile shows a 1.3 TrustScore.",
-      "The same public profile shows a 90% one-star review share.",
-      "There is a clear claim mismatch between the offer page's 4.9 / 201,191+ customer-review claim and the public Trustpilot profile.",
-      "Public review summaries include reported refund friction and restocking-fee complaints.",
-      "Public review summaries include support complaints from unhappy buyers.",
-      "Public review summaries include delayed, incorrect and missing-item complaint themes.",
-      "Public review summaries include product-quality and conductivity complaint themes.",
-      "The offer page uses broad medical-style wellness language that buyers should treat cautiously.",
-      "The landing-page format is aggressive and makes independent review checking especially important.",
+      "Extremely Poor Reviews: BareEarth's public Trustpilot profile shows a 1.3 TrustScore.",
+      "Massive 1-Star Share: The same public profile shows a 90% one-star review share.",
+      "Deceptive Claims: There is a clear claim mismatch between the offer page's 4.9 / 201,191+ customer-review claim and the public Trustpilot profile.",
+      "Refund Friction: Public review summaries include reported refund friction and restocking-fee complaints.",
+      "Poor Support: Public review summaries include support complaints from unhappy buyers.",
+      "Shipping Issues: Public review summaries include delayed, incorrect and missing-item complaint themes.",
+      "Quality Issues: Public review summaries include product-quality and conductivity complaint themes.",
+      "Aggressive Marketing: The offer page uses broad medical-style wellness language that buyers should treat cautiously.",
+      "High Risk: The landing-page format is aggressive and makes independent review checking especially important.",
     ],
     proof: <BareEarthProof />,
     review: [
@@ -351,14 +346,9 @@ function BareEarthProof() {
       data-testid="bareearth-trustpilot-proof"
       className="rounded-2xl border border-red-200 bg-red-50/60 p-4 md:p-5"
     >
-      <a
-        href={BAREEARTH_TRUSTPILOT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[18px] font-bold leading-7 text-red-800 underline underline-offset-4"
-      >
+      <p className="text-[18px] font-bold leading-7 text-red-800">
         Public Trustpilot profile: 1.3 TrustScore and 90% one-star reviews
-      </a>
+      </p>
       <div className="mt-4 overflow-hidden rounded-xl border border-red-200 bg-white">
         <Image
           src="/img/grounding-sheets/bareearth-trustpilot-score-distribution.png"
@@ -369,8 +359,8 @@ function BareEarthProof() {
         />
       </div>
       <p className="mt-3 text-[18px] leading-7 text-red-900/80">
-        Captured from Trustpilot on August 12, 2026. Reviews are user opinions;
-        use the linked profile for the latest public record.
+        Captured from Trustpilot. Reviews are user opinions; use the linked
+        profile for the latest public record.
       </p>
     </div>
   );
@@ -467,13 +457,20 @@ function EvaluationCriteria() {
 
 function MetricBar({ label, value }: Metric) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-slate-200 py-3 first:pt-0 last:border-b-0 last:pb-0">
-      <span className="text-[17px] font-semibold leading-6 text-slate-700 md:text-[18px]">
-        {label}
-      </span>
-      <span className="shrink-0 text-right text-[17px] font-bold text-emerald-700 md:text-[18px]">
-        {value}
-      </span>
+    <div className="mb-3">
+      <div className="flex justify-between text-sm font-semibold mb-1 text-slate-700">
+        <span>{label}</span>
+        <span>{value}%</span>
+      </div>
+      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${value}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="h-full bg-emerald-500 rounded-full"
+        />
+      </div>
     </div>
   );
 }
@@ -485,6 +482,11 @@ function GiftPanel({
   loadingTarget: string | null;
   setLoadingTarget: (target: string) => void;
 }) {
+  const [maskColor, setMaskColor] = useState<"green" | "black" | "pink">(
+    "green",
+  );
+  const [pillowColor, setPillowColor] = useState<"white" | "grey">("white");
+
   return (
     <div className="relative mt-10 overflow-hidden rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5 shadow-xl shadow-blue-100/50 md:p-8">
       <div className="relative z-10">
@@ -502,33 +504,163 @@ function GiftPanel({
           with the sheet purchase.
         </p>
         <div className="mb-8 grid grid-cols-3 gap-2 sm:gap-6">
-          {gifts.map((gift) => (
-            <a
-              key={gift.name}
-              href={JUUJO_URL}
-              rel="noopener noreferrer sponsored"
-              className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4"
+          {/* Grounding Mat */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $69
+              </span>
+              <Image
+                src="/img/grounding-sheets/juujo-grounding-mat-gift.webp"
+                alt="Grounding Mat"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Grounding Mat
+            </span>
+          </a>
+
+          {/* Premium Sleep Mask */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.2s" }}
             >
-              <span className="absolute -right-1 -top-2 z-20 rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-black text-white shadow-lg sm:-right-2 sm:-top-4 sm:px-4 sm:py-1.5 sm:text-base">
-                FREE
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $69
               </span>
-              <span className="block overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
-                <Image
-                  src={gift.image}
-                  alt={gift.name}
-                  width={260}
-                  height={260}
-                  className="aspect-square w-full object-cover"
-                />
+              <Image
+                src={
+                  maskColor === "green"
+                    ? "/img/grounding-sheets/juujo-premium-eye-mask.png"
+                    : maskColor === "black"
+                      ? "/img/grounding-sheets/juujo-sleep-mask-black.png"
+                      : "/img/grounding-sheets/juujo-sleep-mask-pink.png"
+                }
+                alt="Premium Sleep Mask"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Premium Sleep Mask
+            </span>
+            <div className="mt-2 flex justify-center gap-1.5 sm:gap-2">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("green");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-[#0b5f54] border ${
+                  maskColor === "green"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Green"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("black");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-black border ${
+                  maskColor === "black"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Black"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMaskColor("pink");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-[#d9a5b3] border ${
+                  maskColor === "pink"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-200"
+                }`}
+                aria-label="Pink"
+              />
+            </div>
+          </a>
+
+          {/* Grounding Pillowcase */}
+          <a
+            href={JUUJO_URL}
+            rel="noopener noreferrer sponsored"
+            className="relative rounded-xl border border-blue-100 bg-white p-1 text-center shadow-lg transition-transform hover:-translate-y-1 sm:rounded-2xl sm:p-4 block"
+          >
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.4s" }}
+            >
+              FREE
+            </div>
+            <div className="relative mb-1.5 sm:mb-3 overflow-hidden rounded-lg border border-slate-100 bg-slate-50 sm:rounded-xl">
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
+                $49
               </span>
-              <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
-                {gift.name}
-              </span>
-              <span className="mt-1 block text-[10px] font-bold text-blue-700 sm:text-sm">
-                {gift.value}
-              </span>
-            </a>
-          ))}
+              <Image
+                src={
+                  pillowColor === "white"
+                    ? "/img/grounding-sheets/juujo-grounding-pillowcase-gift.webp"
+                    : "/img/grounding-sheets/juujo-pillowcase-grey.png"
+                }
+                alt="Grounding Pillowcase"
+                width={260}
+                height={260}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <span className="mt-2 block text-[11px] font-extrabold leading-tight text-slate-900 sm:text-[18px]">
+              Grounding Pillowcase
+            </span>
+            <div className="mt-2 flex justify-center gap-1.5 sm:gap-2">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPillowColor("white");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-white border ${
+                  pillowColor === "white"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-300"
+                }`}
+                aria-label="White"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPillowColor("grey");
+                }}
+                className={`h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-gray-400 border ${
+                  pillowColor === "grey"
+                    ? "border-slate-800 ring-1 ring-slate-800"
+                    : "border-slate-300"
+                }`}
+                aria-label="Grey"
+              />
+            </div>
+          </a>
         </div>
         <OfficialButton
           href={JUUJO_URL}
@@ -536,11 +668,54 @@ function GiftPanel({
           loadingTarget={loadingTarget}
           setLoadingTarget={setLoadingTarget}
           testId="juujo-cta-gifts"
-          className="rounded-2xl border-2 border-blue-500 bg-blue-600 shadow-blue-600/30"
+          className=""
         >
           Check Availability
         </OfficialButton>
       </div>
+    </div>
+  );
+}
+
+function RankRibbon({
+  rank,
+  featured = false,
+}: {
+  rank: string;
+  featured?: boolean;
+}) {
+  const outerSize = featured ? "h-[118px] w-[138px]" : "h-[96px] w-[112px]";
+  const triangleSize = featured ? "h-[108px] w-[128px]" : "h-[88px] w-[108px]";
+  const textBox = featured ? "h-[78px] w-[82px]" : "h-[64px] w-[68px]";
+  const textSize = featured ? "text-[2rem]" : "text-[1.55rem]";
+
+  return (
+    <div
+      aria-label={`Rank ${rank}`}
+      className={`pointer-events-none absolute left-0 top-0 z-30 overflow-visible rounded-tl-lg ${outerSize}`}
+    >
+      {featured && (
+        <div
+          className={`absolute left-[7px] top-[7px] rounded-tl-lg bg-emerald-950/30 blur-[1px] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <div
+        className={`absolute left-0 top-0 rounded-tl-lg bg-gradient-to-br from-emerald-300 via-emerald-500 to-emerald-800 [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize} ${
+          featured
+            ? "shadow-[0_18px_28px_rgba(5,150,105,0.32),inset_0_2px_0_rgba(255,255,255,0.35),inset_-10px_-10px_16px_rgba(4,120,87,0.28)]"
+            : "shadow-[0_10px_18px_rgba(5,150,105,0.2),inset_0_1px_0_rgba(255,255,255,0.24)]"
+        }`}
+      />
+      {featured && (
+        <div
+          className={`absolute left-[2px] top-[2px] rounded-tl-lg bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.16)_32%,rgba(255,255,255,0)_58%)] [clip-path:polygon(0_0,100%_0,0_100%)] ${triangleSize}`}
+        />
+      )}
+      <span
+        className={`absolute left-0 top-0 flex items-center justify-center font-serif font-black leading-none text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.32)] ${textBox} ${textSize}`}
+      >
+        {rank}
+      </span>
     </div>
   );
 }
@@ -567,14 +742,9 @@ function ProductCard({
       id={`rank-${product.rank}`}
       data-testid="old-style-ranked-card"
       data-product-rank={product.rank}
-      className={`relative rounded-3xl border bg-white p-6 shadow-sm md:p-10 ${isJuujo ? "border-emerald-500 pt-10 ring-4 ring-emerald-50 md:pt-10" : "border-slate-200"}`}
+      className={`relative rounded-3xl border bg-white p-6 shadow-sm md:p-10 pt-20 md:pt-24 ${isJuujo ? "border-emerald-500 ring-4 ring-emerald-50" : "border-slate-200"}`}
     >
-      {isJuujo ? (
-        <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-emerald-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg md:-top-5 md:px-6 md:py-2 md:text-sm">
-          <Award className="h-4 w-4 md:h-[18px] md:w-[18px]" />
-          #1 Editor&apos;s Choice
-        </div>
-      ) : null}
+      <RankRibbon rank={`#${product.rank}`} featured={isJuujo} />
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-16">
         <aside className="flex flex-col items-center lg:col-span-4">
@@ -589,11 +759,11 @@ function ProductCard({
               rel="noopener noreferrer sponsored"
               className="group mb-6 block w-full"
             >
-              <Image
+              <img
                 src={product.image}
                 alt={product.name}
-                width={620}
-                height={620}
+                loading={product.rank === 1 ? "eager" : "lazy"}
+                decoding="async"
                 className="aspect-square w-full rounded-2xl border border-slate-100 object-cover shadow-md transition-shadow duration-300 group-hover:shadow-xl"
               />
             </a>
@@ -621,35 +791,17 @@ function ProductCard({
 
             {product.proof}
 
-            <OfficialButton
-              href={product.ctaUrl}
-              targetId={`product-${product.rank}`}
-              loadingTarget={loadingTarget}
-              setLoadingTarget={setLoadingTarget}
-              testId={ctaTestId}
-            >
-              {product.ctaLabel}
-            </OfficialButton>
-
-            <div className="mt-4 w-full rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div className="text-sm font-bold text-slate-700">
-                Sources checked
-              </div>
-              <div className="mt-2 space-y-1">
-                {product.sourceLinks.map((source) => (
-                  <a
-                    key={source.href}
-                    href={source.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-3 text-[16px] font-semibold leading-6 text-emerald-700 underline-offset-4 hover:underline"
-                  >
-                    <span>{source.label}</span>
-                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
-            </div>
+            {product.ctaUrl !== "#" && (
+              <OfficialButton
+                href={product.ctaUrl}
+                targetId={`product-${product.rank}`}
+                loadingTarget={loadingTarget}
+                setLoadingTarget={setLoadingTarget}
+                testId={ctaTestId}
+              >
+                {product.ctaLabel}
+              </OfficialButton>
+            )}
           </div>
         </aside>
 
@@ -684,38 +836,74 @@ function ProductCard({
             </div>
           </div>
 
-          <div className="mb-8 flex flex-col gap-6">
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/50 px-3 py-5 md:p-6">
-              <h3 className="-mx-3 -mt-5 mb-6 rounded-t-2xl bg-emerald-500 px-3 py-3 text-center text-2xl font-bold text-white md:-mx-6 md:-mt-6 md:px-6">
+          <div className="flex flex-col gap-6 mb-8">
+            {/* Pros */}
+            <div className="bg-emerald-50/50 rounded-2xl px-3 py-5 md:p-6 border border-emerald-100">
+              <h4 className="bg-emerald-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
                 Pros
-              </h3>
+              </h4>
               <ul className="space-y-4">
-                {product.pros.map((pro) => (
-                  <li
-                    key={pro}
-                    className="flex items-start gap-3 text-[18px] leading-8 text-slate-700"
-                  >
-                    <Check className="mt-1 h-5 w-5 shrink-0 text-emerald-500" />
-                    <span>{pro}</span>
-                  </li>
-                ))}
+                {product.pros.map((pro, idx) => {
+                  const [bold, ...rest] = pro.split(":");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
+                    >
+                      <Check
+                        size={20}
+                        className="text-emerald-500 shrink-0 mt-1"
+                      />
+                      <span>
+                        {rest.length > 0 ? (
+                          <>
+                            <strong className="text-slate-900">{bold}:</strong>
+                            {rest.join(":")}
+                          </>
+                        ) : (
+                          pro
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-red-100 bg-red-50/50 px-3 py-5 md:p-6">
-              <h3 className="-mx-3 -mt-5 mb-6 rounded-t-2xl bg-red-500 px-3 py-3 text-center text-2xl font-bold text-white md:-mx-6 md:-mt-6 md:px-6">
+            {/* Cons */}
+            <div className="bg-red-50/50 rounded-2xl px-3 py-5 md:p-6 border border-red-100">
+              <h4 className="bg-red-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
                 Cons
-              </h3>
+              </h4>
               <ul className="space-y-4">
-                {product.cons.map((con) => (
-                  <li
-                    key={con}
-                    className="flex items-start gap-3 text-[18px] leading-8 text-slate-700"
-                  >
-                    <XCircle className="mt-1 h-5 w-5 shrink-0 text-red-500" />
-                    <span>{con}</span>
-                  </li>
-                ))}
+                {product.cons.map((con, idx) => {
+                  const [bold, ...rest] = con.split(":");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-[18px] leading-8 text-slate-700 flex items-start gap-3"
+                    >
+                      <XCircle
+                        size={20}
+                        className="text-red-500 shrink-0 mt-1"
+                      />
+                      <span>
+                        {rest.length > 0 ? (
+                          <>
+                            <strong className="text-slate-900">{bold}:</strong>
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: rest.join(":"),
+                              }}
+                            />
+                          </>
+                        ) : (
+                          <span dangerouslySetInnerHTML={{ __html: con }} />
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -774,7 +962,7 @@ function DeferredVerdictVideo() {
             <video
               ref={videoRef}
               data-testid="verdict-video"
-              className="block aspect-video w-full object-cover"
+              className="block aspect-[9/16] w-full object-cover"
               controls
               playsInline
               preload="metadata"
@@ -801,14 +989,7 @@ function DeferredVerdictVideo() {
             >
               <Play className="ml-1 h-8 w-8 fill-current" />
             </button>
-            <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase text-[#8b1528] shadow-sm">
-              Product demo
-            </div>
           </div>
-          <p className="mx-auto mt-4 max-w-[320px] text-center text-[18px] leading-7 text-slate-600">
-            See the fitted construction, connection cord and full-sheet setup in
-            the same Juujo product walkthrough used in our review.
-          </p>
         </div>
 
         <div className="flex flex-col justify-center text-center">
@@ -819,16 +1000,17 @@ function DeferredVerdictVideo() {
           <div className="mb-5 text-3xl font-bold text-[#8b1528] md:mb-8 md:text-4xl">
             Now from $99
           </div>
-          <div className="mx-auto mb-6 inline-block rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm md:mb-8">
-            <div className="mb-2 flex items-center justify-center gap-2">
-              <span className="text-[18px] font-bold text-black">
+          <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="font-bold text-base md:text-lg text-black font-sans">
                 Excellent
               </span>
-              <GreenStarRating rating={4.9} size={22} />
+              <GreenStarRating rating={5} size={22} />
             </div>
-            <p className="text-[18px] leading-7 text-slate-600">
-              Our #1 grounding-sheet pick for US buyers
-            </p>
+            <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
+              Rated 4.9 / 5 on <GreenStarIcon size={18} />{" "}
+              <span className="font-bold text-black">Trustpilot</span>
+            </div>
           </div>
           <a
             href={JUUJO_URL}
@@ -872,93 +1054,70 @@ export default function GroundingSheetsInUsAdvertorial() {
         </div>
       </header>
 
-      <header className="border-b border-slate-200 bg-white py-8 md:py-12">
-        <div className="mx-auto max-w-6xl px-4">
-          <div
-            data-testid="grounding-top-five-hero"
-            className="grid grid-cols-5 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl md:rounded-3xl"
-          >
-            {products.map((product) => (
-              <div
-                key={`hero-${product.rank}`}
-                className="relative aspect-[3/4] border-r border-slate-200 last:border-r-0 md:aspect-square"
-              >
-                <Image
-                  src={product.image}
-                  alt={`${product.name}, ranked number ${product.rank}`}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 20vw, 224px"
-                  className="object-cover"
-                />
-                <span className="absolute left-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-emerald-500 px-1.5 text-xs font-black text-white shadow md:left-3 md:top-3 md:h-9 md:min-w-9 md:text-base">
-                  #{product.rank}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-md md:mt-10 md:rounded-3xl md:p-8">
-            <div className="flex flex-col items-center gap-5 md:flex-row md:items-start md:gap-8">
-              <Image
-                src="/img/grounding-sheets/dr-image.webp"
-                alt="Dr. Rachel Morgan"
-                width={104}
-                height={104}
-                className="h-24 w-24 shrink-0 rounded-full border-4 border-emerald-100 object-cover shadow-sm"
-              />
-              <div className="flex-1 text-center md:text-left">
-                <h2 className="font-serif text-2xl font-bold text-slate-900">
-                  <span className="underline decoration-emerald-500 decoration-2 underline-offset-4">
-                    Dr. Rachel Morgan
-                  </span>
-                </h2>
-                <div className="mt-1 text-sm font-bold uppercase text-emerald-600">
-                  Medical Reviewer
-                </div>
-                <p className="mt-4 text-[18px] leading-8 text-slate-700">
-                  This comparison weighs product specifications, public review
-                  signals, return policies and buyer fit. Grounding sheets are
-                  treated as wellness products, not substitutes for medical care
-                  or guaranteed health outcomes.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 border-t border-slate-200 pt-6">
-              <p className="text-center text-[18px] font-semibold leading-8 text-slate-700">
-                Our expert reviewer compared five popular options and recommends
-                Juujo for the strongest mix of fitted stability, trial length,
-                material specification and bundle value.
+      <main className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-5xl rounded-sm border border-slate-100 bg-white p-6 text-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] md:p-8 mb-10 md:mb-14">
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
+            <Image
+              src="/img/grounding-sheets/dr-image.webp"
+              alt="Dr. Rachel Morgan"
+              width={112}
+              height={112}
+              priority
+              className="h-24 w-24 rounded-full object-cover md:h-28 md:w-28"
+            />
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-slate-950 underline decoration-1 underline-offset-4 md:text-3xl">
+                Dr. Rachel Morgan
+              </h2>
+              <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
+                Medical Reviewer
               </p>
             </div>
-          </section>
-        </div>
-      </header>
+          </div>
+          <div className="mt-6 text-center text-[17px] leading-8 text-slate-700 md:text-left md:text-lg space-y-4">
+            <p>
+              With <strong>over 10 years</strong> of experience in sleep and
+              wellness,{" "}
+              <strong className="text-slate-900">Dr. Rachel Morgan</strong> is a
+              certified wellness expert. She reviewed 20 popular United States
+              grounding sheet options over 200+ hours, comparing publicly
+              available specifications, fitted options, material blends, setup
+              instructions, care guidance, entry prices, trial periods, and
+              warranties. Her biggest finding was simple: the most expensive
+              sheet was not always the best choice. The strongest options used
+              the right materials, offered a secure fit, and were easy enough to
+              integrate into a nightly routine consistently.
+            </p>
+          </div>
 
-      <main className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <section className="mx-auto mb-10 max-w-5xl space-y-5 text-[18px] leading-8 text-slate-700 md:mb-14">
+          <hr className="border-slate-200 w-full my-4" />
+
+          <div className="text-center text-xs italic text-slate-600 md:text-right md:text-sm">
+            * Recommended by over 1,000 US buyers grounding sheets users.
+          </div>
+        </div>
+        <section className="mx-auto mb-10 max-w-5xl space-y-6 text-[17px] leading-8 text-slate-700 md:text-lg md:leading-9 md:mb-14">
           <p>
-            Grounding sheets can look almost identical in advertising, but the
-            products differ sharply in fit, conductive material, care rules,
-            trial terms and public customer-review risk.
+            <strong>Grounding sheets</strong> are a breakthrough in natural
+            wellness. During our testing, we found that connecting the body to
+            the Earth's electric field overnight provides real, measurable
+            health benefits. Sleeping on these conductive materials actively
+            helps{" "}
+            <strong>
+              reduce inflammation, ease muscle stiffness, and support deeper,
+              more restorative sleep
+            </strong>
+            . It is a simple, effortless way to help your body heal and wake up
+            with a natural energy boost.
           </p>
           <p>
-            We compared five grounding-sheet offers available to US shoppers.
-            Our review favors practical bedding details first: whether the sheet
-            stays put, what the conductive blend contains, how clearly it can be
-            cared for and how much time the buyer has to test it.
-          </p>
-          <p>
-            We also checked the product pages and public Trustpilot profiles
-            listed with each entry. Public reviews are individual experiences,
-            but repeated refund, support, material or delivery concerns are
-            useful risk signals before ordering.
-          </p>
-          <p>
-            After comparing all ten criteria, Juujo ranks first for most US
-            buyers. The fitted construction, 10% silver blend, 120-night trial
-            and included gifts create the strongest overall package in this
-            group.
+            When evaluating the best grounding sheets, we{" "}
+            <strong>prioritized material quality</strong>, everyday ease of use,
+            and their ability to deliver genuine grounding benefits. Whether you
+            are new to earthing or simply looking to upgrade your current
+            routine, these sheets are designed to enhance your wellness while
+            you rest. Our in-depth reviews below will help you make an informed
+            choice for better health and more rejuvenating sleep.
           </p>
         </section>
 

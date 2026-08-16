@@ -822,7 +822,7 @@ function JuujoWinnerSection() {
               >
                 <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white">
                   <Image
-                    src="/img/grounding-sheets/best-page-image.webp"
+                    src="/img/grounding-sheets/juujo-grounding-fitted-sheet-review.webp"
                     alt={`${product.name} product view`}
                     fill
                     sizes="(max-width: 1023px) 90vw, 330px"

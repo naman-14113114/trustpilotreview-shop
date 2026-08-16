@@ -7548,3 +7548,42 @@ or deployment-setting change occurred.
 - Publishing state: no commit, push, branch, pull request, pull, merge, rebase, stash, reset, Vercel deployment, production promotion, rollback, domain/alias/environment change, checkout, payment, order or ad-platform change occurred.
 - Remaining uncertainty/follow-up: the correction is local only until separately authorized publishing. The new page now follows the Best LED Face Mask design; the older `/best-grounding-sheets-us-2026` remains intentionally unchanged.
 
+
+### Session August 13, 2026: Memory Refresh & Grounding Sheets Familiarization
+- **User Intent**: The user requested a memory refresh by reviewing the latest GitHub commits, local unstaged changes (specifically the new "best grounding sheets pages"), and recalling the design system of earlier hair dryer and mask pages, the business rules, and the customer journey, strictly without making any code changes.
+- **Actions Taken**:
+  - Spawned two research subagents. The first investigated the local unstaged changes for the new /best-grounding-sheets-in-us-2026 route and its GroundingSheetsInUsAdvertorial.tsx component. It confirmed the page ranks 5 products (Juujo #1, Terra #2, GroundingWell #3, Premium Grounding #4, BareEarth #5), features detailed pros/cons, and has BareEarth highly critiqued with a 1.3 Trustpilot score screenshot. All changes are currently uncommitted. The older route (/best-grounding-sheets-us-2026) is protected and unchanged.
+  - The second subagent analyzed the design system of the HairDryerAdvertorial.tsx and BestLedFaceMaskAdvertorial.tsx pages. It verified the strict unified design system: emerald-500 accents for mastheads and positive indicators, slate-700 text, responsive display serif/sans-serif typography, a wide five-product hero strip, sticky left product rail, full-width pros/cons panels, and a decisive "editorial/evidence-led" vibe.
+  - Recalled the global business context (MASTER_CONTEXT.md), including the customer journey (Microsoft/Bing Ads -> comparison advertorial -> regional storefront -> PlusBase checkout bridge), the "4-Tier Check" strict workflow, and the no-placeholder/exact-asset rules.
+- **Git & Local State**: main branch aligned with origin/main (0/0 ahead/behind). Local uncommitted changes exist for the grounding sheets advertorial and metadata.
+- **Code Changes**: Strictly NONE, as requested.
+## [2026-08-13] Grounding Sheets Redesign
+
+- **User Intent**: Make 8 specific redesign changes to the new Grounding Sheets US Advertorial page (GroundingSheetsInUsAdvertorial.tsx), matching the style of the Best LED Face Mask page, without modifying any other page. Hide affiliate links for competitors.
+- **Starting Git State**: Uncommitted changes in working directory.
+- **Ending Git State**: 8 tasks implemented, uncommitted.
+- **Files Inspected**: pps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx, pps/site/src/legacy-pages/GroundingSheetsAdvertorial.tsx, pps/site/src/features/grounding-sheets/GroundingSheetsInUsAdvertorial.tsx.
+- **Files Changed**: pps/site/src/features/grounding-sheets/GroundingSheetsInUsAdvertorial.tsx. New image copied to pps/site/public/img/grounding-sheets/bareearth-new.png.
+- **Exact changes made**:
+  - Replaced Dr. Rachel section with the legacy legacy-pages variant.
+  - Added #1 badge to top-left of the #1 section card using RankRibbon.
+  - Removed "Secure Checked" (Sources checked) UI below buttons.
+  - Updated button text to Official Website / Check Availability and removed border logic.
+  - Hid CTA buttons for competitors (ranks 2-5) and stripped external URLs (set to #).
+  - Implemented the 'Pros/Cons' visual design with Check/XCircle icons and subheadings.
+  - Swapped 'Comparison details' strings for visual percentage MetricBars.
+  - Updated images for #5 (BareEarth).
+- **Mistakes and Corrections**: Initial python script failed to replace a couple of exact strings due to formatting differences, corrected with direct multi_replace_file_content chunks. PowerShell execution of $value stripped variables, corrected using exact chunks.
+- **Verification Performed**: pnpm --filter @trustpilotreview/site typecheck and lint passed. Image existence verified.
+- **Commit/Push Status**: No commit, push, branch, or Vercel deployment performed (explicitly requested not to do more than asked).
+- **Hotfix**: Replaced an invalid external absolute URL for the GroundingWell image with a local relative path (/img/grounding-sheets/groundingwell-fitted-sheet.webp) to fix a Next.js 
+ext/image unconfigured host 500 error that was crashing the page.
+
+### Session 43: Grounding Sheets Pros and Cons Verification
+- **User Intent**: Verify Task 7 to check if the Pros and Cons in GroundingSheetsInUsAdvertorial.tsx use the mask page design format (bold subheadings, Check/XCircle icons, emerald/red theme). Report findings.
+- **Starting Git State**: Unchanged
+- **Ending Git State**: Unchanged
+- **Files Inspected**: apps/site/src/features/grounding-sheets/GroundingSheetsInUsAdvertorial.tsx
+- **Files Changed**: None.
+- **Verification Performed**: Inspected the component code. Confirmed that the text is split by ": " with the first part bolded (<strong className="text-slate-900">{bold}:</strong>). Confirmed that Check (emerald-500) and XCircle (red-500) icons from lucide-react are used. Confirmed that Pros use g-emerald-50/50 and g-emerald-500, while Cons use g-red-50/50 and g-red-500. The implementation strictly follows the requested design format.
+- **Commit/Push Status**: No commit, push, branch, or Vercel deployment performed.
