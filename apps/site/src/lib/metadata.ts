@@ -46,9 +46,9 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-hair-removal-device-uk-2026`
   },
   "/best-hair-dryer-uk-2026": {
-    title: "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+    title: "Best Hair Dryers UK (2026) | Top 5 Best Hair Dryer Reviews",
     description:
-      "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Cloud Nine, Shark SpeedStyle Pro FLEX and ghd ranked for drying speed, heat control, attachments and value.",
+      "Compare the top 5 best hair dryers in the UK for 2026. Ranked for fast drying speed, heat control, attachments, hair protection and value.",
     canonical: `${SITE_URL}/best-hair-dryer-uk-2026`
   },
   "/dyson-vs-shark-vs-muuhu-uk": {

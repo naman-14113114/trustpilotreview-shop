@@ -5,22 +5,26 @@ import { metadataForPath } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   ...metadataForPath("/best-hair-dryer-uk-2026"),
-  title: "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+  title: "Best Hair Dryers UK (2026) | Top 5 Best Hair Dryer Reviews",
+  description:
+    "Compare the top 5 best hair dryers in the UK for 2026. Ranked for fast drying speed, heat control, attachments, hair protection and value.",
   keywords: [
-    "best hair dryer",
     "best hair dryers",
+    "best hair dryer",
     "hair dryer best",
+    "best hair dryers uk",
     "best hair dryer uk",
     "best hair dryer uk 2026",
+    "best hair dryers uk 2026",
     "top 5 hair dryers",
     "best multi styler hair dryer uk",
     "hair dryer reviews uk",
     "7 in 1 hair styler",
   ],
   openGraph: {
-    title: "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+    title: "Best Hair Dryers UK (2026) | Top 5 Best Hair Dryer Reviews",
     description:
-      "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Cloud Nine, Shark SpeedStyle Pro FLEX and ghd ranked for drying speed, heat control, attachments and value.",
+      "Compare the top 5 best hair dryers in the UK for 2026. Ranked for fast drying speed, heat control, attachments, hair protection and value.",
     type: "article",
     url: "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026",
     siteName: "Trustpilot Review Shop",
@@ -28,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+    title: "Best Hair Dryers UK (2026) | Top 5 Best Hair Dryer Reviews",
     description:
-      "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Cloud Nine, Shark SpeedStyle Pro FLEX and ghd ranked for drying speed, heat control, attachments and value.",
+      "Compare the top 5 best hair dryers in the UK for 2026. Ranked for fast drying speed, heat control, attachments, hair protection and value.",
     images: ["/img/hair/top-5-hair-dryer-green-hero.png"],
   },
 };
