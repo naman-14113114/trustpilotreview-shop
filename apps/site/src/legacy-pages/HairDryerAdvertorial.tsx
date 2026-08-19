@@ -1371,8 +1371,181 @@ export default function HairDryerAdvertorial({
     });
   };
 
+  const hairDryerJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.trustpilotreview.shop/#organization",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img.thesitebase.net/10677/10677322/themes/17688355473bc9b44aac.png",
+        },
+        "description": "Trustpilot Review Shop publishes UK beauty technology comparisons, buyer guides, and specification reviews.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.trustpilotreview.shop/#website",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+        "name": "Amara Wright",
+        "jobTitle": "Professional Hairdresser & Stylist",
+        "worksFor": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#webpage",
+        "url": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026",
+        "name": "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+        "isPartOf": {
+          "@id": "https://www.trustpilotreview.shop/#website",
+        },
+        "about": [
+          "best hair dryer",
+          "best hair dryers uk",
+          "hair dryer best",
+          "7 in 1 hair styler",
+          "high speed brushless hair dryer",
+        ],
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Article",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#article",
+        "mainEntityOfPage": {
+          "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#webpage",
+        },
+        "headline": "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
+        "description":
+          "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Cloud Nine, Shark SpeedStyle Pro FLEX and ghd ranked for drying speed, heat control, attachments and value.",
+        "image": "https://www.trustpilotreview.shop/img/hair/top-5-hair-dryer-green-hero.png",
+        "author": {
+          "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+        },
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "keywords": [
+          "best hair dryer",
+          "best hair dryers",
+          "hair dryer best",
+          "best hair dryer uk",
+          "top 5 hair dryers uk",
+          "7 in 1 hair styler",
+        ],
+      },
+      {
+        "@type": "Product",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#product-muuhu",
+        "name": "Muuhu AirPro 7-in-1 High-Speed Hair Dryer & Multi-Styler",
+        "image": "https://uk.muuhu.com/images/products/muuhu-hair-dryer/00-travel-friendly-styler.webp",
+        "description": "1,600W, 110,000 RPM high-speed hair dryer and 7-in-1 multi-styler with auto-wrap curling barrels, smoothing brush, round volumising brush, concentrator, and diffuser.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Muuhu",
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://uk.muuhu.com/products/muuhu-hair-dryer",
+          "priceCurrency": "GBP",
+          "price": "129.00",
+          "priceValidUntil": "2027-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Muuhu UK",
+          },
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "16200",
+          "bestRating": "5",
+          "worstRating": "1",
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+          },
+          "author": {
+            "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+          },
+          "reviewBody": "Ranked #1 Best Overall for its 110,000 RPM brushless motor, 7 styling attachments, and complete routine coverage at £129.",
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#ranking",
+        "name": "Best Hair Dryer UK 2026 Comparison Ranking",
+        "numberOfItems": 5,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Muuhu AirPro 7-in-1 Hair Dryer" },
+          { "@type": "ListItem", "position": 2, "name": "Dyson Supersonic" },
+          { "@type": "ListItem", "position": 3, "name": "Shark SpeedStyle Pro FLEX" },
+          { "@type": "ListItem", "position": 4, "name": "Cloud Nine Airshot Pro" },
+          { "@type": "ListItem", "position": 5, "name": "ghd Helios" },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best hair dryer in the UK in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Based on drying speed, heat protection, 7 included attachments, 110,000 RPM motor speed, and value, the Muuhu AirPro is ranked as the #1 best overall hair dryer for UK buyers.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "How does a high-speed brushless hair dryer prevent heat damage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 110,000 RPM high-speed motor relies on high-velocity controlled airflow rather than extreme heat to dry hair quickly, preserving hair moisture and preventing thermal damage.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "What attachments come with the best multi-styler hair dryers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Top multi-styler dryers include auto-wrap curling barrels using the Coanda effect, smoothing brushes, round volumising brushes, concentrator nozzles, and diffusers for curly or wavy hair.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hairDryerJsonLd) }}
+      />
       <Script
         src="/assets/muuhu-hair-dryer-exit-popup.js?v=20260804-129"
         strategy="afterInteractive"
@@ -2232,38 +2405,45 @@ export default function HairDryerAdvertorial({
         </div>
       </main>
 
-      {!isBestHairLanding && (
-        <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
-          <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-            <p className="mb-2 text-lg font-bold text-slate-800">
-              Best Hair Dryer
-            </p>
-            <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
-            <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
-                Important disclosure
-              </p>
-              <p className="mb-4">
-                <strong>Affiliate disclosure:</strong> We may receive compensation
-                for clicks on or purchases of products featured on this site. This
-                comes at no additional cost to you.
-              </p>
-              <p>
-                <strong>Individual results:</strong> Experiences with hair styling
-                devices vary. Product information and examples do not guarantee a
-                particular result.
-              </p>
-              {market.key === "ca" && (
-                <p className="mt-4">
-                  <strong>Regulatory Note:</strong> Reference to certifications
-                  does not imply an endorsement of product efficacy for specific
-                  individual conditions.
-                </p>
-              )}
-            </div>
+      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
+        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-4 border-b border-slate-100 pb-4 text-xs">
+            <a href="/privacy" className="text-slate-500 hover:text-slate-800 transition-colors">Privacy Policy</a>
+            <span className="text-slate-300">•</span>
+            <a href="/terms" className="text-slate-500 hover:text-slate-800 transition-colors">Terms of Service</a>
+            <span className="text-slate-300">•</span>
+            <a href="/disclosure" className="text-slate-500 hover:text-slate-800 transition-colors">Advertising Disclosure</a>
+            <span className="text-slate-300">•</span>
+            <a href="/contact" className="text-slate-500 hover:text-slate-800 transition-colors">Contact Us</a>
           </div>
-        </footer>
-      )}
+          <p className="mb-2 text-lg font-bold text-slate-800">
+            Best Hair Dryer
+          </p>
+          <p className="mb-6">© 2026 Best Hair Dryer. All rights reserved.</p>
+          <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
+              Important disclosure
+            </p>
+            <p className="mb-4">
+              <strong>Affiliate disclosure:</strong> We may receive compensation
+              for clicks on or purchases of products featured on this site. This
+              comes at no additional cost to you.
+            </p>
+            <p>
+              <strong>Individual results:</strong> Experiences with hair styling
+              devices vary. Product information and examples do not guarantee a
+              particular result.
+            </p>
+            {market.key === "ca" && (
+              <p className="mt-4">
+                <strong>Regulatory Note:</strong> Reference to certifications
+                does not imply an endorsement of product efficacy for specific
+                individual conditions.
+              </p>
+            )}
+          </div>
+        </div>
+      </footer>
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">

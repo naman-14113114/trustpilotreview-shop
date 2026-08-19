@@ -46,7 +46,7 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-hair-removal-device-uk-2026`
   },
   "/best-hair-dryer-uk-2026": {
-    title: "Best Hair Dryer 2026 (UK)",
+    title: "Best Hair Dryer UK (2026) | 5 Hair Stylers Compared",
     description:
       "Best hair dryer UK 2026 comparison with Muuhu, Dyson Supersonic, Cloud Nine, Shark SpeedStyle Pro FLEX and ghd ranked for drying speed, heat control, attachments and value.",
     canonical: `${SITE_URL}/best-hair-dryer-uk-2026`
