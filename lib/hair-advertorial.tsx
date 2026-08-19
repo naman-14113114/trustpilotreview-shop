@@ -130,21 +130,168 @@ function ProductCard({ product }: { product: HairProduct }) {
 export default function HairAdvertorialPage({ page }: { page: HairPageData }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: page.title,
-    description: page.description,
-    inLanguage: "en-GB",
-    author: {
-      "@type": "Person",
-      name: "Amara Wright",
-      jobTitle: "Haircare and hair style expert",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Trustpilot Review Shop",
-      url: "https://www.trustpilotreview.shop",
-    },
-    mainEntityOfPage: `https://www.trustpilotreview.shop${page.canonical}`,
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.trustpilotreview.shop/#organization",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img.thesitebase.net/10677/10677322/themes/17688355473bc9b44aac.png",
+        },
+        "description": "Trustpilot Review Shop publishes UK beauty technology comparisons, buyer guides, and specification reviews.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.trustpilotreview.shop/#website",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+        "name": "Amara Wright",
+        "jobTitle": "Haircare and hair style expert",
+        "worksFor": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `https://www.trustpilotreview.shop${page.canonical}#webpage`,
+        "url": `https://www.trustpilotreview.shop${page.canonical}`,
+        "name": page.title,
+        "isPartOf": {
+          "@id": "https://www.trustpilotreview.shop/#website",
+        },
+        "about": [
+          "best hair dryer",
+          "best hair dryers uk",
+          "hair dryer best",
+          "7 in 1 hair styler",
+          "high speed brushless hair dryer",
+        ],
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Article",
+        "@id": `https://www.trustpilotreview.shop${page.canonical}#article`,
+        "mainEntityOfPage": {
+          "@id": `https://www.trustpilotreview.shop${page.canonical}#webpage`,
+        },
+        "headline": page.title,
+        "description": page.description,
+        "image": page.heroImage,
+        "author": {
+          "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+        },
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "keywords": [
+          "best hair dryer",
+          "best hair dryers",
+          "hair dryer best",
+          "best hair dryer uk",
+          "top 5 hair dryers uk",
+          "7 in 1 hair styler",
+        ],
+      },
+      {
+        "@type": "Product",
+        "@id": "https://www.trustpilotreview.shop/best-hair-dryer-uk-2026#product-muuhu",
+        "name": "Muuhu 7-in-1 Hair Dryer & Multi-Styler",
+        "image": "https://uk.muuhu.com/images/products/muuhu-hair-dryer/00-travel-friendly-styler.webp",
+        "description": "110,000 RPM high-speed hair dryer and 7-in-1 multi-styler with Coanda auto-wrap curling barrels, smoothing brush, round volumising brush, concentrator, and diffuser.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Muuhu",
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://uk.muuhu.com/products/muuhu-hair-dryer",
+          "priceCurrency": "GBP",
+          "price": "149.00",
+          "priceValidUntil": "2027-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Muuhu UK",
+          },
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "128",
+          "bestRating": "5",
+          "worstRating": "1",
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+          },
+          "author": {
+            "@id": "https://www.trustpilotreview.shop/#author-amara-wright",
+          },
+          "reviewBody": "Ranked #1 Editor Value Pick for its 110,000 RPM brushless motor, 7 styling attachments, and complete routine coverage at £149.",
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `https://www.trustpilotreview.shop${page.canonical}#ranking`,
+        "name": "Best Hair Dryer UK 2026 Comparison Ranking",
+        "numberOfItems": page.products.length,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": page.products.map((p, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": p.name,
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `https://www.trustpilotreview.shop${page.canonical}#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best hair dryer in the UK in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Based on listed specifications, included attachments, motor speed (110,000 RPM), and pricing, the Muuhu 7-in-1 Hair Dryer is ranked as the #1 editor value pick for versatile everyday styling.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "How does a high-speed brushless hair dryer prevent heat damage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 110,000 RPM high-speed motor relies on high-velocity controlled airflow rather than extreme heat to dry hair quickly, preserving hair moisture and preventing thermal damage.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "What styling attachments are included with multi-styler hair dryers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Comprehensive kits like the Muuhu 7-in-1 include auto-wrap curling barrels using the Coanda effect, smoothing brushes, round volumising brushes, concentrator nozzles, and diffusers for curly or wavy hair.",
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -230,6 +377,15 @@ export default function HairAdvertorialPage({ page }: { page: HairPageData }) {
       </main>
 
       <footer className="hair-footer">
+        <div style={{ marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.1)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px", fontSize: "11px" }}>
+          <a href="/privacy" style={{ color: "#94a3b8", textDecoration: "none" }}>Privacy Policy</a>
+          <span style={{ color: "#475569" }}>•</span>
+          <a href="/terms" style={{ color: "#94a3b8", textDecoration: "none" }}>Terms of Service</a>
+          <span style={{ color: "#475569" }}>•</span>
+          <a href="/disclosure" style={{ color: "#94a3b8", textDecoration: "none" }}>Advertising Disclosure</a>
+          <span style={{ color: "#475569" }}>•</span>
+          <a href="/contact" style={{ color: "#94a3b8", textDecoration: "none" }}>Contact Us</a>
+        </div>
         <strong>Best Hair Dryer</strong>
         <p>© 2026 Best Hair Dryer. All rights reserved.</p>
         <div className="hair-disclosure">

@@ -65,6 +65,14 @@ const tawkToScript = `
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en-GB">
+      <head>
+        <link rel="preconnect" href="https://bat.bing.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://uk.muuhu.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://bat.bing.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://uk.muuhu.com" />
+      </head>
       <body>
         <Script id="microsoft-ads-consent-default" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: microsoftConsentDefault }} />
         <Script id="google-tag-manager" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: googleTagManager }} />
