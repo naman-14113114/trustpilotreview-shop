@@ -75,6 +75,12 @@ const routeMetadata: Record<string, RouteMetadata> = {
       "Detailed US grounding sheet comparison of Juujo, Terra, GroundingWell, Premium Grounding and BareEarth by fit, materials, setup, reviews, returns and value.",
     canonical: `${SITE_URL}/best-grounding-sheets-in-us-2026`
   },
+  "/best-electric-toothbrush-uk-2026": {
+    title: "Best Electric Toothbrush UK 2026 | Top 5 Toothbrushes Compared",
+    description:
+      "Compare the top 5 best electric toothbrushes in the UK for 2026. Ranked for acoustic motor power, plaque removal, battery life, gum protection, refill costs and value.",
+    canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`
+  },
   ...Object.fromEntries(
     buudyEditorialPages.map((page) => [
       page.path,
