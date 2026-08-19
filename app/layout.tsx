@@ -68,9 +68,13 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <head>
         <link rel="preconnect" href="https://bat.bing.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.buudy.co.uk" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://buudy.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://uk.muuhu.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://bat.bing.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.buudy.co.uk" />
+        <link rel="dns-prefetch" href="https://buudy.com" />
         <link rel="dns-prefetch" href="https://uk.muuhu.com" />
       </head>
       <body>

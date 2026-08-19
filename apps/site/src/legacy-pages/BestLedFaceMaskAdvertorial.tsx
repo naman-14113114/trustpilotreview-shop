@@ -732,8 +732,229 @@ export default function Home({
     });
   };
 
+  const ledMaskJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.trustpilotreview.shop/#organization",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img.thesitebase.net/10677/10677322/themes/17688355473bc9b44aac.png",
+        },
+        "description": "Trustpilot Review Shop publishes UK beauty technology comparisons, buyer guides, and specification reviews.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.trustpilotreview.shop/#website",
+        "name": "Trustpilot Review Shop",
+        "url": "https://www.trustpilotreview.shop/",
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.trustpilotreview.shop/#author-dr-megan-vincze",
+        "name": "Dr. Megan Vincze",
+        "jobTitle": "Certified Dermatologist & Beauty Technology Expert",
+        "worksFor": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#webpage",
+        "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026",
+        "name": "Best LED Face Mask UK (2026) | Top 5 Light Therapy Masks Compared",
+        "isPartOf": {
+          "@id": "https://www.trustpilotreview.shop/#website",
+        },
+        "about": [
+          "best led face mask",
+          "best light led face mask",
+          "best led face mask therapy",
+          "best led face mask uk",
+          "best led light therapy mask",
+          "best led mask for wrinkles",
+          "best red light face mask",
+          "best at home led face mask",
+          "led light face mask therapy",
+        ],
+        "inLanguage": "en-GB",
+      },
+      {
+        "@type": "Article",
+        "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#article",
+        "mainEntityOfPage": {
+          "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#webpage",
+        },
+        "headline": "Best LED Face Mask UK (2026) | Top 5 Light Therapy Masks Compared",
+        "description":
+          "Compare the top 5 best LED face masks in the UK for 2026. Ranked for light therapy wavelengths, face and neck coverage, red light therapy, wrinkles, acne and overall value.",
+        "image": "https://www.trustpilotreview.shop/img/TOP%205%20LED%20Mask%20uk.png",
+        "author": {
+          "@id": "https://www.trustpilotreview.shop/#author-dr-megan-vincze",
+        },
+        "publisher": {
+          "@id": "https://www.trustpilotreview.shop/#organization",
+        },
+        "keywords": [
+          "best led face mask",
+          "best light led face mask",
+          "best led face mask therapy",
+          "best led face mask uk",
+          "best led light therapy mask",
+          "best led mask for wrinkles",
+          "best red light face mask",
+          "best at home led face mask",
+          "led light face mask therapy",
+        ],
+      },
+      {
+        "@type": "Product",
+        "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-buudy",
+        "name": "Buudy 7 Colour LED Mask (Face & Neck)",
+        "image": "https://www.trustpilotreview.shop/img/57-w.webp",
+        "description": "7-colour medical-grade LED face and neck therapy mask featuring 830nm near-infrared, cordless rechargeable tap technology, and Buudy AI guided sessions.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Buudy",
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "179.00",
+          "priceCurrency": "GBP",
+          "priceValidUntil": "2027-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.buudy.co.uk/products/buudy-led-mask",
+          "seller": {
+            "@type": "Organization",
+            "name": "Buudy UK",
+          },
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "4000",
+          "bestRating": "5",
+          "worstRating": "1",
+        },
+        "review": {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Megan Vincze",
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+          },
+          "reviewBody": "Buudy 7 Colour LED Mask is our top pick in the UK for 2026. It combines 7 visible light wavelengths plus 830nm near-infrared with built-in neck coverage, offering superior at-home light therapy results at £179.",
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#itemlist",
+        "name": "Top 5 LED Face Masks UK 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": 5,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Buudy 7 Colour LED Mask",
+            "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-1",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "CurrentBody LED Mask",
+            "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-2",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Omnilux LED Mask",
+            "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-3",
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Shark CryoGlow LED Mask",
+            "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-4",
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Dr. Dennis Gross DRx SpectraLite",
+            "url": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#product-5",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.trustpilotreview.shop/best-led-face-mask-uk-2026#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best LED face mask in the UK in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Buudy 7 Colour LED Mask ranks #1 in the UK for 2026. It features 7 therapeutic wavelengths plus 830nm near-infrared, built-in neck coverage, cordless tap controls, and a 90-day money-back guarantee at £179.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "Does LED light face mask therapy really work for wrinkles and acne?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, clinical research confirms that specific LED wavelengths stimulate collagen synthesis (Red and Near-Infrared light) to reduce wrinkles and eliminate P. acnes bacteria (Blue light) to clear active breakouts.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "What makes the Buudy 7 Colour LED Mask different from single-colour masks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While single-colour masks only emit red light, the Buudy 7 Colour LED Mask offers Red, Blue, Green, Cyan, Yellow, Purple, and White light plus 830nm Near-Infrared to target pigmentation, redness, acne, and deep wrinkles in one device.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "Why is neck coverage important for LED face mask therapy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The delicate neck and décolletage area ages faster than facial skin. Masks lacking neck coverage leave a noticeable age gap, whereas Buudy includes full face and neck coverage standard.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "How often should you use an at-home LED light therapy face mask?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For optimal results, use an at-home LED face mask for 10 to 15 minutes, 3 to 5 times per week. Most users notice visible skin improvements within 4 to 8 weeks.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ledMaskJsonLd) }}
+      />
       {/* Header / Hero */}
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -1316,6 +1537,46 @@ export default function Home({
           </div>
         </div>
       </main>
+
+      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
+        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-4 border-b border-slate-100 pb-4 text-xs">
+            <a href="/privacy" className="text-slate-500 hover:text-slate-800 transition-colors">Privacy Policy</a>
+            <span className="text-slate-300">•</span>
+            <a href="/terms" className="text-slate-500 hover:text-slate-800 transition-colors">Terms of Service</a>
+            <span className="text-slate-300">•</span>
+            <a href="/disclosure" className="text-slate-500 hover:text-slate-800 transition-colors">Advertising Disclosure</a>
+            <span className="text-slate-300">•</span>
+            <a href="/contact" className="text-slate-500 hover:text-slate-800 transition-colors">Contact Us</a>
+          </div>
+          <p className="mb-2 text-lg font-bold text-slate-800">
+            Best LED Face Mask
+          </p>
+          <p className="mb-6">© 2026 Best LED Face Mask. All rights reserved.</p>
+          <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
+              Important disclosure
+            </p>
+            <p className="mb-4">
+              <strong>Affiliate disclosure:</strong> We may receive compensation
+              for clicks on or purchases of products featured on this site. This
+              comes at no additional cost to you.
+            </p>
+            <p>
+              <strong>Individual results:</strong> Experiences with light therapy
+              devices vary. Product information and examples do not guarantee a
+              particular result.
+            </p>
+            {market.key === "ca" && (
+              <p className="mt-4">
+                <strong>Regulatory Note:</strong> Reference to certifications
+                does not imply an endorsement of product efficacy for specific
+                individual conditions.
+              </p>
+            )}
+          </div>
+        </div>
+      </footer>
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">

@@ -13,7 +13,6 @@ type PageProps = {
 
 const staticRoutes = [
   "/",
-  "/best-led-face-mask-uk-2026",
   "/best-hair-removal-device-uk-2026",
   "/best-led-face-mask-uk-2026-previous",
   "/best-led-face-mask-uk-2026-video-test",

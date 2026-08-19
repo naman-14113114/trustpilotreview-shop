@@ -13,7 +13,7 @@ type RouteMetadata = {
 };
 
 const defaultLedDescription =
-  "Looking for the best LED face mask in the UK? Compare the best LED light therapy masks for wrinkles, red light therapy, at-home use, face and neck coverage, and overall value.";
+  "Compare the top 5 best LED face masks in the UK for 2026. Ranked for light therapy wavelengths, face & neck coverage, red light therapy, anti-ageing, wrinkles, acne and overall value.";
 
 const routeMetadata: Record<string, RouteMetadata> = {
   "/": {
@@ -23,7 +23,7 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/`
   },
   "/best-led-face-mask-uk-2026": {
-    title: "Best LED Face Mask UK (2026) | Best LED Light Therapy Mask Reviews",
+    title: "Best LED Face Mask UK (2026) | Top 5 Light Therapy Masks Compared",
     description: defaultLedDescription,
     canonical: `${SITE_URL}/best-led-face-mask-uk-2026`
   },
