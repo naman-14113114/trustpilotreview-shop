@@ -204,7 +204,7 @@ export default function QualityReviewerCard({
             </div>
 
             <h3 className="font-[family-name:var(--font-oswald)] text-[26px] md:text-[30px] font-bold text-[#3A3A3A] mb-3 leading-tight uppercase">
-              Active Offer Found: £129 in{" "}
+              Active Offer Found: £99 in{" "}
               <span className="text-[#008BFF] bg-blue-100 px-2 py-0.5 rounded inline-block">
                 FREE GIFTS
               </span>
@@ -225,7 +225,7 @@ export default function QualityReviewerCard({
                 </div>
                 <div className="relative mb-3 rounded-md overflow-hidden bg-gray-50 border border-slate-100 aspect-square">
                   <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-700 font-bold line-through z-10 bg-white/95 px-2.5 py-0.5 rounded-full text-xs shadow-sm whitespace-nowrap">
-                    £35
+                    £25
                   </span>
                   <img
                     src="/img/hair/muuhu-luxury-case.webp"
@@ -248,7 +248,7 @@ export default function QualityReviewerCard({
                 </div>
                 <div className="relative mb-3 rounded-md overflow-hidden bg-gray-50 border border-slate-100 aspect-square">
                   <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-700 font-bold line-through z-10 bg-white/95 px-2.5 py-0.5 rounded-full text-xs shadow-sm whitespace-nowrap">
-                    £79
+                    £59
                   </span>
                   <img
                     src="/img/hair/muuhu-comb.webp"

@@ -2174,7 +2174,7 @@ export default function HairDryerAdvertorial({
                           {market.key === "ca"
                             ? "Exclusive Canadian Offer"
                             : "Active Offer Found"}
-                          : £129 in{" "}
+                          : £99 in{" "}
                           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
                             FREE GIFTS
                           </span>
@@ -2206,7 +2206,7 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                £35
+                                £25
                               </span>
                               <img
                                 src="/img/hair/muuhu-luxury-case.webp"
@@ -2243,7 +2243,7 @@ export default function HairDryerAdvertorial({
                             </div>
                             <div className="relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                                £79
+                                £59
                               </span>
                               <img
                                 src="/img/hair/muuhu-comb.webp"

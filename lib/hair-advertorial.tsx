@@ -39,22 +39,22 @@ function GiftOffer() {
     <div className="hair-offer">
       <p className="hair-section-label">Editor's tip</p>
       <h3>
-        Active Offer Found: £127 in <span>FREE GIFTS</span>
+        Active Offer Found: £99 in <span>FREE GIFTS</span>
       </h3>
       <p>
         While checking the official Muuhu UK product page, we found the current hair dryer offer includes premium packaging,
-        the Muuhu Comb and a Haircare E-book alongside the main styler. These links now go to the official Muuhu gift pages.
+        the Muuhu ScalpPro and a Haircare E-book alongside the main styler. These links now go to the official Muuhu gift pages.
       </p>
       <div className="hair-gifts">
         <a className="hair-gift" href={MUUHU_PACKAGING_URL} data-outbound-button="true">
           <img src="/img/hair/muuhu-luxury-case.webp" alt="Muuhu premium packaging" loading="lazy" decoding="async" />
           <strong>Premium Packaging</strong>
-          <span>FREE £35</span>
+          <span>FREE £25</span>
         </a>
         <a className="hair-gift" href={MUUHU_COMB_URL} data-outbound-button="true">
-          <img src="/img/hair/muuhu-comb.webp" alt="Muuhu comb" loading="lazy" decoding="async" />
-          <strong>Muuhu Comb</strong>
-          <span>FREE £79</span>
+          <img src="/img/hair/muuhu-comb.webp" alt="Muuhu ScalpPro" loading="lazy" decoding="async" />
+          <strong>Muuhu ScalpPro</strong>
+          <span>FREE £59</span>
         </a>
         <a className="hair-gift" href={MUUHU_EBOOK_URL} data-outbound-button="true">
           <img src="/img/hair/muuhu-expert-hair-ebook.webp" alt="Muuhu haircare e-book" loading="lazy" decoding="async" />
