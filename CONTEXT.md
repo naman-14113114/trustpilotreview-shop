@@ -7820,7 +7820,27 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm typecheck` (Passed with 0 errors across 5 workspace packages)
   - `pnpm --filter @trustpilotreview/site build` (Passed with 0 errors, prerendered all 54 static routes including `/best-electric-toothbrush-uk-2026`)
 - **Publishing & Deployment Status**:
-  - No commit, push, PR, or deployment performed as per repository rules.
+  - Committed and pushed to `origin/main` (commit `1d53d06`).
+
+## Electric Toothbrush Footer Removal & Center Hero Image Update - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Remove the entire `<footer>` component from `/best-electric-toothbrush-uk-2026` (`ElectricToothbrushesAdvertorial.tsx`).
+  - Update the 5-image collage banner (`top-5-electric-toothbrushes-uk.webp`) to place the Miroooo X image in the **center (3rd position)**, matching the visual layout of `TOP 5 LED Mask uk.png`.
+  - Order of panels: Panel 1 (Oral-B iO6), Panel 2 (Philips Sonicare 9000), Panel 3 (Miroooo X Silver on beach - CENTER), Panel 4 (SURI Sonic), Panel 5 (Quip Sonic).
+- **Git State**:
+  - Branch: `main` at `1d53d06`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` (removed `<footer>...</footer>`)
+  - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` (regenerated with Miroooo X at 3rd center position)
+  - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.png` (regenerated)
+  - `CONTEXT.md`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors)
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors)
+- **Publishing & Deployment Status**:
+  - Committed and pushed to `origin/main`.
+
 
 
 

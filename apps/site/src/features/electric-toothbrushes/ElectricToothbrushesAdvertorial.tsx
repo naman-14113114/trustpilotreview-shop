@@ -802,61 +802,6 @@ export default function ElectricToothbrushesAdvertorial() {
         </div>
       </main>
 
-      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
-        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
-          <div className="mb-4 flex flex-wrap items-center justify-center gap-4 border-b border-slate-100 pb-4 text-xs">
-            <a
-              href="/privacy"
-              className="text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <span className="text-slate-300">•</span>
-            <a
-              href="/terms"
-              className="text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Terms of Service
-            </a>
-            <span className="text-slate-300">•</span>
-            <a
-              href="/disclosure"
-              className="text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Advertising Disclosure
-            </a>
-            <span className="text-slate-300">•</span>
-            <a
-              href="/contact"
-              className="text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
-          <p className="mb-2 text-lg font-bold text-slate-800">
-            Best Electric Toothbrushes
-          </p>
-          <p className="mb-6">
-            © 2026 Best Electric Toothbrushes. All rights reserved.
-          </p>
-          <div className="mx-auto mb-6 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 p-7 text-left text-sm leading-relaxed text-slate-700">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-700">
-              Important disclosure
-            </p>
-            <p className="mb-4">
-              <strong>Affiliate disclosure:</strong> We may receive compensation
-              for clicks on or purchases of products featured on this site. This
-              comes at no additional cost to you.
-            </p>
-            <p>
-              <strong>Individual results:</strong> Experiences with electric
-              toothbrushes and oral care devices vary. Product information and
-              examples do not guarantee a particular result.
-            </p>
-          </div>
-        </div>
-      </footer>
-
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
         <a
