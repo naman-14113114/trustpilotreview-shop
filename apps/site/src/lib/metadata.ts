@@ -10,6 +10,7 @@ type RouteMetadata = {
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  image?: string;
 };
 
 const defaultLedDescription =
@@ -79,7 +80,8 @@ const routeMetadata: Record<string, RouteMetadata> = {
     title: "Best Electric Toothbrush UK 2026 | Top 5 Toothbrushes Compared",
     description:
       "Compare the top 5 best electric toothbrushes in the UK for 2026. Ranked for acoustic motor power, plaque removal, battery life, gum protection, refill costs and value.",
-    canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`
+    canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`,
+    image: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp"
   },
   ...Object.fromEntries(
     buudyEditorialPages.map((page) => [
@@ -148,7 +150,18 @@ export function metadataForPath(pathname: string): Metadata {
       description,
       type: pathname === "/" ? "website" : "article",
       url: canonical,
-      siteName: SITE_NAME
-    }
+      siteName: SITE_NAME,
+      ...(meta.image ? { images: [meta.image] } : {})
+    },
+    ...(meta.image
+      ? {
+          twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [meta.image]
+          }
+        }
+      : {})
   };
 }
