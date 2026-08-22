@@ -7784,4 +7784,43 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - No commit, push, PR, or deployment performed as per repository rules.
 
+## Electric Toothbrush Data & Integration Task - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Update `ElectricToothbrushesAdvertorial.tsx` to directly import `toothbrushProducts` from `@/data/toothbrushes`.
+  - Ensure all 5 products have the 4 exact performance metric bars:
+    1. `Lightweight & Ergonomic (51g)`: Miroooo X (99%), Oral-B iO6 (62%), Philips 9000 (72%), SURI (85%), Quip (70%)
+    2. `Whisper Quiet (<50dB)`: Miroooo X (98%), Oral-B iO6 (55%), Philips 9000 (75%), SURI (82%), Quip (68%)
+    3. `Battery Life & Endurance (60+ Days)`: Miroooo X (99%), Oral-B iO6 (60%), Philips 9000 (65%), SURI (88%), Quip (35%)
+    4. `Long-Term Value & Bundle`: Miroooo X (99%), Oral-B iO6 (65%), Philips 9000 (58%), SURI (72%), Quip (30%)
+  - Ensure Miroooo X has all 9 pros in exact sequence:
+    1. Ultra Light Weight (51g)
+    2. Whisper Quiet (<50dB)
+    3. 60+ Day Battery Life
+    4. 4.9★ Customer Rating
+    5. Aerospace Aluminium Design
+    6. Travel Case & 2 Extra Free Heads (£60.85 bundle)
+    7. Dental Care Companion App
+    8. 90-Day Money-Back Guarantee
+    9. 2-Year Comprehensive Warranty
+  - Ensure competitor cons are sharpened:
+    - Oral-B: Very noisy (>65dB), short 14-day battery, bulky 2-pin shaver plug, expensive refills (£8-£12/head), heavy plastic handle (135g+), no 90-day guarantee/gifts.
+    - Philips: Exorbitant £189+ price, 14-day battery, fragile 2-pin glass charger, costly refills, no 90-day guarantee/gifts, motor shaft loosening risk.
+    - SURI: No app, milder 33k motor, expensive £95 with no gifts/case, 2 basic modes, cornstarch head fragility, standard 30-day policy.
+    - Quip: No app, disposable AAA battery decay, weak 15k vibration, zero gifts & subscription trap, no pressure sensor, cheap noisy plastic housing.
+  - Update product card images for Oral-B, Philips, and SURI to use comparison images (`/img/toothbrushes/oral-b-io6-comparison.png`, `/img/toothbrushes/philips-sonicare-comparison.png`, `/img/toothbrushes/suri-sonic-comparison.png`).
+  - Verified 5-image hero banner above Dr. Marcus Vance rendered cleanly with `<Image src="/img/toothbrushes/top-5-electric-toothbrushes-uk.webp" ... />`.
+- **Git State**:
+  - Branch: `main` at `f1edd57` (up to date with `origin/main`).
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`.
+- **Inspected and Changed Files**:
+  - Inspected: `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/src/data/toothbrushes.ts`, `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`
+  - Changed: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`
+- **Verification Performed**:
+  - `pnpm typecheck` (Passed with 0 errors across 5 workspace packages)
+  - `pnpm --filter @trustpilotreview/site build` (Passed with 0 errors, prerendered all 54 static routes including `/best-electric-toothbrush-uk-2026`)
+- **Publishing & Deployment Status**:
+  - No commit, push, PR, or deployment performed as per repository rules.
+
+
 
