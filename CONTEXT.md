@@ -7839,7 +7839,24 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors)
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors)
 - **Publishing & Deployment Status**:
-  - Committed and pushed to `origin/main`.
+  - Committed and pushed to `origin/main` (commit `6332486`).
+
+## Electric Toothbrush #1 Editor's Choice Badge Removal - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Remove only the `#1 Editor's Choice` badge situated top center above the product card in `ElectricToothbrushesAdvertorial.tsx`.
+  - Preserve the `#1` ribbon on the top-left corner and all other card layout/elements without any other changes.
+- **Git State**:
+  - Branch: `main` at `6332486`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` (removed `#1 Editor's Choice` badge and unused `Award` import)
+  - `CONTEXT.md`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors)
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors)
+- **Publishing & Deployment Status**:
+  - Ready for commit and push to `origin/main`.
+
 
 
 

@@ -9,7 +9,6 @@ import React, {
   type ReactNode,
 } from "react";
 import {
-  Award,
   Check,
   CheckCircle2,
   ChevronRight,
@@ -371,13 +370,6 @@ function ProductCard({
           : "border-slate-200"
       } p-6 md:p-10 pt-20 md:pt-24 scroll-mt-28`}
     >
-      {isMiroooo && (
-        <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm tracking-wide uppercase flex items-center gap-1.5 md:gap-2 shadow-lg z-10 whitespace-nowrap">
-          <Award size={16} className="md:w-[18px] md:h-[18px]" />
-          #1 Editor&apos;s Choice
-        </div>
-      )}
-
       <RankRibbon rank={`#${product.rank}`} featured={isMiroooo} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
