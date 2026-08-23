@@ -7843,9 +7843,7 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 ## Electric Toothbrush #1 Editor's Choice Badge Removal - 23 August 2026
 
-- **User Intent & Protected Scope**:
-  - Remove only the `#1 Editor's Choice` badge situated top center above the product card in `ElectricToothbrushesAdvertorial.tsx`.
-  - Preserve the `#1` ribbon on the top-left corner and all other card layout/elements without any other changes.
+- **User Intent & Protected Scope**:  - Preserve the `#1` ribbon on the top-left corner and all other card layout/elements without any other changes.
 - **Git State**:
   - Branch: `main` at `6332486`.
 - **Inspected and Changed Files**:
@@ -7857,7 +7855,31 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Ready for commit and push to `origin/main`.
 
+## Electric Toothbrush 32,000 RPM Spec Correction & Simplified UK English Criteria - 23 August 2026
 
-
-
-
+- **User Intent & Protected Scope**:
+  - Evaluation Criteria: Rewrote all 10 criteria using simple, friendly everyday UK English without jargon:
+    1. "Deep cleaning & plaque removal"
+    2. "Gentle on gums & enamel safe"
+    3. "Quiet sound & low vibration" (replaced whisper-quiet)
+    4. "Lightweight & easy to hold" (explicitly included weight)
+    5. "Long battery life & USB-C charging" (replaced endurance with life)
+    6. "Soft rounded bristle quality"
+    7. "Waterproof & mold resistant design"
+    8. "Travel friendly with travel case" (replaced portability with travel friendly)
+    9. "Affordable replacement brush heads"
+    10. "Verified UK customer reviews"
+  - Spec Correction (32,000 RPM): Replaced all occurrences of 40,000 VPM/RPM across the dataset, pros/cons, and review copy with the exact verified manufacturer spec `32,000 RPM`.
+- **Git State**:
+  - Branch: `main` at `4e7caf5`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/scripts/generate_top5_toothbrush_banner.py`, `apps/site/public/img/toothbrushes/top-4-competitors-container-bar.webp`, `apps/site/public/img/toothbrushes/top-4-competitors-container-bar.png`, `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp`, `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.png`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Updated Miroooo X pros and review copy from 40,000 to `32,000 RPM`, updated SURI comparative notes.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated `evaluationCriteria` with simplified UK English phrasing.
+  - `CONTEXT.md`: Appended task log.
+- **Verification Performed**:
+  - Grep search confirmed zero remaining mentions of 40,000 across `apps/site`.
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - No unrequested commit, push, PR, or deployment performed as per repository rules.

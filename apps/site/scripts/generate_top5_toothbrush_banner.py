@@ -1,125 +1,150 @@
 import os
 from pathlib import Path
-from PIL import Image, ImageOps
-import numpy as np
+from PIL import Image, ImageDraw, ImageFilter
 
 REPO_ROOT = Path(r"e:\1st YEAR DTU\New folder\trustpilotreview-shop")
 TOOTHBRUSH_DIR = REPO_ROOT / "apps" / "site" / "public" / "img" / "toothbrushes"
 RAW_IMAGES_DIR = Path(r"E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo")
 
-# Target banner dimensions
-CANVAS_W = 1536
-CANVAS_H = 460
-
-def build_miroooo_panel(src_path: Path, width: int, height: int) -> Image.Image:
-    """Panel 1: Miroooo X lifestyle shot fit/crop to fill vertical panel nicely."""
-    im = Image.open(src_path).convert("RGB")
-    src_w, src_h = im.size
-    
-    # Calculate crop box to fill (width, height) maintaining aspect ratio
-    target_aspect = width / height
-    src_aspect = src_w / src_h
-    
-    if src_aspect > target_aspect:
-        # Source is wider than target: crop left & right
-        crop_w = int(src_h * target_aspect)
-        crop_h = src_h
-        x0 = (src_w - crop_w) // 2
-        y0 = 0
-    else:
-        # Source is taller than target: crop top & bottom
-        crop_w = src_w
-        crop_h = int(src_w / target_aspect)
-        x0 = 0
-        y0 = (src_h - crop_h) // 2
-        
-    cropped = im.crop((x0, y0, x0 + crop_w, y0 + crop_h))
-    panel = cropped.resize((width, height), Image.Resampling.LANCZOS)
-    return panel
-
-def build_transparent_brush_panel(src_path: Path, width: int, height: int, target_brush_h: int = 410) -> Image.Image:
-    """Panels 2, 3, 4: Clean transparent PNG centered on pure white background."""
-    im = Image.open(src_path).convert("RGBA")
-    
-    # Extract alpha bounding box
-    alpha = im.split()[-1]
-    bbox = alpha.getbbox()
-    if bbox:
-        brush = im.crop(bbox)
-    else:
-        brush = im
-        
-    bw, bh = brush.size
-    scale = target_brush_h / float(bh)
-    new_w = max(1, int(round(bw * scale)))
-    new_h = target_brush_h
-    
-    brush_resized = brush.resize((new_w, new_h), Image.Resampling.LANCZOS)
-    
-    # Create white canvas
-    panel = Image.new("RGBA", (width, height), (255, 255, 255, 255))
-    paste_x = (width - new_w) // 2
-    paste_y = (height - new_h) // 2
-    panel.paste(brush_resized, (paste_x, paste_y), brush_resized)
-    return panel.convert("RGB")
-
-def build_quip_panel(src_path: Path, width: int, height: int, target_brush_h: int = 410) -> Image.Image:
-    """Panel 5: Quip sonic toothbrush centered cleanly on pure white background."""
-    im = Image.open(src_path).convert("RGB")
-    
-    # Crop brush and stand
-    crop = im.crop((800, 160, 2000, 2660))
-    arr = np.array(crop, dtype=np.float32)
-    
-    # Seamless white background level adjustment (remap near-white [240..255] -> 255)
-    arr = np.clip(arr / 240.0 * 255.0, 0, 255).astype(np.uint8)
-    adjusted = Image.fromarray(arr)
-    
-    scale = target_brush_h / float(adjusted.height)
-    target_w = max(1, int(round(adjusted.width * scale)))
-    scaled = adjusted.resize((target_w, target_brush_h), Image.Resampling.LANCZOS)
-    
-    panel = Image.new("RGB", (width, height), (255, 255, 255))
-    paste_x = (width - target_w) // 2
-    paste_y = (height - target_brush_h) // 2
-    panel.paste(scaled, (paste_x, paste_y))
-    return panel
-
 def generate_banner(output_webp: Path, output_png: Path):
-    # 5 panels side-by-side: 307 + 307 + 308 + 307 + 307 = 1536
-    panel_widths = [307, 307, 308, 307, 307]
-    panel_starts = [0, 307, 614, 922, 1229]
+    CANVAS_W = 1536
+    CANVAS_H = 430
     
-    # Panel sources
-    p1_src = RAW_IMAGES_DIR / "Mirooo x compressed" / "Miroooo_x_Silver-2.webp"
-    p2_src = TOOTHBRUSH_DIR / "oral-b-io6-comparison.png"
-    p3_src = TOOTHBRUSH_DIR / "philips-sonicare-comparison.png"
-    p4_src = TOOTHBRUSH_DIR / "suri-sonic-comparison.png"
-    p5_src = TOOTHBRUSH_DIR / "quip-sonic-electric-toothbrush.jpg"
+    # 1. Base Canvas (Pure White)
+    canvas = Image.new("RGBA", (CANVAS_W, CANVAS_H), (255, 255, 255, 255))
     
-    # Build each vertical panel (ONLY IMAGES, NO TEXT, NO BADGES, NO PILLS, NO VS CIRCLES)
-    p1 = build_miroooo_panel(p1_src, panel_widths[0], CANVAS_H)
-    p2 = build_transparent_brush_panel(p2_src, panel_widths[1], CANVAS_H, target_brush_h=410)
-    p3 = build_transparent_brush_panel(p3_src, panel_widths[2], CANVAS_H, target_brush_h=410)
-    p4 = build_transparent_brush_panel(p4_src, panel_widths[3], CANVAS_H, target_brush_h=410)
-    p5 = build_quip_panel(p5_src, panel_widths[4], CANVAS_H, target_brush_h=410)
+    # 2. Balanced Horizontal Container Bar Behind (height 350px)
+    CONTAINER_W = 1460
+    CONTAINER_H = 350
+    c_x0 = (CANVAS_W - CONTAINER_W) // 2
+    c_y0 = (CANVAS_H - CONTAINER_H) // 2 # 40
+    c_x1 = c_x0 + CONTAINER_W
+    c_y1 = c_y0 + CONTAINER_H # 390
+    corner_r = 38
     
-    # Composite master canvas
-    canvas = Image.new("RGB", (CANVAS_W, CANVAS_H), (255, 255, 255))
-    panels = [p1, p2, p3, p4, p5]
+    # Container shadow
+    c_shadow = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
+    c_draw_s = ImageDraw.Draw(c_shadow)
+    c_draw_s.rounded_rectangle(
+        [c_x0 + 4, c_y0 + 6, c_x1 - 4, c_y1 + 12],
+        radius=corner_r,
+        fill=(15, 23, 42, 22)
+    )
+    c_shadow = c_shadow.filter(ImageFilter.GaussianBlur(14))
+    canvas.alpha_composite(c_shadow)
     
-    for i, p in enumerate(panels):
-        canvas.paste(p, (panel_starts[i], 0))
+    # Container body
+    c_layer = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
+    c_draw = ImageDraw.Draw(c_layer)
+    c_draw.rounded_rectangle(
+        [c_x0, c_y0, c_x1, c_y1],
+        radius=corner_r,
+        fill=(255, 255, 255, 255),
+        outline=(226, 232, 240, 255),
+        width=2
+    )
+    canvas.alpha_composite(c_layer)
+    
+    # 3. 4 Competitor brushes
+    col_centers = [
+        c_x0 + int(CONTAINER_W * 0.10), # Col 1: Oral-B
+        c_x0 + int(CONTAINER_W * 0.27), # Col 2: Philips
+        c_x0 + int(CONTAINER_W * 0.73), # Col 4: SURI
+        c_x0 + int(CONTAINER_W * 0.90), # Col 5: Quip
+    ]
+    
+    competitors = [
+        (0, "oral-b-io6-comparison.png"),
+        (1, "philips-sonicare-comparison.png"),
+        (2, "suri-sonic-comparison.png"),
+        (3, "quip-sonic-comparison.png"),
+    ]
+    
+    brush_target_h = 265
+    brush_y_center = CANVAS_H // 2
+    
+    for col_idx, filename in competitors:
+        img_path = TOOTHBRUSH_DIR / filename
+        if img_path.exists():
+            im = Image.open(img_path).convert("RGBA")
+            bbox = im.getbbox()
+            if bbox:
+                cropped = im.crop(bbox)
+                scale = brush_target_h / float(cropped.size[1])
+                w = int(round(cropped.size[0] * scale))
+                h = brush_target_h
+                resized = cropped.resize((w, h), Image.Resampling.LANCZOS)
+                
+                pos_x = col_centers[col_idx] - (w // 2)
+                pos_y = brush_y_center - (h // 2)
+                canvas.alpha_composite(resized, (pos_x, pos_y))
+    
+    # 4. #1 Miroooo X Card (Taller than container, extends OUT vertically 30px above and 30px below)
+    miroooo_path = RAW_IMAGES_DIR / "Miroooo_x_Silver-2.jpg"
+    im_m = Image.open(miroooo_path).convert("RGB")
+    
+    CARD_H = 410
+    CARD_W = int(round(CARD_H * 696 / 1087)) # ~262px
+    card_r = 24
+    
+    m_resized = im_m.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
+    
+    scale_factor = 4
+    mask = Image.new("L", (CARD_W * scale_factor, CARD_H * scale_factor), 0)
+    draw_m = ImageDraw.Draw(mask)
+    draw_m.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, fill=255)
+    mask = mask.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
+    
+    card_rgba = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
+    card_rgba.paste(m_resized, (0, 0), mask)
+    
+    # White border stroke
+    stroke_layer = Image.new("RGBA", (CARD_W * scale_factor, CARD_H * scale_factor), (0, 0, 0, 0))
+    draw_s = ImageDraw.Draw(stroke_layer)
+    draw_s.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, outline=(255, 255, 255, 255), width=3 * scale_factor)
+    stroke_layer = stroke_layer.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
+    card_rgba.alpha_composite(stroke_layer)
+    
+    # Outer subtle ring
+    ring_layer = Image.new("RGBA", (CARD_W * scale_factor, CARD_H * scale_factor), (0, 0, 0, 0))
+    draw_r = ImageDraw.Draw(ring_layer)
+    draw_r.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, outline=(15, 23, 42, 35), width=1 * scale_factor)
+    ring_layer = ring_layer.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
+    card_rgba.alpha_composite(ring_layer)
+    
+    m_x = (CANVAS_W - CARD_W) // 2
+    m_y = (CANVAS_H - CARD_H) // 2
+    
+    # 5. Multi-tier 3D drop shadow for Miroooo card
+    shadow_layers = [
+        {"offset": (0, 6), "blur": 12, "color": (15, 23, 42, 80)},
+        {"offset": (0, 16), "blur": 26, "color": (15, 23, 42, 50)},
+        {"offset": (0, 28), "blur": 48, "color": (15, 23, 42, 35)},
+    ]
+    
+    for s in shadow_layers:
+        s_img = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
+        s_draw = ImageDraw.Draw(s_img)
+        ox, oy = s["offset"]
+        s_draw.rounded_rectangle(
+            [m_x + ox + 4, m_y + oy + 4, m_x + CARD_W + ox - 4, m_y + CARD_H + oy - 4],
+            radius=card_r,
+            fill=s["color"]
+        )
+        s_img = s_img.filter(ImageFilter.GaussianBlur(s["blur"]))
+        canvas.alpha_composite(s_img)
         
-    # Save outputs
-    output_webp.parent.mkdir(parents=True, exist_ok=True)
-    canvas.save(output_webp, "WEBP", quality=95, method=6)
-    canvas.save(output_png, "PNG", optimize=True)
+    canvas.alpha_composite(card_rgba, (m_x, m_y))
     
-    print(f"WebP generated: {output_webp} ({output_webp.stat().st_size} bytes)")
-    print(f"PNG generated: {output_png} ({output_png.stat().st_size} bytes)")
+    # 6. Save assets
+    output_webp.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(output_png, "PNG")
+    canvas.convert("RGB").save(output_webp, "WEBP", quality=95)
+    print(f"Generated PNG: {output_png}")
+    print(f"Generated WebP: {output_webp}")
 
 if __name__ == "__main__":
     out_webp = TOOTHBRUSH_DIR / "top-5-electric-toothbrushes-uk.webp"
     out_png = TOOTHBRUSH_DIR / "top-5-electric-toothbrushes-uk.png"
     generate_banner(out_webp, out_png)
+

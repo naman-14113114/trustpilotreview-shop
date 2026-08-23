@@ -26,16 +26,16 @@ import {
 } from "@/data/toothbrushes";
 
 const evaluationCriteria = [
-  "Lightweight & ergonomic design (51g aerospace aluminium body)",
-  "Whisper-quiet acoustic motor operation (<50dB noise level)",
-  "60+ day battery runtime & universal USB-C fast charging",
-  "Long-term value, affordable refills & £60.85 gift bundle",
-  "Acoustic levitation plaque & biofilm removal (40,000+ VPM)",
-  "Smart gum protection & high-density DuPont rounded bristles",
-  "Hygienic mold-resistant unibody construction",
-  "Travel portability & included magnetic charging dock",
-  "Verified UK Trustpilot ratings & buyer satisfaction",
-  "Best overall price-to-performance ratio for UK consumers",
+  "Deep cleaning & plaque removal",
+  "Gentle on gums & enamel safe",
+  "Quiet sound & low vibration",
+  "Lightweight & easy to hold",
+  "Long battery life & USB-C charging",
+  "Soft rounded bristle quality",
+  "Waterproof & mold resistant design",
+  "Travel friendly with travel case",
+  "Affordable replacement brush heads",
+  "Verified UK customer reviews",
 ];
 
 const products: RankedProduct[] = toothbrushProducts;
@@ -619,16 +619,26 @@ export default function ElectricToothbrushesAdvertorial() {
         </div>
       </div>
 
-      <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-12 md:pb-16">
+      <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-14 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
-          <Image
-            src="/img/toothbrushes/top-5-electric-toothbrushes-uk.webp"
-            alt="Top 5 electric toothbrushes comparison for United Kingdom"
-            width={1536}
-            height={461}
-            priority
-            className="w-full max-w-5xl mx-auto aspect-[1536/461] object-cover rounded-3xl shadow-xl border border-slate-100 mb-10 md:mb-12"
-          />
+          {/* 2-Layer Top 5 Comparison Hero Banner */}
+          <div className="relative w-full max-w-6xl mx-auto my-10 md:my-12 flex items-center justify-center">
+            {/* Layer 1: Background Container Bar with 4 competitors and open center space */}
+            <img
+              src="/img/toothbrushes/top-4-competitors-container-bar.webp"
+              alt="Electric Toothbrushes UK Comparison"
+              className="w-full h-auto object-contain pointer-events-none"
+            />
+
+            {/* Layer 2: #1 Miroooo X Card floating OVER the container space, perfectly centered vertically */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
+              <img
+                src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
+                alt="Miroooo X Sonic Electric Toothbrush"
+                className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
+              />
+            </div>
+          </div>
 
           <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
@@ -656,18 +666,17 @@ export default function ElectricToothbrushesAdvertorial() {
                   With <strong>over 14 years</strong> of clinical dental surgery
                   experience across the UK,{" "}
                   <strong className="text-slate-900">Dr. Marcus Vance</strong> is
-                  a specialist in preventative periodontics and oral biofilm
-                  management. He conducted a rigorous 180+ hour comparative
-                  evaluation of leading electric toothbrushes available to
-                  British shoppers in 2026. He benchmarked acoustic vibrational
-                  motors, plaque disruption depth, bristle tip rounding,
-                  enamel safety, battery runtime, UK 2-pin bathroom shaver socket
-                  compatibility, and long-term refill head costs. His primary
-                  conclusion was clear: the highest price tag does not guarantee a
-                  superior clean. The winning brushes combined high acoustic
-                  levitation power with gentle gum protection, hassle-free
-                  universal USB-C charging, and fair ongoing head replacement
-                  costs.
+                  a specialist in preventative periodontics and oral hygiene.
+                  He conducted a rigorous 180+ hour comparative evaluation of
+                  leading electric toothbrushes available to British consumers in
+                  2026. He benchmarked plaque removal efficacy, gingival margin
+                  safety, bristle tip rounding, acoustic vibration comfort, battery
+                  longevity, travel convenience, and the real ongoing cost of
+                  replacement brush heads. His primary conclusion was clear:
+                  the highest price tag does not guarantee a superior clean. The
+                  winning brushes delivered effortless deep cleaning with gentle
+                  gum protection, whisper-quiet operation, long battery life, and
+                  fair replacement head prices without subscription lock-ins.
                 </p>
               </div>
 
@@ -686,28 +695,22 @@ export default function ElectricToothbrushesAdvertorial() {
         {/* Intro */}
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
           <p>
-            <strong>Modern acoustic electric toothbrushes</strong> represent a
-            major evolution in daily dental hygiene. During clinical
-            assessments, sonic levitation motors operating above 40,000
-            vibrations per minute consistently demonstrated superior fluid
-            dynamic plaque disruption compared to manual brushing and
-            low-frequency vibrators. The high-speed micro-bubbles actively
-            penetrate between interdental spaces and beneath the gumline,
-            helping{" "}
-            <strong>
-              dislodge stubborn plaque, reduce gingival bleeding, and lift
-              surface stains without abrasive enamel wear
-            </strong>
-            .
+            <strong>Upgrading to the right electric toothbrush</strong> is one
+            of the most impactful decisions you can make for your long-term oral
+            health. While manual brushing often relies on harsh back-and-forth
+            scrubbing that can wear away protective tooth enamel and irritate
+            sensitive gums, modern acoustic sonic toothbrushes create high-frequency
+            micro-bubbles that gently wash between tight teeth gaps and flush
+            plaque from beneath the gumline.
           </p>
           <p>
-            When selecting the top electric toothbrushes in the UK, we{" "}
-            <strong>prioritized acoustic motor engineering</strong>, bristle tip
-            polishing, battery endurance, and practical travel convenience.
-            Whether you want to eliminate 2-pin shaver adapters or upgrade your
-            daily gum protection, our in-depth 2026 rankings below provide a
-            clear, unbiased breakdown to help you invest wisely in your long-term
-            oral health.
+            However, not all electric toothbrushes are created equal. Many big-brand
+            models are heavy and uncomfortably loud, lose their charge within two
+            weeks, still rely on awkward 2-pin bathroom shaver adapters, and trap
+            shoppers into overpriced replacement heads. When ranking the top
+            electric toothbrushes in the UK for 2026, we evaluated real cleaning
+            performance, daily comfort, battery convenience, and overall long-term
+            value to help you find the best brush for your smile.
           </p>
         </div>
 
