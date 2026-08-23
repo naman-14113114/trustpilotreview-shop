@@ -7989,6 +7989,27 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Ready for user review. No commit/push without explicit instruction.
 
+## Electric Toothbrush Dr. Olivia Portrait Extraction & Doctor Section Update - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Extract a high-quality, professional image of Dr. Olivia from the video clip, edit/crop it for the top Doctor/Author section in place of Dr. Marcus Vance.
+  - Update author name to `Dr. Olivia, BDS` (removing `(Hons)`).
+  - Update Doctor section bio to reflect Dr. Olivia (`she/her` pronouns).
+  - Generated clean 400x400 WebP and JPG portrait assets at `/img/toothbrushes/dr-olivia.webp` and `/img/toothbrushes/dr-olivia.jpg`.
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`, `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, added Dr. Olivia images.
+- **Inspected and Changed Files**:
+  - Assets created: `apps/site/public/img/toothbrushes/dr-olivia.webp`, `apps/site/public/img/toothbrushes/dr-olivia.jpg`, `img/toothbrushes/dr-olivia.webp`, `img/toothbrushes/dr-olivia.jpg`.
+  - Modified: `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+
 
 
 

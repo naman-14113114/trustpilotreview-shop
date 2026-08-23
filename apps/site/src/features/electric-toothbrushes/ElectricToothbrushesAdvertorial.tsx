@@ -673,8 +673,8 @@ export default function ElectricToothbrushesAdvertorial() {
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
                 <Image
-                  src="/img/grounding-sheets/dr-image.webp"
-                  alt="Dr. Marcus Vance"
+                  src="/img/toothbrushes/dr-olivia.webp"
+                  alt="Dr. Olivia"
                   width={96}
                   height={96}
                   priority
@@ -682,7 +682,7 @@ export default function ElectricToothbrushesAdvertorial() {
                 />
                 <div>
                   <h3 className="font-bold text-xl md:text-2xl underline text-slate-900">
-                    Dr. Marcus Vance, BDS (Hons)
+                    Dr. Olivia, BDS
                   </h3>
                   <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
                     Clinical Dental Consultant &amp; Oral Health Specialist
@@ -694,14 +694,14 @@ export default function ElectricToothbrushesAdvertorial() {
                 <p>
                   With <strong>over 14 years</strong> of clinical dental surgery
                   experience across the UK,{" "}
-                  <strong className="text-slate-900">Dr. Marcus Vance</strong> is
+                  <strong className="text-slate-900">Dr. Olivia</strong> is
                   a specialist in preventative periodontics and oral hygiene.
-                  He conducted a rigorous 180+ hour comparative evaluation of
+                  She conducted a rigorous 180+ hour comparative evaluation of
                   leading electric toothbrushes available to British consumers in
-                  2026. He benchmarked plaque removal efficacy, gingival margin
+                  2026. She benchmarked plaque removal efficacy, gingival margin
                   safety, bristle tip rounding, lightweight handle ergonomics, quiet
                   sound operation, battery longevity, travel convenience, and the
-                  real ongoing cost of replacement brush heads. His primary
+                  real ongoing cost of replacement brush heads. Her primary
                   conclusion was clear: the highest price tag does not guarantee
                   a superior clean. The winning brushes delivered effortless deep
                   cleaning with gentle gum protection, quiet operation under 50dB,
