@@ -8061,4 +8061,30 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
-  - Ready for user review. No commit/push without explicit instruction.
+  - Committed and pushed to GitHub `origin main` (`51a418b`).
+
+## Electric Toothbrush Rank #1 Miroooo X Lifestyle Image Update - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the Rank #1 card image with the user-provided trio lifestyle photo (`E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\ChatGPT Image Aug 15, 2026, 12_25_37 PM.png`).
+  - Keep the top comparison hero banner above intact (only change Rank #1 card image).
+  - Rename the image with an SEO-optimized descriptive name: `miroooo-x-electric-toothbrush-trio-lifestyle.webp` & `.png`.
+  - Visually inspect the local live site on the browser before pushing.
+  - Push clean code to GitHub repository `origin main`.
+- **Git State**:
+  - `trustpilotreview-shop`: Branch `main` at `51a418b`.
+- **Inspected and Changed Files**:
+  - Assets added:
+    - `apps/site/public/img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.webp`
+    - `apps/site/public/img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.png`
+    - `img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.webp`
+    - `img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.png`
+  - Modified:
+    - `apps/site/src/data/toothbrushes.ts`: Updated `MIROOOO_X_DATASET.image` to `/img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.webp`.
+- **Verification Performed**:
+  - Visual browser verification via `chrome-devtools-mcp` on `http://localhost:3000/best-electric-toothbrush-uk-2026` (verified Rank #1 card renders the trio lifestyle shot crisply with 0 layout shift or console errors; verified hero comparison bar above remains untouched).
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready to push clean commit to GitHub `origin main`.
