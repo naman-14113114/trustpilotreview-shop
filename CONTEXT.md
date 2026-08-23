@@ -8118,5 +8118,47 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
+  - Committed and pushed to GitHub `origin main` (`3d4020b`).
+
+## Electric Toothbrush Rank #5 Update: Oral-B iO3 Matt Black & Rank #4 SURI Pro 2.0 - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace Rank #5 with official `Oral-B iO3 Matt Black Electric Toothbrush + Travel Case` selling on `oralb.co.uk` for £65 (RRP £160), ensuring that Rank #1 Miroooo X (£59) is strictly cheaper than ALL 4 competitors on the page (£59 < £65 < £85 < £129.99 < £189.99).
+  - Update Rank #4 to `SURI Pro 2.0 Electric Toothbrush` without UV case at its standalone official price of £85 (trysuri.com).
+  - Standardize all 5 product names across the dataset to their exact official commercial market names:
+    - #1: Miroooo X Electric Toothbrush
+    - #2: Oral-B iO Series 6 Electric Toothbrush
+    - #3: Philips Sonicare DiamondClean 9000 Electric Toothbrush
+    - #4: SURI Pro 2.0 Electric Toothbrush
+    - #5: Oral-B iO3 Matt Black Electric Toothbrush
+  - Break down Oral-B iO3 authentically (no OLED screen, no Bluetooth app tracking, 14-day battery on 2-pin shaver plug, heavy 136g handle, expensive £8–£12 iO heads, no free gift bundle).
+  - Break down SURI Pro 2.0 authentically (no companion app/zone mapping, 2 modes at 33k VPM, fragile cornstarch heads that loosen with moisture, costly £14.99 replacement head packs, heavy 85g handle, no £60+ bundle in base box).
+  - Create a clean single standing brush image for Oral-B iO3 (`oral-b-io3-comparison.png` & `.webp`) with transparent background, matching #2, #3, and #4.
+  - Update composite Top 5 comparison banner and SEO metadata keywords.
+  - Delete obsolete iO2 assets.
+  - Push clean code to GitHub repository `origin main`.
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `3d4020b`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    - Updated Rank 2 name to `Oral-B iO Series 6 Electric Toothbrush`.
+    - Updated Rank 3 name to `Philips Sonicare DiamondClean 9000 Electric Toothbrush`.
+    - Updated Rank 4 to `SURI Pro 2.0 Electric Toothbrush` (£85, Touchsense sensor, 34–40 days, authentic pros/cons/review).
+    - Updated Rank 5 to `Oral-B iO3 Matt Black Electric Toothbrush` (£65, compareAt £160, 360° Smart Ring, 14 days, authentic pros/cons/review).
+  - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Updated keywords to include `"suri pro 2.0 review"`, `"suri pro 2.0 electric toothbrush"`, `"oral b io3 review"`, `"oral b io series 3 review"`.
+  - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Updated Col 5 to `oral-b-io3-comparison.png`.
+  - Regenerated composite banners:
+    - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`
+  - Added new clean single brush images:
+    - `apps/site/public/img/toothbrushes/oral-b-io3-comparison.png` & `.webp`
+    - `img/toothbrushes/oral-b-io3-comparison.png` & `.webp`
+  - Deleted obsolete assets:
+    - `oral-b-io2-comparison.png` & `.webp` (from apps/site and img)
+    - `oral-b-io2-electric-toothbrush.webp`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
   - Ready to commit and push to GitHub `origin main`.
+
 
