@@ -8036,3 +8036,29 @@ ext/image unconfigured host 500 error that was crashing the page.
     - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
   - Ready for user review. No commit/push without explicit instruction.
+
+## Electric Toothbrush Rank #5 Competitor Replacement: Oral-B Pro 3 3500 CrossAction - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace Quip at Rank #5 on `/best-electric-toothbrush-uk-2026` with an Oral-B model selling in the UK.
+  - Chosen model: `Oral-B Pro 3 3500 CrossAction` (official UK model selling at £65, compareAt / RRP £99.99).
+  - Model positioning: Inferior to the flagship Rank #2 Oral-B iO Series 6 (£129.99), with an official price higher than Miroooo X (£59 vs £65).
+  - Break down with 7 strong, fact-based, technical cons indirectly contrasting with Miroooo X (loud >70dB mechanical rattling gearbox, outdated 14-day battery with 16h charge, obsolete 2-pin bathroom shaver socket plug, mold-prone hollow head cavity, bulky 136g plastic/rubber handle, no companion app/digital coaching, zero free gifts bundle with restrictive 30-day trial).
+  - 4 balanced pros, accurate metrics bars (Weight: 58%, Noise: 45%, Battery: 52%, Value: 55%), grade C+, badge "Loud & Outdated Charger", and realistic product photography.
+- **Git State**:
+  - `trustpilotreview-shop`: Branch `main` at `e8aa952`.
+  - Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`, and added product image assets.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Replaced Quip with `Oral-B Pro 3 3500 CrossAction` dataset (all 22 required fields populated with accurate official UK data).
+  - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Updated SEO keywords to include `"oral b pro 3 3500 review"`.
+  - Asset files created:
+    - `apps/site/public/img/toothbrushes/oral-b-pro3-comparison.png`
+    - `apps/site/public/img/toothbrushes/oral-b-pro3-comparison.webp`
+    - `img/toothbrushes/oral-b-pro3-comparison.png`
+    - `img/toothbrushes/oral-b-pro3-comparison.webp`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "oral b io series 6 review",
     "philips sonicare diamondclean 9000",
     "suri sustainable sonic toothbrush",
+    "oral b pro 3 3500 review",
   ],
   openGraph: {
     title: "Best Electric Toothbrush UK 2026 | Top 5 Toothbrushes Compared",
