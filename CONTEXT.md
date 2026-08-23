@@ -8007,10 +8007,32 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
+## Electric Toothbrush Miroooo X Product Naming Standardization & Sonic Elimination - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Eliminate the word "sonic" when referring to the user's electric toothbrush across both `trustpilotreview-shop` and `gobrush-product-page`.
+  - Ensure the user's electric toothbrush is strictly named `Miroooo X Electric Toothbrush` (or `Miroooo X2 Electric Toothbrush` / `Miroooo Electric Toothbrush`).
+  - Competitor official brand names (`Philips Sonicare DiamondClean 9000`, `SURI Sustainable Sonic Toothbrush`, `Quip Sonic Electric Toothbrush`) remain intact on comparison tables as official model identifiers.
+- **Git State**:
+  - `trustpilotreview-shop`: Branch `main` at `e8aa952` (clean).
+  - `gobrush-product-page`: Branch `main` at `280fcb8` (clean after build sync).
+- **Inspected and Changed Files**:
+  - **`trustpilotreview-shop`**:
+    - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Removed `"best sonic electric toothbrush"` from metadata keywords.
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Changed `"modern acoustic sonic toothbrushes"` to `"modern electric toothbrushes"`.
+  - **`gobrush-product-page`**:
+    - `miroooo-x.html`: Replaced "sonic electric toothbrush", "sonic toothbrush", "sonic motor", "sonic performance", "TRI SONIC MODES", "Sonic Waves", "40,000 VPM Sonic Power", "sonic technology" in all metadata, headings, JSON-LD, FAQs, and specs with "electric toothbrush", "acoustic motor", "TRI CLEANING MODES", "Acoustic Waves", "40,000 VPM Acoustic Power", etc.
+    - `index.html`: Updated titles, meta descriptions, hero kickers, and showcase headings (`Miroooo X Electric Toothbrush`).
+    - `shop.html`, `cart.html`, `about.html`, `about-us.html`, `contact.html`, `faq.html`, `refund-policy.html`, `return-policy.html`, `shipping-policy.html`, `terms.html`: Removed all instances of "sonic" when referring to Miroooo.
+    - `miroooo-x2.html`: Updated titles, meta, descriptions, specs, FAQs, and review modal headers to "electric toothbrush" / "acoustic motor".
+    - `assets_ref/miroooo-reviews.js` & `assets_ref/miroooo-x2-reviews.js`: Replaced all "sonic" descriptors in review titles, review bodies, merchant replies, and review procedural generation templates with "electric", "acoustic", or "micro-vibrations".
+- **Verification Performed**:
+  - `gobrush-product-page`:
+    - `node scripts/build.mjs` (25 required files and 17 storefront pages passed with 0 errors).
+    - `node scripts/verify-site.mjs` (Passed with 0 errors).
+  - `trustpilotreview-shop`:
+    - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+    - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+    - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
   - Ready for user review. No commit/push without explicit instruction.
-
-
-
-
-
-

@@ -729,7 +729,7 @@ export default function ElectricToothbrushesAdvertorial() {
             of the most impactful decisions you can make for your long-term oral
             health. While manual brushing often relies on harsh back-and-forth
             scrubbing that can wear away protective tooth enamel and irritate
-            sensitive gums, modern acoustic sonic toothbrushes create gentle
+            sensitive gums, modern electric toothbrushes create gentle
             micro-bubbles that wash between tight teeth gaps and sweep
             plaque from beneath the gumline.
           </p>
