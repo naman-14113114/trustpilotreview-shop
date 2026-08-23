@@ -7855,31 +7855,27 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Ready for commit and push to `origin/main`.
 
-## Electric Toothbrush 32,000 RPM Spec Correction & Simplified UK English Criteria - 23 August 2026
+## Electric Toothbrush Core Strengths Reframing & Vibration/Mode Removal - 23 August 2026
 
 - **User Intent & Protected Scope**:
-  - Evaluation Criteria: Rewrote all 10 criteria using simple, friendly everyday UK English without jargon:
-    1. "Deep cleaning & plaque removal"
-    2. "Gentle on gums & enamel safe"
-    3. "Quiet sound & low vibration" (replaced whisper-quiet)
-    4. "Lightweight & easy to hold" (explicitly included weight)
-    5. "Long battery life & USB-C charging" (replaced endurance with life)
-    6. "Soft rounded bristle quality"
-    7. "Waterproof & mold resistant design"
-    8. "Travel friendly with travel case" (replaced portability with travel friendly)
-    9. "Affordable replacement brush heads"
-    10. "Verified UK customer reviews"
-  - Spec Correction (32,000 RPM): Replaced all occurrences of 40,000 VPM/RPM across the dataset, pros/cons, and review copy with the exact verified manufacturer spec `32,000 RPM`.
+  - Strategic Copy Reframing: Removed all mentions of vibration speed numbers (VPM, RPM) and brushing mode counts across the entire page, focusing 100% on Miroooo X's unbeatable core selling points:
+    1. Featherlight Weight (51g vs 140g heavy competitor handles)
+    2. 60+ Day Battery Life with Universal USB-C (vs 14-day batteries and 2-pin shaver adapters)
+    3. Quiet Sound (<50dB vs loud mechanical buzz >65dB)
+    4. Aerospace Aluminium Unibody Design (hygienic metal vs mold-prone plastic/rubber)
+    5. Travel Friendly (slim profile + aluminium travel case included)
+    6. Store Offer & Guarantees (£60.85 free gift bundle, £19.95 refill heads, 90-day money-back guarantee, 2-year warranty, 4.9★ rating)
+  - SURI Cons Expansion: Thoroughly highlighted high refill costs (£14.40), fragile cornstarch heads cracking, mold-prone mirror mount, £95 base price with no free gifts, and short 30-day trial.
+  - Image Sync: Synced bottom verdict section to `Miroooo_x_Silver-2.jpg`.
 - **Git State**:
-  - Branch: `main` at `4e7caf5`.
-  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/scripts/generate_top5_toothbrush_banner.py`, `apps/site/public/img/toothbrushes/top-4-competitors-container-bar.webp`, `apps/site/public/img/toothbrushes/top-4-competitors-container-bar.png`, `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp`, `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.png`.
+  - Branch: `main` at `a6a095b`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`.
 - **Inspected and Changed Files**:
-  - `apps/site/src/data/toothbrushes.ts`: Updated Miroooo X pros and review copy from 40,000 to `32,000 RPM`, updated SURI comparative notes.
-  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated `evaluationCriteria` with simplified UK English phrasing.
+  - `apps/site/src/data/toothbrushes.ts`: Refactored pros, cons, metrics, and reviews across all 5 products to remove vibration/mode comparisons and emphasize lightweight, battery life, quiet sound, aluminium design, and store value.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated Dr. Marcus Vance bio, criteria, and bottom verdict section.
   - `CONTEXT.md`: Appended task log.
 - **Verification Performed**:
-  - Grep search confirmed zero remaining mentions of 40,000 across `apps/site`.
   - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
-  - No unrequested commit, push, PR, or deployment performed as per repository rules.
+  - Ready to commit and push to `origin/main`.

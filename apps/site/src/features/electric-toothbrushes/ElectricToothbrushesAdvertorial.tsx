@@ -28,7 +28,7 @@ import {
 const evaluationCriteria = [
   "Deep cleaning & plaque removal",
   "Gentle on gums & enamel safe",
-  "Quiet sound & low vibration",
+  "Quiet sound & low noise",
   "Lightweight & easy to hold",
   "Long battery life & USB-C charging",
   "Soft rounded bristle quality",
@@ -670,13 +670,14 @@ export default function ElectricToothbrushesAdvertorial() {
                   He conducted a rigorous 180+ hour comparative evaluation of
                   leading electric toothbrushes available to British consumers in
                   2026. He benchmarked plaque removal efficacy, gingival margin
-                  safety, bristle tip rounding, acoustic vibration comfort, battery
-                  longevity, travel convenience, and the real ongoing cost of
-                  replacement brush heads. His primary conclusion was clear:
-                  the highest price tag does not guarantee a superior clean. The
-                  winning brushes delivered effortless deep cleaning with gentle
-                  gum protection, whisper-quiet operation, long battery life, and
-                  fair replacement head prices without subscription lock-ins.
+                  safety, bristle tip rounding, lightweight handle ergonomics, quiet
+                  sound operation, battery longevity, travel convenience, and the
+                  real ongoing cost of replacement brush heads. His primary
+                  conclusion was clear: the highest price tag does not guarantee
+                  a superior clean. The winning brushes delivered effortless deep
+                  cleaning with gentle gum protection, quiet operation under 50dB,
+                  featherlight 51g comfort, 60+ day USB-C battery life, and fair
+                  replacement head prices without subscription lock-ins.
                 </p>
               </div>
 
@@ -699,8 +700,8 @@ export default function ElectricToothbrushesAdvertorial() {
             of the most impactful decisions you can make for your long-term oral
             health. While manual brushing often relies on harsh back-and-forth
             scrubbing that can wear away protective tooth enamel and irritate
-            sensitive gums, modern acoustic sonic toothbrushes create high-frequency
-            micro-bubbles that gently wash between tight teeth gaps and flush
+            sensitive gums, modern acoustic sonic toothbrushes create gentle
+            micro-bubbles that wash between tight teeth gaps and sweep
             plaque from beneath the gumline.
           </p>
           <p>
@@ -740,7 +741,7 @@ export default function ElectricToothbrushesAdvertorial() {
               <div className="relative">
                 <div className="relative mx-auto max-w-[220px] min-[380px]:max-w-[250px] sm:max-w-[280px] md:max-w-[320px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white p-3 shadow-xl">
                   <Image
-                    src="/img/toothbrushes/miroooo-x-sonic-toothbrush.jpg"
+                    src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
                     alt="Miroooo X Sonic Electric Toothbrush"
                     width={500}
                     height={500}
@@ -751,7 +752,7 @@ export default function ElectricToothbrushesAdvertorial() {
                   </div>
                 </div>
                 <p className="mt-4 text-center text-xs md:text-sm font-medium text-gray-600 leading-snug max-w-[260px] md:max-w-none mx-auto">
-                  51g aerospace aluminium body, &lt;50dB whisper-quiet motor, 60+ day USB-C battery &amp; £60.85 free gift bundle.
+                  51g aerospace aluminium body, quiet sound under 50dB, 60+ day USB-C battery &amp; £60.85 free gift bundle.
                 </p>
               </div>
 
