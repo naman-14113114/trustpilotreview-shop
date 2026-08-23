@@ -8087,4 +8087,36 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
-  - Ready to push clean commit to GitHub `origin main`.
+  - Committed and pushed to GitHub `origin main` (`d7ef04d`).
+
+## Electric Toothbrush Rank #5 Replacement: Oral-B iO Series 2 (iO2) - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace Rank #5 competitor on `/best-electric-toothbrush-uk-2026` with `Oral-B iO Series 2 (iO2)`, a widely recognized entry-level model in the UK market (Boots, Argos, Amazon UK).
+  - Use accurate official UK data & pricing (£45 promo/selling price, £75 RRP).
+  - Break down the iO2 with authentic technical cons: stripped features, no Bluetooth or companion app, no interactive display screen, short 7–10 day battery with 16h 2-pin bathroom shaver charge, extortionate iO replacement head ongoing costs (£8–£10/head), chunky 130g plastic handle, no travel accessories or free gifts, standard 30-day window.
+  - Position it as legitimately inferior to #1 (Miroooo X), #2 (Oral-B iO6 with OLED & AI app), #3 (Philips Sonicare 9000), and #4 (SURI).
+  - Provide a clean, single standing brush image with transparent background (`oral-b-io2-comparison.png` & `.webp`).
+  - Update top-5 comparison composite banner with iO2 brush image.
+  - Delete obsolete Pro 3 and Quip images.
+  - Push clean code to GitHub repository `origin main`.
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `d7ef04d`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Replaced rank 5 dataset with `Oral-B iO Series 2 Quiet Clean` (accurate official UK specs, £45 / £75 price, 7 technical cons, 4 pros, 3.3 rating, grade C+, badge "Stripped Features & Costly Refills").
+  - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Updated SEO keywords to `"oral b io series 2 review"`.
+  - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Updated competitor 4 to `oral-b-io2-comparison.png`.
+  - Regenerated composite banners:
+    - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`
+  - Added new clean single brush images:
+    - `apps/site/public/img/toothbrushes/oral-b-io2-comparison.png` & `.webp`
+    - `img/toothbrushes/oral-b-io2-comparison.png` & `.webp`
+  - Deleted obsolete assets:
+    - `oral-b-pro3-comparison.png` & `.webp` (from apps/site and img)
+    - `quip-electric-toothbrush.jpg`, `quip-sonic-comparison.png`, `quip-sonic-electric-toothbrush.jpg`, `quip-sonic-electric-toothbrush.webp`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready to commit and push to GitHub `origin main`.
+

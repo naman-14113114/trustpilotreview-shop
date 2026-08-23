@@ -57,7 +57,7 @@ def generate_banner(output_webp: Path, output_png: Path):
         (0, "oral-b-io6-comparison.png"),
         (1, "philips-sonicare-comparison.png"),
         (2, "suri-sonic-comparison.png"),
-        (3, "quip-sonic-comparison.png"),
+        (3, "oral-b-io2-comparison.png"),
     ]
     
     brush_target_h = 265
