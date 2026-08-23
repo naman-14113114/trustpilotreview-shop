@@ -8159,6 +8159,29 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
+  - Committed and pushed to GitHub `origin main` (`63c6af5`).
+
+## Dr. Olivia Centered Passport Avatar & Top Hero 4-Competitor Container Bar Update - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Center Dr. Olivia's face portrait in the clinical expert section (preventing her face from getting cut off on the left inside the circular `rounded-full` avatar).
+  - Extract a front-facing, clear, smiling/normal frame from her video (`apps/site/public/assets/miroooo-dentist-verdict.mp4`), crop symmetrically to passport-size proportions with clean clinic wall background.
+  - Update the #5 competitor image in the top 2-layer comparison container bar (`top-4-competitors-container-bar.webp` & `.png`) above the Dr section to replace the legacy Quip cutout with the Oral-B iO3 Matt Black single brush cutout.
+  - Push clean code to GitHub repository `origin main`.
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `63c6af5`.
+- **Inspected and Changed Files**:
+  - `apps/site/public/img/toothbrushes/dr-olivia.webp` & `dr-olivia.jpg`: Replaced with centered, symmetrical portrait avatar extracted from video frame with clean background (580x580, centered on face, perfectly framed inside `rounded-full` circle).
+  - `img/toothbrushes/dr-olivia.webp` & `dr-olivia.jpg`: Mirrored root asset.
+  - `apps/site/public/img/toothbrushes/top-4-competitors-container-bar.webp` & `.png`: Regenerated with Oral-B iO6 (Col 1), Philips Sonicare 9000 (Col 2), [Open center gap], SURI Pro 2.0 (Col 4), and Oral-B iO3 Matt Black (Col 5).
+  - `img/toothbrushes/top-4-competitors-container-bar.webp` & `.png`: Mirrored root asset.
+  - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Updated script to generate both the 4-competitor container bar and the 5-product composite banner.
+- **Verification Performed**:
+  - Visual verification via Next.js dev server and Chrome DevTools MCP on `http://localhost:3000/best-electric-toothbrush-uk-2026` (verified Top 5 hero container bar renders Oral-B iO3 at #5, verified Dr. Olivia avatar renders centered with 0 clipping).
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
   - Ready to commit and push to GitHub `origin main`.
+
 
 

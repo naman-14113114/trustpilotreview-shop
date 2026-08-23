@@ -79,6 +79,20 @@ def generate_banner(output_webp: Path, output_png: Path):
                 pos_y = brush_y_center - (h // 2)
                 canvas.alpha_composite(resized, (pos_x, pos_y))
     
+    # Save 4-competitor container bar (before adding center Miroooo card)
+    container_bar_webp = TOOTHBRUSH_DIR / "top-4-competitors-container-bar.webp"
+    container_bar_png = TOOTHBRUSH_DIR / "top-4-competitors-container-bar.png"
+    canvas.save(container_bar_png, "PNG")
+    canvas.convert("RGB").save(container_bar_webp, "WEBP", quality=95)
+    print(f"Generated Container Bar PNG: {container_bar_png}")
+    print(f"Generated Container Bar WebP: {container_bar_webp}")
+
+    # Mirror to root img/toothbrushes/
+    root_img_dir = REPO_ROOT / "img" / "toothbrushes"
+    root_img_dir.mkdir(parents=True, exist_ok=True)
+    canvas.save(root_img_dir / "top-4-competitors-container-bar.png", "PNG")
+    canvas.convert("RGB").save(root_img_dir / "top-4-competitors-container-bar.webp", "WEBP", quality=95)
+
     # 4. #1 Miroooo X Card (Taller than container, extends OUT vertically 30px above and 30px below)
     miroooo_path = RAW_IMAGES_DIR / "Miroooo_x_Silver-2.jpg"
     im_m = Image.open(miroooo_path).convert("RGB")
@@ -136,12 +150,15 @@ def generate_banner(output_webp: Path, output_png: Path):
         
     canvas.alpha_composite(card_rgba, (m_x, m_y))
     
-    # 6. Save assets
+    # 6. Save 5-product composite assets
     output_webp.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(output_png, "PNG")
     canvas.convert("RGB").save(output_webp, "WEBP", quality=95)
     print(f"Generated PNG: {output_png}")
     print(f"Generated WebP: {output_webp}")
+
+    canvas.save(root_img_dir / "top-5-electric-toothbrushes-uk.png", "PNG")
+    canvas.convert("RGB").save(root_img_dir / "top-5-electric-toothbrushes-uk.webp", "WEBP", quality=95)
 
 if __name__ == "__main__":
     out_webp = TOOTHBRUSH_DIR / "top-5-electric-toothbrushes-uk.webp"
