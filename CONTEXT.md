@@ -7879,3 +7879,117 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
   - Ready to commit and push to `origin/main`.
+
+## Electric Toothbrush Miroooo X Magnetic USB-C Charging Dock Correction - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Correct the charging wording for Miroooo X on the UK electric toothbrush comparison page (`/best-electric-toothbrush-uk-2026`).
+  - Clarified that Miroooo X comes with and charges via a **Magnetic charging dock with a USB-C cable** (rather than plugging a cable directly into the brush handle).
+  - Ensured clear, natural UK English copy explaining that the user simply rests the toothbrush onto the magnetic charging dock powered by a universal USB-C cable for 60+ days of battery life, completely eliminating awkward 2-pin bathroom shaver sockets.
+  - Updated Miroooo X dataset specifications, bundle descriptions, pros, review text, criteria, gift panel, Dr. Marcus Vance bio, and verdict subtitle.
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Updated `MIROOOO_X_DATASET` specifications, bundle description, pros, review, and competitor comparison references to accurately describe the magnetic charging dock with USB-C cable.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated evaluation criteria, GiftPanel magnetic dock label & alt text, Dr. Marcus Vance bio, and Dentist Verdict summary text.
+  - `CONTEXT.md`: Appended task log.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+## Electric Toothbrush Miroooo X 50% Off Exit-Intent Popup - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Add the 50% off exit-oriented modal popup for Miroooo X on the UK electric toothbrush comparison page (`/best-electric-toothbrush-uk-2026`), replicating the exact functional architecture and aesthetic used across the best hair dryer and best LED mask pages.
+  - Implemented `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` (and root `assets/miroooo-x-electric-toothbrush-exit-popup.js`).
+  - Added `<Script src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260823-59" strategy="afterInteractive" />` to `ElectricToothbrushesAdvertorial.tsx`.
+  - Configured Miroooo X specific offer details: £59 instead of £119 (50% OFF), 51g aerospace aluminium body, whisper quiet (<50dB), 60+ days battery life with magnetic USB-C charging dock, emerald green accent theme, session storage deduplication, GTM dataLayer tracking events, desktop mouseout/pointerleave top exit detection, mobile scroll-up trigger, and escape key listener.
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`, `assets/miroooo-x-electric-toothbrush-exit-popup.js`.
+- **Inspected and Changed Files**:
+  - Created: `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`, `assets/miroooo-x-electric-toothbrush-exit-popup.js`
+  - Modified: `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+## Electric Toothbrush Miroooo X Live Store URL (`https://www.trymiroooo.com/products/miroooo-x`) - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Assign `https://www.trymiroooo.com/products/miroooo-x` to all Miroooo X links across the UK comparison page (`/best-electric-toothbrush-uk-2026`):
+    1. Official Website CTA buttons (desktop and mobile)
+    2. Product name / title link (#1 Miroooo X)
+    3. Product image link (#1 Miroooo X)
+    4. All 3 free gift cards in GiftPanel (Magnetic Charging Dock, Aluminium Travel Case, 2x DuPont Replacement Heads)
+    5. GiftPanel "Check Availability" CTA button
+    6. Dentist's Verdict "CHECK AVAILABILITY" CTA button
+    7. Sticky Mobile CTA button
+    8. Exit-intent popup CTA button
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`, `assets/miroooo-x-electric-toothbrush-exit-popup.js`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Set `MIROOOO_X_DATASET.ctaUrl` and `sourceLinks[0].href` to `https://www.trymiroooo.com/products/miroooo-x`.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated GiftPanel gift card hrefs, GiftPanel CTA, Dentist Verdict CTA, and mobile sticky CTA to `https://www.trymiroooo.com/products/miroooo-x`.
+  - `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`: Updated `CTA_URL` to `https://www.trymiroooo.com/products/miroooo-x?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=toothbrush_exit&utm_content=last_chance`.
+  - `CONTEXT.md`: Appended task log.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+## Electric Toothbrush Miroooo X Dentist's Verdict Video Implementation - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the 1:1 static lifestyle image in the Dentist's Verdict section with the user-provided video (`E:\1st YEAR DTU\New folder\miroooo videos\Dr video -Electric Toothbrush (1).mp4`).
+  - Extracted 6-second video frame as thumbnail poster (`/assets/miroooo-dentist-verdict-poster.webp` & `.jpg`).
+  - Copied video to `/assets/miroooo-dentist-verdict.mp4` (in both `apps/site/public/assets/` and root `assets/`).
+  - Replicated exact interactive video player UX from Best LED Mask and Best Hair Dryer pages (HTML5 `<video>`, custom play/pause button overlay with emerald green accent, "2 min demo" pill badge, natural 9:16 vertical aspect ratio container, accessible aria-labels).
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`, `assets/miroooo-x-electric-toothbrush-exit-popup.js`, added video/poster assets.
+- **Inspected and Changed Files**:
+  - Assets added: `apps/site/public/assets/miroooo-dentist-verdict.mp4`, `assets/miroooo-dentist-verdict.mp4`, `apps/site/public/assets/miroooo-dentist-verdict-poster.webp`, `assets/miroooo-dentist-verdict-poster.webp`, `apps/site/public/assets/miroooo-dentist-verdict-poster.jpg`, `assets/miroooo-dentist-verdict-poster.jpg`.
+  - Modified: `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+## Electric Toothbrush Miroooo X Video Badge/Text Removal & Product Naming Correction - 23 August 2026
+
+- **User Intent & Protected Scope**:
+  - Removed "2 min demo" badge from the video container.
+  - Removed paragraph text below the video player.
+  - Standardized product naming across all touchpoints to `Miroooo X Electric Toothbrush` (removed "Sonic Toothbrush" and "Sonic Electric Toothbrush").
+- **Git State**:
+  - Branch: `main` at `e8aa952`.
+  - Worktree: Modified `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`, `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Updated keyword to `miroooo x electric toothbrush`.
+  - `apps/site/src/data/toothbrushes.ts`: Changed `MIROOOO_X_DATASET.name` to `Miroooo X Electric Toothbrush`.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Removed "2 min demo" pill overlay, removed video bottom caption text, updated hero card alt text and Dentist's Verdict heading to `Miroooo X Electric Toothbrush`.
+  - `CONTEXT.md`: Appended task log.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Ready for user review. No commit/push without explicit instruction.
+
+
+
+
+

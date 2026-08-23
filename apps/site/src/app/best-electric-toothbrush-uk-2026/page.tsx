@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "electric toothbrush reviews uk",
     "best sonic electric toothbrush",
     "best toothbrush for sensitive gums",
-    "miroooo x sonic electric toothbrush",
+    "miroooo x electric toothbrush",
     "oral b io series 6 review",
     "philips sonicare diamondclean 9000",
     "suri sustainable sonic toothbrush",

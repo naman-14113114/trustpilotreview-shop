@@ -49,7 +49,7 @@ export type RankedToothbrushProduct = {
 
 export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   rank: 1,
-  name: "Miroooo X Sonic Electric Toothbrush",
+  name: "Miroooo X Electric Toothbrush",
   brand: "Miroooo",
   image: "/img/toothbrushes/miroooo-x-silver-lifestyle.jpg",
   price: "£59",
@@ -58,12 +58,12 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   ratingLabel: "Editorial rating",
   grade: "A+",
   badge: "Best Overall 2026",
-  ctaUrl: "#",
+  ctaUrl: "https://www.trymiroooo.com/products/miroooo-x",
   ctaLabel: "Official Website",
-  sourceLinks: [{ label: "Official Miroooo X product page", href: "#" }],
+  sourceLinks: [{ label: "Official Miroooo X product page", href: "https://www.trymiroooo.com/products/miroooo-x" }],
   weight: "51g (Ultra Light Weight)",
   noiseLevel: "<50dB (Whisper Quiet)",
-  batteryLife: "60+ Day Battery Life",
+  batteryLife: "60+ Day Battery Life (Magnetic USB-C Dock)",
   chassisMaterial: "Aerospace Aluminium Design",
   appConnectivity: "Dental Care Companion App",
   moneyBackGuarantee: "90-Day Money-Back Guarantee",
@@ -75,7 +75,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
         name: "Magnetic Charging Dock",
         value: "£24.95",
         image: "/img/toothbrushes/miroooo-charging-dock-gift.jpg",
-        description: "Compact magnetic fast-charging dock",
+        description: "Compact magnetic charging dock with USB-C cable",
       },
       {
         name: "Aluminium Travel Case",
@@ -100,10 +100,10 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   specifications: [
     { label: "Weight", value: "51g (Ultra Light Weight)" },
     { label: "Noise Level", value: "<50dB (Whisper Quiet operation)" },
-    { label: "Battery Endurance", value: "60+ Day Battery Life (Universal USB-C)" },
+    { label: "Battery Endurance", value: "60+ Day Battery Life (Magnetic Charging Dock with USB-C Cable)" },
     { label: "Customer Rating", value: "4.9★ / 5.0" },
     { label: "Chassis & Build", value: "Aerospace Aluminium Design (Mold-resistant unibody)" },
-    { label: "Free Gift Bundle", value: "Travel Case & 2 Extra Free Heads + Magnetic Dock (£60.85 bundle)" },
+    { label: "Free Gift Bundle", value: "Travel Case & 2 Extra Free Heads + Magnetic Dock with USB-C Cable (£60.85 bundle)" },
     { label: "Smart Companion", value: "Dental Care Companion App" },
     { label: "Money-Back Guarantee", value: "90-Day Money-Back Guarantee" },
     { label: "Warranty", value: "2-Year Comprehensive Warranty" },
@@ -111,10 +111,10 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   pros: [
     "Ultra Light Weight (51g): Precision-engineered 51g aerospace aluminium body eliminates wrist fatigue and feels effortless in hand.",
     "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
-    "60+ Day Battery Life: Massive battery endurance with universal USB-C fast charging completely eliminates the need for bulky 2-pin bathroom shaver socket chargers.",
+    "60+ Day Battery Life: Massive 60+ day battery endurance powered by a convenient magnetic charging dock and USB-C cable. Simply place the brush on the magnetic base to charge—completely eliminating the need for bulky 2-pin bathroom shaver socket adapters.",
     "4.9★ Customer Rating: Verified 4.9-star rating reflecting top customer satisfaction across the UK.",
     "Aerospace Aluminium Design: Premium unibody metal construction that outperforms fragile plastic handles in durability and hygiene.",
-    "Travel Case & 2 Extra Free Heads (£60.85 bundle): Active promotion includes Magnetic Charging Dock (£24.95), Aluminium Travel Case (£15.95), and 2x DuPont Replacement Heads (£19.95) at zero added cost.",
+    "Travel Case & 2 Extra Free Heads (£60.85 bundle): Active promotion includes Magnetic Charging Dock with USB-C Cable (£24.95), Aluminium Travel Case (£15.95), and 2x DuPont Replacement Heads (£19.95) at zero added cost.",
     "Dental Care Companion App: Integrated smart companion app tracks brushing zones and reinforces dentist-recommended habits.",
     "90-Day Money-Back Guarantee: 100% risk-free home trial with full refund protection.",
     "2-Year Comprehensive Warranty: Complete 2-year manufacturer warranty ensuring lasting peace of mind.",
@@ -125,7 +125,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   ],
   review: [
     "The Miroooo X takes our #1 ranking for UK buyers in 2026 because it decisively eliminates the most frustrating flaws of legacy electric toothbrushes: heavy bulky handles, loud motor noise, weak battery life, bulky 2-pin bathroom socket adapters, and extortionate ongoing refill head prices. Weighing just 51g with quiet sound under 50dB, its aerospace aluminium chassis delivers an ultra-comfortable, dentist-clean brushing experience.",
-    "Its everyday convenience and comprehensive coverage are second to none. Universal USB-C charging powers 60+ days of brushing per charge, backed by the Dental Care Companion App for smart brushing habits. With a 4.9★ customer rating, an included £60.85 free gift bundle (travel case, magnetic dock, and 2 extra DuPont heads), a 90-day money-back guarantee, and a 2-year comprehensive warranty, the Miroooo X sets the gold standard for electric toothbrushes in the UK.",
+    "Its everyday convenience and comprehensive coverage are second to none. Charging is effortless: simply place the toothbrush onto the included magnetic charging dock, powered by a universal USB-C cable, for 60+ days of brushing per charge with no awkward 2-pin shaver adapters required. Backed by the Dental Care Companion App for smart brushing habits, a verified 4.9★ customer rating, an included £60.85 free gift bundle (magnetic charging dock with USB-C cable, aluminium travel case, and 2 extra DuPont heads), a 90-day money-back guarantee, and a 2-year comprehensive warranty, the Miroooo X sets the gold standard for electric toothbrushes in the UK.",
   ],
 };
 
@@ -230,7 +230,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     cons: [
       "Exorbitant £189+ Upfront Price: At £189–£249 street price (and £349 RRP), it is the most expensive toothbrush in this comparison.",
-      "Short 14-Day Battery Life: Requires bi-weekly charging, far shorter than Miroooo X's 60+ day USB-C endurance.",
+      "Short 14-Day Battery Life: Requires bi-weekly charging, far shorter than Miroooo X's 60+ day magnetic USB-C dock endurance.",
       "Heavy Composite Handle (~135g): More than double the weight of Miroooo X's 51g featherlight body.",
       "Fragile 2-Pin Glass Charger: The charging glass requires a 2-pin shaver plug and easily collects bathroom residue.",
       "Costly Refills (£9–£12/head): Official Sonicare replacement heads cost upwards of £9 to £12 per head.",
@@ -238,7 +238,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     review: [
       "Philips Sonicare DiamondClean 9000 is well known for its luxury bathroom presentation and iconic charging glass. Its sleek finish and smart brush sync tracking offer an attractive high-end feel for countertops.",
-      "However, the value equation is difficult to justify for most UK buyers. The £189+ purchase price is steep, the charging glass requires an awkward 2-pin bathroom socket, the handle is heavy (135g), and the 14-day battery life feels dated compared to modern 60-day USB-C brushes. If luxury countertop aesthetics are your sole priority, it's a solid performer—otherwise, Miroooo X offers superior lightweight comfort, battery life, and long-term value.",
+      "However, the value equation is difficult to justify for most UK buyers. The £189+ purchase price is steep, the charging glass requires an awkward 2-pin bathroom socket, the handle is heavy (135g), and the 14-day battery life feels dated compared to modern 60-day magnetic USB-C docks. If luxury countertop aesthetics are your sole priority, it's a solid performer—otherwise, Miroooo X offers superior lightweight comfort, battery life, and long-term value.",
     ],
   },
   {
@@ -332,7 +332,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Multi-Use Travel Cover: Sticks to mirrors and acts as a slim slip-cover for travel.",
     ],
     cons: [
-      "Disposable AAA Battery Decay: Relies on single disposable AAA alkaline batteries with power steadily decaying instead of rechargeable USB-C lithium cells.",
+      "Disposable AAA Battery Decay: Relies on single disposable AAA alkaline batteries with power steadily decaying instead of rechargeable lithium cells with magnetic USB-C dock charging.",
       "Cheap Noisy Plastic Housing: Lightweight internal plastic mechanism prone to motor wear, rattling noise (>68dB), and moisture intrusion.",
       "Zero Free Gifts & Subscription Trap: Heavy marketing pushes buyers into expensive recurring £5–£7 head refill subscriptions with zero included accessories.",
       "No Pressure Sensor: Completely lacks pressure detection or visual alerts to protect sensitive gums from abrasive over-brushing.",
@@ -340,7 +340,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     review: [
       "Quip represents everything questionable about direct-to-consumer oral care marketing: sleek influencer aesthetics concealing fundamentally obsolete mechanics. Powered by a single disposable AAA battery that constantly loses power as it drains, it feels cheap and noisy in hand.",
-      "With a rattling plastic motor, no pressure sensor, no rechargeable USB-C battery, and an expensive recurring refill subscription model, Quip is an aesthetic novelty that fails to deliver genuine long-term value.",
+      "With a rattling plastic motor, no pressure sensor, no rechargeable magnetic USB-C charging dock, and an expensive recurring refill subscription model, Quip is an aesthetic novelty that fails to deliver genuine long-term value.",
     ],
   },
 ];

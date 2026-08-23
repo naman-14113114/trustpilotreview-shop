@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Script from "next/script";
 import { motion } from "motion/react";
 import React, {
   useEffect,
+  useRef,
   useState,
   type MouseEvent,
   type ReactNode,
@@ -12,6 +14,7 @@ import {
   Check,
   CheckCircle2,
   ChevronRight,
+  Play,
   ShieldCheck,
   XCircle,
 } from "lucide-react";
@@ -30,7 +33,7 @@ const evaluationCriteria = [
   "Gentle on gums & enamel safe",
   "Quiet sound & low noise",
   "Lightweight & easy to hold",
-  "Long battery life & USB-C charging",
+  "Long battery life & magnetic USB-C charging",
   "Soft rounded bristle quality",
   "Waterproof & mold resistant design",
   "Travel friendly with travel case",
@@ -208,7 +211,7 @@ function GiftPanel({
               FREE
             </div>
             <a
-              href="#"
+              href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
               aria-label="View the Miroooo X offer with free Magnetic Charging Dock"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
@@ -218,14 +221,14 @@ function GiftPanel({
               </span>
               <img
                 src="/img/toothbrushes/miroooo-charging-dock-gift.jpg"
-                alt="Magnetic Charging Dock"
+                alt="Magnetic Charging Dock with USB-C Cable"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Magnetic Dock
+              Magnetic Dock &amp; USB-C Cable
             </p>
           </div>
 
@@ -238,7 +241,7 @@ function GiftPanel({
               FREE
             </div>
             <a
-              href="#"
+              href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
               aria-label="View the Miroooo X offer with free Aluminium Travel Case"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
@@ -268,7 +271,7 @@ function GiftPanel({
               FREE
             </div>
             <a
-              href="#"
+              href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
               aria-label="View the Miroooo X offer with free 2x DuPont Replacement Heads"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
@@ -291,7 +294,7 @@ function GiftPanel({
         </div>
 
         <OfficialButton
-          href="#"
+          href="https://www.trymiroooo.com/products/miroooo-x"
           targetId="miroooo-gift-panel"
           loadingTarget={loadingTarget}
           setLoadingTarget={setLoadingTarget}
@@ -594,6 +597,28 @@ export default function ElectricToothbrushesAdvertorial() {
     formatLondonDate(new Date()),
   );
   const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
+  const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
+  const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const playVerdictVideo = () => {
+    const video = verdictVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video
+        .play()
+        .then(() => {
+          setIsVerdictVideoPlaying(true);
+        })
+        .catch(() => {
+          setIsVerdictVideoPlaying(false);
+        });
+      return;
+    }
+
+    video.pause();
+    setIsVerdictVideoPlaying(false);
+  };
 
   useEffect(() => {
     setUpdatedDate(formatLondonDate(new Date()));
@@ -601,6 +626,10 @@ export default function ElectricToothbrushesAdvertorial() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
+      <Script
+        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260823-59"
+        strategy="afterInteractive"
+      />
       {/* Header / Hero */}
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -634,7 +663,7 @@ export default function ElectricToothbrushesAdvertorial() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
                 src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
-                alt="Miroooo X Sonic Electric Toothbrush"
+                alt="Miroooo X Electric Toothbrush"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
@@ -676,7 +705,7 @@ export default function ElectricToothbrushesAdvertorial() {
                   conclusion was clear: the highest price tag does not guarantee
                   a superior clean. The winning brushes delivered effortless deep
                   cleaning with gentle gum protection, quiet operation under 50dB,
-                  featherlight 51g comfort, 60+ day USB-C battery life, and fair
+                  featherlight 51g comfort, 60+ day battery life with magnetic USB-C dock charging, and fair
                   replacement head prices without subscription lock-ins.
                 </p>
               </div>
@@ -737,29 +766,46 @@ export default function ElectricToothbrushesAdvertorial() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Left Product Image / Hero Area */}
+              {/* Left Video Area */}
               <div className="relative">
-                <div className="relative mx-auto max-w-[220px] min-[380px]:max-w-[250px] sm:max-w-[280px] md:max-w-[320px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white p-3 shadow-xl">
-                  <Image
-                    src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
-                    alt="Miroooo X Sonic Electric Toothbrush"
-                    width={500}
-                    height={500}
-                    className="aspect-square w-full rounded-2xl object-cover"
-                  />
-                  <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm">
-                    #1 Top Pick
-                  </div>
+                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                  <video
+                    ref={verdictVideoRef}
+                    className="block w-full"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster="/assets/miroooo-dentist-verdict-poster.webp"
+                    aria-label="Dentist walkthrough of the Miroooo X Electric Toothbrush"
+                    onPlay={() => setIsVerdictVideoPlaying(true)}
+                    onPause={() => setIsVerdictVideoPlaying(false)}
+                    onEnded={() => setIsVerdictVideoPlaying(false)}
+                  >
+                    <source
+                      src="/assets/miroooo-dentist-verdict.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <button
+                    type="button"
+                    aria-label="Play dentist walkthrough video"
+                    onClick={playVerdictVideo}
+                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_14px_34px_rgba(16,185,129,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-emerald-400 ${
+                      isVerdictVideoPlaying
+                        ? "pointer-events-none opacity-0 scale-90"
+                        : "opacity-100 scale-100"
+                    }`}
+                  >
+                    <Play size={30} fill="currentColor" className="ml-1" />
+                  </button>
                 </div>
-                <p className="mt-4 text-center text-xs md:text-sm font-medium text-gray-600 leading-snug max-w-[260px] md:max-w-none mx-auto">
-                  51g aerospace aluminium body, quiet sound under 50dB, 60+ day USB-C battery &amp; £60.85 free gift bundle.
-                </p>
               </div>
 
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  Miroooo X Sonic Toothbrush
+                  Miroooo X Electric Toothbrush
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
@@ -783,7 +829,7 @@ export default function ElectricToothbrushesAdvertorial() {
                 </div>
 
                 <OfficialButton
-                  href="#"
+                  href="https://www.trymiroooo.com/products/miroooo-x"
                   targetId="verdict-cta"
                   loadingTarget={loadingTarget}
                   setLoadingTarget={setLoadingTarget}
@@ -801,7 +847,7 @@ export default function ElectricToothbrushesAdvertorial() {
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
         <a
-          href="#"
+          href="https://www.trymiroooo.com/products/miroooo-x"
           rel="noopener noreferrer sponsored"
           data-testid="mobile-sticky-cta"
           onClick={(event) =>
