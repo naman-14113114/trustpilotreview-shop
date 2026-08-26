@@ -8227,14 +8227,28 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **User Intent & Protected Scope**:
   - Remove duplicate `#1` / `#{product.rank}` text from product card headings in `ElectricToothbrushesAdvertorial.tsx`, as the rank is already clearly displayed in the top-left corner ribbon badge on the card container.
+## Competitor Affiliate Links, "Shop Now" CTAs, Philips 9000 Price & Compare Price Removal - 26 August 2026
+
+- **User Intent & Protected Scope**:
+  - Add Amazon affiliate links for competitor toothbrushes on `/best-electric-toothbrush-uk-2026`:
+    - #2 Oral-B iO Series 6: `https://amzn.to/4wLZUyf`
+    - #3 Philips Sonicare DiamondClean 9000: `https://amzn.to/4hQE7BS`, update price to `£149.99`
+    - #4 SURI Pro 2.0: `https://amzn.to/4wRV2YF`
+    - #5 Oral-B iO3: `https://amzn.to/4gD6zVF`
+  - Update CTA button labels from "View Product" to "Shop Now" on all competitors (#2 through #5).
+  - Remove compare-at prices (`compareAt`) from all competitors (#2, #3, #5) so only #1 Miroooo X displays a compare-at price.
+  - Preserve #1 Miroooo X data, ratings, reviews, design, layouts, and tracking intact.
 - **Git State**:
-  - `trustpilotreview-shop`: Starting at `0821475`.
-- **Inspected and Changed Files**:
-  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated desktop and mobile `<h2>` titles in `ProductCard` from `#{product.rank} {product.name}` to `{product.name}`.
+  - Starting commit: `dd4f5c1` (clean working tree).
+  - Ending commit: working copy modified on branch `main` (`apps/site/src/data/toothbrushes.ts`).
+- **Inspected & Changed Files**:
+  - Modified: `apps/site/src/data/toothbrushes.ts`
 - **Verification Performed**:
-  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm typecheck` (Passed with 0 errors).
+  - `pnpm lint` (Passed with 0 errors).
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
-  - Local edits verified; no push performed per policy (awaiting explicit user instruction).
+  - Local changes verified; no commit or push performed per policy.
+
 
 
