@@ -49,7 +49,7 @@ export type RankedToothbrushProduct = {
 
 export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   rank: 1,
-  name: "Miroooo Brush X",
+  name: "Miroooo Brush X Electric Toothbrush",
   brand: "Miroooo",
   image: "/img/toothbrushes/miroooo-x-electric-toothbrush.webp",
   price: "£59",

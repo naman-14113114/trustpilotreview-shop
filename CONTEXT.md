@@ -8270,3 +8270,21 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
   - Committed and pushed to GitHub `origin/main` per explicit user request.
+
+## Miroooo Brush X Electric Toothbrush Title Suffix Update - 26 August 2026
+
+- **User Intent & Protected Scope**:
+  - Update title to include "Electric Toothbrush" after "Miroooo Brush X" (`Miroooo Brush X Electric Toothbrush`) with minimal changes.
+- **Git State**:
+  - Starting commit: `e12c813` on `main`.
+  - Ending state: working tree modified on `main`.
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Updated `MIROOOO_X_DATASET.name` to `"Miroooo Brush X Electric Toothbrush"`.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated Dentist's verdict heading to `"Miroooo Brush X Electric Toothbrush"`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Local changes verified; no commit or push performed per policy (awaiting explicit user instruction).
+
