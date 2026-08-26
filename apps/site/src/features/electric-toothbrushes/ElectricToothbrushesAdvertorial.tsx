@@ -662,8 +662,8 @@ export default function ElectricToothbrushesAdvertorial() {
             {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space, perfectly centered vertically */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
-                src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
-                alt="Miroooo Brush X"
+                src="/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp"
+                alt="Miroooo Brush X Electric Toothbrush"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>

@@ -8288,3 +8288,39 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Local changes verified; no commit or push performed per policy (awaiting explicit user instruction).
 
+## Top 5 Banner #1 Middle Image Replacement - 27 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the middle #1 image in the top 5 comparison hero banner with the user's provided `Banner#1.webp` (`E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\Mirooo x compressed\Banner#1.webp`).
+  - Rename the image file according to Miroooo SEO best practices (`miroooo-brush-x-electric-toothbrush-banner.webp`).
+  - Strictly avoid modifying any CSS or scripts.
+- **Git State**:
+  - Starting commit: `2498f49` on `main`.
+  - Ending state: working tree modified on `main`.
+- **Inspected & Changed Files**:
+  - Copied & Renamed: `E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\Mirooo x compressed\Banner#1.webp` -> `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp` and mirrored to `img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp`.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated the `src` attribute of the floating layer-2 #1 image from `/img/toothbrushes/miroooo-x-silver-lifestyle.jpg` to `/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp`.
+  - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Updated to reference the new banner image and regenerated `top-5-electric-toothbrushes-uk.webp` and `top-5-electric-toothbrushes-uk.png` for OG/Twitter social preview parity.
+- **Verification Performed**:
+  - Visual verification with `view_file` tool on the source and generated assets.
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Local changes verified; no commit or push performed per strict policy.
+
+## Top 5 Banner Image Scaling & Cropping Fix - 27 August 2026
+
+- **User Intent & Protected Scope**:
+  - Fix cropping on `miroooo-brush-x-electric-toothbrush-banner.webp` so the toothbrush fits completely within the card frame without altering the frame dimensions or touching any CSS/scripts.
+  - Scale down the image canvas and blend seamlessly with generous top and bottom margins so bristles and handle are fully visible.
+- **Git State**:
+  - Working tree modified on `main`.
+- **Inspected & Changed Files**:
+  - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp`: Generated centered, proportionally scaled brush image with seamless feathered canvas blending.
+  - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`: Regenerated composite banner.
+- **Verification Performed**:
+  - Visual verification with `view_file` and browser dev server.
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+
+
+
