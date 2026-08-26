@@ -8183,5 +8183,20 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Ready to commit and push to GitHub `origin main`.
 
+## Dr. Olivia Paragraph Rewrite & UK User Recommendation Badge - 26 August 2026
 
-
+- **User Intent & Protected Scope**:
+  - Rewrite the Dr. Olivia clinical expert introductory paragraph on `/best-electric-toothbrush-uk-2026` to be shorter, punchy, and benefit-focused.
+  - Highlight key daily brushing values (hassle-free, whisper-quiet operation instead of loud buzz, featherlight ~50g handle, gentle deep clean, 60+ days battery life without clunky 2-pin bathroom chargers).
+  - Include 180+ hours of comparative testing metric.
+  - Replace the generic testing disclaimer with a quantified recommendation line matching the LED mask page format: `* Recommended by over 1,000 UK electric toothbrush users.`.
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `0821475`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated Dr. Olivia's paragraph and bottom recommendation line.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Local edits verified; no push performed per policy (awaiting explicit user instruction).

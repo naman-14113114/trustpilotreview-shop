@@ -692,29 +692,25 @@ export default function ElectricToothbrushesAdvertorial() {
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
                 <p>
-                  With <strong>over 14 years</strong> of clinical dental surgery
-                  experience across the UK,{" "}
-                  <strong className="text-slate-900">Dr. Olivia</strong> is
-                  a specialist in preventative periodontics and oral hygiene.
-                  She conducted a rigorous 180+ hour comparative evaluation of
-                  leading electric toothbrushes available to British consumers in
-                  2026. She benchmarked plaque removal efficacy, gingival margin
-                  safety, bristle tip rounding, lightweight handle ergonomics, quiet
-                  sound operation, battery longevity, travel convenience, and the
-                  real ongoing cost of replacement brush heads. Her primary
-                  conclusion was clear: the highest price tag does not guarantee
-                  a superior clean. The winning brushes delivered effortless deep
-                  cleaning with gentle gum protection, quiet operation under 50dB,
-                  featherlight 51g comfort, 60+ day battery life with magnetic USB-C dock charging, and fair
-                  replacement head prices without subscription lock-ins.
+                  With <strong>over 14 years</strong> of clinical dental
+                  experience in the UK,{" "}
+                  <strong className="text-slate-900">Dr. Olivia</strong>{" "}
+                  evaluated the leading electric toothbrushes for 2026 across{" "}
+                  <strong>180+ hours of comparative testing</strong>. Her
+                  conclusion was simple: daily brushing should be effortless. The
+                  ideal brush should be whisper-quiet rather than loudly buzzing
+                  in your ear, featherlight (around 50g) for easy handling, and
+                  gentle on gums while delivering a deep sonic clean. You
+                  don&apos;t need to spend £200+ on heavy, clunky handles or
+                  outdated 2-pin bathroom chargers to get a dentist-clean smile
+                  and 60+ days of battery life.
                 </p>
               </div>
 
               <hr className="border-slate-200 w-full mb-4" />
 
               <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
-                * Recommended based on clinical testing metrics and independent
-                buyer feedback.
+                * Recommended by over 1,000 UK electric toothbrush users.
               </div>
             </div>
           </div>
