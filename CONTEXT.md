@@ -8200,3 +8200,41 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
 - **Publishing & Deployment Status**:
   - Local edits verified; no push performed per policy (awaiting explicit user instruction).
+
+## Miroooo X Rank #1 Product Card Image Update & SEO Renaming - 26 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the Rank #1 product card image below on `/best-electric-toothbrush-uk-2026` with the clean, non-duplicated logo asset from `"E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\Mirooo x compressed\contact_us.webp"`.
+  - Strictly preserve the top hero layer 2 silver card image above.
+  - Rename the image to SEO-optimized filename `miroooo-x-electric-toothbrush.webp` in `apps/site/public/img/toothbrushes/` and `img/toothbrushes/`.
+  - Update `apps/site/src/data/toothbrushes.ts` `MIROOOO_X_DATASET.image` to `/img/toothbrushes/miroooo-x-electric-toothbrush.webp`.
+  - Delete older trio lifestyle image assets (`miroooo-x-electric-toothbrush-trio-lifestyle.png` and `.webp`).
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `0821475`.
+- **Inspected and Changed Files**:
+  - `apps/site/public/img/toothbrushes/miroooo-x-electric-toothbrush.webp`: Copied new clean 3-brush countertop asset.
+  - `img/toothbrushes/miroooo-x-electric-toothbrush.webp`: Mirrored root asset.
+  - `apps/site/src/data/toothbrushes.ts`: Updated `MIROOOO_X_DATASET.image` reference.
+  - Deleted older unused trio assets in `apps/site/public/img/toothbrushes/` and `img/toothbrushes/`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Local edits verified; no push performed per policy (awaiting explicit user instruction).
+
+## Remove Duplicate Rank Number Prefix from Product Card Headings - 26 August 2026
+
+- **User Intent & Protected Scope**:
+  - Remove duplicate `#1` / `#{product.rank}` text from product card headings in `ElectricToothbrushesAdvertorial.tsx`, as the rank is already clearly displayed in the top-left corner ribbon badge on the card container.
+- **Git State**:
+  - `trustpilotreview-shop`: Starting at `0821475`.
+- **Inspected and Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated desktop and mobile `<h2>` titles in `ProductCard` from `#{product.rank} {product.name}` to `{product.name}`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Local edits verified; no push performed per policy (awaiting explicit user instruction).
+
+

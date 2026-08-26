@@ -51,7 +51,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   rank: 1,
   name: "Miroooo X Electric Toothbrush",
   brand: "Miroooo",
-  image: "/img/toothbrushes/miroooo-x-electric-toothbrush-trio-lifestyle.webp",
+  image: "/img/toothbrushes/miroooo-x-electric-toothbrush.webp",
   price: "£59",
   compareAt: "£119",
   rating: 4.9,

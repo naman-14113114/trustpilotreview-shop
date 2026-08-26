@@ -384,7 +384,7 @@ function ProductCard({
                 isMiroooo ? "mt-3" : ""
               }`}
             >
-              #{product.rank} {product.name}
+              {product.name}
             </h2>
 
             <div className="relative w-full mb-6">
@@ -462,7 +462,7 @@ function ProductCard({
               }
               className="hover:text-emerald-600 transition-colors"
             >
-              #{product.rank} {product.name}
+              {product.name}
             </a>
           </h2>
 
