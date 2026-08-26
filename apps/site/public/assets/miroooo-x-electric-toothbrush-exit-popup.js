@@ -87,7 +87,7 @@
       "<div class='miroooo-exit-content'>",
       "<div class='miroooo-exit-kicker'>Before you go</div>",
       "<h2 class='miroooo-exit-title' id='miroooo-exit-title'>The #1 electric toothbrush pick is still 50% off.</h2>",
-      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo X. Weighing only 51g with whisper-quiet operation (&lt;50dB), 60+ days of battery life via its magnetic USB-C dock, and an aerospace aluminium unibody, it delivers a dentist-clean feel every day.</p>",
+      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo Brush X. Weighing only 51g with whisper-quiet operation (&lt;50dB), 60+ days of battery life via its magnetic USB-C dock, and an aerospace aluminium unibody, it delivers a dentist-clean feel every day.</p>",
       "<div class='miroooo-exit-offer'><div><span>Today on Miroooo</span><strong>" + offerPriceText + "</strong></div><span>50% OFF</span></div>",
       "<div class='miroooo-exit-actions'>",
       "<a class='miroooo-exit-cta' href='" + CTA_URL + "' data-outbound-button='true'>Claim 50% Off</a>",

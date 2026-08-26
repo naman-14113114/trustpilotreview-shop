@@ -8250,5 +8250,23 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Local changes verified; no commit or push performed per policy.
 
+## Miroooo Brush X Product Naming Update - 26 August 2026
 
-
+- **User Intent & Protected Scope**:
+  - Update #1 product name on UK electric toothbrush advertorial (`/best-electric-toothbrush-uk-2026`) from "Miroooo X Electric Toothbrush" to "Miroooo Brush X" following the official store product rebranding.
+  - Update all references to #1 in reviews, comparisons, gift labels, dentist verdict, keywords, and exit popup copy to "Miroooo Brush X".
+  - Commit and push clean code to GitHub as explicitly instructed.
+- **Git State**:
+  - Starting commit: `42f8d6d` on `main`.
+  - Ending commit: updated on `main`.
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Updated #1 product name to `Miroooo Brush X`, updated official source link label, updated #1 review text, and updated competitor comparison copy across Oral-B iO6, Philips Sonicare 9000, SURI Pro 2.0, and Oral-B iO3 to refer to `Miroooo Brush X`.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated gift panel aria-labels, hero floating card alt text, Dentist's verdict video aria-label, and Dentist's verdict heading to `Miroooo Brush X`.
+  - `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`: Updated page keywords to include `miroooo brush x`.
+  - `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`: Updated exit popup modal copy to refer to `Miroooo Brush X`.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static routes with 0 errors).
+- **Publishing & Deployment Status**:
+  - Committed and pushed to GitHub `origin/main` per explicit user request.

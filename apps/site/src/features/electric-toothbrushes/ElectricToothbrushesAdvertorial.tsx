@@ -213,7 +213,7 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo X offer with free Magnetic Charging Dock"
+              aria-label="View the Miroooo Brush X offer with free Magnetic Charging Dock"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
@@ -243,7 +243,7 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo X offer with free Aluminium Travel Case"
+              aria-label="View the Miroooo Brush X offer with free Aluminium Travel Case"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
@@ -273,7 +273,7 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo X offer with free 2x DuPont Replacement Heads"
+              aria-label="View the Miroooo Brush X offer with free 2x DuPont Replacement Heads"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
@@ -659,11 +659,11 @@ export default function ElectricToothbrushesAdvertorial() {
               className="w-full h-auto object-contain pointer-events-none"
             />
 
-            {/* Layer 2: #1 Miroooo X Card floating OVER the container space, perfectly centered vertically */}
+            {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space, perfectly centered vertically */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
                 src="/img/toothbrushes/miroooo-x-silver-lifestyle.jpg"
-                alt="Miroooo X Electric Toothbrush"
+                alt="Miroooo Brush X"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
@@ -772,7 +772,7 @@ export default function ElectricToothbrushesAdvertorial() {
                     playsInline
                     preload="metadata"
                     poster="/assets/miroooo-dentist-verdict-poster.webp"
-                    aria-label="Dentist walkthrough of the Miroooo X Electric Toothbrush"
+                    aria-label="Dentist walkthrough of the Miroooo Brush X"
                     onPlay={() => setIsVerdictVideoPlaying(true)}
                     onPause={() => setIsVerdictVideoPlaying(false)}
                     onEnded={() => setIsVerdictVideoPlaying(false)}
@@ -801,7 +801,7 @@ export default function ElectricToothbrushesAdvertorial() {
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  Miroooo X Electric Toothbrush
+                  Miroooo Brush X
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
