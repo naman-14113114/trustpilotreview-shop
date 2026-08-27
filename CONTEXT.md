@@ -8318,9 +8318,31 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Inspected & Changed Files**:
   - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp`: Generated centered, proportionally scaled brush image with seamless feathered canvas blending.
   - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`: Regenerated composite banner.
+## Toothbrush Performance Metrics & Specification Alignment - 27 August 2026
+
+- **User Intent & Protected Scope**:
+  - In performance metrics on `/best-electric-toothbrush-uk-2026`: Replace "Long-Term Value & Bundle" with "Plaque Removal & Cleaning" and make it #1 (topmost metric), preserving the exact same percentage score for each product.
+  - Standardize metric brackets with exact product specifications:
+    - Weight: Ensure weight is in brackets across all products (e.g. `(51g)`, `(140g)`, `(135g)`, `(85g)`, `(136g)`).
+    - Sound/Noise: For #1 keep `Whisper Quiet (<50dB)`. For competitor products, do NOT write "Whisper"; use "Noise" or "Loud Sound" keywords (e.g. `Loud Motor Noise (64dB)`, `Sonic Buzz Noise (56dB)`, `Motor Buzz Noise (54dB)`, `Loud Motor Noise (64dB)`).
+    - Battery: Include battery endurance in brackets for all products (e.g. `(60+ Days)`, `(14 Days)`, `(14 Days)`, `(34–40 Days)`, `(14 Days)`).
+  - Execute minimal changes, conduct full virtual verification (typecheck, lint, build, DOM & security scan) across 5 subagents, and push clean code to GitHub as requested.
+- **Git State**:
+  - Starting commit: `0c734d0` on `main`.
+  - Ending commit: `d99ecf7` on `main` (pushed to `origin/main`).
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: Updated `metrics` array across all 5 ranked toothbrush products:
+    1. **Miroooo Brush X**: `Plaque Removal & Cleaning` (99%), `Lightweight & Ergonomic (51g)` (99%), `Whisper Quiet (<50dB)` (98%), `Battery Life & Endurance (60+ Days)` (99%).
+    2. **Oral-B iO Series 6**: `Plaque Removal & Cleaning` (65%), `Lightweight & Ergonomic (140g)` (62%), `Loud Motor Noise (64dB)` (55%), `Battery Life & Endurance (14 Days)` (60%).
+    3. **Philips Sonicare DiamondClean 9000**: `Plaque Removal & Cleaning` (58%), `Lightweight & Ergonomic (135g)` (72%), `Sonic Buzz Noise (56dB)` (75%), `Battery Life & Endurance (14 Days)` (65%).
+    4. **SURI Pro 2.0**: `Plaque Removal & Cleaning` (58%), `Lightweight & Ergonomic (85g)` (74%), `Motor Buzz Noise (54dB)` (80%), `Battery Life & Endurance (34–40 Days)` (78%).
+    5. **Oral-B iO3 Matt Black**: `Plaque Removal & Cleaning` (50%), `Lightweight & Ergonomic (136g)` (55%), `Loud Motor Noise (64dB)` (52%), `Battery Life & Endurance (14 Days)` (48%).
 - **Verification Performed**:
-  - Visual verification with `view_file` and browser dev server.
+  - Concurrently deployed 5 specialized subagents for data updates, consistency auditing, and build validation.
   - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
-
-
-
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with 0 errors).
+  - DOM / SSR inspection on `/best-electric-toothbrush-uk-2026` static output verified correct metric order and labels.
+  - Snyk security audit completed with 0 vulnerabilities detected.
+- **Publishing & Deployment Status**:
+  - Committed as `d99ecf7` and pushed to GitHub `origin/main` per explicit user instructions.
