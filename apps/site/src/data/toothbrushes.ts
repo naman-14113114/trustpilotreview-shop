@@ -92,10 +92,10 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     ],
   },
   metrics: [
+    { label: "Plaque Removal & Cleaning", value: 99 },
     { label: "Lightweight & Ergonomic (51g)", value: 99 },
     { label: "Whisper Quiet (<50dB)", value: 98 },
     { label: "Battery Life & Endurance (60+ Days)", value: 99 },
-    { label: "Long-Term Value & Bundle", value: 99 },
   ],
   specifications: [
     { label: "Weight", value: "51g (Ultra Light Weight)" },
@@ -161,10 +161,10 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     moneyBackGuarantee: "30-Day Money-Back Guarantee",
     warranty: "2-Year Limited Warranty",
     metrics: [
-      { label: "Lightweight & Ergonomic (51g)", value: 62 },
-      { label: "Quiet Sound (<50dB)", value: 55 },
-      { label: "Battery Life & USB-C", value: 60 },
-      { label: "Long-Term Value & Bundle", value: 65 },
+      { label: "Plaque Removal & Cleaning", value: 65 },
+      { label: "Lightweight & Ergonomic (140g)", value: 62 },
+      { label: "Loud Motor Noise (64dB)", value: 55 },
+      { label: "Battery Life & Endurance (14 Days)", value: 60 },
     ],
     pros: [
       "Interactive OLED Display: Crisp black-and-white screen shows 2-minute timer countdown and brush head replacement alerts.",
@@ -215,10 +215,10 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     moneyBackGuarantee: "28-Day Money-Back Guarantee",
     warranty: "2-Year Warranty",
     metrics: [
-      { label: "Lightweight & Ergonomic (51g)", value: 72 },
-      { label: "Quiet Sound (<50dB)", value: 75 },
-      { label: "Battery Life & USB-C", value: 65 },
-      { label: "Long-Term Value & Bundle", value: 58 },
+      { label: "Plaque Removal & Cleaning", value: 58 },
+      { label: "Lightweight & Ergonomic (135g)", value: 72 },
+      { label: "Sonic Buzz Noise (56dB)", value: 75 },
+      { label: "Battery Life & Endurance (14 Days)", value: 65 },
     ],
     pros: [
       "Luxury Charging Glass: Iconic inductive glass charging cup makes a stylish visual statement on bathroom counters.",
@@ -268,10 +268,10 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     moneyBackGuarantee: "30-Day Money-Back Guarantee",
     warranty: "1-Year Limited Warranty",
     metrics: [
-      { label: "Lightweight & Ergonomic (51g)", value: 74 },
-      { label: "Quiet Sound (<50dB)", value: 80 },
-      { label: "Battery Life & USB-C", value: 78 },
-      { label: "Long-Term Value & Bundle", value: 58 },
+      { label: "Plaque Removal & Cleaning", value: 58 },
+      { label: "Lightweight & Ergonomic (85g)", value: 74 },
+      { label: "Motor Buzz Noise (54dB)", value: 80 },
+      { label: "Battery Life & Endurance (34–40 Days)", value: 78 },
     ],
     pros: [
       "Plant-Based Heads: Heads crafted from cornstarch with castor oil bristles; free UK prepaid mail-back recycling included.",
@@ -323,10 +323,10 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     moneyBackGuarantee: "30-Day Money-Back Guarantee",
     warranty: "2-Year Limited Warranty",
     metrics: [
-      { label: "Lightweight & Ergonomic (51g)", value: 55 },
-      { label: "Quiet Sound (<50dB)", value: 52 },
-      { label: "Battery Life & USB-C", value: 48 },
-      { label: "Long-Term Value & Bundle", value: 50 },
+      { label: "Plaque Removal & Cleaning", value: 50 },
+      { label: "Lightweight & Ergonomic (136g)", value: 55 },
+      { label: "Loud Motor Noise (64dB)", value: 52 },
+      { label: "Battery Life & Endurance (14 Days)", value: 48 },
     ],
     pros: [
       "iO Micro-Vibration Technology: Delivers Oral-B's signature round-head micro-vibrations for thorough mechanical plaque removal.",
