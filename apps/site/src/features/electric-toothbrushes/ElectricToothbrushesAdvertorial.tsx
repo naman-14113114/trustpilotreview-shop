@@ -648,10 +648,10 @@ export default function ElectricToothbrushesAdvertorial() {
         </div>
       </div>
 
-      <header className="bg-white border-b border-slate-200 pt-10 pb-12 px-4 md:pt-14 md:pb-16">
+      <header className="bg-white border-b border-slate-200 pt-6 pb-12 px-4 md:pt-8 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
           {/* 2-Layer Top 5 Comparison Hero Banner */}
-          <div className="relative w-full max-w-6xl mx-auto my-10 md:my-12 flex items-center justify-center">
+          <div className="relative w-full max-w-6xl mx-auto mb-10 md:mb-12 flex items-center justify-center">
             {/* Layer 1: Background Container Bar with 4 competitors and open center space */}
             <img
               src="/img/toothbrushes/top-4-competitors-container-bar.webp"
