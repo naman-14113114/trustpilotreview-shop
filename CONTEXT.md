@@ -8346,3 +8346,19 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Snyk security audit completed with 0 vulnerabilities detected.
 - **Publishing & Deployment Status**:
   - Committed as `d99ecf7` and pushed to GitHub `origin/main` per explicit user instructions.
+
+## Top 5 Comparison Hero Banner Padding-Top Adjustment - 27 August 2026
+
+- **User Intent & Protected Scope**:
+  - Reduce the top padding/whitespace above the top 5 comparison hero banner images on `/best-electric-toothbrush-uk-2026` based on the user-provided screenshot.
+  - Strictly preserve bottom margin to the expert card, layout structure, responsive scaling, and all image components.
+- **Git State**:
+  - Starting commit: `d0be309` on `main`.
+  - Ending commit: `3eafa09` on `main` (pushed to `origin/main`).
+- **Inspected & Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Reduced header padding top (`pt-10 md:pt-14` -> `pt-6 md:pt-8`) and removed redundant top margin on the banner wrapper (`my-10 md:my-12` -> `mb-10 md:mb-12`), eliminating excessive top gap while keeping bottom spacing intact.
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with 0 errors).
+- **Publishing & Deployment Status**:
+  - Committed as `3eafa09` and pushed to GitHub `origin/main`.
