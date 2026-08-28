@@ -93,6 +93,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   },
   metrics: [
     { label: "Plaque Removal & Cleaning", value: 99 },
+    { label: "Long-Lasting Durability", value: 99 },
     { label: "Lightweight & Ergonomic (51g)", value: 99 },
     { label: "Whisper Quiet (<50dB)", value: 98 },
     { label: "Battery Life & Endurance (60+ Days)", value: 99 },
@@ -113,7 +114,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
     "60+ Day Battery Life: Massive 60+ day battery endurance powered by a convenient magnetic charging dock and USB-C cable. Simply place the brush on the magnetic base to charge—completely eliminating the need for bulky 2-pin bathroom shaver socket adapters.",
     "4.9★ Customer Rating: Verified 4.9-star rating reflecting top customer satisfaction across the UK.",
-    "Aerospace Aluminium Design: Premium unibody metal construction that outperforms fragile plastic handles in durability and hygiene.",
+    "Long-Lasting Aluminium Durability: Precision-milled aerospace aluminium unibody resists drops and mold, ensuring the brush lasts years longer than fragile plastic alternatives.",
     "Travel Case & 2 Extra Free Heads (£60.85 bundle): Active promotion includes Magnetic Charging Dock with USB-C Cable (£24.95), Aluminium Travel Case (£15.95), and 2x DuPont Replacement Heads (£19.95) at zero added cost.",
     "Dental Care Companion App: Integrated smart companion app tracks brushing zones and reinforces dentist-recommended habits.",
     "90-Day Money-Back Guarantee: 100% risk-free home trial with full refund protection.",
@@ -162,6 +163,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     warranty: "2-Year Limited Warranty",
     metrics: [
       { label: "Plaque Removal & Cleaning", value: 65 },
+      { label: "Long-Lasting Durability", value: 64 },
       { label: "Lightweight & Ergonomic (140g)", value: 62 },
       { label: "Loud Motor Noise (64dB)", value: 55 },
       { label: "Battery Life & Endurance (14 Days)", value: 60 },
@@ -177,7 +179,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Short 14-Day Battery Life: Requires recharging every two weeks, falling well behind modern 60-day standards.",
       "Bulky 2-Pin Shaver Plug: Proprietary charging stand requires a UK 2-pin bathroom socket or separate adapter.",
       "Expensive Refills (£8–£12/head): High ongoing replacement head prices create costly long-term maintenance.",
-      "Heavy Plastic Handle (140g+): Substantially heavier and bulkier in hand than lightweight aluminium brushes.",
+      "Fragile Plastic Durability & High Weight (140g+): Heavy polycarbonate handle and rubberized seams degrade and trap grime over time, lacking the long-lasting durability of solid aluminium builds.",
       "No 90-Day Guarantee & No Free Gifts: Lacks extended risk-free trial protection and bonus accessory bundle offers.",
     ],
     review: [
@@ -216,6 +218,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     warranty: "2-Year Warranty",
     metrics: [
       { label: "Plaque Removal & Cleaning", value: 58 },
+      { label: "Long-Lasting Durability", value: 60 },
       { label: "Lightweight & Ergonomic (135g)", value: 72 },
       { label: "Sonic Buzz Noise (56dB)", value: 75 },
       { label: "Battery Life & Endurance (14 Days)", value: 65 },
@@ -229,7 +232,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Exorbitant £149+ Upfront Price: At £149–£249 street price (and £349 RRP), it is the most expensive toothbrush in this comparison.",
       "Short 14-Day Battery Life: Requires bi-weekly charging, far shorter than Miroooo Brush X's 60+ day magnetic USB-C dock endurance.",
-      "Heavy Composite Handle (~135g): More than double the weight of Miroooo Brush X's 51g featherlight body.",
+      "Fragile Composite Durability & High Weight (135g): Composite plastic casing and internal vibrating shaft prone to seal wear, motor rattle, and moisture degradation over time.",
       "Fragile 2-Pin Glass Charger: The charging glass requires a 2-pin shaver plug and easily collects bathroom residue.",
       "Costly Refills (£9–£12/head): Official Sonicare replacement heads cost upwards of £9 to £12 per head.",
       "No 90-Day Guarantee & No Free Gifts: Zero bonus accessories included in base packages; standard 28-day return window with no extended trial.",
@@ -269,20 +272,21 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     warranty: "1-Year Limited Warranty",
     metrics: [
       { label: "Plaque Removal & Cleaning", value: 58 },
+      { label: "Long-Lasting Durability", value: 54 },
       { label: "Lightweight & Ergonomic (85g)", value: 74 },
       { label: "Motor Buzz Noise (54dB)", value: 80 },
       { label: "Battery Life & Endurance (34–40 Days)", value: 78 },
     ],
     pros: [
       "Plant-Based Heads: Heads crafted from cornstarch with castor oil bristles; free UK prepaid mail-back recycling included.",
-      "Modular Aluminium Body: Designed to be taken apart and repaired rather than thrown into landfill.",
+      "Compact Minimalist Design: Slim Scandinavian-inspired profile designed for portable everyday handling.",
       "Touchsense™ Pressure Sensor: Built-in haptic pressure sensor alerts users when pressing too firmly against gums.",
-      "Slim Aesthetic: Minimalist Scandinavian-style aluminium handle with magnetic USB-C charging.",
+      "Slim Aesthetic: Minimalist Scandinavian-style handle with magnetic USB-C charging.",
     ],
     cons: [
       "Heavier in Hand (~85g): Noticeably heavier than Miroooo's 51g featherlight unibody design.",
       "Extortionate Refill Costs (£14.99/3-pack): Proprietary plant-based heads cost ~£5 per head, leading to high ongoing yearly maintenance expenses.",
-      "Cornstarch Head Cracking & Loosening: Fragile plant-based brush head stems frequently develop hairline cracks or loosen on the vibrating motor shaft under moisture.",
+      "Compromised Durability & Head Cracking: Modular multi-piece joints and plant-based cornstarch heads frequently develop hairline fractures and loosen on the vibrating shaft under bathroom moisture.",
       "Mold-Prone Mirror Mount: Toothpaste slurry and humidity trap behind the magnetic wall mount, requiring daily scrubbing to avoid black mildew.",
       "Expensive £85 Base Price (No Free Gifts): High upfront standalone price includes zero extra heads, charging dock stand, or travel case in the £85 box.",
       "Limited 2 Cleaning Modes: Only offers Everyday Clean and Polish at 33k VPM, lacking sensitive speed adjustments.",
@@ -324,6 +328,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     warranty: "2-Year Limited Warranty",
     metrics: [
       { label: "Plaque Removal & Cleaning", value: 50 },
+      { label: "Long-Lasting Durability", value: 46 },
       { label: "Lightweight & Ergonomic (136g)", value: 55 },
       { label: "Loud Motor Noise (64dB)", value: 52 },
       { label: "Battery Life & Endurance (14 Days)", value: 48 },
@@ -340,7 +345,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Dated 14-Day Battery Life: Requires recharging every two weeks on a sluggish 16-hour charge, falling far behind modern 60-day standards.",
       "Obsolete 2-Pin Bathroom Shaver Plug: Proprietary inductive charging base requires a UK 2-pin bathroom socket or adapter with zero universal USB-C travel convenience.",
       "Extortionate iO Refill Costs (£8–£12/head): Incompatible with standard Oral-B heads, creating a costly £32–£48/year ongoing maintenance trap.",
-      "Heavy Plastic Chassis (~136g): Bulky polycarbonate handle is more than 2.6x heavier than featherlight aluminium brushes, increasing wrist fatigue.",
+      "Poor Plastic Durability & Heavy Build (136g): Bulky polycarbonate handle and rubber seals easily degrade, scuff, and collect grime, lacking the durability of solid aluminium builds.",
       "No 90-Day Guarantee & Minimal Gifts: Ships with only a single brush head, backed by standard 30-day corporate return terms with no extended risk-free home trial.",
     ],
     review: [

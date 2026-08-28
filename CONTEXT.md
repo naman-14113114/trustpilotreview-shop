@@ -8362,3 +8362,30 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with 0 errors).
 - **Publishing & Deployment Status**:
   - Committed as `3eafa09` and pushed to GitHub `origin/main`.
+
+## Top 5 Toothbrush Durability Metric & Pros/Cons Conversion Update - 28 August 2026
+
+- **User Intent & Protected Scope**:
+  - Add a 5th performance metric `Long-Lasting Durability` directly below `Plaque Removal & Cleaning` across all 5 ranked electric toothbrushes. Set Miroooo Brush X to 99% and assign calibrated percentages to competitors according to their rank and rating.
+  - Update Miroooo Brush X pros: replace "Aerospace Aluminium Design" with "Long-Lasting Aluminium Durability", explaining that its aerospace aluminium unibody lasts years longer than fragile plastic alternatives.
+  - Update competitor pros & cons: ensure durability is addressed in competitor CONS (highlighting plastic fatigue, seal wear, cornstarch head cracking, and grime traps) and not framed as a competitor pro (removed SURI's modular body pro and replaced with compact minimalist design).
+  - Strictly preserve all other performance metrics, pricing, warranty, bundle items, and advertorial styling.
+- **Git State**:
+  - Starting commit: `9e45de8` on `main`.
+  - Ending commit: will be committed and pushed to `origin/main`.
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    1. **Miroooo Brush X (#1)**: Added `Long-Lasting Durability` (99%) below Plaque Removal. Updated pro to `Long-Lasting Aluminium Durability: Precision-milled aerospace aluminium unibody resists drops and mold, ensuring the brush lasts years longer than fragile plastic alternatives.`
+    2. **Oral-B iO Series 6 (#2)**: Added `Long-Lasting Durability` (64%) below Plaque Removal. Updated con to `Fragile Plastic Durability & High Weight (140g+): Heavy polycarbonate handle and rubberized seams degrade and trap grime over time, lacking the long-lasting durability of solid aluminium builds.`
+    3. **Philips Sonicare DiamondClean 9000 (#3)**: Added `Long-Lasting Durability` (60%) below Plaque Removal. Updated con to `Fragile Composite Durability & High Weight (135g): Composite plastic casing and internal vibrating shaft prone to seal wear, motor rattle, and moisture degradation over time.`
+    4. **SURI Pro 2.0 (#4)**: Added `Long-Lasting Durability` (54%) below Plaque Removal. Replaced "Modular Aluminium Body" pro with `Compact Minimalist Design: Slim Scandinavian-inspired profile designed for portable everyday handling.` Updated con to `Compromised Durability & Head Cracking: Modular multi-piece joints and plant-based cornstarch heads frequently develop hairline fractures and loosen on the vibrating shaft under bathroom moisture.`
+    5. **Oral-B iO3 Matt Black (#5)**: Added `Long-Lasting Durability` (46%) below Plaque Removal. Updated con to `Poor Plastic Durability & Heavy Build (136g): Bulky polycarbonate handle and rubber seals easily degrade, scuff, and collect grime, lacking the durability of solid aluminium builds.`
+- **Verification Performed**:
+  - Concurrent QA Specialist and Visual Reviewer subagents deployed for verification.
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site lint` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with Turbopack in 15.1s, TypeScript finished in 21.3s with 0 errors).
+  - Compiled static HTML verified for `/best-electric-toothbrush-uk-2026` checking all 5 metrics and pros/cons.
+- **Publishing & Deployment Status**:
+  - Staged and pushed to GitHub `origin/main` per explicit user request.
+
