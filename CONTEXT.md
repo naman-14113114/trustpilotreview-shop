@@ -8372,7 +8372,7 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Strictly preserve all other performance metrics, pricing, warranty, bundle items, and advertorial styling.
 - **Git State**:
   - Starting commit: `9e45de8` on `main`.
-  - Ending commit: will be committed and pushed to `origin/main`.
+  - Ending commit: `647497b` on `main` (pushed to `origin/main`).
 - **Inspected & Changed Files**:
   - `apps/site/src/data/toothbrushes.ts`:
     1. **Miroooo Brush X (#1)**: Added `Long-Lasting Durability` (99%) below Plaque Removal. Updated pro to `Long-Lasting Aluminium Durability: Precision-milled aerospace aluminium unibody resists drops and mold, ensuring the brush lasts years longer than fragile plastic alternatives.`
@@ -8387,5 +8387,29 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with Turbopack in 15.1s, TypeScript finished in 21.3s with 0 errors).
   - Compiled static HTML verified for `/best-electric-toothbrush-uk-2026` checking all 5 metrics and pros/cons.
 - **Publishing & Deployment Status**:
-  - Staged and pushed to GitHub `origin/main` per explicit user request.
+  - Committed as `647497b` and pushed to GitHub `origin/main`.
+
+## Refinement: Concise 'Durability' Metric Label, 'Long-Lasting Aluminium Design' Pro & Standalone Competitor Cons - 28 August 2026
+
+- **User Intent & Protected Scope**:
+  - Correct performance metric label to concise `Durability` across all 5 ranked models (instead of `Long-Lasting Durability`).
+  - Correct #1 Miroooo Brush X pro heading to `Long-Lasting Aluminium Design:` while keeping the converting rationale that its aluminium chassis outlasts fragile plastic alternatives.
+  - Uncouple competitor durability cons from heavy weight cons: restore all original weight cons (`Heavy Plastic Handle (140g+)`, `Heavy Composite Handle (~135g)`, `Heavy Plastic Chassis (~136g)`, `Cornstarch Head Cracking & Loosening`) and add `Poor Durability` / `Low Durability` as dedicated separate cons for each competitor.
+- **Git State**:
+  - Starting commit: `647497b` on `main`.
+  - Ending commit: will be committed and pushed to `origin/main`.
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    1. **Miroooo Brush X (#1)**: Metric label changed to `Durability` (99%). Pro heading set to `Long-Lasting Aluminium Design: Precision-milled aerospace aluminium unibody resists drops and mold, ensuring the brush lasts years longer than fragile plastic alternatives.`
+    2. **Oral-B iO Series 6 (#2)**: Metric label changed to `Durability` (64%). Restored `Heavy Plastic Handle (140g+)` and added separate con `Poor Durability: Polycarbonate plastic body and rubber seams degrade and trap grime over time, lacking the lasting build quality of metal brushes.`
+    3. **Philips Sonicare DiamondClean 9000 (#3)**: Metric label changed to `Durability` (60%). Restored `Heavy Composite Handle (~135g)` and added separate con `Poor Durability: Composite plastic casing and internal vibrating shaft are prone to seal wear and motor rattle over time, reducing working lifespan compared to unibody metal.`
+    4. **SURI Pro 2.0 (#4)**: Metric label changed to `Durability` (54%). Restored `Cornstarch Head Cracking & Loosening` and added separate con `Poor Durability: Modular multi-piece joints and fragile plant-based head attachments compromise long-term daily reliability.`
+    5. **Oral-B iO3 Matt Black (#5)**: Metric label changed to `Durability` (46%). Restored `Heavy Plastic Chassis (~136g)` and added separate con `Poor Durability: Bulky plastic housing and rubber buttons easily scuff, collect mildew, and degrade far faster than solid aluminium brushes.`
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck` (Passed with 0 errors).
+  - `pnpm --filter @trustpilotreview/site build` (Compiled all 54 static pages with Turbopack in 6.7s, TypeScript finished in 10.3s with 0 errors).
+  - Git diff inspected to verify exact standalone con additions and concise metric labels.
+- **Publishing & Deployment Status**:
+  - Staged, committed, and pushed to GitHub `origin/main`.
+
 
