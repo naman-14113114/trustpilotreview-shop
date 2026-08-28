@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
 import { motion } from "motion/react";
 import React, {
@@ -14,9 +15,12 @@ import {
   Check,
   CheckCircle2,
   ChevronRight,
+  ChevronDown,
   Play,
   ShieldCheck,
   XCircle,
+  HelpCircle,
+  Sparkles,
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
@@ -28,20 +32,24 @@ import {
   type ToothbrushMetric as Metric,
 } from "@/data/toothbrushes";
 
-const evaluationCriteria = [
-  "Deep cleaning & plaque removal",
-  "Gentle on gums & enamel safe",
-  "Quiet sound & low noise",
-  "Lightweight & easy to hold",
-  "Long battery life & magnetic USB-C charging",
-  "Soft rounded bristle quality",
-  "Waterproof & mold resistant design",
-  "Travel friendly with travel case",
-  "Affordable replacement brush heads",
-  "Verified UK customer reviews",
-];
+import {
+  toothbrushGuides,
+  type ToothbrushGuide,
+  type ToothbrushGuideProduct,
+} from "@/data/toothbrushGuides";
 
-const products: RankedProduct[] = toothbrushProducts;
+const defaultEvaluationCriteria = [
+  "Deep cleaning & plaque removal (32,000 VPM acoustic fluid dynamics)",
+  "Gentle on gums & enamel safe (Soft mode & DuPont rounded bristles)",
+  "Whisper-quiet acoustic motor sound (<50dB)",
+  "Lightweight ergonomic handling (51g unibody)",
+  "Long battery life & magnetic USB-C charging (60+ days)",
+  "DuPont™ Tynex® 3D end-rounded bristle quality",
+  "100% mold-resistant aerospace aluminium & IPX7 waterproof",
+  "Travel convenience with included protective aluminium travel case",
+  "Affordable long-term replacement brush heads",
+  "Verified UK customer reviews & 90-day money-back guarantee",
+];
 
 function formatLondonDate(date: Date) {
   return new Intl.DateTimeFormat("en-GB", {
@@ -115,14 +123,16 @@ function OfficialButton({
   );
 }
 
-function EvaluationCriteria() {
+function EvaluationCriteria({ criteria }: { criteria?: string[] }) {
+  const list = criteria && criteria.length > 0 ? criteria : defaultEvaluationCriteria;
+
   return (
     <div className="bg-white rounded-2xl md:rounded-3xl p-5 min-[360px]:p-5 md:p-10 shadow-sm border border-slate-200 mb-10 md:mb-16 w-full">
       <h2 className="text-[1.35rem] md:text-3xl font-bold text-slate-900 mb-5 md:mb-8 text-center font-serif leading-tight">
-        We evaluated electric toothbrushes based on 10 criteria
+        Clinical Evaluation Criteria &amp; Testing Methodology
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4 mb-5 md:mb-8">
-        {evaluationCriteria.map((criterion, idx) => (
+        {list.map((criterion, idx) => (
           <div key={idx} className="flex items-start gap-2.5 md:gap-3">
             <ShieldCheck className="text-emerald-500 shrink-0 mt-0.5 h-[18px] w-[18px] md:h-5 md:w-5" />
             <span className="font-semibold text-slate-700 text-[15px] md:text-base leading-snug">
@@ -132,13 +142,14 @@ function EvaluationCriteria() {
         ))}
       </div>
       <p className="text-center text-slate-600 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 text-[14px] md:text-base leading-snug md:leading-relaxed">
-        Over the past three months, we have thoroughly tested{" "}
-        <strong>leading electric toothbrushes</strong>. Based on{" "}
-        <strong>hands-on evaluations</strong>, insights from{" "}
-        <strong>registered dental professionals</strong>, and{" "}
-        <strong>hundreds of consumer reviews</strong>, the following five
-        models stood out as the best in terms of{" "}
-        <strong>cleaning performance, gum safety, battery runtime, and long-term value</strong>.
+        Over the past three months, we thoroughly evaluated{" "}
+        <strong>leading UK electric toothbrushes</strong> across{" "}
+        <strong>180+ hours of comparative testing</strong>. Based on{" "}
+        <strong>hands-on laboratory measurements</strong>, insights from{" "}
+        <strong>registered UK dental professionals</strong>, and{" "}
+        <strong>thousands of verified consumer reviews</strong>, these models
+        stand out in terms of{" "}
+        <strong>plaque clearance, gum safety, battery runtime, and long-term value</strong>.
       </p>
     </div>
   );
@@ -592,13 +603,186 @@ function ProductCard({
   );
 }
 
-export default function ElectricToothbrushesAdvertorial() {
+function ComparisonMatrix({
+  guide,
+}: {
+  guide: ToothbrushGuide;
+}) {
+  if (!guide.comparisonRows || guide.comparisonRows.length === 0) return null;
+
+  return (
+    <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16">
+      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
+          <Sparkles className="w-3.5 h-3.5" /> Specification Breakdown
+        </span>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
+          Side-by-Side Comparison Matrix
+        </h2>
+        <p className="text-slate-600 mt-2 text-base md:text-lg">
+          How the Miroooo Brush X compares against legacy models on key clinical &amp; daily benchmarks.
+        </p>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse min-w-[620px]">
+          <thead>
+            <tr className="border-b-2 border-slate-200">
+              <th className="py-4 px-4 font-bold text-slate-900 text-base md:text-lg w-1/4">
+                Feature / Metric
+              </th>
+              <th className="py-4 px-4 font-bold text-emerald-700 bg-emerald-50/70 text-base md:text-lg w-2/5 rounded-t-xl border-t-2 border-l-2 border-r-2 border-emerald-300">
+                Miroooo Brush X (£59)
+              </th>
+              <th className="py-4 px-4 font-bold text-slate-700 text-base md:text-lg w-1/3">
+                Competitor Standard
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {guide.comparisonRows.map((row, idx) => (
+              <tr key={idx} className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 px-4 font-semibold text-slate-900 align-top">
+                  <div>{row.feature}</div>
+                  <div className="text-xs font-normal text-slate-500 mt-1">
+                    {row.whyItMatters}
+                  </div>
+                </td>
+                <td className="py-4 px-4 font-bold text-slate-900 bg-emerald-50/40 border-l-2 border-r-2 border-emerald-200 align-top">
+                  <span className="inline-flex items-center gap-1.5 text-emerald-700 mr-1.5">
+                    <Check className="w-4 h-4 shrink-0" />
+                  </span>
+                  {row.miroooo}
+                </td>
+                <td className="py-4 px-4 text-slate-600 align-top">
+                  {row.competitor}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function BuyerBlocksSection({ guide }: { guide: ToothbrushGuide }) {
+  if (!guide.buyerBlocks || guide.buyerBlocks.length === 0) return null;
+
+  return (
+    <section className="my-16 space-y-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-slate-900 font-serif text-center mb-8">
+        Buying Advice &amp; Decision Summary
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {guide.buyerBlocks.map((block, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm"
+          >
+            <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+              {block.title}
+            </h3>
+            <p className="text-slate-600 text-base leading-relaxed">
+              {block.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FaqSection({ faqs }: { faqs?: Array<{ question: string; answer: string }> }) {
+  if (!faqs || faqs.length === 0) return null;
+
+  return (
+    <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16">
+      <div className="text-center max-w-2xl mx-auto mb-8">
+        <div className="inline-flex items-center gap-2 text-emerald-600 font-bold text-sm uppercase tracking-wider mb-2">
+          <HelpCircle className="w-4 h-4" /> Frequently Asked Questions
+        </div>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
+          Expert Answers to Common Questions
+        </h2>
+      </div>
+
+      <div className="space-y-4 max-w-4xl mx-auto">
+        {faqs.map((faq, idx) => (
+          <details
+            key={idx}
+            className="group rounded-2xl border border-slate-200 bg-slate-50/50 p-5 open:bg-white open:ring-2 open:ring-emerald-500/20 transition-all duration-200"
+          >
+            <summary className="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-base md:text-lg list-none">
+              <span>{faq.question}</span>
+              <ChevronDown className="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200" />
+            </summary>
+            <div className="mt-4 pt-3 border-t border-slate-200/60 text-slate-600 text-sm md:text-base leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function RelatedGuidesNav() {
+  const guideEntries = Object.entries(toothbrushGuides);
+
+  return (
+    <nav aria-label="Related Toothbrush Guides" className="bg-slate-100 rounded-3xl p-6 md:p-10 border border-slate-200 my-16">
+      <div className="text-center max-w-2xl mx-auto mb-8">
+        <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif">
+          Explore All UK Electric Toothbrush Guides &amp; Comparisons
+        </h3>
+        <p className="text-slate-600 text-sm mt-1">
+          Detailed benchmarks, brand breakdowns, and clinical advice for 2026.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        {guideEntries.map(([slug, g]) => (
+          <Link
+            key={slug}
+            href={`/${slug}`}
+            className="block bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group"
+          >
+            <span className="inline-block text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full mb-1.5">
+              {g.cardCode}
+            </span>
+            <h4 className="font-bold text-slate-900 group-hover:text-emerald-600 text-sm leading-snug line-clamp-2">
+              {g.cardTitle}
+            </h4>
+            <p className="text-xs text-slate-500 mt-1 line-clamp-2">
+              {g.cardDescription}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+export type ElectricToothbrushesAdvertorialProps = {
+  guide?: ToothbrushGuide;
+};
+
+export default function ElectricToothbrushesAdvertorial({
+  guide,
+}: ElectricToothbrushesAdvertorialProps = {}) {
   const [updatedDate, setUpdatedDate] = useState(() =>
     formatLondonDate(new Date()),
   );
   const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
   const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
   const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const displayProducts: RankedProduct[] =
+    guide && guide.products && guide.products.length > 0
+      ? (guide.products as RankedProduct[])
+      : toothbrushProducts;
 
   const playVerdictVideo = () => {
     const video = verdictVideoRef.current;
@@ -634,10 +818,16 @@ export default function ElectricToothbrushesAdvertorial() {
       <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
-            <span className="block">Best Electric Toothbrushes</span>
-            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
+            <span className="block">
+              {guide ? guide.headline : "Best Electric Toothbrushes"}
+            </span>
+            <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3 font-sans">
               <MarketFlag market="uk" />
-              <span>United Kingdom - 2026</span>
+              <span>
+                {guide?.eyebrow
+                  ? `${guide.eyebrow} · UK 2026`
+                  : "United Kingdom - 2026"}
+              </span>
             </span>
           </h1>
 
@@ -650,7 +840,7 @@ export default function ElectricToothbrushesAdvertorial() {
 
       <header className="bg-white border-b border-slate-200 pt-6 pb-12 px-4 md:pt-8 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
-          {/* 2-Layer Top 5 Comparison Hero Banner */}
+          {/* 2-Layer Top 5 Comparison Hero Banner or Specific Guide Hero */}
           <div className="relative w-full max-w-6xl mx-auto mb-10 md:mb-12 flex items-center justify-center">
             {/* Layer 1: Background Container Bar with 4 competitors and open center space */}
             <img
@@ -659,7 +849,7 @@ export default function ElectricToothbrushesAdvertorial() {
               className="w-full h-auto object-contain pointer-events-none"
             />
 
-            {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space, perfectly centered vertically */}
+            {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
                 src="/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp"
@@ -673,8 +863,8 @@ export default function ElectricToothbrushesAdvertorial() {
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
                 <Image
-                  src="/img/toothbrushes/dr-olivia.webp"
-                  alt="Dr. Olivia"
+                  src={guide?.drOliviaVerdict?.avatar || "/img/toothbrushes/dr-olivia.webp"}
+                  alt={guide?.drOliviaVerdict?.name || "Dr. Olivia"}
                   width={96}
                   height={96}
                   priority
@@ -682,35 +872,46 @@ export default function ElectricToothbrushesAdvertorial() {
                 />
                 <div>
                   <h3 className="font-bold text-xl md:text-2xl underline text-slate-900">
-                    Dr. Olivia, BDS
+                    {guide?.drOliviaVerdict?.name || "Dr. Olivia, BDS"}
                   </h3>
                   <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
-                    Clinical Dental Consultant &amp; Oral Health Specialist
+                    {guide?.drOliviaVerdict?.title ||
+                      "Clinical Dental Consultant & Oral Health Specialist"}
                   </p>
                 </div>
               </div>
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
-                <p>
-                  With <strong>over 14 years</strong> of clinical dental
-                  experience in the UK,{" "}
-                  <strong className="text-slate-900">Dr. Olivia</strong>{" "}
-                  evaluated the leading electric toothbrushes for 2026 across{" "}
-                  <strong>180+ hours of comparative testing</strong>. Her
-                  conclusion was simple: daily brushing should be effortless. The
-                  ideal brush should be whisper-quiet rather than loudly buzzing
-                  in your ear, featherlight (around 50g) for easy handling, and
-                  gentle on gums while delivering a deep sonic clean. You
-                  don&apos;t need to spend £200+ on heavy, clunky handles or
-                  outdated 2-pin bathroom chargers to get a dentist-clean smile
-                  and 60+ days of battery life.
-                </p>
+                {guide?.drOliviaVerdict?.quote ? (
+                  <p className="italic font-medium text-slate-800 mb-3 border-l-4 border-emerald-500 pl-4">
+                    &ldquo;{guide.drOliviaVerdict.quote}&rdquo;
+                  </p>
+                ) : null}
+
+                {guide?.drOliviaVerdict?.clinicalRationale ? (
+                  <p>{guide.drOliviaVerdict.clinicalRationale}</p>
+                ) : (
+                  <p>
+                    With <strong>over 14 years</strong> of clinical dental
+                    experience in the UK,{" "}
+                    <strong className="text-slate-900">Dr. Olivia</strong>{" "}
+                    evaluated the leading electric toothbrushes for 2026 across{" "}
+                    <strong>180+ hours of comparative testing</strong>. Her
+                    conclusion was simple: daily brushing should be effortless. The
+                    ideal brush should be whisper-quiet rather than loudly buzzing
+                    in your ear, featherlight (around 50g) for easy handling, and
+                    gentle on gums while delivering a deep sonic clean. You
+                    don&apos;t need to spend £200+ on heavy, clunky handles or
+                    outdated 2-pin bathroom chargers to get a dentist-clean smile
+                    and 60+ days of battery life.
+                  </p>
+                )}
               </div>
 
               <hr className="border-slate-200 w-full mb-4" />
 
               <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
-                * Recommended by over 1,000 UK electric toothbrush users.
+                * Evaluated across UK dental clinics &amp; independent tests.
               </div>
             </div>
           </div>
@@ -720,31 +921,59 @@ export default function ElectricToothbrushesAdvertorial() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Intro */}
         <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
-          <p>
-            <strong>Upgrading to the right electric toothbrush</strong> is one
-            of the most impactful decisions you can make for your long-term oral
-            health. While manual brushing often relies on harsh back-and-forth
-            scrubbing that can wear away protective tooth enamel and irritate
-            sensitive gums, modern electric toothbrushes create gentle
-            micro-bubbles that wash between tight teeth gaps and sweep
-            plaque from beneath the gumline.
-          </p>
-          <p>
-            However, not all electric toothbrushes are created equal. Many big-brand
-            models are heavy and uncomfortably loud, lose their charge within two
-            weeks, still rely on awkward 2-pin bathroom shaver adapters, and trap
-            shoppers into overpriced replacement heads. When ranking the top
-            electric toothbrushes in the UK for 2026, we evaluated real cleaning
-            performance, daily comfort, battery convenience, and overall long-term
-            value to help you find the best brush for your smile.
-          </p>
+          {guide?.intro && guide.intro.length > 0 ? (
+            guide.intro.map((paragraph, idx) => (
+              <p key={idx} className="leading-relaxed">
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <>
+              <p>
+                <strong>Upgrading to the right electric toothbrush</strong> is one
+                of the most impactful decisions you can make for your long-term oral
+                health. While manual brushing often relies on harsh back-and-forth
+                scrubbing that can wear away protective tooth enamel and irritate
+                sensitive gums, modern electric toothbrushes create gentle
+                micro-bubbles that wash between tight teeth gaps and sweep
+                plaque from beneath the gumline.
+              </p>
+              <p>
+                However, not all electric toothbrushes are created equal. Many big-brand
+                models are heavy and uncomfortably loud, lose their charge within two
+                weeks, still rely on awkward 2-pin bathroom shaver adapters, and trap
+                shoppers into overpriced replacement heads. When ranking the top
+                electric toothbrushes in the UK for 2026, we evaluated real cleaning
+                performance, daily comfort, battery convenience, and overall long-term
+                value to help you find the best brush for your smile.
+              </p>
+            </>
+          )}
         </div>
 
-        <EvaluationCriteria />
+        <EvaluationCriteria criteria={guide?.criteria} />
+
+        {/* Winner Highlights Card if in Guide */}
+        {guide?.winnerBullets && guide.winnerBullets.length > 0 && (
+          <div className="bg-emerald-50 rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 border-emerald-200 mb-12 shadow-sm">
+            <h3 className="text-xl md:text-2xl font-bold text-emerald-950 font-serif mb-4 flex items-center gap-2">
+              <Sparkles className="w-6 h-6 text-emerald-600 shrink-0" />
+              Key Findings &amp; Why Miroooo Brush X Took #1
+            </h3>
+            <ul className="space-y-3">
+              {guide.winnerBullets.map((bullet, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-slate-800 text-base md:text-lg">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-1" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Products List */}
         <div className="space-y-16">
-          {products.map((product) => (
+          {displayProducts.map((product) => (
             <ProductCard
               key={product.name}
               product={product}
@@ -753,6 +982,15 @@ export default function ElectricToothbrushesAdvertorial() {
             />
           ))}
         </div>
+
+        {/* Comparison Matrix Table */}
+        {guide && <ComparisonMatrix guide={guide} />}
+
+        {/* Decision Blocks */}
+        {guide && <BuyerBlocksSection guide={guide} />}
+
+        {/* FAQ Accordion */}
+        <FaqSection faqs={guide?.faqs} />
 
         {/* Bottom Verdict Section */}
         <div className="mt-20 md:mt-24 mb-10 md:mb-12 relative max-w-sm md:max-w-5xl mx-auto">
@@ -838,6 +1076,9 @@ export default function ElectricToothbrushesAdvertorial() {
             </div>
           </div>
         </div>
+
+        {/* Related Toothbrush Guides Section */}
+        <RelatedGuidesNav />
       </main>
 
       {/* Sticky Mobile CTA */}
