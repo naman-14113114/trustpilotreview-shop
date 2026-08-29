@@ -6,7 +6,7 @@
   var STORAGE_KEY = "miroooo_x_exit_popup_seen_v1";
   var SHOW_DELAY_MS = 7000;
   var MOBILE_DELAY_MS = 14000;
-  var CTA_URL = "https://www.trymiroooo.com/products/miroooo-x?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=toothbrush_exit&utm_content=last_chance";
+  var CTA_URL = "https://www.trymiroooo.com/products/miroooo-x2?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=toothbrush_exit&utm_content=last_chance";
 
   function isEligiblePath(pathname) {
     return ELIGIBLE_PATHS.some(function (eligiblePath) {
@@ -34,7 +34,7 @@
     return;
   }
 
-  var offerPriceText = "£59 instead of £119";
+  var offerPriceText = "£69 instead of £139";
 
   var armed = false;
   var shown = false;
@@ -87,7 +87,7 @@
       "<div class='miroooo-exit-content'>",
       "<div class='miroooo-exit-kicker'>Before you go</div>",
       "<h2 class='miroooo-exit-title' id='miroooo-exit-title'>The #1 electric toothbrush pick is still 50% off.</h2>",
-      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo Brush X. Weighing only 51g with whisper-quiet operation (&lt;50dB), 60+ days of battery life via its magnetic USB-C dock, and an aerospace aluminium unibody, it delivers a dentist-clean feel every day.</p>",
+      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo Brush X2. Featuring 45° Bass sweep cleaning, a smart pressure halo ring, 90-day battery life via magnetic USB-C, and an aerospace aluminium unibody, it delivers a dentist-clean feel every day.</p>",
       "<div class='miroooo-exit-offer'><div><span>Today on Miroooo</span><strong>" + offerPriceText + "</strong></div><span>50% OFF</span></div>",
       "<div class='miroooo-exit-actions'>",
       "<a class='miroooo-exit-cta' href='" + CTA_URL + "' data-outbound-button='true'>Claim 50% Off</a>",

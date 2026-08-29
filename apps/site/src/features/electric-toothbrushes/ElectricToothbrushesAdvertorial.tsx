@@ -39,11 +39,11 @@ import {
 } from "@/data/toothbrushGuides";
 
 const defaultEvaluationCriteria = [
-  "Deep cleaning & plaque removal (32,000 VPM acoustic fluid dynamics)",
+  "Deep cleaning & plaque removal (40,000 VPM acoustic fluid dynamics with 45° Bass sweep)",
   "Gentle on gums & enamel safe (Soft mode & DuPont rounded bristles)",
   "Whisper-quiet acoustic motor sound (<50dB)",
   "Lightweight ergonomic handling (51g unibody)",
-  "Long battery life & magnetic USB-C charging (60+ days)",
+  "Long battery life & magnetic USB-C charging (90+ days)",
   "DuPont™ Tynex® 3D end-rounded bristle quality",
   "100% mold-resistant aerospace aluminium & IPX7 waterproof",
   "Travel convenience with included protective aluminium travel case",
@@ -203,7 +203,7 @@ function GiftPanel({
         </div>
 
         <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          Active Offer Found: £60.85 in{" "}
+          Active Offer Found: £35 in{" "}
           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
             FREE GIFTS
           </span>
@@ -216,34 +216,34 @@ function GiftPanel({
         </p>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
-          {/* Magnetic Charging Dock */}
+          {/* Luxury Travel Case */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
               FREE
             </div>
             <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
+              href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free Magnetic Charging Dock"
+              aria-label="View the Miroooo Brush X2 offer with free Luxury Travel Case"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £24.95
+                Normally £16
               </span>
               <img
-                src="/img/toothbrushes/miroooo-charging-dock-gift.jpg"
-                alt="Magnetic Charging Dock with USB-C Cable"
+                src="/img/toothbrushes/miroooo-travel-case-gift.jpg"
+                alt="Luxury Aluminium Travel Case"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Magnetic Dock &amp; USB-C Cable
+              Luxury Travel Case
             </p>
           </div>
 
-          {/* Aluminium Travel Case */}
+          {/* Wall-Mounted Storage Dock */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -252,28 +252,28 @@ function GiftPanel({
               FREE
             </div>
             <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
+              href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free Aluminium Travel Case"
+              aria-label="View the Miroooo Brush X2 offer with free Wall-Mounted Storage Dock"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £15.95
+                Normally £10
               </span>
               <img
-                src="/img/toothbrushes/miroooo-travel-case-gift.jpg"
-                alt="Aluminium Travel Case"
+                src="/img/toothbrushes/miroooo-charging-dock-gift.jpg"
+                alt="Wall-Mounted Storage Dock Cradle"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Aluminium Travel Case
+              Wall-Mount Dock
             </p>
           </div>
 
-          {/* 2x DuPont Brush Heads */}
+          {/* MIROOOO Companion App Access */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -282,30 +282,30 @@ function GiftPanel({
               FREE
             </div>
             <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
+              href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free 2x DuPont Replacement Heads"
+              aria-label="View the Miroooo Brush X2 offer with free MIROOOO App Access"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £19.95
+                Normally £9
               </span>
               <img
                 src="/img/toothbrushes/miroooo-full-bundle.jpg"
-                alt="2x DuPont Brush Heads"
+                alt="MIROOOO Dental Care Companion App"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              2x DuPont Heads
+              MIROOOO App
             </p>
           </div>
         </div>
 
         <OfficialButton
-          href="https://www.trymiroooo.com/products/miroooo-x"
+          href="https://www.trymiroooo.com/products/miroooo-x2"
           targetId="miroooo-gift-panel"
           loadingTarget={loadingTarget}
           setLoadingTarget={setLoadingTarget}
@@ -620,7 +620,7 @@ function ComparisonMatrix({
           Side-by-Side Comparison Matrix
         </h2>
         <p className="text-slate-600 mt-2 text-base md:text-lg">
-          How the Miroooo Brush X compares against legacy models on key clinical &amp; daily benchmarks.
+          How the Miroooo Brush X2 compares against legacy models on key clinical &amp; daily benchmarks.
         </p>
       </div>
 
@@ -632,7 +632,7 @@ function ComparisonMatrix({
                 Feature / Metric
               </th>
               <th className="py-4 px-4 font-bold text-emerald-700 bg-emerald-50/70 text-base md:text-lg w-2/5 rounded-t-xl border-t-2 border-l-2 border-r-2 border-emerald-300">
-                Miroooo Brush X (£59)
+                Miroooo Brush X2 (£69)
               </th>
               <th className="py-4 px-4 font-bold text-slate-700 text-base md:text-lg w-1/3">
                 Competitor Standard
@@ -849,11 +849,11 @@ export default function ElectricToothbrushesAdvertorial({
               className="w-full h-auto object-contain pointer-events-none"
             />
 
-            {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space */}
+            {/* Layer 2: #1 Miroooo Brush X2 Card floating OVER the container space */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
-                src="/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp"
-                alt="Miroooo Brush X Electric Toothbrush"
+                src="/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp"
+                alt="Miroooo Brush X2 Electric Toothbrush"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
@@ -903,7 +903,7 @@ export default function ElectricToothbrushesAdvertorial({
                     gentle on gums while delivering a deep sonic clean. You
                     don&apos;t need to spend £200+ on heavy, clunky handles or
                     outdated 2-pin bathroom chargers to get a dentist-clean smile
-                    and 60+ days of battery life.
+                    and 90+ days of battery life.
                   </p>
                 )}
               </div>
@@ -958,7 +958,7 @@ export default function ElectricToothbrushesAdvertorial({
           <div className="bg-emerald-50 rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 border-emerald-200 mb-12 shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold text-emerald-950 font-serif mb-4 flex items-center gap-2">
               <Sparkles className="w-6 h-6 text-emerald-600 shrink-0" />
-              Key Findings &amp; Why Miroooo Brush X Took #1
+              Key Findings &amp; Why Miroooo Brush X2 Took #1
             </h3>
             <ul className="space-y-3">
               {guide.winnerBullets.map((bullet, idx) => (
@@ -1010,7 +1010,7 @@ export default function ElectricToothbrushesAdvertorial({
                     playsInline
                     preload="metadata"
                     poster="/assets/miroooo-dentist-verdict-poster.webp"
-                    aria-label="Dentist walkthrough of the Miroooo Brush X"
+                    aria-label="Dentist walkthrough of the Miroooo Brush X2"
                     onPlay={() => setIsVerdictVideoPlaying(true)}
                     onPause={() => setIsVerdictVideoPlaying(false)}
                     onEnded={() => setIsVerdictVideoPlaying(false)}
@@ -1039,7 +1039,7 @@ export default function ElectricToothbrushesAdvertorial({
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  Miroooo Brush X Electric Toothbrush
+                  Miroooo Brush X2 Electric Toothbrush
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
@@ -1063,7 +1063,7 @@ export default function ElectricToothbrushesAdvertorial({
                 </div>
 
                 <OfficialButton
-                  href="https://www.trymiroooo.com/products/miroooo-x"
+                  href="https://www.trymiroooo.com/products/miroooo-x2"
                   targetId="verdict-cta"
                   loadingTarget={loadingTarget}
                   setLoadingTarget={setLoadingTarget}
@@ -1084,7 +1084,7 @@ export default function ElectricToothbrushesAdvertorial({
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
         <a
-          href="https://www.trymiroooo.com/products/miroooo-x"
+          href="https://www.trymiroooo.com/products/miroooo-x2"
           rel="noopener noreferrer sponsored"
           data-testid="mobile-sticky-cta"
           onClick={(event) =>

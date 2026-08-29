@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "top 5 electric toothbrushes",
     "electric toothbrush reviews uk",
     "best electric toothbrush for sensitive gums",
+    "miroooo brush x2",
     "miroooo brush x",
     "oral b io series 6 review",
     "philips sonicare diamondclean 9000",

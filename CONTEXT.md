@@ -8471,5 +8471,72 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Publishing & Deployment Status**:
   - Ready for review. No git push or deployment executed without explicit user command.
 
+## Electric Toothbrush Migration: Miroooo Brush X to Miroooo Brush X2 (`https://www.trymiroooo.com/products/miroooo-x2`) - 29 August 2026
 
+- **User Intent & Protected Scope**:
+  - Migrate all electric toothbrush pages (1 main advertorial + 13 guide/comparison pages = 14 pages total) from Miroooo Brush X to the flagship Miroooo Brush X2.
+  - Update top floating comparison card image to `s2.webp` (`miroooo-brush-x2-electric-toothbrush-banner.webp`).
+  - Update #1 product card and review unboxing image to `s12.webp` (`miroooo-x2-electric-toothbrush.webp`).
+  - Update all #1 destination URLs and gift offer links to `https://www.trymiroooo.com/products/miroooo-x2`.
+  - Live Website Verified Data (`https://www.trymiroooo.com/products/miroooo-x2`):
+    - Price: **£69** (Compare at **£139**, 50% OFF).
+    - Multi-unit bundle tiers: Buy 2 at £64 each (£128), Buy 3 at £59 each (£177).
+    - Free Gifts: **£35 total value** (Luxury Travel Case £16, Wall-Mounted Storage Dock £10, MIROOOO Dental Care Companion App £9).
+    - Warranty: **3-Year Comprehensive Warranty** (explicit user instruction).
+    - Cleaning & Modes: 40,000 VPM acoustic motor, 45° Bass sweep guidance, 3 Halo LED modes (Mode 1 Clean / White LED, Mode 2 Whitening / Green LED, Mode 3 Deep / Blue LED).
+    - Battery: 90-day cobalt cell battery endurance with universal magnetic USB-C charging dock.
+    - Chassis: 51g aerospace aluminium unibody (Silver), IPX7 waterproof.
+  - Scope strictly locked: hair dryer, LED mask, grounding sheet, and pillow pages untouched. Competitors (Oral-B iO6 £129.99, Philips Sonicare 9000 £149.99, SURI Pro 2.0 £85, Oral-B iO3 £65) retain exact ranks, scores, pricing, images, and affiliate links.
+
+- **Starting & Ending Git State**:
+  - Starting commit: `3eafa09` on `main`.
+  - Ending commit: Working tree updated cleanly; all 67 routes compile and statically render.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/public/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp`: Deployed top hero upright brush image from `s2.webp`.
+  2. `apps/site/public/img/toothbrushes/miroooo-x2-electric-toothbrush.webp`: Deployed #1 product card unboxing image from `s12.webp`.
+  3. `img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp`: Root mirror asset.
+  4. `img/toothbrushes/miroooo-x2-electric-toothbrush.webp`: Root mirror asset.
+  5. `apps/site/src/data/toothbrushes.ts`:
+     - Updated `MIROOOO_X_DATASET` / `MIROOOO_X2_DATASET` with Brush X2 specs, £69 price, £139 compareAt, 3-Year warranty, £35 free gift bundle, 90-day cobalt battery, 40,000 VPM acoustic motor, 45° Bass sweep, Smart Pressure Halo Ring, Blue LED mode 3, IPX7 immersion waterproof, `https://www.trymiroooo.com/products/miroooo-x2` URL.
+     - Updated competitor con notes and review cross-references (Oral-B iO6, Philips Sonicare 9000, SURI Pro 2.0, Oral-B iO3) to compare against Miroooo Brush X2 (£69).
+  6. `apps/site/src/data/toothbrushGuides.ts`:
+     - Updated `MIROOOO_URL` to `https://www.trymiroooo.com/products/miroooo-x2`.
+     - Updated `MIROOOO_GIFT_BUNDLE` to £35 total value (Luxury Travel Case £16, Wall Dock £10, App £9).
+     - Updated image paths to `miroooo-x2-electric-toothbrush.webp` and `miroooo-brush-x2-electric-toothbrush-banner.webp`.
+     - Updated all 13 guide entries (Guides 1 to 13) across titles, subtitles, quickTakes, Dr. Olivia clinical verdict quotes and rationales, winner bullets, side-by-side comparison matrix rows, buyer decision blocks, product definitions, and FAQs with £69 price, £35 gift bundle, and 3-Year warranty.
+  7. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated GiftPanel with £35 Active Offer and 3 gifts (Luxury Travel Case £16, Wall Dock £10, App £9).
+     - Updated Hero Floating card image to `miroooo-brush-x2-electric-toothbrush-banner.webp` and alt text.
+     - Updated ComparisonMatrix header to `Miroooo Brush X2 (£69)`.
+     - Updated Winner highlights card header to `Why Miroooo Brush X2 Took #1`.
+     - Updated Dentist Verdict video aria-label and heading.
+     - Updated Dentist Verdict CTA button and Mobile Sticky bottom CTA to `https://www.trymiroooo.com/products/miroooo-x2`.
+     - Updated default criteria VPM to `40,000 VPM acoustic fluid dynamics with 45° Bass sweep` and battery to `(90+ days)`.
+  8. `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Updated exit popup CTA link to `https://www.trymiroooo.com/products/miroooo-x2?...`.
+     - Updated price text to `£69 instead of £139` (50% OFF).
+     - Updated copy to highlight Miroooo Brush X2 with 45° Bass sweep, smart pressure halo ring, and 90-day battery.
+  9. `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`:
+     - Added `"miroooo brush x2"` to page keywords.
+  10. `E:\1st YEAR DTU\New folder\MASTER_CONTEXT.md`:
+      - Updated persistent memory record for TrustpilotReview advertorial and sitelinks to reflect Miroooo Brush X2 flagship specifications.
+
+- **Mistakes & Corrections**:
+  - Live website inspection on `https://www.trymiroooo.com/products/miroooo-x2` corrected initial price assumptions from £79/£159 to live £69/£139, 3-year warranty, £35 bundle (Travel Case £16, Wall-Mounted Dock £10, MIROOOO App £9), and Blue LED Mode 3.
+  - Corrected testing methodology criteria VPM from legacy 32,000 VPM to 40,000 VPM with 45° Bass sweep.
+  - Verified no dangling `Miroooo Brush X`, £79, or £60.85 bundle references remain in any active electric toothbrush code or datasets.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 67 static routes generated cleanly.
+  - Visual Browser Verification via Chrome DevTools on `http://localhost:3001`:
+    - Verified `/best-electric-toothbrush-uk-2026`: Top hero image (`s2.webp`), Exit Popup (`£69 instead of £139`, 50% OFF, Brush X2 copy, CTA to `https://www.trymiroooo.com/products/miroooo-x2`), Gift Panel (£35 value, 3 free gifts), #1 Product card (`s12.webp`, £69 crossed from £139, 5 stars, 40,000 VPM, 45° Bass sweep, Blue LED mode, 3-year warranty, 90-day trial).
+    - Verified `/miroooo-vs-oral-b-io6`: Hero image, clinical criteria (£69 flagship with £35 bundle vs £129.99), side-by-side comparison matrix, winner bullets (3-year warranty).
+  - Scope lock verified: 0 modifications to hair dryer, LED mask, grounding sheet, or pillow pages.
+  - Competitor links, pricing, and ranks verified 100% intact.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Working directory clean of unverified files.
+  - No git commit, push, or deployment executed without explicit user instruction.
 
