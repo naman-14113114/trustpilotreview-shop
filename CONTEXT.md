@@ -8540,3 +8540,34 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Working directory clean of unverified files.
   - No git commit, push, or deployment executed without explicit user instruction.
 
+## Removal of "Explore All UK Electric Toothbrush Guides & Comparisons" Section - 30 August 2026
+
+- **User Intent & Protected Scope**:
+  - The user explicitly commanded the complete removal of the "Explore All UK Electric Toothbrush Guides & Comparisons" section positioned below the Dentist's Verdict video on the `/best-electric-toothbrush-uk-2026` page across all devices (desktop, tablet, mobile).
+  - Scope strictly locked: All other sections on `/best-electric-toothbrush-uk-2026` (Hero banner, Dr. Olivia bio & rationale, evaluation criteria, winner bullets, 5 ranked product cards, gift panel, Dentist's Verdict video & CTA, mobile sticky CTA, exit popup) remain 100% intact.
+  - Hair dryer, LED mask, grounding sheet, and pillow pages untouched. Competitors retain exact ranks, scores, pricing, images, and affiliate links.
+
+- **Starting & Ending Git State**:
+  - Starting commit: `761bcba` on `main` (clean working tree).
+  - Ending state: `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` modified cleanly with section and unused imports removed.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Removed `RelatedGuidesNav` component declaration and its JSX invocation (`<RelatedGuidesNav />`) positioned directly beneath the Dentist's Verdict video container.
+     - Cleaned up unused imports (`Link` from `next/link`, `toothbrushGuides`, `type ToothbrushGuideProduct`).
+  2. `CONTEXT.md`: Appended mandatory audit record.
+
+- **Mistakes & Corrections**:
+  - None. Clean removal of the unrequested guides grid below the video section on the main advertorial.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1718ms with 0 errors.
+  - Verified section is completely removed from all viewports/devices.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Changes made in local working tree.
+  - No git commit, push, or deployment executed without explicit user command.
+
+

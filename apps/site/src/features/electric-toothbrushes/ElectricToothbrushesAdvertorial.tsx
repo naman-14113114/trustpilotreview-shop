@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import Script from "next/script";
 import { motion } from "motion/react";
 import React, {
@@ -32,11 +31,7 @@ import {
   type ToothbrushMetric as Metric,
 } from "@/data/toothbrushes";
 
-import {
-  toothbrushGuides,
-  type ToothbrushGuide,
-  type ToothbrushGuideProduct,
-} from "@/data/toothbrushGuides";
+import { type ToothbrushGuide } from "@/data/toothbrushGuides";
 
 const defaultEvaluationCriteria = [
   "Deep cleaning & plaque removal (40,000 VPM acoustic fluid dynamics with 45° Bass sweep)",
@@ -728,42 +723,7 @@ function FaqSection({ faqs }: { faqs?: Array<{ question: string; answer: string 
   );
 }
 
-function RelatedGuidesNav() {
-  const guideEntries = Object.entries(toothbrushGuides);
 
-  return (
-    <nav aria-label="Related Toothbrush Guides" className="bg-slate-100 rounded-3xl p-6 md:p-10 border border-slate-200 my-16">
-      <div className="text-center max-w-2xl mx-auto mb-8">
-        <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif">
-          Explore All UK Electric Toothbrush Guides &amp; Comparisons
-        </h3>
-        <p className="text-slate-600 text-sm mt-1">
-          Detailed benchmarks, brand breakdowns, and clinical advice for 2026.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-        {guideEntries.map(([slug, g]) => (
-          <Link
-            key={slug}
-            href={`/${slug}`}
-            className="block bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group"
-          >
-            <span className="inline-block text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full mb-1.5">
-              {g.cardCode}
-            </span>
-            <h4 className="font-bold text-slate-900 group-hover:text-emerald-600 text-sm leading-snug line-clamp-2">
-              {g.cardTitle}
-            </h4>
-            <p className="text-xs text-slate-500 mt-1 line-clamp-2">
-              {g.cardDescription}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </nav>
-  );
-}
 
 export type ElectricToothbrushesAdvertorialProps = {
   guide?: ToothbrushGuide;
@@ -1077,8 +1037,7 @@ export default function ElectricToothbrushesAdvertorial({
           </div>
         </div>
 
-        {/* Related Toothbrush Guides Section */}
-        <RelatedGuidesNav />
+
       </main>
 
       {/* Sticky Mobile CTA */}
