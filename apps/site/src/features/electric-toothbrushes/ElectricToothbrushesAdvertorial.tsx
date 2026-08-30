@@ -5,7 +5,6 @@ import Script from "next/script";
 import { motion } from "motion/react";
 import React, {
   useEffect,
-  useRef,
   useState,
   type MouseEvent,
   type ReactNode,
@@ -15,7 +14,6 @@ import {
   CheckCircle2,
   ChevronRight,
   ChevronDown,
-  Play,
   ShieldCheck,
   XCircle,
   HelpCircle,
@@ -736,33 +734,11 @@ export default function ElectricToothbrushesAdvertorial({
     formatLondonDate(new Date()),
   );
   const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
-  const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
-  const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const displayProducts: RankedProduct[] =
     guide && guide.products && guide.products.length > 0
       ? (guide.products as RankedProduct[])
       : toothbrushProducts;
-
-  const playVerdictVideo = () => {
-    const video = verdictVideoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      video
-        .play()
-        .then(() => {
-          setIsVerdictVideoPlaying(true);
-        })
-        .catch(() => {
-          setIsVerdictVideoPlaying(false);
-        });
-      return;
-    }
-
-    video.pause();
-    setIsVerdictVideoPlaying(false);
-  };
 
   useEffect(() => {
     setUpdatedDate(formatLondonDate(new Date()));
@@ -823,8 +799,15 @@ export default function ElectricToothbrushesAdvertorial({
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
                 <Image
-                  src={guide?.drOliviaVerdict?.avatar || "/img/toothbrushes/dr-olivia.webp"}
-                  alt={guide?.drOliviaVerdict?.name || "Dr. Olivia"}
+                  src={
+                    guide?.drOliviaVerdict?.avatar ||
+                    "/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp"
+                  }
+                  alt={
+                    guide?.drOliviaVerdict?.name
+                      ? `${guide.drOliviaVerdict.name} - Clinical Dental Consultant & Oral Health Specialist`
+                      : "Dr. Olivia, BDS - Clinical Dental Consultant & Oral Health Specialist"
+                  }
                   width={96}
                   height={96}
                   priority
@@ -960,39 +943,16 @@ export default function ElectricToothbrushesAdvertorial({
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Left Video Area */}
-              <div className="relative">
-                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
-                  <video
-                    ref={verdictVideoRef}
-                    className="block w-full"
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster="/assets/miroooo-dentist-verdict-poster.webp"
-                    aria-label="Dentist walkthrough of the Miroooo Brush X2"
-                    onPlay={() => setIsVerdictVideoPlaying(true)}
-                    onPause={() => setIsVerdictVideoPlaying(false)}
-                    onEnded={() => setIsVerdictVideoPlaying(false)}
-                  >
-                    <source
-                      src="/assets/miroooo-dentist-verdict.mp4"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                  <button
-                    type="button"
-                    aria-label="Play dentist walkthrough video"
-                    onClick={playVerdictVideo}
-                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_14px_34px_rgba(16,185,129,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-emerald-400 ${
-                      isVerdictVideoPlaying
-                        ? "pointer-events-none opacity-0 scale-90"
-                        : "opacity-100 scale-100"
-                    }`}
-                  >
-                    <Play size={30} fill="currentColor" className="ml-1" />
-                  </button>
+              {/* Left Image Area */}
+              <div className="relative flex justify-center items-center">
+                <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
+                  <Image
+                    src="/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp"
+                    alt="Dr. Olivia holding Miroooo Brush X2 Electric Toothbrush in dental clinic - Dentist's Verdict"
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 

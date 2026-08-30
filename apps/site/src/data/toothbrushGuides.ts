@@ -122,7 +122,7 @@ const images = {
   mirooooWinner: "/img/toothbrushes/miroooo-x2-electric-toothbrush.webp",
   mirooooBanner: "/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp",
   topFive: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp",
-  drOlivia: "/img/toothbrushes/dr-olivia.webp",
+  drOlivia: "/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp",
   oralBiO6: "/img/toothbrushes/oral-b-io6-comparison.png",
   philipsSonicare: "/img/toothbrushes/philips-sonicare-comparison.png",
   suriSonic: "/img/toothbrushes/suri-sonic-comparison.png",

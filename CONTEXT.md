@@ -8570,4 +8570,57 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Changes made in local working tree.
   - No git commit, push, or deployment executed without explicit user command.
 
+## Dr. Olivia Profile Image & Dentist's Verdict 1:1 Image Migration Across All Electric Toothbrush Pages - 30 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the Dr. Olivia profile/avatar image on all electric toothbrush pages (1 main advertorial + 13 guide pages = 14 total pages) with `"E:\1st YEAR DTU\New folder\miroooo_images\Brush_Dr_image.webp"`.
+  - Replace the Dentist's Verdict video at the bottom of all electric toothbrush pages with `"E:\1st YEAR DTU\New folder\miroooo_images\Dr_verdict_image.webp"` in a clean 1:1 square aspect ratio (not video frame).
+  - Rename both images according to Miroooo SEO best practices and include complete alt text.
+  - Delete older avatar images (`dr-olivia.webp`, `dr-olivia.jpg`) and older verdict video assets (`miroooo-dentist-verdict.mp4`, `miroooo-dentist-verdict-poster.webp`, `miroooo-dentist-verdict-poster.jpg`).
+  - Keep doctor name ("Dr. Olivia, BDS"), qualifications, clinical rationales, quotes, and all page content unchanged.
+  - Execute minimal changes, verify visually in local browser, and push clean code to GitHub as explicitly instructed.
+  - Protected scope: Hair dryer, LED mask, grounding sheet, and pillow pages untouched. Competitor products, pricing, ratings, reviews, and affiliate links 100% preserved.
+
+- **Starting & Ending Git State**:
+  - Starting commit: `761bcba` on `main` (clean working tree).
+  - Ending commit: Committed and pushed to `origin/main`.
+
+- **Inspected & Changed Files**:
+  1. **New Image Assets Added & SEO Renamed**:
+     - `apps/site/public/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp` & `img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp` (Source: `Brush_Dr_image.webp`, 15 KB).
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp` & `img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp` (Source: `Dr_verdict_image.webp`, 51 KB).
+  2. **Obsolete Media Assets Deleted**:
+     - `apps/site/public/img/toothbrushes/dr-olivia.webp` & `img/toothbrushes/dr-olivia.webp`
+     - `apps/site/public/img/toothbrushes/dr-olivia.jpg` & `img/toothbrushes/dr-olivia.jpg`
+     - `apps/site/public/assets/miroooo-dentist-verdict.mp4` & `assets/miroooo-dentist-verdict.mp4`
+     - `apps/site/public/assets/miroooo-dentist-verdict-poster.webp` & `assets/miroooo-dentist-verdict-poster.webp`
+     - `apps/site/public/assets/miroooo-dentist-verdict-poster.jpg` & `assets/miroooo-dentist-verdict-poster.jpg`
+  3. **`apps/site/src/data/toothbrushGuides.ts`**:
+     - Updated `images.drOlivia` to `/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp`, automatically updating all 13 guide objects.
+  4. **`apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`**:
+     - Removed unused video imports (`Play`, `useRef`).
+     - Removed unused video playback state and handlers (`isVerdictVideoPlaying`, `verdictVideoRef`, `playVerdictVideo`).
+     - Updated Doctor profile avatar fallback `src` to `/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp` with full descriptive `alt` text.
+     - Replaced the bottom Dentist's Verdict `<video>` block with a 1:1 square `<Image>` component pointing to `/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp` with `alt="Dr. Olivia holding Miroooo Brush X2 Electric Toothbrush in dental clinic - Dentist's Verdict"` inside responsive 1:1 container (`max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl`).
+  5. `CONTEXT.md`: Appended mandatory audit record.
+
+- **Mistakes & Corrections**:
+  - None. Both image migrations were performed cleanly with exact SEO naming and 1:1 square CSS ratio constraints.
+
+- **Verification Performed**:
+  - 20 Subagents deployed across all 14 routes, asset verification, dead reference scanning, outbound CTAs, responsive layout, and typechecking.
+  - Dead reference scan confirmed 0 references to deleted files across the codebase.
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes with 0 errors.
+  - Visual Browser Verification via Chrome DevTools MCP on `http://localhost:3000`:
+    - Desktop & Mobile Viewports (375x812 iPhone / Desktop 1280x720):
+    - Verified `/best-electric-toothbrush-uk-2026`: Top Doctor avatar renders new Dr. Olivia image in circular avatar; bottom Dentist's Verdict renders 1:1 square image cleanly with "Miroooo Brush X2 Electric Toothbrush", "Now at 50% off", Trustpilot 4.9/5 stars, and "CHECK AVAILABILITY" CTA button.
+    - Verified `/miroooo-vs-oral-b-io6`: Doctor consultation section renders new avatar and clinical rationale; Dentist's Verdict renders 1:1 image and outbound button.
+  - Outbound CTA verification confirmed all Miroooo buttons resolve to `https://www.trymiroooo.com/products/miroooo-x2`.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Staged and committed clean changes on branch `main`.
+  - Pushed to remote `origin/main` per explicit user instruction.
+
+
 
