@@ -104,13 +104,13 @@ export const MIROOOO_GIFT_BUNDLE = {
       description: "Slim aerospace-grade travel protection case",
     },
     {
-      name: "Wall-Mounted Storage Dock",
+      name: "Wall-Mounted Storage",
       value: "£10",
       image: "/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp",
       description: "Seamless magnetic bathroom wall dock cradle",
     },
     {
-      name: "MIROOOO Companion App Access",
+      name: "Miroooo Dentalcare App",
       value: "£9",
       image: "/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp",
       description: "Smart dental care tracking and habit companion",
@@ -174,7 +174,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "When upgrading your electric toothbrush in the UK, the choice often comes down to two very different design philosophies: the high-tech, oscillating-rotating mechanical approach of legacy giants like Oral-B, or the ultra-modern, lightweight acoustic engineering of Miroooo Brush X2.",
       "The Oral-B iO Series 6 (£129.99) is renowned for its interactive OLED display, AI position recognition, and round mechanical brush head. However, it also brings classic legacy frustrations: a bulky 140g plastic handle, a loud 64dB oscillating gear whine, a short 14-day battery requiring an obsolete 2-pin bathroom shaver socket, and expensive replacement head prices (£8 to £12 each).",
-      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery on a magnetic USB-C charging dock, and an included £35 accessory bundle (luxury travel case, wall-mounted storage dock, and app access), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
+      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery on a magnetic USB-C charging dock, and an included £35 accessory bundle (Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
     ],
     criteria: [
       "Cleaning technology: 45° Bass sweep & acoustic fluid dynamics vs oscillating mechanical rotation",
@@ -189,7 +189,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Acoustic vs Friction: 45° Bass sweep micro-bubble fluid dynamics clean deep between teeth and beneath the gumline without abrasive mechanical scrubbing.",
       "Universal USB-C Charging: Up to 90 days of battery life on a magnetic dock completely removes the need for 2-pin bathroom shaver sockets.",
       "Whisper-Quiet Operation: Under 50dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
-      "Unbeatable Value: £69 purchase price includes a £35 free gift bundle (Travel Case £16, Wall-Mounted Dock £10, MIROOOO App £9), 90-day money-back guarantee, and 3-year warranty.",
+      "Unbeatable Value: £69 purchase price includes a £35 free gift bundle (Luxury Travel Case £16, Wall-Mounted Storage £10, Miroooo Dentalcare App £9), 90-day money-back guarantee, and 3-year warranty.",
     ],
     comparisonRows: [
       {
@@ -236,7 +236,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Smart App & Coaching",
-        miroooo: "Dental Care Companion App & Smart Pressure Halo Ring",
+        miroooo: "Miroooo Dentalcare App & Smart Pressure Halo Ring",
         competitor: "Oral-B App with AI tracking & OLED display",
         whyItMatters: "Both provide digital habit tracking; Oral-B adds on-handle screen feedback.",
         advantage: "competitor",
@@ -324,7 +324,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       quote:
         "High vibration frequencies alone do not guarantee effective plaque removal. Miroooo Brush X2's 45° Bass sweep physically angles micro-bubbles along the gingival sulcus, delivering superior subgingival clean with far better long-term reliability than Sonicare.",
       clinicalRationale:
-        "Philips Sonicare relies on linear 62,000 movements/min vibrations that can feel harsh and buzzing against the dentition without actually sweeping debris away from the gumline unless manually held at 45 degrees. The Miroooo Brush X2 automates this clinical sweep angle through precision acoustic dynamics. In addition, Philips DiamondClean models suffer high failure rates after 12–18 months due to internal vibrating magnetic shaft loosening and rubber gasket mold. Miroooo's CNC aerospace aluminium chassis and seamless unibody structure provide true IPX7 waterproofing with zero rattling points.",
+        "Philips Sonicare relies on linear 62,000 movements/min vibrations that can feel harsh and buzzing against the dentition without actually sweeping debris away from the gumline unless manually held at 45 degrees. The Miroooo Brush X2 automates this clinical sweep angle through precision acoustic dynamics. In addition, Philips DiamondClean models suffer high failure rates after 12–18 months due to internal vibrating magnetic shaft loosening and rubber gasket mould. Miroooo's CNC aerospace aluminium chassis and seamless unibody structure provide true IPX7 waterproofing with zero rattling points.",
       recommendation:
         "Skip the £149+ brand markup of the Sonicare DiamondClean 9000. Miroooo Brush X2 delivers superior 45° Bass sweep cleaning, 90-day cobalt battery convenience, active gumline pressure protection, and unmatched aerospace aluminium durability for £69.",
     },
@@ -344,13 +344,13 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Durability & Shaft Integrity: Miroooo Brush X2's aerospace aluminium unibody completely avoids Sonicare's notorious vibrating shaft loosening and rubber gasket degradation.",
       "45° Bass Sweep & Pressure Halo Ring: Automatically applies the dentist-recommended 45° sweep along the gumline with real-time visual LED halo feedback to prevent enamel and gum damage.",
       "Massive 90-Day Cobalt Cell Battery: Up to 90 days (180 uses) per charge on universal USB-C beats Sonicare's short 14-day battery and cumbersome 2-pin bathroom glass charger.",
-      "Hygienic IPX7 Aluminium Body: Seamless unibody design prevents black mold accumulation around composite joints and eliminates bathroom grime buildup.",
-      "Outstanding Flagship Value: £69 complete set with luxury travel case, dock mount, and app access vs £149.99–£249 for standalone Sonicare.",
+      "Hygienic IPX7 Aluminium Body: Seamless unibody design prevents black mould accumulation around composite joints and eliminates bathroom grime buildup.",
+      "Outstanding Flagship Value: £69 complete set with Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App vs £149.99–£249 for standalone Sonicare.",
     ],
     comparisonRows: [
       {
         feature: "Price & Accessories",
-        miroooo: "£69 (Includes £35 free bundle: Travel Case, Dock, App)",
+        miroooo: "£69 (Includes £35 free bundle: Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App)",
         competitor: "£149.99–£249 (RRP £349, Standalone)",
         whyItMatters: "Miroooo saves over £80–£180 upfront while including essential travel and charging accessories.",
         advantage: "miroooo",
@@ -415,7 +415,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want next-generation sonic cleaning with 45° Bass sweep motion, an active LED halo pressure sensor, massive 90-day cobalt battery life with USB-C charging, mold-resistant aerospace aluminium durability, and £80–£180 in upfront savings with a £35 free gift bundle for £69.",
+        body: "You want next-generation sonic cleaning with 45° Bass sweep motion, an active LED halo pressure sensor, massive 90-day cobalt battery life with USB-C charging, mould-resistant aerospace aluminium durability, and £80–£180 in upfront savings with a £35 free gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) for £69.",
       },
       {
         title: "Choose Philips Sonicare 9000 if...",
@@ -432,7 +432,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         ...toothbrushProducts[2],
         rank: 2,
-        bestFor: "Buyers who prioritize countertop luxury aesthetics and glass charging cups.",
+        bestFor: "Buyers who prioritise countertop luxury aesthetics and glass charging cups.",
       },
     ],
     faqs: [
@@ -454,7 +454,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Does Miroooo Brush X2 come with extra accessories?",
         answer:
-          "Yes. The active Miroooo Brush X2 promotion includes a £35 free gift bundle with a luxury travel case, wall-mounted storage dock, and app access, with affordable replacement heads available at approximately £3 per head.",
+          "Yes. The active Miroooo Brush X2 promotion includes a £35 free gift bundle with a Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App, with affordable replacement heads available at approximately £3 per head.",
       },
     ],
   },
@@ -483,35 +483,35 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       quote:
         "While SURI's plant-based initiative is admirable, cornstarch heads are notoriously prone to micro-cracking and stem loosening under sonic vibration. Miroooo Brush X2's DuPont Tynex 3D rounded bristles deliver reliable bristle geometry and superior plaque removal without head failure.",
       clinicalRationale:
-        "Plant-based brush heads made from cornstarch composite absorb moisture over time, leading to micro-fissures along the collar and loosening on the vibrating motor shaft. When a brush head loosens, acoustic energy is dissipated as noise and rattle rather than transferred to the teeth, reducing plaque cleaning efficacy. Furthermore, SURI offers only 2 basic cleaning modes and lacks a dedicated sensitive gum setting. Miroooo Brush X2 provides 3 clinically optimized halo LED modes with 45° Bass sweep guidance and diamond-cut DuPont Tynex bristles that maintain consistent stiffness and rounded tips to protect enamel.",
+        "Plant-based brush heads made from cornstarch composite absorb moisture over time, leading to micro-fissures along the collar and loosening on the vibrating motor shaft. When a brush head loosens, acoustic energy is dissipated as noise and rattle rather than transferred to the teeth, reducing plaque cleaning efficacy. Furthermore, SURI offers only 2 basic cleaning modes and lacks a dedicated sensitive gum setting. Miroooo Brush X2 provides 3 clinically optimised halo LED modes with 45° Bass sweep guidance and diamond-cut DuPont Tynex bristles that maintain consistent stiffness and rounded tips to protect enamel.",
       recommendation:
         "Miroooo Brush X2 provides a far more durable, effective, and reliable sonic clean. It delivers true long-lasting aluminium engineering with 90-day battery endurance without the fragile head compromises or £14.99/3-pack refill markups of SURI.",
     },
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
-      "The SURI Pro 2.0 (£85) emphasizes eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mold, and zero bonus accessories in the £85 box.",
-      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable DuPont Tynex 3D end-rounded bristles, 90-day cobalt battery on a magnetic USB-C dock, and an active promotion including a £35 gift bundle (travel case, wall dock, and app access).",
+      "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
+      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable DuPont Tynex 3D end-rounded bristles, 90-day cobalt battery on a magnetic USB-C dock, and an active promotion including a £35 gift bundle (Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App).",
     ],
     criteria: [
       "Brush head durability & material: Durable DuPont Tynex 3D bristles vs fragile plant-based cornstarch heads",
       "Weight & ergonomics: 51g precision unibody vs ~85g modular aluminium body",
       "Cleaning modes & guidance: 3 Halo LED modes with 45° Bass sweep vs 2 basic speeds (Everyday Clean, Polish)",
       "Battery runtime: 90-day cobalt cell magnetic USB-C dock vs 34–40 days",
-      "Bathroom hygiene: Compact magnetic dock vs sticky mirror mount prone to mold and residue",
+      "Bathroom hygiene: Compact magnetic dock vs sticky mirror mount prone to mould and residue",
       "Upfront price & bundle: £69 with £35 free gift bundle vs £85 standalone brush",
       "Refill head costs: Affordable DuPont replacements vs £14.99 per 3-pack (£5/head)",
     ],
     winnerBullets: [
       "No Cracked Heads: Miroooo Brush X2's DuPont Tynex heads eliminate the cracking and loose shaft issues common to SURI's cornstarch heads.",
-      "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless maneuverability.",
+      "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless manoeuvrability.",
       "45° Bass Sweep & Smart Halo Ring: Features 3 halo LED modes and active pressure warning, where SURI only offers 2 basic settings with no visual halo.",
       "Longer 90-Day Cobalt Battery: Lasts more than double the duration of SURI's 34–40 day battery on a single charge.",
-      "Better Bundle Value: £69 includes Luxury Travel Case (£16), Wall-Mounted Dock (£10), and MIROOOO App (£9) (£35 total value), while SURI charges £85 with no free accessories.",
+      "Better Bundle Value: £69 includes Luxury Travel Case (£16), Wall-Mounted Storage (£10), and Miroooo Dentalcare App (£9) (£35 total value), while SURI charges £85 with no free accessories.",
     ],
     comparisonRows: [
       {
         feature: "Price & Included Gifts",
-        miroooo: "£69 (Includes £35 free gift bundle: Travel Case, Dock, App)",
+        miroooo: "£69 (Includes £35 free gift bundle: Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App)",
         competitor: "£85 (Standalone brush, travel case sold separately)",
         whyItMatters: "Miroooo Brush X2 costs less while including £35 of essential accessories at zero extra charge.",
         advantage: "miroooo",
@@ -555,7 +555,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 45° Bass sweep guidance, smart pressure halo ring, 3 versatile halo modes, durable DuPont heads that never crack or loosen, 90 days battery life, and a complete £35 free accessory bundle for £69.",
+        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 45° Bass sweep guidance, smart pressure halo ring, 3 versatile halo modes, durable DuPont heads that never crack or loosen, 90 days battery life, and a complete £35 free accessory bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) for £69.",
       },
       {
         title: "Choose SURI Pro 2.0 if...",
@@ -613,17 +613,17 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       quote:
         "The Oral-B iO3 represents a false economy. To reach a lower price point, Oral-B removed the smart display and app coaching, but left patients stuck with a loud 136g plastic handle, a 16-hour 2-pin charge, and extortionate £8–£12 refill heads. Miroooo Brush X2 is superior in every clinical and practical metric.",
       clinicalRationale:
-        "Entry-level mechanical toothbrushes like the iO3 retain the aggressive mechanical oscillating gearbox of higher models, operating at a noisy 64dB that can feel jarring against dental restorations. More importantly, the iO3 locks buyers into proprietary iO replacement heads costing up to £48 per year. Miroooo Brush X2 uses gentle 45° Bass sweep acoustic fluid dynamics with DuPont Tynex 3D rounded bristles, protecting thinning enamel and gumlines while providing smart pressure halo guidance, companion app tracking, a lightweight 51g handle, and a 90-day cobalt cell battery.",
+        "Entry-level mechanical toothbrushes like the iO3 retain the aggressive mechanical oscillating gearbox of higher models, operating at a noisy 64dB that can feel jarring against dental restorations. More importantly, the iO3 locks buyers into proprietary iO replacement heads costing up to £48 per year. Miroooo Brush X2 uses gentle 45° Bass sweep acoustic fluid dynamics with DuPont Tynex 3D rounded bristles, protecting thinning enamel and gumlines while providing smart pressure halo guidance, Miroooo Dentalcare App tracking, a lightweight 51g handle, and a 90-day cobalt cell battery.",
       recommendation:
         "Do not pay £65 for a stripped-down plastic brush with an obsolete 2-pin charger. For just £4 more (£69), Miroooo Brush X2 delivers a true flagship experience with 45° Bass sweep cleaning, 90-day cobalt battery, smart pressure halo guidance, and a £35 gift bundle.",
     },
     intro: [
       "For UK shoppers evaluating electric toothbrushes around the £65–£70 price point, the market presents a stark contrast: a stripped-down entry-level plastic model from a legacy brand, or a fully loaded, precision-engineered acoustic flagship.",
       "The Oral-B iO3 Matt Black (£65, RRP £160) is designed as an accessible gateway into Oral-B's magnetic micro-vibration system. It includes a 360° smart pressure ring, 3 basic cleaning modes, and a hard travel case. However, to hit this price point, Oral-B stripped away the defining smart features of the iO line: there is no interactive OLED display screen, no Bluetooth app tracking, a dated 14-day battery that takes a sluggish 16 hours to charge via an obsolete 2-pin bathroom shaver socket, and proprietary iO refill heads that cost £8 to £12 each.",
-      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery on a magnetic USB-C dock, Dental Care Companion App connectivity, and an active £35 free gift bundle (luxury travel case, wall-mounted storage dock, and app access).",
+      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery on a magnetic USB-C dock, Miroooo Dentalcare App connectivity, and an active £35 free gift bundle (Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App).",
     ],
     criteria: [
-      "Smart features: Dental Care Companion App & Smart Pressure Halo Ring vs stripped-out hardware (No screen, No Bluetooth)",
+      "Smart features: Miroooo Dentalcare App & Smart Pressure Halo Ring vs stripped-out hardware (No screen, No Bluetooth)",
       "Ergonomics & weight: 51g aerospace aluminium unibody vs ~136g chunky matte plastic handle",
       "Battery runtime & charging speed: 90-day cobalt cell magnetic USB-C vs 14 days with 16-hour 2-pin charge",
       "Noise level: <50dB whisper quiet vs ~64dB mechanical gear vibration",
@@ -631,23 +631,23 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Total package value: £69 with £35 gift bundle vs £65 base brush with 1 head",
     ],
     winnerBullets: [
-      "Flagship Smart Guidance: Miroooo Brush X2 integrates a 360° smart pressure halo ring (with 3 halo LED modes) and Dental Care Companion App tracking, whereas Oral-B stripped all Bluetooth and app tracking from the iO3.",
-      "Premium Aerospace Aluminium: Seamless mold-resistant metal chassis replaces the bulky 136g polycarbonate and rubber grime traps of the iO3.",
+      "Flagship Smart Guidance: Miroooo Brush X2 integrates a 360° smart pressure halo ring (with 3 halo LED modes) and Miroooo Dentalcare App tracking, whereas Oral-B stripped all Bluetooth and app tracking from the iO3.",
+      "Premium Aerospace Aluminium: Seamless mould-resistant metal chassis replaces the bulky 136g polycarbonate and rubber grime traps of the iO3.",
       "90-Day Cobalt Cell Power: Fast magnetic USB-C charging delivers 3 full months of runtime, eliminating the iO3's 16-hour 2-pin bathroom shaver marathon.",
       "45° Bass Sweep Acoustic Cleaning: Whisper-quiet (<50dB) micro-vibrations clean subgingivally without the harsh 64dB gear buzzing and jaw rattle of the iO3.",
-      "Superior Value & Refill Savings: The £69 package includes a £35 gift bundle (travel case, wall-mounted dock, app access) and spares owners from £32–£48/year iO replacement head markups.",
+      "Superior Value & Refill Savings: The £69 package includes a £35 gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) and spares owners from £32–£48/year iO replacement head markups.",
     ],
     comparisonRows: [
       {
         feature: "Price & Free Gifts",
-        miroooo: "£69 (Includes £35 bundle: Travel Case, Dock, App)",
+        miroooo: "£69 (Includes £35 bundle: Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App)",
         competitor: "£65 (Includes 1 brush head & basic travel case)",
-        whyItMatters: "Miroooo Brush X2 includes £35 of premium accessories (travel case, wall dock, app access) whereas Oral-B provides only 1 head and a 2-pin plug.",
+        whyItMatters: "Miroooo Brush X2 includes £35 of premium accessories (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) whereas Oral-B provides only 1 head and a 2-pin plug.",
         advantage: "miroooo",
       },
       {
         feature: "Smart App & Coaching",
-        miroooo: "Dental Care Companion App + Smart Pressure Halo Ring",
+        miroooo: "Miroooo Dentalcare App + Smart Pressure Halo Ring",
         competitor: "No Bluetooth, No App, No OLED Display",
         whyItMatters: "Oral-B stripped all smart tracking hardware from the iO3 to cut costs, while Miroooo X2 provides real-time halo visual guidance and app tracking.",
         advantage: "miroooo",
@@ -677,7 +677,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery on magnetic USB-C, companion app habit tracking, aerospace aluminium unibody, and a £35 free gift bundle for £69.",
+        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery on magnetic USB-C, Miroooo Dentalcare App habit tracking, aerospace aluminium unibody, and a £35 free gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) for £69.",
       },
       {
         title: "Choose Oral-B iO3 if...",
@@ -701,12 +701,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Does the Oral-B iO3 connect to the Oral-B app?",
         answer:
-          "No. Unlike the iO6, iO7, iO8, and iO9 models, the iO3 has no Bluetooth chip and cannot connect to the Oral-B app for real-time coverage mapping. Miroooo Brush X2 includes full connectivity with the Dental Care Companion App along with a built-in smart pressure sensor halo ring.",
+          "No. Unlike the iO6, iO7, iO8, and iO9 models, the iO3 has no Bluetooth chip and cannot connect to the Oral-B app for real-time coverage mapping. Miroooo Brush X2 includes full connectivity with the Miroooo Dentalcare App along with a built-in smart pressure sensor halo ring.",
       },
       {
         question: "Why does the Oral-B iO3 take 16 hours to charge?",
         answer:
-          "The iO3 uses a basic inductive charging base with a low current output designed for UK 2-pin bathroom shaver sockets. Miroooo Brush X2 utilizes modern magnetic USB-C fast charging that delivers 90 days of cobalt cell runtime in a fraction of the time.",
+          "The iO3 uses a basic inductive charging base with a low current output designed for UK 2-pin bathroom shaver sockets. Miroooo Brush X2 utilises modern magnetic USB-C fast charging that delivers 90 days of cobalt cell runtime in a fraction of the time.",
       },
     ],
   },
@@ -733,7 +733,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
-        "The electric toothbrush industry has been slow to modernise. Legacy brands continue selling bulky plastic handles and charging excessive refill prices. The shift toward 51g aerospace aluminium acoustic brushes with 90-day USB-C batteries and 45° Bass sweep guidance is the most positive development in UK consumer oral health in a decade.",
+        "The electric toothbrush industry has been slow to modernise. Legacy brands continue selling bulky plastic handles and charging excessive refill prices. The shift towards 51g aerospace aluminium acoustic brushes with 90-day USB-C batteries and 45° Bass sweep guidance is the most positive development in UK consumer oral health in a decade.",
       clinicalRationale:
         "From a clinical perspective, patient compliance is the single most important factor in preventing periodontitis and caries. When a toothbrush is uncomfortably heavy (140g), annoyingly loud (65dB), or frequently runs out of battery because charging requires a 2-pin socket in another room, patients cut their brushing sessions short. Miroooo Brush X2 eliminates all these friction points: its 51g unibody feels weightless, its 45° Bass sweep acoustic fluid dynamics sweep plaque effortlessly, its smart pressure halo ring prevents gum recession, and its 90-day USB-C battery ensures it is always ready to use.",
       recommendation:
@@ -763,7 +763,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         feature: "Chassis Material & Weight",
         miroooo: "51g (Aerospace aluminium unibody, IPX7 waterproof)",
         competitor: "135g – 140g (Heavy plastic & rubber)",
-        whyItMatters: "Metal unibodies resist drops and mold while feeling featherlight in hand.",
+        whyItMatters: "Metal unibodies resist drops and mould while feeling featherlight in hand.",
         advantage: "miroooo",
       },
       {
@@ -798,7 +798,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         feature: "Included Gifts & Trial",
         miroooo: "£35 free bundle included + 90-day trial",
         competitor: "£0 free gifts + standard 30-day retail return",
-        whyItMatters: "Total risk reversal with free travel case, wall dock, and app access.",
+        whyItMatters: "Total risk reversal with free Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App.",
         advantage: "miroooo",
       },
     ],
@@ -809,7 +809,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "How Modern Acoustic Engineering Solves Them All",
-        body: "Miroooo Brush X2 was designed from a blank slate to eliminate all 5 legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery on magnetic USB-C, and an included £35 gift bundle for £69.",
+        body: "Miroooo Brush X2 was designed from a blank slate to eliminate all 5 legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery on magnetic USB-C, and an included £35 gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) for £69.",
       },
     ],
     products: toothbrushProducts,
@@ -876,7 +876,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Featherlight 51g unibody design is over 62% lighter than Oral-B iO (140g) and Sonicare (135g).",
       "CNC-machined aerospace aluminium handle offers an ultra-slim profile with superior tactile grip.",
       "Delivers 45° Bass sweep acoustic plaque removal with smart pressure halo ring protection.",
-      "Includes a £35 complimentary bundle: Luxury Travel Case, Wall-Mounted Dock, and MIROOOO App at £69.",
+      "Includes a £35 complimentary bundle: Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App at £69.",
     ],
     comparisonRows: [
       {
@@ -890,7 +890,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         feature: "Chassis Material",
         miroooo: "100% CNC Aerospace Aluminium Unibody (IPX7 waterproof)",
         competitor: "Polycarbonate plastic with porous rubber grips",
-        whyItMatters: "Aluminium delivers structural strength at a fraction of plastic's bulk, resisting drops and mold.",
+        whyItMatters: "Aluminium delivers structural strength at a fraction of plastic's bulk, resisting drops and mould.",
         advantage: "miroooo",
       },
       {
@@ -977,7 +977,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Industry-leading 90-day runtime on a single charge—requires only ~4 charges per calendar year.",
       "Magnetic USB-C charging dock eliminates outdated, bulky 2-pin British shaver socket adapters.",
       "High-density cobalt cell maintains full acoustic motor speed until the final brushing session.",
-      "Comes with active £35 Free Gift Bundle including Luxury Travel Case (£16) and Wall-Mounted Dock (£10).",
+      "Comes with active £35 Free Gift Bundle including Luxury Travel Case (£16), Wall-Mounted Storage (£10), and Miroooo Dentalcare App (£9).",
     ],
     comparisonRows: [
       {
@@ -1067,7 +1067,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Operates below 50dB—over 15dB quieter than mechanical oscillating brushes (Oral-B iO).",
       "Magnetic acoustic motor eliminates gear-on-gear friction for a smooth, vibration-free sensation.",
       "45° Bass sweep motion creates dynamic fluid action that cleans between tight teeth silently.",
-      "Includes £35 free accessory bundle (Travel Case, Wall Dock, App) backed by a 90-day trial at £69.",
+      "Includes £35 free accessory bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) backed by a 90-day trial at £69.",
     ],
     comparisonRows: [
       {
@@ -1108,42 +1108,42 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "DURABLE",
     cardTitle: "Most Durable Electric Toothbrush",
     cardDescription:
-      "100% mold-resistant CNC aerospace aluminium unibody, IPX7 waterproof and 3-year warranty vs peeling rubber and brittle plastic.",
-    seoTitle: "Most Durable Electric Toothbrush UK 2026 | Mold-Resistant Aluminium Benchmark",
+      "100% mould-resistant CNC aerospace aluminium unibody, IPX7 waterproof and 3-year warranty vs peeling rubber and brittle plastic.",
+    seoTitle: "Most Durable Electric Toothbrush UK 2026 | Mould-Resistant Aluminium Benchmark",
     seoDescription:
-      "Compare the most durable electric toothbrushes in the UK for 2026. Ranked for CNC aerospace aluminium unibody build, IPX7 waterproofing, mold resistance, and drop protection.",
+      "Compare the most durable electric toothbrushes in the UK for 2026. Ranked for CNC aerospace aluminium unibody build, IPX7 waterproofing, mould resistance, and drop protection.",
     eyebrow: "Build Quality & Durability Benchmark",
     headline: "Most Durable Electric Toothbrush UK 2026",
     subheadline:
-      "We stress-tested chassis materials, mold resistance, water seals and drop durability. The Miroooo Brush X2 wins #1 with its 100% CNC aerospace aluminium unibody, IPX7 waterproofing and 3-year warranty.",
+      "We stress-tested chassis materials, mould resistance, water seals and drop durability. The Miroooo Brush X2 wins #1 with its 100% CNC aerospace aluminium unibody, IPX7 waterproofing and 3-year warranty.",
     heroImage: images.topFive,
     heroAlt: "Most durable electric toothbrushes in the UK compared",
     quickTake:
-      "Most electric toothbrushes are made of cheap composite plastic with porous rubber grips that peel, harbour black mold, and crack when dropped on hard bathroom tiles. The Miroooo Brush X2 is precision-milled from a single block of aerospace aluminium with zero rubber seams, offering total mold resistance, IPX7 immersion waterproofing, and years of drop-proof reliability.",
+      "Most electric toothbrushes are made of cheap composite plastic with porous rubber grips that peel, harbour black mould, and crack when dropped on hard bathroom tiles. The Miroooo Brush X2 is precision-milled from a single block of aerospace aluminium with zero rubber seams, offering total mould resistance, IPX7 immersion waterproofing, and years of drop-proof reliability.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
-        "Damp UK bathrooms are notorious for breeding black mold in porous rubber toothbrush seams. A solid aerospace aluminium unibody is completely non-porous, ensuring medical-grade hygiene and multi-year durability.",
+        "Damp UK bathrooms are notorious for breeding black mould in porous rubber toothbrush seams. A solid aerospace aluminium unibody is completely non-porous, ensuring medical-grade hygiene and multi-year durability.",
       clinicalRationale:
-        "During routine check-ups, I regularly inspect toothbrushes brought in by patients. Over 70% of plastic toothbrushes with soft-touch rubber grips exhibit black mold colonies nestled inside rubber crevices and around charging pins. This fungal biofilm poses genuine oral and respiratory hygiene risks. An aerospace aluminium unibody with an IPX7 waterproof rating provides a sterile, impermeable surface that can be wiped clean in seconds, resisting bacterial adhesion and water ingress permanently.",
+        "During routine check-ups, I regularly inspect toothbrushes brought in by patients. Over 70% of plastic toothbrushes with soft-touch rubber grips exhibit black mould colonies nestled inside rubber crevices and around charging pins. This fungal biofilm poses genuine oral and respiratory hygiene risks. An aerospace aluminium unibody with an IPX7 waterproof rating provides a sterile, impermeable surface that can be wiped clean in seconds, resisting bacterial adhesion and water ingress permanently.",
       recommendation:
-        "For long-term build quality, mold resistance, and drop durability, Miroooo Brush X2 is our top recommendation.",
+        "For long-term build quality, mould resistance, and drop durability, Miroooo Brush X2 is our top recommendation.",
     },
     intro: [
-      "Bathrooms in the UK are humid, wet environments where plastic and rubber toothbrushes quickly degrade. Over months of daily use, soapy water and toothpaste slurry seep into rubberized button seams, breeding unsightly black mildew that is impossible to clean.",
+      "Bathrooms in the UK are humid, wet environments where plastic and rubber toothbrushes quickly degrade. Over months of daily use, soapy water and toothpaste slurry seep into rubberised button seams, breeding unsightly black mildew that is impossible to clean.",
       "Furthermore, traditional plastic handles are brittle. A single accidental drop from a bathroom vanity onto porcelain tiles often cracks the casing or loosens the internal vibrating shaft.",
-      "In our 2026 durability benchmark, the Miroooo Brush X2 set a new industry standard. Crafted from aircraft-grade CNC aerospace aluminium with an IPX7 waterproof rating and backed by a comprehensive 3-year warranty, it completely eliminates mold seams and withstands heavy daily use.",
+      "In our 2026 durability benchmark, the Miroooo Brush X2 set a new industry standard. Crafted from aircraft-grade CNC aerospace aluminium with an IPX7 waterproof rating and backed by a comprehensive 3-year warranty, it completely eliminates mould seams and withstands heavy daily use.",
     ],
     criteria: [
       "Chassis material resistance to drops, cracks, and structural fatigue",
-      "Mold and mildew prevention in humid bathroom environments",
+      "Mould and mildew prevention in humid bathroom environments",
       "IPX7 waterproof immersion rating and internal electronic sealing",
       "Shaft vibration stability over 1,000+ continuous brushing cycles",
       "Warranty duration and manufacturer replacement coverage",
     ],
     winnerBullets: [
       "100% CNC Aerospace Aluminium Unibody: Solid metal construction eliminates cracking and fragile plastic joints.",
-      "Zero Rubber Grime Traps: Smooth anodized surface naturally repels moisture, limescale, and black bathroom mold.",
+      "Zero Rubber Grime Traps: Smooth anodised surface naturally repels moisture, limescale, and black bathroom mould.",
       "IPX7 Immersion Waterproof: Completely safe for shower use and direct faucet rinsing.",
       "Comprehensive 3-Year UK Warranty: Full manufacturer protection backed by a 90-day money-back guarantee.",
     ],
@@ -1156,7 +1156,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         advantage: "miroooo",
       },
       {
-        feature: "Mold & Mildew Resistance",
+        feature: "Mould & Mildew Resistance",
         miroooo: "Naturally non-porous, wipe-clean surface",
         competitor: "Traps black mildew in rubber seams & base crevices",
         whyItMatters: "Prevents toxic fungal buildup around charging ports and handle grips.",
@@ -1173,7 +1173,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Best for Multi-Year Durability & Clean Hygiene",
-        body: "Choose the Miroooo Brush X2 if you are tired of moldy rubber grips, cracked plastic handles, and loose vibrating shafts, and want a medical-grade aerospace aluminium brush built to last.",
+        body: "Choose the Miroooo Brush X2 if you are tired of mouldy rubber grips, cracked plastic handles, and loose vibrating shafts, and want a medical-grade aerospace aluminium brush built to last.",
       },
     ],
     products: toothbrushProducts,
@@ -1181,7 +1181,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Does the aluminium body rust or corrode in the bathroom?",
         answer:
-          "No. The Miroooo Brush X2 is crafted from anodized aerospace-grade aluminium, which creates an impermeable protective oxide layer that is 100% corrosion-proof, rust-proof, and water-resistant.",
+          "No. The Miroooo Brush X2 is crafted from anodised aerospace-grade aluminium, which creates an impermeable protective oxide layer that is 100% corrosion-proof, rust-proof, and water-resistant.",
       },
     ],
   },
@@ -1208,20 +1208,20 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
-        "Dentinal hypersensitivity affects over 35% of UK adults. Harsh mechanical oscillation acts like sandpaper against exposed dentin. Miroooo Brush X2's 45° Bass sweep and smart pressure sensor halo ring actively protect exposed roots and delicate gingival margins.",
+        "Dentinal hypersensitivity affects over 35% of UK adults. Harsh mechanical oscillation acts like sandpaper against exposed dentine. Miroooo Brush X2's 45° Bass sweep and smart pressure sensor halo ring actively protect exposed roots and delicate gingival margins.",
       clinicalRationale:
         "When enamel thins or gums recede along the cemento-enamel junction (CEJ), open dentinal tubules transmit pain directly to the pulp nerve. Mechanical oscillating brushes exert harsh shear stress on root surfaces. Miroooo Brush X2's calibrated 45° Bass sweep motion and diamond-cut DuPont rounded bristles lift biofilm without scratching enamel, while its integrated smart pressure halo ring flashes a red warning light if you press too hard, preventing enamel abrasion and gum recession in real time.",
       recommendation:
-        "For patients suffering from sensitive teeth, dentin exposure, or early gingival recession, I recommend switching to the Miroooo Brush X2.",
+        "For patients suffering from sensitive teeth, dentine exposure, or early gingival recession, I recommend switching to the Miroooo Brush X2.",
     },
     intro: [
-      "Brushing sensitive teeth shouldn't feel like an endurance test. Millions of UK adults struggle with sharp sensitivity caused by exposed dentin, enamel erosion, and receding gum margins. Yet many continue using aggressive rotary electric toothbrushes that exacerbate the problem.",
+      "Brushing sensitive teeth shouldn't feel like an endurance test. Millions of UK adults struggle with sharp sensitivity caused by exposed dentine, enamel erosion, and receding gum margins. Yet many continue using aggressive rotary electric toothbrushes that exacerbate the problem.",
       "In our 2026 clinical review, we evaluated top electric toothbrushes against key sensitivity benchmarks: bristle end-rounding, acoustic frequency gentleness, smart pressure feedback, handle ergonomics, and long-term gum margin safety. Miroooo Brush X2 emerged as our top clinical recommendation.",
     ],
     criteria: [
       "Bristle Geometry & End-Rounding (DuPont 3D diamond-cut filaments)",
       "45° Bass Sweep & Soft Mode Calibration (Acoustic micro-bubble fluid dynamics)",
-      "Active Pressure Defense (Smart pressure sensor halo ring with red LED alert)",
+      "Active Pressure Defence (Smart pressure sensor halo ring with red LED alert)",
       "Handle Weight & Ergonomic Pressure Relief (51g unibody preventing excess downward force)",
       "Affordable Sensitive Replacement Heads (Included £35 gift bundle)",
     ],
@@ -1230,7 +1230,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Active Smart Pressure Halo Ring: Flashes a red LED warning when excessive force is detected, actively halting gum recession.",
       "DuPont 3D Diamond-Cut Bristles: End-rounded filaments protect exposed dentinal tubules and fragile enamel prisms.",
       "Ultra-Light 51g Aluminium Handle: Prevents involuntary downward clenching and eliminates wrist torque during brushing.",
-      "£69 Flagship Package: Includes £35 gift bundle (Travel Case, Wall Dock, App Access) plus 90-day home trial and 3-year warranty.",
+      "£69 Flagship Package: Includes £35 gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) plus 90-day home trial and 3-year warranty.",
     ],
     comparisonRows: [
       {
@@ -1241,9 +1241,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         advantage: "miroooo",
       },
       {
-        feature: "Pressure Defense",
+        feature: "Pressure Defence",
         miroooo: "Active Smart Pressure Sensor Halo Ring (Red LED Alert)",
-        competitor: "Basic handle rumble or no pressure indicator",
+        competitor: "Basic handle rumble or no pressure defence",
         whyItMatters: "Visual halo alert immediately stops users from pushing bristles into receding gums.",
         advantage: "miroooo",
       },
@@ -1302,7 +1302,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     eyebrow: "Orthodontic & Bracket Care Guide",
     headline: "Best Electric Toothbrush for Braces UK 2026",
     subheadline:
-      "Orthodontic appliances increase plaque retention by over 300%. We evaluated 5 top electric toothbrushes for bracket safety, interdental fluid action, and demineralization defense.",
+      "Orthodontic appliances increase plaque retention by over 300%. We evaluated 5 top electric toothbrushes for bracket safety, interdental fluid action, and demineralisation defence.",
     heroImage: images.topFive,
     heroAlt: "Best electric toothbrushes for train track braces, ceramic brackets and aligners in the UK",
     quickTake:
@@ -1323,16 +1323,16 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     criteria: [
       "Acoustic Micro-Bubble Fluid Dynamics (45° Bass sweep cavitation reaching behind archwires)",
       "Bracket Safety & Zero Snagging Risk (Linear acoustic sweep with zero rotating cams)",
-      "White Spot & Demineralization Prevention (High plaque shear stress around bracket margins)",
+      "White Spot & Demineralisation Prevention (High plaque shear stress around bracket margins)",
       "Handle Agility & Molar Access (51g slim unibody navigating posterior brackets)",
       "On-The-Go Portability & Battery (90-day battery with aluminium travel case for post-meal cleaning)",
     ],
     winnerBullets: [
       "45° Bass sweep acoustic fluid dynamics flushes plaque and food particles from behind archwires and brackets.",
       "Linear non-rotational motion eliminates the risk of catching bracket wings, loosening cement, or snapping elastics.",
-      "DuPont 3D end-rounded bristles clean thoroughly around hardware without scratching demineralized enamel.",
-      "Ultra-slim 51g aerospace aluminium body provides agile maneuverability around posterior brackets.",
-      "£69 bundle includes Luxury Travel Case (£16), Wall-Mounted Dock (£10), and MIROOOO App Access (£9) (£35 total value) for on-the-go meals.",
+      "DuPont 3D end-rounded bristles clean thoroughly around hardware without scratching demineralised enamel.",
+      "Ultra-slim 51g aerospace aluminium body provides agile manoeuvrability around posterior brackets.",
+      "£69 bundle includes Luxury Travel Case (£16), Wall-Mounted Storage (£10), and Miroooo Dentalcare App (£9) (£35 total value) for on-the-go meals.",
     ],
     comparisonRows: [
       {
@@ -1351,7 +1351,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "On-The-Go Portability",
-        miroooo: "51g Body + Travel Case + 90-Day Battery Dock",
+        miroooo: "51g Body + Luxury Travel Case + 90-Day Battery Dock",
         competitor: "140g Heavy Body + Bulky 2-Pin Shaver Stand",
         whyItMatters: "Braces wearers must brush after meals outside the home; USB-C portability is essential.",
         advantage: "miroooo",
@@ -1385,7 +1385,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "TRAVEL",
     cardTitle: "Best Travel Electric Toothbrush UK 2026",
     cardDescription:
-      "51g featherlight unibody, included free luxury travel case (£16), 90-day cobalt battery with USB-C magnetic dock, zero 2-pin shaver adapters.",
+      "51g featherlight unibody, included free Luxury Travel Case (£16), 90-day cobalt battery with USB-C magnetic dock, zero 2-pin shaver adapters.",
     seoTitle: "Best Travel Electric Toothbrush UK 2026 | Top 5 Portable Brushes Compared",
     seoDescription:
       "Compare the best travel electric toothbrushes in the UK for 2026. Ranked for lightweight portability (51g), 90-day cobalt battery life, USB-C charging, travel cases, and travel-friendly sonic power.",
@@ -1417,15 +1417,15 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Universal USB-C Charging (Zero bulky UK 2-pin bathroom shaver plugs or converter adapters needed)",
       "Travel Case & Hygiene Protection (Included aluminium travel case to shield DuPont bristles in luggage)",
       "Motor Noise & Discretion (<50dB whisper quiet for hotels, early mornings, and shared bathrooms)",
-      "Price & Complete Travel Kit Value (£69 with complete £35 travel bundle vs £85–£149 bare brushes)",
+      "Price & Complete Travel Kit Value (£69 with complete £35 gift bundle vs £85–£149 bare brushes)",
     ],
     winnerBullets: [
       "Featherlight 51g aerospace aluminium handle weighs less than half of legacy Oral-B and Sonicare handles.",
       "Massive 90-day cobalt cell battery life means you can take 3-month trips without even packing the magnetic charging base.",
-      "Includes a complimentary slim luxury travel case (worth £16) that protects the handle and brush heads from washbag bacteria.",
+      "Includes a complimentary slim Luxury Travel Case (worth £16) that protects the handle and brush heads from washbag bacteria.",
       "Universal USB-C magnetic dock eliminates bulky UK 2-pin bathroom shaver adapters and foreign socket converters.",
       "Acoustic motor operates below 50dB with 45° Bass sweep for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
-      "Promotional price of £69 includes a full £35 gift bundle (travel case, wall dock, app access) backed by a 90-day money-back guarantee.",
+      "Promotional price of £69 includes a full £35 gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) backed by a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
@@ -1451,7 +1451,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Travel Case Quality & Inclusion",
-        miroooo: "Premium slim aerospace aluminium travel case included FREE (£16 value)",
+        miroooo: "Luxury Travel Case included FREE (£16 value)",
         competitor: "Cheap plastic clamshell case or sold separately as £20+ add-on",
         whyItMatters: "Protects expensive heads and motor shafts from crushing, dirt, and bacteria in transit.",
         advantage: "miroooo",
@@ -1496,13 +1496,13 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.mirooooBanner,
     heroAlt: "Miroooo Brush X2 electric toothbrush review and unboxing banner UK",
     quickTake:
-      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included £35 free gift bundle (luxury travel case, wall-mounted dock, app access), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
+      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included £35 free gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "The Miroooo Brush X2 addresses both major patient complaints: heavy cumbersome handles that encourage aggressive gripping and abrasive mechanical brush heads that cause gingival recession. Its 45° Bass sweep acoustic motor, smart pressure sensor halo ring, and 51g aerospace aluminium unibody deliver dentist-clean plaque removal with supreme gumline gentleness.",
       clinicalRationale:
-        "In over 14 years of clinical practice in the UK, the Miroooo Brush X2 represents the most refined consumer sonic toothbrush tested. Its acoustic motor with 45° Bass sweep produces optimal fluid cavitation to disrupt subgingival biofilm without damaging enamel. Meanwhile, its 51g aerospace aluminium unibody reduces hand strain by over 60%, and the active LED halo pressure sensor immediately prevents excessive force. Paired with soft diamond-cut DuPont rounded bristles and the Dental Care Companion App, it is a clinical triumph for everyday gum health.",
+        "In over 14 years of clinical practice in the UK, the Miroooo Brush X2 represents the most refined consumer sonic toothbrush tested. Its acoustic motor with 45° Bass sweep produces optimal fluid cavitation to disrupt subgingival biofilm without damaging enamel. Meanwhile, its 51g aerospace aluminium unibody reduces hand strain by over 60%, and the active LED halo pressure sensor immediately prevents excessive force. Paired with soft diamond-cut DuPont rounded bristles and the Miroooo Dentalcare App, it is a clinical triumph for everyday gum health.",
       recommendation:
         "Backed by 4,275+ verified 4.9★ UK customer reviews, a 90-day money-back guarantee, and a 3-year warranty, Miroooo Brush X2 is our #1 ranked electric toothbrush for 2026.",
     },
@@ -1513,11 +1513,11 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     ],
     criteria: [
       "Sonic Motor Power & Plaque Disruption (45° Bass sweep acoustic magnetic motor)",
-      "Pressure Defense (Smart pressure sensor halo ring with visual red alert)",
+      "Pressure Defence (Smart pressure sensor halo ring with visual red alert)",
       "Acoustic Noise & Vibration Dampening (<50dB whisper-quiet operation benchmark)",
       "Ergonomics & Handle Weight (51g featherlight aerospace aluminium unibody)",
       "Battery Performance & Charging Interface (90 days with magnetic USB-C dock)",
-      "Unboxing & Bundle Value (£35 free gifts: travel case, wall-mounted dock, app access)",
+      "Unboxing & Bundle Value (£35 free gifts: Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App)",
       "Consumer Protection & Warranty (90-day money-back guarantee & 3-year manufacturer warranty)",
     ],
     winnerBullets: [
@@ -1526,7 +1526,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Weighs only 51g — more than 60% lighter than bulky 140g plastic competitors, preventing hand strain and excessive brushing pressure.",
       "Whisper-quiet sound profile tested below 50dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
       "Massive 90-day cobalt battery life powered by a magnetic charging dock and universal USB-C cable — zero 2-pin bathroom sockets needed.",
-      "Includes £35 in premium free gifts: Luxury Travel Case (£16), Wall-Mounted Dock (£10), and MIROOOO App Access (£9).",
+      "Includes £35 in premium free gifts: Luxury Travel Case (£16), Wall-Mounted Storage (£10), and Miroooo Dentalcare App (£9).",
       "Backed by a verified 4.9★ rating from 4,275+ UK customers, a 90-day risk-free money-back guarantee, and a 3-year warranty.",
     ],
     comparisonRows: [
@@ -1538,17 +1538,17 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         advantage: "miroooo",
       },
       {
-        feature: "Pressure Feedback",
+        feature: "Pressure Defence",
         miroooo: "Active Smart Pressure Sensor Halo Ring (Red LED Alert)",
-        competitor: "Handle rumble or no pressure defense",
+        competitor: "Handle rumble or no pressure defence",
         whyItMatters: "Visual halo alert immediately stops users from pushing bristles into receding gums.",
         advantage: "miroooo",
       },
       {
         feature: "Chassis Weight & Materials",
-        miroooo: "51g aerospace aluminium unibody (mold & drop-resistant)",
+        miroooo: "51g aerospace aluminium unibody (mould & drop-resistant)",
         competitor: "85g to 140g polycarbonate plastic and grime-trapping rubber",
-        whyItMatters: "Aircraft-grade metal resists mold, grime, and drops while feeling exceptionally light and balanced in hand.",
+        whyItMatters: "Aircraft-grade metal resists mould, grime, and drops while feeling exceptionally light and balanced in hand.",
         advantage: "miroooo",
       },
       {
@@ -1567,9 +1567,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Included Accessory Bundle Value",
-        miroooo: "£35 free gift bundle (travel case, wall dock, app access) included at £69",
+        miroooo: "£35 free gift bundle (Luxury Travel Case, Wall-Mounted Storage, Miroooo Dentalcare App) included at £69",
         competitor: "£0 free gifts; £85 to £149 base price with £20–£40 add-on accessories",
-        whyItMatters: "You receive the complete travel case, wall dock, and app access upfront with zero hidden costs.",
+        whyItMatters: "You receive the complete Luxury Travel Case, Wall-Mounted Storage, and Miroooo Dentalcare App upfront with zero hidden costs.",
         advantage: "miroooo",
       },
       {
@@ -1583,11 +1583,11 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Unboxing the £35 Free Gift Bundle: What's Inside the Box",
-        body: "The Miroooo Brush X2 promotional package arrives in premium packaging containing everything required: (1) The Miroooo Brush X2 51g aerospace aluminium handle, (2) The Luxury Travel Case (£16 value), (3) The Wall-Mounted Storage Dock (£10 value), and (4) MIROOOO Dental Care Companion App Access (£9 value).",
+        body: "The Miroooo Brush X2 promotional package arrives in premium packaging containing everything required: (1) The Miroooo Brush X2 51g aerospace aluminium handle, (2) Luxury Travel Case (£16 value), (3) Wall-Mounted Storage (£10 value), and (4) Miroooo Dentalcare App (£9 value).",
       },
       {
-        title: "Analyzing 4,275+ Verified 4.9★ UK Customer Reviews",
-        body: "With over 4,275 verified UK customer reviews, users consistently praise the 51g featherlight weight, 45° Bass sweep cleaning power, smart pressure halo feedback, whisper-quiet <50dB motor sound, 90-day USB-C battery endurance, and mold-resistant aerospace aluminium unibody build.",
+        title: "Analysing 4,275+ Verified 4.9★ UK Customer Reviews",
+        body: "With over 4,275 verified UK customer reviews, users consistently praise the 51g featherlight weight, 45° Bass sweep cleaning power, smart pressure halo feedback, whisper-quiet <50dB motor sound, 90-day USB-C battery endurance, and mould-resistant aerospace aluminium unibody build.",
       },
       {
         title: "The 90-Day Money-Back Guarantee & 3-Year Warranty Breakdown",
@@ -1604,7 +1604,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "What is included in the £69 promotional offer?",
         answer:
-          "The £69 package includes the Miroooo Brush X2 51g aerospace aluminium handle, plus a complimentary £35 3-piece gift bundle: Luxury Travel Case (£16 value), Wall-Mounted Storage Dock (£10 value), and MIROOOO Companion App Access (£9 value).",
+          "The £69 package includes the Miroooo Brush X2 51g aerospace aluminium handle, plus a complimentary £35 3-piece gift bundle: Luxury Travel Case (£16 value), Wall-Mounted Storage (£10 value), and Miroooo Dentalcare App (£9 value).",
       },
     ],
   },

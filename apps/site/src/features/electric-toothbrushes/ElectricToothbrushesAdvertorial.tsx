@@ -38,7 +38,7 @@ const defaultEvaluationCriteria = [
   "Lightweight ergonomic handling (51g unibody)",
   "Long battery life & magnetic USB-C charging (90+ days)",
   "DuPont™ Tynex® 3D end-rounded bristle quality",
-  "100% mold-resistant aerospace aluminium & IPX7 waterproof",
+  "100% mould-resistant aerospace aluminium & IPX7 waterproof",
   "Travel convenience with included protective aluminium travel case",
   "Affordable long-term replacement brush heads",
   "Verified UK customer reviews & 90-day money-back guarantee",
@@ -236,7 +236,7 @@ function GiftPanel({
             </p>
           </div>
 
-          {/* Wall-Mounted Storage Dock */}
+          {/* Wall-Mounted Storage */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -247,7 +247,7 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X2 offer with free Wall-Mounted Storage Dock"
+              aria-label="View the Miroooo Brush X2 offer with free Wall-Mounted Storage"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
@@ -255,18 +255,18 @@ function GiftPanel({
               </span>
               <img
                 src="/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp"
-                alt="Miroooo Brush X2 Wall-Mounted Storage Dock Cradle - Complimentary Free Gift"
+                alt="Miroooo Brush X2 Wall-Mounted Storage - Complimentary Free Gift"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Wall-Mount Dock
+              Wall-Mounted Storage
             </p>
           </div>
 
-          {/* MIROOOO Companion App Access */}
+          {/* Miroooo Dentalcare App */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -277,7 +277,7 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X2 offer with free MIROOOO App Access"
+              aria-label="View the Miroooo Brush X2 offer with free Miroooo Dentalcare App"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
@@ -285,14 +285,14 @@ function GiftPanel({
               </span>
               <img
                 src="/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp"
-                alt="MIROOOO Dental Care Smart Companion App - Complimentary Free Access"
+                alt="Miroooo Dentalcare App - Complimentary Free Access"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              MIROOOO App
+              Miroooo Dentalcare App
             </p>
           </div>
         </div>

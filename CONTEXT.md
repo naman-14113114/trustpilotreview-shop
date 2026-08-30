@@ -8673,6 +8673,45 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Staged and committed clean changes on branch `main`.
   - Pushed to remote `origin/main` per explicit user instruction.
 
+## Miroooo Brush X2 Free Gift Naming Standardization & UK English Orthography Audit - 30 August 2026
+
+- **User Intent & Protected Scope**:
+  - Standardize the 3 Free Gift names across all electric toothbrush pages (1 main advertorial + 13 guide pages = 14 total pages):
+    1. `Luxury Travel Case` (valued at £16)
+    2. `Wall-Mounted Storage` (valued at £10)
+    3. `Miroooo Dentalcare App` (valued at £9)
+  - Ensure all copy, headings, and clinical descriptions strictly follow UK / British English spelling (e.g. `mould`, `aluminium`, `optimised`, `prioritise`, `manoeuvrability`, `colour`, `rubberised`, `anodised`, `demineralised`, `dentine`, `defence`, `analysing`, `towards`, `centre of gravity`).
+  - Minimal changes without touching CSS layout, styles, or scripts.
+  - Audit all 14 pages using parallel specialist subagents, verify visually, and push clean code to GitHub.
+  - Protected scope: Non-toothbrush routes, ratings, competitor datasets, and URLs 100% preserved.
+
+- **Starting & Ending Git State**:
+  - Starting commit: `13b93c2` on `main`.
+  - Ending commit: Committed and pushed to `origin/main`.
+
+- **Inspected & Changed Files**:
+  1. **`apps/site/src/data/toothbrushes.ts`**:
+     - Standardized `bundle.items` names to `Luxury Travel Case`, `Wall-Mounted Storage`, and `Miroooo Dentalcare App`.
+     - Updated specifications, pros, and editorial review to use UK English spellings (`Mould-resistant`, `mould`, `multi-colour`, `Mould-Prone`, `black mould`) and exact gift names.
+  2. **`apps/site/src/data/toothbrushGuides.ts`**:
+     - Standardized `MIROOOO_GIFT_BUNDLE.items` to `Luxury Travel Case`, `Wall-Mounted Storage`, and `Miroooo Dentalcare App`.
+     - Converted all US English words across all 13 guides to British English (`mould`, `mould-resistant`, `mouldy`, `optimised`, `prioritise`, `emphasises`, `utilises`, `rubberised`, `anodised`, `demineralised`, `demineralisation`, `dentine`, `defence`, `manoeuvrability`, `analysing`, `towards`).
+     - Standardized in-text gift mentions across all competitor battles, benchmarks, conditions, and official review guides.
+  3. **`apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`**:
+     - Updated `GiftPanel` card headings, aria labels, and image alt text for gifts 2 and 3 to `Wall-Mounted Storage` and `Miroooo Dentalcare App`.
+     - Updated evaluation criteria to `100% mould-resistant aerospace aluminium & IPX7 waterproof`.
+  4. `CONTEXT.md`: Appended mandatory audit entry.
+
+- **Verification Performed**:
+  - Deployed 6 specialist audit subagents covering Root Advertorial, Competitor Battles, Benchmark Routes, Health & Review Routes, UK English Spelling Consistency, and TypeScript Integrity.
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit` passed cleanly).
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes with 0 errors.
+  - Server DOM & content verification: Verified exact gift names and UK English spellings served across routes on `http://localhost:3000`.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Staged and committed clean changes on branch `main`.
+  - Pushed to remote `origin/main` per explicit user instruction.
+
 
 
 
