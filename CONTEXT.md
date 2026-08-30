@@ -8712,6 +8712,33 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Staged and committed clean changes on branch `main`.
   - Pushed to remote `origin/main` per explicit user instruction.
 
+---
+
+### Task Entry: Removal of Free Gifts Container from All Electric Toothbrush Pages (2026-08-31 00:16 IST)
+
+- **User Intent & Protected Scope**:
+  - User explicitly requested the complete removal of the entire Free Gifts container/div/section (`GiftPanel` with Editor's Tip, £35 Free Gifts title, promotional text, 3 gift cards, and "Check Availability" CTA) strictly from all electric toothbrush pages and no other product pages.
+  - Required reporting changes first without modifying code, verifying clean rendering without issues, and ensuring any background processes are terminated.
+  - Strict preservation of LED mask, hair dryer, grounding sheet, and hair removal pages.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop`
+  - Branch: `main`
+  - Commits: `2bba5ab` pushed to `origin/main`.
+  - Working tree clean.
+
+- **Inspected & Changed Files**:
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Removed `<GiftPanel ... />` invocation inside `ProductCard` and removed the `GiftPanel` component definition.
+  - `apps/site/src/app/*-electric-toothbrush-*` / `apps/site/src/app/miroooo-*`: Verified all 14 routes cleanly consume `ElectricToothbrushesAdvertorial`.
+  - `CONTEXT.md`: Appended task entry.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1.6s.
+  - Background process audit: All lingering test/server processes terminated cleanly; 0 background tasks active.
+
+
 
 
 
