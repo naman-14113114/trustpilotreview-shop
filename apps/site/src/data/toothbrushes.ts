@@ -74,19 +74,19 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
       {
         name: "Luxury Travel Case",
         value: "£16",
-        image: "/img/toothbrushes/miroooo-travel-case-gift.jpg",
+        image: "/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp",
         description: "Slim aerospace-grade travel protection case",
       },
       {
         name: "Wall-Mounted Storage Dock",
         value: "£10",
-        image: "/img/toothbrushes/miroooo-charging-dock-gift.jpg",
+        image: "/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp",
         description: "Seamless magnetic bathroom wall dock cradle",
       },
       {
         name: "MIROOOO Companion App Access",
         value: "£9",
-        image: "/img/toothbrushes/miroooo-full-bundle.jpg",
+        image: "/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp",
         description: "Smart dental care tracking and habit companion",
       },
     ],

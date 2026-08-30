@@ -8622,5 +8622,57 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Staged and committed clean changes on branch `main`.
   - Pushed to remote `origin/main` per explicit user instruction.
 
+## Miroooo Brush X2 Free Gifts Asset Migration & SEO Enhancement Across All Pages - 30 August 2026
+
+- **User Intent & Protected Scope**:
+  - Replace the 3 Free Gift images in the £35 Free Gift Bundle across all electric toothbrush pages (1 main advertorial + 13 guide pages = 14 total pages):
+    1. Luxury Travel Case: `"E:\1st YEAR DTU\New folder\miroooo_images\travel_case.webp"` -> `/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp`.
+    2. Wall-Mounted Storage Dock: `"E:\1st YEAR DTU\New folder\miroooo_images\Miroooo X2\x2 compressed\s11.webp"` -> `/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp`.
+    3. Smart Companion App: `http://127.0.0.1:5500/assets_ref/x2/gallery/miroooo-x2-sonic-electric-toothbrush-smart-companion-app.webp` (`E:\1st YEAR DTU\New folder\gobrush-product-page\assets_ref\x2\gallery\miroooo-x2-sonic-electric-toothbrush-smart-companion-app.webp`) -> `/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp`.
+  - Standardize image filenames with Miroooo SEO best practices.
+  - Enhance alt text for SEO/GEO:
+    - `"Miroooo Brush X2 Luxury Aluminium Travel Case - Complimentary Free Gift"`
+    - `"Miroooo Brush X2 Wall-Mounted Storage Dock Cradle - Complimentary Free Gift"`
+    - `"MIROOOO Dental Care Smart Companion App - Complimentary Free Access"`
+  - Delete older unused gift image files (`miroooo-travel-case-gift.jpg`, `miroooo-charging-dock-gift.jpg`, `miroooo-full-bundle.jpg`).
+  - Deploy multiple subagents to audit all 14 routes.
+  - Verify visually in local browser across desktop and mobile, then push clean code to GitHub.
+  - Protected scope: Non-toothbrush routes, competitor data, ratings, reviews, and links 100% preserved.
+
+- **Starting & Ending Git State**:
+  - Starting commit: `70d13f3` on `main`.
+  - Ending commit: Committed and pushed to `origin/main`.
+
+- **Inspected & Changed Files**:
+  1. **New WebP Image Assets Added**:
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp` & `img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp` (347 KB).
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp` & `img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp` (54 KB).
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp` & `img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp` (10 KB).
+  2. **Obsolete Assets Deleted**:
+     - `apps/site/public/img/toothbrushes/miroooo-travel-case-gift.jpg` & `img/toothbrushes/miroooo-travel-case-gift.jpg`
+     - `apps/site/public/img/toothbrushes/miroooo-charging-dock-gift.jpg` & `img/toothbrushes/miroooo-charging-dock-gift.jpg`
+     - `apps/site/public/img/toothbrushes/miroooo-full-bundle.jpg` & `img/toothbrushes/miroooo-full-bundle.jpg`
+  3. **`apps/site/src/data/toothbrushes.ts`**:
+     - Updated `bundle.items` with new WebP paths.
+  4. **`apps/site/src/data/toothbrushGuides.ts`**:
+     - Updated `MIROOOO_GIFT_BUNDLE` and `images` object (`dockGift`, `caseGift`, `bundleGift`) with new WebP paths.
+  5. **`apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`**:
+     - Updated `GiftPanel` image sources and enhanced SEO alt text across all 3 gift items.
+  6. `CONTEXT.md`: Appended mandatory audit record.
+
+- **Verification Performed**:
+  - Audit subagents verified main advertorial and all 13 comparison/guide routes.
+  - Dead asset scan confirmed 0 references to deleted JPG files across the codebase.
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js Turbopack compiled all 67 static routes in 2.5s with code 0.
+  - Visual Browser Verification via Chrome DevTools MCP on `http://localhost:3000`:
+    - Mobile (375x812 iPhone): Verified GiftPanel displays Luxury Travel Case, Wall-Mount Dock, and MIROOOO App with "Normally £16", "Normally £10", "Normally £9", and "FREE" badges.
+    - Desktop (1280x720): Verified 3-column GiftPanel rendering with sharp imagery and clean alignment.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Staged and committed clean changes on branch `main`.
+  - Pushed to remote `origin/main` per explicit user instruction.
+
+
 
 

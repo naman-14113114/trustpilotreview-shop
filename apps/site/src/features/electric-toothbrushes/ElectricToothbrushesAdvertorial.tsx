@@ -224,8 +224,8 @@ function GiftPanel({
                 Normally £16
               </span>
               <img
-                src="/img/toothbrushes/miroooo-travel-case-gift.jpg"
-                alt="Luxury Aluminium Travel Case"
+                src="/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp"
+                alt="Miroooo Brush X2 Luxury Aluminium Travel Case - Complimentary Free Gift"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
@@ -254,8 +254,8 @@ function GiftPanel({
                 Normally £10
               </span>
               <img
-                src="/img/toothbrushes/miroooo-charging-dock-gift.jpg"
-                alt="Wall-Mounted Storage Dock Cradle"
+                src="/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp"
+                alt="Miroooo Brush X2 Wall-Mounted Storage Dock Cradle - Complimentary Free Gift"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
@@ -284,8 +284,8 @@ function GiftPanel({
                 Normally £9
               </span>
               <img
-                src="/img/toothbrushes/miroooo-full-bundle.jpg"
-                alt="MIROOOO Dental Care Companion App"
+                src="/img/toothbrushes/miroooo-brush-x2-dental-companion-app-gift.webp"
+                alt="MIROOOO Dental Care Smart Companion App - Complimentary Free Access"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
