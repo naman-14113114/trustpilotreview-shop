@@ -9020,6 +9020,63 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
   - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1.3s.
 
+---
+
+### Task Entry: Publish Existing Electric-Toothbrush Pages On TrustpilotReview Domain (2026-09-02 IST)
+
+- **User Intent & Protected Scope**:
+  - Add the existing `https://trustpilotreview-shop.vercel.app/best-electric-toothbrush-uk-2026` page and every other electric-toothbrush page to `trustpilotreview.shop` exactly as currently implemented.
+  - Preserve every toothbrush page's visible design, copy, images, offers, outbound links, tracking, metadata, schema, and responsive behaviour.
+  - Preserve all existing LED-mask, hair, pillow, grounding-sheet, homepage, and shared tracking functionality.
+
+- **Starting Git And Workspace State**:
+  - Remote: `https://github.com/naman-14113114/trustpilotreview-shop.git`.
+  - Starting commit: `5ddfdbb09f9246e06197fc56e2d3789b007a1be5` on `origin/main`.
+  - Work branch: `codex/toothbrush-routes-sync-20260902`, created from the current remote head with ahead/behind `0/0`.
+  - Work performed in a clean dedicated worktree at `trustpilotreview-toothbrush-sync-20260902`.
+  - The older `trustpilot-led-mask-replica` checkout was dirty and deliberately left untouched, including its modified and untracked files.
+  - Mandatory external context paths under `E:\1st YEAR DTU\New folder` were unavailable in this workspace. Repository-local `AGENTS.md`, `DESIGN.md`, `PRODUCT.md`, and `CONTEXT.md` were read.
+
+- **Live And Deployment Audit Before Editing**:
+  - All 14 toothbrush routes were already present on GitHub `origin/main` and rendered successfully on both current Vercel project domains.
+  - `https://trustpilotreview-shop.vercel.app/best-electric-toothbrush-uk-2026` returned the expected electric-toothbrush page with canonical `https://www.trustpilotreview.shop/best-electric-toothbrush-uk-2026`.
+  - `https://www.trustpilotreview.shop/best-electric-toothbrush-uk-2026` instead returned the older LED-mask catch-all page and LED-mask canonical.
+  - GitHub reported successful deployments for two projects, `trustpilotreview-shop` and `trustpilotreview-shop-site`, from the same current commit. The custom `www.trustpilotreview.shop` domain remained attached to a separate older catch-all deployment.
+  - No Vercel login, CLI deployment, project replacement, or domain reassignment was performed.
+
+- **Changed Files**:
+  - `apps/site/public/sitemap.xml`: added the 14 existing canonical toothbrush URLs. No page implementation or shared frontend file changed.
+  - `CONTEXT.md`: appended this operational record as required.
+
+- **Registered Toothbrush Routes**:
+  - `/best-electric-toothbrush-uk-2026`
+  - `/best-battery-life-electric-toothbrush-uk-2026`
+  - `/best-electric-toothbrush-for-braces-uk-2026`
+  - `/best-electric-toothbrush-for-sensitive-teeth-uk-2026`
+  - `/best-lightweight-electric-toothbrush-uk-2026`
+  - `/best-quiet-electric-toothbrush-uk-2026`
+  - `/best-travel-electric-toothbrush-uk-2026`
+  - `/miroooo-brush-x-uk-review-2026`
+  - `/miroooo-vs-oral-b-io3`
+  - `/miroooo-vs-oral-b-io6`
+  - `/miroooo-vs-philips-sonicare`
+  - `/miroooo-vs-suri`
+  - `/most-durable-electric-toothbrush-uk-2026`
+  - `/why-switch-from-legacy-electric-toothbrushes-uk`
+
+- **Verification Performed**:
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site typecheck`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site lint`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site build`: passed; Next.js generated all 67 static routes, including all 14 toothbrush routes.
+  - `node apps/site/scripts/verify-static-parity.mjs` from the app directory: parity snapshots present.
+  - XML parsing and canonical-route assertion: all 14 toothbrush URLs occur exactly once in the deployed sitemap.
+  - The root `pnpm verify:parity` wrapper was not used for the final result because its nested command resolved global pnpm 11.0.8 instead of repository-pinned pnpm 11.1.1; the underlying parity script was run directly and passed.
+
+- **Commit, Push, And Deployment Status At Documentation Time**:
+  - Commit and push were pending this final documentation edit.
+  - Intended push target: `origin/main` after a final fetch/rebase check.
+  - GitHub-triggered deployments for the two connected current projects were expected after push.
+  - The custom-domain mapping remained the external blocker: code pushed to the connected projects cannot replace the separate older deployment serving `www.trustpilotreview.shop` without a Vercel domain/project reassignment.
 
 
 
