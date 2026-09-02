@@ -9126,6 +9126,43 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Changes tested locally and ready for push upon user instruction.
 
+---
+
+## 2026-09-02: Owner-Authorized Vercel Connection And Custom-Domain Toothbrush Publication
+
+- **User Intent & Protected Scope**:
+  - Connect the owner-authorized Vercel account and complete publication of the existing 14 toothbrush routes on `trustpilotreview.shop`.
+  - Preserve the existing Vercel project, custom-domain aliases, non-toothbrush routes, tracking, page content, assets, and responsive frontend.
+  - Do not transfer the domain, change DNS, create a replacement project, or edit toothbrush page content.
+
+- **Starting And Ending Git State**:
+  - Started from clean commit `9985d1ac64d4680aeccc1d7f25cc9f292054772f`, which already contained the sitemap registration from `5f2b8e7`.
+  - A newer owner-authored remote commit `d37d873848c09fa648110e8245777c5f43b2b45a` arrived during production verification. It was inspected, fast-forward pulled without conflict, validated, and used for the final deployment.
+  - The production build changed generated `apps/site/next-env.d.ts`; it was restored to the exact `d37d873` source value before this context entry.
+  - No product page, data, styling, asset, link, metadata, schema, or tracking source was changed by this Vercel connection task.
+
+- **Vercel Project And Deployment Actions**:
+  - Confirmed the authenticated owner scope could access team `elato-tests-projects`.
+  - Confirmed existing production project `trustpilot-led-mask-replica`, project ID `prj_moC6YhuDufmzdh8NrYZGqndONmtJ`, owned both apex and `www` TrustpilotReview aliases.
+  - Recorded rollback deployment `dpl_DYmafdmYuFemRQv4R2r2E4fuNNLn` before mutation.
+  - Linked the clean monorepo worktree to the existing project through ignored `.vercel/project.json`; no credentials or secrets were written to repository files.
+  - First deployment `dpl_FGwk3BfcGCg9yQkTZjUvoHyvdMtN` proved the custom-domain routing fix from commit `9985d1a`.
+  - After detecting newer remote commit `d37d873`, pulled and redeployed it as final production deployment `dpl_4j3HTwkunUPBGRMVXLpWc6j1qQga`.
+  - Vercel reported the final deployment Ready and aliased it to `https://www.trustpilotreview.shop`, `https://trustpilotreview.shop`, and the existing project aliases.
+
+- **Verification Performed**:
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site typecheck`: passed on `d37d873`.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site lint`: passed on `d37d873`.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site build`: passed; all 67 routes generated, including all 14 toothbrush routes.
+  - `node apps/site/scripts/verify-static-parity.mjs` from the app directory: parity snapshots present.
+  - Custom-domain HTTP matrix: all 14 toothbrush routes returned HTTP 200 with correct route canonicals and both GTM and Microsoft consent/tracking markers.
+  - Verified the newer owner changes live through the 34-day SURI battery copy, two-head refill copy, and universal USB-C copy.
+  - Existing homepage, LED-mask, hair-dryer, pillow, and grounding-sheet routes all returned HTTP 200 after the deployment.
+  - The sitemap returned HTTP 200 with all 14 toothbrush routes exactly once; ten shared toothbrush assets returned HTTP 200; the apex domain redirected to `www` while preserving the path.
+
+- **Commit, Push, And Final Status At Documentation Time**:
+  - Production is live and Ready at deployment `dpl_4j3HTwkunUPBGRMVXLpWc6j1qQga` from source commit `d37d873`.
+  - This context-only documentation addition was pending commit and push at the time it was written.
 
 
 
