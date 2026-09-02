@@ -9234,5 +9234,10 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Local production parity script smoke-tested all seven protected parity routes successfully.
   - Restored the generated `apps/site/next-env.d.ts` build-only change to its exact source value.
 
-- **Commit, Push, & Deployment Status At Documentation Time**:
-  - Image implementation is locally validated; commit, push, production deployment, and custom-domain verification are pending.
+- **Commit, Push, & Deployment Status**:
+  - Implementation commit `ae9247c5fa4c872b1a790f42cae44341d7ab2c80` was pushed to GitHub `main`.
+  - Existing Vercel project `trustpilot-led-mask-replica` built successfully and published production deployment `dpl_nZfJ1aiE8aNjSp784pVwcfU26tWE` with Ready status.
+  - Vercel aliased the deployment to `https://www.trustpilotreview.shop` and `https://trustpilotreview.shop`.
+  - Live custom-domain verification confirmed all 14 toothbrush routes reference the new image and the WebP returns HTTP 200 with the expected 89,148-byte payload.
+  - Live Playwright checks at desktop and mobile sizes confirmed the new 1254x1254 asset loads in the number-one card at a square 303x303 or 308x308 display size.
+  - Homepage, LED-mask, hair-dryer, pillow, and grounding-sheet smoke routes remained HTTP 200; GTM, Bing preconnect, Microsoft consent, and outbound-tracking markers remained present.
