@@ -50,7 +50,7 @@ export type RankedToothbrushProduct = {
 
 export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   rank: 1,
-  name: "Miroooo Brush X2 Electric Toothbrush",
+  name: "Miroooo X2",
   brand: "Miroooo",
   image: "/img/toothbrushes/miroooo-x2-sonic-electric-toothbrush.webp",
   imageAlt: "Miroooo Brush X2 Sonic Electric Toothbrush with 45° Bass Sweep and Smart Pressure Sensor - #1 Ranked Electric Toothbrush UK 2026",

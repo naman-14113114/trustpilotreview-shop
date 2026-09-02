@@ -9173,3 +9173,32 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 
 
+
+
+---
+
+## 2026-09-02: Miroooo X2 Visible Product-Name Shortening
+
+- **User Intent & Protected Scope**:
+  - Change the visible toothbrush product name from `Miroooo Brush X2 Electric Toothbrush` to `Miroooo X2` on `trustpilotreview.shop`.
+  - Keep all product-page layouts, descriptions, rankings, pricing, images, links, metadata, tracking, and unrelated routes unchanged.
+  - Preserve descriptive image alt text because it remains accurate accessibility and SEO context rather than a visible product heading.
+
+- **Starting Git State**:
+  - Freshness-audited clean commit `93992cf8665be1ef35706bda93207498083c534a`; local HEAD and `origin/main` matched with ahead/behind `0/0` before editing.
+
+- **Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: shortened the shared rank-one product `name` to `Miroooo X2`, updating its visible product-card rendering on all toothbrush routes.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: shortened the separate dentist-verdict heading to `Miroooo X2`.
+  - `CONTEXT.md`: recorded this scoped implementation and verification evidence.
+
+- **Verification Performed**:
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site typecheck`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site lint`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site build`: passed; all 67 routes generated.
+  - Local production `node scripts/verify-static-parity.mjs` with `PARITY_BASE_URL=http://127.0.0.1:3017`: passed all seven parity routes.
+  - Local production HTTP/content matrix: all 14 toothbrush routes returned HTTP 200, contained visible `Miroooo X2`, and contained no visible `Miroooo Brush X2 Electric Toothbrush` text.
+  - The generated `apps/site/next-env.d.ts` build-only change was restored to its exact source value.
+
+- **Commit, Push, & Deployment Status At Documentation Time**:
+  - Implementation is validated locally; commit, push, existing-project production deployment, and custom-domain verification are pending.
