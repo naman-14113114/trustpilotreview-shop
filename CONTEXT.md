@@ -9200,5 +9200,10 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Local production HTTP/content matrix: all 14 toothbrush routes returned HTTP 200, contained visible `Miroooo X2`, and contained no visible `Miroooo Brush X2 Electric Toothbrush` text.
   - The generated `apps/site/next-env.d.ts` build-only change was restored to its exact source value.
 
-- **Commit, Push, & Deployment Status At Documentation Time**:
-  - Implementation is validated locally; commit, push, existing-project production deployment, and custom-domain verification are pending.
+- **Commit, Push, & Deployment Status**:
+  - Implementation commit `26e24f1bed16514c1af637770ed5dab016d31d02` was pushed to GitHub `main`.
+  - Existing Vercel project `trustpilot-led-mask-replica` built successfully and published production deployment `dpl_EywC6r1PifSDr9UXheuVNFfp21Xq` with Ready status.
+  - Vercel aliased the deployment to `https://www.trustpilotreview.shop` and `https://trustpilotreview.shop`.
+  - Live custom-domain verification confirmed all 14 toothbrush routes return HTTP 200, visibly show `Miroooo X2`, and omit the old full product name from visible text.
+  - Homepage, LED-mask, hair-dryer, pillow, and grounding-sheet smoke routes remained HTTP 200.
+  - GTM, Bing preconnect, Microsoft consent, and the existing outbound-tracking loader remained present; both referenced tracking assets returned HTTP 200.
