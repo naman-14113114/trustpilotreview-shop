@@ -38,7 +38,7 @@ const defaultEvaluationCriteria = [
   "Long battery life & USB-C charging",
   "Travel friendly with protective travel case",
   "Whisper-quiet acoustic motor sound",
-  "DuPont™ Tynex® 3D bristle quality",
+  "Precision 3D contour brush head quality",
   "100% mould-resistant aerospace aluminium & IPX7 waterproof",
   "Affordable long-term replacement brush heads",
   "Verified UK customer reviews & 90-day money-back guarantee",
@@ -294,24 +294,24 @@ function PackagePanel({
             </p>
           </div>
 
-          {/* Extra DuPont™ Brush Heads */}
+          {/* Up to 4 Extra Brush Heads */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X2 package with Extra DuPont Brush Heads"
+              aria-label="View the Miroooo Brush X2 package with up to 4 extra brush heads"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <img
-                src="/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp"
-                alt="Miroooo Brush X2 Extra DuPont™ Brush Heads"
+                src="/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp"
+                alt="Miroooo Brush X2 Up to 4 Extra Brush Heads"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Extra DuPont™ Heads
+              Up to 4 Extra Brush Heads
             </p>
           </div>
         </div>
@@ -453,9 +453,11 @@ function ProductCard({
 
           <div className="prose prose-slate prose-lg max-w-none mb-8 space-y-4">
             {product.review.map((paragraph, pIdx) => (
-              <p key={pIdx} className="text-slate-600 leading-relaxed">
-                {paragraph}
-              </p>
+              <p
+                key={pIdx}
+                className="text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
           </div>
 

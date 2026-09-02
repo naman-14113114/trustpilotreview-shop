@@ -86,10 +86,10 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
         description: "Seamless magnetic bathroom wall dock cradle",
       },
       {
-        name: "Extra DuPont™ Brush Heads",
+        name: "Up to 4 Extra Brush Heads",
         value: "£9",
         image: "/img/toothbrushes/miroooo-x2-sonic-electric-toothbrush.webp",
-        description: "High-density micro-diamond DuPont replacement heads",
+        description: "High-density micro-diamond replacement brush heads",
       },
     ],
   },
@@ -106,20 +106,20 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     { label: "Battery Endurance", value: "90-Day Battery Life (High-Density Cobalt Cell with Magnetic USB-C Dock)" },
     { label: "Customer Rating", value: "4.9★ / 5.0" },
     { label: "Chassis & Build", value: "Aerospace Aluminium Design (Mould-resistant unibody, IPX7 immersion waterproof)" },
-    { label: "Included in Package", value: "Luxury Travel Case, Wall-Mounted Storage & Extra DuPont™ Brush Heads" },
+    { label: "Included in Package", value: "Luxury Travel Case, Wall-Mounted Storage & Up to 4 Extra Brush Heads" },
     { label: "Smart Companion", value: "Smart Pressure Sensor Halo Ring, 45° Bass Sweep & Miroooo Dentalcare App" },
     { label: "Money-Back Guarantee", value: "90-Day Money-Back Guarantee" },
     { label: "Warranty", value: "3-Year Comprehensive Warranty" },
   ],
   pros: [
     "Ultra Light Weight (51g): Precision-engineered 51g aerospace aluminium body eliminates wrist fatigue and feels effortless in hand.",
-    "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
     "90-Day Battery Life: Massive 90-day cobalt battery endurance powered by universal USB-C fast charging. Delivers 180 uses on a single charge with zero need for proprietary chargers.",
+    "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
     "4.9★ Customer Rating: Verified 4.9-star rating reflecting top customer satisfaction across the UK.",
     "Long-Lasting Aluminium Design: Precision-milled aerospace aluminium unibody with flush capacitive touch button resists drops and mould, ensuring the brush lasts years longer than fragile plastic alternatives.",
-    "Included in Package: Complete set includes Luxury Travel Case, Wall-Mounted Storage, and extra DuPont™ brush heads.",
-    "45° Bass Sweep & Smart Pressure Halo: Precision 45-degree angled acoustic motion follows dentist-recommended Bass technique, backed by a smart pressure sensor halo ring with red alert LED and 3 modes (Standard, Whitening, Deep Cleansing).",
+    "Included in Package: Complete set includes Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
     "90-Day Money-Back Guarantee: 100% risk-free home trial with full refund protection.",
+    "45° Bass Sweep & Smart Pressure Halo: Precision 45-degree angled acoustic motion follows dentist-recommended Bass technique, backed by a smart pressure sensor halo ring with red alert LED and 3 modes (Standard, Whitening, Deep Cleansing).",
     "3-Year Comprehensive Warranty: Complete 3-year manufacturer warranty ensuring lasting peace of mind.",
   ],
   cons: [
@@ -128,8 +128,8 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     "Promotional Sale: Usually costs £99, currently selling for £69 in ongoing promotional sale.",
   ],
   review: [
-    "The Miroooo Brush X2 earns our #1 ranking for UK buyers in 2026 because of its exceptional cleaning performance and advanced engineering. It features a dentist-recommended 45° Bass sweep that angles acoustic micro-vibrations along the gumline, 3 tailored brushing modes (Standard, Whitening, and Deep Clean), and an active smart pressure sensor halo ring that protects sensitive gums and enamel from excessive force.",
-    "Everyday usability and build quality lead the category. Weighing just 51g, it is the lightest electric toothbrush tested, crafted from a mould-resistant aerospace aluminium unibody. It operates with whisper-quiet acoustics under 50dB, eliminating morning motor buzz. With an industry-leading 90+ days of battery life per charge and universal USB-C charging, it is completely travel-friendly with no need to carry extra proprietary chargers. Each package includes a Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads, backed by a verified 4.9★ customer rating, 90-day money-back guarantee, and 3-year comprehensive warranty.",
+    "The Miroooo Brush X2 earns our #1 ranking for UK buyers in 2026 because it decisively leads every usability and engineering benchmark we tested. Weighing just <strong>51g</strong>, it is the lightest electric toothbrush on the market, crafted from a seamless mould-resistant aerospace aluminium unibody. It features an industry-leading <strong>90+ days of battery life</strong> per charge, universal USB-C charging for effortless travel with no extra proprietary chargers, and operates with whisper-quiet acoustics <strong>under 50dB</strong> to eliminate morning motor buzz. Each package includes a <strong>Luxury Travel Case</strong>, <strong>Wall-Mounted Storage</strong>, and <strong>up to 4 extra brush heads</strong>, backed by a verified 4.9★ customer rating, 90-day money-back guarantee, and 3-year comprehensive warranty.",
+    "Cleaning performance is equally uncompromising. The Miroooo Brush X2 features a dentist-recommended 45° Bass sweep that angles acoustic micro-vibrations along the gumline for deep subgingival plaque removal, 3 tailored brushing modes (Standard, Whitening, and Deep Clean), and an active smart pressure sensor halo ring with real-time visual alerts to protect sensitive gums and enamel from excessive brushing force.",
   ],
 };
 

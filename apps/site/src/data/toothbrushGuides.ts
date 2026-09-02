@@ -110,10 +110,10 @@ export const MIROOOO_PACKAGE_CONTENTS = {
       description: "Seamless magnetic bathroom wall dock cradle",
     },
     {
-      name: "Extra DuPont™ Brush Heads",
+      name: "Up to 4 Extra Brush Heads",
       value: "£9",
-      image: "/img/toothbrushes/miroooo-x2-sonic-electric-toothbrush.webp",
-      description: "High-density micro-diamond DuPont replacement heads",
+      image: "/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp",
+      description: "High-density micro-diamond replacement brush heads",
     },
   ],
 };
@@ -163,20 +163,20 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.oralBiO6,
     heroAlt: "Miroooo Brush X2 vs Oral-B iO6 electric toothbrush comparison",
     quickTake:
-      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 90-day magnetic USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) at nearly half the price (£69 vs £129.99).",
+      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 90-day magnetic USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at nearly half the price (£69 vs £129.99).",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "Mechanical oscillating-rotating heads can feel like a drill against sensitive gums. Miroooo Brush X2's acoustic micro-bubble fluid action and 45° Bass sweep remove stubborn plaque while remaining exceptionally gentle on enamel and gingival margins.",
       clinicalRationale:
-        "In our comparative dental assessments, mechanical oscillating toothbrushes like the Oral-B iO6 create significant friction that can accelerate gum recession if applied with excessive pressure or when the rubber grips degrade. In contrast, Miroooo Brush X2 combines high-frequency acoustic micro-vibrations with 45° Bass sweep action and DuPont Tynex 3D rounded bristles to generate dynamic fluid action—flushing plaque biofilm from tight interdental spaces without abrasive mechanical scraping. Furthermore, the 51g featherlight unibody and smart pressure halo ring eliminate hand strain and excessive force, making patient compliance during the full 2-minute cycle far higher.",
+        "In our comparative dental assessments, mechanical oscillating toothbrushes like the Oral-B iO6 create significant friction that can accelerate gum recession if applied with excessive pressure or when the rubber grips degrade. In contrast, Miroooo Brush X2 combines high-frequency acoustic micro-vibrations with 45° Bass sweep action and precision 3D rounded brush heads to generate dynamic fluid action—flushing plaque biofilm from tight interdental spaces without abrasive mechanical scraping. Furthermore, the 51g featherlight unibody and smart pressure halo ring eliminate hand strain and excessive force, making patient compliance during the full 2-minute cycle far higher.",
       recommendation:
         "For patients suffering from sensitive gums, enamel wear, or who dislike heavy, loud handles, Miroooo Brush X2 is our clear #1 recommendation.",
     },
     intro: [
       "When upgrading your electric toothbrush in the UK, the choice often comes down to two very different design philosophies: the high-tech, oscillating-rotating mechanical approach of legacy giants like Oral-B, or the ultra-modern, lightweight acoustic engineering of Miroooo Brush X2.",
       "The Oral-B iO Series 6 (£129.99) is renowned for its interactive OLED display, AI position recognition, and round mechanical brush head. However, it also brings classic legacy drawbacks: a bulky 140g plastic handle, a loud 64dB oscillating gear whine, a short 14-day battery, and expensive replacement head prices (£8 to £12 each).",
-      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery on a magnetic USB-C charging dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
+      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery on a magnetic USB-C charging dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -185,7 +185,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -195,12 +195,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Acoustic vs Friction: 45° Bass sweep micro-bubble fluid dynamics clean deep between teeth and beneath the gumline without abrasive mechanical scrubbing.",
       "Universal USB-C Charging: Up to 90 days of battery life on a magnetic dock provides effortless travel convenience.",
       "Whisper-Quiet Operation: Under 50dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
-      "Unbeatable Value: £69 purchase price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, Extra DuPont Brush Heads), 90-day money-back guarantee, and 3-year warranty.",
+      "Unbeatable Value: £69 purchase price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads), 90-day money-back guarantee, and 3-year warranty.",
     ],
     comparisonRows: [
       {
         feature: "Price & Included Package",
-        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage & Extra DuPont Heads)",
+        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage & Up to 4 Extra Brush Heads)",
         competitor: "£129.99 (Standalone brush only)",
         whyItMatters: "Miroooo Brush X2 delivers complete package accessories and 90-day battery at a fraction of the competitor cost.",
         advantage: "miroooo",
@@ -235,7 +235,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Refill Replacement Cost",
-        miroooo: "Affordable DuPont Tynex 3D heads (~£3/head)",
+        miroooo: "Affordable replacement brush heads (~£3/head)",
         competitor: "£8–£12 per iO replacement head (£32–£48/year)",
         whyItMatters: "High refill prices create a costly ongoing subscription trap over the lifespan of the brush.",
         advantage: "miroooo",
@@ -286,7 +286,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Is Miroooo Brush X2 better than Oral-B iO6 for sensitive gums?",
         answer:
-          "Yes. Miroooo Brush X2 features 45° Bass sweep acoustic vibrations with DuPont Tynex 3D rounded bristles and an integrated smart pressure halo ring. This creates fluid dynamic micro-bubbles that sweep plaque away without the mechanical friction and abrasive rotation of Oral-B's oscillating head.",
+          "Yes. Miroooo Brush X2 features 45° Bass sweep acoustic vibrations with precision 3D rounded brush heads and an integrated smart pressure halo ring. This creates fluid dynamic micro-bubbles that sweep plaque away without the mechanical friction and abrasive rotation of Oral-B's oscillating head.",
       },
       {
         question: "How does the battery life compare between Miroooo Brush X2 and Oral-B iO6?",
@@ -296,7 +296,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Why are Oral-B iO replacement heads so expensive?",
         answer:
-          "Oral-B uses a proprietary magnetic drive mechanism inside each iO refill head, which raises the manufacturing cost and retail price to £8–£12 per head. Miroooo replacement heads use standard high-density DuPont Tynex bristles, making them far more affordable over time.",
+          "Oral-B uses a proprietary magnetic drive mechanism inside each iO refill head, which raises the manufacturing cost and retail price to £8–£12 per head. Miroooo replacement heads use affordable high-density brush heads, making them far more economical over time.",
       },
       {
         question: "Can I charge Miroooo Brush X2 with my phone charger?",
@@ -324,7 +324,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.philipsSonicare,
     heroAlt: "Miroooo Brush X2 vs Philips Sonicare DiamondClean 9000 comparison",
     quickTake:
-      "While Philips Sonicare 9000 offers iconic charging glass aesthetics, Miroooo Brush X2 outperforms it in clinical technology and daily practicality: it introduces 45° Bass sweep oscillation, an active LED halo pressure sensor, lasts over 6x longer on battery (90-day cobalt cell vs 14 days), eliminates Sonicare's shaft rattle defect, and includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) at £69 compared to Sonicare's £149.99–£249 price tag.",
+      "While Philips Sonicare 9000 offers iconic charging glass aesthetics, Miroooo Brush X2 outperforms it in clinical technology and daily practicality: it introduces 45° Bass sweep oscillation, an active LED halo pressure sensor, lasts over 6x longer on battery (90-day cobalt cell vs 14 days), eliminates Sonicare's shaft rattle defect, and includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at £69 compared to Sonicare's £149.99–£249 price tag.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -345,7 +345,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -355,12 +355,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "45° Bass Sweep & Pressure Halo Ring: Automatically applies the dentist-recommended 45° sweep along the gumline with real-time visual LED halo feedback to prevent enamel and gum damage.",
       "Massive 90-Day Cobalt Cell Battery: Up to 90 days (180 uses) per charge on universal USB-C beats Sonicare's short 14-day battery and cumbersome charging glass.",
       "Hygienic IPX7 Aluminium Body: Seamless unibody design prevents black mould accumulation around composite joints and eliminates bathroom grime buildup.",
-      "Outstanding Flagship Value: £69 complete set with Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads vs £149.99–£249 for standalone Sonicare.",
+      "Outstanding Flagship Value: £69 complete set with Luxury Travel Case, Wall-Mounted Storage, and Up to 4 Extra Brush Heads vs £149.99–£249 for standalone Sonicare.",
     ],
     comparisonRows: [
       {
         feature: "Price & Accessories",
-        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Extra DuPont Heads)",
+        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads)",
         competitor: "£149.99–£249 (RRP £349, Standalone)",
         whyItMatters: "Miroooo saves over £80–£180 upfront while including essential travel and mounting accessories.",
         advantage: "miroooo",
@@ -409,7 +409,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Refill Head Costs",
-        miroooo: "Affordable DuPont Tynex 3D heads (~£3/head)",
+        miroooo: "Affordable replacement brush heads (~£3/head)",
         competitor: "£9–£12 per BrushSync replacement head",
         whyItMatters: "Lower replacement costs ensure you replace heads every 3 months without hesitation.",
         advantage: "miroooo",
@@ -425,7 +425,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want next-generation sonic cleaning with 45° Bass sweep motion, an active LED halo pressure sensor, massive 90-day cobalt battery life with USB-C charging, mould-resistant aerospace aluminium durability, and £80–£180 in upfront savings with complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) for £69.",
+        body: "You want next-generation sonic cleaning with 45° Bass sweep motion, an active LED halo pressure sensor, massive 90-day cobalt battery life with USB-C charging, mould-resistant aerospace aluminium durability, and £80–£180 in upfront savings with complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
       {
         title: "Choose Philips Sonicare 9000 if...",
@@ -449,7 +449,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Does Miroooo Brush X2 clean as deeply as Philips Sonicare DiamondClean 9000?",
         answer:
-          "Yes, and with superior gumline technique. Miroooo Brush X2 combines an acoustic motor with a 45° wide-angle Bass sweep that automatically executes the dentist-recommended Bass brushing motion. This drives fluid micro-bubbles between tight interdental spaces while the micro-diamond polished DuPont 3D bristles lift plaque without abrasive scrubbing.",
+          "Yes, and with superior gumline technique. Miroooo Brush X2 combines an acoustic motor with a 45° wide-angle Bass sweep that automatically executes the dentist-recommended Bass brushing motion. This drives fluid micro-bubbles between tight interdental spaces while the micro-diamond polished precision 3D bristles lift plaque without abrasive scrubbing.",
       },
       {
         question: "What causes Philips Sonicare toothbrushes to become loud and loose?",
@@ -464,7 +464,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Does Miroooo Brush X2 come with extra accessories?",
         answer:
-          "Yes. The Miroooo Brush X2 package includes a Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads, with affordable replacement heads available on the official website.",
+          "Yes. The Miroooo Brush X2 package includes a Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads, with affordable replacement heads available on the official website.",
       },
     ],
   },
@@ -476,7 +476,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "VS SURI",
     cardTitle: "Miroooo Brush X2 vs SURI Pro 2.0",
     cardDescription:
-      "Direct comparison: 51g aluminium unibody with 45° Bass sweep vs 85g modular body, durable DuPont heads vs cracking cornstarch heads, and £69 flagship vs £85 standalone.",
+      "Direct comparison: 51g aluminium unibody with 45° Bass sweep vs 85g modular body, durable brush heads vs cracking cornstarch heads, and £69 flagship vs £85 standalone.",
     seoTitle: "Miroooo Brush X2 vs SURI Pro 2.0 Review UK 2026 | Sustainable Sonic Comparison",
     seoDescription:
       "Miroooo Brush X2 (£69) vs SURI Pro 2.0 (£85). Compare 51g vs 85g weight, 3 halo modes vs 2, smart pressure halo ring, head durability, and included accessories with Dr. Olivia's verdict.",
@@ -487,20 +487,20 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.suriSonic,
     heroAlt: "Miroooo Brush X2 vs SURI Pro 2.0 electric toothbrush comparison",
     quickTake:
-      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X2 is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct halo modes vs 2, features durable DuPont Tynex heads that do not crack or loosen, delivers 90-day cobalt cell battery vs 34–40 days, smart pressure sensor halo ring, and includes complete package accessories at £69 vs SURI's £85 standalone price.",
+      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X2 is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct halo modes vs 2, features durable precision brush heads that do not crack or loosen, delivers 90-day cobalt cell battery vs 34–40 days, smart pressure sensor halo ring, and includes complete package accessories at £69 vs SURI's £85 standalone price.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
-        "While SURI's plant-based initiative is admirable, cornstarch heads are notoriously prone to micro-cracking and stem loosening under sonic vibration. Miroooo Brush X2's DuPont Tynex 3D rounded bristles deliver reliable bristle geometry and superior plaque removal without head failure.",
+        "While SURI's plant-based initiative is admirable, cornstarch heads are notoriously prone to micro-cracking and stem loosening under sonic vibration. Miroooo Brush X2's precision 3D rounded brush heads deliver reliable bristle geometry and superior plaque removal without head failure.",
       clinicalRationale:
-        "Plant-based brush heads made from cornstarch composite absorb moisture over time, leading to micro-fissures along the collar and loosening on the vibrating motor shaft. When a brush head loosens, acoustic energy is dissipated as noise and rattle rather than transferred to the teeth, reducing plaque cleaning efficacy. Furthermore, SURI offers only 2 basic cleaning modes and lacks a dedicated sensitive gum setting. Miroooo Brush X2 provides 3 clinically optimised halo LED modes with 45° Bass sweep guidance and diamond-cut DuPont Tynex bristles that maintain consistent stiffness and rounded tips to protect enamel.",
+        "Plant-based brush heads made from cornstarch composite absorb moisture over time, leading to micro-fissures along the collar and loosening on the vibrating motor shaft. When a brush head loosens, acoustic energy is dissipated as noise and rattle rather than transferred to the teeth, reducing plaque cleaning efficacy. Furthermore, SURI offers only 2 basic cleaning modes and lacks a dedicated sensitive gum setting. Miroooo Brush X2 provides 3 clinically optimised halo LED modes with 45° Bass sweep guidance and precision 3D rounded brush heads that maintain consistent stiffness and rounded tips to protect enamel.",
       recommendation:
         "Miroooo Brush X2 provides a far more durable, effective, and reliable sonic clean. It delivers true long-lasting aluminium engineering with 90-day battery endurance without the fragile head compromises or £14.99/3-pack refill markups of SURI.",
     },
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
       "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
-      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable DuPont Tynex 3D end-rounded bristles, 90-day cobalt battery on a magnetic USB-C dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads).",
+      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable 3D end-rounded brush heads, 90-day cobalt battery on a magnetic USB-C dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -509,29 +509,29 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
     ],
     winnerBullets: [
-      "No Cracked Heads: Miroooo Brush X2's DuPont Tynex heads eliminate the cracking and loose shaft issues common to SURI's cornstarch heads.",
+      "No Cracked Heads: Miroooo Brush X2's precision brush heads eliminate the cracking and loose shaft issues common to SURI's cornstarch heads.",
       "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless manoeuvrability.",
       "45° Bass Sweep & Smart Halo Ring: Features 3 halo LED modes and active pressure warning, where SURI only offers 2 basic settings with no visual halo.",
       "Longer 90-Day Cobalt Battery: Lasts more than double the duration of SURI's 34–40 day battery on a single charge.",
-      "Better Package Value: £69 includes Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads, while SURI charges £85 with no travel case in the box.",
+      "Better Package Value: £69 includes Luxury Travel Case, Wall-Mounted Storage, and Up to 4 Extra Brush Heads, while SURI charges £85 with no travel case in the box.",
     ],
     comparisonRows: [
       {
         feature: "Price & Included Package",
-        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Extra DuPont Heads)",
+        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads)",
         competitor: "£85 (Standalone brush, travel case sold separately)",
         whyItMatters: "Miroooo Brush X2 costs less while including essential travel and mounting accessories at zero extra charge.",
         advantage: "miroooo",
       },
       {
         feature: "Brush Head Durability",
-        miroooo: "DuPont Tynex 3D rounded heads (Durable, secure fit)",
+        miroooo: "Precision 3D rounded heads (Durable, secure fit)",
         competitor: "Cornstarch heads (Prone to cracking & shaft loosening)",
         whyItMatters: "Cracked brush heads rattle, lose acoustic cleaning power, and must be replaced prematurely.",
         advantage: "miroooo",
@@ -559,7 +559,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Refill Pack Cost",
-        miroooo: "Affordable DuPont Tynex replacements (~£3/head)",
+        miroooo: "Affordable replacement heads (~£3/head)",
         competitor: "£14.99 for 3 heads (~£5 per head)",
         whyItMatters: "SURI's proprietary plant-based refills cost substantially more every year.",
         advantage: "miroooo",
@@ -568,7 +568,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 45° Bass sweep guidance, smart pressure halo ring, 3 versatile halo modes, durable DuPont heads that never crack or loosen, 90 days battery life, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) for £69.",
+        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 45° Bass sweep guidance, smart pressure halo ring, 3 versatile halo modes, durable precision brush heads that never crack or loosen, 90 days battery life, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
       {
         title: "Choose SURI Pro 2.0 if...",
@@ -620,20 +620,20 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.oralBiO3,
     heroAlt: "Miroooo Brush X2 vs Oral-B iO3 electric toothbrush comparison",
     quickTake:
-      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring an extended 16-hour charge, and expensive £8–£12 refill heads. Miroooo Brush X2 delivers a true flagship experience: 45° Bass sweep acoustic cleaning, smart pressure sensor halo ring with 3 halo LED modes, 90-day cobalt cell battery via magnetic USB-C, 51g aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) for £69.",
+      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring an extended 16-hour charge, and expensive £8–£12 refill heads. Miroooo Brush X2 delivers a true flagship experience: 45° Bass sweep acoustic cleaning, smart pressure sensor halo ring with 3 halo LED modes, 90-day cobalt cell battery via magnetic USB-C, 51g aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "The Oral-B iO3 represents a false economy. To reach a lower price point, Oral-B removed the smart display and app coaching, but left patients stuck with a loud 136g plastic handle, slow 16-hour charging, and expensive £8–£12 refill heads. Miroooo Brush X2 is superior in every clinical and practical metric.",
       clinicalRationale:
-        "Entry-level mechanical toothbrushes like the iO3 retain the aggressive mechanical oscillating gearbox of higher models, operating at a noisy 64dB that can feel jarring against dental restorations. More importantly, the iO3 locks buyers into proprietary iO replacement heads costing up to £48 per year. Miroooo Brush X2 uses gentle 45° Bass sweep acoustic fluid dynamics with DuPont Tynex 3D rounded bristles, protecting thinning enamel and gumlines while providing smart pressure halo guidance, Miroooo Dentalcare App tracking, a lightweight 51g handle, and a 90-day cobalt cell battery.",
+        "Entry-level mechanical toothbrushes like the iO3 retain the aggressive mechanical oscillating gearbox of higher models, operating at a noisy 64dB that can feel jarring against dental restorations. More importantly, the iO3 locks buyers into proprietary iO replacement heads costing up to £48 per year. Miroooo Brush X2 uses gentle 45° Bass sweep acoustic fluid dynamics with precision 3D rounded brush heads, protecting thinning enamel and gumlines while providing smart pressure halo guidance, Miroooo Dentalcare App tracking, a lightweight 51g handle, and a 90-day cobalt cell battery.",
       recommendation:
         "Do not pay £65 for a stripped-down plastic brush. For just £4 more (£69), Miroooo Brush X2 delivers a true flagship experience with 45° Bass sweep cleaning, 90-day cobalt battery, smart pressure halo guidance, and complete included package accessories.",
     },
     intro: [
       "For UK shoppers evaluating electric toothbrushes around the £65–£70 price point, the market presents a stark contrast: a stripped-down entry-level plastic model from a legacy brand, or a fully loaded, precision-engineered acoustic flagship.",
       "The Oral-B iO3 Matt Black (£65, RRP £160) is designed as an accessible gateway into Oral-B's magnetic micro-vibration system. It includes a 360° smart pressure ring, 3 basic cleaning modes, and a hard travel case. However, to hit this price point, Oral-B stripped away the defining smart features of the iO line: there is no interactive OLED display screen, no Bluetooth app tracking, a dated 14-day battery that takes a sluggish 16 hours to charge, and proprietary iO refill heads that cost £8 to £12 each.",
-      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery on a magnetic USB-C dock, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads).",
+      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery on a magnetic USB-C dock, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -642,7 +642,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -652,12 +652,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Premium Aerospace Aluminium: Seamless mould-resistant metal chassis replaces the bulky 136g polycarbonate and rubber grime traps of the iO3.",
       "90-Day Cobalt Cell Power: Fast magnetic USB-C charging delivers 3 full months of runtime, eliminating the iO3's sluggish 16-hour recharge cycle.",
       "45° Bass Sweep Acoustic Cleaning: Whisper-quiet (<50dB) micro-vibrations clean subgingivally without the harsh 64dB gear buzzing and jaw rattle of the iO3.",
-      "Superior Value & Refill Savings: The £69 package includes complete accessories (Luxury Travel Case, Wall-Mounted Storage, Extra DuPont Brush Heads) and spares owners from costly iO replacement head markups.",
+      "Superior Value & Refill Savings: The £69 package includes complete accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads) and spares owners from costly iO replacement head markups.",
     ],
     comparisonRows: [
       {
         feature: "Price & Included Package",
-        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Extra DuPont Heads)",
+        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads)",
         competitor: "£65 (Includes 1 brush head & basic travel case)",
         whyItMatters: "Miroooo Brush X2 includes complete premium accessories whereas Oral-B provides only 1 head.",
         advantage: "miroooo",
@@ -694,7 +694,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery on magnetic USB-C, Miroooo Dentalcare App habit tracking, aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) for £69.",
+        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery on magnetic USB-C, Miroooo Dentalcare App habit tracking, aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
       {
         title: "Choose Oral-B iO3 if...",
@@ -768,7 +768,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -778,7 +778,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "62% Lighter in Hand: 51g aerospace aluminium unibody prevents wrist fatigue and eliminates porous rubber grime traps.",
       "Whisper-Quiet Acoustics: Runs under 50dB, eliminating the jarring morning power-tool noise of oscillating gearboxes.",
       "Dentist-Clean 45° Bass Sweep: Acoustic micro-bubbles flush plaque from beneath the gumline without enamel abrasion.",
-      "Honest Direct-to-Consumer Value: £69 promotional price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) and a 90-day money-back guarantee.",
+      "Honest Direct-to-Consumer Value: £69 promotional price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) and a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
@@ -811,7 +811,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Refill Replacement Cost",
-        miroooo: "Affordable DuPont Tynex 3D heads (~£3/head)",
+        miroooo: "Affordable replacement brush heads (~£3/head)",
         competitor: "£8 – £12 per replacement head",
         whyItMatters: "Saves £30 to £50 every year on replacement brush heads.",
         advantage: "miroooo",
@@ -820,7 +820,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         feature: "Included Package & Trial",
         miroooo: "Complete package accessories included + 90-day trial",
         competitor: "Zero bonus accessories + standard 30-day retail return",
-        whyItMatters: "Total risk reversal with Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads.",
+        whyItMatters: "Total risk reversal with Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
         advantage: "miroooo",
       },
     ],
@@ -831,7 +831,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "How Modern Acoustic Engineering Solves Them All",
-        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery on magnetic USB-C, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) for £69.",
+        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery on magnetic USB-C, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
     ],
     products: toothbrushProducts,
@@ -894,7 +894,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -903,7 +903,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Featherlight 51g unibody design is over 62% lighter than Oral-B iO (140g) and Sonicare (135g).",
       "CNC-machined aerospace aluminium handle offers an ultra-slim profile with superior tactile grip.",
       "Delivers 45° Bass sweep acoustic plaque removal with smart pressure halo ring protection.",
-      "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads at £69.",
+      "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads at £69.",
     ],
     comparisonRows: [
       {
@@ -929,7 +929,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Total Price & Included Package",
-        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage & Extra DuPont Heads)",
+        miroooo: "£69 (Includes Luxury Travel Case, Wall-Mounted Storage & Up to 4 Extra Brush Heads)",
         competitor: "£85 – £149.99 (Standalone units with no bonus accessories)",
         whyItMatters: "Get premium lightweight engineering without paying inflated retail markups.",
         advantage: "miroooo",
@@ -999,7 +999,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1008,7 +1008,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Industry-leading 90-day runtime on a single charge—requires only ~4 charges per calendar year.",
       "Magnetic USB-C charging dock works anywhere with standard USB-C cables.",
       "High-density cobalt cell maintains full acoustic motor speed until the final brushing session.",
-      "Comes with complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads.",
+      "Comes with complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
     ],
     comparisonRows: [
       {
@@ -1094,7 +1094,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1103,7 +1103,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Operates below 50dB—over 15dB quieter than mechanical oscillating brushes (Oral-B iO).",
       "Magnetic acoustic motor eliminates gear-on-gear friction for a smooth, vibration-free sensation.",
       "45° Bass sweep motion creates dynamic fluid action that cleans between tight teeth silently.",
-      "Includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) backed by a 90-day trial at £69.",
+      "Includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) backed by a 90-day trial at £69.",
     ],
     comparisonRows: [
       {
@@ -1177,7 +1177,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1234,7 +1234,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "SENSITIVE",
     cardTitle: "Best Electric Toothbrush for Sensitive Teeth",
     cardDescription:
-      "Gentle 45° Bass sweep acoustic micro-vibrations, smart pressure sensor halo ring, and DuPont rounded bristles to halt enamel wear and protect receding gums.",
+      "Gentle 45° Bass sweep acoustic micro-vibrations, smart pressure sensor halo ring, and precision 3D rounded bristles to halt enamel wear and protect receding gums.",
     seoTitle: "Best Electric Toothbrush for Sensitive Teeth UK 2026 | Dentist Reviewed",
     seoDescription:
       "Looking for the best electric toothbrush for sensitive teeth and receding gums? Compare gentle 45° Bass sweep acoustic brushes with smart pressure halo rings vs harsh oscillating models with Dr. Olivia, BDS.",
@@ -1245,13 +1245,13 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.topFive,
     heroAlt: "Best electric toothbrushes for sensitive teeth and receding gums compared in the UK",
     quickTake:
-      "If you experience sharp twinges when drinking cold water or brushing near the gumline, mechanical oscillating toothbrushes are often the hidden culprit. Miroooo Brush X2 combines 45° Bass sweep acoustic technology, an active smart pressure sensor halo ring, high-density DuPont end-rounded bristles, and a featherlight 51g aerospace aluminium handle to deliver plaque-free cleaning with zero gum discomfort.",
+      "If you experience sharp twinges when drinking cold water or brushing near the gumline, mechanical oscillating toothbrushes are often the hidden culprit. Miroooo Brush X2 combines 45° Bass sweep acoustic technology, an active smart pressure sensor halo ring, high-density precision 3D end-rounded bristles, and a featherlight 51g aerospace aluminium handle to deliver plaque-free cleaning with zero gum discomfort.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "Dentinal hypersensitivity affects over 35% of UK adults. Harsh mechanical oscillation acts like sandpaper against exposed dentine. Miroooo Brush X2's 45° Bass sweep and smart pressure sensor halo ring actively protect exposed roots and delicate gingival margins.",
       clinicalRationale:
-        "When enamel thins or gums recede along the cemento-enamel junction (CEJ), open dentinal tubules transmit pain directly to the pulp nerve. Mechanical oscillating brushes exert harsh shear stress on root surfaces. Miroooo Brush X2's calibrated 45° Bass sweep motion and diamond-cut DuPont rounded bristles lift biofilm without scratching enamel, while its integrated smart pressure halo ring flashes a red warning light if you press too hard, preventing enamel abrasion and gum recession in real time.",
+        "When enamel thins or gums recede along the cemento-enamel junction (CEJ), open dentinal tubules transmit pain directly to the pulp nerve. Mechanical oscillating brushes exert harsh shear stress on root surfaces. Miroooo Brush X2's calibrated 45° Bass sweep motion and diamond-cut precision 3D rounded bristles lift biofilm without scratching enamel, while its integrated smart pressure halo ring flashes a red warning light if you press too hard, preventing enamel abrasion and gum recession in real time.",
       recommendation:
         "For patients suffering from sensitive teeth, dentine exposure, or early gingival recession, I recommend switching to the Miroooo Brush X2.",
     },
@@ -1266,7 +1266,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1274,9 +1274,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     winnerBullets: [
       "45° Bass Sweep & Soft Halo Mode: Harnesses gentle fluid dynamics for non-abrasive plaque removal beneath the gumline.",
       "Active Smart Pressure Halo Ring: Flashes a red LED warning when excessive force is detected, actively halting gum recession.",
-      "DuPont 3D Diamond-Cut Bristles: End-rounded filaments protect exposed dentinal tubules and fragile enamel prisms.",
+      "Precision 3D Diamond-Cut Bristles: End-rounded filaments protect exposed dentinal tubules and fragile enamel prisms.",
       "Ultra-Light 51g Aluminium Handle: Prevents involuntary downward clenching and eliminates wrist torque during brushing.",
-      "£69 Flagship Package: Includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) plus 90-day home trial and 3-year warranty.",
+      "£69 Flagship Package: Includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) plus 90-day home trial and 3-year warranty.",
     ],
     comparisonRows: [
       {
@@ -1295,7 +1295,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Bristle Quality",
-        miroooo: "DuPont 3D Diamond-Cut End-Rounded Bristles",
+        miroooo: "Precision 3D Diamond-Cut End-Rounded Bristles",
         competitor: "Standard Flat-Cut Nylon Bristles",
         whyItMatters: "Rounded tips protect fragile enamel prisms and stop micro-lacerations along the gumline.",
         advantage: "miroooo",
@@ -1327,9 +1327,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
           "The Miroooo Brush X2 features an integrated microprocessor that monitors brushing pressure in real time. If excessive force is applied, the halo ring illuminates in red to alert you immediately, ensuring you never damage delicate gingival tissue or abrade tooth enamel.",
       },
       {
-        question: "How do DuPont 3D end-rounded bristles protect receding gums?",
+        question: "How do precision 3D end-rounded bristles protect receding gums?",
         answer:
-          "Under microscopic inspection, cheap bristles have sharp, sheared jagged ends that cause micro-lacerations along delicate gum tissue. DuPont 3D filaments are individually diamond-polished to create perfectly rounded domes that safely deflect off gingival margins.",
+          "Under microscopic inspection, cheap bristles have sharp, sheared jagged ends that cause micro-lacerations along delicate gum tissue. Precision 3D filaments are individually diamond-polished to create perfectly rounded domes that safely deflect off gingival margins.",
       },
     ],
   },
@@ -1373,7 +1373,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1381,9 +1381,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     winnerBullets: [
       "45° Bass sweep acoustic fluid dynamics flushes plaque and food particles from behind archwires and brackets.",
       "Linear non-rotational motion eliminates the risk of catching bracket wings, loosening cement, or snapping elastics.",
-      "DuPont 3D end-rounded bristles clean thoroughly around hardware without scratching demineralised enamel.",
+      "Precision 3D end-rounded bristles clean thoroughly around hardware without scratching demineralised enamel.",
       "Ultra-slim 51g aerospace aluminium body provides agile manoeuvrability around posterior brackets.",
-      "£69 package includes Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads for on-the-go meals.",
+      "£69 package includes Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads for on-the-go meals.",
     ],
     comparisonRows: [
       {
@@ -1469,7 +1469,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1480,7 +1480,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Includes a slim Luxury Travel Case that protects the handle and brush heads from washbag bacteria.",
       "Universal USB-C magnetic dock works seamlessly with any standard phone charger or USB port.",
       "Acoustic motor operates below 50dB with 45° Bass sweep for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
-      "Promotional price of £69 includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) backed by a 90-day money-back guarantee.",
+      "Promotional price of £69 includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) backed by a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
@@ -1551,13 +1551,13 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.mirooooBanner,
     heroAlt: "Miroooo Brush X2 electric toothbrush review and unboxing banner UK",
     quickTake:
-      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included package (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
+      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included package (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "The Miroooo Brush X2 addresses both major patient complaints: heavy cumbersome handles that encourage aggressive gripping and abrasive mechanical brush heads that cause gingival recession. Its 45° Bass sweep acoustic motor, smart pressure sensor halo ring, and 51g aerospace aluminium unibody deliver dentist-clean plaque removal with supreme gumline gentleness.",
       clinicalRationale:
-        "In over 14 years of clinical practice in the UK, the Miroooo Brush X2 represents the most refined consumer sonic toothbrush tested. Its acoustic motor with 45° Bass sweep produces optimal fluid cavitation to disrupt subgingival biofilm without damaging enamel. Meanwhile, its 51g aerospace aluminium unibody reduces hand strain by over 60%, and the active LED halo pressure sensor immediately prevents excessive force. Paired with soft diamond-cut DuPont rounded bristles and the Miroooo Dentalcare App, it is a clinical triumph for everyday gum health.",
+        "In over 14 years of clinical practice in the UK, the Miroooo Brush X2 represents the most refined consumer sonic toothbrush tested. Its acoustic motor with 45° Bass sweep produces optimal fluid cavitation to disrupt subgingival biofilm without damaging enamel. Meanwhile, its 51g aerospace aluminium unibody reduces hand strain by over 60%, and the active LED halo pressure sensor immediately prevents excessive force. Paired with soft diamond-cut precision 3D rounded brush heads and the Miroooo Dentalcare App, it is a clinical triumph for everyday gum health.",
       recommendation:
         "Backed by 4,275+ verified 4.9★ UK customer reviews, a 90-day money-back guarantee, and a 3-year warranty, Miroooo Brush X2 is our #1 ranked electric toothbrush for 2026.",
     },
@@ -1573,7 +1573,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Long battery life & USB-C charging",
       "Travel friendly with protective travel case",
       "Whisper-quiet acoustic motor sound",
-      "DuPont™ Tynex® 3D bristle quality",
+      "Precision 3D contour brush head quality",
       "100% mould-resistant aerospace aluminium & IPX7 waterproof",
       "Affordable long-term replacement brush heads",
       "Verified UK customer reviews & 90-day money-back guarantee",
@@ -1584,7 +1584,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Weighs only 51g — more than 60% lighter than bulky 140g plastic competitors, preventing hand strain and excessive brushing pressure.",
       "Whisper-quiet sound profile tested below 50dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
       "Massive 90-day cobalt battery life powered by a magnetic charging dock and universal USB-C cable.",
-      "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads.",
+      "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
       "Backed by a verified 4.9★ rating from 4,275+ UK customers, a 90-day risk-free money-back guarantee, and a 3-year warranty.",
     ],
     comparisonRows: [
@@ -1625,7 +1625,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Included Package Contents",
-        miroooo: "Complete package (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads) included at £69",
+        miroooo: "Complete package (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) included at £69",
         competitor: "Zero bonus accessories; £85 to £149 base price with £20–£40 add-on accessories",
         whyItMatters: "You receive the complete Luxury Travel Case, Wall-Mounted Storage, and extra brush heads upfront with zero hidden costs.",
         advantage: "miroooo",
@@ -1641,7 +1641,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Unboxing the Package: What's Inside the Box",
-        body: "The Miroooo Brush X2 package arrives in premium packaging containing everything required: (1) The Miroooo Brush X2 51g aerospace aluminium handle, (2) Luxury Travel Case, (3) Wall-Mounted Storage, and (4) Extra DuPont brush heads.",
+        body: "The Miroooo Brush X2 package arrives in premium packaging containing everything required: (1) The Miroooo Brush X2 51g aerospace aluminium handle, (2) Luxury Travel Case, (3) Wall-Mounted Storage, and (4) Up to 4 extra brush heads.",
       },
       {
         title: "Analysing 4,275+ Verified 4.9★ UK Customer Reviews",
@@ -1662,7 +1662,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "What is included in the £69 promotional offer?",
         answer:
-          "The £69 package includes the Miroooo Brush X2 51g aerospace aluminium handle, plus a Luxury Travel Case, Wall-Mounted Storage, and extra DuPont brush heads.",
+          "The £69 package includes the Miroooo Brush X2 51g aerospace aluminium handle, plus a Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
       },
     ],
   },

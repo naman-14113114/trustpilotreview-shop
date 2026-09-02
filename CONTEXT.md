@@ -8894,6 +8894,136 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
   - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 2.5s.
 
+---
+
+### Task Entry: Review Paragraph Reordering & Pros Reordering (2026-09-02 10:05 IST)
+
+- **User Intent & Protected Scope**:
+  1. Reorder review paragraphs for #1 Miroooo Brush X2:
+     - Paragraph 1: Lead with usability/engineering reasons why it is #1 (51g featherlight weight - lightest tested, 90+ day battery, <50dB whisper-quiet sound, universal USB-C travel convenience, included package accessories, 4.9★ rating, 90-day trial, 3-year warranty).
+     - Paragraph 2: Follow with cleaning points (45° Bass sweep acoustic fluid dynamics, 3 tailored modes, smart pressure sensor halo ring).
+  2. Reorder Pros for #1 Miroooo Brush X2:
+     - Moved `90-Day Battery Life` above `Quiet Sound (<50dB)`.
+     - Moved `90-Day Money-Back Guarantee` above `45° Bass Sweep & Smart Pressure Halo`.
+  3. Propagate across all pages cleanly.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Staged/Modified files: `apps/site/src/data/toothbrushes.ts`, `CONTEXT.md`.
+  - All changes made locally only.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Updated `MIROOOO_X_DATASET.review` paragraphs 1 and 2 to lead with usability/engineering reasons first, followed by cleaning points in paragraph 2.
+     - Updated `MIROOOO_X_DATASET.pros` ordering: `90-Day Battery Life` placed above `Quiet Sound (<50dB)`, and `90-Day Money-Back Guarantee` placed above `45° Bass Sweep & Smart Pressure Halo`.
+  2. `CONTEXT.md`: Appended task record.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1.4s.
+
+---
+
+### Task Entry: Miroooo Brush X2 Review Paragraph 1 Bold Term Formatting (2026-09-02 10:10 IST)
+
+- **User Intent & Protected Scope**:
+  - Bold specific key metrics and package inclusion terms in paragraph 1 of the Miroooo Brush X2 review across all electric toothbrush pages: `51g`, `90+ days of battery life`, `under 50dB`, `Luxury Travel Case`, `Wall-Mounted Storage`, and `extra DuPont™ brush heads`.
+  - Maintain exact design, layout, and copy across all 14 pages.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Modified files: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`.
+  - All changes made locally only.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated paragraph renderer in `ProductCard` to render HTML tags via `dangerouslySetInnerHTML={{ __html: paragraph }}`.
+  2. `apps/site/src/data/toothbrushes.ts`:
+     - Wrapped `<strong>51g</strong>`, `<strong>90+ days of battery life</strong>`, `<strong>under 50dB</strong>`, `<strong>Luxury Travel Case</strong>`, `<strong>Wall-Mounted Storage</strong>`, and `<strong>extra DuPont™ brush heads</strong>` in `MIROOOO_X_DATASET.review[0]`.
+  3. `CONTEXT.md`: Appended task record.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1.5s.
+
+---
+
+### Task Entry: DuPont Removal & "Up to 4 Extra Brush Heads" Update (2026-09-02 10:20 IST)
+
+- **User Intent & Protected Scope**:
+  - Remove all mentions of "DuPont Heads" / "DuPont™" across the codebase and replace them with simple brush heads terminology.
+  - For #1 Miroooo Brush X2, write "up to 4 extra brush heads" / "Up to 4 Extra Brush Heads" everywhere in copy, criteria, winner bullets, FAQs, and package contents.
+  - Update evaluation criteria item 7 to "Precision 3D contour brush head quality".
+  - Ensure zero references to "DuPont" remain across all 14 electric toothbrush routes and guide configurations.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Modified files:
+    - `apps/site/src/data/toothbrushes.ts`
+    - `apps/site/src/data/toothbrushGuides.ts`
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`
+    - `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp`
+    - `CONTEXT.md`
+  - All changes made locally only.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Replaced all "DuPont" mentions with "up to 4 extra brush heads", "Precision 3D contour brush head quality", or "precision 3D rounded brush heads".
+     - Updated `specifications` and `bundleItems`.
+  2. `apps/site/src/data/toothbrushGuides.ts`:
+     - Updated `MIROOOO_PACKAGE_CONTENTS` item 3 to "Up to 4 Extra Brush Heads".
+     - Updated all 13 guide configurations (quickTakes, Dr. Olivia rationales, criteria, winnerBullets, comparisonRows, buyerBlocks, and FAQs) to remove DuPont and use "up to 4 extra brush heads" / "precision 3D brush heads".
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated PackagePanel 3rd card label to "Up to 4 Extra Brush Heads" with clean image asset `/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp`.
+     - Updated `defaultEvaluationCriteria` item 7 to "Precision 3D contour brush head quality".
+  4. `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp` and root mirror:
+     - Mirrored clean asset without "dupont" in the filename.
+  5. `CONTEXT.md`: Appended task record.
+
+- **Verification Performed**:
+  - `grep_search` for `dupont`: 0 results across entire `apps/site`.
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 3.1s.
+
+---
+
+### Task Entry: Luxury Travel Case Image Replacement Across All 14 Pages (2026-09-02 10:28 IST)
+
+- **User Intent & Protected Scope**:
+  - Replace the Luxury Travel Case image with the newly provided image: `E:\1st YEAR DTU\New folder\miroooo_images\travel_case.webp`.
+  - Retain the exact same asset path/name (`/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp`) so that all 14 electric toothbrush routes and package components render the new image automatically without broken links or duplicate files.
+  - Delete/overwrite the older image in `apps/site/public/img/toothbrushes/` and root mirror `img/toothbrushes/`.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Modified files:
+    - `apps/site/public/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp` (68,662 bytes)
+    - `img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp` (68,662 bytes)
+    - `CONTEXT.md`
+  - All changes made locally only.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/public/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp`: Replaced with new WebP asset (68,662 bytes).
+  2. `img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp`: Replaced with new WebP asset (68,662 bytes).
+  3. `CONTEXT.md`: Appended task record.
+
+- **Verification Performed**:
+  - Verified file size: 68,662 bytes across both paths.
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 1.3s.
+
+
+
+
+
 
 
 
