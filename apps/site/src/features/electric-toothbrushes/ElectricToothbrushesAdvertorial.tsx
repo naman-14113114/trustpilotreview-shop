@@ -32,14 +32,14 @@ import {
 import { type ToothbrushGuide } from "@/data/toothbrushGuides";
 
 const defaultEvaluationCriteria = [
-  "Deep cleaning & plaque removal (40,000 VPM acoustic fluid dynamics with 45° Bass sweep)",
-  "Gentle on gums & enamel safe (Soft mode & DuPont rounded bristles)",
-  "Whisper-quiet acoustic motor sound (<50dB)",
-  "Lightweight ergonomic handling (51g unibody)",
-  "Long battery life & magnetic USB-C charging (90+ days)",
-  "DuPont™ Tynex® 3D end-rounded bristle quality",
+  "Deep cleaning & plaque removal",
+  "Gentle on gums & enamel safe",
+  "Lightweight ergonomic handling",
+  "Long battery life & USB-C charging",
+  "Travel friendly with protective travel case",
+  "Whisper-quiet acoustic motor sound",
+  "DuPont™ Tynex® 3D bristle quality",
   "100% mould-resistant aerospace aluminium & IPX7 waterproof",
-  "Travel convenience with included protective aluminium travel case",
   "Affordable long-term replacement brush heads",
   "Verified UK customer reviews & 90-day money-back guarantee",
 ];
@@ -210,6 +210,124 @@ function RankRibbon({
         {rank}
       </span>
     </div>
+  );
+}
+
+function PackagePanel({
+  loadingTarget,
+  setLoadingTarget,
+}: {
+  loadingTarget: string | null;
+  setLoadingTarget: (target: string) => void;
+}) {
+  return (
+    <motion.div
+      initial={false}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, type: "spring" }}
+      className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50"
+    >
+      {/* Animated background elements */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-200/40 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+
+      <div className="relative z-10">
+        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
+          <span className="text-lg">📦</span> Included in Package
+        </div>
+
+        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+          What&apos;s Inside{" "}
+          <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
+            Your Package
+          </span>
+        </h4>
+
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
+          Every Miroooo Brush X2 order includes these essential accessories in the box for complete oral care at home and on the go.
+        </p>
+
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
+          {/* Luxury Travel Case */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with Luxury Travel Case"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp"
+                alt="Miroooo Brush X2 Luxury Aluminium Travel Case"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              Luxury Travel Case
+            </p>
+          </div>
+
+          {/* Wall-Mounted Storage */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with Wall-Mounted Storage"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp"
+                alt="Miroooo Brush X2 Wall-Mounted Storage"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              Wall-Mounted Storage
+            </p>
+          </div>
+
+          {/* Extra DuPont™ Brush Heads */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with Extra DuPont Brush Heads"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp"
+                alt="Miroooo Brush X2 Extra DuPont™ Brush Heads"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              Extra DuPont™ Heads
+            </p>
+          </div>
+        </div>
+
+        <OfficialButton
+          href="https://www.trymiroooo.com/products/miroooo-x2"
+          targetId="miroooo-package-panel"
+          loadingTarget={loadingTarget}
+          setLoadingTarget={setLoadingTarget}
+          testId="miroooo-cta-package"
+          className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
+        >
+          Check Availability
+        </OfficialButton>
+      </div>
+    </motion.div>
   );
 }
 
@@ -433,6 +551,13 @@ function ProductCard({
               </ul>
             </div>
           </div>
+
+          {isMiroooo && (
+            <PackagePanel
+              loadingTarget={loadingTarget}
+              setLoadingTarget={setLoadingTarget}
+            />
+          )}
 
           <div className="w-full mt-8 lg:hidden">
             <OfficialButton
@@ -700,9 +825,9 @@ export default function ElectricToothbrushesAdvertorial({
                     ideal brush should be whisper-quiet rather than loudly buzzing
                     in your ear, featherlight (around 50g) for easy handling, and
                     gentle on gums while delivering a deep sonic clean. You
-                    don&apos;t need to spend £200+ on heavy, clunky handles or
-                    outdated 2-pin bathroom chargers to get a dentist-clean smile
-                    and 90+ days of battery life.
+                    don&apos;t need to spend £200+ on heavy, loud, clunky handles
+                    to get a dentist-clean smile, whisper-quiet sound, and 90+
+                    days of battery life.
                   </p>
                 )}
               </div>
@@ -719,36 +844,15 @@ export default function ElectricToothbrushesAdvertorial({
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Intro */}
-        <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
-          {guide?.intro && guide.intro.length > 0 ? (
-            guide.intro.map((paragraph, idx) => (
+        {guide?.intro && guide.intro.length > 0 && (
+          <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
+            {guide.intro.map((paragraph, idx) => (
               <p key={idx} className="leading-relaxed">
                 {paragraph}
               </p>
-            ))
-          ) : (
-            <>
-              <p>
-                <strong>Upgrading to the right electric toothbrush</strong> is one
-                of the most impactful decisions you can make for your long-term oral
-                health. While manual brushing often relies on harsh back-and-forth
-                scrubbing that can wear away protective tooth enamel and irritate
-                sensitive gums, modern electric toothbrushes create gentle
-                micro-bubbles that wash between tight teeth gaps and sweep
-                plaque from beneath the gumline.
-              </p>
-              <p>
-                However, not all electric toothbrushes are created equal. Many big-brand
-                models are heavy and uncomfortably loud, lose their charge within two
-                weeks, still rely on awkward 2-pin bathroom shaver adapters, and trap
-                shoppers into overpriced replacement heads. When ranking the top
-                electric toothbrushes in the UK for 2026, we evaluated real cleaning
-                performance, daily comfort, battery convenience, and overall long-term
-                value to help you find the best brush for your smile.
-              </p>
-            </>
-          )}
-        </div>
+            ))}
+          </div>
+        )}
 
         <EvaluationCriteria criteria={guide?.criteria} />
 

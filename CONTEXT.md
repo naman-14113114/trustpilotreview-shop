@@ -8796,6 +8796,106 @@ ext/image unconfigured host 500 error that was crashing the page.
   - All changes made locally only as explicitly instructed.
   - No commit, push, or Vercel deployment executed.
 
+---
+
+### Task Entry: Electric Toothbrush Content Overhaul across 14 Guides & Advertorial (2026-09-02 09:38 IST)
+
+- **User Intent & Protected Scope**:
+  1. Eliminate all negative talk of "2-pin" shaver plugs across all pages and replace with battery life, whisper-quiet sound, or lightweight ergonomics.
+  2. Remove the 2 default intro paragraphs from the main best electric toothbrush page (`/best-electric-toothbrush-uk-2026`) so criteria display immediately beneath the header.
+  3. Set exact criteria ordering and single-line format without brackets:
+     - `Deep cleaning & plaque removal`
+     - `Gentle on gums & enamel safe`
+     - `Lightweight ergonomic handling`
+     - `Long battery life & USB-C charging`
+     - `Travel friendly with protective travel case`
+     - `Whisper-quiet acoustic motor sound`
+     - `DuPont™ Tynex® 3D bristle quality`
+     - `100% mould-resistant aerospace aluminium & IPX7 waterproof`
+     - `Affordable long-term replacement brush heads`
+     - `Verified UK customer reviews & 90-day money-back guarantee`
+  4. Rewrite #1 Miroooo Brush X2 review text to positively lead with why it is #1 (45° Bass sweep, 3 modes, pressure sensor halo ring), lightest weight tested (51g), longest battery (90+ days), whisper-quiet sound (<50dB), travel-friendly universal USB-C charging, and convert former "free gifts" into standard included package items (Luxury Travel Case, Wall-Mounted Storage, extra DuPont brush heads).
+  5. Correct the 3 Cons of #1 Miroooo Brush X2:
+     - Con 1: High Promotional Demand (frequent stock sellouts during peak UK sale periods)
+     - Con 2: Official Website Exclusive (replacement heads must be purchased directly from official website as they are not on Amazon)
+     - Con 3: Limited-Time Offer (usually costs £99, selling for £69 on offer for today only)
+  - Protected Scope: Strict focus on electric toothbrush pages only. Zero modifications to hair dryers, LED masks, grounding sheets, hair removal devices, checkout routes, or tracking parameters.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Modified files: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/data/toothbrushGuides.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `CONTEXT.md`.
+  - No commit, push, or Vercel deployment executed.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Updated `MIROOOO_X_DATASET.bundleItems` with exact included items.
+     - Changed specifications from "Free Gift Bundle" to `"Included in Package": "Luxury Travel Case, Wall-Mounted Storage & Extra DuPont™ Brush Heads"`.
+     - Replaced 2-pin mentions in Pros with 90-day battery runtime and universal USB-C charging.
+     - Updated Cons to the 3 exact requested points: high promotional demand, official website exclusive refills, and usually £99 selling for £69 offer for today only.
+     - Rewrote review paragraphs leading positively with 45° Bass sweep, 3 modes, pressure halo ring, 51g featherlight weight, <50dB whisper sound, 90-day battery, and included package items.
+     - Cleaned competitor cons and review texts of 2-pin shaver plug talk.
+  2. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Standardized `defaultEvaluationCriteria` to the 10 single-line items without brackets.
+     - Removed default 2 intro paragraphs so criteria appear immediately below the header on `/best-electric-toothbrush-uk-2026`.
+     - Removed 2-pin reference from Dr. Olivia fallback verdict.
+  3. `apps/site/src/data/toothbrushGuides.ts`:
+     - Renamed `MIROOOO_GIFT_BUNDLE` to `MIROOOO_PACKAGE_CONTENTS`.
+     - Overhauled all 13 guide configurations (Guides 1 to 13) to remove all 2-pin mentions, eliminate free gift language, standardize criteria to the 10-point single-line list, and align review copy, winner bullets, and comparison tables.
+  4. `CONTEXT.md`: Appended task entry.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit` passed cleanly).
+  - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes with 0 errors.
+  - Global Grep Verification: Confirmed 0 occurrences of `2-pin` in `apps/site/src/` and 0 occurrences of `free gift` across all toothbrush data and page components.
+
+- **Commit, Push, Branch & Deployment Status**:
+  - Changes kept locally on branch `main` as instructed.
+  - No commit, push, or deployment executed.
+
+---
+
+### Task Entry: Package Contents Panel Re-integration & Con 3 Refinement (2026-09-02 09:45 IST)
+
+- **User Intent & Protected Scope**:
+  1. Refine Con 3 for Miroooo X2 to remove "today only" and replace with a short reference to selling in an ongoing/promotional sale (`"Promotional Sale: Usually costs £99, currently selling for £69 in ongoing promotional sale."`).
+  2. Add the package inclusion section back below Cons on the #1 Miroooo Brush X2 card across all electric toothbrush pages.
+     - Changed data to represent what comes in the package.
+     - Preserved existing images for Item 1 (Luxury Travel Case) and Item 2 (Wall-Mounted Storage).
+     - Added new asset for Item 3 (Extra DuPont™ Brush Heads) from `E:\1st YEAR DTU\New folder\miroooo_images\Miroooo X2\x2 compressed\B1.webp`.
+     - Completely excluded all price numbers, strikes, currency symbols, and value claims from the entire container.
+  3. Launched audit subagents across all 14 routes to verify accuracy.
+
+- **Starting & Ending Git State**:
+  - Repo: `trustpilotreview-shop` (`https://github.com/naman-14113114/trustpilotreview-shop.git`)
+  - Branch: `main`
+  - Upstream: `origin/main`
+  - Staged/Modified files: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp`, `img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp`, `CONTEXT.md`.
+  - All changes made locally only.
+
+- **Inspected & Changed Files**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Con 3 updated to `"Promotional Sale: Usually costs £99, currently selling for £69 in ongoing promotional sale."`.
+  2. `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp`:
+     - Copied from `B1.webp` (38,822 bytes) and mirrored to `img/toothbrushes/`.
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Built `PackagePanel` component with 3 items: Luxury Travel Case, Wall-Mounted Storage, and Extra DuPont™ Brush Heads.
+     - Zero price labels/tags included.
+     - Mounted `<PackagePanel ... />` directly below Cons in `ProductCard` for `isMiroooo`.
+  4. `CONTEXT.md`: Appended task record.
+
+- **Subagent Audits Performed**:
+  - Subagent 1 (Battles Auditor): Audited Routes 1–4 (`/best-electric-toothbrush-uk-2026`, `/miroooo-vs-oral-b-io6`, `/miroooo-vs-philips-sonicare`, `/miroooo-vs-suri`) - All PASSED.
+  - Subagent 2 (Guides Auditor): Audited Routes 5–14 (`/miroooo-vs-oral-b-io3`, `/why-switch-from-legacy-electric-toothbrushes-uk`, `/best-lightweight-electric-toothbrush-uk-2026`, `/best-battery-life-electric-toothbrush-uk-2026`, `/best-quiet-electric-toothbrush-uk-2026`, `/most-durable-electric-toothbrush-uk-2026`, `/best-electric-toothbrush-for-sensitive-teeth-uk-2026`, `/best-electric-toothbrush-for-braces-uk-2026`, `/best-travel-electric-toothbrush-uk-2026`, `/miroooo-brush-x-uk-review-2026`) - All PASSED.
+
+- **Build Verification**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded, generating all 67 static routes in 2.5s.
+
+
+
 
 
 
