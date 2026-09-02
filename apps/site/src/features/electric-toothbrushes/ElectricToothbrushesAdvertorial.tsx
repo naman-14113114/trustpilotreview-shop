@@ -264,7 +264,12 @@ function ProductCard({
               >
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={
+                    product.imageAlt ||
+                    (isMiroooo
+                      ? "Miroooo Brush X2 Sonic Electric Toothbrush with 45° Bass Sweep and Smart Pressure Sensor - #1 Best Electric Toothbrush UK 2026"
+                      : product.name)
+                  }
                   loading={isMiroooo ? "eager" : "lazy"}
                   decoding="async"
                   className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
