@@ -9086,6 +9086,47 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Ten shared `/img/toothbrushes/` and `/assets/toothbrushes/` resources referenced by the rendered pages were checked and all returned HTTP 200.
   - Final custom-domain recheck still returned the old LED-mask page at the toothbrush path with `x-matched-path: /[[...path]]`; its sitemap did not contain the toothbrush routes. Completing that last production-domain step requires assigning `www.trustpilotreview.shop` to either of the two current projects in Vercel.
 
+## 2026-09-02: Electric Toothbrush Metrics Alignment & SURI Data Refinements
+
+- **User Intent & Protected Scope**:
+  - Update product performance percentage metrics from top to bottom across all electric toothbrush pages:
+    - **#1 Miroooo Brush X2**: Plaque Removal & Cleaning: 97%, Durability: 96%, Lightweight & Ergonomic (51g): 98%, Whisper Quiet (<50dB): 96%, Battery Life & Endurance (90+ Days): 99%.
+    - **#2 Oral-B iO Series 6**: Plaque Removal & Cleaning: 87%, Durability: 76%, Lightweight & Ergonomic (140g): 79%, Loud Motor Noise (64dB): 84%, Battery Life & Endurance (14 Days): 70%.
+    - **#3 Philips Sonicare DiamondClean 9000**: Plaque Removal & Cleaning: 75%, Durability: 72%, Lightweight & Ergonomic (135g): 79%, Sonic Buzz Noise (56dB): 85%, Battery Life & Endurance (14 Days): 68%.
+    - **#4 SURI Pro 2.0 & #5 Oral-B iO3**: Unchanged (SURI: 58, 54, 74, 80, 78; iO3: 50, 46, 55, 52, 48).
+  - Update SURI Pro 2.0 dataset with accurate live product data from official website:
+    - Refills cost £14.99 for 2 heads (2-pack), NOT 3 heads; no single-head calculation.
+    - Battery runtime is 34 days. Added dedicated hard-hitting Con point #3 specifically breaking down the 34-day battery runtime.
+    - Eliminated charging dock stand comparisons (Miroooo Brush X2 does not have a charging dock stand; it uses Wall-Mounted Storage and universal USB-C charging).
+    - Updated comparison rows, quickTake, Dr. Olivia quotes, and unboxing descriptions across all guides in `toothbrushGuides.ts`.
+
+- **Starting & Ending Git State**:
+  - Starting Git state: Clean on `main` at `origin/main` (`9985d1a`).
+  - Modified files: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/data/toothbrushGuides.ts`, `CONTEXT.md`.
+  - Ending Git state: Working tree modified, typecheck, lint, and build verified code 0.
+
+- **Inspected & Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    - Updated `MIROOOO_X_DATASET.metrics` to `[97, 96, 98, 96, 99]`.
+    - Updated `MIROOOO_X_DATASET.batteryLife` and specifications to universal USB-C charging.
+    - Updated Oral-B iO6 `metrics` to `[87, 76, 79, 84, 70]`.
+    - Updated Philips Sonicare 9000 `metrics` to `[75, 72, 79, 85, 68]`.
+    - Updated SURI Pro 2.0 `batteryLife` to 34 Days, updated 10 sharp Cons with 34-day battery at #3, £14.99 for 2 heads, and removed charging dock mentions.
+  - `apps/site/src/data/toothbrushGuides.ts`:
+    - Updated `miroooo-vs-suri` comparison rows and text to £14.99 for 2 heads and 34-day battery.
+    - Standardized Miroooo Brush X2 charging description across all 13 guides to universal USB-C charging / Wall-Mounted Storage.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Inspected and verified dynamic metric rendering.
+  - All 14 toothbrush route pages in `apps/site/src/app/`: Inspected and confirmed proper data binding.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Exited with code 0.
+  - `pnpm --filter @trustpilotreview/site lint`: Exited with code 0.
+  - `pnpm --filter @trustpilotreview/site build`: Exited with code 0 (all 67 static and dynamic routes compiled successfully).
+
+- **Commit, Push, & Deployment Status**:
+  - Changes tested locally and ready for push upon user instruction.
+
+
 
 
 

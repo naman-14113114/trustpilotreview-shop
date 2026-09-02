@@ -159,11 +159,11 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     eyebrow: "Head-to-Head Comparison",
     headline: "Miroooo Brush X2 vs Oral-B iO6: Which Electric Toothbrush Wins in 2026?",
     subheadline:
-      "Oral-B iO6 brings interactive digital coaching at £129.99. Miroooo Brush X2 delivers whisper-quiet acoustic power with 45° Bass sweeping, a 51g aerospace aluminium body, and a 90-day magnetic USB-C battery at £69. Here is the clinical breakdown for UK buyers.",
+      "Oral-B iO6 brings interactive digital coaching at £129.99. Miroooo Brush X2 delivers whisper-quiet acoustic power with 45° Bass sweeping, a 51g aerospace aluminium body, and a 90-day cobalt battery with universal USB-C charging at £69. Here is the clinical breakdown for UK buyers.",
     heroImage: images.oralBiO6,
     heroAlt: "Miroooo Brush X2 vs Oral-B iO6 electric toothbrush comparison",
     quickTake:
-      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 90-day magnetic USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at nearly half the price (£69 vs £129.99).",
+      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 90-day cobalt battery with universal USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at nearly half the price (£69 vs £129.99).",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -176,7 +176,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "When upgrading your electric toothbrush in the UK, the choice often comes down to two very different design philosophies: the high-tech, oscillating-rotating mechanical approach of legacy giants like Oral-B, or the ultra-modern, lightweight acoustic engineering of Miroooo Brush X2.",
       "The Oral-B iO Series 6 (£129.99) is renowned for its interactive OLED display, AI position recognition, and round mechanical brush head. However, it also brings classic legacy drawbacks: a bulky 140g plastic handle, a loud 64dB oscillating gear whine, a short 14-day battery, and expensive replacement head prices (£8 to £12 each).",
-      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery on a magnetic USB-C charging dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
+      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery with universal USB-C charging, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -193,7 +193,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     winnerBullets: [
       "Ergonomic Comfort: At 51g, Miroooo Brush X2 is nearly 3x lighter than the 140g Oral-B iO6, dramatically reducing wrist fatigue.",
       "Acoustic vs Friction: 45° Bass sweep micro-bubble fluid dynamics clean deep between teeth and beneath the gumline without abrasive mechanical scrubbing.",
-      "Universal USB-C Charging: Up to 90 days of battery life on a magnetic dock provides effortless travel convenience.",
+      "Universal USB-C Charging: Up to 90 days of battery life with universal USB-C fast charging provides effortless travel convenience.",
       "Whisper-Quiet Operation: Under 50dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
       "Unbeatable Value: £69 purchase price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads), 90-day money-back guarantee, and 3-year warranty.",
     ],
@@ -228,7 +228,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Battery Life & Charging",
-        miroooo: "90 Days (Cobalt cell with magnetic USB-C dock)",
+        miroooo: "90 Days (Cobalt cell with universal USB-C charging)",
         competitor: "14 Days (Standard inductive charging base)",
         whyItMatters: "USB-C charging works anywhere at home or on holiday without extra chargers.",
         advantage: "miroooo",
@@ -258,7 +258,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a dentist-clean smile with 45° Bass sweeping, zero morning motor noise, effortless 51g handling, 90 days of battery life via magnetic USB-C, smart pressure halo feedback, and complete included package accessories for £69.",
+        body: "You want a dentist-clean smile with 45° Bass sweeping, zero morning motor noise, effortless 51g handling, 90 days of battery life via universal USB-C charging, smart pressure halo feedback, and complete included package accessories for £69.",
       },
       {
         title: "Choose Oral-B iO6 if...",
@@ -291,7 +291,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "How does the battery life compare between Miroooo Brush X2 and Oral-B iO6?",
         answer:
-          "Miroooo Brush X2 delivers up to 90 days of battery life on a single charge and uses a compact magnetic USB-C dock. Oral-B iO6 lasts approximately 14 days and requires frequent recharging.",
+          "Miroooo Brush X2 delivers up to 90 days of battery life on a single charge and uses universal USB-C charging. Oral-B iO6 lasts approximately 14 days and requires frequent recharging.",
       },
       {
         question: "Why are Oral-B iO replacement heads so expensive?",
@@ -301,7 +301,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Can I charge Miroooo Brush X2 with my phone charger?",
         answer:
-          "Yes. The Miroooo magnetic charging dock connects via a standard universal USB-C cable, allowing you to charge it from any USB wall adapter, laptop, power bank, or bathroom USB port.",
+          "Yes. The Miroooo Brush X2 charges via a standard universal USB-C cable, allowing you to charge it from any USB wall adapter, laptop, power bank, or bathroom USB port.",
       },
     ],
   },
@@ -402,7 +402,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Battery Life & Charger",
-        miroooo: "90 Days (Cobalt cell with magnetic USB-C dock)",
+        miroooo: "90 Days (Cobalt cell with universal USB-C charging)",
         competitor: "14 Days (Inductive glass charger cup)",
         whyItMatters: "90-day USB-C charging eliminates bathroom clutter and travel charger headaches.",
         advantage: "miroooo",
@@ -487,7 +487,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.suriSonic,
     heroAlt: "Miroooo Brush X2 vs SURI Pro 2.0 electric toothbrush comparison",
     quickTake:
-      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X2 is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct halo modes vs 2, features durable precision brush heads that do not crack or loosen, delivers 90-day cobalt cell battery vs 34–40 days, smart pressure sensor halo ring, and includes complete package accessories at £69 vs SURI's £85 standalone price.",
+      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X2 is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct halo modes vs 2, features durable precision brush heads that do not crack or loosen, delivers 90-day cobalt cell battery vs 34 days, smart pressure sensor halo ring, and includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at £69 vs SURI's £85 standalone price.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -495,12 +495,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       clinicalRationale:
         "Plant-based brush heads made from cornstarch composite absorb moisture over time, leading to micro-fissures along the collar and loosening on the vibrating motor shaft. When a brush head loosens, acoustic energy is dissipated as noise and rattle rather than transferred to the teeth, reducing plaque cleaning efficacy. Furthermore, SURI offers only 2 basic cleaning modes and lacks a dedicated sensitive gum setting. Miroooo Brush X2 provides 3 clinically optimised halo LED modes with 45° Bass sweep guidance and precision 3D rounded brush heads that maintain consistent stiffness and rounded tips to protect enamel.",
       recommendation:
-        "Miroooo Brush X2 provides a far more durable, effective, and reliable sonic clean. It delivers true long-lasting aluminium engineering with 90-day battery endurance without the fragile head compromises or £14.99/3-pack refill markups of SURI.",
+        "Miroooo Brush X2 provides a far more durable, effective, and reliable sonic clean. It delivers true long-lasting aluminium engineering with 90-day battery endurance without the fragile head compromises or £14.99 per 2-pack refill markups of SURI.",
     },
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
-      "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
-      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable 3D end-rounded brush heads, 90-day cobalt battery on a magnetic USB-C dock, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
+      "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 2 heads), a mediocre 34-day battery life, a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
+      "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable 3D end-rounded brush heads, 90-day cobalt battery with universal USB-C charging, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -518,7 +518,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "No Cracked Heads: Miroooo Brush X2's precision brush heads eliminate the cracking and loose shaft issues common to SURI's cornstarch heads.",
       "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless manoeuvrability.",
       "45° Bass Sweep & Smart Halo Ring: Features 3 halo LED modes and active pressure warning, where SURI only offers 2 basic settings with no visual halo.",
-      "Longer 90-Day Cobalt Battery: Lasts more than double the duration of SURI's 34–40 day battery on a single charge.",
+      "Longer 90-Day Cobalt Battery: Lasts nearly 3x longer than SURI's 34-day battery on a single charge.",
       "Better Package Value: £69 includes Luxury Travel Case, Wall-Mounted Storage, and Up to 4 Extra Brush Heads, while SURI charges £85 with no travel case in the box.",
     ],
     comparisonRows: [
@@ -552,15 +552,15 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Battery Endurance",
-        miroooo: "90 Days (Cobalt cell magnetic USB-C dock)",
-        competitor: "34–40 Days (Magnetic USB-C charging)",
+        miroooo: "90 Days (Cobalt cell with universal USB-C charging)",
+        competitor: "34 Days (Magnetic USB-C charging)",
         whyItMatters: "90 days means you only need to charge the brush 4 times a year.",
         advantage: "miroooo",
       },
       {
         feature: "Refill Pack Cost",
         miroooo: "Affordable replacement heads (~£3/head)",
-        competitor: "£14.99 for 3 heads (~£5 per head)",
+        competitor: "£14.99 for 2 heads (£14.99 per 2-pack)",
         whyItMatters: "SURI's proprietary plant-based refills cost substantially more every year.",
         advantage: "miroooo",
       },
@@ -572,7 +572,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "Choose SURI Pro 2.0 if...",
-        body: "You are strictly committed to plant-based cornstarch heads with a prepaid UK mail-back recycling scheme, and you are comfortable paying £85 upfront plus £14.99 per 3-pack of refill heads.",
+        body: "You are strictly committed to plant-based cornstarch heads with a prepaid UK mail-back recycling scheme, and you are comfortable paying £85 upfront plus £14.99 per 2-pack of refill heads.",
       },
     ],
     products: [
@@ -620,7 +620,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.oralBiO3,
     heroAlt: "Miroooo Brush X2 vs Oral-B iO3 electric toothbrush comparison",
     quickTake:
-      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring an extended 16-hour charge, and expensive £8–£12 refill heads. Miroooo Brush X2 delivers a true flagship experience: 45° Bass sweep acoustic cleaning, smart pressure sensor halo ring with 3 halo LED modes, 90-day cobalt cell battery via magnetic USB-C, 51g aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
+      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring an extended 16-hour charge, and expensive £8–£12 refill heads. Miroooo Brush X2 delivers a true flagship experience: 45° Bass sweep acoustic cleaning, smart pressure sensor halo ring with 3 halo LED modes, 90-day cobalt cell battery via universal USB-C charging, 51g aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -633,7 +633,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "For UK shoppers evaluating electric toothbrushes around the £65–£70 price point, the market presents a stark contrast: a stripped-down entry-level plastic model from a legacy brand, or a fully loaded, precision-engineered acoustic flagship.",
       "The Oral-B iO3 Matt Black (£65, RRP £160) is designed as an accessible gateway into Oral-B's magnetic micro-vibration system. It includes a 360° smart pressure ring, 3 basic cleaning modes, and a hard travel case. However, to hit this price point, Oral-B stripped away the defining smart features of the iO line: there is no interactive OLED display screen, no Bluetooth app tracking, a dated 14-day battery that takes a sluggish 16 hours to charge, and proprietary iO refill heads that cost £8 to £12 each.",
-      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery on a magnetic USB-C dock, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
+      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery with universal USB-C charging, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -650,7 +650,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     winnerBullets: [
       "Flagship Smart Guidance: Miroooo Brush X2 integrates a 360° smart pressure halo ring (with 3 halo LED modes) and Miroooo Dentalcare App tracking, whereas Oral-B stripped all Bluetooth and app tracking from the iO3.",
       "Premium Aerospace Aluminium: Seamless mould-resistant metal chassis replaces the bulky 136g polycarbonate and rubber grime traps of the iO3.",
-      "90-Day Cobalt Cell Power: Fast magnetic USB-C charging delivers 3 full months of runtime, eliminating the iO3's sluggish 16-hour recharge cycle.",
+      "90-Day Cobalt Cell Power: Fast universal USB-C charging delivers 3 full months of runtime, eliminating the iO3's sluggish 16-hour recharge cycle.",
       "45° Bass Sweep Acoustic Cleaning: Whisper-quiet (<50dB) micro-vibrations clean subgingivally without the harsh 64dB gear buzzing and jaw rattle of the iO3.",
       "Superior Value & Refill Savings: The £69 package includes complete accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads) and spares owners from costly iO replacement head markups.",
     ],
@@ -685,7 +685,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Battery Life & Charge Time",
-        miroooo: "90 Days (Cobalt cell fast magnetic USB-C dock)",
+        miroooo: "90 Days (Cobalt cell fast universal USB-C charging)",
         competitor: "14 Days (Sluggish 16-hour charge cycle)",
         whyItMatters: "Waiting 16 hours for a 14-day charge is obsolete compared to Miroooo's 90-day cobalt cell endurance.",
         advantage: "miroooo",
@@ -694,7 +694,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X2 if...",
-        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery on magnetic USB-C, Miroooo Dentalcare App habit tracking, aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
+        body: "You want a premium flagship acoustic toothbrush with 45° Bass sweep cleaning, a smart pressure sensor halo ring with 3 halo LED modes, 90 days of cobalt cell battery with universal USB-C charging, Miroooo Dentalcare App habit tracking, aerospace aluminium unibody, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
       {
         title: "Choose Oral-B iO3 if...",
@@ -723,7 +723,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Why does the Oral-B iO3 take 16 hours to charge?",
         answer:
-          "The iO3 uses a basic inductive charging base with a low current output. Miroooo Brush X2 utilises modern magnetic USB-C fast charging that delivers 90 days of cobalt cell runtime in a fraction of the time.",
+          "The iO3 uses a basic inductive charging base with a low current output. Miroooo Brush X2 utilises modern universal USB-C fast charging that delivers 90 days of cobalt cell runtime in a fraction of the time.",
       },
     ],
   },
@@ -746,7 +746,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.topFive,
     heroAlt: "Top 5 best electric toothbrushes in the UK compared for 2026",
     quickTake:
-      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to short 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X2 deliver superior plaque removal with 45° Bass sweeping, smart pressure halo feedback, whisper-quiet sound (<50dB), 90 days battery on magnetic USB-C, and complete included package accessories for £69.",
+      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to short 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X2 deliver superior plaque removal with 45° Bass sweeping, smart pressure halo feedback, whisper-quiet sound (<50dB), 90 days battery via universal USB-C charging, and complete included package accessories for £69.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -759,7 +759,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "For over twenty years, the UK electric toothbrush market has been dominated by a duopoly of multinational brands. While smartphones, laptops, and personal care devices underwent massive technological leaps, electric toothbrushes remained virtually frozen in time.",
       "The result is that millions of UK bathrooms are still cluttered with bulky plastic handles that weigh upwards of 140g, vibrate with a loud 65dB mechanical buzz, require charging every two weeks, and demand £30 to £50 every year in replacement head markups.",
-      "In 2026, a new wave of direct-to-consumer acoustic engineering has triggered a massive consumer migration. British shoppers are switching in droves to lightweight aerospace aluminium acoustic brushes that deliver whisper-quiet operation, 90 days of battery life via magnetic USB-C, 45° Bass sweep guidance, and honest refill pricing. Here is why thousands are making the switch to Miroooo Brush X2.",
+      "In 2026, a new wave of direct-to-consumer acoustic engineering has triggered a massive consumer migration. British shoppers are switching in droves to lightweight aerospace aluminium acoustic brushes that deliver whisper-quiet operation, 90 days of battery life via universal USB-C charging, 45° Bass sweep guidance, and honest refill pricing. Here is why thousands are making the switch to Miroooo Brush X2.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -774,7 +774,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Verified UK customer reviews & 90-day money-back guarantee",
     ],
     winnerBullets: [
-      "Long Battery Life: 90 days of battery life on a magnetic USB-C dock means you charge only ~4 times a year.",
+      "Long Battery Life: 90 days of battery life with universal USB-C charging means you charge only ~4 times a year.",
       "62% Lighter in Hand: 51g aerospace aluminium unibody prevents wrist fatigue and eliminates porous rubber grime traps.",
       "Whisper-Quiet Acoustics: Runs under 50dB, eliminating the jarring morning power-tool noise of oscillating gearboxes.",
       "Dentist-Clean 45° Bass Sweep: Acoustic micro-bubbles flush plaque from beneath the gumline without enamel abrasion.",
@@ -790,7 +790,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Charging & Travel",
-        miroooo: "Universal Magnetic USB-C Charging Dock",
+        miroooo: "Universal USB-C Fast Charging",
         competitor: "Proprietary charging base with short battery runtime",
         whyItMatters: "Universal USB-C cable charging works anywhere without carrying extra adapters.",
         advantage: "miroooo",
@@ -831,7 +831,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "How Modern Acoustic Engineering Solves Them All",
-        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery on magnetic USB-C, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
+        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery via universal USB-C charging, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
     ],
     products: toothbrushProducts,
@@ -839,7 +839,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Why should I switch from my old Oral-B or Sonicare to Miroooo?",
         answer:
-          "Switching to Miroooo Brush X2 upgrades your routine with a 51g aerospace aluminium body (over 60% lighter), 90 days of battery life via magnetic USB-C, smart pressure sensor halo ring, 45° Bass sweep guidance, whisper-quiet <50dB acoustic motor, and affordable replacement heads, saving you money both upfront and over time.",
+          "Switching to Miroooo Brush X2 upgrades your routine with a 51g aerospace aluminium body (over 60% lighter), 90 days of battery life via universal USB-C charging, smart pressure sensor halo ring, 45° Bass sweep guidance, whisper-quiet <50dB acoustic motor, and affordable replacement heads, saving you money both upfront and over time.",
       },
       {
         question: "Is acoustic sonic brushing better than mechanical rotating brushes?",
@@ -967,30 +967,30 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "BATTERY",
     cardTitle: "Best Battery Life Electric Toothbrush",
     cardDescription:
-      "90-day single-charge cobalt battery endurance with magnetic USB-C dock vs short 14-day models.",
+      "90-day single-charge cobalt battery endurance with universal USB-C charging vs short 14-day models.",
     seoTitle: "Best Battery Life Electric Toothbrush UK 2026 | 90-Day Endurance Test",
     seoDescription:
       "Compare the longest battery life electric toothbrushes in the UK for 2026. Ranked for 90-day single-charge cobalt runtime and universal USB-C charging convenience.",
     eyebrow: "Battery Endurance & Charging Benchmark",
     headline: "Best Battery Life Electric Toothbrush UK 2026",
     subheadline:
-      "We tested real-world battery endurance, charging convenience and travel practicality. Miroooo Brush X2 leads with 90 days per charge and magnetic USB-C docking—charging just 4 times a year vs 26 times for legacy brands.",
+      "We tested real-world battery endurance, charging convenience and travel practicality. Miroooo Brush X2 leads with 90 days per charge and universal USB-C fast charging—charging just 4 times a year vs 26 times for legacy brands.",
     heroImage: images.topFive,
     heroAlt: "Best battery life electric toothbrushes in the UK compared",
     quickTake:
-      "Legacy electric toothbrushes die every 14 days (26 recharges a year). Modern endurance leaders like the Miroooo Brush X2 last 90 days on a single charge and power up via a sleek magnetic USB-C dock, requiring only 4 quick charges per year.",
+      "Legacy electric toothbrushes die every 14 days (26 recharges a year). Modern endurance leaders like the Miroooo Brush X2 last 90 days on a single charge and power up via universal USB-C charging, requiring only 4 quick charges per year.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "Battery fatigue is the number one reason UK patients revert to manual toothbrushes. A brush that runs 90 days on one charge removes charging friction and ensures consistent acoustic plaque removal.",
       clinicalRationale:
-        "Patients frequently leave their toothbrushes uncharged or let them run down until the motor weakens, resulting in substandard plaque removal. A 90-day cobalt battery coupled with a universal magnetic USB-C dock ensures the motor operates at full clinical velocity every single morning without battery anxiety.",
+        "Patients frequently leave their toothbrushes uncharged or let them run down until the motor weakens, resulting in substandard plaque removal. A 90-day cobalt battery coupled with universal USB-C fast charging ensures the motor operates at full clinical velocity every single morning without battery anxiety.",
       recommendation:
         "For battery peace of mind and universal USB-C travel convenience, Miroooo Brush X2 is our top recommendation.",
     },
     intro: [
       "Electric toothbrush battery life has often been a frustrating limitation. When a toothbrush battery only lasts two weeks, you must charge it 26 times a year—creating constant battery anxiety and dead-brush mornings.",
-      "Modern battery benchmarks require at least 30 to 90 days of runtime with universal USB-C charging. In our 2026 endurance evaluation, the Miroooo Brush X2 achieved an unbeatable 90 days on a single charge via its magnetic USB-C dock, requiring just ~4 charges per year.",
+      "Modern battery benchmarks require at least 30 to 90 days of runtime with universal USB-C charging. In our 2026 endurance evaluation, the Miroooo Brush X2 achieved an unbeatable 90 days on a single charge via universal USB-C charging, requiring just ~4 charges per year.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -1006,7 +1006,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     ],
     winnerBullets: [
       "Industry-leading 90-day runtime on a single charge—requires only ~4 charges per calendar year.",
-      "Magnetic USB-C charging dock works anywhere with standard USB-C cables.",
+      "Universal USB-C charging works anywhere with standard USB-C cables.",
       "High-density cobalt cell maintains full acoustic motor speed until the final brushing session.",
       "Comes with complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
     ],
@@ -1020,7 +1020,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Charging Method",
-        miroooo: "Universal Magnetic USB-C Charging Dock",
+        miroooo: "Universal USB-C Fast Charging",
         competitor: "Proprietary inductive charging base",
         whyItMatters: "USB-C plugs directly into standard phone chargers, laptops, and bedside sockets without extra cables.",
         advantage: "miroooo",
@@ -1036,7 +1036,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Best for Maximum Battery Endurance & USB-C Simplicity",
-        body: "Choose the Miroooo Brush X2 if you want 90 days of uninterrupted brushing, charging only 4 times a year with a universal magnetic USB-C dock that works anywhere.",
+        body: "Choose the Miroooo Brush X2 if you want 90 days of uninterrupted brushing, charging only 4 times a year with universal USB-C charging that works anywhere.",
       },
     ],
     products: toothbrushProducts,
@@ -1049,7 +1049,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Can I charge the Miroooo Brush X2 using standard USB-C?",
         answer:
-          "Yes! The Miroooo Brush X2 uses a universal magnetic charging dock powered by a standard USB-C cable. You can charge it anywhere using any standard phone charger, USB wall plug, laptop, or power bank.",
+          "Yes! The Miroooo Brush X2 features universal fast charging powered by a standard USB-C cable. You can charge it anywhere using any standard phone charger, USB wall plug, laptop, or power bank.",
       },
     ],
   },
@@ -1402,7 +1402,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "On-The-Go Portability",
-        miroooo: "51g Body + Luxury Travel Case + 90-Day Battery Dock",
+        miroooo: "51g Body + Luxury Travel Case + 90-Day Battery",
         competitor: "140g Heavy Body + Short 14-Day Battery",
         whyItMatters: "Braces wearers must brush after meals outside the home; USB-C portability is essential.",
         advantage: "miroooo",
@@ -1436,7 +1436,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "TRAVEL",
     cardTitle: "Best Travel Electric Toothbrush UK 2026",
     cardDescription:
-      "51g featherlight unibody, included Luxury Travel Case, 90-day cobalt battery with USB-C magnetic dock, and whisper-quiet sound.",
+      "51g featherlight unibody, included Luxury Travel Case, 90-day cobalt battery with universal USB-C charging, and whisper-quiet sound.",
     seoTitle: "Best Travel Electric Toothbrush UK 2026 | Top 5 Portable Brushes Compared",
     seoDescription:
       "Compare the best travel electric toothbrushes in the UK for 2026. Ranked for lightweight portability (51g), 90-day cobalt battery life, USB-C charging, travel cases, and travel-friendly sonic power.",
@@ -1459,7 +1459,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     },
     intro: [
       "Packing an electric toothbrush for UK staycations, business trips, or international holidays has historically been a frustrating compromise. Traditional electric toothbrushes from legacy brands weigh upwards of 135g to 140g, feature loud mechanical motors that disturb others in hotel rooms, and have short 14-day batteries.",
-      "As a result, many UK travellers either sacrifice their oral hygiene by reverting to ineffective manual toothbrushes or find themselves stranded with a dead electric brush mid-trip. In 2026, modern acoustic engineering has completely transformed travel oral care. By pairing a featherlight 51g aerospace aluminium chassis with a massive 90-day cobalt battery and a universal USB-C magnetic dock, modern sonic brushes deliver dentist-clean results anywhere in the world.",
+      "As a result, many UK travellers either sacrifice their oral hygiene by reverting to ineffective manual toothbrushes or find themselves stranded with a dead electric brush mid-trip. In 2026, modern acoustic engineering has completely transformed travel oral care. By pairing a featherlight 51g aerospace aluminium chassis with a massive 90-day cobalt battery and universal USB-C fast charging, modern sonic brushes deliver dentist-clean results anywhere in the world.",
       "In this travel guide, we evaluated the UK's top 5 electric toothbrushes across travel-specific benchmarks: handle weight, battery endurance, charging versatility, travel case hygiene, motor noise discretion, and overall kit value.",
     ],
     criteria: [
@@ -1476,9 +1476,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     ],
     winnerBullets: [
       "Featherlight 51g aerospace aluminium handle weighs less than half of legacy Oral-B and Sonicare handles.",
-      "Massive 90-day cobalt cell battery life means you can take 3-month trips without even packing the magnetic charging base.",
+      "Massive 90-day cobalt cell battery life means you can take 3-month trips without even packing a charger.",
       "Includes a slim Luxury Travel Case that protects the handle and brush heads from washbag bacteria.",
-      "Universal USB-C magnetic dock works seamlessly with any standard phone charger or USB port.",
+      "Universal USB-C charging works seamlessly with any standard phone charger or USB port.",
       "Acoustic motor operates below 50dB with 45° Bass sweep for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
       "Promotional price of £69 includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) backed by a 90-day money-back guarantee.",
     ],
@@ -1494,12 +1494,12 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         feature: "Battery Life per Charge",
         miroooo: "90 Days (3 full months of twice-daily brushing)",
         competitor: "14 to 40 Days maximum before battery depletion",
-        whyItMatters: "Allows multi-month holidays with zero charging cords or docks packed in your luggage.",
+        whyItMatters: "Allows multi-month holidays with zero charging cords packed in your luggage.",
         advantage: "miroooo",
       },
       {
         feature: "Charging Interface",
-        miroooo: "Compact Magnetic Dock with universal USB-C cable",
+        miroooo: "Universal USB-C fast charging",
         competitor: "Bulky proprietary charging stands or glass cups",
         whyItMatters: "Can be charged from any phone charger, power bank, or laptop without extra clutter.",
         advantage: "miroooo",
@@ -1528,7 +1528,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "How long does the Miroooo Brush X2 battery last on holiday without a charger?",
         answer:
-          "The Miroooo Brush X2 provides 90 days of battery life based on standard dentist-recommended twice-daily brushing for 2 minutes per session. This means you can travel for over 12 weeks on a single charge without ever packing the charging base or USB-C cable.",
+          "The Miroooo Brush X2 provides 90 days of battery life based on standard dentist-recommended twice-daily brushing for 2 minutes per session. This means you can travel for over 12 weeks on a single charge without ever packing a charger or USB-C cable.",
       },
     ],
   },
@@ -1547,7 +1547,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     eyebrow: "Official UK Brand Review & Verification",
     headline: "Miroooo Brush X2 UK Review 2026: Clinical Test & 90-Day Trial Breakdown",
     subheadline:
-      "We conducted an exhaustive hands-on verification of the Miroooo Brush X2 — testing its 45° Bass sweep acoustic motor, smart pressure sensor halo ring, 51g featherlight handle, 90-day cobalt battery dock, included package contents, and 4,275+ verified 4.9★ UK reviews.",
+      "We conducted an exhaustive hands-on verification of the Miroooo Brush X2 — testing its 45° Bass sweep acoustic motor, smart pressure sensor halo ring, 51g featherlight handle, 90-day cobalt battery endurance, included package contents, and 4,275+ verified 4.9★ UK reviews.",
     heroImage: images.mirooooBanner,
     heroAlt: "Miroooo Brush X2 electric toothbrush review and unboxing banner UK",
     quickTake:
@@ -1583,7 +1583,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Smart pressure sensor halo ring provides instant real-time visual feedback to protect gums from over-brushing.",
       "Weighs only 51g — more than 60% lighter than bulky 140g plastic competitors, preventing hand strain and excessive brushing pressure.",
       "Whisper-quiet sound profile tested below 50dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
-      "Massive 90-day cobalt battery life powered by a magnetic charging dock and universal USB-C cable.",
+      "Massive 90-day cobalt battery life powered by universal USB-C fast charging.",
       "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
       "Backed by a verified 4.9★ rating from 4,275+ UK customers, a 90-day risk-free money-back guarantee, and a 3-year warranty.",
     ],
@@ -1617,8 +1617,8 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
         advantage: "miroooo",
       },
       {
-        feature: "Battery Endurance & Dock",
-        miroooo: "90 Days (Cobalt cell magnetic dock with USB-C cable)",
+        feature: "Battery Endurance & Charging",
+        miroooo: "90 Days (Cobalt cell with universal USB-C charging)",
         competitor: "14 to 40 Days on proprietary charging stands",
         whyItMatters: "Recharge only 4 times a year using any phone charger, eliminating bathroom cable clutter.",
         advantage: "miroooo",
