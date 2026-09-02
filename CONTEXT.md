@@ -9078,6 +9078,13 @@ ext/image unconfigured host 500 error that was crashing the page.
   - GitHub-triggered deployments for the two connected current projects were expected after push.
   - The custom-domain mapping remained the external blocker: code pushed to the connected projects cannot replace the separate older deployment serving `www.trustpilotreview.shop` without a Vercel domain/project reassignment.
 
+- **Post-Push Verification Addendum**:
+  - Commit `5f2b8e7` (`feat: register electric toothbrush pages in sitemap`) was pushed to `origin/main`.
+  - GitHub deployment checks completed successfully for both connected projects: `Vercel – trustpilotreview-shop` and `Vercel – trustpilotreview-shop-site`.
+  - Direct HTTP verification checked all 14 routes on both project domains: 28/28 returned HTTP 200, the expected toothbrush page title, and the matching `https://www.trustpilotreview.shop/<route>` canonical.
+  - The deployed sitemap returned HTTP 200 and contained each of the 14 canonical toothbrush URLs exactly once.
+  - Ten shared `/img/toothbrushes/` and `/assets/toothbrushes/` resources referenced by the rendered pages were checked and all returned HTTP 200.
+  - Final custom-domain recheck still returned the old LED-mask page at the toothbrush path with `x-matched-path: /[[...path]]`; its sitemap did not contain the toothbrush routes. Completing that last production-domain step requires assigning `www.trustpilotreview.shop` to either of the two current projects in Vercel.
 
 
 
