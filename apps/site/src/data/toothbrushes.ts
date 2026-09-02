@@ -52,7 +52,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   rank: 1,
   name: "Miroooo X2",
   brand: "Miroooo",
-  image: "/img/toothbrushes/miroooo-x2-sonic-electric-toothbrush.webp",
+  image: "/img/toothbrushes/miroooo-x2-ranked-product-no-logo.webp",
   imageAlt: "Miroooo Brush X2 Sonic Electric Toothbrush with 45° Bass Sweep and Smart Pressure Sensor - #1 Ranked Electric Toothbrush UK 2026",
   price: "£69",
   compareAt: "£139",

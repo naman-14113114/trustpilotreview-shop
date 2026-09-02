@@ -9207,3 +9207,32 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Live custom-domain verification confirmed all 14 toothbrush routes return HTTP 200, visibly show `Miroooo X2`, and omit the old full product name from visible text.
   - Homepage, LED-mask, hair-dryer, pillow, and grounding-sheet smoke routes remained HTTP 200.
   - GTM, Bing preconnect, Microsoft consent, and the existing outbound-tracking loader remained present; both referenced tracking assets returned HTTP 200.
+
+---
+
+## 2026-09-02: Logo-Free Miroooo X2 Image In Number-One Ranking Block
+
+- **User Intent & Protected Scope**:
+  - Remove the large floating Miroooo logo from the owner-supplied square toothbrush artwork and use the cleaned artwork as the Miroooo X2 image in the number-one ranking block.
+  - Preserve the authentic small product marking on the physical toothbrush, the existing ranking copy, layout, pricing, links, tracking, and unrelated routes.
+
+- **Starting Git State**:
+  - Pulled and freshness-audited clean commit `c3e5165e1de6cbe4b5336f588e6f289e83eaaaf6`; local HEAD and `origin/main` matched with ahead/behind `0/0` before editing.
+
+- **Implementation**:
+  - Used the built-in image-editing workflow with the owner image as the edit target; removed only the large white logo from the top background and retained the small marking printed on the toothbrush.
+  - Converted the selected square result to an 89,148-byte WebP for storefront delivery and saved it as `apps/site/public/img/toothbrushes/miroooo-x2-ranked-product-no-logo.webp`.
+  - Updated only `MIROOOO_X_DATASET.image` in `apps/site/src/data/toothbrushes.ts`, so the shared number-one product card uses the new asset across all 14 toothbrush routes.
+
+- **Verification Performed**:
+  - Visually inspected the standalone generated and optimized image; the large top logo is absent and the product/foreground composition remains clean.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site typecheck`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site lint`: passed.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site build`: passed; all 67 routes generated.
+  - Local Playwright production checks at desktop 1440x1100 and mobile 390x844 confirmed the new 1254x1254 WebP loaded in `#rank-1`, rendered square with `object-fit: cover`, and produced no browser console or page errors.
+  - Local production route matrix confirmed all 14 toothbrush routes returned HTTP 200 and referenced the new image; the asset returned HTTP 200 with WebP content type.
+  - Local production parity script smoke-tested all seven protected parity routes successfully.
+  - Restored the generated `apps/site/next-env.d.ts` build-only change to its exact source value.
+
+- **Commit, Push, & Deployment Status At Documentation Time**:
+  - Image implementation is locally validated; commit, push, production deployment, and custom-domain verification are pending.
