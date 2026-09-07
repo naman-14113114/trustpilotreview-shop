@@ -15,6 +15,7 @@ import {
   ChevronRight,
   ChevronDown,
   ShieldCheck,
+  X,
   XCircle,
   HelpCircle,
   Sparkles,
@@ -704,7 +705,290 @@ function FaqSection({ faqs }: { faqs?: Array<{ question: string; answer: string 
   );
 }
 
+interface ComparisonTableProduct {
+  rank: number;
+  name: string;
+  shortName: string;
+  image: string;
+  price: string;
+  originalPrice?: string;
+  rating: number;
+  weight: string;
+  batteryLife: string;
+  travelCase: boolean;
+  wallMount: boolean;
+  appTracking: boolean;
+  chassisMaterial: string;
+  freeHeads: boolean;
+  whisperQuiet: boolean;
+  moneyBackTrial: string;
+  freeDelivery: boolean;
+}
 
+const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
+  {
+    rank: 1,
+    name: "Miroooo X2",
+    shortName: "Miroooo X2",
+    image: "/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp",
+    price: "£69",
+    originalPrice: "£139",
+    rating: 4.9,
+    weight: "51g",
+    batteryLife: "90 Days",
+    travelCase: true,
+    wallMount: true,
+    appTracking: true,
+    chassisMaterial: "Aluminium Alloy",
+    freeHeads: true,
+    whisperQuiet: true,
+    moneyBackTrial: "90-Day Money-Back",
+    freeDelivery: true,
+  },
+  {
+    rank: 2,
+    name: "Oral-B iO Series 6",
+    shortName: "Oral-B iO6",
+    image: "/img/toothbrushes/oral-b-io6-comparison.png",
+    price: "£129.99",
+    rating: 4.3,
+    weight: "~140g",
+    batteryLife: "14 Days",
+    travelCase: false,
+    wallMount: false,
+    appTracking: false,
+    chassisMaterial: "Plastic & Rubber",
+    freeHeads: false,
+    whisperQuiet: false,
+    moneyBackTrial: "30-Day Guarantee",
+    freeDelivery: false,
+  },
+  {
+    rank: 3,
+    name: "Philips Sonicare DiamondClean 9000",
+    shortName: "Philips 9000",
+    image: "/img/toothbrushes/philips-sonicare-comparison.png",
+    price: "£149.99",
+    rating: 4.1,
+    weight: "~135g",
+    batteryLife: "14 Days",
+    travelCase: false,
+    wallMount: false,
+    appTracking: false,
+    chassisMaterial: "Composite Plastic",
+    freeHeads: false,
+    whisperQuiet: false,
+    moneyBackTrial: "28-Day Guarantee",
+    freeDelivery: false,
+  },
+  {
+    rank: 4,
+    name: "SURI Pro 2.0",
+    shortName: "SURI Pro 2.0",
+    image: "/img/toothbrushes/suri-sonic-comparison.png",
+    price: "£85",
+    rating: 3.6,
+    weight: "~85g",
+    batteryLife: "34 Days",
+    travelCase: false,
+    wallMount: true,
+    appTracking: false,
+    chassisMaterial: "Modular Aluminium",
+    freeHeads: false,
+    whisperQuiet: false,
+    moneyBackTrial: "30-Day Guarantee",
+    freeDelivery: false,
+  },
+  {
+    rank: 5,
+    name: "Oral-B iO3 Matt Black",
+    shortName: "Oral-B iO3",
+    image: "/img/toothbrushes/oral-b-io3-comparison.png",
+    price: "£65",
+    rating: 3.4,
+    weight: "~136g",
+    batteryLife: "14 Days",
+    travelCase: false,
+    wallMount: false,
+    appTracking: false,
+    chassisMaterial: "Matte Plastic",
+    freeHeads: false,
+    whisperQuiet: false,
+    moneyBackTrial: "30-Day Guarantee",
+    freeDelivery: false,
+  },
+];
+
+type ComparisonRowDef =
+  | {
+      key:
+        | "travelCase"
+        | "wallMount"
+        | "appTracking"
+        | "freeHeads"
+        | "whisperQuiet"
+        | "freeDelivery";
+      label: string;
+      kind: "boolean";
+    }
+  | {
+      key: "weight" | "batteryLife" | "chassisMaterial" | "moneyBackTrial";
+      label: string;
+      kind: "text";
+    }
+  | {
+      key: "price";
+      label: string;
+      kind: "price";
+    };
+
+const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
+  { key: "weight", label: "Ultra-Light Weight", kind: "text" },
+  { key: "batteryLife", label: "Battery Life", kind: "text" },
+  { key: "travelCase", label: "Luxury Travel Case", kind: "boolean" },
+  { key: "wallMount", label: "Wall-Mounted Storage", kind: "boolean" },
+  { key: "appTracking", label: "Dental Care App", kind: "boolean" },
+  { key: "chassisMaterial", label: "Chassis Material", kind: "text" },
+  { key: "freeHeads", label: "Free Extra Brush Heads", kind: "boolean" },
+  { key: "whisperQuiet", label: "Whisper Quiet (<50dB)", kind: "boolean" },
+  { key: "moneyBackTrial", label: "Risk-Free Trial", kind: "text" },
+  { key: "freeDelivery", label: "Free Tracked Delivery", kind: "boolean" },
+  { key: "price", label: "Price", kind: "price" },
+];
+
+function CompetitorComparisonTable() {
+  return (
+    <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans">
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
+          Top 5 Electric Toothbrushes Side-by-Side Comparison
+        </h2>
+        <p className="text-slate-600 mt-2 text-sm md:text-base font-sans">
+          Detailed technical specifications, battery endurance, included accessories, and ownership value compared across the UK&apos;s leading 2026 models.
+        </p>
+      </div>
+
+      {/* Mobile Swipe Hint */}
+      <div className="block lg:hidden text-center text-xs text-slate-500 font-medium mb-4 bg-slate-50 py-2 px-3 rounded-lg border border-slate-100 font-sans">
+        ← Swipe horizontally to compare all 5 toothbrushes →
+      </div>
+
+      {/* Table Container */}
+      <div className="overflow-x-auto -mx-2 sm:mx-0">
+        <table className="w-full text-left border-collapse min-w-[720px] lg:min-w-full table-fixed font-sans">
+          <thead>
+            <tr className="border-b-2 border-slate-200">
+              <th className="py-4 px-3 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm md:text-base w-[18%] bg-slate-50/50 rounded-tl-xl align-bottom font-sans">
+                Feature / Metric
+              </th>
+              {TOP_5_COMPARISON_PRODUCTS.map((prod) => (
+                <th
+                  key={prod.rank}
+                  className="py-4 px-2 text-center w-[16.4%] align-bottom border-l border-slate-200 bg-white"
+                >
+                  <div className="flex flex-col items-center">
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 font-sans">
+                      #{prod.rank} Ranked
+                    </span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-2.5 flex items-center justify-center p-1 bg-slate-50 rounded-xl border border-slate-100">
+                      <img
+                        src={prod.image}
+                        alt={prod.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <span className="font-bold text-slate-900 text-sm sm:text-base md:text-lg line-clamp-1 mb-1 font-sans">
+                      {prod.shortName}
+                    </span>
+                    <div className="mb-2 scale-90 sm:scale-100">
+                      <GreenStarRating rating={prod.rating} size={14} />
+                    </div>
+                    <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                      <span className="text-base sm:text-xl md:text-2xl font-black text-slate-900">
+                        {prod.price}
+                      </span>
+                      {prod.originalPrice && (
+                        <span className="text-xs sm:text-sm text-slate-400 line-through font-medium">
+                          {prod.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100 text-xs sm:text-sm font-sans">
+            {TOP_5_COMPARISON_ROWS.map((row, idx) => (
+              <tr
+                key={row.key}
+                className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"}
+              >
+                <td className="py-3.5 px-3 sm:px-4 font-semibold text-slate-800 align-middle text-xs sm:text-sm font-sans">
+                  {row.label}
+                </td>
+                {TOP_5_COMPARISON_PRODUCTS.map((prod) => {
+                  if (row.kind === "boolean") {
+                    const isPassed = prod[row.key];
+                    return (
+                      <td
+                        key={`${prod.rank}-${row.key}`}
+                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                      >
+                        <div className="flex items-center justify-center">
+                          {isPassed ? (
+                            <Check className="w-5 h-5 text-emerald-500 shrink-0" />
+                          ) : (
+                            <XCircle className="w-5 h-5 text-red-500 shrink-0" />
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  if (row.kind === "price") {
+                    return (
+                      <td
+                        key={`${prod.rank}-price-row`}
+                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                      >
+                        <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                          <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
+                            {prod.price}
+                          </span>
+                          {prod.originalPrice && (
+                            <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
+                              {prod.originalPrice}
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  const textVal = prod[row.key];
+                  return (
+                    <td
+                      key={`${prod.rank}-${row.key}`}
+                      className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                    >
+                      <span className="text-xs sm:text-sm font-medium text-slate-800 font-sans">
+                        {textVal}
+                      </span>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
 
 export type ElectricToothbrushesAdvertorialProps = {
   guide?: ToothbrushGuide;
@@ -730,7 +1014,7 @@ export default function ElectricToothbrushesAdvertorial({
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
       <Script
-        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260823-59"
+        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260907-01"
         strategy="afterInteractive"
       />
       {/* Header / Hero */}
@@ -958,6 +1242,9 @@ export default function ElectricToothbrushesAdvertorial({
             </div>
           </div>
         </div>
+
+        {/* 5-Product Side-by-Side Comparison Table */}
+        <CompetitorComparisonTable />
 
 
       </main>

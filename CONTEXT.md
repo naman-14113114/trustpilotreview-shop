@@ -9241,3 +9241,58 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Live custom-domain verification confirmed all 14 toothbrush routes reference the new image and the WebP returns HTTP 200 with the expected 89,148-byte payload.
   - Live Playwright checks at desktop and mobile sizes confirmed the new 1254x1254 asset loads in the number-one card at a square 303x303 or 308x308 display size.
   - Homepage, LED-mask, hair-dryer, pillow, and grounding-sheet smoke routes remained HTTP 200; GTM, Bing preconnect, Microsoft consent, and outbound-tracking markers remained present.
+
+---
+
+## 2026-09-07: Electric Toothbrush Exit Popup Scope & 5-Product Comparison Table Deployment
+
+- **User Intent & Protected Scope**:
+  - **Task 1: Exit Popup Fix**:
+    - Remove all references to "45 degree" / "45° Bass sweep" in the electric toothbrush exit popup.
+    - Rewrite popup copy to highlight the 4 main points: Lightweight 51g, Long Battery Life 90 days, Whisper quiet (<50dB), and Travel Friendly.
+    - Expand popup eligibility from only `/best-electric-toothbrush-uk-2026` to all 14 electric toothbrush routes.
+  - **Task 2: Competitor Comparison Table Below Dentist's Verdict**:
+    - Create a clean 5-product comparison table positioned directly below the Dentist's Verdict section in `ElectricToothbrushesAdvertorial.tsx`.
+    - Follow Trustpilot review light theme (not the dark Miroooo landing page theme) with clean white background, subtle slate borders, and crisp badges.
+    - Single frame table comparing all 5 ranked toothbrushes in the exact order (#1 Miroooo X2, #2 Oral-B iO6, #3 Philips Sonicare 9000, #4 SURI Pro 2.0, #5 Oral-B iO3).
+    - Uniform column width and styling across all 5 columns with no special highlight/scaling on #1.
+    - Use the hand holding brush image from the top hero collage for #1 Miroooo X2 (`/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp`).
+    - Use authentic comparison images for competitors (#2 Oral-B iO6, #3 Philips 9000, #4 SURI 2.0, #5 Oral-B iO3).
+    - Include all 11 key specification rows from `trymiroooo.com` (Weight, Battery Life, Luxury Travel Case, Wall-Mounted Storage, App Tracking, Chassis Material, Free Extra Heads, Whisper Quiet, Risk-Free Trial, Free Delivery, Price).
+  - **Task 3: Refinement of Comparison Table (Button Removal, Badge Removal, Strict Icon/Data Separation, Typography & Framing)**:
+    - Removed `Official Website` and `Shop Now` buttons completely from the table column headers.
+    - Removed the `DIRECT COMPETITOR BREAKDOWN` badge, starting directly with the heading `Top 5 Electric Toothbrushes Side-by-Side Comparison`.
+    - Enforced strict icon vs data rule:
+      - Boolean/inclusion rows (`Luxury Travel Case`, `Wall-Mounted Storage`, `Dental Care App`, `Free Extra Brush Heads`, `Whisper Quiet (<50dB)`, `Free Tracked Delivery`): Display ONLY `Check` ($\checkmark$ in emerald-500) and `XCircle` ($\otimes$ in red-500) matching Pros & Cons icon design exactly with zero text underneath.
+      - Spec/data rows (`Ultra-Light Weight`, `Battery Life`, `Chassis Material`, `Risk-Free Trial`, `Price`): Display ONLY clean text values with zero check/cross icons.
+    - Compare-at price for #1 (`£139`) positioned to the right of the sale price (`£69`) with baseline horizontal alignment in both the table header and body price row.
+    - Increased product name font size (`text-sm sm:text-base md:text-lg font-bold`) and price font size (`text-base sm:text-xl md:text-2xl font-black`) with unified `font-sans` styling.
+    - Ensured entire 5-product table renders seamlessly in one single frame on desktop with `table-fixed` layout (`scrollWidth == clientWidth == 1039px`).
+  - **Protected Scope**: Keep all existing ad tracking, Microsoft UET tags, GTM markers, layout, rankings, pricing, review blocks, image galleries, and unrelated hair-dryer/LED-mask/grounding-sheet routes intact.
+
+- **Starting Git State**:
+  - Clean `origin/main` at `896ffd9` after fast-forward pull.
+
+- **Changed Files**:
+  - `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`: expanded `ELIGIBLE_PATHS` to all 14 toothbrush routes, updated popup copy to focus on the 4 core points (51g, 90-day battery, whisper quiet, travel friendly), and eliminated 45-degree text.
+  - `assets/miroooo-x-electric-toothbrush-exit-popup.js`: synchronized root mirror script with identical changes.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: updated popup script cache-busting query parameter (`?v=20260907-01`), added `CompetitorComparisonTable` component definition without CTA buttons and without the competitor breakdown badge, with Pros & Cons matching Check & XCircle icons, horizontal price comparison alignment, boolean tick/cross rows for `Dental Care App`, `Whisper Quiet (<50dB)`, and `Free Tracked Delivery` (Miroooo tick, rest cross), text data for specs, increased product name and price typography, and rendered it below the Dentist's Verdict section.
+  - `apps/site/next-env.d.ts`: restored build-generated change to maintain strict repository source integrity.
+
+- **Verification Performed**:
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site typecheck`: passed with 0 errors.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site lint`: passed with 0 errors.
+  - `corepack pnpm@11.1.1 --filter @trustpilotreview/site build`: passed; all 67 static routes generated successfully in 1047ms.
+  - `corepack pnpm@11.1.1 verify:parity`: passed cleanly.
+  - Visual verification via Chrome DevTools on local Next.js production server (ports 3033, 3034, 3035, 3036):
+    - Verified table heading starts directly without the Direct Competitor Breakdown badge.
+    - Verified comparison table headers show no CTA buttons.
+    - Verified compare-at price `£139` is horizontally aligned to the right of `£69` on the same baseline.
+    - Verified `Check` (emerald-500) and `XCircle` (red-500) matching Pros & Cons icons.
+    - Verified strict icon-only rows for travel case, wall storage, dental care app, free extra heads, whisper quiet (<50dB), and free tracked delivery with Miroooo tick and rest cross.
+    - Verified strict text-only rows for weight, battery life, chassis material, risk-free trial, and price with no check/cross icons.
+    - Verified table fits in one desktop frame (1440x900) with zero clipping or unwanted overflow.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes ready for review; no unrequested commit, push, or deployment performed.
+

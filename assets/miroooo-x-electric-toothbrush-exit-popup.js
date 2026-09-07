@@ -1,6 +1,19 @@
 (function () {
   var ELIGIBLE_PATHS = [
-    "/best-electric-toothbrush-uk-2026"
+    "/best-electric-toothbrush-uk-2026",
+    "/best-battery-life-electric-toothbrush-uk-2026",
+    "/best-electric-toothbrush-for-braces-uk-2026",
+    "/best-electric-toothbrush-for-sensitive-teeth-uk-2026",
+    "/best-lightweight-electric-toothbrush-uk-2026",
+    "/best-quiet-electric-toothbrush-uk-2026",
+    "/best-travel-electric-toothbrush-uk-2026",
+    "/miroooo-brush-x-uk-review-2026",
+    "/miroooo-vs-oral-b-io3",
+    "/miroooo-vs-oral-b-io6",
+    "/miroooo-vs-philips-sonicare",
+    "/miroooo-vs-suri",
+    "/most-durable-electric-toothbrush-uk-2026",
+    "/why-switch-from-legacy-electric-toothbrushes-uk"
   ];
 
   var STORAGE_KEY = "miroooo_x_exit_popup_seen_v1";
@@ -87,7 +100,7 @@
       "<div class='miroooo-exit-content'>",
       "<div class='miroooo-exit-kicker'>Before you go</div>",
       "<h2 class='miroooo-exit-title' id='miroooo-exit-title'>The #1 electric toothbrush pick is still 50% off.</h2>",
-      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo Brush X2. Featuring 45° Bass sweep cleaning, a smart pressure halo ring, 90-day battery life via magnetic USB-C, and an aerospace aluminium unibody, it delivers a dentist-clean feel every day.</p>",
+      "<p class='miroooo-exit-copy'>If you were comparing electric toothbrushes, do not leave without checking the Miroooo Brush X2. Featuring an ultra-lightweight 51g design, a long 90-day battery life, whisper-quiet operation (&lt;50dB), and travel-friendly portability, it delivers a dentist-clean feel every day.</p>",
       "<div class='miroooo-exit-offer'><div><span>Today on Miroooo</span><strong>" + offerPriceText + "</strong></div><span>50% OFF</span></div>",
       "<div class='miroooo-exit-actions'>",
       "<a class='miroooo-exit-cta' href='" + CTA_URL + "' data-outbound-button='true'>Claim 50% Off</a>",
