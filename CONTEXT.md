@@ -9296,3 +9296,66 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Local changes ready for review; no unrequested commit, push, or deployment performed.
 
+---
+
+## Session Log: 7 September 2026 - Electric Toothbrush Pricing & Competitor Cons Alignment Across All 14 Pages
+
+- **User Intent & Protected Scope**:
+  - **Task 1: Correct Price of #5 (Oral-B iO3)**:
+    - Updated price of #5 everywhere across all datasets, comparison tables, editorial reviews, and comparison rows to **£160** (was £65).
+  - **Task 2: Add Enhanced Cons to #5 (Oral-B iO3)**:
+    - Added explicit con for accurate noise level: `~64dB` mechanical motor sound and vibration resonating through jaw.
+    - Added con for no wall-mounted stand or cradle included (sitting on damp countertops).
+    - Added con for standard 2-year limited warranty (trailing Miroooo Brush X2's 3-year warranty).
+    - Added con for no Bluetooth / smart app connectivity.
+    - Standardized all benchmarks and comparisons against **Miroooo Brush X2** (not X1).
+  - **Task 3: Correct Price of #3 (Philips Sonicare 9000)**:
+    - Updated price of #3 to **£222** (was £149.99).
+    - Added separate cons for:
+      - Noise: `~56–60dB` high-pitched sonic buzz and ear vibration.
+      - App connectivity: Bluetooth dropouts and sync lag.
+      - Warranty: standard 2-year limited warranty.
+      - Storage: no space-saving wall-mounted dock (requires bulky glass cup on countertop).
+  - **Task 4: Add Noise, App, Wall Mount, and Warranty Cons Across All 4 Competitors**:
+    - **#2 Oral-B iO6**: Price updated to **£165** (was £129.99); cons include `~64dB+` mechanical gear whine, clunky Bluetooth sync and battery drain, no wall-mounted storage dock, and 2-year limited warranty.
+    - **#3 Philips Sonicare 9000**: Price updated to **£222**; cons include `~56–60dB` high-pitched sonic buzz, Bluetooth app dropouts, no wall dock, and 2-year warranty.
+    - **#4 SURI Pro 2.0**: Cons include `~54dB` motor buzz, zero smart app connectivity, mould-prone magnetic mirror mount, and 1-year limited warranty.
+    - **#5 Oral-B iO3**: Price updated to **£160**; cons include `~64dB` loud motor noise, zero app connectivity, no wall dock, and 2-year warranty.
+  - **Task 5: Synchronize Across All 14 Electric Toothbrush Pages**:
+    - Propagated through single-source data architecture (`toothbrushes.ts`, `toothbrushGuides.ts`, `ElectricToothbrushesAdvertorial.tsx`) serving all 14 routes:
+      1. `/best-electric-toothbrush-uk-2026`
+      2. `/best-battery-life-electric-toothbrush-uk-2026`
+      3. `/best-lightweight-electric-toothbrush-uk-2026`
+      4. `/best-quiet-electric-toothbrush-uk-2026`
+      5. `/best-travel-electric-toothbrush-uk-2026`
+      6. `/best-electric-toothbrush-for-sensitive-teeth-uk-2026`
+      7. `/best-electric-toothbrush-for-braces-uk-2026`
+      8. `/most-durable-electric-toothbrush-uk-2026`
+      9. `/why-switch-from-legacy-electric-toothbrushes-uk`
+      10. `/miroooo-vs-oral-b-io6`
+      11. `/miroooo-vs-philips-sonicare`
+      12. `/miroooo-vs-suri`
+      13. `/miroooo-vs-oral-b-io3`
+      14. `/miroooo-brush-x-uk-review-2026`
+  - **Protected Scope**: Keep all existing ad tracking, Microsoft UET tags, GTM markers, layout, rankings, review blocks, image galleries, and unrelated hair-dryer/LED-mask/grounding-sheet routes intact.
+
+- **Starting Git State**:
+  - Clean `origin/main` at `486eb3e`.
+
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: updated competitor prices (#2 £165, #3 £222, #5 £160), added comprehensive con points for noise dB, app connectivity, wall dock storage, and 2-year warranty across all 4 competitors, and updated editorial reviews.
+  - `apps/site/src/data/toothbrushGuides.ts`: updated editorial comparisons, guide copy, and comparison table price ranges (£85 to £222), ensuring consistent Miroooo Brush X2 branding.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: updated `TOP_5_COMPARISON_PRODUCTS` table prices (#2 to £165, #3 to £222, #5 to £160).
+  - `apps/site/next-env.d.ts`: automatic route types reference updated during build.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: passed; all 67 static and dynamic routes compiled successfully.
+  - `pnpm verify:parity`: passed cleanly.
+  - Static HTML verification: verified correct rendering of £160, £165, and £222 prices, con lists, comparison tables, and metadata across built pages.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes ready for review; no unrequested commit, push, or deployment performed.
+
+
