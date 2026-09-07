@@ -18,6 +18,10 @@ const MIROOOO_PRODUCT_IDS = new Set([
   "1000000675471182",
   "1000000675616058",
 ]);
+const RECOVERED_MSCLKID_BY_ORDER_ID = new Map<string, string>([
+  ["465035601", "eb3af506e0d212fa48d09f9b2d6ac23d"],
+  ["465047631", "59c409229fab1d9ac40763bc42049050"],
+]);
 
 type PlusbaseProperty = {
   name?: string | null;
@@ -99,9 +103,15 @@ function extractMsclkid(order: PlusbaseOrder) {
     }
   }
 
-  return (
+  const urlClickId =
     normalizeMsclkid(extractMsclkidFromUrl(order.landing_site)) ??
-    normalizeMsclkid(extractMsclkidFromUrl(order.referring_site))
+    normalizeMsclkid(extractMsclkidFromUrl(order.referring_site));
+  if (urlClickId) return urlClickId;
+
+  // Exact owner-supplied recovery for orders created before the durable
+  // product-to-cart attribution handoff was deployed.
+  return (
+    RECOVERED_MSCLKID_BY_ORDER_ID.get(String(order.id ?? "")) ?? null
   );
 }
 
