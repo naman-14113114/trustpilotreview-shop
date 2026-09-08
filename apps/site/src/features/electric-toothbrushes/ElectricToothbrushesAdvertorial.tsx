@@ -45,6 +45,24 @@ const defaultEvaluationCriteria = [
   "Verified UK customer reviews & 90-day money-back guarantee",
 ];
 
+const attributionQueryKeys = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "msclkid",
+  "gclid",
+  "fbclid",
+] as const;
+
+type TrackingWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  uetq?: {
+    push: (...args: unknown[]) => unknown;
+  };
+};
+
 function formatLondonDate(date: Date) {
   return new Intl.DateTimeFormat("en-GB", {
     month: "long",
@@ -59,6 +77,57 @@ function handleOutboundClick(
   setLoadingTarget: (target: string) => void,
   target: string,
 ) {
+  try {
+    const destination = new URL(event.currentTarget.href, window.location.href);
+    if (destination.hostname === "www.trymiroooo.com") {
+      const current = new URL(window.location.href);
+      attributionQueryKeys.forEach((key) => {
+        const value = current.searchParams.get(key);
+        if (value && !destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
+      });
+
+      if (!destination.searchParams.has("utm_source")) {
+        destination.searchParams.set("utm_source", "trustpilotreview");
+      }
+      if (!destination.searchParams.has("utm_medium")) {
+        destination.searchParams.set("utm_medium", "comparison");
+      }
+      if (!destination.searchParams.has("utm_campaign")) {
+        destination.searchParams.set(
+          "utm_campaign",
+          "best_electric_toothbrush_uk_2026",
+        );
+      }
+
+      event.currentTarget.href = destination.toString();
+
+      const trackingWindow = window as TrackingWindow;
+      const payload = {
+        event_category: "comparison",
+        event_label: target,
+        outbound_url: destination.toString(),
+        page_type: "best_electric_toothbrush_uk_2026",
+      };
+
+      trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
+      trackingWindow.dataLayer.push({
+        event: "miroooo_outbound_click",
+        ecommerce: null,
+        ...payload,
+      });
+      trackingWindow.dataLayer.push({
+        event: "affiliate_click",
+        ...payload,
+      });
+      trackingWindow.uetq?.push("event", "miroooo_outbound_click", payload);
+      trackingWindow.uetq?.push("event", "affiliate_click", payload);
+    }
+  } catch {
+    // Keep the original native anchor navigation if attribution cannot be added.
+  }
+
   if (
     event.metaKey ||
     event.ctrlKey ||
