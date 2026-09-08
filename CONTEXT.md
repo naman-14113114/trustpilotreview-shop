@@ -9358,4 +9358,90 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Local changes ready for review; no unrequested commit, push, or deployment performed.
 
+---
+
+## Session Log: 8 September 2026 - Minimal Competitor Price Reversion (#5, #3, #2) Across All 14 Pages
+
+- **User Intent & Protected Scope**:
+  - **Task**: Revert prices of competitors #5, #3, and #2 back to their original/older prices across all 14 electric toothbrush pages while making minimal changes and preserving all other additions (noise in dB, app connectivity, wall dock storage, warranty, Miroooo Brush X2 references, layout, tracking, and comparison table structure):
+    - **#5 Oral-B iO3 Matt Black**: Reverted to **£65** (RRP £160).
+    - **#3 Philips Sonicare DiamondClean 9000**: Reverted to **£149.99**.
+    - **#2 Oral-B iO Series 6**: Reverted to **£129.99**.
+  - **Protected Scope**: Keep all detailed con bullet points (accurate noise dB, Bluetooth dropouts, lack of wall-mounted docks, 2-year vs 3-year warranty), comparison table formatting, Miroooo Brush X2 naming, ad tracking, and non-toothbrush routes strictly intact.
+
+- **Starting Git State**:
+  - Clean fast-forward to `origin/main` at `bc92395`.
+
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`: reverted prices for #2 (£129.99), #3 (£149.99), and #5 (£65) in product definitions, upfront price cons, and editorial reviews while keeping all new con items intact.
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: reverted prices in `TOP_5_COMPARISON_PRODUCTS` table: #2 to £129.99, #3 to £149.99, #5 to £65.
+  - `apps/site/src/data/toothbrushGuides.ts`: updated competitor guide comparison rows, descriptions, and price ranges (£85 to £149.99) for all 14 routes.
+  - `apps/site/next-env.d.ts`: route types reference updated during build.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: passed; all 67 static and dynamic routes compiled in 1.4s.
+  - `pnpm verify:parity`: passed cleanly.
+  - Static HTML verification: verified `£129.99`, `£149.99`, and `£65` output across all compiled static HTML and RSC payloads.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes ready for review; no unrequested commit, push, or deployment performed.
+
+---
+
+## Session Log: 8 September 2026 - Oral-B iO3 New Affiliate Link & Price (£75) Across All 14 Pages
+
+- **User Intent & Protected Scope**:
+  - **Task 1: Oral-B iO3 Affiliate Link Update**:
+    - Update the affiliate URL for #4 Oral-B iO3 (ranked #5 overall) across all electric toothbrush pages to: `https://amzn.to/4x7VTo5` (replacing legacy link `https://amzn.to/4gD6zVF`).
+  - **Task 2: Oral-B iO3 Price Update to £75**:
+    - Update Oral-B iO3 price everywhere across datasets, comparison tables, guide copy, reviews, and feature comparison rows to **£75** (was £65 / RRP £160).
+  - **Task 3: Synchronize Across All 14 Electric Toothbrush Pages**:
+    - Propagate through single-source data architecture serving all 14 routes:
+      1. `/best-electric-toothbrush-uk-2026`
+      2. `/best-battery-life-electric-toothbrush-uk-2026`
+      3. `/best-lightweight-electric-toothbrush-uk-2026`
+      4. `/best-quiet-electric-toothbrush-uk-2026`
+      5. `/best-travel-electric-toothbrush-uk-2026`
+      6. `/best-electric-toothbrush-for-sensitive-teeth-uk-2026`
+      7. `/best-electric-toothbrush-for-braces-uk-2026`
+      8. `/most-durable-electric-toothbrush-uk-2026`
+      9. `/why-switch-from-legacy-electric-toothbrushes-uk`
+      10. `/miroooo-vs-oral-b-io6`
+      11. `/miroooo-vs-philips-sonicare`
+      12. `/miroooo-vs-suri`
+      13. `/miroooo-vs-oral-b-io3`
+      14. `/miroooo-brush-x-uk-review-2026`
+  - **Protected Scope**:
+    - Keep all competitor con additions (noise level in dB: ~64dB+ for iO6, ~56–60dB for Philips, ~54dB for SURI, ~64dB for iO3; Bluetooth/app connectivity status; lack of wall mounts; 2-year warranties vs Miroooo 3-year warranty) strictly intact.
+    - Keep Miroooo Brush X2 benchmarks, layout, tracking, and non-toothbrush routes strictly intact.
+
+- **Starting Git State**:
+  - Clean tracking `origin/main` at `bc92395`.
+
+- **Inspected and Changed Files**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    - Updated Oral-B iO3 price to `£75`.
+    - Updated `ctaUrl` and `sourceLinks` to `https://amzn.to/4x7VTo5`.
+    - Updated upfront price con and editorial review mentioning £75 (RRP £160).
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+    - Updated `TOP_5_COMPARISON_PRODUCTS[4].price` (Oral-B iO3) to `£75`.
+  - `apps/site/src/data/toothbrushGuides.ts`:
+    - Updated `miroooo-vs-oral-b-io3` guide: `cardDescription`, `seoTitle`, `seoDescription`, `headline`, `subheadline`, `quickTake`, `drOliviaVerdict`, `intro`, `winnerBullets`, `comparisonRows`, and `buyerBlocks` from £65 to `£75` (RRP £160).
+  - `apps/site/next-env.d.ts`:
+    - Route types reference updated during build.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: passed; all 67 static and dynamic routes compiled successfully in 1.4s.
+  - `pnpm verify:parity`: passed cleanly.
+  - Static HTML verification: confirmed `https://amzn.to/4x7VTo5` and `£75` render across all compiled routes with zero occurrences of the old link.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes ready for review; no unrequested commit, push, or deployment performed.
+
+
+
 
