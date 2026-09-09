@@ -99,7 +99,7 @@
     });
   }
 
-  function loadClarity() {
+  function startClarity() {
     if (window.__tprClarityLoaded || !CLARITY_ID) {
       return;
     }
@@ -115,6 +115,14 @@
       y = l.getElementsByTagName(r)[0];
       y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", CLARITY_ID);
+  }
+
+  function loadClarity() {
+    if (window.location.pathname === "/best-electric-toothbrush-uk-2026") {
+      window.__tprClarityDeferred = true;
+      return;
+    }
+    startClarity();
   }
 
   function setClarityConsent(value) {

@@ -77,9 +77,9 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-grounding-sheets-in-us-2026`
   },
   "/best-electric-toothbrush-uk-2026": {
-    title: "Best Electric Toothbrush UK 2026 | Top 5 Toothbrushes Compared",
+    title: "Best Electric Toothbrush UK 2026: Top 5 Compared & Reviewed",
     description:
-      "Compare the top 5 best electric toothbrushes in the UK for 2026. Ranked for acoustic motor power, plaque removal, battery life, gum protection, refill costs and value.",
+      "Compare the five best electric toothbrushes in the UK for 2026 by price, battery life, pressure control, brush heads, warranties and overall value today.",
     canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`,
     image: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp"
   },

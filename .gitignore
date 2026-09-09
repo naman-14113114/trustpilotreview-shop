@@ -17,6 +17,7 @@ out/
 *.tsbuildinfo
 output/playwright/
 apps/site/output/playwright/
+.seo-cache/
 
 # This raw source video is deliberately excluded from Vercel deployments.
 # The production page uses the deployable asset in assets/ instead.

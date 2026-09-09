@@ -1,7 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { Inter, Playfair_Display } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.trustpilotreview.shop"),
@@ -37,10 +49,25 @@ const microsoftConsentDefault = `
 `;
 
 const googleTagManager = `
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    var loaded=false;
+    var events=['pointerdown','touchstart','keydown','scroll'];
+    function load(){
+      if(loaded)return;
+      loaded=true;
+      events.forEach(function(name){w.removeEventListener(name,load);});
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    }
+    if(d.location.pathname==='/best-electric-toothbrush-uk-2026'){
+      events.forEach(function(name){w.addEventListener(name,load,{once:true,passive:true});});
+      w.setTimeout(load,30000);
+    }else{
+      load();
+    }
   })(window,document,'script','dataLayer','GTM-TQ3HRZMJ');
 `;
 
@@ -64,6 +91,9 @@ const tawkFrontendHideCss = `
 `;
 
 const tawkToScript = `
+  if (window.location.pathname === "/best-electric-toothbrush-uk-2026") {
+    window.__tprTawkDeferredForLandingPage = true;
+  } else {
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
 
@@ -111,6 +141,7 @@ const tawkToScript = `
     s1.charset = 'UTF-8';
     s0.parentNode.insertBefore(s1, s0);
   })();
+  }
 `;
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
@@ -127,18 +158,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <link rel="dns-prefetch" href="https://www.buudy.co.uk" />
         <link rel="dns-prefetch" href="https://buudy.com" />
         <link rel="dns-prefetch" href="https://uk.muuhu.com" />
-      </head>
-      <body>
-        <Script
-          id="microsoft-ads-consent-default"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{ __html: microsoftConsentDefault }}
         />
-        <Script
-          id="google-tag-manager"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: googleTagManager }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: googleTagManager }} />
+      </head>
+      <body className={`${inter.variable} ${playfair.variable}`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TQ3HRZMJ"
@@ -148,15 +173,11 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           />
         </noscript>
         {children}
-        <Script src="/assets/microsoft-consent-mode.js" strategy="afterInteractive" />
-        <Script src="/assets/buudy-outbound-failsafe-buudycouk-660.js" strategy="afterInteractive" />
-        <Script
-          id="tpr-buudy-outbound-conversion"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: outboundConversionConfig }}
-        />
+        <script src="/assets/microsoft-consent-mode.js" defer />
+        <script src="/assets/buudy-outbound-failsafe-buudycouk-660.js" defer />
+        <script dangerouslySetInnerHTML={{ __html: outboundConversionConfig }} />
         <style id="tawk-frontend-hide" dangerouslySetInnerHTML={{ __html: tawkFrontendHideCss }} />
-        <Script id="tawk-to-widget" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: tawkToScript }} />
+        <script dangerouslySetInnerHTML={{ __html: tawkToScript }} />
       </body>
     </html>
   );
