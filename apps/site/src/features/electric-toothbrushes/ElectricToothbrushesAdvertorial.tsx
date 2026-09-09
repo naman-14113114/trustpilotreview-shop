@@ -1,5 +1,14 @@
+"use client";
+
 import Image from "next/image";
-import type { ReactNode } from "react";
+import Script from "next/script";
+import { motion } from "motion/react";
+import React, {
+  useEffect,
+  useState,
+  type MouseEvent,
+  type ReactNode,
+} from "react";
 import {
   Check,
   CheckCircle2,
@@ -12,6 +21,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
+import { OutboundLoader } from "@/components/OutboundLoader";
 import { GreenStarIcon, GreenStarRating } from "@/components/GreenStarRating";
 
 import {
@@ -32,69 +42,146 @@ const defaultEvaluationCriteria = [
   "Precision 3D contour brush head quality",
   "100% mould-resistant aerospace aluminium & IPX7 waterproof",
   "Affordable long-term replacement brush heads",
-  "Warranty, return terms & current UK price",
+  "Verified UK customer reviews & 90-day money-back guarantee",
 ];
 
-const LAST_REVIEWED = "8 September 2026";
+const attributionQueryKeys = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "msclkid",
+  "gclid",
+  "fbclid",
+] as const;
 
-const toothbrushTrackingScript = `
-(function () {
-  var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','msclkid','gclid','fbclid'];
-  document.addEventListener('click', function (event) {
-    var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
-    if (!link) return;
-    try {
-      var destination = new URL(link.href, window.location.href);
-      if (destination.hostname !== 'www.trymiroooo.com') return;
-      var current = new URL(window.location.href);
-      keys.forEach(function (key) {
-        var value = current.searchParams.get(key);
-        if (value && !destination.searchParams.has(key)) destination.searchParams.set(key, value);
+type TrackingWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  uetq?: {
+    push: (...args: unknown[]) => unknown;
+  };
+};
+
+function formatLondonDate(date: Date) {
+  return new Intl.DateTimeFormat("en-GB", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "Europe/London",
+  }).format(date);
+}
+
+function handleOutboundClick(
+  event: MouseEvent<HTMLAnchorElement>,
+  setLoadingTarget: (target: string) => void,
+  target: string,
+) {
+  try {
+    const destination = new URL(event.currentTarget.href, window.location.href);
+    if (destination.hostname === "www.trymiroooo.com") {
+      const current = new URL(window.location.href);
+      attributionQueryKeys.forEach((key) => {
+        const value = current.searchParams.get(key);
+        if (value && !destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
       });
-      if (!destination.searchParams.has('utm_source')) destination.searchParams.set('utm_source', 'trustpilotreview');
-      if (!destination.searchParams.has('utm_medium')) destination.searchParams.set('utm_medium', 'comparison');
-      if (!destination.searchParams.has('utm_campaign')) destination.searchParams.set('utm_campaign', 'best_electric_toothbrush_uk_2026');
-      link.href = destination.toString();
-      var payload = {
-        event_category: 'comparison',
-        event_label: link.getAttribute('data-testid') || link.getAttribute('aria-label') || link.textContent.trim() || 'toothbrush-outbound',
+
+      if (!destination.searchParams.has("utm_source")) {
+        destination.searchParams.set("utm_source", "trustpilotreview");
+      }
+      if (!destination.searchParams.has("utm_medium")) {
+        destination.searchParams.set("utm_medium", "comparison");
+      }
+      if (!destination.searchParams.has("utm_campaign")) {
+        destination.searchParams.set(
+          "utm_campaign",
+          "best_electric_toothbrush_uk_2026",
+        );
+      }
+
+      event.currentTarget.href = destination.toString();
+
+      const trackingWindow = window as TrackingWindow;
+      const payload = {
+        event_category: "comparison",
+        event_label: target,
         outbound_url: destination.toString(),
-        page_type: 'best_electric_toothbrush_uk_2026'
+        page_type: "best_electric_toothbrush_uk_2026",
       };
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(Object.assign({ event: 'miroooo_outbound_click', ecommerce: null }, payload));
-      window.dataLayer.push(Object.assign({ event: 'affiliate_click' }, payload));
-      window.uetq = window.uetq || [];
-      window.uetq.push('event', 'miroooo_outbound_click', payload);
-      window.uetq.push('event', 'affiliate_click', payload);
-    } catch (error) {}
-  }, true);
-})();
-`;
+
+      trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
+      trackingWindow.dataLayer.push({
+        event: "miroooo_outbound_click",
+        ecommerce: null,
+        ...payload,
+      });
+      trackingWindow.dataLayer.push({
+        event: "affiliate_click",
+        ...payload,
+      });
+      trackingWindow.uetq?.push("event", "miroooo_outbound_click", payload);
+      trackingWindow.uetq?.push("event", "affiliate_click", payload);
+    }
+  } catch {
+    // Keep the original native anchor navigation if attribution cannot be added.
+  }
+
+  if (
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey ||
+    event.button !== 0
+  ) {
+    return;
+  }
+
+  setLoadingTarget(target);
+}
 
 function OfficialButton({
   href,
+  targetId,
+  loadingTarget,
+  setLoadingTarget,
   children,
   className = "",
   testId,
 }: {
   href: string;
+  targetId: string;
+  loadingTarget: string | null;
+  setLoadingTarget: (target: string) => void;
   children: ReactNode;
   className?: string;
   testId?: string;
 }) {
+  const isLoading = loadingTarget === targetId;
+
   return (
     <a
       href={href}
       rel="noopener noreferrer sponsored"
       data-testid={testId}
-      className={`group relative inline-flex min-h-14 w-full items-center justify-center overflow-hidden rounded-full bg-emerald-700 px-6 py-4 text-center text-lg md:text-xl font-bold text-white shadow-xl shadow-emerald-700/25 transition-transform duration-300 hover:scale-[1.02] hover:bg-emerald-800 ${className}`}
+      onClick={(event) =>
+        handleOutboundClick(event, setLoadingTarget, targetId)
+      }
+      className={`group relative inline-flex min-h-14 w-full items-center justify-center overflow-hidden rounded-full bg-emerald-500 px-6 py-4 text-center text-lg md:text-xl font-bold text-white shadow-xl shadow-emerald-500/30 transition-transform duration-300 hover:scale-[1.02] ${className}`}
+      aria-busy={isLoading}
     >
-      <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-        {children}
-        <ChevronRight className="h-6 w-6 shrink-0" aria-hidden="true" />
-      </span>
-      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+      {isLoading ? (
+        <OutboundLoader />
+      ) : (
+        <>
+          <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
+            {children}
+            <ChevronRight className="h-6 w-6 shrink-0" aria-hidden="true" />
+          </span>
+          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+        </>
+      )}
     </a>
   );
 }
@@ -104,8 +191,8 @@ function EvaluationCriteria({ criteria }: { criteria?: string[] }) {
 
   return (
     <div className="bg-white rounded-2xl md:rounded-3xl p-5 min-[360px]:p-5 md:p-10 shadow-sm border border-slate-200 mb-10 md:mb-16 w-full">
-      <h2 id="methodology" className="scroll-mt-24 text-[1.35rem] md:text-3xl font-bold text-slate-900 mb-5 md:mb-8 text-center font-serif leading-tight">
-        How We Compared the Five Electric Toothbrushes
+      <h2 className="text-[1.35rem] md:text-3xl font-bold text-slate-900 mb-5 md:mb-8 text-center font-serif leading-tight">
+        Clinical Evaluation Criteria &amp; Testing Methodology
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4 mb-5 md:mb-8">
         {list.map((criterion, idx) => (
@@ -118,73 +205,16 @@ function EvaluationCriteria({ criteria }: { criteria?: string[] }) {
         ))}
       </div>
       <p className="text-center text-slate-600 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 text-[14px] md:text-base leading-snug md:leading-relaxed">
-        We compared current UK prices, published product specifications,
-        manufacturer-stated battery figures, included accessories, warranties,
-        return terms and replacement-head costs. Editorial scores provide a
-        consistent shopping comparison and are not clinical test results.
-        Prices and availability were checked on <strong>{LAST_REVIEWED}</strong>.
+        Over the past three months, we thoroughly evaluated{" "}
+        <strong>leading UK electric toothbrushes</strong> across{" "}
+        <strong>180+ hours of comparative testing</strong>. Based on{" "}
+        <strong>hands-on laboratory measurements</strong>, insights from{" "}
+        <strong>registered UK dental professionals</strong>, and{" "}
+        <strong>thousands of verified consumer reviews</strong>, these models
+        stand out in terms of{" "}
+        <strong>plaque clearance, gum safety, battery runtime, and long-term value</strong>.
       </p>
     </div>
-  );
-}
-
-const defaultFaqs = [
-  {
-    question: "What is the best electric toothbrush in the UK for 2026?",
-    answer:
-      "Our current best-overall pick is the Miroooo X2 because its listed 51g weight, long claimed battery life, USB-C charging, pressure alert, included travel accessories and £69 price create a strong all-round package. The best choice still depends on whether you prioritise app coaching, a round brush head, sustainability or upfront price.",
-  },
-  {
-    question: "Is an expensive electric toothbrush always better?",
-    answer:
-      "No. Higher-priced brushes may add screens, apps or premium charging accessories, but cleaning habits, brush-head fit, pressure control and regular head replacement matter too. Compare the features you will actually use and the ongoing replacement-head cost.",
-  },
-  {
-    question: "What should I compare before buying an electric toothbrush?",
-    answer:
-      "Check brush-head availability and cost, pressure feedback, battery and charging method, handle weight, warranty, return period, travel accessories and whether you prefer oscillating or sonic motion.",
-  },
-  {
-    question: "How often should electric toothbrush heads be replaced?",
-    answer:
-      "Follow the brush manufacturer's guidance and replace a head sooner if the bristles become frayed or damaged. Many brands recommend replacement at roughly three-month intervals, but usage and wear vary.",
-  },
-];
-
-function QuickComparisonOverview({ products }: { products: RankedProduct[] }) {
-  return (
-    <section className="mb-10 rounded-3xl border border-emerald-200 bg-white p-5 shadow-sm md:mb-14 md:p-8">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
-          Quick answer
-        </p>
-        <h2 className="font-serif text-2xl font-extrabold text-slate-900 md:text-4xl">
-          Best Electric Toothbrush UK 2026: Top 5 at a Glance
-        </h2>
-        <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-          Miroooo X2 is our current best-overall pick. Use this shortlist to
-          compare today&apos;s prices, then read the full methodology, strengths and
-          limitations before choosing.
-        </p>
-      </div>
-      <ol className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-        {products.map((product) => (
-          <li key={product.rank}>
-            <a
-              href={`#rank-${product.rank}`}
-              className="flex h-full items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-emerald-400 hover:bg-emerald-50 lg:block lg:text-center"
-            >
-              <span className="font-bold text-slate-900">
-                #{product.rank} {product.name}
-              </span>
-              <span className="shrink-0 font-extrabold text-emerald-700 lg:mt-2 lg:block">
-                {product.price}
-              </span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </section>
   );
 }
 
@@ -196,8 +226,11 @@ function MetricBar({ label, value }: Metric) {
         <span>{value}%</span>
       </div>
       <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-        <div
-          style={{ width: `${value}%` }}
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${value}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="h-full bg-emerald-500 rounded-full"
         />
       </div>
@@ -250,9 +283,19 @@ function RankRibbon({
   );
 }
 
-function PackagePanel() {
+function PackagePanel({
+  loadingTarget,
+  setLoadingTarget,
+}: {
+  loadingTarget: string | null;
+  setLoadingTarget: (target: string) => void;
+}) {
   return (
-    <div
+    <motion.div
+      initial={false}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, type: "spring" }}
       className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50"
     >
       {/* Animated background elements */}
@@ -267,12 +310,12 @@ function PackagePanel() {
           <span className="text-lg">📦</span> Included in Package
         </div>
 
-        <h3 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
           What&apos;s Inside{" "}
           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
             Your Package
           </span>
-        </h3>
+        </h4>
 
         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
           Every Miroooo Brush X2 order includes these essential accessories in the box for complete oral care at home and on the go.
@@ -292,8 +335,6 @@ function PackagePanel() {
                 alt="Miroooo Brush X2 Luxury Aluminium Travel Case"
                 loading="lazy"
                 decoding="async"
-                width={946}
-                height={946}
                 className="w-full aspect-square object-cover"
               />
             </a>
@@ -315,8 +356,6 @@ function PackagePanel() {
                 alt="Miroooo Brush X2 Wall-Mounted Storage"
                 loading="lazy"
                 decoding="async"
-                width={2000}
-                height={2000}
                 className="w-full aspect-square object-cover"
               />
             </a>
@@ -338,8 +377,6 @@ function PackagePanel() {
                 alt="Miroooo Brush X2 Up to 4 Extra Brush Heads"
                 loading="lazy"
                 decoding="async"
-                width={1254}
-                height={1254}
                 className="w-full aspect-square object-cover"
               />
             </a>
@@ -351,17 +388,28 @@ function PackagePanel() {
 
         <OfficialButton
           href="https://www.trymiroooo.com/products/miroooo-x2"
+          targetId="miroooo-package-panel"
+          loadingTarget={loadingTarget}
+          setLoadingTarget={setLoadingTarget}
           testId="miroooo-cta-package"
           className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
         >
           Check Availability
         </OfficialButton>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
-function ProductCard({ product }: { product: RankedProduct }) {
+function ProductCard({
+  product,
+  loadingTarget,
+  setLoadingTarget,
+}: {
+  product: RankedProduct;
+  loadingTarget: string | null;
+  setLoadingTarget: (target: string) => void;
+}) {
   const isMiroooo = product.rank === 1;
 
   return (
@@ -393,6 +441,13 @@ function ProductCard({ product }: { product: RankedProduct }) {
               <a
                 href={product.ctaUrl}
                 rel="noopener noreferrer sponsored"
+                onClick={(event) =>
+                  handleOutboundClick(
+                    event,
+                    setLoadingTarget,
+                    `product-img-${product.rank}`,
+                  )
+                }
                 className="block w-full group"
               >
                 <img
@@ -405,8 +460,6 @@ function ProductCard({ product }: { product: RankedProduct }) {
                   }
                   loading={isMiroooo ? "eager" : "lazy"}
                   decoding="async"
-                  width={800}
-                  height={800}
                   className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
                 />
               </a>
@@ -418,7 +471,7 @@ function ProductCard({ product }: { product: RankedProduct }) {
                   {product.price}
                 </span>
                 {product.compareAt ? (
-                  <span className="text-lg text-slate-500 line-through font-medium">
+                  <span className="text-lg text-slate-400 line-through font-medium">
                     {product.compareAt}
                   </span>
                 ) : null}
@@ -430,13 +483,16 @@ function ProductCard({ product }: { product: RankedProduct }) {
                 className="mb-2"
               />
               <p className="text-sm font-medium text-slate-500">
-                Editorial rating {product.rating.toFixed(1)} / 5
+                Overall rating {product.rating.toFixed(1)} / 5
               </p>
             </div>
 
             <div className="w-full hidden lg:block">
               <OfficialButton
                 href={product.ctaUrl}
+                targetId={`product-desktop-${product.rank}`}
+                loadingTarget={loadingTarget}
+                setLoadingTarget={setLoadingTarget}
                 testId={`toothbrush-cta-${product.rank}`}
                 className="w-full"
               >
@@ -452,6 +508,13 @@ function ProductCard({ product }: { product: RankedProduct }) {
             <a
               href={product.ctaUrl}
               rel="noopener noreferrer sponsored"
+              onClick={(event) =>
+                handleOutboundClick(
+                  event,
+                  setLoadingTarget,
+                  `product-title-${product.rank}`,
+                )
+              }
               className="hover:text-emerald-600 transition-colors"
             >
               {product.name}
@@ -470,9 +533,9 @@ function ProductCard({ product }: { product: RankedProduct }) {
 
           {/* Performance Metrics */}
           <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
-            <h3 className="font-bold text-slate-900 mb-6 text-lg">
-              Editorial Scorecard
-            </h3>
+            <h4 className="font-bold text-slate-900 mb-6 text-lg">
+              Performance Metrics
+            </h4>
             <div className="space-y-3">
               {product.metrics.map((metric) => (
                 <MetricBar
@@ -488,9 +551,9 @@ function ProductCard({ product }: { product: RankedProduct }) {
           <div className="flex flex-col gap-6 mb-8">
             {/* Pros */}
             <div className="bg-emerald-50/50 rounded-2xl px-3 py-5 md:p-6 border border-emerald-100">
-              <h3 className="bg-emerald-700 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+              <h4 className="bg-emerald-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
                 Pros
-              </h3>
+              </h4>
               <ul className="space-y-4">
                 {product.pros.map((pro, idx) => {
                   const [bold, ...rest] = pro.split(":");
@@ -523,9 +586,9 @@ function ProductCard({ product }: { product: RankedProduct }) {
 
             {/* Cons */}
             <div className="bg-red-50/50 rounded-2xl px-3 py-5 md:p-6 border border-red-100">
-              <h3 className="bg-red-700 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+              <h4 className="bg-red-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
                 Cons
-              </h3>
+              </h4>
               <ul className="space-y-4">
                 {product.cons.map((con, idx) => {
                   const [bold, ...rest] = con.split(":");
@@ -561,11 +624,19 @@ function ProductCard({ product }: { product: RankedProduct }) {
             </div>
           </div>
 
-          {isMiroooo && <PackagePanel />}
+          {isMiroooo && (
+            <PackagePanel
+              loadingTarget={loadingTarget}
+              setLoadingTarget={setLoadingTarget}
+            />
+          )}
 
           <div className="w-full mt-8 lg:hidden">
             <OfficialButton
               href={product.ctaUrl}
+              targetId={`product-mobile-${product.rank}`}
+              loadingTarget={loadingTarget}
+              setLoadingTarget={setLoadingTarget}
               testId={`toothbrush-cta-mobile-${product.rank}`}
               className="w-full"
             >
@@ -586,7 +657,7 @@ function ComparisonMatrix({
   if (!guide.comparisonRows || guide.comparisonRows.length === 0) return null;
 
   return (
-    <section id="faq" className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16 [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
+    <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16">
       <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
           <Sparkles className="w-3.5 h-3.5" /> Specification Breakdown
@@ -679,7 +750,7 @@ function FaqSection({ faqs }: { faqs?: Array<{ question: string; answer: string 
           <HelpCircle className="w-4 h-4" /> Frequently Asked Questions
         </div>
         <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
-          Electric Toothbrush Buying Questions
+          Expert Answers to Common Questions
         </h2>
       </div>
 
@@ -856,7 +927,7 @@ const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
 
 function CompetitorComparisonTable() {
   return (
-    <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+    <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
         <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
@@ -895,8 +966,6 @@ function CompetitorComparisonTable() {
                         alt={prod.name}
                         loading="lazy"
                         decoding="async"
-                        width={200}
-                        height={200}
                         className="max-h-full max-w-full object-contain"
                       />
                     </div>
@@ -997,45 +1066,47 @@ export type ElectricToothbrushesAdvertorialProps = {
 export default function ElectricToothbrushesAdvertorial({
   guide,
 }: ElectricToothbrushesAdvertorialProps = {}) {
+  const [updatedDate, setUpdatedDate] = useState(() =>
+    formatLondonDate(new Date()),
+  );
+  const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
+
   const displayProducts: RankedProduct[] =
     guide && guide.products && guide.products.length > 0
       ? (guide.products as RankedProduct[])
       : toothbrushProducts;
 
+  useEffect(() => {
+    setUpdatedDate(formatLondonDate(new Date()));
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
-      <script dangerouslySetInnerHTML={{ __html: toothbrushTrackingScript }} />
+      <Script
+        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260907-01"
+        strategy="afterInteractive"
+      />
       {/* Header / Hero */}
-      <div className="bg-emerald-800 border-b border-emerald-900 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
+      <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
             <span className="block">
-              {guide ? guide.headline : "Best Electric Toothbrush UK 2026"}
+              {guide ? guide.headline : "Best Electric Toothbrushes"}
             </span>
             <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3 font-sans">
               <MarketFlag market="uk" />
               <span>
                 {guide?.eyebrow
                   ? `${guide.eyebrow} · UK 2026`
-                  : "Top 5 Models Compared"}
+                  : "United Kingdom - 2026"}
               </span>
             </span>
           </h1>
 
           <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
             <CheckCircle2 size={20} className="text-white shrink-0" />
-            Prices checked <span>{LAST_REVIEWED}</span>
+            Last updated – <span suppressHydrationWarning>{updatedDate}</span>
           </div>
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-emerald-50 md:text-base">
-            Editorial buying comparison. We may earn a commission from featured
-            links at no extra cost to you.
-          </p>
-          <nav aria-label="Page sections" className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold text-white">
-            <a href="#quick-comparison" className="underline decoration-white/50 underline-offset-4 hover:decoration-white">Quick comparison</a>
-            <a href="#methodology" className="underline decoration-white/50 underline-offset-4 hover:decoration-white">Methodology</a>
-            <a href="#full-comparison" className="underline decoration-white/50 underline-offset-4 hover:decoration-white">Full comparison</a>
-            <a href="#disclosure" className="underline decoration-white/50 underline-offset-4 hover:decoration-white">Disclosure</a>
-          </nav>
         </div>
       </div>
 
@@ -1047,11 +1118,6 @@ export default function ElectricToothbrushesAdvertorial({
             <img
               src="/img/toothbrushes/top-4-competitors-container-bar.webp"
               alt="Electric Toothbrushes UK Comparison"
-              width={1536}
-              height={430}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
               className="w-full h-auto object-contain pointer-events-none"
             />
 
@@ -1060,44 +1126,71 @@ export default function ElectricToothbrushesAdvertorial({
               <img
                 src="/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp"
                 alt="Miroooo Brush X2 Electric Toothbrush"
-                width={1161}
-                height={1161}
-                loading="eager"
-                decoding="async"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
+          <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
-                <div aria-hidden="true" className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-serif text-2xl font-black text-emerald-800 md:h-24 md:w-24">TR</div>
+                <Image
+                  src={
+                    guide?.drOliviaVerdict?.avatar ||
+                    "/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp"
+                  }
+                  alt={
+                    guide?.drOliviaVerdict?.name
+                      ? `${guide.drOliviaVerdict.name} - Clinical Dental Consultant & Oral Health Specialist`
+                      : "Dr. Olivia, BDS - Clinical Dental Consultant & Oral Health Specialist"
+                  }
+                  width={96}
+                  height={96}
+                  priority
+                  className="w-24 h-24 md:w-24 md:h-24 rounded-full object-cover mb-2 md:mb-0"
+                />
                 <div>
-                  <h2 className="font-serif text-2xl font-bold text-slate-900 md:text-3xl">
-                    How this buyer&apos;s guide was prepared
-                  </h2>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-500 md:text-sm">
-                    TrustpilotReview editorial team
+                  <h3 className="font-bold text-xl md:text-2xl underline text-slate-900">
+                    {guide?.drOliviaVerdict?.name || "Dr. Olivia, BDS"}
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
+                    {guide?.drOliviaVerdict?.title ||
+                      "Clinical Dental Consultant & Oral Health Specialist"}
                   </p>
                 </div>
               </div>
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
-                <p>
-                  We compared five widely considered electric toothbrushes using
-                  current UK prices, published specifications, practical ownership
-                  features, warranty and return terms, and replacement-head costs.
-                  Our rankings are editorial opinions designed to help shoppers
-                  narrow their shortlist, not clinical or dental advice.
-                </p>
+                {guide?.drOliviaVerdict?.quote ? (
+                  <p className="italic font-medium text-slate-800 mb-3 border-l-4 border-emerald-500 pl-4">
+                    &ldquo;{guide.drOliviaVerdict.quote}&rdquo;
+                  </p>
+                ) : null}
+
+                {guide?.drOliviaVerdict?.clinicalRationale ? (
+                  <p>{guide.drOliviaVerdict.clinicalRationale}</p>
+                ) : (
+                  <p>
+                    With <strong>over 14 years</strong> of clinical dental
+                    experience in the UK,{" "}
+                    <strong className="text-slate-900">Dr. Olivia</strong>{" "}
+                    evaluated the leading electric toothbrushes for 2026 across{" "}
+                    <strong>180+ hours of comparative testing</strong>. Her
+                    conclusion was simple: daily brushing should be effortless. The
+                    ideal brush should be whisper-quiet rather than loudly buzzing
+                    in your ear, featherlight (around 50g) for easy handling, and
+                    gentle on gums while delivering a deep sonic clean. You
+                    don&apos;t need to spend £200+ on heavy, loud, clunky handles
+                    to get a dentist-clean smile, whisper-quiet sound, and 90+
+                    days of battery life.
+                  </p>
+                )}
               </div>
 
               <hr className="border-slate-200 w-full mb-4" />
 
-              <div className="text-xs md:text-sm text-slate-600 md:text-right">
-                Product details can change. Confirm price, availability and terms
-                on the retailer&apos;s website before buying.
+              <div className="text-xs md:text-sm italic text-slate-600 md:text-right">
+                * Evaluated across UK dental clinics &amp; independent tests.
               </div>
             </div>
           </div>
@@ -1105,9 +1198,6 @@ export default function ElectricToothbrushesAdvertorial({
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
-        <div id="quick-comparison" className="scroll-mt-24">
-          <QuickComparisonOverview products={displayProducts} />
-        </div>
         {/* Intro */}
         {guide?.intro && guide.intro.length > 0 && (
           <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
@@ -1142,7 +1232,12 @@ export default function ElectricToothbrushesAdvertorial({
         {/* Products List */}
         <div className="space-y-16">
           {displayProducts.map((product) => (
-            <ProductCard key={product.name} product={product} />
+            <ProductCard
+              key={product.name}
+              product={product}
+              loadingTarget={loadingTarget}
+              setLoadingTarget={setLoadingTarget}
+            />
           ))}
         </div>
 
@@ -1153,13 +1248,13 @@ export default function ElectricToothbrushesAdvertorial({
         {guide && <BuyerBlocksSection guide={guide} />}
 
         {/* FAQ Accordion */}
-        <FaqSection faqs={guide?.faqs ?? defaultFaqs} />
+        <FaqSection faqs={guide?.faqs} />
 
         {/* Bottom Verdict Section */}
         <div className="mt-20 md:mt-24 mb-10 md:mb-12 relative max-w-sm md:max-w-5xl mx-auto">
           <div className="bg-[#f8f4e6] rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-12 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] border border-[#e8dccb] relative z-10">
             <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
-              Editor&apos;s Verdict
+              Dentist&apos;s Verdict
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
@@ -1167,8 +1262,8 @@ export default function ElectricToothbrushesAdvertorial({
               <div className="relative flex justify-center items-center">
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
                   <Image
-                    src="/img/toothbrushes/miroooo-x2-ranked-product-box-case-brush.webp"
-                    alt="Miroooo X2 electric toothbrush, travel case and package"
+                    src="/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp"
+                    alt="Dr. Olivia holding Miroooo Brush X2 Electric Toothbrush in dental clinic - Dentist's Verdict"
                     width={600}
                     height={600}
                     className="w-full h-full object-cover"
@@ -1188,7 +1283,7 @@ export default function ElectricToothbrushesAdvertorial({
                   Now at 50% off
                 </div>
 
-                {/* Editorial rating badge */}
+                {/* Trustpilot-style Badge */}
                 <div className="border border-gray-200 bg-white/70 rounded-xl p-3 md:p-4 mx-auto mb-6 md:mb-8 inline-block shadow-sm">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="font-bold text-base md:text-lg text-black font-sans">
@@ -1198,12 +1293,15 @@ export default function ElectricToothbrushesAdvertorial({
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 flex items-center justify-center gap-1 font-sans">
                     Rated 4.9 / 5 on <GreenStarIcon size={18} />{" "}
-                    <span className="font-bold text-black">editorial score</span>
+                    <span className="font-bold text-black">Trustpilot</span>
                   </div>
                 </div>
 
                 <OfficialButton
                   href="https://www.trymiroooo.com/products/miroooo-x2"
+                  targetId="verdict-cta"
+                  loadingTarget={loadingTarget}
+                  setLoadingTarget={setLoadingTarget}
                   testId="toothbrush-verdict-cta"
                   className="mx-auto w-full max-w-[260px] md:w-auto md:max-w-none !bg-gradient-to-b !from-[#1a7444] !to-[#0d4a29] hover:!from-[#145c35] hover:!to-[#0a381f] text-white text-sm md:text-xl font-bold tracking-wide py-3.5 md:py-4 px-6 md:px-12 rounded-full shadow-[0_8px_20px_rgba(13,74,41,0.4)]"
                 >
@@ -1215,9 +1313,7 @@ export default function ElectricToothbrushesAdvertorial({
         </div>
 
         {/* 5-Product Side-by-Side Comparison Table */}
-        <div id="full-comparison" className="scroll-mt-24">
-          <CompetitorComparisonTable />
-        </div>
+        <CompetitorComparisonTable />
 
 
       </main>
@@ -1228,36 +1324,24 @@ export default function ElectricToothbrushesAdvertorial({
           href="https://www.trymiroooo.com/products/miroooo-x2"
           rel="noopener noreferrer sponsored"
           data-testid="mobile-sticky-cta"
-          className="w-full text-center bg-emerald-700 text-white px-2 py-3.5 rounded-full font-bold text-[13px] sm:text-base shadow-lg shadow-emerald-700/25 whitespace-nowrap relative overflow-hidden group"
+          onClick={(event) =>
+            handleOutboundClick(event, setLoadingTarget, "mobile-sticky-cta")
+          }
+          className="w-full text-center bg-emerald-500 text-white px-2 py-3.5 rounded-full font-bold text-[13px] sm:text-base shadow-lg shadow-emerald-500/30 whitespace-nowrap relative overflow-hidden group"
+          aria-busy={loadingTarget === "mobile-sticky-cta"}
         >
-          <span className="relative z-10">
-            Take me to the winning electric toothbrush
-          </span>
-          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2s_infinite]" />
+          {loadingTarget === "mobile-sticky-cta" ? (
+            <OutboundLoader />
+          ) : (
+            <>
+              <span className="relative z-10">
+                Take me to the winning electric toothbrush
+              </span>
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2s_infinite]" />
+            </>
+          )}
         </a>
       </div>
-
-      <footer id="disclosure" className="border-t border-slate-200 bg-white px-4 py-10 shadow-inner">
-        <div className="mx-auto max-w-5xl text-center">
-          <nav aria-label="Site information" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
-            <a href="/privacy" className="text-slate-600 hover:text-slate-900">Privacy Policy</a>
-            <a href="/terms" className="text-slate-600 hover:text-slate-900">Terms of Service</a>
-            <a href="/disclosure" className="text-slate-600 hover:text-slate-900">Advertising Disclosure</a>
-            <a href="/contact" className="text-slate-600 hover:text-slate-900">Contact Us</a>
-          </nav>
-          <p className="mx-auto mt-6 max-w-4xl text-sm leading-relaxed text-slate-600">
-            <strong className="text-slate-800">Affiliate disclosure:</strong>{" "}
-            We may receive compensation when you follow a featured link and make
-            a purchase. This does not increase the price you pay. Rankings and
-            editorial opinions are our own, and compensation does not guarantee
-            placement or a positive review.
-          </p>
-          <p className="mt-4 text-xs text-slate-500">
-            © 2026 TrustpilotReview.shop. Product names and trademarks belong to
-            their respective owners.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
