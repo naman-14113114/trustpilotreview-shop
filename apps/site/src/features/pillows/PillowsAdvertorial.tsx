@@ -1019,27 +1019,6 @@ export default function PillowsAdvertorial({
 
         <EvaluationCriteria criteria={guide?.criteria} />
 
-        {/* Winner Highlights Card */}
-        {guide?.winnerBullets && guide.winnerBullets.length > 0 && (
-          <div className="bg-emerald-50 rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 border-emerald-200 mb-12 shadow-sm">
-            <h3 className="text-xl md:text-2xl font-bold text-emerald-950 font-serif mb-4 flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-emerald-600 shrink-0" />
-              Key Findings &amp; Why Sleeping CloudAlign Took #1
-            </h3>
-            <ul className="space-y-3">
-              {guide.winnerBullets.map((bullet, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-slate-800 text-base md:text-lg"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-1" />
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {/* Products List */}
         <div className="space-y-16">
           {displayProducts.map((product) => (

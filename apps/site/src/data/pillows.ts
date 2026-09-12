@@ -465,10 +465,8 @@ export const TOP_5_PILLOW_COMPARISON_ROWS: PillowComparisonRowDef[] = [
 
 export interface PillowGuideData {
   headline: string;
-  eyebrow: string;
   intro: string[];
   criteria: string[];
-  winnerBullets: string[];
   sleepSpecialistVerdict: {
     name: string;
     title: string;
@@ -482,20 +480,12 @@ export interface PillowGuideData {
 
 export const defaultPillowGuide: PillowGuideData = {
   headline: "Top 5 Pillows for Side Sleepers",
-  eyebrow: "Tested & Ranked",
   intro: [
     "Side sleepers face a unique anatomical challenge: the pillow must bridge the deep gap between the outer shoulder and the neck without forcing the cervical spine upward or letting the head collapse downward.",
     "When a pillow has incorrect loft or lacks shoulder clearance, it creates concentrated pressure on the acromioclavicular joint and pinches cervical nerves—leading to morning neck stiffness, shoulder ache, and tingling down the arm.",
     "Over the past three months, our sleep editorial team evaluated leading UK side-sleeper pillows across 150+ hours of physical testing, consulting registered UK chiropractic and sleep ergonomics specialists. The five models below represent the absolute best options available in the UK for 2026.",
   ],
   criteria: defaultPillowCriteria,
-  winnerBullets: [
-    "Anatomical 6-zone contour supports head, neck, shoulders, and arms in true horizontal spinal alignment.",
-    "SwitchFit™ dual-loft design offers both Regular (8.9 cm) and High (10.9 cm) profiles for any frame.",
-    "Lateral shoulder wings and under-arm channels prevent nerve compression and morning shoulder numbness.",
-    "High-density molded memory foam retains its therapeutic shape night after night without sagging.",
-    "Risk-free 90-night in-home comfort trial with free tracked UK delivery and money-back guarantee.",
-  ],
   sleepSpecialistVerdict: {
     name: "Dr. Eleanor Sterling, MChiro",
     title: "Consultant Chiropractor & Sleep Biomechanics Specialist",
@@ -505,56 +495,6 @@ export const defaultPillowGuide: PillowGuideData = {
     clinicalRationale:
       "With over 16 years of clinical practice treating chronic cervical strain and shoulder impingement across UK patients, Dr. Eleanor Sterling evaluated the leading side-sleeper pillows for 2026 across 150+ hours of comparative testing. Her conclusion was decisive: traditional rectangular pillows force the shoulder into awkward compression, while single-height contoured pillows fail to fit different body frames. The Sleeping CloudAlign's dedicated shoulder wings, ear pressure cavity, and choice of Regular (8.9 cm) or High (10.9 cm) profiles deliver the most consistent orthopedic alignment on the market.",
   },
-  buyerBlocks: [
-    {
-      title: "Why Standard Pillows Cause Side-Sleeper Neck Pain",
-      body: "Standard rectangular pillows leave an empty void beneath the cervical spine or force the shoulder blade forward, rotating the neck into lateral flexion. An ergonomic side-sleeper pillow with a defined neck arch and shoulder recess maintains a 90° neutral angle between the head and shoulders, relieving tension on the trapezius and levator scapulae muscles.",
-    },
-    {
-      title: "Choosing Between Regular (8.9 cm) and High (10.9 cm) Loft",
-      body: "Proper pillow loft depends on your shoulder breadth and mattress firmness. The Regular (8.9 cm) profile suits petite to medium frames (under 5'10\") or those on softer contouring mattresses. The High (10.9 cm) profile is recommended for broad-shouldered sleepers (over 5'10\") or firmer mattresses where the shoulder does not sink deeply into the bed.",
-    },
-    {
-      title: "Memory Foam Density vs. Loose Nanocubes & Feathers",
-      body: "While loose-fill and feather pillows feel plush initially, they shift under head weight during the night, causing the head to sink into an unsupportive dip. Molded high-density memory foam provides stable, consistent rebound pressure throughout 8 hours of sleep, ensuring your spine stays properly aligned from dusk till dawn.",
-    },
-    {
-      title: "The Importance of Risk-Free In-Home Trials",
-      body: "The human cervical spine requires 14 to 21 nights to adapt from an unsupportive traditional pillow to an orthopedically correct contour. Brands that offer a 90-night in-home trial (like Sleeping) give your neck muscles adequate time to decompress and adapt completely risk-free.",
-    },
-  ],
-  faqs: [
-    {
-      question: "Why is the Sleeping CloudAlign ranked #1 over other UK pillows?",
-      answer:
-        "The Sleeping CloudAlign Pillow is the only model in our comparison that features a true 6-zone anatomical contour specifically tailored for side sleeping. It incorporates dedicated shoulder-recess wings, under-arm channels, a central head cradle, and an ear-pressure relief cavity. Combined with two finished height profiles (Regular 8.9 cm and High 10.9 cm), premium memory foam, a 90-night comfort trial, and a starting price of £49.99, it offers the highest clinical performance and value in the UK.",
-    },
-    {
-      question: "Which height option should I choose: Regular (8.9 cm) or High (10.9 cm)?",
-      answer:
-        "Choose the Regular (8.9 cm) profile if you have a petite to medium build (under 5'10\" / 178 cm), sleep on a medium or soft mattress that allows your shoulder to sink in slightly, or frequently switch between side and back sleeping. Choose the High (10.9 cm) profile if you have broader shoulders (over 5'10\"), sleep on a firm mattress, or experience morning shoulder crushing with standard pillows.",
-    },
-    {
-      question: "Can I sleep on my back with the Sleeping CloudAlign pillow?",
-      answer:
-        "Yes. While designed primarily for side sleepers, the central concave cradle is engineered to comfortably support back sleepers by stabilizing the occiput and maintaining natural cervical lordosis. If you roll from your side onto your back during the night, the pillow continues to keep your airway open and neck supported.",
-    },
-    {
-      question: "How do I wash and care for the Sleeping CloudAlign pillow?",
-      answer:
-        "The outer cover features an all-around hidden zipper and can be easily removed for machine washing at 30°C on a gentle cycle. Line dry or tumble dry on low heat. The inner memory foam core should not be submerged in water; simply spot-clean with a damp cloth if necessary and allow to air in a well-ventilated room.",
-    },
-    {
-      question: "How does the 90-Night Comfort Trial work?",
-      answer:
-        "Sleeping provides a 90-night risk-free trial on all UK orders. You can test the pillow in your own bed for up to 90 nights. If you do not experience noticeable improvements in neck comfort, spinal alignment, and sleep quality, you can contact their UK customer support team for a full hassle-free refund.",
-    },
-    {
-      question: "Does the pillow fit standard UK pillowcases?",
-      answer:
-        "The Sleeping CloudAlign measures 68.5 x 37 cm, which easily fits inside standard UK pillowcases (typically 75 x 50 cm). However, for maximum contouring benefits, temperature regulation, and breathability, we recommend sleeping directly on the included custom-fitted soft knit cover.",
-    },
-  ],
 };
 
 export const methodologyPoints = [
