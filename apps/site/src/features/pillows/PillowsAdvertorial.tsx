@@ -406,7 +406,7 @@ function PackagePanel({
           testId="sleeping-cta-package"
           className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
         >
-          Check Availability &amp; Claim 50% Off
+          Check Availability
         </OfficialButton>
       </div>
     </motion.div>
@@ -1163,7 +1163,7 @@ export default function PillowsAdvertorial({
                   testId="pillow-verdict-cta"
                   className="mx-auto w-full max-w-[280px] md:w-auto md:max-w-none !bg-gradient-to-b !from-[#1a7444] !to-[#0d4a29] hover:!from-[#145c35] hover:!to-[#0a381f] text-white text-sm md:text-xl font-bold tracking-wide py-3.5 md:py-4 px-6 md:px-12 rounded-full shadow-[0_8px_20px_rgba(13,74,41,0.4)]"
                 >
-                  CHECK AVAILABILITY &amp; CLAIM 50% OFF
+                  CHECK AVAILABILITY
                 </OfficialButton>
               </div>
             </div>
@@ -1239,7 +1239,7 @@ export default function PillowsAdvertorial({
           {loadingTarget === "mobile-sticky-cta" ? (
             <OutboundLoader />
           ) : (
-            <span>Claim 50% Off &gt;</span>
+            <span>Check Availability &gt;</span>
           )}
         </a>
       </div>

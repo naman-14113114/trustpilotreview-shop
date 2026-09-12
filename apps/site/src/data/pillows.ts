@@ -107,7 +107,7 @@ export const pillowProducts: RankedPillowProduct[] = [
       "Sculpted ergonomic shape: Best used with its custom-fitted breathable cover rather than tight rigid rectangular pillowcases.",
     ],
     ctaUrl: sleepingProductUrl,
-    ctaLabel: "Check Availability & Claim 50% Off",
+    ctaLabel: "Official Website",
     sourceUrl: sleepingProductUrl,
     isWinner: true,
   },
