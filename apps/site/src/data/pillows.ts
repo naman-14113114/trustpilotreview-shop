@@ -465,6 +465,7 @@ export const TOP_5_PILLOW_COMPARISON_ROWS: PillowComparisonRowDef[] = [
 
 export interface PillowGuideData {
   headline: string;
+  eyebrow?: string;
   intro: string[];
   criteria: string[];
   sleepSpecialistVerdict: {
