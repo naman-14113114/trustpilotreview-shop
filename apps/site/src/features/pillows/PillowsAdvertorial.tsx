@@ -572,26 +572,6 @@ function ProductCard({
             ))}
           </div>
 
-          {/* Key Facts Specifications */}
-          <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-200 mb-8">
-            <h4 className="font-bold text-slate-900 mb-4 text-lg">
-              Key Product Facts &amp; Specifications
-            </h4>
-            <dl className="grid gap-3 sm:grid-cols-2">
-              {product.specifications.map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-700"
-                >
-                  <dt className="mb-1 font-extrabold text-slate-900">
-                    {label}
-                  </dt>
-                  <dd className="leading-snug">{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
           {/* Performance Metrics */}
           <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
             <h4 className="font-bold text-slate-900 mb-6 text-lg">
