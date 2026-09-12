@@ -161,7 +161,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     whyBelowWinner:
       "Groove is an excellent choice for users who want granular DIY adjustments, but Sleeping offers a far simpler, superior finished experience: choose Regular or High, and the full 6-zone anatomical contour is ready immediately without storing loose foam pieces.",
     ctaUrl: "https://www.groovepillows.co.uk/products/groove-adjustable-pillow",
-    ctaLabel: "View Groove 2.0 Details",
+    ctaLabel: "Shop Now",
     sourceUrl: "https://www.groovepillows.co.uk/products/groove-adjustable-pillow",
   },
   {
@@ -213,7 +213,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     whyBelowWinner:
       "TEMPUR offers legendary foam quality, but the price tag is prohibitive. Sleeping delivers a wider 68.5 cm sleeping surface, superior multi-zone shoulder/arm ergonomics, and two profile choices starting at just £49.99.",
     ctaUrl: "https://uk.tempur.com/pillows/tempur-ergonomic-pillows-UKORIGINALSC.html",
-    ctaLabel: "View TEMPUR Official Page",
+    ctaLabel: "Shop Now",
     sourceUrl: "https://uk.tempur.com/pillows/tempur-ergonomic-pillows-UKORIGINALSC.html",
   },
   {
@@ -265,7 +265,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     whyBelowWinner:
       "Simba is ideal for hot sleepers wanting a traditional rectangular shape, but for true side-sleeper spinal alignment and morning neck relief, Sleeping's defined anatomical 6-zone contour is significantly more effective.",
     ctaUrl: "https://simbasleep.com/products/simba-hybrid-pillow",
-    ctaLabel: "View Simba Hybrid Details",
+    ctaLabel: "Shop Now",
     sourceUrl: "https://simbasleep.com/products/simba-hybrid-pillow",
   },
   {
@@ -317,7 +317,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     whyBelowWinner:
       "Panda provides wonderful eco-friendly materials and a generous 10-year warranty, but its rigid 13 cm height lacks the dual-loft choice and anatomical shoulder relief that make Sleeping the clear winner.",
     ctaUrl: "https://pandalondon.com/products/hybrid-bamboo-pillow",
-    ctaLabel: "View Panda Bamboo Page",
+    ctaLabel: "Shop Now",
     sourceUrl: "https://pandalondon.com/products/hybrid-bamboo-pillow",
     availabilityNote: "Check official page for current batch availability",
   },
@@ -497,13 +497,13 @@ export const defaultPillowGuide: PillowGuideData = {
     "Risk-free 90-night in-home comfort trial with free tracked UK delivery and money-back guarantee.",
   ],
   sleepSpecialistVerdict: {
-    name: "Dr. Marcus Vance, MChiro",
+    name: "Dr. Eleanor Sterling, MChiro",
     title: "Consultant Chiropractor & Sleep Biomechanics Specialist",
     avatar: "/img/pillows/juujo-model.png",
     quote:
       "Side sleeping requires maintaining a strictly neutral horizontal cervical spine. The Sleeping CloudAlign is the first ergonomic pillow in the UK that integrates dedicated shoulder cutaways and dual-loft precision, preventing the common cervical hyperextension seen with traditional pillows.",
     clinicalRationale:
-      "With over 16 years of clinical practice treating chronic cervical strain and shoulder impingement across UK patients, Dr. Marcus Vance evaluated the leading side-sleeper pillows for 2026 across 150+ hours of comparative testing. His conclusion was decisive: traditional rectangular pillows force the shoulder into awkward compression, while single-height contoured pillows fail to fit different body frames. The Sleeping CloudAlign's dedicated shoulder wings, ear pressure cavity, and choice of Regular (8.9 cm) or High (10.9 cm) profiles deliver the most consistent orthopedic alignment on the market.",
+      "With over 16 years of clinical practice treating chronic cervical strain and shoulder impingement across UK patients, Dr. Eleanor Sterling evaluated the leading side-sleeper pillows for 2026 across 150+ hours of comparative testing. Her conclusion was decisive: traditional rectangular pillows force the shoulder into awkward compression, while single-height contoured pillows fail to fit different body frames. The Sleeping CloudAlign's dedicated shoulder wings, ear pressure cavity, and choice of Regular (8.9 cm) or High (10.9 cm) profiles deliver the most consistent orthopedic alignment on the market.",
   },
   buyerBlocks: [
     {

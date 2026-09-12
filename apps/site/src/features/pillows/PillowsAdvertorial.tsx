@@ -507,28 +507,16 @@ function ProductCard({
             </div>
 
             <div className="w-full hidden lg:block">
-              {isWinner ? (
-                <OfficialButton
-                  href={product.ctaUrl}
-                  targetId={`product-desktop-${product.rank}`}
-                  loadingTarget={loadingTarget}
-                  setLoadingTarget={setLoadingTarget}
-                  testId={`pillow-cta-${product.rank}`}
-                  className="w-full"
-                >
-                  {product.ctaLabel}
-                </OfficialButton>
-              ) : (
-                <a
-                  href={product.ctaUrl}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-slate-800 px-7 py-4 text-base font-bold text-white transition hover:bg-slate-950"
-                >
-                  {product.ctaLabel}
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                </a>
-              )}
+              <OfficialButton
+                href={product.ctaUrl}
+                targetId={`product-desktop-${product.rank}`}
+                loadingTarget={loadingTarget}
+                setLoadingTarget={setLoadingTarget}
+                testId={`pillow-cta-${product.rank}`}
+                className="w-full"
+              >
+                {product.ctaLabel}
+              </OfficialButton>
             </div>
           </div>
         </aside>
@@ -685,28 +673,16 @@ function ProductCard({
           )}
 
           <div className="w-full mt-8 lg:hidden">
-            {isWinner ? (
-              <OfficialButton
-                href={product.ctaUrl}
-                targetId={`product-mobile-${product.rank}`}
-                loadingTarget={loadingTarget}
-                setLoadingTarget={setLoadingTarget}
-                testId={`pillow-cta-mobile-${product.rank}`}
-                className="w-full"
-              >
-                {product.ctaLabel}
-              </OfficialButton>
-            ) : (
-              <a
-                href={product.ctaUrl}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-slate-800 px-7 py-4 text-base font-bold text-white"
-              >
-                {product.ctaLabel}
-                <ExternalLink className="h-4 w-4" aria-hidden="true" />
-              </a>
-            )}
+            <OfficialButton
+              href={product.ctaUrl}
+              targetId={`product-mobile-${product.rank}`}
+              loadingTarget={loadingTarget}
+              setLoadingTarget={setLoadingTarget}
+              testId={`pillow-cta-mobile-${product.rank}`}
+              className="w-full"
+            >
+              {product.ctaLabel}
+            </OfficialButton>
           </div>
         </div>
       </div>
@@ -719,9 +695,6 @@ function CompetitorComparisonTable() {
     <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-          <Sparkles className="w-3.5 h-3.5" /> Specification Breakdown
-        </span>
         <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
           Top 5 Side Sleeper Pillows Side-by-Side Comparison
         </h2>
@@ -981,7 +954,7 @@ export default function PillowsAdvertorial({
           </div>
 
           {/* Sleep Biomechanics Specialist Card */}
-          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.08)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
+          <div className="bg-white p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-5xl mx-auto border border-slate-100 text-slate-800">
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
                 <Image
@@ -992,16 +965,16 @@ export default function PillowsAdvertorial({
                   alt={
                     guide?.sleepSpecialistVerdict?.name
                       ? `${guide.sleepSpecialistVerdict.name} - ${guide.sleepSpecialistVerdict.title}`
-                      : "Dr. Marcus Vance - Consultant Chiropractor & Sleep Ergonomics Specialist"
+                      : "Dr. Eleanor Sterling - Consultant Chiropractor & Sleep Ergonomics Specialist"
                   }
                   width={96}
                   height={96}
                   priority
-                  className="w-24 h-24 md:w-24 md:h-24 rounded-full object-cover mb-2 md:mb-0 border-2 border-emerald-100"
+                  className="w-24 h-24 md:w-24 md:h-24 rounded-full object-cover mb-2 md:mb-0"
                 />
                 <div>
                   <h3 className="font-bold text-xl md:text-2xl underline text-slate-900">
-                    {guide?.sleepSpecialistVerdict?.name || "Dr. Marcus Vance, MChiro"}
+                    {guide?.sleepSpecialistVerdict?.name || "Dr. Eleanor Sterling, MChiro"}
                   </h3>
                   <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
                     {guide?.sleepSpecialistVerdict?.title ||
@@ -1012,12 +985,12 @@ export default function PillowsAdvertorial({
 
               <div className="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
                 {guide?.sleepSpecialistVerdict?.quote ? (
-                  <p className="italic font-medium text-slate-800 mb-3 border-l-4 border-emerald-500 pl-4 text-left">
+                  <p className="italic font-medium text-slate-800 mb-3 border-l-4 border-emerald-500 pl-4">
                     &ldquo;{guide.sleepSpecialistVerdict.quote}&rdquo;
                   </p>
                 ) : null}
 
-                <p className="text-left">
+                <p>
                   {guide?.sleepSpecialistVerdict?.clinicalRationale}
                 </p>
               </div>
@@ -1078,15 +1051,6 @@ export default function PillowsAdvertorial({
             />
           ))}
         </div>
-
-        {/* 5-Product Side-by-Side Comparison Table Directly Below #5 */}
-        <CompetitorComparisonTable />
-
-        {/* Decision / Buyer Blocks */}
-        {guide && <BuyerBlocksSection guide={guide} />}
-
-        {/* FAQ Accordion */}
-        <FaqSection faqs={guide?.faqs} />
 
         {/* Bottom Specialist Verdict Section */}
         <div className="mt-20 md:mt-24 mb-10 md:mb-12 relative max-w-sm md:max-w-5xl mx-auto">
@@ -1150,35 +1114,9 @@ export default function PillowsAdvertorial({
           </div>
         </div>
 
-        {/* Sources and Editorial Notes */}
-        <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16 text-center">
-          <h2 className="font-serif text-2xl md:text-3xl font-black text-slate-900 mb-4">
-            Sources and Editorial Notes
-          </h2>
-          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-slate-600 mb-6">
-            Prices, dimensions, core specifications, sleep trials, guarantees, and availability were verified on {checkedDate}. Retail offers and promotional stock levels can vary after publication. This comparison is independent consumer editorial research and does not constitute formal medical diagnosis or advice.
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-5 gap-y-3">
-            {displayProducts.map((product) => (
-              <a
-                key={product.name}
-                href={product.sourceUrl}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 underline underline-offset-4 hover:text-emerald-900"
-              >
-                {product.shortName} official source
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-          <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-center gap-2 text-xs italic text-slate-500">
-            <Info className="h-4 w-4 shrink-0" />
-            <span>
-              Commercial disclosure: TrustpilotReview.shop has a commercial affiliate relationship with Sleeping and may receive a referral commission when readers purchase through links on this page.
-            </span>
-          </div>
-        </section>
+        {/* 5-Product Side-by-Side Comparison Table */}
+        <CompetitorComparisonTable />
+
       </main>
 
       {/* Footer */}
