@@ -1,7 +1,7 @@
 "use client";
 
 import type { MouseEvent, ReactNode } from "react";
-import { juujoProductUrl } from "@/data/pillows";
+import { sleepingProductUrl } from "@/data/pillows";
 
 const attributionKeys = [
   "msclkid",
@@ -14,7 +14,7 @@ const attributionKeys = [
 ] as const;
 
 function attributedUrl() {
-  const destination = new URL(juujoProductUrl);
+  const destination = new URL(sleepingProductUrl);
   const source = new URLSearchParams(window.location.search);
 
   attributionKeys.forEach((key) => {
@@ -40,7 +40,7 @@ export function PillowOutboundLink({
     const payload = {
       event_category: "outbound",
       outbound_url: href,
-      product: "Juujo CloudAlign Pillow",
+      product: "Sleeping CloudAlign Pillow",
       source_page: window.location.pathname,
     };
 
@@ -50,12 +50,12 @@ export function PillowOutboundLink({
     };
 
     trackerWindow.dataLayer = trackerWindow.dataLayer || [];
-    trackerWindow.dataLayer.push({ event: "juujo_outbound_click", ...payload });
+    trackerWindow.dataLayer.push({ event: "sleeping_outbound_click", ...payload });
     trackerWindow.dataLayer.push({ event: "affiliate_click", ...payload });
     trackerWindow.uetq = trackerWindow.uetq || [];
-    trackerWindow.uetq.push("event", "juujo_outbound_click", {
+    trackerWindow.uetq.push("event", "sleeping_outbound_click", {
       event_category: "outbound",
-      event_label: "Juujo CloudAlign Pillow",
+      event_label: "Sleeping CloudAlign Pillow",
       outbound_url: href,
       source_page: window.location.pathname,
     });
@@ -63,12 +63,13 @@ export function PillowOutboundLink({
 
   return (
     <a
-      href={juujoProductUrl}
+      href={sleepingProductUrl}
       className={className}
-      data-juujo-outbound="true"
+      data-sleeping-outbound="true"
       onClick={dispatch}
     >
       {children}
     </a>
   );
 }
+

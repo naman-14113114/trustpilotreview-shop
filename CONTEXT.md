@@ -9442,6 +9442,118 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Local changes ready for review; no unrequested commit, push, or deployment performed.
 
+---
+
+### [2026-09-12] UK SIDE-SLEEPER PILLOW 2026 MARKET INTELLIGENCE & REPO AUDIT (BEST-PILLOW-FOR-SIDE-SLEEPERS-UK-2026)
+
+- **User Request & Intent**:
+  - Update repository knowledge from GitHub (`git pull --ff-only` on `trustpilotreview-shop`).
+  - Read and analyze all data on `best-pillow-for-side-sleepers-uk-2026` and the UK side-sleeper pillow commercial landscape without modifying any application code.
+  - Deploy multiple subagents in parallel to research codebase artifacts, UK competitors (pricing, specs, trials, pros/cons), and sleep biomechanical comparison factors to prepare for selling the Juujo OrthoAlign™ Pillow in the UK.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `e702b81` (behind `origin/main` by 3 commits).
+  - Fast-forward pull incorporated:
+    1. `ab1490c` (*restore original toothbrush frontend*)
+    2. `8e22d10` (*improve toothbrush landing page quality*)
+    3. `3b2b927` (*fix: preserve Miroooo click attribution from advertorial*)
+  - Ending HEAD: `ab1490c` (ahead 0, behind 0, clean worktree).
+
+- **Inspected Files & Directories**:
+  - `apps/site/src/app/best-pillow-for-side-sleepers-uk-2026/page.tsx`
+  - `apps/site/src/data/pillows.ts`
+  - `apps/site/src/components/PillowComparisonPage.tsx`
+  - `apps/site/src/components/PillowOutboundLink.tsx`
+  - `apps/site/public/img/pillows/*` (12 image assets)
+  - `E:\1st YEAR DTU\New folder\Pillow\src\data\store.ts`
+  - `E:\1st YEAR DTU\New folder\Pillow\PRODUCT.md` & `DESIGN.md`
+  - `E:\1st YEAR DTU\New folder\Pillow\Plusebase\ProductPage-Pillow\*` (11 modular HTML sections)
+  - `E:\1st YEAR DTU\New folder\Pillow\Plusebase\homePage.html`
+
+- **Synthesized Intelligence & Data Findings**:
+  1. **Juujo OrthoAlign™ Pillow (Our Product)**:
+     - Core specs: 68.5 x 37 cm; ~1.36 kg; High-density molded memory foam core; OEKO-TEX® breathable washable cover (30°C).
+     - SwitchFit™ Dual Profile: Regular 8.9 cm (smaller frames, softer beds, back/side mix) vs High 10.9 cm (broader shoulders, firm beds, pure side sleepers).
+     - 6-Zone Anatomical Anatomy: 1. Occipital Head Cradle, 2. Cervical Neck Arch, 3. Shoulder Clearance Arc, 4. Side-Sleeper Wings, 5. Under-Arm Rest Channels, 6. SwitchFit™ Dual-Height Core.
+     - Pricing: 1 Pillow £49.99 (compare £100), 2-Pillow Bundle £88.99 (£44.50/ea, compare £200, Most Popular, Code `J2-7QF9MK`), 4-Pillow Family Bundle £151.99 (£38.00/ea, compare £400, Best Value, Code `J4-8NW3AX`). Cooling Pillowcase upsell £9.99 to £29.99.
+     - PlusBase Product ID: `1000000663256638` | White Regular `1000020655426746` / High `1000020655426747` | Grey Regular `1000020655426744` / High `1000020655426745` | Baby Blue Regular `1000020655426742` / High `1000020655426743` | Navy Regular `1000020655426740` / High `1000020655426741` | Cooling Cover `1000020655426748`.
+     - Trust signals: 90-Night Comfort Trial, Free Tracked UK Delivery, Chiropractor-designed alignment.
+  2. **UK Competitor Landscape**:
+     - *Groove Adjustable 2.0* (£40.50–£45.00): 4 removable foam panels (4–13 cm), 100-night trial, 2-yr warranty. Weakness: clunky foam re-layering, smaller 60x35cm footprint.
+     - *TEMPUR Original SmartCool* (£115–£165): Authentic dense viscoelastic, 30-night trial, 3-yr guarantee. Weakness: >3x Juujo's price, narrow 31cm depth, hard initial feel in cold rooms, no arm/shoulder wings.
+     - *Simba Hybrid* (£109.00): Nanocube foam + synthetic fibres, Stratos cooling cover, 200-night trial. Weakness: loose cubes shift overnight causing 3 AM cervical sag; messy to store; no shoulder contour.
+     - *Panda London Bamboo* (£44.95–£48.00): Hydro-foam block, bamboo cover, 10-yr guarantee. Weakness: flat geometric rectangle crushes shoulder, fixed 12cm height, no cervical cradle.
+     - *Levitex Sleep Posture* (£75–£80): Clinically backed foam, 4 fixed sizes. Weakness: complex collar sizing chart, flat shape with no ear/shoulder relief.
+     - *Emma Premium Foam* (£69–£89): 3-layer removable foam sandwich. Weakness: flat block geometry, layers slide inside cover over time.
+  3. **Biomechanical Evaluation Factors**:
+     - Cervical Spine Alignment (neutral horizontal plane along C1–T12; filling the 10–15 cm shoulder-to-ear void).
+     - Shoulder & AC Joint Relief (curved cutouts prevent shoulder impingement and thoracic outlet nerve compression / "dead arm").
+     - Ear Pressure Relief (cranial cradle suspends auricular cartilage, preventing CNH soreness).
+     - SwitchFit™ Dual-Loft (180° rotation eliminates messy particulate or slice adjustments).
+     - Thermoregulation (open-cell foam + breathable cover maintains 18°C–21°C microclimate).
+
+- **Verification Performed**:
+  - Verified git status is synchronized with remote `origin/main`.
+  - Confirmed strictly zero changes to application code, routes, or styles.
+
+- **Commit, Push, & Deployment Status**:
+  - No code changes, no commit, no push, no deployment.
+
+---
+
+### [2026-09-12] FULL REDESIGN OF UK SIDE-SLEEPER PILLOW PAGE TO MATCH ELECTRIC TOOTHBRUSH GOLD-STANDARD ARCHITECTURE WITH STRICT "SLEEPING" BRANDING
+
+- **User Intent & Protected Scope**:
+  - Redesign and restructure `/best-pillow-for-side-sleepers-uk-2026` to have the exact same high-converting layout, visual styling, doctor/expert section, 10 clinical evaluation criteria, product cards, 5-product side-by-side comparison table below #5, verdict section, FAQ accordion, and mobile responsiveness as the gold-standard UK Electric Toothbrush advertorial (`ElectricToothbrushesAdvertorial.tsx`).
+  - Strict Brand Substitution: Replace every single instance of "Juujo" / "Jujjo" with "Sleeping" across all copy, headings, metadata, alt text, links, and dataLayer events.
+  - Strict Data & Asset Integrity: Preserve all pillow product specifications, dimensions (68.5 x 37 cm, Regular 8.9 cm / High 10.9 cm), £49.99 pricing (compare £100), scores, review paragraphs, pros/cons, and genuine pillow imagery (`juujo-side-sleeper.png`, `juujo-bedroom.png`, `juujo-model.png`, `groove-adjustable.jpg`, `tempur-smartcool.jpg`, `simba-hybrid.png`, `panda-hybrid.jpg`). No toothbrush artifacts or unrelated branding introduced.
+  - Local Execution: Strictly local changes; zero unrequested git push, commit, branch, or remote deployment.
+
+- **Starting & Ending Git State**:
+  - Clean tracking `origin/main` at `ab1490c`.
+
+- **Inspected and Changed Files**:
+  1. `apps/site/src/data/pillows.ts`:
+     - Enriched data model with `PillowMetric`, `RankedPillowProduct`, `TOP_5_PILLOW_COMPARISON_PRODUCTS`, `TOP_5_PILLOW_COMPARISON_ROWS`, `defaultPillowCriteria`, `defaultPillowGuide` (expert verdict by Dr. Marcus Vance, MChiro, 6 FAQs, and buyer decision blocks).
+     - Completely replaced "Juujo" with "Sleeping" across all product names, badge definitions, pros/cons, reviews, and whyBelowWinner callouts.
+  2. `apps/site/src/features/pillows/PillowsAdvertorial.tsx` [NEW]:
+     - Built dedicated advertorial feature component mirroring `ElectricToothbrushesAdvertorial.tsx`:
+       - Top Hero Banner with UK flag and dynamic London date.
+       - Hero visual banner (`/img/pillows/juujo-bedroom.png`).
+       - Sleep Biomechanics Consultant Endorsement Card (Dr. Marcus Vance, MChiro with quote and clinical rationale).
+       - Clinical Evaluation Criteria (10 criteria with `ShieldCheck` icons & testing methodology).
+       - Key Findings / Winner Highlights box with `Sparkles` icon.
+       - Top 5 Ranked Product Cards (#1 Sleeping CloudAlign with RankRibbon `#1`, emerald styling, "Editor's Choice", 6-zone specs, 5 performance metric bars, pros/cons, Included in Package panel with pillow, cover, and trial cards, and desktop/mobile green CTAs; #2 Groove, #3 TEMPUR, #4 Simba, #5 Panda with RankRibbons `#2`–`#5`, metric bars, pros/cons, and "Why it ranks below Sleeping" callouts).
+       - **5-Product Side-by-Side Comparison Table directly below #5**: Comparing Shoulder Recess, Arm Rest Channels, Ear Pressure Pocket, Loft Options, Core Material, Dimensions, Removable Washable Cover, Risk-Free Trial, Free Delivery, and Price.
+       - Buyer Advice & Decision Guide (4 structured advice cards).
+       - Frequently Asked Questions Accordion (6 collapsible FAQ cards).
+       - Sleep Specialist's Verdict Card (beige background `#f8f4e6`, image, "Now at 50% off", Trustpilot 4.9/5 Excellent badge, large official CTA).
+       - Sources & Editorial Notes section with 5 official outbound links.
+       - Sticky Mobile Quick-Buy Bar (product thumbnail, "Sleeping CloudAlign · From £49.99 · #1 Top Pick", instant green CTA).
+       - Tracking & Attribution: `sleeping_outbound_click` + `affiliate_click` events pushed to `dataLayer` and `uetq`.
+  3. `apps/site/src/app/best-pillow-for-side-sleepers-uk-2026/page.tsx`:
+     - Updated route to render `PillowsAdvertorial` with rich JSON-LD schemas (`Article`, `ItemList`, `BreadcrumbList`, and `FAQPage`).
+     - Updated metadata with "Sleeping CloudAlign" keywords and zero Juujo mentions.
+  4. `apps/site/src/components/PillowComparisonPage.tsx`:
+     - Updated to cleanly delegate to `PillowsAdvertorial` for backward compatibility.
+  5. `apps/site/src/components/PillowOutboundLink.tsx`:
+     - Updated tracking event name to `sleeping_outbound_click`, product label to "Sleeping CloudAlign Pillow", and data attribute to `data-sleeping-outbound="true"`.
+  6. `apps/site/src/lib/metadata.ts`:
+     - Updated route metadata entry for `/best-pillow-for-side-sleepers-uk-2026`.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67 routes compiled in static/SSR mode.
+  - Static HTML Inspection (`.next/server/app/best-pillow-for-side-sleepers-uk-2026.html`):
+    - Confirmed 0 occurrences of "Juujo" / "Jujjo" across the entire generated document.
+    - Verified proper rendering of all 5 product cards, 10 criteria, expert endorsement, side-by-side comparison table below #5, specialist verdict card, 6 FAQs, and sticky mobile bar.
+
+- **Commit, Push, & Deployment Status**:
+  - Completed locally with full build verification; no commit, push, or remote deployment performed.
+
+
+
 
 
 
