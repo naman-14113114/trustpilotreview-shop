@@ -474,8 +474,6 @@ export interface PillowGuideData {
     quote: string;
     clinicalRationale: string;
   };
-  faqs: Array<{ question: string; answer: string }>;
-  buyerBlocks: Array<{ title: string; body: string }>;
 }
 
 export const defaultPillowGuide: PillowGuideData = {

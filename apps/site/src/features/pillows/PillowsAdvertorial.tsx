@@ -836,67 +836,6 @@ function CompetitorComparisonTable() {
   );
 }
 
-function BuyerBlocksSection({ guide }: { guide: PillowGuideData }) {
-  if (!guide.buyerBlocks || guide.buyerBlocks.length === 0) return null;
-
-  return (
-    <section className="my-16 space-y-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-slate-900 font-serif text-center mb-8">
-        Buying Advice &amp; Side-Sleeper Decision Guide
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {guide.buyerBlocks.map((block, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm"
-          >
-            <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-              {block.title}
-            </h3>
-            <p className="text-slate-600 text-base leading-relaxed">
-              {block.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FaqSection({ faqs }: { faqs?: Array<{ question: string; answer: string }> }) {
-  if (!faqs || faqs.length === 0) return null;
-
-  return (
-    <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm my-16">
-      <div className="text-center max-w-2xl mx-auto mb-8">
-        <div className="inline-flex items-center gap-2 text-emerald-600 font-bold text-sm uppercase tracking-wider mb-2">
-          <HelpCircle className="w-4 h-4" /> Frequently Asked Questions
-        </div>
-        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
-          Expert Answers to Common Sleep Questions
-        </h2>
-      </div>
-
-      <div className="space-y-4 max-w-4xl mx-auto">
-        {faqs.map((faq, idx) => (
-          <details
-            key={idx}
-            className="group rounded-2xl border border-slate-200 bg-slate-50/50 p-5 open:bg-white open:ring-2 open:ring-emerald-500/20 transition-all duration-200"
-          >
-            <summary className="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-base md:text-lg list-none">
-              <span>{faq.question}</span>
-              <ChevronDown className="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200" />
-            </summary>
-            <div className="mt-4 pt-3 border-t border-slate-200/60 text-slate-600 text-sm md:text-base leading-relaxed">
-              {faq.answer}
-            </div>
-          </details>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export type PillowsAdvertorialProps = {
   guide?: PillowGuideData;
