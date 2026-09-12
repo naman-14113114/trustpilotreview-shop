@@ -97,6 +97,7 @@ export default function Page() {
             item: canonical,
           },
         ],
+      },
     ],
   };
 
