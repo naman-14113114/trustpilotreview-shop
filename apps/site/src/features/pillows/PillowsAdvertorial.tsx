@@ -98,7 +98,7 @@ function handleOutboundClick(
     const payload = {
       event_category: "comparison",
       event_label: target,
-      product: "Sleeping CloudAlign Pillow",
+      product: "RestArch Pillow",
       outbound_url: destination.toString(),
       page_type: "best_pillow_for_side_sleepers_uk_2026",
     };
@@ -309,35 +309,35 @@ function PackagePanel({
         </h4>
 
         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-          Every Sleeping CloudAlign Pillow order includes these premium components for full orthopaedic neck and shoulder support.
+          Every RestArch Pillow order includes these premium components for full orthopaedic neck and shoulder support.
         </p>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
-          {/* CloudAlign Pillow */}
+          {/* RestArch Pillow */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <a
               href={ctaUrl}
               rel="noopener noreferrer sponsored"
-              aria-label="View the Sleeping CloudAlign Pillow package"
+              aria-label="View the RestArch Pillow package"
               onClick={(event) =>
                 handleOutboundClick(
                   event,
                   setLoadingTarget,
-                  "sleeping-package-pillow",
+                  "restarch-package-pillow",
                 )
               }
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <img
                 src="/img/pillows/juujo-cloudalign.png"
-                alt="Sleeping CloudAlign Ergonomic 6-Zone Memory Foam Pillow"
+                alt="RestArch Ergonomic 6-Zone Memory Foam Pillow"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-base leading-tight">
-              CloudAlign Pillow
+              RestArch Pillow
             </p>
           </div>
 
@@ -346,19 +346,19 @@ function PackagePanel({
             <a
               href={ctaUrl}
               rel="noopener noreferrer sponsored"
-              aria-label="View the Sleeping Pillow with Breathable Washable Cover"
+              aria-label="View the RestArch Pillow with Breathable Washable Cover"
               onClick={(event) =>
                 handleOutboundClick(
                   event,
                   setLoadingTarget,
-                  "sleeping-package-cover",
+                  "restarch-package-cover",
                 )
               }
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <img
                 src="/img/pillows/juujo-colours-approved.png"
-                alt="Sleeping Breathable Washable Knit Cover in Multiple Colours"
+                alt="RestArch Breathable Washable Knit Cover in Multiple Colours"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
@@ -379,7 +379,7 @@ function PackagePanel({
                 handleOutboundClick(
                   event,
                   setLoadingTarget,
-                  "sleeping-package-trial",
+                  "restarch-package-trial",
                 )
               }
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
@@ -400,10 +400,10 @@ function PackagePanel({
 
         <OfficialButton
           href={ctaUrl}
-          targetId="sleeping-package-panel"
+          targetId="restarch-package-panel"
           loadingTarget={loadingTarget}
           setLoadingTarget={setLoadingTarget}
-          testId="sleeping-cta-package"
+          testId="restarch-cta-package"
           className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
         >
           Check Availability
@@ -457,26 +457,38 @@ function ProductCard({
             </h2>
 
             <div className="relative w-full mb-6">
-              <a
-                href={product.ctaUrl}
-                rel="noopener noreferrer sponsored"
-                onClick={(event) =>
-                  handleOutboundClick(
-                    event,
-                    setLoadingTarget,
-                    `product-img-${product.rank}`,
-                  )
-                }
-                className="block w-full group"
-              >
-                <img
-                  src={product.image}
-                  alt={product.imageAlt || product.name}
-                  loading={isWinner ? "eager" : "lazy"}
-                  decoding="async"
-                  className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
-                />
-              </a>
+              {isWinner ? (
+                <a
+                  href={product.ctaUrl}
+                  rel="noopener noreferrer sponsored"
+                  onClick={(event) =>
+                    handleOutboundClick(
+                      event,
+                      setLoadingTarget,
+                      `product-img-${product.rank}`,
+                    )
+                  }
+                  className="block w-full group"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.imageAlt || product.name}
+                    loading="eager"
+                    decoding="async"
+                    className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
+                  />
+                </a>
+              ) : (
+                <div className="block w-full">
+                  <img
+                    src={product.image}
+                    alt={product.imageAlt || product.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="text-center mb-2 lg:mb-6 w-full">
@@ -506,38 +518,44 @@ function ProductCard({
               )}
             </div>
 
-            <div className="w-full hidden lg:block">
-              <OfficialButton
-                href={product.ctaUrl}
-                targetId={`product-desktop-${product.rank}`}
-                loadingTarget={loadingTarget}
-                setLoadingTarget={setLoadingTarget}
-                testId={`pillow-cta-${product.rank}`}
-                className="w-full"
-              >
-                {product.ctaLabel}
-              </OfficialButton>
-            </div>
+            {isWinner && (
+              <div className="w-full hidden lg:block">
+                <OfficialButton
+                  href={product.ctaUrl}
+                  targetId={`product-desktop-${product.rank}`}
+                  loadingTarget={loadingTarget}
+                  setLoadingTarget={setLoadingTarget}
+                  testId={`pillow-cta-${product.rank}`}
+                  className="w-full"
+                >
+                  {product.ctaLabel}
+                </OfficialButton>
+              </div>
+            )}
           </div>
         </aside>
 
         {/* Right Column: Details */}
         <div className="lg:col-span-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3 hidden lg:block font-serif">
-            <a
-              href={product.ctaUrl}
-              rel="noopener noreferrer sponsored"
-              onClick={(event) =>
-                handleOutboundClick(
-                  event,
-                  setLoadingTarget,
-                  `product-title-${product.rank}`,
-                )
-              }
-              className="hover:text-emerald-600 transition-colors"
-            >
-              {product.name}
-            </a>
+            {isWinner ? (
+              <a
+                href={product.ctaUrl}
+                rel="noopener noreferrer sponsored"
+                onClick={(event) =>
+                  handleOutboundClick(
+                    event,
+                    setLoadingTarget,
+                    `product-title-${product.rank}`,
+                  )
+                }
+                className="hover:text-emerald-600 transition-colors"
+              >
+                {product.name}
+              </a>
+            ) : (
+              <span>{product.name}</span>
+            )}
           </h2>
 
           <div className="mb-4 hidden lg:block">
@@ -656,7 +674,7 @@ function ProductCard({
           {product.whyBelowWinner && (
             <div className="mb-8 rounded-2xl border-l-4 border-emerald-500 bg-emerald-50/30 p-5 border border-slate-200">
               <p className="mb-1 text-sm font-black uppercase text-emerald-800">
-                Why it ranks below Sleeping
+                Why it ranks below RestArch Pillow
               </p>
               <p className="text-base leading-relaxed text-slate-700">
                 {product.whyBelowWinner}
@@ -672,18 +690,20 @@ function ProductCard({
             />
           )}
 
-          <div className="w-full mt-8 lg:hidden">
-            <OfficialButton
-              href={product.ctaUrl}
-              targetId={`product-mobile-${product.rank}`}
-              loadingTarget={loadingTarget}
-              setLoadingTarget={setLoadingTarget}
-              testId={`pillow-cta-mobile-${product.rank}`}
-              className="w-full"
-            >
-              {product.ctaLabel}
-            </OfficialButton>
-          </div>
+          {isWinner && (
+            <div className="w-full mt-8 lg:hidden">
+              <OfficialButton
+                href={product.ctaUrl}
+                targetId={`product-mobile-${product.rank}`}
+                loadingTarget={loadingTarget}
+                setLoadingTarget={setLoadingTarget}
+                testId={`pillow-cta-mobile-${product.rank}`}
+                className="w-full"
+              >
+                {product.ctaLabel}
+              </OfficialButton>
+            </div>
+          )}
         </div>
       </div>
     </article>
@@ -983,7 +1003,7 @@ export default function PillowsAdvertorial({
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
                   <Image
                     src="/img/pillows/juujo-model.png"
-                    alt="Sleeping CloudAlign Ergonomic Pillow - Specialist's Verdict"
+                    alt="RestArch Ergonomic Pillow - Specialist's Verdict"
                     width={600}
                     height={600}
                     className="w-full h-full object-cover"
@@ -994,7 +1014,7 @@ export default function PillowsAdvertorial({
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  Sleeping CloudAlign Pillow
+                  RestArch Pillow
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
@@ -1049,13 +1069,13 @@ export default function PillowsAdvertorial({
         <div className="flex min-w-0 items-center gap-2.5">
           <img
             src="/img/pillows/juujo-side-sleeper.png"
-            alt="Sleeping CloudAlign"
+            alt="RestArch Pillow"
             className="h-11 w-11 shrink-0 rounded-lg border border-slate-200 object-cover"
             aria-hidden="true"
           />
           <span className="min-w-0">
             <strong className="block truncate text-xs font-black text-slate-900">
-              Sleeping CloudAlign
+              RestArch Pillow
             </strong>
             <small className="block text-[11px] text-emerald-700 font-bold">
               From £49.99 · #1 Top Pick
