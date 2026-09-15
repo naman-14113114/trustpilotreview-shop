@@ -9676,6 +9676,54 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
 
+---
+
+### [2026-09-15] PILLOW ADVERTORIAL TOP 5 COMPARISON VISUAL BANNER GENERATION & 2-LAYER HERO ARCHITECTURE
+
+- **User Intent & Protected Scope**:
+  - Create a Top 5 comparison visual banner for the UK Best Pillow for Side Sleepers comparison page (`https://www.trustpilotreview.shop/best-pillow-for-side-sleepers-uk-2026`) matching the exact design and 2-layer architecture of the UK Best Electric Toothbrush page (`/best-electric-toothbrush-uk-2026`).
+  - #1 Product (Center Hero Card): Use `juujo-model.png` (model holding the RestArch / Juujo ergonomic pillow), edit the background to pure white (`#ffffff`) using AI background segmentation (`rembg` with `u2net.onnx`) and perimeter HSV decontamination, frame inside a rounded card with white border, ring, and 3D multi-tier shadow.
+  - 4 Competitors: Use existing authentic pillow assets (`cozyrest-contour.jpg`, `tempur-smartcool.jpg`, `coop-eden.webp`, `epabo-contour.jpg`), remove non-white backgrounds, and arrange them horizontally inside a rounded container bar with open center space behind the #1 card.
+  - Replacement Scope: Replace the hero image (`/img/pillows/juujo-bedroom.png`) with the new 2-layer Top 5 visual banner structure in `PillowsAdvertorial.tsx`.
+  - Update page metadata and OpenGraph / Twitter image references to `/img/pillows/top-5-side-sleeper-pillows-uk.webp`.
+  - Keep changes minimal and preserve all other content, layout, pricing, reviews, tracking, and components untouched.
+
+- **Starting & Ending Git State**:
+  - Starting Git state: branch `main` at `8e2d64b` (synchronized with `origin/main`).
+  - Current Git state: branch `main` with modified files (`PillowsAdvertorial.tsx`, `page.tsx`, `metadata.ts`, `CONTEXT.md`) and newly generated assets. Zero unrequested remote push or deployment.
+
+- **Inspected and Changed Files**:
+  1. `apps/site/scripts/generate_top5_pillow_banner.py` [NEW]:
+     - Engineered Python Pillow/OpenCV generation script using `rembg` (`u2net.onnx`) and HSV color decontamination to extract the model and pillow cleanly onto pure `#ffffff` background.
+     - Calibrated pillow proportions for horizontal alignment (`CARD_W = 262px`, `CARD_H = 410px` on #1; `BAR_W = 1200px`, `BAR_H = 260px` with competitor slots at 11%, 28%, 72%, 89%).
+     - Generated both 2-layer separate assets (`top-4-competitors-container-bar.webp`, `restarch-pillow-banner.webp`) and composite fallback image (`top-5-side-sleeper-pillows-uk.webp`) along with `.png` counterparts.
+  2. `apps/site/public/img/pillows/` & `img/pillows/`:
+     - `top-4-competitors-container-bar.webp` & `.png` (Layer 1 container bar).
+     - `restarch-pillow-banner.webp` & `.png` (Layer 2 floating #1 card).
+     - `top-5-side-sleeper-pillows-uk.webp` & `.png` (Composite OpenGraph / fallback).
+  3. `apps/site/src/features/pillows/PillowsAdvertorial.tsx`:
+     - Replaced `/img/pillows/juujo-bedroom.png` with the 2-layer Top 5 banner structure matching `ElectricToothbrushesAdvertorial.tsx`.
+     - Configured Layer 1 responsive container bar and Layer 2 centered absolute floating card (`w-[18%] min-w-[110px] max-w-[280px] aspect-[696/1087]`).
+  4. `apps/site/src/app/best-pillow-for-side-sleepers-uk-2026/page.tsx`:
+     - Updated OpenGraph and Twitter images to `/img/pillows/top-5-side-sleeper-pillows-uk.webp`.
+  5. `apps/site/src/lib/metadata.ts`:
+     - Updated route metadata image for `/best-pillow-for-side-sleepers-uk-2026` to `/img/pillows/top-5-side-sleeper-pillows-uk.webp`.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed cleanly with exit code 0; 67/67 static pages generated in 3.7s.
+  - Visual verification via Chrome DevTools MCP across desktop (1280px) and mobile (390px) viewports: confirmed the #1 RestArch pillow is 100% complete and fully visible with zero cropping of any lobe, edge, arm, or contour.
+
+- **Mistakes Corrected**:
+  - Root Cause: Initial asset generation cropped the model bounding box and used a narrow toothbrush-style vertical aspect ratio (`696/1087`), which clipped the left lobe and bottom of the horizontal ergonomic pillow.
+  - Fix: Sized the card to aspect ratio `17:21` (`CARD_W = 680, CARD_H = 840`), placed the full uncropped model + pillow inside with generous pure white breathing space, updated CSS in `PillowsAdvertorial.tsx` to `w-[22%] min-w-[130px] max-w-[340px] aspect-[680/840] object-contain`, and regenerated all WebP and PNG assets.
+
+- **Commit, Push, & Deployment Status**:
+  - Local verification complete; zero unrequested git commit, push, or remote deployment performed.
+
+
+
 
 
 

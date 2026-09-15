@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     type: "article",
     url: canonical,
     siteName: "Trustpilot Review Shop",
-    images: ["/img/pillows/juujo-colours-approved.png"],
+    images: ["/img/pillows/top-5-side-sleeper-pillows-uk.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Best Pillow for Side Sleepers UK 2026: Top 5 Compared & Reviewed",
     description:
       "Compare the five best side-sleeper pillows in the UK for 2026 by cervical alignment, shoulder relief, and value.",
-    images: ["/img/pillows/juujo-colours-approved.png"],
+    images: ["/img/pillows/top-5-side-sleeper-pillows-uk.webp"],
   },
 };
 

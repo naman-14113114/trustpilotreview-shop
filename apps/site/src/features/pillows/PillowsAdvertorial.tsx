@@ -726,13 +726,23 @@ export default function PillowsAdvertorial({
 
       <header className="bg-white border-b border-slate-200 pt-6 pb-12 px-4 md:pt-8 md:pb-16">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Top 5 Comparison Hero Banner */}
-          <div className="relative w-full max-w-5xl mx-auto mb-10 md:mb-12 flex items-center justify-center">
+          {/* 2-Layer Top 5 Comparison Hero Banner */}
+          <div className="relative w-full max-w-6xl mx-auto mb-10 md:mb-12 flex items-center justify-center">
+            {/* Layer 1: Background Container Bar with 4 competitors and open center space */}
             <img
-              src="/img/pillows/juujo-bedroom.png"
-              alt="Best Side-Sleeper Pillows UK 2026 Comparison"
-              className="w-full aspect-[16/7] rounded-2xl sm:rounded-3xl object-cover shadow-xl border border-slate-100"
+              src="/img/pillows/top-4-competitors-container-bar.webp"
+              alt="Top 5 Best Pillows for Side Sleepers UK 2026 Comparison"
+              className="w-full h-auto object-contain pointer-events-none"
             />
+
+            {/* Layer 2: #1 RestArch Pillow Card floating OVER the container space */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[22%] min-w-[130px] max-w-[340px]">
+              <img
+                src="/img/pillows/restarch-pillow-banner.webp"
+                alt="RestArch Ergonomic Cervical Side Sleeper Pillow - #1 Ranked Winner"
+                className="w-full aspect-[680/840] rounded-xl sm:rounded-2xl md:rounded-3xl object-contain shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
+              />
+            </div>
           </div>
 
           {/* Sleep Biomechanics Specialist Card */}
