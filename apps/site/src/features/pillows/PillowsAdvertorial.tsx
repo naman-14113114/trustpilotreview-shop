@@ -736,11 +736,11 @@ export default function PillowsAdvertorial({
             />
 
             {/* Layer 2: #1 RestArch Pillow Card floating OVER the container space */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[22%] min-w-[130px] max-w-[340px]">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[24%] min-w-[140px] max-w-[340px]">
               <img
                 src="/img/pillows/restarch-pillow-banner.webp"
                 alt="RestArch Ergonomic Cervical Side Sleeper Pillow - #1 Ranked Winner"
-                className="w-full aspect-[680/840] rounded-xl sm:rounded-2xl md:rounded-3xl object-contain shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
+                className="w-full aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl object-contain shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none bg-white"
               />
             </div>
           </div>

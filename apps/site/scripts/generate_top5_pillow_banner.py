@@ -2,77 +2,54 @@ import os
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter
 import rembg
-import cv2
 import numpy as np
 
 REPO_ROOT = Path(r"e:\1st YEAR DTU\New folder\trustpilotreview-shop")
 PILLOW_DIR = REPO_ROOT / "apps" / "site" / "public" / "img" / "pillows"
-
-def prepare_cleaned_images():
-    session = rembg.new_session("u2net")
-    
-    # 1. Clean Juujo/RestArch Model (#1)
-    orig_model = cv2.imread(str(PILLOW_DIR / "juujo-model.png"))
-    u2_model = rembg.remove(Image.fromarray(cv2.cvtColor(orig_model, cv2.COLOR_BGR2RGB)), session=session)
-    u2_arr = np.array(u2_model)
-    alpha = u2_arr[:, :, 3].copy()
-    
-    # Clean any residual blue at the background perimeter
-    hsv = cv2.cvtColor(orig_model, cv2.COLOR_BGR2HSV)
-    lower_blue = np.array([90, 45, 50])
-    upper_blue = np.array([135, 255, 255])
-    is_blue = cv2.inRange(hsv, lower_blue, upper_blue)
-    
-    for y in range(orig_model.shape[0]):
-        for x in range(orig_model.shape[1]):
-            if y < 700 or x < 350 or x > 800:
-                if is_blue[y, x] > 180:
-                    alpha[y, x] = 0
-                    
-    alpha = cv2.GaussianBlur(alpha, (3, 3), 0)
-    b, g, r = cv2.split(orig_model)
-    model_rgba = cv2.merge([b, g, r, alpha])
-    
-    # 2. Clean CozyRest (#2) using rembg
-    cozy_in = Image.open(PILLOW_DIR / "cozyrest-contour.jpg")
-    cozy_nobg = rembg.remove(cozy_in, session=session)
-    
-    # 3. Clean Tempur (#3)
-    tempur_in = Image.open(PILLOW_DIR / "tempur-smartcool.jpg").convert("RGBA")
-    
-    # 4. Clean Coop Eden (#4) using rembg
-    coop_in = Image.open(PILLOW_DIR / "coop-eden.webp")
-    coop_nobg = rembg.remove(coop_in, session=session)
-    
-    # 5. Clean Epabo (#5)
-    epabo_in = Image.open(PILLOW_DIR / "epabo-contour.jpg").convert("RGBA")
-    
-    return (
-        Image.fromarray(cv2.cvtColor(model_rgba, cv2.COLOR_BGRA2RGBA)),
-        cozy_nobg,
-        tempur_in,
-        coop_nobg,
-        epabo_in
-    )
+ROOT_IMG_DIR = REPO_ROOT / "img" / "pillows"
+CHATGPT_SRC = Path(r"E:\1st YEAR DTU\New folder\Buddy\Images\ChatGPT Image Sep 15, 2026, 09_24_00 PM.png")
 
 def generate_banner(output_webp: Path, output_png: Path):
     session = rembg.new_session("u2net")
 
-    # 1. Clean Juujo/RestArch Model (#1) FULL UNCROPPED
-    orig_model = Image.open(PILLOW_DIR / "juujo-model.png")
-    model_nobg = rembg.remove(orig_model, session=session)
+    # 1. Clean Juujo/RestArch Model (#1) from user ChatGPT image
+    chatgpt_im = Image.open(CHATGPT_SRC)
+    model_nobg = rembg.remove(chatgpt_im, session=session)
 
-    # Find bbox of model + pillow
     m_arr = np.array(model_nobg)
     alpha = m_arr[:, :, 3]
     non_bg = alpha > 15
     coords = np.argwhere(non_bg)
     y0, x0 = coords.min(axis=0)
     y1, x1 = coords.max(axis=0) + 1
-    print(f"Model active content bbox: x=[{x0}, {x1}] (w={x1-x0}), y=[{y0}, {y1}] (h={y1-y0})")
+    print(f"Active model bbox: x=[{x0}, {x1}] (w={x1-x0}), y=[{y0}, {y1}] (h={y1-y0})")
 
-    # Crop to exact active content bbox without cutting a single pixel
-    full_model = model_nobg.crop((x0, y0, x1, y1))
+    cropped_model = model_nobg.crop((x0, y0, x1, y1))
+
+    # Create clean square image (1200 x 1200) on pure white with NO baked borders
+    BANNER_SIZE = 1200
+    pad = 60
+    avail_w = BANNER_SIZE - (pad * 2)
+    avail_h = BANNER_SIZE - (pad * 2)
+
+    scale = min(avail_w / float(cropped_model.size[0]), avail_h / float(cropped_model.size[1]))
+    mw = int(round(cropped_model.size[0] * scale))
+    mh = int(round(cropped_model.size[1] * scale))
+    m_resized = cropped_model.resize((mw, mh), Image.Resampling.LANCZOS)
+
+    banner_img = Image.new("RGB", (BANNER_SIZE, BANNER_SIZE), (255, 255, 255))
+    px = (BANNER_SIZE - mw) // 2
+    py = BANNER_SIZE - mh - pad
+    banner_img.paste(m_resized, (px, py), m_resized)
+
+    # Save clean #1 image
+    card_webp = PILLOW_DIR / "restarch-pillow-banner.webp"
+    card_png = PILLOW_DIR / "restarch-pillow-banner.png"
+    banner_img.save(card_png, "PNG")
+    banner_img.save(card_webp, "WEBP", quality=95)
+    banner_img.save(ROOT_IMG_DIR / "restarch-pillow-banner.png", "PNG")
+    banner_img.save(ROOT_IMG_DIR / "restarch-pillow-banner.webp", "WEBP", quality=95)
+    print(f"Generated clean #1 card: {card_webp}")
 
     # 2. Clean 4 Competitors
     cozy_in = Image.open(PILLOW_DIR / "cozyrest-contour.jpg")
@@ -85,64 +62,7 @@ def generate_banner(output_webp: Path, output_png: Path):
 
     epabo_in = Image.open(PILLOW_DIR / "epabo-contour.jpg").convert("RGBA")
 
-    # 3. Create #1 Center Card (CARD_W = 680, CARD_H = 840) -> Aspect ratio = 17:21
-    CARD_W = 680
-    CARD_H = 840
-    card_r = 48 # High-res corner radius
-
-    card_canvas = Image.new("RGBA", (CARD_W, CARD_H), (255, 255, 255, 255))
-
-    # Scale full_model to comfortably fit inside card with generous padding
-    pad_w = 44
-    pad_h = 36
-    avail_w = CARD_W - (pad_w * 2)
-    avail_h = CARD_H - (pad_h * 2)
-
-    scale_m = min(avail_w / float(full_model.size[0]), avail_h / float(full_model.size[1]))
-    mw = int(round(full_model.size[0] * scale_m))
-    mh = int(round(full_model.size[1] * scale_m))
-    m_resized = full_model.resize((mw, mh), Image.Resampling.LANCZOS)
-
-    # Position: center horizontally, align bottom with slight bottom padding
-    mx = (CARD_W - mw) // 2
-    my = CARD_H - mh - pad_h
-    card_canvas.alpha_composite(m_resized, (mx, my))
-
-    # Rounded mask for card
-    scale_factor = 4
-    mask = Image.new("L", (CARD_W * scale_factor, CARD_H * scale_factor), 0)
-    draw_m = ImageDraw.Draw(mask)
-    draw_m.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, fill=255)
-    mask = mask.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
-
-    card_rgba = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
-    card_rgba.paste(card_canvas, (0, 0), mask)
-
-    # White border
-    stroke_layer = Image.new("RGBA", (CARD_W * scale_factor, CARD_H * scale_factor), (0, 0, 0, 0))
-    draw_s = ImageDraw.Draw(stroke_layer)
-    draw_s.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, outline=(255, 255, 255, 255), width=6 * scale_factor)
-    stroke_layer = stroke_layer.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
-    card_rgba.alpha_composite(stroke_layer)
-
-    # Subtle outer ring
-    ring_layer = Image.new("RGBA", (CARD_W * scale_factor, CARD_H * scale_factor), (0, 0, 0, 0))
-    draw_r = ImageDraw.Draw(ring_layer)
-    draw_r.rounded_rectangle([0, 0, CARD_W * scale_factor, CARD_H * scale_factor], radius=card_r * scale_factor, outline=(15, 23, 42, 35), width=2 * scale_factor)
-    ring_layer = ring_layer.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
-    card_rgba.alpha_composite(ring_layer)
-
-    # Save RestArch Card
-    card_webp = PILLOW_DIR / "restarch-pillow-banner.webp"
-    card_png = PILLOW_DIR / "restarch-pillow-banner.png"
-    card_rgba.save(card_png, "PNG")
-    card_rgba.convert("RGB").save(card_webp, "WEBP", quality=95)
-    card_rgba.save(ROOT_IMG_DIR / "restarch-pillow-banner.png", "PNG")
-    card_rgba.convert("RGB").save(ROOT_IMG_DIR / "restarch-pillow-banner.webp", "WEBP", quality=95)
-    print(f"Generated RestArch Card PNG: {card_png}")
-    print(f"Generated RestArch Card WebP: {card_webp}")
-
-    # 4. Create Background Container Bar (1536 x 430, Container: 1460 x 350)
+    # 3. Create Container Bar (1536 x 430, Container: 1460 x 350)
     CANVAS_W = 1536
     CANVAS_H = 430
     canvas = Image.new("RGBA", (CANVAS_W, CANVAS_H), (255, 255, 255, 255))
@@ -216,22 +136,35 @@ def generate_banner(output_webp: Path, output_png: Path):
     canvas.convert("RGB").save(container_bar_webp, "WEBP", quality=95)
     canvas.save(ROOT_IMG_DIR / "top-4-competitors-container-bar.png", "PNG")
     canvas.convert("RGB").save(ROOT_IMG_DIR / "top-4-competitors-container-bar.webp", "WEBP", quality=95)
-    print(f"Generated Container Bar PNG: {container_bar_png}")
     print(f"Generated Container Bar WebP: {container_bar_webp}")
 
-    # 5. Composite Final Visual
-    comp_card_h = 410
-    comp_card_w = int(round(comp_card_h * (CARD_W / CARD_H)))
-    comp_card_r = int(round(card_r * (comp_card_h / CARD_H)))
-    card_comp_resized = card_rgba.resize((comp_card_w, comp_card_h), Image.Resampling.LANCZOS)
+    # 4. Create Composite Top 5 Image
+    CARD_DIM = 370
+    card_r = 24
 
-    m_x = (CANVAS_W - comp_card_w) // 2
-    m_y = (CANVAS_H - comp_card_h) // 2
+    card_cut = banner_img.resize((CARD_DIM, CARD_DIM), Image.Resampling.LANCZOS)
+    scale_f = 4
+    mask = Image.new("L", (CARD_DIM * scale_f, CARD_DIM * scale_f), 0)
+    draw_m = ImageDraw.Draw(mask)
+    draw_m.rounded_rectangle([0, 0, CARD_DIM * scale_f, CARD_DIM * scale_f], radius=card_r * scale_f, fill=255)
+    mask = mask.resize((CARD_DIM, CARD_DIM), Image.Resampling.LANCZOS)
+
+    card_rgba = Image.new("RGBA", (CARD_DIM, CARD_DIM), (0, 0, 0, 0))
+    card_rgba.paste(card_cut, (0, 0), mask)
+
+    stroke = Image.new("RGBA", (CARD_DIM * scale_f, CARD_DIM * scale_f), (0, 0, 0, 0))
+    draw_s = ImageDraw.Draw(stroke)
+    draw_s.rounded_rectangle([0, 0, CARD_DIM * scale_f, CARD_DIM * scale_f], radius=card_r * scale_f, outline=(255, 255, 255, 255), width=2 * scale_f)
+    stroke = stroke.resize((CARD_DIM, CARD_DIM), Image.Resampling.LANCZOS)
+    card_rgba.alpha_composite(stroke)
+
+    m_x = (CANVAS_W - CARD_DIM) // 2
+    m_y = (CANVAS_H - CARD_DIM) // 2
 
     shadow_layers = [
-        {"offset": (0, 6), "blur": 12, "color": (15, 23, 42, 80)},
-        {"offset": (0, 16), "blur": 26, "color": (15, 23, 42, 50)},
-        {"offset": (0, 28), "blur": 48, "color": (15, 23, 42, 35)},
+        {"offset": (0, 6), "blur": 12, "color": (15, 23, 42, 70)},
+        {"offset": (0, 16), "blur": 26, "color": (15, 23, 42, 45)},
+        {"offset": (0, 28), "blur": 45, "color": (15, 23, 42, 30)},
     ]
 
     for s in shadow_layers:
@@ -239,19 +172,18 @@ def generate_banner(output_webp: Path, output_png: Path):
         s_draw = ImageDraw.Draw(s_img)
         ox, oy = s["offset"]
         s_draw.rounded_rectangle(
-            [m_x + ox + 4, m_y + oy + 4, m_x + comp_card_w + ox - 4, m_y + comp_card_h + oy - 4],
-            radius=comp_card_r,
+            [m_x + ox + 4, m_y + oy + 4, m_x + CARD_DIM + ox - 4, m_y + CARD_DIM + oy - 4],
+            radius=card_r,
             fill=s["color"]
         )
         s_img = s_img.filter(ImageFilter.GaussianBlur(s["blur"]))
         canvas.alpha_composite(s_img)
 
-    canvas.alpha_composite(card_comp_resized, (m_x, m_y))
+    canvas.alpha_composite(card_rgba, (m_x, m_y))
 
     output_webp.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(output_png, "PNG")
     canvas.convert("RGB").save(output_webp, "WEBP", quality=95)
-    print(f"Generated Composite PNG: {output_png}")
     print(f"Generated Composite WebP: {output_webp}")
 
     canvas.save(ROOT_IMG_DIR / "top-5-side-sleeper-pillows-uk.png", "PNG")

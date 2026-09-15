@@ -9712,15 +9712,16 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Verification Performed**:
   - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
   - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
-  - `pnpm --filter @trustpilotreview/site build`: Passed cleanly with exit code 0; 67/67 static pages generated in 3.7s.
-  - Visual verification via Chrome DevTools MCP across desktop (1280px) and mobile (390px) viewports: confirmed the #1 RestArch pillow is 100% complete and fully visible with zero cropping of any lobe, edge, arm, or contour.
+  - `pnpm --filter @trustpilotreview/site build`: Passed cleanly with exit code 0; 67/67 static pages generated in 887ms.
+  - Visual verification via Chrome DevTools MCP across desktop (1280px) and mobile (390px) viewports: confirmed the #1 RestArch pillow is 100% complete, borderless inside the asset bitmap (styled natively via Tailwind CSS), matching the exact visual elegance of the UK Best Electric Toothbrush page.
 
 - **Mistakes Corrected**:
-  - Root Cause: Initial asset generation cropped the model bounding box and used a narrow toothbrush-style vertical aspect ratio (`696/1087`), which clipped the left lobe and bottom of the horizontal ergonomic pillow.
-  - Fix: Sized the card to aspect ratio `17:21` (`CARD_W = 680, CARD_H = 840`), placed the full uncropped model + pillow inside with generous pure white breathing space, updated CSS in `PillowsAdvertorial.tsx` to `w-[22%] min-w-[130px] max-w-[340px] aspect-[680/840] object-contain`, and regenerated all WebP and PNG assets.
+  - Root Cause: Initial asset generation baked rounded rectangles and dark rings into the image bitmap itself, which combined with Tailwind CSS to produce double "unnecessary border lines".
+  - Fix: Sourced authentic full model from `ChatGPT Image Sep 15, 2026, 09_24_00 PM.png`, saved clean square `#1` image (`restarch-pillow-banner.webp`) on pure `#ffffff` without baked-in borders, aligned container bar and composite top 5 visuals, updated CSS in `PillowsAdvertorial.tsx` to `w-[24%] min-w-[140px] max-w-[340px] aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl object-contain shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none bg-white`.
 
 - **Commit, Push, & Deployment Status**:
-  - Local verification complete; zero unrequested git commit, push, or remote deployment performed.
+  - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
+
 
 
 
