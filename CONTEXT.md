@@ -9645,6 +9645,38 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
 
+---
+
+### [2026-09-15] PILLOW ADVERTORIAL PRICING CLEANUP: COMPETITOR COMPARE-AT PRICES & AVAILABILITY NOTE REMOVAL
+
+- **User Intent & Scope**:
+  1. Remove "Budget mass-market option with standard Amazon return terms" (`availabilityNote`) pill entirely from EPABO (#5) and the codebase.
+  2. Hide compare-at / original prices (`line-through` strike-through prices) for all competitors (#2–#5) across the product cards and comparison table; display compare price exclusively for #1 (RestArch Pillow).
+  3. Clean competitor prices (e.g. remove `" sale"` suffix from CozyRest).
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `8e2d64b`.
+  - Ending: committed and pushed cleanly to `origin/main`.
+
+- **Inspected and Changed Files**:
+  1. `apps/site/src/data/pillows.ts`:
+     - Removed `compareAt` and `previousPrice` from CozyRest (#2), TEMPUR (#3), Coop (#4), and EPABO (#5).
+     - Normalized CozyRest price from `"£57.00 sale"` to `"£57.00"`.
+     - Removed `availabilityNote` from EPABO (#5).
+     - Removed `originalPrice` from competitors 2–5 in `TOP_5_PILLOW_COMPARISON_PRODUCTS`.
+  2. `apps/site/src/features/pillows/PillowsAdvertorial.tsx`:
+     - Updated `ProductCard` price display to strictly check `isWinner && product.compareAt` before rendering the line-through price.
+     - Removed `availabilityNote` rendering block from `ProductCard`.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67 static routes generated cleanly in 1037ms.
+  - Verified generated HTML: confirmed zero occurrences of `availabilityNote` or competitor strike-through prices; only #1 (RestArch Pillow) renders `From £49.99` alongside `£100.00`.
+
+- **Commit, Push, & Deployment Status**:
+  - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
+
+
 
 
 

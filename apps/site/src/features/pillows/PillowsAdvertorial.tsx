@@ -361,7 +361,7 @@ function ProductCard({
                 <span className="text-3xl font-extrabold text-slate-900">
                   {product.price}
                 </span>
-                {product.compareAt ? (
+                {isWinner && product.compareAt ? (
                   <span className="text-lg text-slate-400 line-through font-medium">
                     {product.compareAt}
                   </span>
@@ -376,11 +376,6 @@ function ProductCard({
               <p className="text-sm font-medium text-slate-500">
                 Editorial score {product.rating.toFixed(1)} / 5
               </p>
-              {product.availabilityNote && (
-                <p className="mt-2 text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full inline-block border border-amber-200">
-                  {product.availabilityNote}
-                </p>
-              )}
             </div>
 
             <div className="w-full hidden lg:block">
