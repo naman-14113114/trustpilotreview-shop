@@ -160,7 +160,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     ],
     whyBelowWinner:
       "CozyRest offers a decent entry-level butterfly shape, but RestArch provides superior high-density CertiPUR-US certified slow-rebound foam, a 10cm wider footprint (68.5cm), two tailored loft choices (Regular vs High), dedicated ear relief cavities, and a true risk-free 90-night UK trial.",
-    ctaUrl: "",
+    ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
   },
@@ -213,7 +213,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     ],
     whyBelowWinner:
       "TEMPUR offers legendary foam quality, but its rigid 30-year-old wave shape crushes side sleepers' shoulders and ears. RestArch delivers a wider 68.5 cm sleeping surface, modern 6-zone anatomical shoulder/arm ergonomics, ear relief, and two profile choices starting at just £49.99.",
-    ctaUrl: "",
+    ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
   },
@@ -266,7 +266,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     ],
     whyBelowWinner:
       "Coop offers great initial softness and DIY customizability, but shredded foam cannot maintain stable orthopedic alignment through an 8-hour night. RestArch’s molded one-piece core maintains exact 6-zone cervical support from the minute you fall asleep until your alarm rings.",
-    ctaUrl: "",
+    ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
   },
@@ -318,8 +318,8 @@ export const pillowProducts: RankedPillowProduct[] = [
       "Short 30-day Amazon return window with zero extended warranty.",
     ],
     whyBelowWinner:
-      "Budget Amazon pillows like EPABO use low-density foam with steep, uncalibrated angles that deteriorate quickly. RestArch is clinically engineered with chiropractic guidance, uses certified medical-grade slow-rebound foam, and provides dual-loft precision.",
-    ctaUrl: "",
+      "EPABO is a budget Amazon option, but its low-density foam softens rapidly and its steep angle strains the neck. RestArch’s certified orthopedic core and 6-zone ergonomics offer lasting therapeutic alignment backed by a 90-night trial.",
+    ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
     availabilityNote: "Budget mass-market option with standard Amazon return terms",

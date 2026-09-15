@@ -68,6 +68,12 @@ function handleOutboundClick(
   setLoadingTarget: (target: string) => void,
   target: string,
 ) {
+  const rawHref = event.currentTarget.getAttribute("href");
+  if (!rawHref || rawHref === "#" || rawHref.startsWith("#")) {
+    event.preventDefault();
+    return;
+  }
+
   try {
     const destination = new URL(event.currentTarget.href, window.location.href);
     const current = new URL(window.location.href);
@@ -273,146 +279,6 @@ function RankRibbon({
   );
 }
 
-function PackagePanel({
-  loadingTarget,
-  setLoadingTarget,
-  ctaUrl,
-}: {
-  loadingTarget: string | null;
-  setLoadingTarget: (target: string) => void;
-  ctaUrl: string;
-}) {
-  return (
-    <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, type: "spring" }}
-      className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50"
-    >
-      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-pulse" />
-      <div
-        className="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-200/40 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
-
-      <div className="relative z-10">
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
-          <span className="text-lg">📦</span> Included in Package
-        </div>
-
-        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          What&apos;s Inside{" "}
-          <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
-            Your Package
-          </span>
-        </h4>
-
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-          Every RestArch Pillow order includes these premium components for full orthopaedic neck and shoulder support.
-        </p>
-
-        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
-          {/* RestArch Pillow */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <a
-              href={ctaUrl}
-              rel="noopener noreferrer sponsored"
-              aria-label="View the RestArch Pillow package"
-              onClick={(event) =>
-                handleOutboundClick(
-                  event,
-                  setLoadingTarget,
-                  "restarch-package-pillow",
-                )
-              }
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <img
-                src="/img/pillows/juujo-cloudalign.png"
-                alt="RestArch Ergonomic 6-Zone Memory Foam Pillow"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-base leading-tight">
-              RestArch Pillow
-            </p>
-          </div>
-
-          {/* Breathable Cooling Cover */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <a
-              href={ctaUrl}
-              rel="noopener noreferrer sponsored"
-              aria-label="View the RestArch Pillow with Breathable Washable Cover"
-              onClick={(event) =>
-                handleOutboundClick(
-                  event,
-                  setLoadingTarget,
-                  "restarch-package-cover",
-                )
-              }
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <img
-                src="/img/pillows/juujo-colours-approved.png"
-                alt="RestArch Breathable Washable Knit Cover in Multiple Colours"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-base leading-tight">
-              Washable Soft Cover
-            </p>
-          </div>
-
-          {/* 90-Night In-Home Trial */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <a
-              href={ctaUrl}
-              rel="noopener noreferrer sponsored"
-              aria-label="View the 90-Night Risk-Free In-Home Trial Guarantee"
-              onClick={(event) =>
-                handleOutboundClick(
-                  event,
-                  setLoadingTarget,
-                  "restarch-package-trial",
-                )
-              }
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <img
-                src="/img/pillows/juujo-model.png"
-                alt="90-Night Risk-Free In-Home Trial Guarantee"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-base leading-tight">
-              90-Night Trial Guarantee
-            </p>
-          </div>
-        </div>
-
-        <OfficialButton
-          href={ctaUrl}
-          targetId="restarch-package-panel"
-          loadingTarget={loadingTarget}
-          setLoadingTarget={setLoadingTarget}
-          testId="restarch-cta-package"
-          className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
-        >
-          Check Availability
-        </OfficialButton>
-      </div>
-    </motion.div>
-  );
-}
-
 function ProductCard({
   product,
   loadingTarget,
@@ -437,13 +303,6 @@ function ProductCard({
     >
       <RankRibbon rank={`#${product.rank}`} featured={isWinner} />
 
-      {isWinner && (
-        <div className="absolute right-5 top-5 md:right-8 md:top-7 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-xs md:text-sm font-extrabold uppercase text-emerald-700 border border-emerald-200">
-          <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-          Editor&apos;s choice
-        </div>
-      )}
-
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
         {/* Left Column: Image & Quick Stats */}
         <aside className="lg:col-span-4 flex flex-col items-center">
@@ -453,42 +312,48 @@ function ProductCard({
                 isWinner ? "mt-3" : ""
               }`}
             >
-              {product.name}
+              <a
+                href={product.ctaUrl}
+                rel="noopener noreferrer sponsored"
+                onClick={(event) =>
+                  handleOutboundClick(
+                    event,
+                    setLoadingTarget,
+                    `product-title-mob-${product.rank}`,
+                  )
+                }
+                className="hover:text-emerald-600 transition-colors"
+              >
+                {product.name}
+              </a>
             </h2>
 
             <div className="relative w-full mb-6">
-              {isWinner ? (
-                <a
-                  href={product.ctaUrl}
-                  rel="noopener noreferrer sponsored"
-                  onClick={(event) =>
-                    handleOutboundClick(
-                      event,
-                      setLoadingTarget,
-                      `product-img-${product.rank}`,
-                    )
+              <a
+                href={product.ctaUrl}
+                rel="noopener noreferrer sponsored"
+                onClick={(event) =>
+                  handleOutboundClick(
+                    event,
+                    setLoadingTarget,
+                    `product-img-${product.rank}`,
+                  )
+                }
+                className="block w-full group"
+              >
+                <img
+                  src={product.image}
+                  alt={
+                    product.imageAlt ||
+                    (isWinner
+                      ? "RestArch Ergonomic Side Sleeper Pillow - #1 Best Pillow UK 2026"
+                      : product.name)
                   }
-                  className="block w-full group"
-                >
-                  <img
-                    src={product.image}
-                    alt={product.imageAlt || product.name}
-                    loading="eager"
-                    decoding="async"
-                    className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
-                  />
-                </a>
-              ) : (
-                <div className="block w-full">
-                  <img
-                    src={product.image}
-                    alt={product.imageAlt || product.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100"
-                  />
-                </div>
-              )}
+                  loading={isWinner ? "eager" : "lazy"}
+                  decoding="async"
+                  className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
+                />
+              </a>
             </div>
 
             <div className="text-center mb-2 lg:mb-6 w-full">
@@ -518,55 +383,39 @@ function ProductCard({
               )}
             </div>
 
-            {isWinner && (
-              <div className="w-full hidden lg:block">
-                <OfficialButton
-                  href={product.ctaUrl}
-                  targetId={`product-desktop-${product.rank}`}
-                  loadingTarget={loadingTarget}
-                  setLoadingTarget={setLoadingTarget}
-                  testId={`pillow-cta-${product.rank}`}
-                  className="w-full"
-                >
-                  {product.ctaLabel}
-                </OfficialButton>
-              </div>
-            )}
+            <div className="w-full hidden lg:block">
+              <OfficialButton
+                href={product.ctaUrl}
+                targetId={`product-desktop-${product.rank}`}
+                loadingTarget={loadingTarget}
+                setLoadingTarget={setLoadingTarget}
+                testId={`pillow-cta-${product.rank}`}
+                className="w-full"
+              >
+                {product.ctaLabel}
+              </OfficialButton>
+            </div>
           </div>
         </aside>
 
         {/* Right Column: Details */}
         <div className="lg:col-span-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3 hidden lg:block font-serif">
-            {isWinner ? (
-              <a
-                href={product.ctaUrl}
-                rel="noopener noreferrer sponsored"
-                onClick={(event) =>
-                  handleOutboundClick(
-                    event,
-                    setLoadingTarget,
-                    `product-title-${product.rank}`,
-                  )
-                }
-                className="hover:text-emerald-600 transition-colors"
-              >
-                {product.name}
-              </a>
-            ) : (
-              <span>{product.name}</span>
-            )}
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 hidden lg:block font-serif">
+            <a
+              href={product.ctaUrl}
+              rel="noopener noreferrer sponsored"
+              onClick={(event) =>
+                handleOutboundClick(
+                  event,
+                  setLoadingTarget,
+                  `product-title-${product.rank}`,
+                )
+              }
+              className="hover:text-emerald-600 transition-colors"
+            >
+              {product.name}
+            </a>
           </h2>
-
-          <div className="mb-4 hidden lg:block">
-            <span className="inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-extrabold uppercase text-emerald-700 border border-emerald-200">
-              {product.badge}
-            </span>
-          </div>
-
-          <p className="text-lg font-bold leading-relaxed text-slate-800 mb-4">
-            {product.bestFor}
-          </p>
 
           <div className="prose prose-slate prose-lg max-w-none mb-8 space-y-4">
             {product.review.map((paragraph, pIdx) => (
@@ -671,39 +520,18 @@ function ProductCard({
             </div>
           </div>
 
-          {product.whyBelowWinner && (
-            <div className="mb-8 rounded-2xl border-l-4 border-emerald-500 bg-emerald-50/30 p-5 border border-slate-200">
-              <p className="mb-1 text-sm font-black uppercase text-emerald-800">
-                Why it ranks below RestArch Pillow
-              </p>
-              <p className="text-base leading-relaxed text-slate-700">
-                {product.whyBelowWinner}
-              </p>
-            </div>
-          )}
-
-          {isWinner && (
-            <PackagePanel
+          <div className="w-full mt-8 lg:hidden">
+            <OfficialButton
+              href={product.ctaUrl}
+              targetId={`product-mobile-${product.rank}`}
               loadingTarget={loadingTarget}
               setLoadingTarget={setLoadingTarget}
-              ctaUrl={product.ctaUrl}
-            />
-          )}
-
-          {isWinner && (
-            <div className="w-full mt-8 lg:hidden">
-              <OfficialButton
-                href={product.ctaUrl}
-                targetId={`product-mobile-${product.rank}`}
-                loadingTarget={loadingTarget}
-                setLoadingTarget={setLoadingTarget}
-                testId={`pillow-cta-mobile-${product.rank}`}
-                className="w-full"
-              >
-                {product.ctaLabel}
-              </OfficialButton>
-            </div>
-          )}
+              testId={`pillow-cta-mobile-${product.rank}`}
+              className="w-full"
+            >
+              {product.ctaLabel}
+            </OfficialButton>
+          </div>
         </div>
       </div>
     </article>

@@ -9609,6 +9609,43 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
 
+---
+
+### [2026-09-15] PILLOW ADVERTORIAL UI CLEANUP & STANDARDIZATION TO MATCH TOOTHBRUSH PAGE ARCHITECTURE
+
+- **User Intent & Scope**:
+  1. Remove "Editor's choice" top-right badge and "Best Overall Winner" / category badges from all 5 product cards.
+  2. Completely remove the "What's Inside Your Package" / `PackagePanel` blue container from the #1 hero card.
+  3. Remove the bold target audience / subheading (`bestFor`) below product names across all 5 cards.
+  4. Align CTA buttons with the electric toothbrush comparison layout: add a "Shop Now" button (both desktop left sidebar and mobile bottom) for all competitors (#2–#5) with `href="#"` as a placeholder, while #1 retains "Official Website" linking to `https://sleepingpillow.onshopbase.com/pages/restarch-pillow`. Also make competitor images and titles clickable to `href="#"`.
+  5. Remove the "Why it ranks below RestArch Pillow" callout block and anything below the Cons list on competitor cards.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `ed2950b`.
+  - Ending: committed and pushed cleanly to `origin/main`.
+
+- **Inspected and Changed Files**:
+  1. `apps/site/src/data/pillows.ts`:
+     - Updated `ctaUrl: "#"` and `ctaLabel: "Shop Now"` for CozyRest (#2), TEMPUR (#3), Coop (#4), and EPABO (#5).
+  2. `apps/site/src/features/pillows/PillowsAdvertorial.tsx`:
+     - Removed `PackagePanel` component and its call entirely.
+     - Removed `Editor's choice` badge and `{product.badge}` from `ProductCard`.
+     - Removed `{product.bestFor}` subheading paragraph from `ProductCard`.
+     - Removed `{product.whyBelowWinner}` callout box below Cons list.
+     - Added desktop and mobile `OfficialButton` for all 5 product cards (`Shop Now` on #2–#5 with `href="#"`, `Official Website` on #1 with the live landing page).
+     - Made product card images and title links point to `product.ctaUrl` across all 5 cards.
+     - Updated `handleOutboundClick` to safely bypass tracking and loading spinners when `href="#"` is clicked.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67 static routes generated cleanly in 1230ms.
+  - Inspected generated HTML: confirmed zero occurrences of `Editor's choice`, `What's Inside Your Package`, `Why it ranks below`, or product subheadings; verified "Shop Now" buttons render with `href="#"` on all competitor cards.
+
+- **Commit, Push, & Deployment Status**:
+  - Committed and pushed to `origin/main` on GitHub (`naman-14113114/trustpilotreview-shop`).
+
+
 
 
 
