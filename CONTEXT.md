@@ -9757,7 +9757,37 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Visual Browser Verification via Chrome DevTools MCP: Navigated to `http://localhost:3005/best-pillow-for-side-sleepers-uk-2026`, inspected rendered Pros list with green checkmarks and bold headers, verified the 3 Cons with red cross icons, and confirmed clean mobile and desktop layouts.
 
 - **Commit, Push, & Deployment Status**:
-  - Ready for commit and push to `origin/main`.
+  - Committed as `1076450` and pushed to `origin/main`.
+
+### [2026-09-17] BUUDY LED TORCH IMAGE ASSET REPLACEMENT ACROSS ALL LED MASK PAGES
+
+- **User Intent & Protected Scope**:
+  1. Replace the Buudy LED Torch gift image across all LED mask pages (specifically on `https://www.trustpilotreview.shop/best-led-face-mask-uk-2026` and legacy advertorial pages) with the new image provided at `E:\1st YEAR DTU\New folder\Buddy\Images\T4.webp`.
+  2. Keep the asset name identical to the older image (`35-w.webp`), overwriting and deleting the older Buudy LED Torch image content.
+  3. Replace any legacy hardcoded image URLs of the older torch (`176738038817f3610740.png`) across legacy LED mask pages with the local `/img/35-w.webp` asset.
+  4. Test locally and push clean code to GitHub repository `origin/main`.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `1076450` (clean, synchronized with `origin/main`).
+  - Modified:
+    - `apps/site/public/img/35-w.webp` (binary content overwritten with `T4.webp`, 91,198 bytes)
+    - `img/35-w.webp` (root copy overwritten with `T4.webp`, 91,198 bytes)
+    - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx` (updated torch image `src` to `/img/35-w.webp`)
+    - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx` (updated torch image `src` to `/img/35-w.webp`)
+    - `pages/buudy-led-mask-product-redesign/index.html` (updated torch image `src` to `/img/35-w.webp`)
+    - `unzipped/src/pages/NewAdvertorial.tsx` (updated torch image `src` to `/img/35-w.webp`)
+    - `unzipped/src/pages/VideoAdvertorial.tsx` (updated torch image `src` to `/img/35-w.webp`)
+  - Ending: committed and pushed cleanly to GitHub `origin/main`.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67/67 static routes generated cleanly.
+  - Local Server Verification: Dev server launched, verified `http://localhost:3000/best-led-face-mask-uk-2026` (HTTP 200 OK) and `http://localhost:3000/img/35-w.webp` (HTTP 200 OK).
+
+- **Commit, Push, & Deployment Status**:
+  - Committed and pushed to `origin/main`.
+
 
 
 

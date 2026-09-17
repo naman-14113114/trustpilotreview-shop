@@ -495,7 +495,7 @@ export default function Home() {
                             <div className="relative mb-3 rounded-xl overflow-hidden bg-gray-50 border border-slate-100">
                               <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-500 font-bold line-through z-10 bg-white/90 px-3 py-1 rounded-full text-xs shadow-sm">Normally £70</span>
                               <img 
-                                src="https://img.thesitebase.net/10650/10650730/products/ver_1/176738038817f3610740.png?width=640&height=0&min_height=0" 
+                                src="/img/35-w.webp" 
                                 alt="Buudy LED Torch" 
                                 className="w-full aspect-square object-cover"
                               />
