@@ -326,11 +326,14 @@ export default function BuudyEditorialPage({ pathname }: { pathname: string }) {
         </section>
 
         <footer className="mt-10 border-t border-slate-200 py-8 text-xs leading-6 text-slate-500">
-          <p><strong className="text-slate-700">Editorial and affiliate disclosure:</strong> This comparison is based on publicly available product information and does not claim laboratory or medical testing by Trustpilot Review. We may receive a commission if you buy through selected links, at no extra cost to you. Prices and offers can change.</p>
-          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-bold text-slate-600">
-            <a href="/disclosure" className="hover:text-emerald-700">Affiliate disclosure</a>
-            <a href="/privacy" className="hover:text-emerald-700">Privacy</a>
-            <a href="/contact" className="hover:text-emerald-700">Contact</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600">
+            <a href="/privacy" className="hover:text-emerald-700 transition-colors">Privacy Policy</a>
+            <span className="text-slate-300">•</span>
+            <a href="/terms" className="hover:text-emerald-700 transition-colors">Terms of Service</a>
+            <span className="text-slate-300">•</span>
+            <a href="/disclosure" className="hover:text-emerald-700 transition-colors">Advertising Disclosure</a>
+            <span className="text-slate-300">•</span>
+            <a href="/contact" className="hover:text-emerald-700 transition-colors">Contact Us</a>
           </div>
         </footer>
       </main>

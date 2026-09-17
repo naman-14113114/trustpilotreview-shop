@@ -9788,16 +9788,25 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Committed and pushed to `origin/main`.
 
+### [2026-09-17] REMOVED EXTRA FOOTER CONTENT & PRESERVED ONLY POLICY ROW ACROSS LED FACE MASK PAGES
 
+- **User Intent & Protected Scope**:
+  1. Remove extra elements/sections from the footer on all LED face mask pages, keeping strictly the policy row containing Privacy Policy, Terms of Service, Advertising Disclosure, and Contact Us.
+  2. Remove title headers ("Best LED Face Mask" / "Trustpilot Review Shop"), copyright notices ("© 2026 Best LED Face Mask. All rights reserved."), and the amber "IMPORTANT DISCLOSURE" boxes (affiliate disclosure, individual results, disclaimers) below the policy row.
+  3. Keep mobile sticky CTAs, outbound tracking, links, product data, and all upper page content 100% intact.
 
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `9ec8060` (clean, synchronized with `origin/main`).
+  - Modified files:
+    - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx` (simplified footer to only render the policy links row; removed brand title, copyright, and amber Important Disclosure box).
+    - `apps/site/src/features/buudy-comparisons/BuudyEditorialPage.tsx` (simplified footer to only render the policy links row; removed disclosure paragraph).
+    - `apps/site/src/components/LegacyLayout.tsx` (simplified footer to only render the policy links row; removed brand title, copyright, and amber Important Disclosure box).
+  - Ending: worktree modified with 3 files; ready for review.
 
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67/67 static pages generated cleanly.
 
-
-
-
-
-
-
-
-
+- **Commit, Push, & Deployment Status**:
+  - Local changes only, no unrequested commit, push, or deployment performed.
 
