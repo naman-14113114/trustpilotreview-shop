@@ -9810,3 +9810,37 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Local changes only, no unrequested commit, push, or deployment performed.
 
+### [2026-09-17] UK PILLOW PAGE OVERHAUL: RUUHU RESTALIGN PILLOW #1, DR. ANGIE CHIROPRACTOR VERDICT VIDEO, AND CLEAN FOOTER
+
+- **User Intent & Protected Scope**:
+  1. Make the footer on pillow pages identical to the clean white footer edited just now on LED mask pages (Privacy Policy • Terms of Service • Advertising Disclosure • Contact Us).
+  2. Change the verdict section heading from "Sleep Specialist's Verdict" to "Chiropractor's Verdict" and replace the static model image with the authentic Chiropractor video from `E:\1st YEAR DTU\New folder\ruuhu_pillow_review_videos\Selected and edited Videos\Dr video for best page-compressed.mp4`, named canonically for SEO/GEO as `/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict.mp4` with poster and descriptive alt / aria-label metadata.
+  3. Change the #1 ranked pillow name to `Ruuhu RestAlign Pillow` across all data structures, reviews, comparison table, hero cards, analytics tracking, and metadata.
+  4. Change Doctor references to `Dr. Angie` (Dr. Angie, DC) with updated chiropractic rationale and avatar.
+  5. Scope discipline: applied strictly to pillow pages (`apps/site/src/data/pillows.ts`, `apps/site/src/features/pillows/PillowsAdvertorial.tsx`, `apps/site/src/app/best-pillow-for-side-sleepers-uk-2026/page.tsx`).
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `577d540` (clean, synchronized with `origin/main`).
+  - Added Assets:
+    - `apps/site/public/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict.mp4`
+    - `apps/site/public/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict-poster.jpg`
+    - `apps/site/public/videos/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict.mp4`
+    - `apps/site/public/videos/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict-poster.jpg`
+    - `apps/site/public/img/pillows/dr-angie-avatar.jpg`
+  - Modified Files:
+    - `apps/site/src/data/pillows.ts` (updated #1 name to "Ruuhu RestAlign Pillow", shortName "Ruuhu RestAlign", review text, competitor comparison why-below text, comparison table, and doctor data to "Dr. Angie, DC" with avatar `/img/pillows/dr-angie-avatar.jpg`).
+    - `apps/site/src/features/pillows/PillowsAdvertorial.tsx` (replaced dark footer with clean white footer, updated Chiropractor's Verdict heading, integrated responsive video player with play overlay button and SEO/GEO caption, updated #1 name in analytics, banner alt, verdict card, sticky mobile bar, and fallback doctor data to Dr. Angie).
+    - `apps/site/src/app/best-pillow-for-side-sleepers-uk-2026/page.tsx` (updated keywords to "ruuhu restalign pillow review" and OpenGraph description to "Ruuhu RestAlign Pillow").
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67/67 static pages generated cleanly in Turbopack.
+  - Static HTML Inspection: Verified `.next/server/app/best-pillow-for-side-sleepers-uk-2026.html` renders `Ruuhu RestAlign Pillow`, `Dr. Angie`, `Chiropractor's Verdict`, the video source, and the clean policy footer.
+
+- **Headline Adjustment (2026-09-17)**:
+  - Removed `& Neck Pain` from the main H1 headline in `apps/site/src/data/pillows.ts` (`defaultPillowGuide.headline` -> `"Top 5 Pillows for Side Sleepers"`), focusing strictly on side sleepers.
+  - Re-verified build with `pnpm --filter @trustpilotreview/site build`: 67/67 static pages compiled cleanly, confirmed rendered HTML contains `Top 5 Pillows for Side Sleepers` and zero instances of `& Neck Pain` in the headline.
+
+
+

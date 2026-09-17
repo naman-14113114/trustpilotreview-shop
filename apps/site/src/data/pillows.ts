@@ -57,11 +57,11 @@ export const defaultPillowCriteria = [
 export const pillowProducts: RankedPillowProduct[] = [
   {
     rank: 1,
-    name: "RestArch Pillow",
-    shortName: "RestArch Pillow",
+    name: "Ruuhu RestAlign Pillow",
+    shortName: "Ruuhu RestAlign Pillow",
     image: "/img/pillows/juujo-side-sleeper.png",
     imageAlt:
-      "RestArch Ergonomic Side Sleeper Pillow with Cervical Support and Shoulder Recess - #1 Best Pillow for Neck Pain & Side Sleepers UK 2026",
+      "Ruuhu RestAlign Ergonomic Side Sleeper Pillow with Cervical Support and Shoulder Recess - #1 Best Pillow for Side Sleepers UK 2026",
     price: "From £49.99",
     compareAt: "£100.00",
     previousPrice: "£100",
@@ -71,12 +71,12 @@ export const pillowProducts: RankedPillowProduct[] = [
     bestFor:
       "Side, back, and combination sleepers seeking dedicated shoulder relief, zero-pressure ear comfort, dual-loft precision, and unmatched bundle value.",
     summary:
-      "The RestArch Pillow is the most purpose-built ergonomic cervical pillow available in the UK for 2026. Its generous 68.5 x 37 cm footprint features an anatomical central head cradle, raised cervical neck arch, dedicated shoulder-and-arm recesses, cooling Ice-Silk cover, and an ear-pressure relief cavity that eliminates neck stiffness, shoulder impingement, and morning numbness.",
+      "The Ruuhu RestAlign Pillow is the most purpose-built ergonomic cervical pillow available in the UK for 2026. Its generous 68.5 x 37 cm footprint features an anatomical central head cradle, raised cervical neck arch, dedicated shoulder-and-arm recesses, cooling Ice-Silk cover, and an ear-pressure relief cavity that eliminates neck stiffness, shoulder impingement, and morning numbness.",
     review: [
-      "After extensive comparative testing across UK sleep laboratories, the <strong>RestArch Pillow</strong> took our <strong>#1 Overall Ranking</strong> by solving the fundamental flaw of traditional pillows: failing to support the cervical spine while accommodating the shoulder and ear.",
-      "Engineered specifically for side, back, and combination sleepers, the RestArch features a <strong>6-Zone Anatomical Contour</strong>. A central concave cradle gently suspends the occipital region, while a reinforced cervical contour maintains the natural lordotic curve of the neck to relieve chronic neck pain and stiffness. Most crucially, <strong>sculpted lateral shoulder wings and under-arm rest channels</strong> allow the lower shoulder and arm to rest naturally without compressing nerves or causing morning numbness.",
-      "Unlike generic 'one-size-fits-all' pillows, RestArch offers two distinct finished heights: <strong>Regular (8.9 cm)</strong> for petite to medium frames and back sleepers, and <strong>High (10.9 cm)</strong> for broader shoulders and dedicated side sleeping. The high-density, slow-rebound CertiPUR-US® memory foam core provides consistent, pressure-relieving support night after night without sagging or flattening, wrapped in an <strong>Advanced Ice-Silk Cooling Modal Cover</strong> that actively dissipates body heat.",
-      "Backed by over <strong>42,000+ verified 4.9★ reviews</strong>, a genuine <strong>90-Day Money-Back Guarantee</strong>, a <strong>2-Year Comprehensive Warranty</strong>, free tracked UK Royal Mail / DPD delivery, and substantial bundle savings (2 pillows for £88.99, 4 pillows for £151.99), the RestArch Pillow delivers unmatched comfort, therapeutic spine support, and unbeatable value.",
+      "After extensive comparative testing across UK sleep laboratories, the <strong>Ruuhu RestAlign Pillow</strong> took our <strong>#1 Overall Ranking</strong> by solving the fundamental flaw of traditional pillows: failing to support the cervical spine while accommodating the shoulder and ear.",
+      "Engineered specifically for side, back, and combination sleepers, the Ruuhu RestAlign features a <strong>6-Zone Anatomical Contour</strong>. A central concave cradle gently suspends the occipital region, while a reinforced cervical contour maintains the natural lordotic curve of the neck to relieve chronic neck pain and stiffness. Most crucially, <strong>sculpted lateral shoulder wings and under-arm rest channels</strong> allow the lower shoulder and arm to rest naturally without compressing nerves or causing morning numbness.",
+      "Unlike generic 'one-size-fits-all' pillows, Ruuhu RestAlign offers two distinct finished heights: <strong>Regular (8.9 cm)</strong> for petite to medium frames and back sleepers, and <strong>High (10.9 cm)</strong> for broader shoulders and dedicated side sleeping. The high-density, slow-rebound CertiPUR-US® memory foam core provides consistent, pressure-relieving support night after night without sagging or flattening, wrapped in an <strong>Advanced Ice-Silk Cooling Modal Cover</strong> that actively dissipates body heat.",
+      "Backed by over <strong>42,000+ verified 4.9★ reviews</strong>, a genuine <strong>90-Day Money-Back Guarantee</strong>, a <strong>2-Year Comprehensive Warranty</strong>, free tracked UK Royal Mail / DPD delivery, and substantial bundle savings (2 pillows for £88.99, 4 pillows for £151.99), the Ruuhu RestAlign Pillow delivers unmatched comfort, therapeutic spine support, and unbeatable value.",
     ],
     metrics: [
       { label: "Cervical Spine Alignment", value: 98 },
@@ -165,7 +165,7 @@ export const pillowProducts: RankedPillowProduct[] = [
       "Restricted return fine print: Return policy requires unused condition and international postage.",
     ],
     whyBelowWinner:
-      "CozyRest offers a decent entry-level butterfly shape, but RestArch provides superior high-density CertiPUR-US certified slow-rebound foam, a 10cm wider footprint (68.5cm), two tailored loft choices (Regular vs High), dedicated ear relief cavities, and a true risk-free 90-night UK trial.",
+      "CozyRest offers a decent entry-level butterfly shape, but Ruuhu RestAlign provides superior high-density CertiPUR-US certified slow-rebound foam, a 10cm wider footprint (68.5cm), two tailored loft choices (Regular vs High), dedicated ear relief cavities, and a true risk-free 90-night UK trial.",
     ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
@@ -187,7 +187,7 @@ export const pillowProducts: RankedPillowProduct[] = [
     review: [
       "The <strong>TEMPUR Original SmartCool Pillow</strong> delivers the unmistakable slow-sinking feel of authentic NASA-developed TEMPUR viscoelastic material. It gently conforms to facial and cervical contours under body heat.",
       "The SmartCool cover actively absorbs excess body heat, maintaining a refreshing initial touch. TEMPUR offers the pillow in three fixed height options (Small, Medium, Large) to accommodate various frame sizes.",
-      "On the downside, at over £165, it is more than three times the price of RestArch Pillow. The 61 x 31 cm surface is also the narrowest in our test group. Most critically, its classic 1990s dual-lobe wave shape lacks dedicated cutaways for the shoulder and arms—causing significant ear cartilage pressure (>48 mmHg) and shoulder compression for side sleepers.",
+      "On the downside, at over £165, it is more than three times the price of Ruuhu RestAlign Pillow. The 61 x 31 cm surface is also the narrowest in our test group. Most critically, its classic 1990s dual-lobe wave shape lacks dedicated cutaways for the shoulder and arms—causing significant ear cartilage pressure (>48 mmHg) and shoulder compression for side sleepers.",
     ],
     metrics: [
       { label: "Cervical Spine Alignment", value: 92 },
@@ -216,7 +216,7 @@ export const pillowProducts: RankedPillowProduct[] = [
       "High ear pressure: Dense cold foam creates concentrated pressure on the ear cartilage.",
     ],
     whyBelowWinner:
-      "TEMPUR offers legendary foam quality, but its rigid 30-year-old wave shape crushes side sleepers' shoulders and ears. RestArch delivers a wider 68.5 cm sleeping surface, modern 6-zone anatomical shoulder/arm ergonomics, ear relief, and two profile choices starting at just £49.99.",
+      "TEMPUR offers legendary foam quality, but its rigid 30-year-old wave shape crushes side sleepers' shoulders and ears. Ruuhu RestAlign delivers a wider 68.5 cm sleeping surface, modern 6-zone anatomical shoulder/arm ergonomics, ear relief, and two profile choices starting at just £49.99.",
     ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
@@ -267,7 +267,7 @@ export const pillowProducts: RankedPillowProduct[] = [
       "High ongoing cost (£92+): Expensive for a shredded fill pillow.",
     ],
     whyBelowWinner:
-      "Coop offers great initial softness and DIY customizability, but shredded foam cannot maintain stable orthopedic alignment through an 8-hour night. RestArch’s molded one-piece core maintains exact 6-zone cervical support from the minute you fall asleep until your alarm rings.",
+      "Coop offers great initial softness and DIY customizability, but shredded foam cannot maintain stable orthopedic alignment through an 8-hour night. Ruuhu RestAlign’s molded one-piece core maintains exact 6-zone cervical support from the minute you fall asleep until your alarm rings.",
     ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
@@ -318,7 +318,7 @@ export const pillowProducts: RankedPillowProduct[] = [
       "Short 30-day Amazon return window with zero extended warranty.",
     ],
     whyBelowWinner:
-      "EPABO is a budget Amazon option, but its low-density foam softens rapidly and its steep angle strains the neck. RestArch’s certified orthopedic core and 6-zone ergonomics offer lasting therapeutic alignment backed by a 90-night trial.",
+      "EPABO is a budget Amazon option, but its low-density foam softens rapidly and its steep angle strains the neck. Ruuhu RestAlign’s certified orthopedic core and 6-zone ergonomics offer lasting therapeutic alignment backed by a 90-night trial.",
     ctaUrl: "#",
     ctaLabel: "Shop Now",
     sourceUrl: "",
@@ -347,8 +347,8 @@ export interface PillowComparisonTableProduct {
 export const TOP_5_PILLOW_COMPARISON_PRODUCTS: PillowComparisonTableProduct[] = [
   {
     rank: 1,
-    name: "RestArch Pillow",
-    shortName: "RestArch Pillow",
+    name: "Ruuhu RestAlign Pillow",
+    shortName: "Ruuhu RestAlign",
     image: "/img/pillows/juujo-side-sleeper.png",
     price: "£49.99",
     originalPrice: "£100",
@@ -478,7 +478,7 @@ export interface PillowGuideData {
 }
 
 export const defaultPillowGuide: PillowGuideData = {
-  headline: "Top 5 Pillows for Side Sleepers & Neck Pain",
+  headline: "Top 5 Pillows for Side Sleepers",
   intro: [
     "Side and combination sleepers face a unique anatomical challenge: the pillow must bridge the deep void between the outer shoulder and the neck without forcing the cervical spine upward or letting the head collapse downward.",
     "When a pillow has incorrect loft or lacks dedicated shoulder clearance, it creates concentrated pressure on the acromioclavicular joint and pinches cervical nerves—leading to morning neck stiffness, shoulder impingement, and tingling down the arm.",
@@ -486,13 +486,13 @@ export const defaultPillowGuide: PillowGuideData = {
   ],
   criteria: defaultPillowCriteria,
   sleepSpecialistVerdict: {
-    name: "Dr. Eleanor Sterling, MChiro",
+    name: "Dr. Angie, DC",
     title: "Consultant Chiropractor & Sleep Biomechanics Specialist",
-    avatar: "/img/pillows/juujo-model.png",
+    avatar: "/img/pillows/dr-angie-avatar.jpg",
     quote:
-      "Side sleeping requires maintaining a strictly neutral horizontal cervical spine. The RestArch Pillow is the first ergonomic pillow in the UK that integrates dedicated shoulder cutaways, ear-relief hollows, and dual-loft precision, preventing the common cervical hyperextension seen with traditional pillows.",
+      "Side sleeping requires maintaining a strictly neutral horizontal cervical spine. The Ruuhu RestAlign Pillow is the first ergonomic pillow in the UK that integrates dedicated shoulder cutaways, ear-relief hollows, and dual-loft precision, preventing the common cervical hyperextension seen with traditional pillows.",
     clinicalRationale:
-      "With over 16 years of clinical practice treating chronic cervical strain and shoulder impingement across UK patients, Dr. Eleanor Sterling evaluated the leading side-sleeper pillows for 2026 across 150+ hours of comparative testing. Her conclusion was decisive: traditional rectangular pillows force the shoulder into awkward compression, while single-height contoured pillows fail to fit different body frames. The RestArch Pillow's dedicated shoulder wings, ear pressure cavity, and choice of Regular (8.9 cm) or High (10.9 cm) profiles deliver the most consistent orthopedic alignment on the market.",
+      "With over 16 years of clinical practice treating chronic cervical strain and shoulder impingement, Dr. Angie evaluated the leading side-sleeper pillows for 2026 across 150+ hours of comparative testing. Her conclusion was decisive: traditional rectangular pillows force the shoulder into awkward compression, while single-height contoured pillows fail to fit different body frames. The Ruuhu RestAlign Pillow's dedicated shoulder wings, ear pressure cavity, and choice of Regular (8.9 cm) or High (10.9 cm) profiles deliver the most consistent orthopedic alignment on the market.",
   },
 };
 

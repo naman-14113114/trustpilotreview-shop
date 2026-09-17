@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     "side sleeper pillow uk",
     "pillow for neck pain side sleeper",
     "best orthopaedic pillow uk",
-    "restarch pillow review",
+    "ruuhu restalign pillow review",
+    "ruuhu pillow review",
     "cozyrest pillow review",
     "tempur smartcool pillow review",
     "coop eden pillow review",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Pillow for Side Sleepers UK 2026: Top 5 Compared & Reviewed",
     description:
-      "A UK comparison of RestArch Pillow, CozyRest, TEMPUR, Coop Eden, and EPABO pillows for side sleepers.",
+      "A UK comparison of Ruuhu RestAlign Pillow, CozyRest, TEMPUR, Coop Eden, and EPABO pillows for side sleepers.",
     type: "article",
     url: canonical,
     siteName: "Trustpilot Review Shop",

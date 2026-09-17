@@ -19,6 +19,7 @@ import {
   Sparkles,
   ExternalLink,
   Info,
+  Play,
 } from "lucide-react";
 import { MarketFlag } from "@/components/MarketFlag";
 import { OutboundLoader } from "@/components/OutboundLoader";
@@ -104,7 +105,7 @@ function handleOutboundClick(
     const payload = {
       event_category: "comparison",
       event_label: target,
-      product: "RestArch Pillow",
+      product: "Ruuhu RestAlign Pillow",
       outbound_url: destination.toString(),
       page_type: "best_pillow_for_side_sleepers_uk_2026",
     };
@@ -346,7 +347,7 @@ function ProductCard({
                   alt={
                     product.imageAlt ||
                     (isWinner
-                      ? "RestArch Ergonomic Side Sleeper Pillow - #1 Best Pillow UK 2026"
+                      ? "Ruuhu RestAlign Ergonomic Side Sleeper Pillow - #1 Best Pillow UK 2026"
                       : product.name)
                   }
                   loading={isWinner ? "eager" : "lazy"}
@@ -691,6 +692,15 @@ export default function PillowsAdvertorial({
     formatLondonDate(new Date()),
   );
   const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
+  const verdictVideoRef = React.useRef<HTMLVideoElement>(null);
+  const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
+
+  const playVerdictVideo = () => {
+    if (verdictVideoRef.current) {
+      verdictVideoRef.current.play();
+      setIsVerdictVideoPlaying(true);
+    }
+  };
 
   const displayProducts: RankedProduct[] = pillowProducts;
 
@@ -739,7 +749,7 @@ export default function PillowsAdvertorial({
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[24%] min-w-[140px] max-w-[340px]">
               <img
                 src="/img/pillows/restarch-pillow-banner.webp"
-                alt="RestArch Ergonomic Cervical Side Sleeper Pillow - #1 Ranked Winner"
+                alt="Ruuhu RestAlign Ergonomic Cervical Side Sleeper Pillow - #1 Ranked Winner"
                 className="w-full aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl object-contain shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none bg-white"
               />
             </div>
@@ -752,12 +762,12 @@ export default function PillowsAdvertorial({
                 <Image
                   src={
                     guide?.sleepSpecialistVerdict?.avatar ||
-                    "/img/pillows/juujo-model.png"
+                    "/img/pillows/dr-angie-avatar.jpg"
                   }
                   alt={
                     guide?.sleepSpecialistVerdict?.name
                       ? `${guide.sleepSpecialistVerdict.name} - ${guide.sleepSpecialistVerdict.title}`
-                      : "Dr. Eleanor Sterling - Consultant Chiropractor & Sleep Ergonomics Specialist"
+                      : "Dr. Angie - Consultant Chiropractor & Sleep Ergonomics Specialist"
                   }
                   width={96}
                   height={96}
@@ -766,7 +776,7 @@ export default function PillowsAdvertorial({
                 />
                 <div>
                   <h3 className="font-bold text-xl md:text-2xl underline text-slate-900">
-                    {guide?.sleepSpecialistVerdict?.name || "Dr. Eleanor Sterling, MChiro"}
+                    {guide?.sleepSpecialistVerdict?.name || "Dr. Angie"}
                   </h3>
                   <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider font-semibold mt-1">
                     {guide?.sleepSpecialistVerdict?.title ||
@@ -827,27 +837,57 @@ export default function PillowsAdvertorial({
         <div className="mt-20 md:mt-24 mb-10 md:mb-12 relative max-w-sm md:max-w-5xl mx-auto">
           <div className="bg-[#f8f4e6] rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-12 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] border border-[#e8dccb] relative z-10">
             <h2 className="text-2xl md:text-4xl font-bold text-center text-[#8b1528] mb-6 md:mb-10 font-serif tracking-wide">
-              Sleep Specialist&apos;s Verdict
+              Chiropractor&apos;s Verdict
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Left Image Area */}
-              <div className="relative flex justify-center items-center">
-                <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
-                  <Image
-                    src="/img/pillows/juujo-model.png"
-                    alt="RestArch Ergonomic Pillow - Specialist's Verdict"
-                    width={600}
-                    height={600}
-                    className="w-full h-full object-cover"
-                  />
+              {/* Left Video Area */}
+              <div className="relative">
+                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                  <video
+                    ref={verdictVideoRef}
+                    className="block w-full"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster="/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict-poster.jpg"
+                    aria-label="Dr. Angie Chiropractor video review and verdict of Ruuhu RestAlign Pillow for side sleepers"
+                    title="Dr. Angie Chiropractor Verdict - Ruuhu RestAlign Pillow"
+                    onPlay={() => setIsVerdictVideoPlaying(true)}
+                    onPause={() => setIsVerdictVideoPlaying(false)}
+                    onEnded={() => setIsVerdictVideoPlaying(false)}
+                  >
+                    <source
+                      src="/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <button
+                    type="button"
+                    aria-label="Play Dr. Angie chiropractor verdict video"
+                    onClick={playVerdictVideo}
+                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
+                      isVerdictVideoPlaying
+                        ? "pointer-events-none opacity-0 scale-90"
+                        : "opacity-100 scale-100"
+                    }`}
+                  >
+                    <Play size={30} fill="currentColor" className="ml-1" />
+                  </button>
+                  <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8b1528] shadow-sm">
+                    Dr. Angie Demo
+                  </div>
                 </div>
+                <p className="mt-4 text-center text-xs md:text-sm font-medium text-gray-600 leading-snug max-w-[240px] md:max-w-none mx-auto">
+                  Watch Dr. Angie demonstrate cervical spine alignment, shoulder clearance, and zero-pressure ear comfort.
+                </p>
               </div>
 
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  RestArch Pillow
+                  Ruuhu RestAlign Pillow
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
@@ -891,10 +931,18 @@ export default function PillowsAdvertorial({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950 px-4 py-8 text-center text-slate-300">
-        <p className="mx-auto max-w-5xl text-sm leading-6">
-          TrustpilotReview.shop is an independent shopping comparison publisher and is not affiliated with Trustpilot A/S. All product trademarks remain property of their respective owners.
-        </p>
+      <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-8 shadow-inner">
+        <div className="mx-auto max-w-6xl text-center text-sm text-slate-500">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-500">
+            <a href="/privacy" className="hover:text-emerald-600 transition-colors">Privacy Policy</a>
+            <span className="text-slate-300">•</span>
+            <a href="/terms" className="hover:text-emerald-600 transition-colors">Terms of Service</a>
+            <span className="text-slate-300">•</span>
+            <a href="/disclosure" className="hover:text-emerald-600 transition-colors">Advertising Disclosure</a>
+            <span className="text-slate-300">•</span>
+            <a href="/contact" className="hover:text-emerald-600 transition-colors">Contact Us</a>
+          </div>
+        </div>
       </footer>
 
       {/* Sticky Mobile CTA */}
@@ -902,13 +950,13 @@ export default function PillowsAdvertorial({
         <div className="flex min-w-0 items-center gap-2.5">
           <img
             src="/img/pillows/juujo-side-sleeper.png"
-            alt="RestArch Pillow"
+            alt="Ruuhu RestAlign Pillow"
             className="h-11 w-11 shrink-0 rounded-lg border border-slate-200 object-cover"
             aria-hidden="true"
           />
           <span className="min-w-0">
             <strong className="block truncate text-xs font-black text-slate-900">
-              RestArch Pillow
+              Ruuhu RestAlign Pillow
             </strong>
             <small className="block text-[11px] text-emerald-700 font-bold">
               From £49.99 · #1 Top Pick
