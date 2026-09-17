@@ -9838,9 +9838,11 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build`: Passed with exit code 0; all 67/67 static pages generated cleanly in Turbopack.
   - Static HTML Inspection: Verified `.next/server/app/best-pillow-for-side-sleepers-uk-2026.html` renders `Ruuhu RestAlign Pillow`, `Dr. Angie`, `Chiropractor's Verdict`, the video source, and the clean policy footer.
 
-- **Headline Adjustment (2026-09-17)**:
-  - Removed `& Neck Pain` from the main H1 headline in `apps/site/src/data/pillows.ts` (`defaultPillowGuide.headline` -> `"Top 5 Pillows for Side Sleepers"`), focusing strictly on side sleepers.
-  - Re-verified build with `pnpm --filter @trustpilotreview/site build`: 67/67 static pages compiled cleanly, confirmed rendered HTML contains `Top 5 Pillows for Side Sleepers` and zero instances of `& Neck Pain` in the headline.
+- **Video Card Sizing & Controls Refinement (2026-09-17)**:
+  - Enlarged the video card in `apps/site/src/features/pillows/PillowsAdvertorial.tsx` to `w-full max-w-[320px] min-[400px]:max-w-[360px] sm:max-w-[420px] md:max-w-[480px] aspect-video` to properly fit the 16:9 widescreen video format without looking constricted.
+  - Made browser native media controls conditional (`controls={isVerdictVideoPlaying}`), ensuring that the initial poster thumbnail displays clean with only the play button and "Dr. Angie Demo" badge, without any overlapping native browser seekbar or media controls.
+  - Verification: `pnpm --filter @trustpilotreview/site build` passed with 0 errors across all 67 static pages.
+
 
 
 

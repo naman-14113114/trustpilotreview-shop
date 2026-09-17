@@ -843,11 +843,18 @@ export default function PillowsAdvertorial({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
               {/* Left Video Area */}
               <div className="relative">
-                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
+                <div
+                  className="relative mx-auto w-full max-w-[320px] min-[400px]:max-w-[360px] sm:max-w-[420px] md:max-w-[480px] aspect-video overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl cursor-pointer"
+                  onClick={() => {
+                    if (!isVerdictVideoPlaying) {
+                      playVerdictVideo();
+                    }
+                  }}
+                >
                   <video
                     ref={verdictVideoRef}
-                    className="block w-full"
-                    controls
+                    className="block w-full h-full object-cover"
+                    controls={isVerdictVideoPlaying}
                     playsInline
                     preload="metadata"
                     poster="/assets/ruuhu-restalign-pillow-chiropractor-dr-angie-verdict-poster.jpg"
@@ -866,7 +873,10 @@ export default function PillowsAdvertorial({
                   <button
                     type="button"
                     aria-label="Play Dr. Angie chiropractor verdict video"
-                    onClick={playVerdictVideo}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      playVerdictVideo();
+                    }}
                     className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#136b3a] text-white shadow-[0_14px_34px_rgba(19,107,58,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-[#d4af37]/70 ${
                       isVerdictVideoPlaying
                         ? "pointer-events-none opacity-0 scale-90"
@@ -875,11 +885,15 @@ export default function PillowsAdvertorial({
                   >
                     <Play size={30} fill="currentColor" className="ml-1" />
                   </button>
-                  <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8b1528] shadow-sm">
+                  <div
+                    className={`pointer-events-none absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8b1528] shadow-sm transition-opacity duration-300 ${
+                      isVerdictVideoPlaying ? "opacity-0" : "opacity-100"
+                    }`}
+                  >
                     Dr. Angie Demo
                   </div>
                 </div>
-                <p className="mt-4 text-center text-xs md:text-sm font-medium text-gray-600 leading-snug max-w-[240px] md:max-w-none mx-auto">
+                <p className="mt-4 text-center text-xs md:text-sm font-medium text-gray-600 leading-snug max-w-[320px] sm:max-w-[420px] md:max-w-none mx-auto">
                   Watch Dr. Angie demonstrate cervical spine alignment, shoulder clearance, and zero-pressure ear comfort.
                 </p>
               </div>
