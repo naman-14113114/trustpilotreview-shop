@@ -91,12 +91,6 @@ const tawkFrontendHideCss = `
 `;
 
 const tawkToScript = `
-  if (
-    window.location.pathname === "/best-electric-toothbrush-uk-2026" ||
-    window.location.pathname === "/best-hearing-aids-uk-2026"
-  ) {
-    window.__tprTawkDeferredForLandingPage = true;
-  } else {
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
 
@@ -144,7 +138,6 @@ const tawkToScript = `
     s1.charset = 'UTF-8';
     s0.parentNode.insertBefore(s1, s0);
   })();
-  }
 `;
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
