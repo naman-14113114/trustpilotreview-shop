@@ -62,7 +62,7 @@ const googleTagManager = `
       j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
       f.parentNode.insertBefore(j,f);
     }
-    if(d.location.pathname==='/best-electric-toothbrush-uk-2026'){
+    if(d.location.pathname==='/best-electric-toothbrush-uk-2026' || d.location.pathname==='/best-hearing-aids-uk-2026'){
       events.forEach(function(name){w.addEventListener(name,load,{once:true,passive:true});});
       w.setTimeout(load,30000);
     }else{
@@ -91,7 +91,10 @@ const tawkFrontendHideCss = `
 `;
 
 const tawkToScript = `
-  if (window.location.pathname === "/best-electric-toothbrush-uk-2026") {
+  if (
+    window.location.pathname === "/best-electric-toothbrush-uk-2026" ||
+    window.location.pathname === "/best-hearing-aids-uk-2026"
+  ) {
     window.__tprTawkDeferredForLandingPage = true;
   } else {
   window.Tawk_API = window.Tawk_API || {};

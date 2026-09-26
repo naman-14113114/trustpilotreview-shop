@@ -9843,6 +9843,104 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Made browser native media controls conditional (`controls={isVerdictVideoPlaying}`), ensuring that the initial poster thumbnail displays clean with only the play button and "Dr. Angie Demo" badge, without any overlapping native browser seekbar or media controls.
   - Verification: `pnpm --filter @trustpilotreview/site build` passed with 0 errors across all 67 static pages.
 
+### [2026-09-26] BEST HEARING AIDS UK 2026: EXIT INTENT POPUP & TAWK SUPPRESSION CONFIGURATION
+
+- **User Intent & Protected Scope**:
+  1. Create `apps/site/public/assets/hearing-aids-exit-popup.js` modeled on `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Eligible paths: `["/best-hearing-aids-uk-2026"]`
+     - Storage key: `hearing_aids_exit_popup_seen_v1`
+     - Heading: "The #1 OTC Hearing Aid pick is still 50% off."
+     - Body: "Before you leave, experience crystal-clear speech intelligibility and discreet invisible comfort. Muuhu HearClear Pro CIC features dual DSP noise reduction, 30-hour single charge (150-hour total with HD display case), and a 90-day risk-free trial for £149 instead of £299."
+     - Button CTA: "Claim 50% Off Muuhu HearClear Pro →" with outbound destination `https://muuhu.com/products/Muuhu-hearing-aids`
+     - Desktop and mobile exit triggers (mouseleave/mouseout top exit, mobile fast scroll-up after 42% page depth, mobile time-on-page delay after scrolling) + scroll unlock (`document.documentElement.classList.remove("hearing-aids-exit-lock")`) on close.
+     - Event tracking: Pushes `hearing_aids_exit_popup_view` and `hearing_aids_exit_popup_cta_click` to dataLayer.
+     - Global testing hook: `window.__hearingAidsExitPopup`.
+  2. Inspect and configure `apps/site/src/app/layout.tsx`:
+     - Include `/best-hearing-aids-uk-2026` in `tawkToScript` deferred suppression alongside `/best-electric-toothbrush-uk-2026` to prevent Tawk chat widget iframe from blocking sticky CTA elements.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `02773af`.
+  - Created Files:
+    - `apps/site/public/assets/hearing-aids-exit-popup.js`
+  - Modified Files:
+    - `apps/site/src/app/layout.tsx`
+
+- **Verification Performed**:
+  - `node --check apps/site/public/assets/hearing-aids-exit-popup.js`: Syntax check passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site typecheck`: TypeScript verification passed cleanly.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build passed with exit code 0, generating all 67 static routes.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes only, no unrequested commit, push, or deployment performed.
+
+### [2026-09-26] HEARING AIDS DATA LAYER IMPLEMENTATION (`hearingAids.ts` & `hearingAidGuides.ts`)
+
+- **User Intent & Protected Scope**:
+  1. Create the data layer files for Hearing Aids in trustpilotreview-shop following the exact types and structures from `apps/site/src/data/toothbrushes.ts` and `apps/site/src/data/toothbrushGuides.ts`:
+     - File 1: `apps/site/src/data/hearingAids.ts`
+     - File 2: `apps/site/src/data/hearingAidGuides.ts`
+  2. Implement complete product dataset for #1 Muuhu HearClear Pro CIC and #2 to #5 competitors:
+     - #1: "Muuhu HearClear Pro CIC", "Muuhu", "£149" (compare at "£299" / 50% Off), 4.9★, "A+", "Best Overall 2026", ctaUrl `https://muuhu.com/products/Muuhu-hearing-aids`, "Official Website", 2.0g CIC, <20dB EIN anti-howling DSP, 30h battery / 150h HD display case, medical-grade nano-coated (ISO 13485), senior simplicity Blue/Red, 90-day money-back guarantee, 3-year UK warranty, £59 free gift bundle (Travel Case £20, 6-Piece Domes £15, Wax Guard Kit £12, USB-C Cable £12), 5 metric scores (97, 98, 99, 96, 100).
+     - #2: Boots Ceretone Core One Pro (£389.99, 4.3★, Grade A-, "Runner Up", Intricon A16, 20h battery / 80h case, 35-day return with 25-day lock-in, 1-year warranty, metrics: 88, 96, 84, 82, 76).
+     - #3: Audicus Mini Series 2 (£1,950 / $2,498 USD, 4.2★, Grade B+, "Luxury Clinic Grade", 16-channel Sonova DSP, 28h battery / 140h case, 100-day trial, 2-year warranty, metrics: 92, 99, 90, 86, 68).
+     - #4: MDHearing Air (£249 / was £465, 3.8★, Grade C+, "Outdated BTE Design", 12-channel DSP, 16h battery / 48h case, 45-day trial, 1-year warranty, metrics: 80, 68, 65, 79, 75).
+     - #5: Audien Atom Pro (£199 / $249 USD, 3.5★, Grade C, "Budget Amplifier / Feedback Risk", basic hybrid amplifier, 24h battery / 96h case, screwdriver dial, 45-day trial, 1-year warranty, metrics: 62, 74, 78, 65, 70).
+  3. Implement comprehensive guide dataset in `apps/site/src/data/hearingAidGuides.ts`:
+     - Dr. Eleanor Vance, AuD, MSc (Senior Consultant Audiologist) clinical verdicts.
+     - 10 Evaluation Criteria.
+     - 11 Comparison Table rows.
+     - 13 exhaustive guide configurations across 6 categories (Competitor Battles, Switching Guides, Superlative & Feature Benchmarks, Hearing Health & Senior Living, Discreet Design & Daily Life, Official Reviews & Brand Trials).
+     - Metadata helper `hearingAidGuideMetadata` and lookup `getHearingAidGuide`.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `02773af`.
+  - Created Files:
+    - `apps/site/src/data/hearingAids.ts`
+    - `apps/site/src/data/hearingAidGuides.ts`
+  - Ending: worktree with 2 new data files ready for site consumption.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: TypeScript compilation passed cleanly with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: ESLint check passed cleanly with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build passed with exit code 0, generating all 68 static and dynamic routes (`68/68` routes generated).
+  - Snyk security tool invoked (snyk_code_scan required auth).
+
+### [2026-09-26] HEARING AIDS ADVERTORIAL COMPONENT IMPLEMENTATION (`HearingAidsAdvertorial.tsx`)
+
+- **User Intent & Protected Scope**:
+  1. Create the advertorial component at `apps/site/src/features/hearing-aids/HearingAidsAdvertorial.tsx` replicating the exact structure, layout, typography (Mulish/Halant & Playfair), animations, styling, and text formatting of `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`.
+  2. Implement all required sections and features:
+     - Imports from `@/data/hearingAids` and `@/data/hearingAidGuides`.
+     - Hero Emerald Banner (`bg-emerald-500`) with dynamic London time formatted date (`formatLondonDate`), UK `MarketFlag`, and Playfair headline.
+     - 2-Layer Hero Collage: Background competitor container bar (`top-4-competitors-container-bar.webp`) + floating #1 Muuhu HearClear Pro card (`muuhu-hearclear-pro-banner.webp`) with elevation shadows and white border.
+     - Dr. Eleanor Vance, Au.D., CCC-A Consultant Audiologist Card with avatar, clinical credentials, italic quote with emerald accent bar, and 200+ hour clinical testing disclosure.
+     - 10-Point Clinical Evaluation Criteria with `ShieldCheck` icons and audiological testing methodology summary.
+     - RankRibbon clipped polygon badges (`clip-path: polygon(...)`) with multi-layer emerald gradient shimmer for #1 Winner and standard badges for #2–#5.
+     - MetricBar animated progress bars with Framer Motion (`motion.div` with viewport-triggered reveal).
+     - Dual-column Pros (emerald box with `Check`) & Cons (red box with `XCircle`) with bold label separation.
+     - PackagePanel for #1 Muuhu: 4-Piece Deluxe Hearing Care Kit (£59 Value Included Free) featuring 4 gift cards (Deluxe Hard Travel Case £20, 6-Piece Comfort Domes £15, Cerumen Wax Guard Kit £12, Braided USB-C Cable £12) with hover animations and "Check Availability" CTA.
+     - 11-point Responsive Side-by-Side Comparison Table with mobile swipe hint and sticky header alignment across top 5 UK hearing aids (Muuhu HearClear Pro CIC, Boots Ceretone Core One Pro, Audicus Mini Series 2, MDHearing Air, Audien Atom Pro).
+     - Bottom Audiologist Verdict Box with cream background (`#f8f4e6`), border (`#e8dccb`), image of Dr. Eleanor Vance holding Muuhu device (`muuhu-hearclear-pro-audiologist-verdict-dr-eleanor.webp`), "Now at 50% off" callout, Trustpilot 4.9★ badge with `GreenStarRating`, and green gradient CTA button (`!bg-gradient-to-b !from-[#1a7444] !to-[#0d4a29]`).
+     - Sticky Mobile CTA Bar (`fixed bottom-0`) with CSS shimmer animation and `OutboundLoader` spinner.
+     - Outbound click handler with UTM forwarding to `https://muuhu.com/products/Muuhu-hearing-aids`, `window.dataLayer.push({ event: "hearing_aid_outbound_click", ... })`, `window.dataLayer.push({ event: "affiliate_click", ... })`, and Microsoft UET pushes.
+     - FAQ Accordions with HTML5 `<details>` / `<summary>` and animated rotating `ChevronDown` chevrons.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `02773af`.
+  - Created Files:
+    - `apps/site/src/features/hearing-aids/HearingAidsAdvertorial.tsx`
+  - Ending: worktree with new feature component fully verified and integrated.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: TypeScript verification passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: ESLint verification passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack production build succeeded with exit code 0, prerendering all 68 static and dynamic routes including `/best-hearing-aids-uk-2026`.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes only, no unrequested commit, push, or deployment performed.
+
+
+
 
 
 

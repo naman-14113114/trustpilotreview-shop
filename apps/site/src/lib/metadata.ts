@@ -84,6 +84,13 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`,
     image: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp"
   },
+  "/best-hearing-aids-uk-2026": {
+    title: "Best Hearing Aids UK 2026: Top 5 Compared & Reviewed",
+    description:
+      "Compare the five best OTC and digital hearing aids in the UK for 2026 by speech clarity, noise cancellation, battery life, invisible fit, and warranty.",
+    canonical: `${SITE_URL}/best-hearing-aids-uk-2026`,
+    image: "/img/hearing-aids/top-5-hearing-aids-uk.webp"
+  },
   ...Object.fromEntries(
     buudyEditorialPages.map((page) => [
       page.path,
