@@ -118,10 +118,6 @@
   }
 
   function loadClarity() {
-    if (window.location.pathname === "/best-electric-toothbrush-uk-2026") {
-      window.__tprClarityDeferred = true;
-      return;
-    }
     startClarity();
   }
 
