@@ -307,11 +307,11 @@ function PackagePanel({
 
       <div className="relative z-10">
         <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
-          <span className="text-lg">📦</span> Included in Package
+          <span className="text-lg">🎁</span> Free Gifts Included
         </div>
 
         <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          What&apos;s Inside{" "}
+          Free Gifts Included in{" "}
           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
             Your Package
           </span>
@@ -324,6 +324,9 @@ function PackagePanel({
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
           {/* Luxury Travel Case */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
+              FREE
+            </div>
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
@@ -345,6 +348,12 @@ function PackagePanel({
 
           {/* Wall-Mounted Storage */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.2s" }}
+            >
+              FREE
+            </div>
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
@@ -366,6 +375,12 @@ function PackagePanel({
 
           {/* Up to 4 Extra Brush Heads */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.4s" }}
+            >
+              FREE
+            </div>
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"

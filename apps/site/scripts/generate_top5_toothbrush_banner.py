@@ -94,7 +94,7 @@ def generate_banner(output_webp: Path, output_png: Path):
     canvas.convert("RGB").save(root_img_dir / "top-4-competitors-container-bar.webp", "WEBP", quality=95)
 
     # 4. #1 Miroooo X Card (Taller than container, extends OUT vertically 30px above and 30px below)
-    miroooo_path = RAW_IMAGES_DIR / "Miroooo_x_Silver-2.jpg"
+    miroooo_path = Path(r"E:\1st YEAR DTU\New folder\miroooo_images\Miroooo X2\Miroooo-X2_top_image.jpg")
     im_m = Image.open(miroooo_path).convert("RGB")
     
     CARD_H = 410
