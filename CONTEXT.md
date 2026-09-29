@@ -10029,3 +10029,37 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 ---
 
+## Session Log: 29 September 2026 - Best LED Face Mask UK Side-by-Side Comparison Table Addition
+
+- **User Intent & Protected Scope**:
+  1. Synchronize repository state and context files prior to editing code.
+  2. Add a side-by-side 5-product comparison table directly below the Dermatologist's Verdict / video section at the bottom of the Best LED Face Mask UK page (`/best-led-face-mask-uk-2026`), matching the design, layout, and styling from the Best Electric Toothbrush UK page (`/best-electric-toothbrush-uk-2026`).
+  3. Scope discipline: strictly preserved all existing layouts, editorial reviews, video player, pricing, outbound tracking (`buudy_outbound_click`, `affiliate_click`, Microsoft Ads UET), and components with minimal, targeted changes.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `f7c1208` (clean, synchronized with `origin/main`).
+  - Modified Files:
+    - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`: Added `ComparisonTableProduct` interface, `TOP_5_LED_MASK_COMPARISON_ROWS`, `getComparisonProducts(market)`, and the `CompetitorComparisonTable` component styled identically to `ElectricToothbrushesAdvertorial.tsx` (white rounded-3xl container, responsive horizontal scroll with mobile swipe prompt, green checkmarks / red crosses, price comparison, rating, and product thumbnails). Placed directly below the Dermatologist Verdict video container in `<main>`.
+    - `CONTEXT.md`
+  - Ending: worktree with clean modified `BestLedFaceMaskAdvertorial.tsx` passing all local checks.
+
+- **Ranked LED Mask Comparison Matrix (UK Baseline)**:
+  - **#1 Buudy 7 Colour LED Mask**: £179 (was £449), 4.9★, 192 LEDs, 7 Colours + 830nm NIR, Integrated Neck Coverage: Yes, Multi-Skin Therapy: Yes, Eye Protection: Yes, Cordless/Rechargeable: Yes, Free Gifts Included: Yes (£128 bundle), Trial: 90-Day Money-Back, Free UK Delivery: Yes.
+  - **#2 CurrentBody Skin LED Mask**: £399.99, 4.7★, 132 LEDs, Red & NIR (3 Modes), Neck: No (£280 extra kit), Multi-Skin: No, Eye: No (Optional inserts), Cordless: Yes, Gifts: No, Trial: 60-Day (10% restocking fee), Free Delivery: No.
+  - **#3 Omnilux Contour LED Mask**: £348, 4.6★, 132 LEDs, Red & NIR (2 Modes), Neck: No (£348 separate piece), Multi-Skin: No, Eye: No, Cordless: Yes, Gifts: No, Trial: 30-Day Guarantee, Free Delivery: No.
+  - **#4 Shark CryoGlow LED Mask**: £299.99, 4.6★, Unspecified LED count, Red & Blue (4 Modes), Neck: No, Multi-Skin: No, Eye: Yes (Chill pads), Cordless: No (Heavy rigid shell), Gifts: No, Trial: 30-Day Guarantee, Free Delivery: No.
+  - **#5 Dr. Dennis Gross DRx SpectraLite**: £455, 4.1★, 162 LEDs, Red & Blue (3 Modes), Neck: No, Multi-Skin: No, Eye: No, Cordless: Yes, Gifts: No, Trial: 30-Day Guarantee, Free Delivery: No.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: TypeScript verification passed cleanly with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: ESLint verification passed cleanly with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with exit code 0; all 68/68 static and dynamic routes compiled cleanly.
+  - `pnpm verify:parity`: Route parity verified with 0 errors.
+  - DOM & HTML inspection: Verified prerendered `best-led-face-mask-uk-2026.html` renders the new 5-product comparison table with complete specs, badges, and pricing.
+
+- **Commit, Push, & Deployment Status**:
+  - Local changes verified; no unrequested commit, push, or deployment performed.
+
+---
+
+

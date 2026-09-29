@@ -709,6 +709,387 @@ export const MetricBar: React.FC<{ label: string; value: number }> = ({
   </div>
 );
 
+interface ComparisonTableProduct {
+  rank: number;
+  name: string;
+  shortName: string;
+  image: string;
+  price: string;
+  originalPrice?: string;
+  rating: number;
+  ledCount: string;
+  lightWavelengths: string;
+  neckCoverage: boolean;
+  multiSkinModes: boolean;
+  eyeProtection: boolean;
+  cordlessRechargeable: boolean;
+  freeGifts: boolean;
+  moneyBackTrial: string;
+  freeDelivery: boolean;
+}
+
+type ComparisonRowDef =
+  | {
+      key:
+        | "neckCoverage"
+        | "multiSkinModes"
+        | "eyeProtection"
+        | "cordlessRechargeable"
+        | "freeGifts"
+        | "freeDelivery";
+      label: string;
+      kind: "boolean";
+    }
+  | {
+      key: "ledCount" | "lightWavelengths" | "moneyBackTrial";
+      label: string;
+      kind: "text";
+    }
+  | {
+      key: "price";
+      label: string;
+      kind: "price";
+    };
+
+const TOP_5_LED_MASK_COMPARISON_ROWS: ComparisonRowDef[] = [
+  { key: "ledCount", label: "LED Bulb Count", kind: "text" },
+  { key: "lightWavelengths", label: "Light Spectrum / Modes", kind: "text" },
+  { key: "neckCoverage", label: "Integrated Neck Coverage", kind: "boolean" },
+  { key: "multiSkinModes", label: "Total Skin Health (Acne, Tone, Aging)", kind: "boolean" },
+  { key: "eyeProtection", label: "Built-in Eye Protection", kind: "boolean" },
+  { key: "cordlessRechargeable", label: "Cordless & Hands-Free", kind: "boolean" },
+  { key: "freeGifts", label: "Free Deluxe Gift Bundle", kind: "boolean" },
+  { key: "moneyBackTrial", label: "Risk-Free Trial", kind: "text" },
+  { key: "freeDelivery", label: "Free Tracked Delivery", kind: "boolean" },
+  { key: "price", label: "Price", kind: "price" },
+];
+
+function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduct[] {
+  const prices = market.productPrices;
+
+  if (market.key === "ca") {
+    return [
+      {
+        rank: 1,
+        name: "Buudy 7 Colour LED Mask",
+        shortName: "Buudy 7 Colour",
+        image: "/img/57-w.webp",
+        price: prices.buudy.price,
+        originalPrice: prices.buudy.originalPrice,
+        rating: 4.9,
+        ledCount: "192 LEDs",
+        lightWavelengths: "7 Colours + 830nm NIR",
+        neckCoverage: true,
+        multiSkinModes: true,
+        eyeProtection: true,
+        cordlessRechargeable: true,
+        freeGifts: true,
+        moneyBackTrial: "90-Day Money-Back",
+        freeDelivery: true,
+      },
+      {
+        rank: 2,
+        name: "CurrentBody LED Mask",
+        shortName: "CurrentBody",
+        image: "/img/Untitled design.png",
+        price: prices.currentbody.price,
+        rating: 4.7,
+        ledCount: "132 LEDs",
+        lightWavelengths: "Red & NIR (3 Modes)",
+        neckCoverage: false,
+        multiSkinModes: false,
+        eyeProtection: false,
+        cordlessRechargeable: true,
+        freeGifts: false,
+        moneyBackTrial: "60-Day (10% Fee)",
+        freeDelivery: false,
+      },
+      {
+        rank: 3,
+        name: "Kala Red Light Face Mask",
+        shortName: "Kala Red Light",
+        image: "/img/kala-1.jpg",
+        price: "$382.49",
+        rating: 4.5,
+        ledCount: "198 LEDs",
+        lightWavelengths: "Red, NIR & Blue (3 Modes)",
+        neckCoverage: false,
+        multiSkinModes: false,
+        eyeProtection: false,
+        cordlessRechargeable: true,
+        freeGifts: false,
+        moneyBackTrial: "60-Day Guarantee",
+        freeDelivery: false,
+      },
+      {
+        rank: 4,
+        name: "TheraFace Mask",
+        shortName: "TheraFace",
+        image: "/img/WhatsApp Image 2026-02-08 at 12.18.58 AM.jpeg",
+        price: "$799.99",
+        rating: 4.3,
+        ledCount: "648 LEDs",
+        lightWavelengths: "Red, Blue & Yellow + Vibration",
+        neckCoverage: false,
+        multiSkinModes: false,
+        eyeProtection: false,
+        cordlessRechargeable: true,
+        freeGifts: false,
+        moneyBackTrial: "30-Day Guarantee",
+        freeDelivery: false,
+      },
+      {
+        rank: 5,
+        name: "Equinox LED Mask",
+        shortName: "Equinox LED",
+        image: "/img/WhatsApp Image 2026-02-08 at 12.16.22 AM.jpeg",
+        price: "$385",
+        rating: 4.2,
+        ledCount: "336 LEDs",
+        lightWavelengths: "Red, NIR, Blue, Yellow",
+        neckCoverage: false,
+        multiSkinModes: false,
+        eyeProtection: false,
+        cordlessRechargeable: false,
+        freeGifts: false,
+        moneyBackTrial: "30-Day Guarantee",
+        freeDelivery: false,
+      },
+    ];
+  }
+
+  return [
+    {
+      rank: 1,
+      name: "Buudy 7 Colour LED Mask",
+      shortName: "Buudy 7 Colour",
+      image: "/img/57-w.webp",
+      price: prices.buudy.price,
+      originalPrice: prices.buudy.originalPrice,
+      rating: 4.9,
+      ledCount: "192 LEDs",
+      lightWavelengths: "7 Colours + 830nm NIR",
+      neckCoverage: true,
+      multiSkinModes: true,
+      eyeProtection: true,
+      cordlessRechargeable: true,
+      freeGifts: true,
+      moneyBackTrial: "90-Day Money-Back",
+      freeDelivery: true,
+    },
+    {
+      rank: 2,
+      name: "CurrentBody LED Mask",
+      shortName: "CurrentBody",
+      image: "/img/Untitled design.png",
+      price: prices.currentbody.price,
+      rating: 4.7,
+      ledCount: "132 LEDs",
+      lightWavelengths: "Red & NIR (3 Modes)",
+      neckCoverage: false,
+      multiSkinModes: false,
+      eyeProtection: false,
+      cordlessRechargeable: true,
+      freeGifts: false,
+      moneyBackTrial: "60-Day (10% Fee)",
+      freeDelivery: false,
+    },
+    {
+      rank: 3,
+      name: "Omnilux LED Mask",
+      shortName: "Omnilux",
+      image: "https://img.thesitebase.net/10677/10677322/themes/1769107230af732ce69a.jpeg",
+      price: prices.omnilux.price,
+      rating: 4.6,
+      ledCount: "132 LEDs",
+      lightWavelengths: "Red & NIR (2 Modes)",
+      neckCoverage: false,
+      multiSkinModes: false,
+      eyeProtection: false,
+      cordlessRechargeable: true,
+      freeGifts: false,
+      moneyBackTrial: "30-Day Guarantee",
+      freeDelivery: false,
+    },
+    {
+      rank: 4,
+      name: "Shark CryoGlow LED Mask",
+      shortName: "Shark CryoGlow",
+      image: "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
+      price: prices.shark.price,
+      rating: 4.6,
+      ledCount: "Unspecified",
+      lightWavelengths: "Red & Blue (4 Modes)",
+      neckCoverage: false,
+      multiSkinModes: false,
+      eyeProtection: true,
+      cordlessRechargeable: false,
+      freeGifts: false,
+      moneyBackTrial: "30-Day Guarantee",
+      freeDelivery: false,
+    },
+    {
+      rank: 5,
+      name: "Dr. Dennis Gross DRx SpectraLite",
+      shortName: "Dr. Dennis Gross",
+      image: "/img/Dr Dennis Gross.png",
+      price: prices.drdenis.price,
+      rating: 4.1,
+      ledCount: "162 LEDs",
+      lightWavelengths: "Red & Blue (3 Modes)",
+      neckCoverage: false,
+      multiSkinModes: false,
+      eyeProtection: false,
+      cordlessRechargeable: true,
+      freeGifts: false,
+      moneyBackTrial: "30-Day Guarantee",
+      freeDelivery: false,
+    },
+  ];
+}
+
+function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
+  const comparisonProducts = getComparisonProducts(market);
+
+  return (
+    <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans">
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
+          Top 5 LED Face Masks Side-by-Side Comparison
+        </h2>
+        <p className="text-slate-600 mt-2 text-sm md:text-base font-sans">
+          Detailed technical specifications, light wavelengths, included coverage, and ownership value compared across the {market.countryAdjective ? market.countryAdjective : "UK"}&apos;s leading 2026 models.
+        </p>
+      </div>
+
+      {/* Mobile Swipe Hint */}
+      <div className="block lg:hidden text-center text-xs text-slate-500 font-medium mb-4 bg-slate-50 py-2 px-3 rounded-lg border border-slate-100 font-sans">
+        ← Swipe horizontally to compare all 5 masks →
+      </div>
+
+      {/* Table Container */}
+      <div className="overflow-x-auto -mx-2 sm:mx-0">
+        <table className="w-full text-left border-collapse min-w-[720px] lg:min-w-full table-fixed font-sans">
+          <thead>
+            <tr className="border-b-2 border-slate-200">
+              <th className="py-4 px-3 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm md:text-base w-[18%] bg-slate-50/50 rounded-tl-xl align-bottom font-sans">
+                Feature / Metric
+              </th>
+              {comparisonProducts.map((prod) => (
+                <th
+                  key={prod.rank}
+                  className={`py-4 px-2 text-center w-[16.4%] align-bottom border-l border-slate-200 ${
+                    prod.rank === 1 ? "bg-emerald-50/40" : "bg-white"
+                  }`}
+                >
+                  <div className="flex flex-col items-center">
+                    <span
+                      className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-1.5 font-sans ${
+                        prod.rank === 1 ? "text-emerald-700" : "text-slate-500"
+                      }`}
+                    >
+                      #{prod.rank} {prod.rank === 1 ? "Winner" : "Ranked"}
+                    </span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-2.5 flex items-center justify-center p-1 bg-white rounded-xl border border-slate-200 shadow-sm">
+                      <img
+                        src={prod.image}
+                        alt={prod.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <span className="font-bold text-slate-900 text-sm sm:text-base md:text-lg line-clamp-1 mb-1 font-sans">
+                      {prod.shortName}
+                    </span>
+                    <div className="mb-2 scale-90 sm:scale-100">
+                      <GreenStarRating rating={prod.rating} size={14} />
+                    </div>
+                    <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                      <span className="text-base sm:text-xl md:text-2xl font-black text-slate-900">
+                        {prod.price}
+                      </span>
+                      {prod.originalPrice && (
+                        <span className="text-xs sm:text-sm text-slate-400 line-through font-medium">
+                          {prod.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100 text-xs sm:text-sm font-sans">
+            {TOP_5_LED_MASK_COMPARISON_ROWS.map((row, idx) => (
+              <tr
+                key={row.key}
+                className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"}
+              >
+                <td className="py-3.5 px-3 sm:px-4 font-semibold text-slate-800 align-middle text-xs sm:text-sm font-sans">
+                  {row.label}
+                </td>
+                {comparisonProducts.map((prod) => {
+                  if (row.kind === "boolean") {
+                    const isPassed = prod[row.key];
+                    return (
+                      <td
+                        key={`${prod.rank}-${row.key}`}
+                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                      >
+                        <div className="flex items-center justify-center">
+                          {isPassed ? (
+                            <Check className="w-5 h-5 text-emerald-500 shrink-0" />
+                          ) : (
+                            <XCircle className="w-5 h-5 text-red-500 shrink-0" />
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  if (row.kind === "price") {
+                    return (
+                      <td
+                        key={`${prod.rank}-price-row`}
+                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                      >
+                        <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                          <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
+                            {prod.price}
+                          </span>
+                          {prod.originalPrice && (
+                            <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
+                              {prod.originalPrice}
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  const textVal = prod[row.key];
+                  return (
+                    <td
+                      key={`${prod.rank}-${row.key}`}
+                      className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                    >
+                      <span className="text-xs sm:text-sm font-medium text-slate-800 font-sans">
+                        {textVal}
+                      </span>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
 export default function Home({
   market: marketKey = "uk",
   context,
@@ -1536,6 +1917,9 @@ export default function Home({
             </div>
           </div>
         </div>
+
+        {/* 5-Product Side-by-Side Comparison Table */}
+        <CompetitorComparisonTable market={market} />
       </main>
 
       <footer className="mt-0 border-t border-slate-200 bg-white px-4 py-8 shadow-inner">
