@@ -155,7 +155,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Direct comparison: 51g aluminium acoustic motor with 45° Bass sweep vs 140g oscillating plastic handle, 90-day USB-C battery vs 14-day runtime, and £69 flagship vs £129.99.",
     seoTitle: "Miroooo Brush X2 vs Oral-B iO Series 6 Review UK 2026 | Head-to-Head Comparison",
     seoDescription:
-      "Miroooo Brush X2 (£69) vs Oral-B iO6 (£129.99). Compare 45° Bass sweep acoustic cleaning, 51g weight, <50dB noise, 90-day USB-C battery, and UK refill costs with Dr. Olivia's verdict.",
+      "Miroooo Brush X2 (£69) vs Oral-B iO6 (£129.99). Compare 45° Bass sweep acoustic cleaning, 51g weight, <45dB noise, 90-day USB-C battery, and UK refill costs with Dr. Olivia's verdict.",
     eyebrow: "Head-to-Head Comparison",
     headline: "Miroooo Brush X2 vs Oral-B iO6: Which Electric Toothbrush Wins in 2026?",
     subheadline:
@@ -163,7 +163,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.oralBiO6,
     heroAlt: "Miroooo Brush X2 vs Oral-B iO6 electric toothbrush comparison",
     quickTake:
-      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 90-day cobalt battery with universal USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at less than half the price (£69 vs £129.99).",
+      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X2 decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<45dB vs ~64dB), 90-day cobalt battery with universal USB-C charging endurance, smart pressure sensor halo ring, affordable refills, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) at less than half the price (£69 vs £129.99).",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -176,7 +176,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "When upgrading your electric toothbrush in the UK, the choice often comes down to two very different design philosophies: the high-tech, oscillating-rotating mechanical approach of legacy giants like Oral-B, or the ultra-modern, lightweight acoustic engineering of Miroooo Brush X2.",
       "The Oral-B iO Series 6 (£129.99) is renowned for its interactive OLED display, AI position recognition, and round mechanical brush head. However, it also brings classic legacy drawbacks: a bulky 140g plastic handle, a loud 64dB oscillating gear whine, a short 14-day battery, and expensive replacement head prices (£8 to £12 each).",
-      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 50dB with 45° Bass sweeping, 90 days of battery with universal USB-C charging, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
+      "By contrast, Miroooo Brush X2 (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, a whisper-quiet motor below 45dB with 45° Bass sweeping, 90 days of battery with universal USB-C charging, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads), it provides superior daily comfort and advanced gum protection at significantly lower cost than legacy flagships.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -194,7 +194,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Ergonomic Comfort: At 51g, Miroooo Brush X2 is nearly 3x lighter than the 140g Oral-B iO6, dramatically reducing wrist fatigue.",
       "Acoustic vs Friction: 45° Bass sweep micro-bubble fluid dynamics clean deep between teeth and beneath the gumline without abrasive mechanical scrubbing.",
       "Universal USB-C Charging: Up to 90 days of battery life with universal USB-C fast charging provides effortless travel convenience.",
-      "Whisper-Quiet Operation: Under 50dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
+      "Whisper-Quiet Operation: Under 45dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
       "Unbeatable Value: £69 purchase price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads), 90-day money-back guarantee, and 3-year warranty.",
     ],
     comparisonRows: [
@@ -221,7 +221,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Operating Noise",
-        miroooo: "<50dB (Whisper quiet acoustic operation)",
+        miroooo: "<45dB (Whisper quiet acoustic operation)",
         competitor: "~64dB (Loud mechanical oscillating whine)",
         whyItMatters: "Quiet motors prevent morning sensory overload and loud buzzing in the ear.",
         advantage: "miroooo",
@@ -395,7 +395,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Operating Sound",
-        miroooo: "<50dB (Whisper-quiet acoustic sound)",
+        miroooo: "<45dB (Whisper-quiet acoustic sound)",
         competitor: "~56–60dB (High-pitched sonic buzzing sound)",
         whyItMatters: "A quieter acoustic motor provides a smoother, less jarring morning routine.",
         advantage: "miroooo",
@@ -499,7 +499,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     },
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
-      "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 2 heads), a mediocre 34-day battery life, a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
+      "The SURI Pro 2.0 (£85) emphasises eco-friendliness with plant-based cornstarch heads, castor oil bristles, an aluminium alloy body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 2 heads), a mediocre 34-day battery life, a heavier 85g handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mould, and zero bonus accessories in the £85 box.",
       "Miroooo Brush X2 (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, acoustic motor with 45° Bass sweep oscillation, smart pressure sensor halo ring, 3 halo LED modes, durable 3D end-rounded brush heads, 90-day cobalt battery with universal USB-C charging, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
@@ -516,7 +516,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     ],
     winnerBullets: [
       "No Cracked Heads: Miroooo Brush X2's precision brush heads eliminate the cracking and loose shaft issues common to SURI's cornstarch heads.",
-      "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless manoeuvrability.",
+      "Featherlight 51g Body: 40% lighter in hand than SURI's 85g handle for effortless manoeuvrability.",
       "45° Bass Sweep & Smart Halo Ring: Features 3 halo LED modes and active pressure warning, where SURI only offers 2 basic settings with no visual halo.",
       "Longer 90-Day Cobalt Battery: Lasts nearly 3x longer than SURI's 34-day battery on a single charge.",
       "Better Package Value: £69 includes Luxury Travel Case, Wall-Mounted Storage, and Up to 4 Extra Brush Heads, while SURI charges £85 with no travel case in the box.",
@@ -539,7 +539,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         feature: "Weight & Chassis Build",
         miroooo: "51g (Aerospace aluminium unibody, IPX7 waterproof)",
-        competitor: "~85g (Modular multi-piece aluminium body)",
+        competitor: "~85g (Aluminium alloy body)",
         whyItMatters: "A lighter unibody has fewer moisture seams and reduces hand fatigue during brushing.",
         advantage: "miroooo",
       },
@@ -633,7 +633,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "For UK shoppers evaluating electric toothbrushes around the entry £75 price point, the market presents a stark contrast: a stripped-down plastic model from a legacy brand, or a fully loaded, precision-engineered acoustic flagship for £69.",
       "The Oral-B iO3 Matt Black (£75, RRP £160) is designed as an entry gateway into Oral-B's magnetic micro-vibration system. It includes a 360° smart pressure ring, 3 basic cleaning modes, and a hard travel case. However, to hit this product line, Oral-B stripped away the defining smart features of the iO line: there is no interactive OLED display screen, no Bluetooth app tracking, a dated 14-day battery that takes a sluggish 16 hours to charge, and proprietary iO refill heads that cost £8 to £12 each.",
-      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 50dB, an industry-leading 90-day cobalt cell battery with universal USB-C charging, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
+      "Miroooo Brush X2 (£69) represents flagship acoustic engineering without compromise. It features a precision aerospace aluminium unibody, 45° Bass sweep dynamic micro-vibrations, an intelligent smart pressure sensor halo ring with 3 halo LED modes, whisper-quiet acoustic sound under 45dB, an industry-leading 90-day cobalt cell battery with universal USB-C charging, Miroooo Dentalcare App connectivity, and an included package (Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads).",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -651,7 +651,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Flagship Smart Guidance: Miroooo Brush X2 integrates a 360° smart pressure halo ring (with 3 halo LED modes) and Miroooo Dentalcare App tracking, whereas Oral-B stripped all Bluetooth and app tracking from the iO3.",
       "Premium Aerospace Aluminium: Seamless mould-resistant metal chassis replaces the bulky 136g polycarbonate and rubber grime traps of the iO3.",
       "90-Day Cobalt Cell Power: Fast universal USB-C charging delivers 3 full months of runtime, eliminating the iO3's sluggish 16-hour recharge cycle.",
-      "45° Bass Sweep Acoustic Cleaning: Whisper-quiet (<50dB) micro-vibrations clean subgingivally without the harsh 64dB gear buzzing and jaw rattle of the iO3.",
+      "45° Bass Sweep Acoustic Cleaning: Whisper-quiet (<45dB) micro-vibrations clean subgingivally without the harsh 64dB gear buzzing and jaw rattle of the iO3.",
       "Superior Value & Refill Savings: Miroooo Brush X2 (£69) costs less upfront than the £75 iO3, includes complete accessories (Luxury Travel Case, Wall-Mounted Storage, Up to 4 Extra Brush Heads), and spares owners from costly iO replacement head markups.",
     ],
     comparisonRows: [
@@ -678,7 +678,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Operating Noise",
-        miroooo: "<50dB (45° Bass sweep acoustic motor)",
+        miroooo: "<45dB (45° Bass sweep acoustic motor)",
         competitor: "~64dB (Loud mechanical oscillating motor)",
         whyItMatters: "Miroooo X2 pairs 45° Bass subgingival sweeping with whisper-quiet acoustics, avoiding the iO3's harsh mechanical motor vibrations.",
         advantage: "miroooo",
@@ -735,7 +735,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "SWITCH",
     cardTitle: "Why Switch from Legacy Electric Toothbrushes",
     cardDescription:
-      "The major reasons UK dental patients are switching from legacy brands (Oral-B, Sonicare) to modern acoustic brushes: 51g light weight, <50dB whisper sound, 90-day battery, and affordable refills.",
+      "The major reasons UK dental patients are switching from legacy brands (Oral-B, Sonicare) to modern acoustic brushes: 51g light weight, <45dB whisper sound, 90-day battery, and affordable refills.",
     seoTitle: "Why UK Buyers Are Ditching Legacy Electric Toothbrushes in 2026",
     seoDescription:
       "Discover why UK dental patients are switching from legacy electric toothbrushes (Oral-B, Sonicare) to modern acoustic brushes like Miroooo Brush X2. Clinical analysis by Dr. Olivia, BDS.",
@@ -746,7 +746,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.topFive,
     heroAlt: "Top 5 best electric toothbrushes in the UK compared for 2026",
     quickTake:
-      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to short 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X2 deliver superior plaque removal with 45° Bass sweeping, smart pressure halo feedback, whisper-quiet sound (<50dB), 90 days battery via universal USB-C charging, and complete included package accessories for £69.",
+      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to short 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X2 deliver superior plaque removal with 45° Bass sweeping, smart pressure halo feedback, whisper-quiet sound (<45dB), 90 days battery via universal USB-C charging, and complete included package accessories for £69.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -776,7 +776,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     winnerBullets: [
       "Long Battery Life: 90 days of battery life with universal USB-C charging means you charge only ~4 times a year.",
       "62% Lighter in Hand: 51g aerospace aluminium unibody prevents wrist fatigue and eliminates porous rubber grime traps.",
-      "Whisper-Quiet Acoustics: Runs under 50dB, eliminating the jarring morning power-tool noise of oscillating gearboxes.",
+      "Whisper-Quiet Acoustics: Runs under 45dB, eliminating the jarring morning power-tool noise of oscillating gearboxes.",
       "Dentist-Clean 45° Bass Sweep: Acoustic micro-bubbles flush plaque from beneath the gumline without enamel abrasion.",
       "Honest Direct-to-Consumer Value: £69 promotional price includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) and a 90-day money-back guarantee.",
     ],
@@ -804,7 +804,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Noise Level",
-        miroooo: "<50dB (Whisper-quiet acoustic sound)",
+        miroooo: "<45dB (Whisper-quiet acoustic sound)",
         competitor: "64dB – 70dB (Loud mechanical gear rattle)",
         whyItMatters: "Quiet motors make morning and evening routines relaxing.",
         advantage: "miroooo",
@@ -831,7 +831,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "How Modern Acoustic Engineering Solves Them All",
-        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <50dB whisper-quiet motor, 90 days battery via universal USB-C charging, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
+        body: "Miroooo Brush X2 was designed from a blank slate to eliminate legacy pain points: 51g aerospace aluminium unibody, 45° Bass sweep acoustic fluid dynamics, smart pressure sensor halo ring, <45dB whisper-quiet motor, 90 days battery via universal USB-C charging, and complete included package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) for £69.",
       },
     ],
     products: toothbrushProducts,
@@ -839,7 +839,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "Why should I switch from my old Oral-B or Sonicare to Miroooo?",
         answer:
-          "Switching to Miroooo Brush X2 upgrades your routine with a 51g aerospace aluminium body (over 60% lighter), 90 days of battery life via universal USB-C charging, smart pressure sensor halo ring, 45° Bass sweep guidance, whisper-quiet <50dB acoustic motor, and affordable replacement heads, saving you money both upfront and over time.",
+          "Switching to Miroooo Brush X2 upgrades your routine with a 51g aerospace aluminium body (over 60% lighter), 90 days of battery life via universal USB-C charging, smart pressure sensor halo ring, 45° Bass sweep guidance, whisper-quiet <45dB acoustic motor, and affordable replacement heads, saving you money both upfront and over time.",
       },
       {
         question: "Is acoustic sonic brushing better than mechanical rotating brushes?",
@@ -1061,31 +1061,31 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "QUIET",
     cardTitle: "Best Quiet Electric Toothbrush",
     cardDescription:
-      "<50dB acoustic whisper motor vs 65dB+ mechanical rattles for early UK mornings and sensory comfort.",
-    seoTitle: "Best Quiet Electric Toothbrush UK 2026 | <50dB Whisper-Quiet Acoustic Motor",
+      "<45dB acoustic whisper motor vs 65dB+ mechanical rattles for early UK mornings and sensory comfort.",
+    seoTitle: "Best Quiet Electric Toothbrush UK 2026 | <45dB Whisper-Quiet Acoustic Motor",
     seoDescription:
-      "Compare the quietest electric toothbrushes in the UK for 2026. Acoustic magnetic levitation motors tested below 50dB vs loud 65dB mechanical gearboxes in British homes.",
+      "Compare the quietest electric toothbrushes in the UK for 2026. Acoustic magnetic levitation motors tested below 45dB vs loud 65dB mechanical gearboxes in British homes.",
     eyebrow: "Acoustic Noise & Decibel Benchmark",
     headline: "Best Quiet Electric Toothbrush UK 2026",
     subheadline:
-      "We measured acoustic sound pressure (dB) and mechanical vibration across leading UK toothbrushes. Miroooo Brush X2 takes #1 operating under 50dB—delivering whisper-quiet brushing without the harsh chainsaw rattle of legacy motors.",
+      "We measured acoustic sound pressure (dB) and mechanical vibration across leading UK toothbrushes. Miroooo Brush X2 takes #1 operating under 45dB—delivering whisper-quiet brushing without the harsh chainsaw rattle of legacy motors.",
     heroImage: images.topFive,
     heroAlt: "Best quiet electric toothbrushes in the UK compared",
     quickTake:
-      "Loud mechanical oscillating toothbrushes exceed 65dB to 70dB—sounding like a mini power tool vibrating directly against your jaw. The Miroooo Brush X2 operates below 50dB using an advanced acoustic motor with 45° Bass sweep motion, delivering a peaceful, ultra-quiet clean that won't wake family members in shared UK terraced houses.",
+      "Loud mechanical oscillating toothbrushes exceed 65dB to 70dB—sounding like a mini power tool vibrating directly against your jaw. The Miroooo Brush X2 operates below 45dB using an advanced acoustic motor with 45° Bass sweep motion, delivering a peaceful, ultra-quiet clean that won't wake family members in shared UK terraced houses.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
         "Loud 65dB+ mechanical rattles vibrate directly through the jawbone, causing sensory fatigue and leading patients to brush for under a minute. Whisper-quiet acoustic levitation transforms daily hygiene into a calming routine.",
       clinicalRationale:
-        "Acoustic comfort is a critically overlooked aspect of dental compliance. Traditional oscillating toothbrushes rely on mechanical gears that generate abrasive 65dB+ vibrations. Because teeth are embedded in the alveolar bone, this sound conducts straight into the inner ear and skull, triggering sensory discomfort, morning headaches, and rushing. At sub-50dB, the Miroooo Brush X2 operates like a whisper, letting patients relax and thoroughly brush all four quadrants with 45° Bass sweep guidance.",
+        "Acoustic comfort is a critically overlooked aspect of dental compliance. Traditional oscillating toothbrushes rely on mechanical gears that generate abrasive 65dB+ vibrations. Because teeth are embedded in the alveolar bone, this sound conducts straight into the inner ear and skull, triggering sensory discomfort, morning headaches, and rushing. At sub-45dB, the Miroooo Brush X2 operates like a whisper, letting patients relax and thoroughly brush all four quadrants with 45° Bass sweep guidance.",
       recommendation:
-        "For early risers, shared households, and sensory comfort, the <50dB Miroooo Brush X2 is our top recommendation.",
+        "For early risers, shared households, and sensory comfort, the <45dB Miroooo Brush X2 is our top recommendation.",
     },
     intro: [
       "If you wake up early in a typical UK home or modern flat, turning on an electric toothbrush can sound like starting a small chainsaw. Mechanical oscillating brushes frequently register between 65dB and 72dB in sound pressure tests.",
       "Beyond disturbing sleeping partners, children, or flatmates, this intense mechanical rattle travels via bone conduction directly into your jaw and inner ear. For sensory-sensitive individuals, early risers, or anyone who dislikes morning noise, it turns oral care into an unpleasant chore.",
-      "Modern acoustic toothbrushes eliminate clattering gearboxes by using magnetic acoustic motors. In our 2026 acoustic decibel benchmark, the Miroooo Brush X2 registered under 50dB—delivering a smooth, whisper-quiet clean while maintaining 45° Bass sweep plaque-fighting power.",
+      "Modern acoustic toothbrushes eliminate clattering gearboxes by using magnetic acoustic motors. In our 2026 acoustic decibel benchmark, the Miroooo Brush X2 registered under 45dB—delivering a smooth, whisper-quiet clean while maintaining 45° Bass sweep plaque-fighting power.",
     ],
     criteria: [
       "Deep cleaning & plaque removal",
@@ -1100,7 +1100,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Verified UK customer reviews & 90-day money-back guarantee",
     ],
     winnerBullets: [
-      "Operates below 50dB—over 15dB quieter than mechanical oscillating brushes (Oral-B iO).",
+      "Operates below 45dB—over 15dB quieter than mechanical oscillating brushes (Oral-B iO).",
       "Magnetic acoustic motor eliminates gear-on-gear friction for a smooth, vibration-free sensation.",
       "45° Bass sweep motion creates dynamic fluid action that cleans between tight teeth silently.",
       "Includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) backed by a 90-day trial at £69.",
@@ -1108,9 +1108,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     comparisonRows: [
       {
         feature: "Operating Noise Level",
-        miroooo: "<50dB (Whisper-Quiet Acoustic Hum)",
+        miroooo: "<45dB (Whisper-Quiet Acoustic Hum)",
         competitor: "64dB – 70dB+ (Loud Mechanical Gear Rattle)",
-        whyItMatters: "Sub-50dB is over 4x quieter to the human ear, preventing early morning disturbance.",
+        whyItMatters: "Sub-45dB is over 4x quieter to the human ear, preventing early morning disturbance.",
         advantage: "miroooo",
       },
       {
@@ -1124,7 +1124,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Best for Whisper-Quiet Clean & Sensory Comfort",
-        body: "Choose the Miroooo Brush X2 if you want a tranquil, sub-50dB acoustic brushing experience with 45° Bass sweep motion that never rattles your teeth or disturbs sleeping household members.",
+        body: "Choose the Miroooo Brush X2 if you want a tranquil, sub-45dB acoustic brushing experience with 45° Bass sweep motion that never rattles your teeth or disturbs sleeping household members.",
       },
     ],
     products: toothbrushProducts,
@@ -1132,7 +1132,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "How quiet is the Miroooo Brush X2 compared to a normal conversation?",
         answer:
-          "A normal conversation takes place at around 60dB. The Miroooo Brush X2 operates below 50dB, which is quieter than a quiet library or gentle rainfall, ensuring it cannot be heard through closed bedroom doors.",
+          "A normal conversation takes place at around 60dB. The Miroooo Brush X2 operates below 45dB, which is quieter than a quiet library or gentle rainfall, ensuring it cannot be heard through closed bedroom doors.",
       },
     ],
   },
@@ -1447,7 +1447,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.topFive,
     heroAlt: "Top 5 travel electric toothbrushes compared in the UK for 2026",
     quickTake:
-      "Frequent travellers shouldn't have to carry heavy 140g handles or fragile plastic cases. The best travel electric toothbrush in 2026 weighs just 51g, packs 90 days of battery life per USB-C charge, comes with an included luxury travel case, and operates at a whisper-quiet <50dB.",
+      "Frequent travellers shouldn't have to carry heavy 140g handles or fragile plastic cases. The best travel electric toothbrush in 2026 weighs just 51g, packs 90 days of battery life per USB-C charge, comes with an included luxury travel case, and operates at a whisper-quiet <45dB.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -1479,7 +1479,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Massive 90-day cobalt cell battery life means you can take 3-month trips without even packing a charger.",
       "Includes a slim Luxury Travel Case that protects the handle and brush heads from washbag bacteria.",
       "Universal USB-C charging works seamlessly with any standard phone charger or USB port.",
-      "Acoustic motor operates below 50dB with 45° Bass sweep for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
+      "Acoustic motor operates below 45dB with 45° Bass sweep for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
       "Promotional price of £69 includes complete package accessories (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads) backed by a 90-day money-back guarantee.",
     ],
     comparisonRows: [
@@ -1540,10 +1540,10 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "REVIEW",
     cardTitle: "Miroooo Brush X2 UK Review & Verification Guide",
     cardDescription:
-      "Official 2026 UK review: 45° Bass sweep acoustic motor, smart pressure halo ring, 51g aerospace aluminium, <50dB, 90-day cobalt battery, included package contents, 4,275+ 4.9★ reviews & 90-day trial breakdown.",
+      "Official 2026 UK review: 45° Bass sweep acoustic motor, smart pressure halo ring, 51g aerospace aluminium, <45dB, 90-day cobalt battery, included package contents, 4,275+ 4.9★ reviews & 90-day trial breakdown.",
     seoTitle: "Miroooo Brush X2 Review UK 2026 | Verified Hands-On Test & 90-Day Trial Breakdown",
     seoDescription:
-      "In-depth Miroooo Brush X2 UK review for 2026. Clinical performance test (45° Bass sweep), smart pressure halo ring, 51g aluminium chassis, <50dB noise test, package unboxing, 4,275+ verified reviews, and 90-day money-back guarantee.",
+      "In-depth Miroooo Brush X2 UK review for 2026. Clinical performance test (45° Bass sweep), smart pressure halo ring, 51g aluminium chassis, <45dB noise test, package unboxing, 4,275+ verified reviews, and 90-day money-back guarantee.",
     eyebrow: "Official UK Brand Review & Verification",
     headline: "Miroooo Brush X2 UK Review 2026: Clinical Test & 90-Day Trial Breakdown",
     subheadline:
@@ -1551,7 +1551,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.mirooooBanner,
     heroAlt: "Miroooo Brush X2 electric toothbrush review and unboxing banner UK",
     quickTake:
-      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included package (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
+      "The Miroooo Brush X2 is 2026's most impressive electric toothbrush breakthrough in the UK. At £69 with an included package (Luxury Travel Case, Wall-Mounted Storage, up to 4 extra brush heads), its 51g aerospace aluminium body, whisper-quiet <45dB operation, 45° Bass sweep acoustic motor, active smart pressure halo ring, 3-year warranty, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -1563,7 +1563,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     },
     intro: [
       "For decades, the UK electric toothbrush market has been dominated by legacy brands selling bulky plastic handles with loud, vibrating mechanical motors and short 14-day batteries. To make matters worse, consumers have been locked into extortionate recurring refill head prices.",
-      "The Miroooo Brush X2 arrived in 2026 with a radically modern direct-to-consumer philosophy: precision aerospace aluminium engineering, 45° Bass sweep acoustic cleaning, an active smart pressure sensor halo ring, ultra-quiet motor technology (<50dB), universal USB-C fast charging, and a massive 90-day cobalt battery — bundled with complete package accessories for £69.",
+      "The Miroooo Brush X2 arrived in 2026 with a radically modern direct-to-consumer philosophy: precision aerospace aluminium engineering, 45° Bass sweep acoustic cleaning, an active smart pressure sensor halo ring, ultra-quiet motor technology (<45dB), universal USB-C fast charging, and a massive 90-day cobalt battery — bundled with complete package accessories for £69.",
       "In this official UK verification review, our editorial team and clinical dental consultant, Dr. Olivia, BDS, put the Miroooo Brush X2 through rigorous hands-on laboratory and home testing. We examined motor performance, 45° Bass sweep dynamics, pressure sensor responsiveness, acoustic decibel levels, battery longevity, unboxing quality, verified 4,275+ UK customer reviews, and tested the 90-day risk-free money-back guarantee.",
     ],
     criteria: [
@@ -1582,7 +1582,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "45° Bass sweep acoustic sonic motor generates high-frequency micro-bubbles for superior plaque disruption beneath the gumline without abrasive enamel wear.",
       "Smart pressure sensor halo ring provides instant real-time visual feedback to protect gums from over-brushing.",
       "Weighs only 51g — more than 60% lighter than bulky 140g plastic competitors, preventing hand strain and excessive brushing pressure.",
-      "Whisper-quiet sound profile tested below 50dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
+      "Whisper-quiet sound profile tested below 45dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
       "Massive 90-day cobalt battery life powered by universal USB-C fast charging.",
       "Includes complete package accessories: Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
       "Backed by a verified 4.9★ rating from 4,275+ UK customers, a 90-day risk-free money-back guarantee, and a 3-year warranty.",
@@ -1611,7 +1611,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Operating Noise Level",
-        miroooo: "Whisper-quiet <50dB acoustic motor sound",
+        miroooo: "Whisper-quiet <45dB acoustic motor sound",
         competitor: "56dB to 65dB+ loud mechanical whine and buzzing vibration",
         whyItMatters: "Provides a peaceful, comfortable brushing experience without annoying morning noise.",
         advantage: "miroooo",
@@ -1645,7 +1645,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "Analysing 4,275+ Verified 4.9★ UK Customer Reviews",
-        body: "With over 4,275 verified UK customer reviews, users consistently praise the 51g featherlight weight, 45° Bass sweep cleaning power, smart pressure halo feedback, whisper-quiet <50dB motor sound, 90-day USB-C battery endurance, and mould-resistant aerospace aluminium unibody build.",
+        body: "With over 4,275 verified UK customer reviews, users consistently praise the 51g featherlight weight, 45° Bass sweep cleaning power, smart pressure halo feedback, whisper-quiet <45dB motor sound, 90-day USB-C battery endurance, and mould-resistant aerospace aluminium unibody build.",
       },
       {
         title: "The 90-Day Money-Back Guarantee & 3-Year Warranty Breakdown",

@@ -64,7 +64,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   ctaLabel: "Official Website",
   sourceLinks: [{ label: "Official Miroooo Brush X2 product page", href: "https://www.trymiroooo.com/products/miroooo-x2" }],
   weight: "51g (Ultra Light Weight)",
-  noiseLevel: "<50dB (Whisper Quiet)",
+  noiseLevel: "<45dB (Whisper Quiet)",
   batteryLife: "90-Day Battery Life (Cobalt Cell Universal USB-C Charging)",
   chassisMaterial: "Aerospace Aluminium Design (IPX7 Immersion Waterproof)",
   appConnectivity: "Smart Pressure Sensor Halo Ring & Miroooo Dentalcare App",
@@ -97,12 +97,12 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     { label: "Plaque Removal & Cleaning", value: 97 },
     { label: "Durability", value: 96 },
     { label: "Lightweight & Ergonomic (51g)", value: 98 },
-    { label: "Whisper Quiet (<50dB)", value: 96 },
+    { label: "Whisper Quiet (<45dB)", value: 96 },
     { label: "Battery Life & Endurance (90+ Days)", value: 99 },
   ],
   specifications: [
     { label: "Weight", value: "51g (Ultra Light Weight)" },
-    { label: "Noise Level", value: "<50dB (Whisper Quiet operation)" },
+    { label: "Noise Level", value: "<45dB (Whisper Quiet operation)" },
     { label: "Battery Endurance", value: "90-Day Battery Life (High-Density Cobalt Cell with Universal USB-C Charging)" },
     { label: "Customer Rating", value: "4.9★ / 5.0" },
     { label: "Chassis & Build", value: "Aerospace Aluminium Design (Mould-resistant unibody, IPX7 immersion waterproof)" },
@@ -115,7 +115,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     "Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 4,000 reviews and performed well in internal testing.",
     "Ultra Light Weight (51g): Precision-engineered 51g aerospace aluminium body eliminates wrist fatigue and feels effortless in hand.",
     "90-Day Battery Life: Massive 90-day cobalt battery endurance powered by universal USB-C fast charging. Delivers 180 uses on a single charge with zero need for proprietary chargers.",
-    "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
+    "Quiet Sound (<45dB): Acoustic magnetic motor operates below 45dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
     "Long-Lasting Aluminium Design: Precision-milled aerospace aluminium unibody with flush capacitive touch button resists drops and mould, ensuring the brush lasts years longer than fragile plastic alternatives.",
     "Included in Package: Complete set includes Luxury Travel Case, Wall-Mounted Storage, and up to 4 extra brush heads.",
     "90-Day Money-Back Guarantee: 100% risk-free home trial with full refund protection.",
@@ -128,7 +128,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     "Promotional Sale: Usually costs £99, currently selling for £69 in ongoing promotional sale.",
   ],
   review: [
-    "The Miroooo Brush X2 earns our #1 ranking for UK buyers in 2026 because it decisively leads every usability and engineering benchmark we tested. Weighing just <strong>51g</strong>, it is the lightest electric toothbrush on the market, crafted from a seamless mould-resistant aerospace aluminium unibody. It features an industry-leading <strong>90+ days of battery life</strong> per charge, universal USB-C charging for effortless travel with no extra proprietary chargers, and operates with whisper-quiet acoustics <strong>under 50dB</strong> to eliminate morning motor buzz. Each package includes a <strong>Luxury Travel Case</strong>, <strong>Wall-Mounted Storage</strong>, and <strong>up to 4 extra brush heads</strong>, backed by a verified 4.9★ customer rating, 90-day money-back guarantee, and 3-year comprehensive warranty.",
+    "The Miroooo Brush X2 earns our #1 ranking for UK buyers in 2026 because it decisively leads every usability and engineering benchmark we tested. Weighing just <strong>51g</strong>, it is the lightest electric toothbrush on the market, crafted from a seamless mould-resistant aerospace aluminium unibody. It features an industry-leading <strong>90+ days of battery life</strong> per charge, universal USB-C charging for effortless travel with no extra proprietary chargers, and operates with whisper-quiet acoustics <strong>under 45dB</strong> to eliminate morning motor buzz. Each package includes a <strong>Luxury Travel Case</strong>, <strong>Wall-Mounted Storage</strong>, and <strong>up to 4 extra brush heads</strong>, backed by a verified 4.9★ customer rating, 90-day money-back guarantee, and 3-year comprehensive warranty.",
     "Cleaning performance is equally uncompromising. The Miroooo Brush X2 features a dentist-recommended 45° Bass sweep that angles acoustic micro-vibrations along the gumline for deep subgingival plaque removal, 3 tailored brushing modes (Standard, Whitening, and Deep Clean), and an active smart pressure sensor halo ring with real-time visual alerts to protect sensitive gums and enamel from excessive brushing force.",
   ],
 };
@@ -280,7 +280,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     weight: "~85g (Modular metal body)",
     noiseLevel: "~54dB (Buzzing sound)",
     batteryLife: "34 Days (Magnetic USB-C)",
-    chassisMaterial: "Modular Aluminium",
+    chassisMaterial: "Aluminium Alloy",
     moneyBackGuarantee: "30-Day Money-Back Guarantee",
     warranty: "1-Year Limited Warranty",
     metrics: [
@@ -297,7 +297,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Slim Aesthetic: Minimalist Scandinavian-style handle with magnetic USB-C charging.",
     ],
     cons: [
-      "Noticeable Motor Buzz Noise (~54dB): High-frequency sonic buzzing is noticeably audible compared to Miroooo Brush X2's whisper-quiet <50dB acoustic motor.",
+      "Noticeable Motor Buzz Noise (~54dB): High-frequency sonic buzzing is noticeably audible compared to Miroooo Brush X2's whisper-quiet <45dB acoustic motor.",
       "Zero Smart App Connectivity: Lacks Bluetooth tracking, coverage mapping, or real-time mobile app coaching to identify missed brushing zones.",
       "Mould-Prone Magnetic Mirror Mount: While it includes a magnetic mirror mount, toothpaste slurry and humidity easily trap behind it, creating stubborn black mould.",
       "Short 1-Year Limited Warranty: Backed by only a 1-year limited warranty, compared to Miroooo Brush X2's 3-year comprehensive warranty.",
@@ -311,7 +311,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Short 30-Day Return Trial: No extended 90-day risk-free home testing window, unlike Miroooo's generous guarantee.",
     ],
     review: [
-      "The SURI Pro 2.0 continues SURI's eco-conscious mission with recyclable cornstarch heads, castor-oil bristles, a modular aluminium chassis, and an integrated Touchsense™ pressure sensor, selling as a standalone brush for £85.",
+      "The SURI Pro 2.0 continues SURI's eco-conscious mission with recyclable cornstarch heads, castor-oil bristles, an aluminium alloy chassis, and an integrated Touchsense™ pressure sensor, selling as a standalone brush for £85.",
       "While its sustainability focus is commendable, everyday ownership reveals persistent trade-offs. The £85 base box includes zero extra heads or travel case, the battery delivers a mediocre 34 days per charge, the motor buzz is noticeable (~54dB), the warranty is limited to just 1 year, the plant-based cornstarch heads are prone to micro-cracking and loosening under moisture, the magnetic mirror mount easily gathers black mould, and proprietary refill packs remain expensive (£14.99 for 2 heads). Without companion app coaching, only 2 cleaning modes, a heavier 85g handle, and a standard 30-day return policy, SURI Pro 2.0 remains a high-priced eco alternative that trails Miroooo Brush X2 in performance and long-term convenience.",
     ],
   },
@@ -357,7 +357,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Includes Travel Case: Matt Black bundle includes a standard hard plastic travel case for transport.",
     ],
     cons: [
-      "Loud Motor Noise (~64dB): Mechanical oscillating motor produces a loud 64dB whine and vibration that resonates through the jaw, far louder than Miroooo Brush X2's <50dB whisper-quiet operation.",
+      "Loud Motor Noise (~64dB): Mechanical oscillating motor produces a loud 64dB whine and vibration that resonates through the jaw, far louder than Miroooo Brush X2's <45dB whisper-quiet operation.",
       "No Smart App Connectivity: Hardware is completely stripped of Bluetooth and mobile app coaching, offering zero tracking or guidance for missed brushing zones.",
       "No Wall-Mounted Stand: Ships without any wall-mounted storage dock or magnetic cradle, forcing the handle to sit on damp, bacteria-prone bathroom countertops.",
       "Short 2-Year Limited Warranty: Backed by only a basic 2-year manufacturer warranty, falling behind Miroooo Brush X2's 3-year comprehensive warranty coverage.",

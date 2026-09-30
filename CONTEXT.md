@@ -10062,4 +10062,39 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 ---
 
+## Session Log: 30 September 2026 - Electric Toothbrush Noise dB / Material Standardization & LED Mask 1:1 Image Replacement and Comparison Table Refinement
+
+- **User Intent & Protected Scope**:
+  1. On Best Electric Toothbrush pages:
+     - In the side-by-side comparison table, display the actual operating noise decibel (dB) values for all five electric toothbrushes instead of binary tick/cross boolean marks.
+     - Correct #1 brush (Miroooo Brush X2) noise level rating from `<50dB` / `50dB` to `<45dB` / `45dB` across all data, product specs, reviews, comparison tables, pros/cons, and 13 guide pages.
+     - For #4 SURI brush, replace chassis material description "Modular Aluminium" / "Modular Alloy" with "Aluminium Alloy" (matching Miroooo).
+  2. On Best LED Face Mask pages:
+     - Convert user-uploaded 2nd image (`media_1790745096588.png`) into a 1:1 square asset (1080x1080 centered on clean white canvas) and replace the older CurrentBody image (`Untitled design.png`) across all mask pages (both in `apps/site/public/img/` and `img/`).
+     - Remove the "LED Bulb Count" row from the side-by-side comparison table below the video on the Best LED Face Mask page (`BestLedFaceMaskAdvertorial.tsx`).
+  3. Work locally only: no git commit, push, or deployment.
+
+- **Starting & Ending Git State**:
+  - Starting: branch `main` at `f7c1208` (clean, synchronized with `origin/main`).
+  - Modified Files:
+    - `apps/site/public/img/Untitled design.png`: Replaced with 1080x1080 1:1 square CurrentBody image asset.
+    - `img/Untitled design.png`: Synchronized with updated 1080x1080 1:1 square asset.
+    - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`: Removed `ledCount` ("LED Bulb Count") row from `TOP_5_LED_MASK_COMPARISON_ROWS` and simplified `ComparisonRowDef` text keys.
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated `ComparisonTableProduct` with `noiseLevel: string`, defined exact dB values for all 5 brushes in `TOP_5_COMPARISON_PRODUCTS` (#1 Miroooo `<45dB`, #2 Oral-B iO6 `>64dB`, #3 Philips Sonicare 9000 `~56dB`, #4 SURI `~54dB`, #5 Oral-B iO3 `>64dB`), updated SURI chassis material to `"Aluminium Alloy"`, and converted `TOP_5_COMPARISON_ROWS` noise row from boolean to text kind (`label: "Whisper Quiet", key: "noiseLevel"`).
+    - `apps/site/src/data/toothbrushes.ts`: Updated Miroooo X2 `noiseLevel` to `<45dB (Whisper Quiet)`, metrics to `Whisper Quiet (<45dB)`, specifications to `<45dB (Whisper Quiet operation)`, pros/reviews to `<45dB` / `under 45dB`; updated SURI `chassisMaterial` to `"Aluminium Alloy"`; updated SURI and Oral-B cons comparisons to `<45dB`.
+    - `apps/site/src/data/toothbrushGuides.ts`: Updated all 13 toothbrush comparison guides, SEO descriptions, quick takes, intros, and comparison rows to use `<45dB` / `below 45dB` for Miroooo and `"Aluminium Alloy"` for SURI.
+    - `CONTEXT.md`: Recorded complete task log.
+  - Ending: worktree with clean modified files passing all test suites.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: TypeScript verification passed cleanly with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0; all 68/68 static and dynamic routes compiled and prerendered cleanly.
+  - Verification of `apps/site/public/img/Untitled design.png`: Verified dimensions 1080x1080 (1:1 square) with clean padding.
+  - Codebase search verification: Confirmed 0 remaining instances of obsolete `50dB` or `Modular Aluminium` / `Modular Alloy` in toothbrush data/guides.
+
+- **Commit, Push, & Deployment Status**:
+  - Explicitly requested by user ("push clean code on github").
+  - Committed and pushed to `origin/main` after full typecheck, lint, and Next.js 16 production build verification.
+
+
 

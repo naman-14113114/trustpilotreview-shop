@@ -804,7 +804,7 @@ interface ComparisonTableProduct {
   appTracking: boolean;
   chassisMaterial: string;
   freeHeads: boolean;
-  whisperQuiet: boolean;
+  noiseLevel: string;
   moneyBackTrial: string;
   freeDelivery: boolean;
 }
@@ -825,7 +825,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     appTracking: true,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: true,
-    whisperQuiet: true,
+    noiseLevel: "<45dB",
     moneyBackTrial: "90-Day Money-Back",
     freeDelivery: true,
   },
@@ -843,7 +843,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     appTracking: false,
     chassisMaterial: "Plastic & Rubber",
     freeHeads: false,
-    whisperQuiet: false,
+    noiseLevel: ">64dB",
     moneyBackTrial: "30-Day Guarantee",
     freeDelivery: false,
   },
@@ -861,7 +861,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     appTracking: false,
     chassisMaterial: "Composite Plastic",
     freeHeads: false,
-    whisperQuiet: false,
+    noiseLevel: "~56dB",
     moneyBackTrial: "28-Day Guarantee",
     freeDelivery: false,
   },
@@ -877,9 +877,9 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     travelCase: false,
     wallMount: true,
     appTracking: false,
-    chassisMaterial: "Modular Aluminium",
+    chassisMaterial: "Aluminium Alloy",
     freeHeads: false,
-    whisperQuiet: false,
+    noiseLevel: "~54dB",
     moneyBackTrial: "30-Day Guarantee",
     freeDelivery: false,
   },
@@ -897,7 +897,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     appTracking: false,
     chassisMaterial: "Matte Plastic",
     freeHeads: false,
-    whisperQuiet: false,
+    noiseLevel: ">64dB",
     moneyBackTrial: "30-Day Guarantee",
     freeDelivery: false,
   },
@@ -910,13 +910,12 @@ type ComparisonRowDef =
         | "wallMount"
         | "appTracking"
         | "freeHeads"
-        | "whisperQuiet"
         | "freeDelivery";
       label: string;
       kind: "boolean";
     }
   | {
-      key: "weight" | "batteryLife" | "chassisMaterial" | "moneyBackTrial";
+      key: "weight" | "batteryLife" | "chassisMaterial" | "noiseLevel" | "moneyBackTrial";
       label: string;
       kind: "text";
     }
@@ -934,7 +933,7 @@ const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
   { key: "appTracking", label: "Dental Care App", kind: "boolean" },
   { key: "chassisMaterial", label: "Chassis Material", kind: "text" },
   { key: "freeHeads", label: "Free Extra Brush Heads", kind: "boolean" },
-  { key: "whisperQuiet", label: "Whisper Quiet (<50dB)", kind: "boolean" },
+  { key: "noiseLevel", label: "Whisper Quiet", kind: "text" },
   { key: "moneyBackTrial", label: "Risk-Free Trial", kind: "text" },
   { key: "freeDelivery", label: "Free Tracked Delivery", kind: "boolean" },
   { key: "price", label: "Price", kind: "price" },
