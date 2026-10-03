@@ -10152,6 +10152,111 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly no git commit, push, or deployment executed as requested. All changes remain local in the working directory.
 
+---
+
+## Session Log: 03 October 2026 - Toothbrush X1 Advertorial Side-by-Side Comparison Table, £69/£139 Price Update & 4.9-Star 1st Pro Integration
+
+- **User Intent & Protected Scope**:
+  1. Replace the "Explore All UK Electric Toothbrush Guides & Comparisons" section on the main advertorial page (`ElectricToothbrushesAdvertorial.tsx`) with the 5-Product Side-by-Side Comparison Table (`CompetitorComparisonTable`), configured for **Miroooo Brush X (X1)**.
+  2. Update price of Miroooo Brush X (X1) to **£69** and compare-at to **£139** across datasets, guides, advertorial, and exit popups.
+  3. Set the 1st pro for Miroooo Brush X to: `"Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 4,000 reviews and performed well in internal testing."` (sourced from best LED face mask pages).
+  4. Perform minimal changes, confined strictly to electric toothbrush files locally without committing or pushing.
+
+- **Files Modified**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Updated `MIROOOO_X_DATASET.price` to `"£69"` and `compareAt` to `"£139"`.
+     - Placed `"Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 4,000 reviews and performed well in internal testing."` as the 1st pro.
+     - Updated promotional con note to £69.
+  2. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Replaced `RelatedGuidesNav` with `CompetitorComparisonTable` displaying the 5-product side-by-side comparison (#1 Miroooo Brush X £69/£139, #2 Oral-B iO6 £129.99, #3 Philips Sonicare 9000 £149.99, #4 SURI Pro 2.0 £85, #5 Oral-B iO3 £65).
+     - Updated `ComparisonMatrix` table header to `Miroooo Brush X (£69)`.
+  3. `apps/site/src/data/toothbrushGuides.ts`:
+     - Updated all price references from £59 to £69.
+  4. `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Updated `offerPriceText = "£69 instead of £139"`.
+
+- **Verification Performed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0; all 68/68 static and dynamic routes compiled and prerendered cleanly.
+  - Scope check: Only toothbrush files modified; zero changes to other products.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no git commit or push performed.
+
+---
+
+## Session Log: 03 October 2026 - #1 Electric Toothbrush Product Image Replacement & trymiroooo SEO Alt Text
+
+- **User Intent & Scope**:
+  1. Replace the #1 product image on the Best Electric Toothbrush page and related guide pages with `E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\compare.webp`.
+  2. Deploy it with a clean SEO-optimized name and alt text tailored for `trymiroooo` SEO.
+  3. Delete the older #1 product image asset (`miroooo-x-electric-toothbrush.webp`).
+  4. Perform minimal changes strictly locally without committing or pushing.
+
+- **Files Inspected & Modified**:
+  1. Image Asset Deployment:
+     - Copied `E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\compare.webp` (33,196 bytes) to:
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp`
+       - `img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp`
+     - Deleted older image `miroooo-x-electric-toothbrush.webp` from both `apps/site/public/img/toothbrushes/` and `img/toothbrushes/`.
+  2. `apps/site/src/data/toothbrushes.ts`:
+     - Added `imageAlt?: string;` to `RankedToothbrushProduct` interface.
+     - Updated `MIROOOO_X_DATASET.image` to `"/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp"`.
+     - Set `MIROOOO_X_DATASET.imageAlt` to `"Miroooo Brush X Sonic Electric Toothbrush with Magnetic Charging Dock and Aerospace Aluminium Body - #1 Best Electric Toothbrush UK 2026"`.
+  3. `apps/site/src/data/toothbrushGuides.ts`:
+     - Updated `images.mirooooWinner` to `"/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp"`.
+  4. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated `ProductCard` image `alt` attribute to `alt={product.imageAlt || product.name}` so SEO alt text renders seamlessly.
+
+- **Verification Executed**:
+  1. `git grep "miroooo-x-electric-toothbrush.webp"`: Verified 0 occurrences across active codebase (only historical log notes in `CONTEXT.md`).
+  2. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  3. `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  4. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68 routes generated cleanly).
+  5. Scope check: Zero changes outside the toothbrush files/assets in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed.
+
+---
+
+## Session Log: 03 October 2026 - Performance Bar Key Metrics & Competitor Pros/Cons Restoration from X2
+
+- **User Intent & Scope**:
+  1. Synchronize the performance bar key points, percentage numbers, and order from the X2 reference (commit `003e419`) across all 5 electric toothbrushes.
+  2. Restore the exact updated pros and cons lists from X2 for all 4 competitors (Oral-B iO6, Philips Sonicare DiamondClean 9000, SURI Pro 2.0, Oral-B iO3) adapted to reference Miroooo Brush X.
+  3. Perform minimal changes strictly locally without committing or pushing.
+
+- **Files Inspected & Modified**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - **#1 Miroooo Brush X**:
+       - Updated metrics: Plaque Removal & Cleaning (97%), Durability (96%), Lightweight & Ergonomic 51g (98%), Whisper Quiet <50dB (96%), Battery Life & Endurance 60+ Days (99%).
+     - **#2 Oral-B iO Series 6**:
+       - Updated metrics: Plaque Removal & Cleaning (87%), Durability (76%), Lightweight & Ergonomic 140g (79%), Loud Motor Noise 64dB (84%), Battery Life & Endurance 14 Days (70%).
+       - Restored 4 pros & 10 detailed cons from `003e419` (including loud 64dB whine, Bluetooth sync dropouts, no wall mount, 2-year warranty, 14-day battery, heavy handle, £8–£12 refills, durability, £129.99 upfront cost).
+     - **#3 Philips Sonicare DiamondClean 9000**:
+       - Updated metrics: Plaque Removal & Cleaning (75%), Durability (72%), Lightweight & Ergonomic 135g (79%), Sonic Buzz Noise 56dB (85%), Battery Life & Endurance 14 Days (68%).
+       - Restored 4 pros & 10 detailed cons from `003e419` (including high-pitched sonic buzz, app dropouts, no wall dock, 2-year warranty, £149+ price, 14-day battery, 135g weight, shaft loosening, £9–£12 refills, 28-day return).
+     - **#4 SURI Pro 2.0**:
+       - Updated metrics: Plaque Removal & Cleaning (58%), Durability (54%), Lightweight & Ergonomic 85g (74%), Motor Buzz Noise 54dB (80%), Battery Life & Endurance 34 Days (78%).
+       - Restored 4 pros & 12 detailed cons from `003e419` (including ~54dB motor buzz, zero app connectivity, mould-prone magnetic mount, 1-year warranty, 85g handle, £14.99/2-pack refills, 34-day battery, cornstarch head cracking, £85 base price, 2 modes, 30-day trial).
+     - **#5 Oral-B iO3**:
+       - Updated metrics: Plaque Removal & Cleaning (50%), Durability (46%), Lightweight & Ergonomic 136g (55%), Loud Motor Noise 64dB (52%), Battery Life & Endurance 14 Days (48%).
+       - Restored 4 pros & 11 detailed cons from `003e419` (including loud 64dB whine, no Bluetooth app, no wall mount, 2-year warranty, £65 price for stripped features, no OLED display, 14-day battery, £8–£12 refills, 136g plastic chassis, durability, 30-day terms).
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68 routes generated cleanly).
+  4. Scope check: Zero changes outside the toothbrush dataset in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed.
+
+
+
+
 
 
 

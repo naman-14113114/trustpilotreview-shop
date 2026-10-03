@@ -34,7 +34,7 @@
     return;
   }
 
-  var offerPriceText = "£59 instead of £119";
+  var offerPriceText = "£69 instead of £139";
 
   var armed = false;
   var shown = false;
