@@ -10096,5 +10096,62 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Explicitly requested by user ("push clean code on github").
   - Committed and pushed to `origin/main` after full typecheck, lint, and Next.js 16 production build verification.
 
+---
+
+## Session Log: 03 October 2026 - Toothbrush Pages & Data 1:1 Restoration to Commit 57387aa (Miroooo Brush X / X1 Flagship)
+
+- **User Intent & Protected Scope**:
+  - Exact instruction: Restore all electric toothbrush pages, data, advertorial components, and assets to the exact state from commit `57387aa527cd4f872091f02255b39d3ba6ff0610` (featuring Miroooo Brush X / X1 at £59 / £119, 60+ days battery, 51g ultra light weight, <50dB whisper quiet, £60.85 free gift bundle, 2-Year warranty, `https://www.trymiroooo.com/products/miroooo-x`).
+  - Strict scope boundary: Strictly ZERO modifications to any other product (pillows, hearing aids, LED face masks, hair dryers, grounding sheets).
+  - Operating boundary: Work done 100% locally; NO git commit or push performed.
+  - Executed using 3 parallel specialized subagents for data, advertorial/popups, and assets/landing pages.
+
+- **Files Restored 1:1 to Commit 57387aa (0 Diff)**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - Restored `MIROOOO_X_DATASET` / `toothbrushProducts[0]` as "Miroooo Brush X Electric Toothbrush" at £59 (compareAt £119), 60+ days battery life, 51g, <50dB, £60.85 bundle value (Magnetic Charging Dock £24.95, Aluminium Travel Case £15.95, 2x DuPont Replacement Heads £19.95), 90-Day Money-Back Guarantee, 2-Year Comprehensive Warranty, `https://www.trymiroooo.com/products/miroooo-x`.
+  2. `apps/site/src/data/toothbrushGuides.ts`:
+     - Restored all 13 comparison and buying guides for Miroooo Brush X (X1), `MIROOOO_URL = "https://www.trymiroooo.com/products/miroooo-x"`, `MIROOOO_GIFT_BUNDLE` (£60.85 value), comparison matrices, Dr. Olivia rationales, and FAQs.
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Restored full advertorial UI structure matching 57387aa with Miroooo Brush X hero banner, £60.85 gift bundle panel, dentist verdict video walkthrough section, side-by-side comparison matrix, winner highlights, and sticky mobile CTA.
+  4. `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`:
+     - Restored clean page component and metadata from 57387aa.
+  5. `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Restored exit popup copy for Miroooo Brush X at £59 (50% off £119) linking to `https://www.trymiroooo.com/products/miroooo-x`.
+  6. 13 UK Toothbrush Landing Pages in `apps/site/src/app/`:
+     - `best-battery-life-electric-toothbrush-uk-2026/page.tsx`
+     - `best-electric-toothbrush-for-braces-uk-2026/page.tsx`
+     - `best-electric-toothbrush-for-sensitive-teeth-uk-2026/page.tsx`
+     - `best-lightweight-electric-toothbrush-uk-2026/page.tsx`
+     - `best-quiet-electric-toothbrush-uk-2026/page.tsx`
+     - `best-travel-electric-toothbrush-uk-2026/page.tsx`
+     - `miroooo-brush-x-uk-review-2026/page.tsx`
+     - `miroooo-vs-oral-b-io3/page.tsx`
+     - `miroooo-vs-oral-b-io6/page.tsx`
+     - `miroooo-vs-philips-sonicare/page.tsx`
+     - `miroooo-vs-suri/page.tsx`
+     - `most-durable-electric-toothbrush-uk-2026/page.tsx`
+     - `why-switch-from-legacy-electric-toothbrushes-uk/page.tsx`
+  7. Restored Toothbrush Image and Video Assets:
+     - `apps/site/public/assets/miroooo-dentist-verdict-poster.jpg`
+     - `apps/site/public/assets/miroooo-dentist-verdict-poster.webp`
+     - `apps/site/public/assets/miroooo-dentist-verdict.mp4`
+     - `apps/site/public/img/toothbrushes/dr-olivia.jpg`
+     - `apps/site/public/img/toothbrushes/dr-olivia.webp`
+     - `apps/site/public/img/toothbrushes/miroooo-charging-dock-gift.jpg`
+     - `apps/site/public/img/toothbrushes/miroooo-full-bundle.jpg`
+     - `apps/site/public/img/toothbrushes/miroooo-travel-case-gift.jpg`
+     - Root mirrored assets in `assets/` and `img/toothbrushes/`.
+
+- **Verification Performed**:
+  - `git diff 57387aa -- apps/site/src/data/toothbrushes.ts apps/site/src/data/toothbrushGuides.ts apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx apps/site/src/app/*toothbrush* apps/site/src/app/miroooo* apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js assets/miroooo-x-electric-toothbrush-exit-popup.js`: Verified exact 0 diff.
+  - `git diff HEAD --stat`: Confirmed only electric toothbrush files were modified; 0 files from pillows, hearing aids, LED masks, hair dryers, or grounding sheets were touched.
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0; all 68/68 static and dynamic routes compiled and prerendered cleanly.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly no git commit, push, or deployment executed as requested. All changes remain local in the working directory.
+
+
 
 
