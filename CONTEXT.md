@@ -10254,6 +10254,32 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed.
 
+---
+
+## Session Log: 04 October 2026 - Revert of Commit 8b2e8ed (Best Electric Toothbrush Image Reversion)
+
+- **User Intent & Scope**:
+  - Revert the latest commit pushed today (`8b2e8edb00325f29e7a5549de701bcb82939d61e` - "testing X2 image as #1 image").
+  - Restore all electric toothbrush image assets to their previous state from commit `96d3a51`.
+
+- **Action Completed**:
+  1. Executed `git revert 8b2e8ed --no-edit` resulting in revert commit `da181e0db47d162d878ce45c0a8b3219d7a29c30`.
+  2. Reverted image files back to:
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp` (33,196 bytes)
+     - `img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp` (33,196 bytes)
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp` (21,946 bytes)
+     - `img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp` (21,946 bytes)
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site lint`: 0 errors.
+  3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and prerendered cleanly).
+  4. Scope check: Zero changes outside the toothbrush image assets.
+
+- **Git Status**:
+  - Revert commit `da181e0db47d162d878ce45c0a8b3219d7a29c30` created locally (ahead of origin/main by 1 commit).
+
+
 
 
 
