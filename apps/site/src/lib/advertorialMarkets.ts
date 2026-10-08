@@ -71,7 +71,7 @@ export const advertorialMarkets: Record<
     titleCountry: "Worldwide",
     priceRange: "$100 to $700+",
     currencyCode: "USD",
-    buudyUrl: "https://buudy.co.uk/products/buudy-led-mask",
+    buudyUrl: "https://www.buudy.co.uk/products/buudy-led-face-mask",
     productPrices: {
       buudy: { price: "$199", originalPrice: "$399", schemaPrice: "199.00", roundedPrice: "$199" },
       currentbody: { price: "$469", roundedPrice: "$469", restockingFee: "$47", fullCoveragePrice: "$799" },
@@ -123,7 +123,7 @@ export const advertorialMarkets: Record<
     titleCountry: "the UK",
     priceRange: `${legacyPound}100 to ${legacyPound}600+`,
     currencyCode: "GBP",
-    buudyUrl: "https://www.buudy.co.uk/products/buudy-led-mask",
+    buudyUrl: "https://www.buudy.co.uk/products/buudy-led-face-mask",
     muuhuUrl: "https://uk.muuhu.com/products/muuhu-hair-dryer",
     productPrices: {
       buudy: {

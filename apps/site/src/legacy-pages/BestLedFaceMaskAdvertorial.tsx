@@ -159,7 +159,7 @@ const baseProducts: Product[] = [
     price: "£179",
     originalPrice: "£449",
     rating: "4.9 / 5",
-    link: "https://www.buudy.co.uk/products/buudy-led-mask",
+    link: "https://www.buudy.co.uk/products/buudy-led-face-mask",
     isWinner: true,
     description: [
       "Our top pick is the Buudy 7 Colour LED Mask, a medical-grade device that outperforms the competition with a 7-colour spectrum plus 830nm near-infrared. While most brands focus only on basic red light, Buudy uses targeted wavelengths to support everything from deep wrinkles and acne to inflammation, uneven tone, and overall skin recovery. This Health Canada Approved technology (with CE, FCC, and ROHS certifications) ensures professional-grade results for all skin types.",
@@ -1214,7 +1214,7 @@ export default function Home({
           "priceCurrency": "GBP",
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
-          "url": "https://www.buudy.co.uk/products/buudy-led-mask",
+          "url": "https://www.buudy.co.uk/products/buudy-led-face-mask",
           "seller": {
             "@type": "Organization",
             "name": "Buudy UK",

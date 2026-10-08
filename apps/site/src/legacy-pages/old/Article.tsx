@@ -78,7 +78,7 @@ export default function Article() {
                        </div>
                        
                        <a 
-                          href="https://www.buudy.co.uk/products/buudy-led-mask" 
+                          href="https://www.buudy.co.uk/products/buudy-led-face-mask" 
                           className="inline-block w-full text-center bg-gradient-to-b from-[#1a7444] to-[#0d4a29] hover:from-[#145c35] hover:to-[#0a381f] text-white text-lg font-bold font-sans tracking-wide py-4 px-8 rounded-full shadow-[0_8px_20px_rgba(13,74,41,0.3)] transition-all"
                         >
                           View Product Details

@@ -10352,6 +10352,56 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
 
+---
+
+## Session Log: 08 October 2026 - Free Gift Travel Case & E-Book Images Update + #1 URL Update to buudy-led-face-mask
+
+- **User Intent & Scope**:
+  - Update Free Gift Travel Case image to: `"E:\1st YEAR DTU\New folder\Buddy\Images\Smiling blonde with LED mask case.webp"` while preserving older filename `93-w.webp`.
+  - Update Free Gift E-Book image to: `"E:\1st YEAR DTU\New folder\Buddy\Images\E-Book-w.webp"` updating/preserving `94-w.webp`.
+  - Update #1 product URL everywhere across all mask pages to: `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+  - Launch multiple subagents to audit, update, and verify all mask pages strictly with minimal changes.
+  - Strict scope boundary: Work only on mask pages in `trustpilotreview-shop`, zero edits to non-mask pages (hair dryers, toothbrushes, grounding sheets, pillows, hearing aids), and zero edits to outside repositories.
+
+- **Files Inspected & Modified**:
+  1. **Free Gift Assets (`apps/site/public/img/`)**:
+     - `apps/site/public/img/93-w.webp`: Overwritten with `Smiling blonde with LED mask case.webp` (55,318 bytes).
+     - `apps/site/public/img/Smiling blonde with LED mask case.webp`: Deployed.
+     - `apps/site/public/img/94-w.webp`: Overwritten with `E-Book-w.webp` (36,932 bytes).
+     - `apps/site/public/img/E-Book-w.webp`: Deployed.
+  2. **`apps/site/src/data/buudyEditorialPages.ts`**:
+     - Updated `BUUDY_PRODUCT_URL` to `"https://www.buudy.co.uk/products/buudy-led-face-mask"`.
+  3. **`apps/site/src/lib/advertorialMarkets.ts`**:
+     - Updated `global` market `buudyUrl` to `"https://www.buudy.co.uk/products/buudy-led-face-mask"`.
+     - Updated `uk` market `buudyUrl` to `"https://www.buudy.co.uk/products/buudy-led-face-mask"`.
+  4. **`apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`**:
+     - Updated Buudy #1 winner product `link` (line 162) to `"https://www.buudy.co.uk/products/buudy-led-face-mask"`.
+     - Updated JSON-LD schema offer `url` (line 1217) to `"https://www.buudy.co.uk/products/buudy-led-face-mask"`.
+     - Verified Free Gift images render `/img/93-w.webp` (Travel Case), `/img/35-w.webp` (Torch), and `/img/94-w.webp` (E-Book).
+  5. **Legacy Comparison Pages (`apps/site/src/legacy-pages/old/*`)**:
+     - `VideoAdvertorial.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `NewAdvertorial.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `CurrentbodyComparison.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `DeluxeskinComparison.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `QureskincareComparison.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `TherafaceComparison.tsx`: Updated all Buudy links to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+  6. **Legacy Guides & Articles (`apps/site/src/legacy-pages/old/*`)**:
+     - `BrandNamePremium.tsx`: Updated all CTAs to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `FloatingHeadWarning.tsx`: Updated all CTAs to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `LedDensityScam.tsx`: Updated all CTAs to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `MissingColorsExpose.tsx`: Updated all CTAs to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `SiliconMaskWarning.tsx`: Updated all CTAs to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+     - `Article.tsx`: Updated featured product link to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+  3. Scope check: Zero changes outside mask pages in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+
 
 
 
