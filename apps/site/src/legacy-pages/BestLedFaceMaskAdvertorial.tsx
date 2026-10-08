@@ -741,7 +741,7 @@ type ComparisonRowDef =
       kind: "boolean";
     }
   | {
-      key: "ledCount" | "lightWavelengths" | "moneyBackTrial";
+      key: "lightWavelengths" | "moneyBackTrial";
       label: string;
       kind: "text";
     }
@@ -752,7 +752,6 @@ type ComparisonRowDef =
     };
 
 const TOP_5_LED_MASK_COMPARISON_ROWS: ComparisonRowDef[] = [
-  { key: "ledCount", label: "LED Bulb Count", kind: "text" },
   { key: "lightWavelengths", label: "Light Spectrum / Modes", kind: "text" },
   { key: "neckCoverage", label: "Integrated Neck Coverage", kind: "boolean" },
   { key: "multiSkinModes", label: "Total Skin Health (Acne, Tone, Aging)", kind: "boolean" },
