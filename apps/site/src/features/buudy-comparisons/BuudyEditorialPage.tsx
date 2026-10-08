@@ -24,10 +24,11 @@ const checkedDate = "3 August 2026";
 
 function ProductImage({ product }: { product: EditorialProduct }) {
   const [failed, setFailed] = useState(false);
+  const fallbackSrc = product.shortName === "Buudy" ? "/img/57-w.webp" : "/img/TOP 5 LED Mask uk.png";
 
   return (
     <img
-      src={failed ? "/img/TOP 5 LED Mask uk.png" : product.image}
+      src={failed ? fallbackSrc : product.image}
       alt={product.imageAlt}
       className="h-full w-full object-contain p-5"
       onError={() => setFailed(true)}
@@ -216,19 +217,59 @@ export default function BuudyEditorialPage({ pathname }: { pathname: string }) {
 
   if (!page) return null;
 
-  const faqSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: page.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://www.trustpilotreview.shop${page.path}#article`,
+        headline: page.title,
+        description: page.metaDescription,
+        image: `https://www.trustpilotreview.shop${page.heroImage}`,
+        author: {
+          "@type": "Organization",
+          name: "Trustpilot Review",
+          url: "https://www.trustpilotreview.shop/",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Trustpilot Review",
+          url: "https://www.trustpilotreview.shop/",
+        },
+      },
+      {
+        "@type": "Product",
+        "@id": `https://www.trustpilotreview.shop${page.path}#product-buudy`,
+        name: buudyProduct.name,
+        image: `https://www.trustpilotreview.shop${buudyProduct.image}`,
+        description: "Buudy 7 Colour LED Mask with face and neck coverage, 7 visible colours plus 830nm near-infrared light therapy.",
+        brand: {
+          "@type": "Brand",
+          name: "Buudy",
+        },
+        offers: {
+          "@type": "Offer",
+          price: "179.00",
+          priceCurrency: "GBP",
+          availability: "https://schema.org/InStock",
+          url: BUUDY_PRODUCT_URL,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `https://www.trustpilotreview.shop${page.path}#faq`,
+        mainEntity: page.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      },
+    ],
   };
 
   return (
     <div data-buudy-editorial-page={page.path} className="min-h-screen bg-[#f7f7f4] pb-24 text-slate-900 md:pb-0">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <EditorialHeader page={page} />
 
       <main className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">

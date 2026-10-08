@@ -10279,6 +10279,80 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Git Status**:
   - Revert commit `da181e0db47d162d878ce45c0a8b3219d7a29c30` created locally (ahead of origin/main by 1 commit).
 
+---
+
+## Session Log: 08 October 2026 - LED Mask #1 Pick & Top 5 Comparison Images Update Across All Mask Pages
+
+- **User Intent & Scope**:
+  - Pull latest repository changes (`git pull`).
+  - Update #1 product pick image everywhere across all mask pages to: `"E:\1st YEAR DTU\New folder\Buddy\Images\LED Mask With Certification Badge.webp"`.
+  - Update Top 5 comparison image everywhere across all mask pages to: `"E:\1st YEAR DTU\New folder\Buddy\Images\TOP 5 LED Mask (4).webp"`.
+  - Launch multiple subagents to audit, update, and verify all mask pages strictly.
+  - Strict scope boundary: Work only on mask pages in `trustpilotreview-shop`, with zero edits to any other product lines (hair dryers, toothbrushes, grounding sheets, hearing aids, pillows) and zero edits to any outside repository.
+
+- **Starting & Ending Git State**:
+  - Starting: `## main...origin/main` (clean tracking). Executed `git pull` -> `Already up to date`.
+  - Ending: Modified mask image assets and legacy components in `apps/site/`.
+
+- **Source Image Assets & Deployments**:
+  1. **New #1 Image**:
+     - Source: `E:\1st YEAR DTU\New folder\Buddy\Images\LED Mask With Certification Badge.webp` (71,930 bytes).
+     - Target Asset Deployments:
+       - `apps/site/public/img/57-w.webp`
+       - `apps/site/public/img/buudy-blue-light-no1-pick.png`
+       - `apps/site/public/img/LED Mask With Certification Badge.webp`
+       - `unzipped/public/img/buudy-blue-light-no1-pick.png`
+  2. **New Top 5 Image**:
+     - Source: `E:\1st YEAR DTU\New folder\Buddy\Images\TOP 5 LED Mask (4).webp` (62,926 bytes).
+     - Target Asset Deployments:
+       - `apps/site/public/img/TOP 5 LED Mask uk.png`
+       - `apps/site/public/img/TOP 5 LED Mask.png`
+       - `apps/site/public/img/TOP 5 LED Mask (4).webp`
+       - `apps/site/public/img/TOP 5 LED Mask uk.webp`
+       - `apps/site/public/img/TOP 5 LED Mask.webp`
+
+- **Files Inspected & Modified**:
+  1. `apps/site/src/app/best-led-face-mask-uk-2026/page.tsx`:
+     - Verified OpenGraph and Twitter card images reference `/img/TOP 5 LED Mask uk.png`.
+  2. `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`:
+     - Verified `baseProducts` #1 pick image points to `/img/57-w.webp`.
+     - Verified `getComparisonProducts` rank 1 image points to `/img/57-w.webp`.
+     - Verified `heroImage` points to `/img/TOP 5 LED Mask.png` (CA) and `/img/TOP 5 LED Mask uk.png` (UK/Global).
+     - Verified structured JSON-LD schema references `https://www.trustpilotreview.shop/img/TOP%205%20LED%20Mask%20uk.png` and `https://www.trustpilotreview.shop/img/57-w.webp`.
+  3. `apps/site/src/data/buudyEditorialPages.ts`:
+     - Verified `buudyProduct.image` points to `/img/57-w.webp`.
+     - Verified `heroImage` for all comparisons (`currentbody-vs-buudy`, `deluxeskin-vs-buudy`, `qureskincare-vs-buudy`, `theraface-vs-other-masks`) points to `/img/TOP 5 LED Mask uk.png`.
+     - Verified `buudyEditorialHomeCards` Top 5 card image points to `/img/TOP 5 LED Mask uk.png`.
+  4. `apps/site/src/features/buudy-comparisons/BuudyEditorialPage.tsx`:
+     - Verified hero banner fallback to `/img/TOP 5 LED Mask uk.png`.
+     - Updated ProductImage fallback logic for Buudy to `/img/57-w.webp` and comparison items to `/img/TOP 5 LED Mask uk.png`.
+     - Added comprehensive JSON-LD structured data graph with Article, Product (Buudy), and FAQPage schemas.
+  5. `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`:
+     - Updated product #1 image to `/img/57-w.webp` (line 23).
+     - Updated comparison hero image to `/img/TOP 5 LED Mask uk.png` (line 412).
+     - Confirmed bottom pick image reference is `/img/buudy-blue-light-no1-pick.png` (line 657).
+  6. `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`:
+     - Updated product #1 image from remote host to `/img/57-w.webp` (line 23).
+     - Updated comparison hero image to `/img/TOP 5 LED Mask uk.png` (line 298).
+  7. Legacy Comparisons (`CurrentbodyComparison.tsx`, `DeluxeskinComparison.tsx`, `QureskincareComparison.tsx`, `TherafaceComparison.tsx`):
+     - Updated Buudy #1 image to `/img/57-w.webp`.
+     - Updated comparison hero banner to `/img/TOP 5 LED Mask uk.png`.
+  8. Legacy Editorial Guides (`BrandNamePremium.tsx`, `FloatingHeadWarning.tsx`, `LedDensityScam.tsx`, `MissingColorsExpose.tsx`, `SiliconMaskWarning.tsx`):
+     - Replaced all outdated remote Hostinger staging URLs with local `/img/57-w.webp`.
+  9. `apps/site/src/data/old/articles.ts`:
+     - Article 1 (`red-light-therapy-ultimate-guide`): Updated image to `/img/TOP 5 LED Mask uk.png`.
+     - Article 2 (`blue-red-light-blemish-prone-skin`): Updated image to `/img/39-w.webp`.
+     - Article 3 (`led-masks-for-mature-skin`): Updated image to `/img/57-w.webp`.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68 static and dynamic routes compiled and prerendered cleanly).
+  3. Scope check: Zero modifications to non-mask pages (hair dryers, toothbrushes, grounding sheets, pillows, hearing aids) and zero modifications to outside repositories.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+
 
 
 

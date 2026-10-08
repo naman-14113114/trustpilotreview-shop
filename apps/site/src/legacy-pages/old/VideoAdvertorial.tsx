@@ -20,7 +20,7 @@ const products = [
     id: 1,
     rank: "#1",
     name: "Buudy 7 Colour LED Mask",
-    image: "https://www.buudy.co.uk/images/products/buudy-led-mask/02-buudy-led-mask-side-profile.webp",
+    image: "/img/57-w.webp",
     price: "£179",
     originalPrice: "£449",
     rating: "4.9 / 5",
@@ -409,7 +409,7 @@ export default function Home() {
           </div>
 
           <img 
-            src="https://img.thesitebase.net/10677/10677322/themes/177107744580dd01d13d.png" 
+            src="/img/TOP 5 LED Mask uk.png" 
             alt="LED Masks Comparison" 
             className="w-full max-w-5xl mx-auto rounded-3xl shadow-xl border border-slate-100"
           />
