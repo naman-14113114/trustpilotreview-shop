@@ -195,7 +195,7 @@ const baseProducts: Product[] = [
     rank: "#2",
     name: "CurrentBody LED Mask",
     image: "/img/Untitled design.png",
-    price: "£399.99",
+    price: "£499.99",
     rating: "4.7 / 5",
     link: "https://amzn.to/4beNXsm",
     isWinner: false,
@@ -212,11 +212,11 @@ const baseProducts: Product[] = [
       "High-Quality Build: Features include flexible silicone for a good fit, a portable clip-on controller, and optional eye inserts for convenience.",
     ],
     cons: [
-      "Extremely High Price: At £399.99, it is drastically more expensive than the Buudy mask (which is £179).",
-      'No Neck Coverage: The standard £400 mask is for the face only. You must purchase the "Face & Neck Kit" for £679.99 to get neck coverage, which comes standard with the Buudy mask.',
+      "Extremely High Price: At £499.99, it is drastically more expensive than the Buudy mask (which is £179).",
+      'No Neck Coverage: The standard £500 mask is for the face only. You must purchase the "Face & Neck Kit" for £679.99 to get neck coverage, which comes standard with the Buudy mask.',
       "Very Limited Treatment Modes: This is an anti-aging-only device. It only offers 3 red/near-infrared wavelengths and completely lacks the 7-color versatility of the Buudy mask. It cannot be used to target acne (Blue light), dark spots (Green light), or redness (Yellow light).",
       "Not a Complete Solution: Because it only targets one concern (aging), it is not a comprehensive solution for total skin health like a multi-color mask.",
-      "Costly Money-Back Guarantee: The 60-day money-back guarantee is not 100% free. Customers are charged a 10% restocking fee to return it, which would be £40 on a £400 mask.",
+      "Costly Money-Back Guarantee: The 60-day money-back guarantee is not 100% free. Customers are charged a 10% restocking fee to return it, which would be £50 on a £500 mask.",
       'Mixed User Results: Despite the high rating, some verified reviewers report issues, stating they "Not noticed any difference yet" even after using it 5 times a week for a couple of months.',
       'Fit Issues: Some users note that the fit isn\'t perfect and that the mask can "feel it slide down," even with the new straps.',
       "Silicone Mask Dangers: Recent studies have highlighted potential safety and hygiene concerns with flexible silicone LED masks. <a href='https://www.bestledfacemask.org/silicone-led-mask-dangers' target='_blank' class='text-red-500 hover:text-red-700 underline font-bold'>Read Full Report</a>",
@@ -233,8 +233,7 @@ const baseProducts: Product[] = [
     id: 3,
     rank: "#3",
     name: "Omnilux LED Mask",
-    image:
-      "https://img.thesitebase.net/10677/10677322/themes/1769107230af732ce69a.jpeg",
+    image: "/img/omnilux.png",
     price: "£348",
     rating: "4.6 / 5",
     link: "https://amzn.to/4s0Zcf7",
@@ -274,9 +273,9 @@ const baseProducts: Product[] = [
     name: "Shark CryoGlow LED Mask",
     image:
       "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
-    price: "£299.99",
+    price: "£249.99",
     rating: "4.6 / 5",
-    link: "https://amzn.to/4b4C8WS",
+    link: "https://link.amazon/B0cFRb4P4",
     isWinner: false,
     description: [
       "The Shark CryoGlow LED Face Mask has quickly made headlines and won prestigious beauty awards since its launch. From a trusted brand known for high-tech innovation, Shark offers the first LED mask featuring integrated under-eye cooling technology, making it a unique 2-in-1 solution for facial care.",
@@ -290,7 +289,7 @@ const baseProducts: Product[] = [
       "Fast Treatment Times: With pre-programmed sessions as short as 6-8 minutes, it offers a very quick daily treatment.",
     ],
     cons: [
-      "Extremely High Price: At £299.99, it is more than double the price of the Buudy mask (£179) for what is arguably less technology.",
+      "Extremely High Price: At £249.99, it is significantly more expensive than the Buudy mask (£179) for what is arguably less technology.",
       "No Neck Coverage: The device is for the face only and offers no treatment for the neck, a key area of concern for aging that is included with the Buudy mask.",
       "Severely Limited Light Modes: The mask is heavily focused on its cooling gimmick and offers very few light options. It is missing 5 of the 7 wavelengths (Green, Yellow, Cyan, Purple, White) that the Buudy mask has for targeting dark spots, skin balancing, and reducing swelling.",
       "Unspecified LED Count: A major red flag. The page does not state the number of LEDs, suggesting the count is low. A lower LED count (compared to Buudy's 192 high-density LEDs) means less power and less even skin coverage.",
@@ -485,13 +484,19 @@ function replaceMarketPrices(text: string, market: AdvertorialMarket) {
       `${legacyPound}679.99`,
       prices.currentbody.fullCoveragePrice ?? prices.currentbody.price,
     )
+    .replaceAll(`${legacyPound}499.99`, prices.currentbody.price)
     .replaceAll(`${legacyPound}399.99`, prices.currentbody.price)
+    .replaceAll(
+      `${legacyPound}500`,
+      prices.currentbody.roundedPrice ?? prices.currentbody.price,
+    )
     .replaceAll(
       `${legacyPound}400`,
       prices.currentbody.roundedPrice ?? prices.currentbody.price,
     )
     .replaceAll(`${legacyPound}348`, prices.omnilux.price)
     .replaceAll(`${legacyPound}299.99`, prices.shark.price)
+    .replaceAll(`${legacyPound}249.99`, prices.shark.price)
     .replaceAll(`${legacyPound}455`, prices.drdenis.price)
     .replaceAll(
       `${legacyPound}500`,
@@ -506,6 +511,10 @@ function replaceMarketPrices(text: string, market: AdvertorialMarket) {
       prices.buudy.originalPrice ?? prices.buudy.price,
     )
     .replaceAll(`${legacyPound}179`, prices.buudy.price)
+    .replaceAll(
+      `${legacyPound}50`,
+      prices.currentbody.restockingFee ?? prices.currentbody.price,
+    )
     .replaceAll(
       `${legacyPound}40`,
       prices.currentbody.restockingFee ?? prices.currentbody.price,
@@ -709,6 +718,52 @@ export const MetricBar: React.FC<{ label: string; value: number }> = ({
   </div>
 );
 
+type ColorDot = {
+  name: string;
+  bg: string;
+  border?: boolean;
+};
+
+const BUUDY_7_COLOR_DOTS: ColorDot[] = [
+  { name: "Red (630nm)", bg: "#EF4444" },
+  { name: "Blue (415nm)", bg: "#3B82F6" },
+  { name: "Green (525nm)", bg: "#10B981" },
+  { name: "Cyan (490nm)", bg: "#06B6D4" },
+  { name: "Yellow (590nm)", bg: "#F59E0B" },
+  { name: "Purple (390nm)", bg: "#A855F7" },
+  { name: "White Spectrum", bg: "#FFFFFF", border: true },
+  { name: "Near-Infrared (830nm)", bg: "#881337" },
+];
+
+const RED_NIR_DOTS: ColorDot[] = [
+  { name: "Red (633nm)", bg: "#EF4444" },
+  { name: "Near-Infrared (830nm)", bg: "#881337" },
+];
+
+const RED_BLUE_DOTS: ColorDot[] = [
+  { name: "Red (630nm)", bg: "#EF4444" },
+  { name: "Blue (415nm)", bg: "#3B82F6" },
+];
+
+const KALA_DOTS: ColorDot[] = [
+  { name: "Red (630nm)", bg: "#EF4444" },
+  { name: "Near-Infrared (830nm)", bg: "#881337" },
+  { name: "Blue (415nm)", bg: "#3B82F6" },
+];
+
+const THERAFACE_DOTS: ColorDot[] = [
+  { name: "Red (630nm)", bg: "#EF4444" },
+  { name: "Blue (415nm)", bg: "#3B82F6" },
+  { name: "Yellow (590nm)", bg: "#F59E0B" },
+];
+
+const EQUINOX_DOTS: ColorDot[] = [
+  { name: "Red (633nm)", bg: "#EF4444" },
+  { name: "Near-Infrared (830nm)", bg: "#881337" },
+  { name: "Blue (415nm)", bg: "#3B82F6" },
+  { name: "Yellow (590nm)", bg: "#F59E0B" },
+];
+
 interface ComparisonTableProduct {
   rank: number;
   name: string;
@@ -719,13 +774,14 @@ interface ComparisonTableProduct {
   rating: number;
   ledCount: string;
   lightWavelengths: string;
+  colorDots?: ColorDot[];
   neckCoverage: boolean;
   multiSkinModes: boolean;
   eyeProtection: boolean;
   cordlessRechargeable: boolean;
   freeGifts: boolean;
   moneyBackTrial: string;
-  freeDelivery: boolean;
+  freeDelivery?: boolean;
 }
 
 type ComparisonRowDef =
@@ -735,8 +791,7 @@ type ComparisonRowDef =
         | "multiSkinModes"
         | "eyeProtection"
         | "cordlessRechargeable"
-        | "freeGifts"
-        | "freeDelivery";
+        | "freeGifts";
       label: string;
       kind: "boolean";
     }
@@ -759,7 +814,6 @@ const TOP_5_LED_MASK_COMPARISON_ROWS: ComparisonRowDef[] = [
   { key: "cordlessRechargeable", label: "Cordless & Hands-Free", kind: "boolean" },
   { key: "freeGifts", label: "Free Deluxe Gift Bundle", kind: "boolean" },
   { key: "moneyBackTrial", label: "Risk-Free Trial", kind: "text" },
-  { key: "freeDelivery", label: "Free Tracked Delivery", kind: "boolean" },
   { key: "price", label: "Price", kind: "price" },
 ];
 
@@ -778,6 +832,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
         rating: 4.9,
         ledCount: "192 LEDs",
         lightWavelengths: "7 Colours + 830nm NIR",
+        colorDots: BUUDY_7_COLOR_DOTS,
         neckCoverage: true,
         multiSkinModes: true,
         eyeProtection: true,
@@ -795,6 +850,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
         rating: 4.7,
         ledCount: "132 LEDs",
         lightWavelengths: "Red & NIR (3 Modes)",
+        colorDots: RED_NIR_DOTS,
         neckCoverage: false,
         multiSkinModes: false,
         eyeProtection: false,
@@ -812,6 +868,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
         rating: 4.5,
         ledCount: "198 LEDs",
         lightWavelengths: "Red, NIR & Blue (3 Modes)",
+        colorDots: KALA_DOTS,
         neckCoverage: false,
         multiSkinModes: false,
         eyeProtection: false,
@@ -829,6 +886,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
         rating: 4.3,
         ledCount: "648 LEDs",
         lightWavelengths: "Red, Blue & Yellow + Vibration",
+        colorDots: THERAFACE_DOTS,
         neckCoverage: false,
         multiSkinModes: false,
         eyeProtection: false,
@@ -846,6 +904,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
         rating: 4.2,
         ledCount: "336 LEDs",
         lightWavelengths: "Red, NIR, Blue, Yellow",
+        colorDots: EQUINOX_DOTS,
         neckCoverage: false,
         multiSkinModes: false,
         eyeProtection: false,
@@ -868,6 +927,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
       rating: 4.9,
       ledCount: "192 LEDs",
       lightWavelengths: "7 Colours + 830nm NIR",
+      colorDots: BUUDY_7_COLOR_DOTS,
       neckCoverage: true,
       multiSkinModes: true,
       eyeProtection: true,
@@ -885,6 +945,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
       rating: 4.7,
       ledCount: "132 LEDs",
       lightWavelengths: "Red & NIR (3 Modes)",
+      colorDots: RED_NIR_DOTS,
       neckCoverage: false,
       multiSkinModes: false,
       eyeProtection: false,
@@ -897,11 +958,12 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
       rank: 3,
       name: "Omnilux LED Mask",
       shortName: "Omnilux",
-      image: "https://img.thesitebase.net/10677/10677322/themes/1769107230af732ce69a.jpeg",
+      image: "/img/omnilux.png",
       price: prices.omnilux.price,
       rating: 4.6,
       ledCount: "132 LEDs",
       lightWavelengths: "Red & NIR (2 Modes)",
+      colorDots: RED_NIR_DOTS,
       neckCoverage: false,
       multiSkinModes: false,
       eyeProtection: false,
@@ -919,6 +981,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
       rating: 4.6,
       ledCount: "Unspecified",
       lightWavelengths: "Red & Blue (4 Modes)",
+      colorDots: RED_BLUE_DOTS,
       neckCoverage: false,
       multiSkinModes: false,
       eyeProtection: true,
@@ -936,6 +999,7 @@ function getComparisonProducts(market: AdvertorialMarket): ComparisonTableProduc
       rating: 4.1,
       ledCount: "162 LEDs",
       lightWavelengths: "Red & Blue (3 Modes)",
+      colorDots: RED_BLUE_DOTS,
       neckCoverage: false,
       multiSkinModes: false,
       eyeProtection: false,
@@ -990,13 +1054,23 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                     >
                       #{prod.rank} {prod.rank === 1 ? "Winner" : "Ranked"}
                     </span>
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-2.5 flex items-center justify-center p-1 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div
+                      className={
+                        prod.rank === 1
+                          ? "w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square mb-2.5 rounded-2xl overflow-hidden bg-white border-2 border-emerald-500/50 shadow-md flex items-center justify-center p-0"
+                          : "w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square mb-2.5 rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm flex items-center justify-center p-1.5"
+                      }
+                    >
                       <img
                         src={prod.image}
                         alt={prod.name}
                         loading="lazy"
                         decoding="async"
-                        className="max-h-full max-w-full object-contain"
+                        className={
+                          prod.rank === 1
+                            ? "w-full h-full object-cover rounded-2xl"
+                            : "max-h-full max-w-full object-contain"
+                        }
                       />
                     </div>
                     <span className="font-bold text-slate-900 text-sm sm:text-base md:text-lg line-clamp-1 mb-1 font-sans">
@@ -1035,7 +1109,9 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                     return (
                       <td
                         key={`${prod.rank}-${row.key}`}
-                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
                       >
                         <div className="flex items-center justify-center">
                           {isPassed ? (
@@ -1052,7 +1128,9 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                     return (
                       <td
                         key={`${prod.rank}-price-row`}
-                        className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
                       >
                         <div className="flex items-baseline justify-center gap-1.5 font-sans">
                           <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
@@ -1068,11 +1146,47 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                     );
                   }
 
+                  if (row.key === "lightWavelengths") {
+                    const dots = prod.colorDots || [];
+                    return (
+                      <td
+                        key={`${prod.rank}-${row.key}`}
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
+                      >
+                        <div className="flex flex-col items-center justify-center gap-1.5">
+                          {dots.length > 0 && (
+                            <div className="flex items-center justify-center gap-1 flex-wrap max-w-[125px]">
+                              {dots.map((dot, i) => (
+                                <span
+                                  key={i}
+                                  title={dot.name}
+                                  className={`inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full shadow-2xs shrink-0 ${
+                                    dot.border
+                                      ? "border border-slate-300 ring-1 ring-slate-200/50"
+                                      : ""
+                                  }`}
+                                  style={{ backgroundColor: dot.bg }}
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <span className="text-[11px] sm:text-xs md:text-sm font-semibold text-slate-800 font-sans leading-tight">
+                            {prod.lightWavelengths}
+                          </span>
+                        </div>
+                      </td>
+                    );
+                  }
+
                   const textVal = prod[row.key];
                   return (
                     <td
                       key={`${prod.rank}-${row.key}`}
-                      className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
+                      className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                        prod.rank === 1 ? "bg-emerald-50/20" : ""
+                      }`}
                     >
                       <span className="text-xs sm:text-sm font-medium text-slate-800 font-sans">
                         {textVal}
@@ -1616,6 +1730,9 @@ export default function Home({
                       <ul className="space-y-4">
                         {product.pros.map((pro, idx) => {
                           const [bold, ...rest] = pro.split(":");
+                          const is7ColorPoint =
+                            bold.toLowerCase().includes("7 colour") ||
+                            bold.toLowerCase().includes("7 color");
                           return (
                             <li
                               key={idx}
@@ -1625,12 +1742,35 @@ export default function Home({
                                 size={20}
                                 className="text-emerald-500 shrink-0 mt-0.5"
                               />
-                              <span>
-                                <strong className="text-slate-900">
-                                  {bold}:
-                                </strong>
-                                {rest.join(":")}
-                              </span>
+                              <div>
+                                <span>
+                                  <strong className="text-slate-900">
+                                    {bold}:
+                                  </strong>
+                                  {rest.join(":")}
+                                </span>
+                                {is7ColorPoint && (
+                                  <div className="mt-2.5 flex items-center gap-1.5 flex-wrap">
+                                    {BUUDY_7_COLOR_DOTS.map((dot, i) => (
+                                      <span
+                                        key={i}
+                                        title={dot.name}
+                                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-white border shadow-2xs ${
+                                          dot.border
+                                            ? "border-slate-300 text-slate-700"
+                                            : "border-slate-200 text-slate-800"
+                                        }`}
+                                      >
+                                        <span
+                                          className="w-2.5 h-2.5 rounded-full shrink-0 shadow-2xs"
+                                          style={{ backgroundColor: dot.bg }}
+                                        />
+                                        <span className="text-[11px] font-medium">{dot.name.split(" ")[0]}</span>
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             </li>
                           );
                         })}

@@ -7,7 +7,7 @@ const dangerPoints = [
   {
     icon: ZapOff,
     title: "Hidden Bulb Counts",
-    description: "Many high-end brands intentionally obscure their total LED bulb count in their marketing materials. Why? Because producing high-density LED arrays is expensive. A mask that costs £400 might only have 60 to 80 weak LEDs spread far apart.",
+    description: "Many high-end brands intentionally obscure their total LED bulb count in their marketing materials. Why? Because producing high-density LED arrays is expensive. A mask that costs £500 might only have 60 to 80 weak LEDs spread far apart.",
     severity: "Transparency Risk"
   },
   {
@@ -98,7 +98,7 @@ export default function LedDensityScam() {
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="prose prose-lg prose-slate max-w-4xl mx-auto mb-16">
-          <p>When you buy a luxury car, you expect to know how much horsepower the engine has. Yet, when consumers spend £400 on a luxury LED face mask, they rarely ask the equivalent question: <strong>How many LED bulbs does it actually have?</strong></p>
+          <p>When you buy a luxury car, you expect to know how much horsepower the engine has. Yet, when consumers spend £500 on a luxury LED face mask, they rarely ask the equivalent question: <strong>How many LED bulbs does it actually have?</strong></p>
           <p>Many 'premium' brands hide this number deep in the fine print—or omit it entirely. Because manufacturing dense, high-quality LED arrays is expensive, some well-known brands rely on sparse grids of 60 to 80 weak LEDs to maximize their profit margins.</p>
           <p>This creates massive "dead zones" on your face. Due to the physics of light dispersion from these masks, the skin located precisely between two widely spaced bulbs receives almost zero clinical benefit. You could be treating your forehead while totally missing the most important crow's feet and smile lines.</p>
         </div>

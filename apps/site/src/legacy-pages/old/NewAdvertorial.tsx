@@ -60,7 +60,7 @@ const products = [
     rank: "#2",
     name: "CurrentBody LED Mask",
     image: "https://img.thesitebase.net/10677/10677322/themes/176872504642f0322d65.jpeg",
-    price: "£399.99",
+    price: "£499.99",
     rating: "4.7 / 5",
     link: "https://amzn.to/4beNXsm",
     isWinner: false,
@@ -77,11 +77,11 @@ const products = [
       "High-Quality Build: Features include flexible silicone for a good fit, a portable clip-on controller, and optional eye inserts for convenience."
     ],
     cons: [
-      "Extremely High Price: At £399.99, it is drastically more expensive than the Buudy mask (which is £179).",
-      "No Neck Coverage: The standard £400 mask is for the face only. You must purchase the \"Face & Neck Kit\" for £679.99 to get neck coverage, which comes standard with the Buudy mask.",
+      "Extremely High Price: At £499.99, it is drastically more expensive than the Buudy mask (which is £179).",
+      "No Neck Coverage: The standard £500 mask is for the face only. You must purchase the \"Face & Neck Kit\" for £679.99 to get neck coverage, which comes standard with the Buudy mask.",
       "Very Limited Treatment Modes: This is an anti-aging-only device. It only offers 3 red/near-infrared wavelengths and completely lacks the 7-color versatility of the Buudy mask. It cannot be used to target acne (Blue light), dark spots (Green light), or redness (Yellow light).",
       "Not a Complete Solution: Because it only targets one concern (aging), it is not a comprehensive solution for total skin health like a multi-color mask.",
-      "Costly Money-Back Guarantee: The 60-day money-back guarantee is not 100% free. Customers are charged a 10% restocking fee to return it, which would be £40 on a £400 mask.",
+      "Costly Money-Back Guarantee: The 60-day money-back guarantee is not 100% free. Customers are charged a 10% restocking fee to return it, which would be £50 on a £500 mask.",
       "Mixed User Results: Despite the high rating, some verified reviewers report issues, stating they \"Not noticed any difference yet\" even after using it 5 times a week for a couple of months.",
       "Fit Issues: Some users note that the fit isn't perfect and that the mask can \"feel it slide down,\" even with the new straps.",
       "Silicone Mask Dangers: Recent studies have highlighted potential safety and hygiene concerns with flexible silicone LED masks. <a href='https://www.trustpilotreview.shop/silicone-led-mask-dangers' target='_blank' class='text-red-500 hover:text-red-700 underline font-bold'>Read Full Report</a>"
@@ -98,7 +98,7 @@ const products = [
     id: 3,
     rank: "#3",
     name: "Omnilux LED Mask",
-    image: "https://img.thesitebase.net/10677/10677322/themes/1769107230af732ce69a.jpeg",
+    image: "/img/omnilux.png",
     price: "£348",
     rating: "4.6 / 5",
     link: "https://amzn.to/4s0Zcf7",
@@ -137,9 +137,9 @@ const products = [
     rank: "#4",
     name: "Shark CryoGlow LED Mask",
     image: "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
-    price: "£299.99",
+    price: "£249.99",
     rating: "4.6 / 5",
-    link: "https://amzn.to/4b4C8WS",
+    link: "https://link.amazon/B0cFRb4P4",
     isWinner: false,
     description: [
       "The Shark CryoGlow LED Face Mask has quickly made headlines and won prestigious beauty awards since its launch. From a trusted brand known for high-tech innovation, Shark offers the first LED mask featuring integrated under-eye cooling technology, making it a unique 2-in-1 solution for facial care.",
@@ -153,7 +153,7 @@ const products = [
       "Fast Treatment Times: With pre-programmed sessions as short as 6-8 minutes, it offers a very quick daily treatment."
     ],
     cons: [
-      "Extremely High Price: At £299.99, it is more than double the price of the Buudy mask (£179) for what is arguably less technology.",
+      "Extremely High Price: At £249.99, it is more than double the price of the Buudy mask (£179) for what is arguably less technology.",
       "No Neck Coverage: The device is for the face only and offers no treatment for the neck, a key area of concern for aging that is included with the Buudy mask.",
       "Severely Limited Light Modes: The mask is heavily focused on its cooling gimmick and offers very few light options. It is missing 5 of the 7 wavelengths (Green, Yellow, Cyan, Purple, White) that the Buudy mask has for targeting dark spots, skin balancing, and reducing swelling.",
       "Unspecified LED Count: A major red flag. The page does not state the number of LEDs, suggesting the count is low. A lower LED count (compared to Buudy's 192 high-density LEDs) means less power and less even skin coverage.",

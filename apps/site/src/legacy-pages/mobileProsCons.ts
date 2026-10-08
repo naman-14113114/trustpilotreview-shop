@@ -53,11 +53,11 @@ export const mobileProsCons: MobileProsConsMap = {
         "Flexible silicone design with portable controller and optional eye inserts",
       ],
       cons: [
-        "Face-only treatment at £399.99; neck kit costs an additional £679.99",
+        "Face-only treatment at £499.99; neck kit costs an additional £679.99",
         "Premium-priced device — significantly more expensive than Buudy (£179)",
         "Limited to anti-aging with 3 Red/NIR wavelengths only",
         "No Blue, Green or Yellow light modes for broader skin concerns",
-        "60-day guarantee includes a 10% restocking fee on returns (~£40)",
+        "60-day guarantee includes a 10% restocking fee on returns (~£50)",
         "Some users report minimal results after extended use",
         "Some reviewers mention fit and slipping issues",
         "Flexible silicone design may require extra care for hygiene and maintenance",
@@ -92,7 +92,7 @@ export const mobileProsCons: MobileProsConsMap = {
         "Fast pre-programmed sessions as short as 6–8 minutes",
       ],
       cons: [
-        "At £299.99, more than double the price of Buudy (£179)",
+        "At £249.99, significantly more expensive than Buudy (£179)",
         "Face-only treatment — no neck coverage included",
         "Missing 5 of 7 wavelengths (Green, Yellow, Cyan, Purple, White)",
         "LED count undisclosed — likely lower than Buudy's 192 high-density LEDs",

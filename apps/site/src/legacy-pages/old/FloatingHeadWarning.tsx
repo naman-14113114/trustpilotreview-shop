@@ -13,7 +13,7 @@ const dangerPoints = [
   {
     icon: Scissors,
     title: "The £300 'Neck Tax' Rip-Off",
-    description: "Premium brands like Omnilux and CurrentBody intentionally sell their standard £350-£400 LED masks as 'face-only'. If you want to treat your neck, they force you to purchase a completely separate 'Neck & Décolletage' piece for an additional £300+. You are effectively being taxed twice for what should be a single, comprehensive treatment.",
+    description: "Premium brands like Omnilux and CurrentBody intentionally sell their standard £350-£500 LED masks as 'face-only'. If you want to treat your neck, they force you to purchase a completely separate 'Neck & Décolletage' piece for an additional £300+. You are effectively being taxed twice for what should be a single, comprehensive treatment.",
     severity: "Financial Risk"
   },
   {
@@ -97,7 +97,7 @@ export default function FloatingHeadWarning() {
 
           <div className="bg-slate-50 p-6 rounded-2xl text-left text-sm md:text-base text-slate-600 leading-relaxed border border-slate-100 shadow-sm mb-12 max-w-4xl mx-auto">
             <p>
-              <strong className="text-slate-900">Dr. Elizabeth Vance</strong> exposes the beauty industry's most profitable secret: intentionally designing £400 LED masks to ignore the neck area, forcing customers to spend hundreds more to prevent the dreaded "floating head" syndrome.
+              <strong className="text-slate-900">Dr. Elizabeth Vance</strong> exposes the beauty industry's most profitable secret: intentionally designing £500 LED masks to ignore the neck area, forcing customers to spend hundreds more to prevent the dreaded "floating head" syndrome.
             </p>
           </div>
         </div>
@@ -105,8 +105,8 @@ export default function FloatingHeadWarning() {
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="prose prose-lg prose-slate max-w-4xl mx-auto mb-16">
-          <p>You've decided to invest in an LED face mask to fight wrinkles and boost collagen. You look at premium brands like CurrentBody or Omnilux, ready to spend nearly £400 on your skin health. But there's a vital piece of information hidden in the fine print.</p>
-          <p><strong>Those £400 masks stop completely at your jawline.</strong></p>
+          <p>You've decided to invest in an LED face mask to fight wrinkles and boost collagen. You look at premium brands like CurrentBody or Omnilux, ready to spend nearly £500 on your skin health. But there's a vital piece of information hidden in the fine print.</p>
+          <p><strong>Those £500 masks stop completely at your jawline.</strong></p>
           <p>By treating only your face, you are inadvertently accelerating the visual aging contrast between your face and your neck. Within months, your facial skin will appear tight and glowing, while your neck continues to show "tech neck" lines, creping, and sun damage—a stark contrast that dermatologists refer to as <em>"Floating Head Syndrome."</em></p>
           <p>So, how do premium brands solve this? By requiring you to purchase a completely separate "Neck & Décolletage" attachment for <strong>another £300 to £350.</strong> They are effectively holding your total skin health hostage behind a massive paywall.</p>
         </div>

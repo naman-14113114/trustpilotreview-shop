@@ -97,7 +97,7 @@ const products = [
     rank: "#3",
     name: "CurrentBody LED Mask",
     image: "https://img.thesitebase.net/10677/10677322/themes/176872504642f0322d65.jpeg",
-    price: "£399.99",
+    price: "£499.99",
     rating: "4.7 / 5",
     link: "https://amzn.to/4beNXsm",
     isWinner: false,
@@ -113,7 +113,7 @@ const products = [
       "High-Quality Build: Features include flexible silicone for a good fit, a portable clip-on controller, and optional eye inserts for convenience."
     ],
     cons: [
-      "Extremely High Price: At £399.99, it sits at the very top of the consumer price range.",
+      "Extremely High Price: At £499.99, it sits at the very top of the consumer price range.",
       "No Neck Coverage: The standard mask does not cover the neck. To achieve neck coverage, you must purchase an additional kit, raising the total cost to nearly £680.",
       "Very Limited Treatment Modes: It exclusively utilizes red and near-infrared light. It cannot be used to treat active acne breakouts (which requires blue light) or balance skin tone (which utilizes green/yellow light).",
       "Not a Complete Solution: Because it only targets one concern (aging), it is not a comprehensive solution for total skin health like a multi-color mask.",
@@ -131,7 +131,7 @@ const products = [
     id: 4,
     rank: "#4",
     name: "Omnilux LED Mask",
-    image: "https://img.thesitebase.net/10677/10677322/themes/1769107230af732ce69a.jpeg",
+    image: "/img/omnilux.png",
     price: "£348",
     rating: "4.6 / 5",
     link: "https://amzn.to/4uewbOw",
@@ -166,9 +166,9 @@ const products = [
     rank: "#5",
     name: "Shark CryoGlow LED Mask",
     image: "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
-    price: "£299.99",
+    price: "£249.99",
     rating: "4.6 / 5",
-    link: "https://amzn.to/40iCfrI",
+    link: "https://link.amazon/B0cFRb4P4",
     isWinner: false,
     description: [
       "Our top pick after rigorous testing is the Shark CryoGlow LED Face Mask, which has quickly made headlines and won prestigious beauty awards. From a trusted brand known for high-tech innovation, Shark offers the first LED mask featuring integrated under-eye cooling technology, making it the ultimate 2-in-1 solution for comprehensive facial care.",
@@ -181,7 +181,7 @@ const products = [
       "Fast Treatment Times: With pre-programmed sessions as short as 6-8 minutes, it offers a very quick daily treatment."
     ],
     cons: [
-      "Extremely High Price: At £299.99, it is more than double the price of the Buudy mask (£179) for what is arguably less technology.",
+      "Extremely High Price: At £249.99, it is more than double the price of the Buudy mask (£179) for what is arguably less technology.",
       "No Neck Coverage: The device is for the face only and offers no treatment for the neck, a key area of concern for aging that is included with the Buudy mask.",
       "Fewer LEDs: Features fewer LEDs than top-tier models, resulting in less comprehensive facial coverage.",
       "Unspecified LED Count: A major red flag. The manufacturer does not heavily advertise the exact number of LED bulbs, making it difficult to gauge the true light density.",

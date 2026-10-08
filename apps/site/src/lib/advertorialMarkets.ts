@@ -133,9 +133,9 @@ export const advertorialMarkets: Record<
         roundedPrice: `${legacyPound}179`,
       },
       currentbody: {
-        price: `${legacyPound}399.99`,
-        roundedPrice: `${legacyPound}400`,
-        restockingFee: `${legacyPound}40`,
+        price: `${legacyPound}499.99`,
+        roundedPrice: `${legacyPound}500`,
+        restockingFee: `${legacyPound}50`,
         fullCoveragePrice: `${legacyPound}679.99`,
       },
       omnilux: {
@@ -143,7 +143,7 @@ export const advertorialMarkets: Record<
         fullCoveragePrice: `${legacyPound}696`,
       },
       shark: {
-        price: `${legacyPound}299.99`,
+        price: `${legacyPound}249.99`,
       },
       drdenis: {
         price: `${legacyPound}455`,

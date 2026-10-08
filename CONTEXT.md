@@ -10401,6 +10401,118 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
 
+---
+
+## Session Log: 08 October 2026 - Shark Affiliate Link & Price Update (£249.99) + CurrentBody Price Update (£499.99)
+
+- **User Intent & Scope**:
+  - Update Shark CryoGlow LED mask affiliate link to: `https://link.amazon/B0cFRb4P4`.
+  - Update Shark CryoGlow LED mask price to: `£249.99` (from `£299.99`).
+  - Update CurrentBody LED mask price to: `£499.99` (from `£399.99`).
+  - Update all associated comparison copy, metrics, and legacy guides across mask pages.
+  - Strict scope boundary: Work only on mask pages in `trustpilotreview-shop`, zero edits to non-mask pages (hair dryers, toothbrushes, grounding sheets, pillows, hearing aids), and zero edits to outside repositories.
+
+- **Files Inspected & Modified**:
+  1. **`apps/site/src/lib/advertorialMarkets.ts`**:
+     - `uk.productPrices.currentbody.price`: `${legacyPound}499.99`
+     - `uk.productPrices.currentbody.roundedPrice`: `${legacyPound}500`
+     - `uk.productPrices.currentbody.restockingFee`: `${legacyPound}50`
+     - `uk.productPrices.shark.price`: `${legacyPound}249.99`
+  2. **`apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`**:
+     - CurrentBody (`baseProducts[1]`):
+       - `price`: `"£499.99"`
+       - Updated cons: `"Extremely High Price: At £499.99, it is drastically more expensive..."`, `'No Neck Coverage: The standard £500 mask...'`, `"Costly Money-Back Guarantee: ...would be £50 on a £500 mask."`
+     - Shark (`baseProducts[3]`):
+       - `price`: `"£249.99"`
+       - `link`: `"https://link.amazon/B0cFRb4P4"`
+       - Updated cons: `"Extremely High Price: At £249.99, it is significantly more expensive than the Buudy mask (£179) for what is arguably less technology."`
+     - `replaceMarketPrices`: Added replacements for `£499.99`, `£500`, `£249.99`, `£50`.
+  3. **`apps/site/src/data/buudyEditorialPages.ts`**:
+     - `currentBody.price`: `"£499.99"`
+     - Updated comparison text in `/currentbody-vs-buudy`, `/floating-head-warning`, `/brand-name-premium`.
+  4. **`apps/site/src/legacy-pages/mobileProsCons.ts`**:
+     - Updated CurrentBody and Shark price text references.
+  5. **Legacy Advertorials & Comparison Pages (`apps/site/src/legacy-pages/old/*`)**:
+     - `VideoAdvertorial.tsx`, `NewAdvertorial.tsx`, `CurrentbodyComparison.tsx`, `DeluxeskinComparison.tsx`, `QureskincareComparison.tsx`, `TherafaceComparison.tsx`:
+       - CurrentBody price: `"£499.99"`, cons to `£499.99`, `£500`, `£50`.
+       - Shark price: `"£249.99"`, link: `"https://link.amazon/B0cFRb4P4"`, cons to `£249.99`.
+  6. **Legacy Guides & Articles (`apps/site/src/legacy-pages/old/*`, `articles.ts`)**:
+     - `BrandNamePremium.tsx`, `FloatingHeadWarning.tsx`, `LedDensityScam.tsx`, `MissingColorsExpose.tsx`, `articles.ts`:
+       - Updated CurrentBody price references to `£499.99` / `£500`.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+  3. Scope check: Zero changes outside mask pages in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+---
+
+## Session Log: 08 October 2026 - LED Mask Comparison Table Update (Color Dots, Delivery Removal, #1 Image Fit)
+
+- **User Intent & Scope**:
+  - Remove "Free Tracked Delivery" row from the Top 5 LED Mask side-by-side comparison table.
+  - Show color spectrum dots for all masks respectively in the "Light Spectrum / Modes" comparison row (matching the Buudy LED page styling):
+    - Buudy (#1): 7 visible color dots (Red, Blue, Green, Cyan, Yellow, Purple, White) + 830nm NIR.
+    - CurrentBody (#2): Red & NIR dots.
+    - Omnilux (#3): Red & NIR dots.
+    - Shark (#4): Red & Blue dots.
+    - Dr Dennis Gross (#5): Red & Blue dots.
+    - (And localized CA masks: Kala with Red, NIR, Blue; TheraFace with Red, Blue, Yellow; Equinox with Red, NIR, Blue, Yellow).
+  - Fix the #1 image container in the comparison table header to fit the card edge-to-edge with smooth border-radius (`rounded-2xl`, `overflow-hidden`, `object-cover`), avoiding the awkward inset square floating appearance.
+  - Render color dot pills for the "7 Colour Medical Grade Spectrum" item in the main product review pros section.
+  - Strict scope boundary: Work only on mask pages in `trustpilotreview-shop`, zero edits to non-mask pages (hair dryers, toothbrushes, grounding sheets, pillows, hearing aids), and zero edits to outside repositories.
+
+- **Files Inspected & Modified**:
+  1. **`apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`**:
+     - Defined `ColorDot` type and dot constants: `BUUDY_7_COLOR_DOTS`, `RED_NIR_DOTS`, `RED_BLUE_DOTS`, `KALA_DOTS`, `THERAFACE_DOTS`, `EQUINOX_DOTS`.
+     - Removed `{ key: "freeDelivery", label: "Free Tracked Delivery", kind: "boolean" }` from `TOP_5_LED_MASK_COMPARISON_ROWS`.
+     - Updated `getComparisonProducts` to assign `colorDots` to all 5 ranked products in both default (UK/US) and CA markets.
+     - Refactored `CompetitorComparisonTable` header image container:
+       - `#1 Winner`: `w-full max-w-[110px] sm:max-w-[130px] md:max-w-[145px] aspect-square rounded-2xl overflow-hidden bg-white border-2 border-emerald-500/50 shadow-md p-0` with `w-full h-full object-cover rounded-2xl` for a seamless edge-to-edge card fit.
+       - Competitors: `w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm p-1.5` with `max-h-full max-w-full object-contain`.
+     - Added specialized rendering for `lightWavelengths` comparison cells displaying centered flex color dots with title tooltips above the wavelength description.
+     - Added inline color dot badges for the "7 Colour Medical Grade Spectrum" pros item in the main product review cards.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+  3. Scope check: Zero changes outside mask pages in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+---
+
+## Session Log: 08 October 2026 - Uniform Comparison Header Sizes & Omnilux Clean Cutout Fix
+
+- **User Intent & Scope**:
+  - Unify header image container sizing across all 5 masks in the Top 5 comparison table (keep `#1` and all competitors the exact same size: `max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square rounded-2xl`).
+  - Fix the Omnilux comparison image: replaced the un-cropped external JPEG (`1769107230af732ce69a.jpeg` which had an unseemly beige/grey background box) with the clean transparent cutout mask asset `/img/omnilux.png`.
+  - Strict scope boundary: Work only on mask pages in `trustpilotreview-shop`, zero edits to non-mask pages, and zero edits to outside repositories.
+
+- **Files Inspected & Modified**:
+  1. **`apps/site/public/img/omnilux.png`**: Copied high-resolution clean transparent Omnilux cutout asset into public assets.
+  2. **`apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`**:
+     - Standardized all 5 comparison table header image containers to `w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square rounded-2xl overflow-hidden bg-white`.
+     - `#1 Winner`: `border-2 border-emerald-500/50 shadow-md p-0` with `w-full h-full object-cover rounded-2xl`.
+     - Competitors (#2, #3, #4, #5): `border border-slate-200 shadow-sm p-1.5` with `max-h-full max-w-full object-contain`.
+     - Updated Omnilux image to `/img/omnilux.png` in `baseProducts[2]` and `getComparisonProducts`.
+  3. **Legacy Pages (`CurrentbodyComparison.tsx`, `DeluxeskinComparison.tsx`, `NewAdvertorial.tsx`, `QureskincareComparison.tsx`, `TherafaceComparison.tsx`, `VideoAdvertorial.tsx`, `articles.ts`)**:
+     - Updated Omnilux image references from remote URL to `/img/omnilux.png`.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+
+
+
 
 
 

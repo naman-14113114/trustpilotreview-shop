@@ -80,7 +80,7 @@ const currentBody: EditorialProduct = {
   shortName: "CurrentBody",
   image: "/img/Untitled design.png",
   imageAlt: "CurrentBody LED face mask",
-  price: "£399.99",
+  price: "£499.99",
   priceNote: "Face mask price checked on the official UK product page",
   sourceUrl: "https://www.currentbody.com/products/currentbody-skin-led-light-therapy-mask?del_country=GB",
   sourceLabel: "CurrentBody official product page",
@@ -205,7 +205,7 @@ export const buudyEditorialPages: BuudyEditorialPage[] = [
     verdictTitle: "Buudy is the stronger all-round value; CurrentBody is the focused anti-ageing alternative",
     verdict: "Choose CurrentBody if you specifically want its flexible silicone fit and three red/near-infrared wavelengths. Choose Buudy if you want more visible colour modes, face-and-neck coverage in one device and a much lower current price.",
     keyTakeaways: [
-      "Buudy is £179; CurrentBody’s face mask was £399.99 when checked.",
+      "Buudy is £179; CurrentBody’s face mask was £499.99 when checked.",
       "CurrentBody concentrates on 633nm, 830nm and 1072nm light.",
       "Buudy includes seven visible colours, 830nm near-infrared and neck coverage.",
     ],
@@ -228,7 +228,7 @@ export const buudyEditorialPages: BuudyEditorialPage[] = [
     faq: [
       { question: "Is CurrentBody better than Buudy?", answer: "It depends on your priority. CurrentBody is a focused three-wavelength anti-ageing mask; Buudy offers more colour modes, integrated neck coverage and a lower current price." },
       { question: "Which mask includes neck coverage?", answer: "Buudy includes face and neck coverage in one design. CurrentBody lists neck coverage as part of a separate face-and-neck kit." },
-      { question: "Which one costs less?", answer: "At the prices checked on 3 August 2026, Buudy was £179 and the CurrentBody face mask was £399.99." },
+      { question: "Which one costs less?", answer: "At the prices checked on 3 August 2026, Buudy was £179 and the CurrentBody face mask was £499.99." },
     ],
   },
   {
@@ -430,7 +430,7 @@ export const buudyEditorialPages: BuudyEditorialPage[] = [
     ],
     guideFacts: [
       { label: "Buudy", value: "Integrated face and neck coverage; £179 current price" },
-      { label: "CurrentBody", value: "Face mask £399.99; face-and-neck kit £679.99 when checked" },
+      { label: "CurrentBody", value: "Face mask £499.99; face-and-neck kit £679.99 when checked" },
       { label: "DeluxeSkin", value: "Face mask plus separate neck/décolletage device; £199 sale price checked" },
       { label: "Qure / TheraFace", value: "Products reviewed here focus on the face" },
     ],
@@ -572,7 +572,7 @@ export const buudyEditorialPages: BuudyEditorialPage[] = [
     guideFacts: [
       { label: "Buudy", value: "£179; face and neck; 7 colours plus NIR; 90-day guarantee" },
       { label: "DeluxeSkin", value: "£199 checked sale price; face plus separate neck piece; red plus NIR" },
-      { label: "CurrentBody", value: "£399.99 face mask; three red/NIR wavelengths; flexible silicone" },
+      { label: "CurrentBody", value: "£499.99 face mask; three red/NIR wavelengths; flexible silicone" },
       { label: "TheraFace", value: "£579 when reviewed; three modes; vibration; rigid face-only design" },
     ],
     sections: [

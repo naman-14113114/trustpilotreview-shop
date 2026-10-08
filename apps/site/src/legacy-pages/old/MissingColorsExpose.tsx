@@ -13,7 +13,7 @@ const dangerPoints = [
   {
     icon: FlaskConical,
     title: "Ignoring Active Breakouts",
-    description: "If you buy a premium Red/NIR mask for wrinkles, but suddenly get an active acne breakout, your £400 mask is completely useless. Without Blue Light (415nm), you cannot kill acne-causing bacteria. You're left with an expensive paperweight during breakouts.",
+    description: "If you buy a premium Red/NIR mask for wrinkles, but suddenly get an active acne breakout, your £500 mask is completely useless. Without Blue Light (415nm), you cannot kill acne-causing bacteria. You're left with an expensive paperweight during breakouts.",
     severity: "Critical Risk"
   },
   {
@@ -42,7 +42,7 @@ const expertQuotes = [
   {
     name: "Dr. Sarah Jenkins",
     title: "Clinical Aesthetician",
-    quote: "Our skin is dynamic. You might need collagen stimulation on Monday, but acne treatment on Friday if you're stressed. Locking a patient into a £400 device that only treats one single concern is an outdated, restrictive approach to skincare."
+    quote: "Our skin is dynamic. You might need collagen stimulation on Monday, but acne treatment on Friday if you're stressed. Locking a patient into a £500 device that only treats one single concern is an outdated, restrictive approach to skincare."
   },
   {
     name: "Dr. Michael Thorne",
@@ -100,8 +100,8 @@ export default function MissingColorsExpose() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="prose prose-lg prose-slate max-w-4xl mx-auto mb-16">
           <p>The biggest household names in LED therapy—brands charging anywhere from £350 to £500—are actively limiting your skin's potential. If you look closely at their flagship products, you'll notice a glaring omission: <strong>they only offer 2 colors of light (usually Red and Near-Infrared).</strong></p>
-          <p>Why does this matter? Because your skin is not a static organ. While Red light is fantastic for collagen production and anti-aging, it is virtually useless against the bacteria that causes acne breakouts. If you wake up with a hormonal breakout, your £400 'Anti-Aging' mask can't help you.</p>
-          <p>These premium brands know this. That's why they sell a separate 'Blemish/Acne' mask (featuring Blue light) for another £350. By artificially limiting their £400 devices to just two colors, they force you into a frustrating cycle of buying multiple expensive devices for different skin concerns.</p>
+          <p>Why does this matter? Because your skin is not a static organ. While Red light is fantastic for collagen production and anti-aging, it is virtually useless against the bacteria that causes acne breakouts. If you wake up with a hormonal breakout, your £500 'Anti-Aging' mask can't help you.</p>
+          <p>These premium brands know this. That's why they sell a separate 'Blemish/Acne' mask (featuring Blue light) for another £350. By artificially limiting their £500 devices to just two colors, they force you into a frustrating cycle of buying multiple expensive devices for different skin concerns.</p>
         </div>
 
         {/* Danger Cards */}

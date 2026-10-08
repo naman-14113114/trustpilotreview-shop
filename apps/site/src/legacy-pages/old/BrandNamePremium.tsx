@@ -7,7 +7,7 @@ const dangerPoints = [
   {
     icon: HandCoins,
     title: "The Influencer Markup",
-    description: "When you see a Hollywood celebrity or a massive influencer endorsing a £400 LED mask on Instagram, you are directly funding that post. Up to 60% of the cost of premium masks goes straight into influencer marketing budgets, not into the physical technology.",
+    description: "When you see a Hollywood celebrity or a massive influencer endorsing a £500 LED mask on Instagram, you are directly funding that post. Up to 60% of the cost of premium masks goes straight into influencer marketing budgets, not into the physical technology.",
     severity: "Financial Risk"
   },
   {
@@ -19,7 +19,7 @@ const dangerPoints = [
   {
     icon: BadgePoundSterling,
     title: "The 'Prestige Pricing' Illusion",
-    description: "In the beauty industry, there is a psychological tactic called 'prestige pricing'. Brands intentionally price a product at £400+ to trick consumers into assuming it must be 'clinical grade' or inherently better than a £179 product. It is a calculated psychological trap.",
+    description: "In the beauty industry, there is a psychological tactic called 'prestige pricing'. Brands intentionally price a product at £500+ to trick consumers into assuming it must be 'clinical grade' or inherently better than a £179 product. It is a calculated psychological trap.",
     severity: "High Risk"
   },
   {
@@ -98,14 +98,14 @@ export default function BrandNamePremium() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="prose prose-lg prose-slate max-w-4xl mx-auto mb-16">
           <p>It's the dirtiest secret in the luxury beauty industry: <strong>A higher price tag does not equal better technology.</strong></p>
-          <p>When you see world-famous models or Hollywood actors posting selfies with a specific brand's LED mask, they didn't just stumble upon it. They are paid hundreds of thousands of pounds for that endorsement. And where does the brand get that money? By charging you £400 for a device that costs a fraction of that to produce.</p>
+          <p>When you see world-famous models or Hollywood actors posting selfies with a specific brand's LED mask, they didn't just stumble upon it. They are paid hundreds of thousands of pounds for that endorsement. And where does the brand get that money? By charging you £500 for a device that costs a fraction of that to produce.</p>
           <p>This "Celebrity Markup" forces consumers to absorb massive corporate marketing overheads. You are led to believe that because a mask costs £500, it must possess some magical, proprietary 'clinical' advantage. The reality is that the physics of light—specifically 630nm Red Light and 415nm Blue Light—cannot be patented or made 'more premium' by a logo. Light is just light.</p>
         </div>
 
         {/* Danger Cards */}
         <div className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center font-serif">
-            Where Your £400 Actually Goes
+            Where Your £500 Actually Goes
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
