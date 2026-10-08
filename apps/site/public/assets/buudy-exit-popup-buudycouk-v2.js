@@ -22,7 +22,7 @@
   var STORAGE_KEY = "buudy_exit_popup_seen_v1";
   var SHOW_DELAY_MS = 7000;
   var MOBILE_DELAY_MS = 14000;
-  var CTA_URL = "https://www.buudy.co.uk/products/buudy-led-mask?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=article_exit&utm_content=last_chance";
+  var CTA_URL = "https://www.buudy.co.uk/products/buudy-led-face-mask?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=article_exit&utm_content=last_chance";
 
   function isEligiblePath(pathname) {
     return ELIGIBLE_PATHS.some(function (eligiblePath) {

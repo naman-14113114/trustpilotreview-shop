@@ -24,7 +24,7 @@ const products = [
     price: "£179",
     originalPrice: "£449",
     rating: "4.9 / 5",
-    link: "https://www.buudy.co.uk/products/buudy-led-mask",
+    link: "https://www.buudy.co.uk/products/buudy-led-face-mask",
     isWinner: true,
     description: [
       "Our top pick is the Buudy 7 Colour LED Mask, a medical-grade device that outperforms the competition with a 7-colour spectrum plus 830nm near-infrared. While most brands focus only on basic red light, Buudy uses targeted wavelengths to support everything from deep wrinkles and acne to inflammation, uneven tone, and overall skin recovery. This Health Canada Approved technology (with CE, FCC, and ROHS certifications) ensures professional-grade results for all skin types.",
@@ -521,7 +521,7 @@ export default function Home() {
                         </div>
 
                         <a 
-                          href="https://www.buudy.co.uk/products/buudy-led-mask"
+                          href="https://www.buudy.co.uk/products/buudy-led-face-mask"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl text-center py-4 md:py-5 rounded-2xl shadow-xl shadow-blue-600/30 transition-all hover:scale-[1.02] relative overflow-hidden group border-2 border-blue-500"
@@ -623,7 +623,7 @@ export default function Home() {
                 </div>
 
                 <a 
-                  href="https://www.buudy.co.uk/products/buudy-led-mask" 
+                  href="https://www.buudy.co.uk/products/buudy-led-face-mask"
                   className="mx-auto bg-gradient-to-b from-[#1a7444] to-[#0d4a29] hover:from-[#145c35] hover:to-[#0a381f] text-white text-lg md:text-xl font-bold font-sans tracking-wide py-4 px-12 rounded-full shadow-[0_8px_20px_rgba(13,74,41,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   CHECK AVAILABILITY
@@ -641,7 +641,7 @@ export default function Home() {
           <span className="text-xs text-red-500 font-bold uppercase tracking-wide">60% OFF — Limited Time</span>
         </div>
         <a 
-          href="https://www.buudy.co.uk/products/buudy-led-mask" 
+          href="https://www.buudy.co.uk/products/buudy-led-face-mask"
           className="bg-emerald-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg shadow-emerald-500/30 whitespace-nowrap relative overflow-hidden group"
         >
           <span className="relative z-10">Shop Now</span>

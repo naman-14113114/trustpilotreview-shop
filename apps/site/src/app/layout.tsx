@@ -170,7 +170,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         </noscript>
         {children}
         <script src="/assets/microsoft-consent-mode.js?v=20260926-clarity" defer />
-        <script src="/assets/buudy-outbound-failsafe-buudycouk-660.js" defer />
+        <script src="/assets/buudy-outbound-failsafe-buudycouk-660.js?v=20261008-led-face-mask" defer />
         <script dangerouslySetInnerHTML={{ __html: outboundConversionConfig }} />
         <style id="tawk-frontend-hide" dangerouslySetInnerHTML={{ __html: tawkFrontendHideCss }} />
         <script dangerouslySetInnerHTML={{ __html: tawkToScript }} />

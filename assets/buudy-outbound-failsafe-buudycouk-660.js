@@ -7,10 +7,8 @@
   var MICROSOFT_UET_TAG_ID = "211072489";
   var REDIRECT_DELAY_MS = 180;
   var DEDUPE_WINDOW_MS = 1200;
-  var OLD_BUUDY_FACE_MASK_URL = "https://buudy.com" + "/pages/buudy-led-face-mask";
-  var OLD_BUUDY_LED_MASK_URL = "https://buudy.com" + "/pages/buudy-led-mask";
-  var OLD_UK_BUUDY_LED_MASK_URL = "https://www.buudy.co.uk/products/buudy-led-mask";
-  var UK_BUUDY_LED_MASK_URL = "https://www.buudy.co.uk/products/buudy-led-mask";
+  var UK_BUUDY_LED_MASK_URL = "https://www.buudy.co.uk/products/buudy-led-face-mask";
+  var BUUDY_LED_MASK_PATH_RE = /^\/(?:pages|products)\/buudy-(?:led-mask|led-face-mask)\/?$/i;
   var FALLBACK_BUUDY_URL = UK_BUUDY_LED_MASK_URL;
   var BUUDY_IMAGE_RE = /buudy|57-w-1\.webp|176943060543a303d043|10650730\/products/i;
   var BUUDY_CARD_TEXT_RE = /buudy\s*(7\s*color|led|mask)|official website|check availability|free gifts/i;
@@ -25,11 +23,19 @@
     try {
       var url = new URL(rawHref, window.location.href);
       if (!BUUDY_HOST_RE.test(url.hostname)) return null;
-      var normalizedHref = url.href
-        .replace(OLD_BUUDY_FACE_MASK_URL, UK_BUUDY_LED_MASK_URL)
-        .replace(OLD_BUUDY_LED_MASK_URL, UK_BUUDY_LED_MASK_URL)
-        .replace(OLD_UK_BUUDY_LED_MASK_URL, UK_BUUDY_LED_MASK_URL);
-      var normalizedUrl = new URL(normalizedHref);
+      var normalizedUrl = new URL(url.href);
+      if (BUUDY_LED_MASK_PATH_RE.test(normalizedUrl.pathname)) {
+        var destination = new URL(UK_BUUDY_LED_MASK_URL);
+        normalizedUrl.protocol = destination.protocol;
+        normalizedUrl.host = destination.host;
+        normalizedUrl.pathname = destination.pathname;
+        var attribution = new URLSearchParams(window.location.search);
+        ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id"].forEach(function (key) {
+          if (attribution.has(key) && !normalizedUrl.searchParams.has(key)) {
+            normalizedUrl.searchParams.set(key, attribution.get(key));
+          }
+        });
+      }
       var sourceMsclkid = new URLSearchParams(window.location.search).get("msclkid");
       if (sourceMsclkid && !normalizedUrl.searchParams.has("msclkid")) {
         normalizedUrl.searchParams.set("msclkid", sourceMsclkid);
@@ -92,7 +98,7 @@
     if (href) return href;
 
     if (looksLikeBuudyImage(target) || looksLikeBuudyImage(pointTarget)) {
-      return FALLBACK_BUUDY_URL;
+      return toBuudyHref(FALLBACK_BUUDY_URL);
     }
 
     return null;
@@ -101,6 +107,8 @@
   function normalizeBuudyLinks(root) {
     var scope = root && root.querySelectorAll ? root : document;
     scope.querySelectorAll('a[href*="buudy.com"], a[href*="buudy.co.uk"]').forEach(function (link) {
+      var href = toBuudyHref(link.href);
+      if (href && BUUDY_LED_MASK_PATH_RE.test(new URL(href).pathname)) link.href = href;
       link.target = "_self";
       link.rel = "noopener noreferrer";
     });

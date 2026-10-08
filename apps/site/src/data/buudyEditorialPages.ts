@@ -1,4 +1,4 @@
-export const BUUDY_PRODUCT_URL = "https://www.buudy.co.uk/products/buudy-led-mask";
+export const BUUDY_PRODUCT_URL = "https://www.buudy.co.uk/products/buudy-led-face-mask";
 
 export type EditorialFact = {
   label: string;
