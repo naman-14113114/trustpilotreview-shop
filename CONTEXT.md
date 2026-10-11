@@ -10510,6 +10510,52 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
 
+---
+
+## Session Log: 11 October 2026 - Toothbrush Pages & Data 1:1 Restoration to Commit 003e419 (Miroooo Brush X2 Flagship)
+
+- **User Intent & Scope**:
+  - Revert toothbrush pages strictly to Miroooo Brush X2 according to commit `003e419c1b3da778b0e8bc99069ca8baa9e10d55` without git reverting other pages or commits.
+  - Miroooo Brush X2 flagship specifications: £69 (compare-at £139, 50% OFF Today), 90+ days battery life (180 uses via USB-C), 51g ultra-light aerospace aluminium handle, <45dB whisper-quiet 45° Bass acoustic motor, £87 gift suite (Luxury Travel Case £29, Wall-Mounted Storage Dock £19, up to 4 extra brush heads £39), 3-year warranty, 90-day trial, link `https://www.trymiroooo.com/products/miroooo-x2`.
+  - Strict scope boundary: Work only on electric toothbrush pages, data, components, and assets in `trustpilotreview-shop`. Zero edits to pillows, hearing aids, LED face masks, legacy pages, advertorial markets, or outside repos.
+  - Executed via multiple specialized subagents with rigorous build and typecheck verification.
+
+- **Starting & Ending Git State**:
+  - Starting: `origin/main` at `72cab94` (clean, up-to-date after pull).
+  - Target Reference for Restoration: `003e419c1b3da778b0e8bc99069ca8baa9e10d55`.
+  - Ending: Working tree modified strictly on electric toothbrush files and `CONTEXT.md`.
+
+- **Files Inspected & Restored to 1:1 Parity with 003e419**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - #1 ranked product restored to Miroooo Brush X2 (£69, compareAt £139, 90-day battery life, 51g aerospace aluminium, <45dB whisper-quiet motor, £87 gift bundle [Luxury Travel Case £29, Wall-Mounted Storage Dock £19, Up to 4 extra brush heads £39], 3-year warranty, 90-day trial, URL `https://www.trymiroooo.com/products/miroooo-x2`).
+     - Verified `git diff 003e419 -- apps/site/src/data/toothbrushes.ts` = 0 lines diff.
+  2. `apps/site/src/data/toothbrushGuides.ts`:
+     - Restored all 13 comparison and buying guides for Miroooo Brush X2 (`MIROOOO_URL = "https://www.trymiroooo.com/products/miroooo-x2"`, £87 bundle suite, Dr. Olivia clinical rationales, and FAQs).
+     - Verified `git diff 003e419 -- apps/site/src/data/toothbrushGuides.ts` = 0 lines diff.
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Restored advertorial structure matching 003e419 with Miroooo Brush X2 hero banner, £87 gift bundle panel, Dr. Olivia photo verdict section (`/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp`), side-by-side comparison matrix, and sticky mobile CTA. Completely removed video element.
+     - Verified `git diff 003e419 -- apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` = 0 lines diff.
+  4. `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`:
+     - Restored page component, metadata keywords (`miroooo brush x2`), and Article/ItemList/Breadcrumb schema structured data from 003e419.
+     - Verified `git diff 003e419 -- apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx` = 0 lines diff.
+  5. `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Restored exit popup copy for Miroooo Brush X2 at £69 instead of £139 (50% off), 90-day battery life, linking to `https://www.trymiroooo.com/products/miroooo-x2`.
+     - Verified `git diff 003e419` = 0 lines diff.
+  6. Asset Directory Harmonization:
+     - Restored `apps/site/public/img/toothbrushes/miroooo-x-electric-toothbrush.webp` and `img/toothbrushes/miroooo-x-electric-toothbrush.webp` from 003e419.
+     - Removed 18 obsolete X1 video and photo files introduced in later commits (`miroooo-dentist-verdict*`, `dr-olivia.jpg/webp`, `miroooo-brush-x-electric-toothbrush.webp`, `miroooo-charging-dock-gift.jpg`, `miroooo-full-bundle.jpg`, `miroooo-travel-case-gift.jpg`).
+
+- **Verification Executed**:
+  1. `git diff 003e419 -- apps/site/src/data/toothbrushes.ts apps/site/src/data/toothbrushGuides.ts apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js assets/miroooo-x-electric-toothbrush-exit-popup.js`: Verified exact 0 diff.
+  2. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  3. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  4. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0; all 68/68 static and dynamic routes compiled and generated cleanly.
+  5. Scope check: Zero files outside electric toothbrush pages in `trustpilotreview-shop` modified.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+
 
 
 
