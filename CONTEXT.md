@@ -10555,6 +10555,58 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
 
+---
+
+## Session Log: 11 October 2026 - Miroooo X2 #1 Image & 4 Free Heads Gift Asset Update
+
+- **User Intent & Scope**:
+  - Replace #1 image of Miroooo X2 with `Electric toothbrush with precision bristle heads (1).webp` using SEO-optimized name and alt text.
+  - Replace gift heads image with `Miroooo_X2_Head.webp` and update copy: instead of "Up to 4", write "4 Free heads".
+  - Update all brush pages, guides, bundles, and data models.
+  - Delete older replaced images after update.
+  - Strict scope boundary: Work only in `trustpilotreview-shop` on electric toothbrush pages and assets. Zero outside repo edits.
+
+- **Starting & Ending Git State**:
+  - Starting: Working tree with toothbrush pages restored to X2.
+  - Ending: Working tree updated with new SEO assets, modified data models & advertorial component, obsolete images deleted, zero broken references.
+
+- **Files Inspected, Created, & Modified**:
+  1. `apps/site/public/img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp` & `img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp`:
+     - Newly added #1 image (100,136 bytes) copied from `Electric toothbrush with precision bristle heads (1).webp`.
+  2. `apps/site/public/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp` & `img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp`:
+     - Newly added gift heads image (37,170 bytes) copied from `Miroooo_X2_Head.webp`.
+  3. `apps/site/src/data/toothbrushes.ts`:
+     - `MIROOOO_X_DATASET.image`: Updated to `/img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp`.
+     - `MIROOOO_X_DATASET.imageAlt`: Updated to `"Miroooo Brush X2 Sonic Electric Toothbrush with Precision Bristle Heads & 45° Bass Sweep - #1 Ranked Electric Toothbrush UK 2026"`.
+     - `MIROOOO_X_DATASET.bundle.items[2]`: Updated name to `"4 Free Heads"` with image `/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp`.
+     - `specifications`, `pros`, `review`: Replaced `"Up to 4 Extra Brush Heads"` / `"up to 4 extra brush heads"` with `"4 Free Heads"`.
+  4. `apps/site/src/data/toothbrushGuides.ts`:
+     - `MIROOOO_PACKAGE_CONTENTS.items[2]`: Updated name to `"4 Free Heads"` with image `/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp`.
+     - `images.mirooooWinner`: Updated to `/img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp`.
+     - Replaced all occurrences of `"Up to 4 Extra Brush Heads"` / `"up to 4 extra brush heads"` across all 13 comparison and buying guides with `"4 Free Heads"` / `"4 free heads"`.
+  5. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated PackagePanel gift 3 image to `/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp`.
+     - Updated alt text to `"Miroooo Brush X2 4 Free Heads"` and anchor aria-label to `"View the Miroooo Brush X2 package with 4 Free Heads"`.
+     - Updated card title text to `<p ...>4 Free Heads</p>`.
+     - Updated #1 ProductCard fallback alt text to `"Miroooo Brush X2 Sonic Electric Toothbrush with Precision Bristle Heads & 45° Bass Sweep - #1 Best Electric Toothbrush UK 2026"`.
+  6. **Deleted Deprecated Image Files**:
+     - `apps/site/public/img/toothbrushes/miroooo-x2-ranked-product-box-case-brush.webp` & `img/toothbrushes/miroooo-x2-ranked-product-box-case-brush.webp`
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp` & `img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp`
+     - `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp` & `img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp`
+
+- **Verification Executed**:
+  1. `git grep`: Confirmed zero remaining references to deleted image filenames across codebase.
+  2. `git grep`: Confirmed zero unwanted "up to 4" occurrences in toothbrush data/components.
+  3. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  4. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  5. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack production build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled cleanly).
+  6. Scope check: Strictly confined to electric toothbrush files in `trustpilotreview-shop`.
+
+- **Commit, Push, & Deployment Status**:
+  - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
+
+
+
 
 
 
