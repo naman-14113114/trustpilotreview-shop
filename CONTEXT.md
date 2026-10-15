@@ -10605,6 +10605,68 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Strictly local in the working tree; no commit, push, or deployment executed without explicit request.
 
+---
+
+## Session Log: 15 October 2026 - Toothbrush Pages 1:1 Restoration to Commit 72cab94 (Miroooo Brush X / X1 Flagship)
+
+- **User Intent & Scope**:
+  - Revert all electric toothbrush pages back from Miroooo Brush X2 to Miroooo Brush X / X1 according to commit `72cab94c0fa575c768d0d5c3d34aef86cdd4b710`.
+  - Ensure X1 outbound links go to `https://www.trymiroooo.com/products/miroooo-x` and all competitor affiliate links (Amazon) remain identical to `72cab94`.
+  - Strictly protect all LED face mask pages, hair pages, grounding sheets, pillows, and hearing aids pages.
+  - Zero modifications to outside repositories.
+  - Execute via multiple specialized subagents with rigorous local build, typecheck, lint, and diff audits.
+  - Push clean code to GitHub on `main` after verification per explicit user command.
+
+- **Starting & Ending Git State**:
+  - Starting: `origin/main` at `5d470e2` (clean working tree).
+  - Target Reference for Restoration: `72cab94c0fa575c768d0d5c3d34aef86cdd4b710`.
+  - Ending: Working tree restored to 100% exact bitwise match with `72cab94` across all toothbrush data, components, guides, exit popup scripts, and assets.
+
+- **Files Inspected & Restored to 1:1 Parity with 72cab94**:
+  1. `apps/site/src/data/toothbrushes.ts`:
+     - #1 ranked product restored to Miroooo Brush X / X1 (£69, compareAt £139, 60-day battery life, 51g aerospace aluminium, <50dB whisper-quiet motor, £60.85 gift bundle [Magnetic Charging Dock with USB-C Cable £24.95, Aluminium Travel Case £15.95, 2x DuPont Replacement Heads £19.95], URL `https://www.trymiroooo.com/products/miroooo-x`).
+     - Verified `git diff 72cab94 -- apps/site/src/data/toothbrushes.ts` = 0 lines diff.
+  2. `apps/site/src/data/toothbrushGuides.ts`:
+     - Restored all 13 comparison and buying guides for Miroooo Brush X (`MIROOOO_URL = "https://www.trymiroooo.com/products/miroooo-x"`).
+     - Competitor affiliate links verified: Oral-B iO6 (`https://amzn.to/4wLZUyf`), Philips Sonicare 9900 (`https://amzn.to/4hQE7BS`), SURI Pro 2.0 (`https://amzn.to/4wRV2YF`), Oral-B iO3 (`https://amzn.to/4gD6zVF`).
+     - Verified `git diff 72cab94 -- apps/site/src/data/toothbrushGuides.ts` = 0 lines diff.
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Restored Dr. Olivia video verdict section (`/assets/miroooo-dentist-verdict.mp4`, poster `/assets/miroooo-dentist-verdict-poster.webp`), Miroooo Brush X hero banner, £60.85 bundle panel, comparison matrix, and sticky mobile CTA targeting `https://www.trymiroooo.com/products/miroooo-x`.
+     - Verified `git diff 72cab94 -- apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` = 0 lines diff.
+  4. `apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx`:
+     - Restored page component and schema structured data from `72cab94`.
+     - Verified `git diff 72cab94 -- apps/site/src/app/best-electric-toothbrush-uk-2026/page.tsx` = 0 lines diff.
+  5. `apps/site/public/assets/miroooo-x-electric-toothbrush-exit-popup.js` & `assets/miroooo-x-electric-toothbrush-exit-popup.js`:
+     - Restored exit popup copy for Miroooo Brush X at £69 (50% off), 60+ days battery life, linking to `https://www.trymiroooo.com/products/miroooo-x?utm_source=trustpilotreview.shop&utm_medium=exit_popup&utm_campaign=toothbrush_exit&utm_content=last_chance`.
+     - Verified `git diff 72cab94` = 0 lines diff.
+  6. **Asset Harmonization & Purge**:
+     - Restored:
+       - `apps/site/public/assets/miroooo-dentist-verdict.mp4`, `miroooo-dentist-verdict-poster.jpg`, `miroooo-dentist-verdict-poster.webp` (and root mirrors)
+       - `apps/site/public/img/toothbrushes/dr-olivia.jpg`, `dr-olivia.webp`
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp`
+       - `apps/site/public/img/toothbrushes/miroooo-charging-dock-gift.jpg`
+       - `apps/site/public/img/toothbrushes/miroooo-full-bundle.jpg`
+       - `apps/site/public/img/toothbrushes/miroooo-travel-case-gift.jpg`
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-brush-heads-package.webp`
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x2-extra-dupont-heads-package.webp`
+       - `apps/site/public/img/toothbrushes/miroooo-x2-ranked-product-box-case-brush.webp`
+     - Purged redundant X2 specific assets:
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp` (& root mirror)
+       - `apps/site/public/img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp` (& root mirror)
+       - `apps/site/public/img/toothbrushes/miroooo-x-electric-toothbrush.webp` (& root mirror)
+     - Verified `git diff 72cab94 -- apps/site/public/assets/ apps/site/public/img/toothbrushes/ assets/ img/toothbrushes/` = 0 lines diff.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+  4. Built HTML audit: Confirmed destination links point to `https://www.trymiroooo.com/products/miroooo-x` and all Amazon affiliate links are intact.
+  5. Scope check: Zero files outside electric toothbrush pages in `trustpilotreview-shop` modified. Zero mask files touched.
+
+- **Commit, Push, & Deployment Status**:
+  - Clean code committed and pushed cleanly to GitHub `origin/main` after verification per explicit user command.
+
+
 
 
 
