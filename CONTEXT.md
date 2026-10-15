@@ -10666,6 +10666,47 @@ ext/image unconfigured host 500 error that was crashing the page.
 - **Commit, Push, & Deployment Status**:
   - Clean code committed and pushed cleanly to GitHub `origin/main` after verification per explicit user command.
 
+---
+
+## 2026-10-15T08:07:00+05:30 — Electric Toothbrush Free Gift Bundle Update: 2 Gifts (£20 Total Value)
+
+- **User Intent & Scope**:
+  - Update the free gift bundle for Miroooo Brush X across electric toothbrush pages from the previous 3-gift offer (Charging Dock, Aluminium Case, 2x Heads worth £60.85) to **two free gifts**:
+    1. **2 Free Brush Heads** (Normally £10)
+    2. **Miroooo Digital Gift Card** (Normally £10)
+    - Total combined value: **£20 in FREE GIFTS**.
+  - Use exact images present on `trymiroooo.com`.
+  - Preserve all other layout, design, and outbound links (`https://www.trymiroooo.com/products/miroooo-x`).
+  - Confined strictly to electric toothbrush files in `trustpilotreview-shop`. Zero edits to mask or other product category pages.
+
+- **Files Inspected & Modified**:
+  1. `apps/site/public/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp` & `img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp`:
+     - Added canonical X1 replacement brush heads image from `trymiroooo`.
+  2. `apps/site/public/img/toothbrushes/miroooo-digital-gift-card.webp` & `img/toothbrushes/miroooo-digital-gift-card.webp`:
+     - Added canonical Miroooo digital gift card image from `trymiroooo`.
+  3. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - Updated `GiftPanel`:
+       - Headline: "Active Offer Found: £20 in FREE GIFTS".
+       - Copy: "While doing our research, we found that Miroooo is currently running a limited-time promotional sale where you get these two premium dental accessories bundled completely free with every brush."
+       - Grid: 2-column balanced layout (`grid grid-cols-2 gap-3 sm:gap-6 mb-8 max-w-xl mx-auto`).
+       - Card 1: 2 Free Brush Heads (Normally £10, FREE badge).
+       - Card 2: Miroooo Gift Card (Normally £10, FREE badge).
+       - Links: Both point to `https://www.trymiroooo.com/products/miroooo-x`.
+  4. `apps/site/src/data/toothbrushes.ts`:
+     - Updated `MIROOOO_X_DATASET.bundle`: totalValue `£20` with 2 items (`2 Free Brush Heads` £10, `Miroooo Digital Gift Card` £10).
+     - Updated specifications, pros, and review text to reference £20 free gift bundle.
+  5. `apps/site/src/data/toothbrushGuides.ts`:
+     - Updated `MIROOOO_GIFT_BUNDLE`: totalValue `£20` with 2 items.
+     - Updated all guide quickTakes, buyerBlocks, comparison tables, unboxing breakdowns, criteria, and FAQs from £60.85 to £20 free gifts.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled and generated cleanly).
+  4. Built HTML audit: Confirmed "Active Offer Found: £20 in FREE GIFTS", "2 Free Brush Heads", "Miroooo Gift Card", "Normally £10", 0 mentions of 60.85, and destination URL `https://www.trymiroooo.com/products/miroooo-x`.
+  5. Scope check: Zero files outside electric toothbrush pages in `trustpilotreview-shop` modified. Zero mask files touched.
+
+
 
 
 

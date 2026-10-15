@@ -203,7 +203,7 @@ function GiftPanel({
         </div>
 
         <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          Active Offer Found: £60.85 in{" "}
+          Active Offer Found: £20 in{" "}
           <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
             FREE GIFTS
           </span>
@@ -211,40 +211,40 @@ function GiftPanel({
 
         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
           While doing our research, we found that Miroooo is currently running a
-          limited-time promotional sale where you get these three premium dental
+          limited-time promotional sale where you get these two premium dental
           accessories bundled completely free with every brush.
         </p>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
-          {/* Magnetic Charging Dock */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-8 max-w-xl mx-auto">
+          {/* 2 Free Brush Heads */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
               FREE
             </div>
             <a
               href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free Magnetic Charging Dock"
+              aria-label="View the Miroooo Brush X offer with 2 Free Brush Heads"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
-              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £24.95
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
+                Normally £10
               </span>
               <img
-                src="/img/toothbrushes/miroooo-charging-dock-gift.jpg"
-                alt="Magnetic Charging Dock with USB-C Cable"
+                src="/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp"
+                alt="2 Free Brush Heads"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Magnetic Dock &amp; USB-C Cable
+            <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
+              2 Free Brush Heads
             </p>
           </div>
 
-          {/* Aluminium Travel Case */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+          {/* Miroooo Digital Gift Card */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
               style={{ animationDelay: "0.2s" }}
@@ -254,52 +254,22 @@ function GiftPanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free Aluminium Travel Case"
+              aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
-              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £15.95
+              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
+                Normally £10
               </span>
               <img
-                src="/img/toothbrushes/miroooo-travel-case-gift.jpg"
-                alt="Aluminium Travel Case"
+                src="/img/toothbrushes/miroooo-digital-gift-card.webp"
+                alt="Miroooo Digital Gift Card"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              Aluminium Travel Case
-            </p>
-          </div>
-
-          {/* 2x DuPont Brush Heads */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <div
-              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
-              style={{ animationDelay: "0.4s" }}
-            >
-              FREE
-            </div>
-            <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
-              rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with free 2x DuPont Replacement Heads"
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £19.95
-              </span>
-              <img
-                src="/img/toothbrushes/miroooo-full-bundle.jpg"
-                alt="2x DuPont Brush Heads"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              2x DuPont Heads
+            <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
+              Miroooo Gift Card
             </p>
           </div>
         </div>

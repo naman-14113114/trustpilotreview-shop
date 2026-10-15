@@ -71,25 +71,19 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   moneyBackGuarantee: "90-Day Money-Back Guarantee",
   warranty: "2-Year Comprehensive Warranty",
   bundle: {
-    totalValue: "£60.85",
+    totalValue: "£20",
     items: [
       {
-        name: "Magnetic Charging Dock",
-        value: "£24.95",
-        image: "/img/toothbrushes/miroooo-charging-dock-gift.jpg",
-        description: "Compact magnetic charging dock with USB-C cable",
+        name: "2 Free Brush Heads",
+        value: "£10",
+        image: "/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp",
+        description: "One pair of Miroooo replacement brush heads",
       },
       {
-        name: "Aluminium Travel Case",
-        value: "£15.95",
-        image: "/img/toothbrushes/miroooo-travel-case-gift.jpg",
-        description: "Slim aerospace-grade travel protection case",
-      },
-      {
-        name: "2x DuPont Replacement Heads",
-        value: "£19.95",
-        image: "/img/toothbrushes/miroooo-full-bundle.jpg",
-        description: "High-density diamond-cut rounded bristle heads",
+        name: "Miroooo Digital Gift Card",
+        value: "£10",
+        image: "/img/toothbrushes/miroooo-digital-gift-card.webp",
+        description: "Official Miroooo £10 complimentary digital voucher",
       },
     ],
   },
@@ -106,7 +100,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     { label: "Battery Endurance", value: "60+ Day Battery Life (Magnetic Charging Dock with USB-C Cable)" },
     { label: "Customer Rating", value: "4.9★ / 5.0" },
     { label: "Chassis & Build", value: "Aerospace Aluminium Design (Mold-resistant unibody)" },
-    { label: "Free Gift Bundle", value: "Travel Case & 2 Extra Free Heads + Magnetic Dock with USB-C Cable (£60.85 bundle)" },
+    { label: "Free Gift Bundle", value: "2 Free Brush Heads & £10 Miroooo Gift Card (£20 bundle)" },
     { label: "Smart Companion", value: "Dental Care Companion App" },
     { label: "Money-Back Guarantee", value: "90-Day Money-Back Guarantee" },
     { label: "Warranty", value: "2-Year Comprehensive Warranty" },
@@ -117,7 +111,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
     "Quiet Sound (<50dB): Acoustic magnetic motor operates below 50dB for a smooth, whisper-quiet clean that eliminates harsh buzzing noise and hand rattling.",
     "60+ Day Battery Life: Massive 60+ day battery endurance powered by a convenient magnetic charging dock and USB-C cable. Simply place the brush on the magnetic base to charge—completely eliminating the need for bulky 2-pin bathroom shaver socket adapters.",
     "Long-Lasting Aluminium Design: Precision-milled aerospace aluminium unibody resists drops and mold, ensuring the brush lasts years longer than fragile plastic alternatives.",
-    "Travel Case & 2 Extra Free Heads (£60.85 bundle): Active promotion includes Magnetic Charging Dock with USB-C Cable (£24.95), Aluminium Travel Case (£15.95), and 2x DuPont Replacement Heads (£19.95) at zero added cost.",
+    "2 Free Brush Heads & £10 Gift Card (£20 bundle): Active promotion includes 2 Free Brush Heads (£10) and a Miroooo Digital Gift Card (£10) at zero added cost.",
     "Dental Care Companion App: Integrated smart companion app tracks brushing zones and reinforces dentist-recommended habits.",
     "90-Day Money-Back Guarantee: 100% risk-free home trial with full refund protection.",
     "2-Year Comprehensive Warranty: Complete 2-year manufacturer warranty ensuring lasting peace of mind.",
@@ -128,7 +122,7 @@ export const MIROOOO_X_DATASET: RankedToothbrushProduct = {
   ],
   review: [
     "The Miroooo Brush X takes our #1 ranking for UK buyers in 2026 because it decisively eliminates the most frustrating flaws of legacy electric toothbrushes: heavy bulky handles, loud motor noise, weak battery life, bulky 2-pin bathroom socket adapters, and extortionate ongoing refill head prices. Weighing just 51g with quiet sound under 50dB, its aerospace aluminium chassis delivers an ultra-comfortable, dentist-clean brushing experience.",
-    "Its everyday convenience and comprehensive coverage are second to none. Charging is effortless: simply place the toothbrush onto the included magnetic charging dock, powered by a universal USB-C cable, for 60+ days of brushing per charge with no awkward 2-pin shaver adapters required. Backed by the Dental Care Companion App for smart brushing habits, a verified 4.9★ customer rating, an included £60.85 free gift bundle (magnetic charging dock with USB-C cable, aluminium travel case, and 2 extra DuPont heads), a 90-day money-back guarantee, and a 2-year comprehensive warranty, the Miroooo Brush X sets the gold standard for electric toothbrushes in the UK.",
+    "Its everyday convenience and comprehensive coverage are second to none. Charging is effortless: simply place the toothbrush onto the included magnetic charging dock, powered by a universal USB-C cable, for 60+ days of brushing per charge with no awkward 2-pin shaver adapters required. Backed by the Dental Care Companion App for smart brushing habits, a verified 4.9★ customer rating, an included £20 free gift bundle (2 free brush heads and a £10 Miroooo digital gift card), a 90-day money-back guarantee, and a 2-year comprehensive warranty, the Miroooo Brush X sets the gold standard for electric toothbrushes in the UK.",
   ],
 };
 

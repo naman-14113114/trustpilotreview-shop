@@ -95,25 +95,19 @@ export type ToothbrushGuide = {
 };
 
 export const MIROOOO_GIFT_BUNDLE = {
-  totalValue: "£60.85",
+  totalValue: "£20",
   items: [
     {
-      name: "Magnetic Charging Dock",
-      value: "£24.95",
-      image: "/img/toothbrushes/miroooo-charging-dock-gift.jpg",
-      description: "Compact magnetic charging dock with universal USB-C cable",
+      name: "2 Free Brush Heads",
+      value: "£10",
+      image: "/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp",
+      description: "One pair of Miroooo replacement brush heads",
     },
     {
-      name: "Aluminium Travel Case",
-      value: "£15.95",
-      image: "/img/toothbrushes/miroooo-travel-case-gift.jpg",
-      description: "Slim aerospace-grade travel protection case",
-    },
-    {
-      name: "2x DuPont Replacement Heads",
-      value: "£19.95",
-      image: "/img/toothbrushes/miroooo-full-bundle.jpg",
-      description: "High-density diamond-cut rounded bristle heads",
+      name: "Miroooo Digital Gift Card",
+      value: "£10",
+      image: "/img/toothbrushes/miroooo-digital-gift-card.webp",
+      description: "Official Miroooo £10 complimentary digital voucher",
     },
   ],
 };
@@ -127,9 +121,8 @@ const images = {
   philipsSonicare: "/img/toothbrushes/philips-sonicare-comparison.png",
   suriSonic: "/img/toothbrushes/suri-sonic-comparison.png",
   oralBiO3: "/img/toothbrushes/oral-b-io3-comparison.png",
-  dockGift: "/img/toothbrushes/miroooo-charging-dock-gift.jpg",
-  caseGift: "/img/toothbrushes/miroooo-travel-case-gift.jpg",
-  bundleGift: "/img/toothbrushes/miroooo-full-bundle.jpg",
+  headsGift: "/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp",
+  giftCard: "/img/toothbrushes/miroooo-digital-gift-card.webp",
 };
 
 const defaultDrOlivia: Omit<
@@ -161,7 +154,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.oralBiO6,
     heroAlt: "Miroooo Brush X vs Oral-B iO6 electric toothbrush comparison",
     quickTake:
-      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 60+ day magnetic USB-C charging dock (no 2-pin shaver plug needed), affordable refills, and a complete £60.85 free gift bundle at less than half the price (£69 vs £129.99).",
+      "While Oral-B iO6 offers a colourful OLED screen and mechanical oscillating power, Miroooo Brush X decisively wins on ergonomic comfort (51g vs 140g), whisper-quiet sound (<50dB vs ~64dB), 60+ day magnetic USB-C charging dock (no 2-pin shaver plug needed), affordable refills, and a complete £20 free gift bundle at less than half the price (£69 vs £129.99).",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -174,7 +167,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "When upgrading your electric toothbrush in the UK, the choice often comes down to two very different design philosophies: the high-tech, oscillating-rotating mechanical approach of legacy giants like Oral-B, or the ultra-modern, lightweight acoustic engineering of Miroooo Brush X.",
       "The Oral-B iO Series 6 (£129.99) is renowned for its interactive OLED display, AI position recognition, and round mechanical brush head. However, it also brings classic legacy frustrations: a bulky 140g plastic handle, a loud 64dB oscillating gear whine, a short 14-day battery requiring an obsolete 2-pin bathroom shaver socket, and expensive replacement head prices (£8 to £12 each).",
-      "By contrast, Miroooo Brush X (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, an acoustic motor operating below 50dB, 60+ days of battery on a magnetic USB-C charging dock, and an included £60.85 accessory bundle (charging dock, aluminium travel case, and 2 extra DuPont heads), it provides superior daily comfort at less than half the upfront cost.",
+      "By contrast, Miroooo Brush X (£69) re-engineers daily dental care around modern lifestyle needs. Featuring an aerospace aluminium unibody weighing just 51g, an acoustic motor operating below 50dB, 60+ days of battery on a magnetic USB-C charging dock, and an included £20 accessory bundle (2 Free Brush Heads and £10 Miroooo Digital Gift Card), it provides superior daily comfort at less than half the upfront cost.",
     ],
     criteria: [
       "Cleaning technology: 32,000 VPM acoustic fluid dynamics vs oscillating mechanical rotation",
@@ -182,19 +175,19 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Acoustic noise level: <50dB whisper-quiet motor vs ~64dB mechanical gear whine",
       "Charging & battery endurance: 60+ days magnetic USB-C dock vs 14 days 2-pin shaver plug",
       "Refill & long-term maintenance costs: Affordable DuPont heads vs £8–£12 iO refill heads",
-      "Overall value & warranty: £69 with £60.85 free gift bundle vs £129.99 base price",
+      "Overall value & warranty: £69 with £20 free gift bundle vs £129.99 base price",
     ],
     winnerBullets: [
       "Ergonomic Comfort: At 51g, Miroooo is nearly 3x lighter than the 140g Oral-B iO6, dramatically reducing wrist fatigue.",
       "Acoustic vs Friction: 32,000 VPM micro-bubble fluid dynamics clean deep between teeth without abrasive mechanical scrubbing.",
       "Universal USB-C Charging: 60+ days of battery life on a magnetic dock completely removes the need for 2-pin bathroom shaver sockets.",
       "Whisper-Quiet Operation: Under 50dB sound level avoids the harsh morning drilling noise of Oral-B's oscillating gearbox.",
-      "Unbeatable Value: £69 purchase price includes a £60.85 free gift bundle (Magnetic Dock £24.95, Travel Case £15.95, 2x DuPont Heads £19.95) and a 90-day money-back guarantee.",
+      "Unbeatable Value: £69 purchase price includes a £20 free gift bundle (2 Free Brush Heads £10, £10 Digital Gift Card) and a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
         feature: "Price & Promotion",
-        miroooo: "£69 (Includes £60.85 free gift bundle)",
+        miroooo: "£69 (Includes £20 free gift bundle)",
         competitor: "£129.99 (Standalone brush only)",
         whyItMatters: "Miroooo delivers more than double the accessories at less than half the upfront price.",
         advantage: "miroooo",
@@ -252,7 +245,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X if...",
-        body: "You want a dentist-clean smile with zero morning motor noise, effortless 51g handling, 60+ days of battery life via magnetic USB-C, affordable replacement heads, and a complete £60.85 free accessory bundle for just £69.",
+        body: "You want a dentist-clean smile with zero morning motor noise, effortless 51g handling, 60+ days of battery life via magnetic USB-C, affordable replacement heads, and a complete £20 free accessory bundle for just £69.",
       },
       {
         title: "Choose Oral-B iO6 if...",
@@ -318,7 +311,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.philipsSonicare,
     heroAlt: "Miroooo Brush X vs Philips Sonicare DiamondClean 9000 comparison",
     quickTake:
-      "While Philips Sonicare 9000 offers iconic charging glass aesthetics, Miroooo Brush X outperforms it in daily practical use: it is over 60% lighter (51g vs 135g), lasts over 4x longer on battery (60+ days vs 14 days), avoids Sonicare's notorious shaft rattle defect, and includes a £60.85 free gift bundle at £69 compared to Sonicare's £149.99+ price tag.",
+      "While Philips Sonicare 9000 offers iconic charging glass aesthetics, Miroooo Brush X outperforms it in daily practical use: it is over 60% lighter (51g vs 135g), lasts over 4x longer on battery (60+ days vs 14 days), avoids Sonicare's notorious shaft rattle defect, and includes a £20 free gift bundle at £69 compared to Sonicare's £149.99+ price tag.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -339,19 +332,19 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Ergonomics: 51g featherlight unibody vs ~135g bulky composite body",
       "Noise & vibration comfort: <50dB whisper quiet vs ~56dB high-pitch sonic whine",
       "Charging & bathroom hygiene: Universal magnetic USB-C dock vs 2-pin glass charger that traps mildew",
-      "Lifetime cost & bundle: £69 with £60.85 free gift bundle vs £149.99+ with £9–£12/head refills",
+      "Lifetime cost & bundle: £69 with £20 free gift bundle vs £149.99+ with £9–£12/head refills",
     ],
     winnerBullets: [
       "Durability & Shaft Integrity: Miroooo's aerospace aluminium unibody avoids Sonicare's common loose vibrating shaft and seal wear issues.",
       "Featherlight 51g Handling: More than 60% lighter than the 135g Sonicare 9000, eliminating wrist strain during 2-minute brushing.",
       "Superior 60+ Day Battery: Massive battery endurance with universal magnetic USB-C charging beats Sonicare's 14-day 2-pin glass cup.",
       "Hygienic Maintenance: Seamless aluminium body prevents black mold accumulation around rubber seals and charging bases.",
-      "Massive Price Savings: £69 complete bundle with dock, case, and 2 extra heads vs £149.99+ standalone Sonicare.",
+      "Massive Price Savings: £69 complete bundle with 2 extra brush heads and £10 gift card vs £149.99+ standalone Sonicare.",
     ],
     comparisonRows: [
       {
         feature: "Price & Accessories",
-        miroooo: "£69 (Includes £60.85 free bundle: Dock, Case, 2x Heads)",
+        miroooo: "£69 (Includes £20 free bundle: 2 Free Heads & £10 Gift Card)",
         competitor: "£149.99–£249 (RRP £349, Standalone)",
         whyItMatters: "Miroooo saves over £90 upfront while including essential travel and charging accessories.",
         advantage: "miroooo",
@@ -409,7 +402,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X if...",
-        body: "You want premium sonic plaque removal with effortless 51g handling, 60+ days of battery on magnetic USB-C, mold-resistant aerospace aluminium durability, and £90+ in upfront savings with a £60.85 free gift bundle.",
+        body: "You want premium sonic plaque removal with effortless 51g handling, 60+ days of battery on magnetic USB-C, mold-resistant aerospace aluminium durability, and £90+ in upfront savings with a £20 free gift bundle.",
       },
       {
         title: "Choose Philips Sonicare 9000 if...",
@@ -466,11 +459,11 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     eyebrow: "Head-to-Head Comparison",
     headline: "Miroooo Brush X vs SURI Pro 2.0: Modern Aluminium Toothbrushes Compared",
     subheadline:
-      "SURI Pro 2.0 markets plant-based sustainability at £85. Miroooo Brush X delivers a 51g aerospace aluminium unibody, 3 cleaning modes, durable DuPont heads, and a £60.85 free gift bundle at £69. Here is the realistic UK comparison.",
+      "SURI Pro 2.0 markets plant-based sustainability at £85. Miroooo Brush X delivers a 51g aerospace aluminium unibody, 3 cleaning modes, durable DuPont heads, and a £20 free gift bundle at £69. Here is the realistic UK comparison.",
     heroImage: images.suriSonic,
     heroAlt: "Miroooo Brush X vs SURI Pro 2.0 electric toothbrush comparison",
     quickTake:
-      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct modes vs 2, features durable DuPont Tynex heads that do not crack or loosen, delivers 60+ days battery vs 34–40 days, and includes £60.85 in free gifts at £69 vs SURI's £85 standalone price.",
+      "While SURI Pro 2.0 appeals to eco-conscious shoppers with recyclable plant-based heads, Miroooo Brush X is the superior daily electric toothbrush: it is 40% lighter (51g vs 85g), offers 3 distinct modes vs 2, features durable DuPont Tynex heads that do not crack or loosen, delivers 60+ days battery vs 34–40 days, and includes £20 in free gifts at £69 vs SURI's £85 standalone price.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -483,7 +476,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
       "The SURI Pro 2.0 (£85) emphasizes eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mold, and zero bonus accessories in the £85 box.",
-      "Miroooo Brush X (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, 32,000 VPM acoustic motor with 3 modes (Clean, Soft, White), durable DuPont Tynex 3D end-rounded bristles, 60+ days battery on a magnetic USB-C dock, and an active promotion including a £60.85 gift bundle (dock, travel case, and 2 extra heads).",
+      "Miroooo Brush X (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, 32,000 VPM acoustic motor with 3 modes (Clean, Soft, White), durable DuPont Tynex 3D end-rounded bristles, 60+ days battery on a magnetic USB-C dock, and an active promotion including a £20 gift bundle (2 Free Brush Heads and £10 Miroooo Digital Gift Card).",
     ],
     criteria: [
       "Brush head durability & material: Durable DuPont Tynex 3D bristles vs fragile plant-based cornstarch heads",
@@ -491,7 +484,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Cleaning modes & speed: 3 modes (Clean, Soft, White) vs 2 basic speeds (Everyday Clean, Polish)",
       "Battery runtime: 60+ days magnetic USB-C dock vs 34–40 days",
       "Bathroom hygiene: Compact magnetic dock vs sticky mirror mount prone to mold and residue",
-      "Upfront price & bundle: £69 with £60.85 free gift bundle vs £85 standalone brush",
+      "Upfront price & bundle: £69 with £20 free gift bundle vs £85 standalone brush",
       "Refill head costs: Affordable DuPont replacements vs £14.99 per 3-pack (£5/head)",
     ],
     winnerBullets: [
@@ -499,14 +492,14 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Featherlight 51g Body: 40% lighter in hand than SURI's 85g modular handle for effortless maneuverability.",
       "3 Clinically Tailored Modes: Includes a dedicated Soft mode for sensitive gums, where SURI only offers 2 basic settings.",
       "Longer 60+ Day Battery: Lasts nearly double the duration of SURI's 34–40 day battery on a single charge.",
-      "Better Bundle Value: £69 includes Magnetic Dock (£24.95), Travel Case (£15.95), and 2x Heads (£19.95), while SURI charges £85 with no free accessories.",
+      "Better Bundle Value: £69 includes 2 Free Brush Heads (£10) and Miroooo Digital Gift Card (£10), while SURI charges £85 with no free accessories.",
     ],
     comparisonRows: [
       {
         feature: "Price & Included Gifts",
-        miroooo: "£69 (Includes £60.85 free gift bundle: Dock, Case, 2x Heads)",
+        miroooo: "£69 (Includes £20 free gift bundle: 2 Free Heads & £10 Gift Card)",
         competitor: "£85 (Standalone brush, travel case sold separately)",
-        whyItMatters: "Miroooo costs £26 less while including £60.85 of essential accessories at zero extra charge.",
+        whyItMatters: "Miroooo costs £26 less while including £20 of essential accessories at zero extra charge.",
         advantage: "miroooo",
       },
       {
@@ -548,7 +541,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X if...",
-        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 3 versatile modes, durable DuPont heads that never crack or loosen, 60+ days battery life, and a complete £60.85 free accessory bundle for £69.",
+        body: "You want a sleek 51g aerospace aluminium sonic toothbrush with 3 versatile modes, durable DuPont heads that never crack or loosen, 60+ days battery life, and a complete £20 free accessory bundle for £69.",
       },
       {
         title: "Choose SURI Pro 2.0 if...",
@@ -596,11 +589,11 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     eyebrow: "Head-to-Head Comparison",
     headline: "Miroooo Brush X vs Oral-B iO3: Which Sub-£70 Electric Toothbrush Wins?",
     subheadline:
-      "Oral-B iO3 sits at £65 as the entry model to the iO micro-vibration series. Miroooo Brush X provides 32,000 VPM acoustic power, a 51g aerospace aluminium chassis, 60+ days battery, and a £60.85 free gift bundle at £69. Here is how they stack up.",
+      "Oral-B iO3 sits at £65 as the entry model to the iO micro-vibration series. Miroooo Brush X provides 32,000 VPM acoustic power, a 51g aerospace aluminium chassis, 60+ days battery, and a £20 free gift bundle at £69. Here is how they stack up.",
     heroImage: images.oralBiO3,
     heroAlt: "Miroooo Brush X vs Oral-B iO3 electric toothbrush comparison",
     quickTake:
-      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring a 16-hour 2-pin charge, and expensive £8–£12 refill heads. Miroooo Brush X costs less (£69 vs £65), is 62% lighter (51g), lasts 60+ days via magnetic USB-C, includes a companion app, and comes with a £60.85 free accessory bundle.",
+      "Oral-B iO3 strips out the interactive OLED display and Bluetooth smart tracking of the iO line while retaining all the mechanical downsides: a heavy 136g plastic handle, a loud 64dB gear whine, a sluggish 14-day battery requiring a 16-hour 2-pin charge, and expensive £8–£12 refill heads. Miroooo Brush X costs less (£69 vs £65), is 62% lighter (51g), lasts 60+ days via magnetic USB-C, includes a companion app, and comes with a £20 free accessory bundle.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -613,7 +606,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     intro: [
       "For UK shoppers with a budget around £60, the electric toothbrush market presents a clear contrast: an entry-level plastic model from a legacy brand, or a fully loaded, precision-engineered acoustic toothbrush.",
       "The Oral-B iO3 Matt Black (£65, RRP £160) is designed as an accessible gateway into Oral-B's magnetic micro-vibration system. It includes a 360° smart pressure ring, 3 basic cleaning modes, and a hard travel case. However, to hit this price point, Oral-B stripped away the defining smart features of the iO line: there is no interactive OLED display screen, no Bluetooth app tracking, a dated 14-day battery that takes a sluggish 16 hours to charge via an obsolete 2-pin bathroom shaver socket, and proprietary iO refill heads that cost £8 to £12 each.",
-      "Miroooo Brush X (£69) makes zero compromises. It features a premium aerospace aluminium unibody weighing only 51g, whisper-quiet acoustic sound under 50dB, 60+ days battery on a magnetic USB-C dock, Dental Care Companion App connectivity, and an active £60.85 free gift bundle (charging dock, aluminium travel case, and 2 extra DuPont heads).",
+      "Miroooo Brush X (£69) makes zero compromises. It features a premium aerospace aluminium unibody weighing only 51g, whisper-quiet acoustic sound under 50dB, 60+ days battery on a magnetic USB-C dock, Dental Care Companion App connectivity, and an active £20 free gift bundle (2 Free Brush Heads and £10 Miroooo Digital Gift Card).",
     ],
     criteria: [
       "Smart features: Dental Care Companion App vs stripped-out hardware (No screen, No Bluetooth)",
@@ -621,19 +614,19 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Battery runtime & charging speed: 60+ days magnetic USB-C vs 14 days with 16-hour 2-pin charge",
       "Noise level: <50dB whisper quiet vs ~64dB mechanical gear vibration",
       "Long-term refill cost: Affordable DuPont replacements vs £8–£12 iO refill heads",
-      "Total package value: £69 with £60.85 gift bundle vs £65 base brush with 1 head",
+      "Total package value: £69 with £20 gift bundle vs £65 base brush with 1 head",
     ],
     winnerBullets: [
       "True Smart Connectivity: Miroooo connects to the Dental Care Companion App, whereas the iO3 has all Bluetooth tracking removed.",
       "Featherlight Aluminium: 51g unibody is 62% lighter than the 136g chunky plastic iO3 handle.",
       "Modern USB-C Charging: 60+ days battery on a magnetic dock replaces the iO3's 16-hour 2-pin shaver plug marathon.",
       "Whisper-Quiet Motor: Runs under 50dB, completely avoiding the loud 64dB gear noise of the iO3.",
-      "Lower Cost of Ownership: £69 price includes £60.85 of free gifts and avoids the £32–£48/year iO refill head trap.",
+      "Lower Cost of Ownership: £69 price includes £20 of free gifts and avoids the £32–£48/year iO refill head trap.",
     ],
     comparisonRows: [
       {
         feature: "Price & Free Gifts",
-        miroooo: "£69 (Includes £60.85 bundle: Dock, Case, 2x Heads)",
+        miroooo: "£69 (Includes £20 bundle: 2 Free Heads & £10 Gift Card)",
         competitor: "£65 (Includes 1 brush head & basic travel case)",
         whyItMatters: "Miroooo costs less upfront while including double the brush heads and a magnetic USB-C dock.",
         advantage: "miroooo",
@@ -670,7 +663,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     buyerBlocks: [
       {
         title: "Choose Miroooo Brush X if...",
-        body: "You want a modern, ultra-lightweight 51g aluminium acoustic toothbrush with 60+ days of battery on magnetic USB-C, companion app habit tracking, whisper-quiet operation, and a £60.85 free gift bundle for £69.",
+        body: "You want a modern, ultra-lightweight 51g aluminium acoustic toothbrush with 60+ days of battery on magnetic USB-C, companion app habit tracking, whisper-quiet operation, and a £20 free gift bundle for £69.",
       },
       {
         title: "Choose Oral-B iO3 if...",
@@ -722,7 +715,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     heroImage: images.topFive,
     heroAlt: "Top 5 best electric toothbrushes in the UK compared for 2026",
     quickTake:
-      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to 2-pin bathroom sockets with 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X deliver superior plaque removal, whisper-quiet sound (<50dB), 60+ days battery on magnetic USB-C, and a £60.85 free gift bundle for £69.",
+      "Legacy electric toothbrushes have barely changed their core architecture in 20 years: they remain heavy (~140g), loud (>64dB), tied to 2-pin bathroom sockets with 14-day batteries, and locked behind £8–£12 replacement head traps. Modern acoustic brushes like the 51g Miroooo Brush X deliver superior plaque removal, whisper-quiet sound (<50dB), 60+ days battery on magnetic USB-C, and a £20 free gift bundle for £69.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -742,14 +735,14 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Ergonomic weight reduction: 51g aerospace aluminium vs 135g–140g heavy plastic",
       "Acoustic noise reduction: <50dB whisper quiet vs 64dB+ mechanical rattling",
       "Acoustic micro-bubble cleaning (32,000 VPM) vs harsh mechanical scrubbing",
-      "Total cost of ownership: £69 with £60.85 free gift bundle vs high legacy refill traps",
+      "Total cost of ownership: £69 with £20 free gift bundle vs high legacy refill traps",
     ],
     winnerBullets: [
       "Ditch the 2-Pin Plug: 60+ days of battery life on a magnetic USB-C dock means you can charge from your phone cable anywhere.",
       "62% Lighter in Hand: 51g aerospace aluminium unibody prevents wrist fatigue and eliminates porous rubber grime traps.",
       "Whisper-Quiet Acoustics: Runs under 50dB, eliminating the jarring morning power-tool noise of oscillating gearboxes.",
       "Dentist-Clean Fluid Dynamics: 32,000 VPM acoustic micro-bubbles flush plaque from between teeth without enamel abrasion.",
-      "Honest Direct-to-Consumer Value: £69 promotional price includes a £60.85 free gift bundle and a 90-day money-back guarantee.",
+      "Honest Direct-to-Consumer Value: £69 promotional price includes a £20 free gift bundle and a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
@@ -789,9 +782,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Included Gifts & Trial",
-        miroooo: "£60.85 free bundle included + 90-day trial",
+        miroooo: "£20 free bundle included + 90-day trial",
         competitor: "£0 free gifts + standard 30-day retail return",
-        whyItMatters: "Total risk reversal with free travel case, extra heads, and charging dock.",
+        whyItMatters: "Total risk reversal with free extra brush heads and £10 digital voucher.",
         advantage: "miroooo",
       },
     ],
@@ -802,7 +795,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         title: "How Modern Acoustic Engineering Solves Them All",
-        body: "Miroooo Brush X was designed from a blank slate to eliminate all 5 legacy pain points: 51g aerospace aluminium unibody, 32,000 VPM acoustic fluid dynamics, <50dB whisper-quiet motor, 60+ days battery on magnetic USB-C, and an included £60.85 gift bundle for £69.",
+        body: "Miroooo Brush X was designed from a blank slate to eliminate all 5 legacy pain points: 51g aerospace aluminium unibody, 32,000 VPM acoustic fluid dynamics, <50dB whisper-quiet motor, 60+ days battery on magnetic USB-C, and an included £20 gift bundle for £69.",
       },
     ],
     products: toothbrushProducts,
@@ -869,7 +862,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Featherlight 51g unibody design is over 62% lighter than Oral-B iO (140g) and Sonicare (135g).",
       "CNC-machined aerospace aluminium handle offers an ultra-slim profile with superior tactile grip.",
       "Delivers full 32,000 VPM acoustic plaque removal without heavy internal motor clatter.",
-      "Includes a £60.85 complimentary bundle: Magnetic Dock, Travel Case, and 2 extra DuPont heads at £69.",
+      "Includes a £20 complimentary bundle: 2 Free Brush Heads and £10 Miroooo Digital Gift Card at £69.",
     ],
     comparisonRows: [
       {
@@ -895,7 +888,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Total Price & Bundle Value",
-        miroooo: "£69 (Includes £60.85 Free Gift Bundle & Dock)",
+        miroooo: "£69 (Includes £20 Free Gift Bundle)",
         competitor: "£85 – £149.99 (Standalone units with no bonus gifts)",
         whyItMatters: "Get premium lightweight engineering without paying inflated legacy pharmacy markups.",
         advantage: "miroooo",
@@ -1060,7 +1053,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Operates below 50dB—over 15dB quieter than mechanical oscillating brushes (Oral-B iO).",
       "Magnetic levitation motor eliminates gear-on-gear friction for a smooth, vibration-free sensation.",
       "32,000 VPM acoustic speed creates dynamic fluid action that cleans between tight teeth silently.",
-      "Includes £60.85 free accessory bundle (Dock, Travel Case, 2 DuPont heads) backed by a 90-day trial.",
+      "Includes £20 free accessory bundle (2 Free Heads, £10 Gift Card) backed by a 90-day trial.",
     ],
     comparisonRows: [
       {
@@ -1216,14 +1209,14 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Acoustic Soft Mode Calibration (32,000 VPM micro-bubble fluid dynamics)",
       "Handle Weight & Ergonomic Pressure Relief (51g unibody preventing excess downward force)",
       "Acoustic Noise & Vibration Dampening (<50dB whisper-quiet motor)",
-      "Affordable Sensitive Replacement Heads (Included £60.85 gift bundle)",
+      "Affordable Sensitive Replacement Heads (Included £20 gift bundle)",
     ],
     winnerBullets: [
       "Dedicated 32,000 VPM Soft mode harnesses micro-bubble fluid dynamics for non-abrasive plaque removal.",
       "DuPont 3D diamond-cut end-rounded bristles protect exposed dentinal tubules and delicate gum margins.",
       "Ultra-light 51g aerospace aluminium handle eliminates excessive manual pressure on sensitive teeth.",
       "Whisper-quiet <50dB acoustic motor avoids uncomfortable jaw and tooth bone-conduction vibrations.",
-      "£69 price includes £60.85 gift bundle (Travel Case, 2x DuPont Heads, Magnetic USB-C Dock) plus 90-day trial.",
+      "£69 price includes £20 gift bundle (2 Free Heads, £10 Gift Card) plus 90-day trial.",
     ],
     comparisonRows: [
       {
@@ -1398,7 +1391,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Universal USB-C Charging (Zero bulky UK 2-pin bathroom shaver plugs or converter adapters needed)",
       "Travel Case & Hygiene Protection (Included aluminium travel case to shield DuPont bristles in luggage)",
       "Motor Noise & Discretion (<50dB whisper quiet for hotels, early mornings, and shared bathrooms)",
-      "Price & Complete Travel Kit Value (£69 with complete £60.85 travel bundle vs £85–£149 bare brushes)",
+      "Price & Complete Value (£69 with complete £20 gift bundle vs £85–£149 bare brushes)",
     ],
     winnerBullets: [
       "Featherlight 51g aerospace aluminium handle weighs less than half of legacy Oral-B and Sonicare handles.",
@@ -1406,7 +1399,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Includes a complimentary slim aluminium travel case (worth £15.95) that protects the handle and brush heads from washbag bacteria.",
       "Universal USB-C magnetic dock eliminates bulky UK 2-pin bathroom shaver adapters and foreign socket converters.",
       "Acoustic motor operates below 50dB at 32,000 VPM for discreet, powerful sonic cleaning in hotel rooms and overnight travel.",
-      "Promotional price of £69 includes a full £60.85 gift bundle (dock, travel case, 2 extra DuPont heads) backed by a 90-day money-back guarantee.",
+      "Promotional price of £69 includes a full £20 gift bundle (2 extra brush heads, £10 gift card) backed by a 90-day money-back guarantee.",
     ],
     comparisonRows: [
       {
@@ -1466,18 +1459,18 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     cardCode: "REVIEW",
     cardTitle: "Miroooo Brush X UK Review & Verification Guide",
     cardDescription:
-      "Official 2026 UK review: 32k VPM acoustic motor, 51g aerospace aluminium, <50dB, 60+ day battery, £60.85 gift bundle unboxing, 4,275+ 4.9★ reviews & 90-day trial breakdown.",
+      "Official 2026 UK review: 32k VPM acoustic motor, 51g aerospace aluminium, <50dB, 60+ day battery, £20 gift bundle unboxing, 4,275+ 4.9★ reviews & 90-day trial breakdown.",
     seoTitle: "Miroooo Brush X Review UK 2026 | Verified Hands-On Test & 90-Day Trial Breakdown",
     seoDescription:
-      "In-depth Miroooo Brush X UK review for 2026. Clinical performance test (32,000 VPM), 51g aluminium chassis, <50dB noise test, unboxing of the £60.85 gift bundle, 4,275+ verified reviews, and 90-day money-back guarantee.",
+      "In-depth Miroooo Brush X UK review for 2026. Clinical performance test (32,000 VPM), 51g aluminium chassis, <50dB noise test, unboxing of the £20 gift bundle, 4,275+ verified reviews, and 90-day money-back guarantee.",
     eyebrow: "Official UK Brand Review & Verification",
     headline: "Miroooo Brush X UK Review 2026: Clinical Test & 90-Day Trial Breakdown",
     subheadline:
-      "We conducted an exhaustive hands-on verification of the Miroooo Brush X — testing its 32,000 VPM sonic motor, 51g featherlight handle, 60+ day battery dock, £60.85 free gift bundle, and 4,275+ verified 4.9★ UK reviews.",
+      "We conducted an exhaustive hands-on verification of the Miroooo Brush X — testing its 32,000 VPM sonic motor, 51g featherlight handle, 60+ day battery dock, £20 free gift bundle, and 4,275+ verified 4.9★ UK reviews.",
     heroImage: images.mirooooBanner,
     heroAlt: "Miroooo Brush X electric toothbrush review and unboxing banner UK",
     quickTake:
-      "The Miroooo Brush X is 2026's most impressive electric toothbrush breakthrough in the UK. At just £69 with an included £60.85 free gift bundle (magnetic USB-C dock, aluminium travel case, 2 extra DuPont heads), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 32,000 VPM sonic motor, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
+      "The Miroooo Brush X is 2026's most impressive electric toothbrush breakthrough in the UK. At just £69 with an included £20 free gift bundle (2 Free Brush Heads, Miroooo Digital Gift Card), its 51g aerospace aluminium body, whisper-quiet <50dB operation, 32,000 VPM sonic motor, and 90-day risk-free trial make £150+ plastic legacy brushes obsolete.",
     drOliviaVerdict: {
       ...defaultDrOlivia,
       quote:
@@ -1489,15 +1482,15 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     },
     intro: [
       "For decades, the UK electric toothbrush market has been dominated by legacy brands selling bulky plastic handles with loud, vibrating mechanical motors, fragile 14-day batteries, and proprietary 2-pin bathroom shaver chargers. To make matters worse, consumers have been locked into extortionate £8 to £12 recurring refill head prices.",
-      "The Miroooo Brush X arrived in 2026 with a radically different direct-to-consumer philosophy: precision aerospace aluminium engineering, ultra-quiet acoustic motor technology (<50dB), universal USB-C magnetic charging, and a massive 60+ day battery — bundled with £60.85 in premium free accessories for an accessible promotional price of £69.",
-      "In this official UK verification review, our editorial team and clinical dental consultant, Dr. Olivia, BDS, put the Miroooo Brush X through rigorous hands-on laboratory and home testing. We examined motor performance, acoustic decibel levels, battery longevity, unboxing quality of the £60.85 gift bundle, verified 4,275+ UK customer reviews, and tested the 90-day risk-free money-back guarantee.",
+      "The Miroooo Brush X arrived in 2026 with a radically different direct-to-consumer philosophy: precision aerospace aluminium engineering, ultra-quiet acoustic motor technology (<50dB), universal USB-C magnetic charging, and a massive 60+ day battery — bundled with £20 in premium free accessories for an accessible promotional price of £69.",
+      "In this official UK verification review, our editorial team and clinical dental consultant, Dr. Olivia, BDS, put the Miroooo Brush X through rigorous hands-on laboratory and home testing. We examined motor performance, acoustic decibel levels, battery longevity, unboxing quality of the £20 gift bundle, verified 4,275+ UK customer reviews, and tested the 90-day risk-free money-back guarantee.",
     ],
     criteria: [
       "Sonic Motor Power & Plaque Disruption (32,000 VPM acoustic magnetic levitation motor)",
       "Acoustic Noise & Vibration Dampening (<50dB whisper-quiet operation benchmark)",
       "Ergonomics & Handle Weight (51g featherlight aerospace aluminium unibody)",
       "Battery Performance & Charging Interface (60+ days with magnetic USB-C dock)",
-      "Unboxing & Bundle Value (£60.85 free gifts: dock, aluminium case, 2 extra DuPont heads)",
+      "Unboxing & Bundle Value (£20 free gifts: 2 extra brush heads, digital gift card)",
       "Consumer Protection & Warranty (90-day money-back guarantee & 2-year manufacturer warranty)",
     ],
     winnerBullets: [
@@ -1505,7 +1498,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Weighs only 51g — more than 60% lighter than bulky 140g plastic competitors, preventing hand strain and excessive brushing pressure.",
       "Whisper-quiet sound profile tested below 50dB, eliminating the harsh motor buzz and rattling of legacy mechanical toothbrushes.",
       "Massive 60+ day battery life powered by a magnetic charging dock and universal USB-C cable — zero 2-pin bathroom sockets needed.",
-      "Includes £60.85 in premium free gifts: Magnetic Charging Dock (£24.95), Aluminium Travel Case (£15.95), and 2x DuPont Heads (£19.95).",
+      "Includes £20 in premium free gifts: 2 Free Brush Heads (£10) and Miroooo Digital Gift Card (£10).",
       "Backed by a verified 4.9★ rating from 4,275+ UK customers, a 90-day risk-free money-back guarantee, and a 2-year warranty.",
     ],
     comparisonRows: [
@@ -1539,9 +1532,9 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       },
       {
         feature: "Included Accessory Bundle Value",
-        miroooo: "£60.85 free gift bundle (dock, aluminium case, 2 extra heads) included at £69",
+        miroooo: "£20 free gift bundle (2 Free Heads & £10 Gift Card) included at £69",
         competitor: "£0 free gifts; £85 to £149 base price with £20–£40 add-on accessories",
-        whyItMatters: "You receive the complete charging dock, metal case, and 3 total heads upfront with zero hidden costs.",
+        whyItMatters: "You receive the complete charging dock, 2 extra heads, and gift card upfront with zero hidden costs.",
         advantage: "miroooo",
       },
       {
@@ -1554,8 +1547,8 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     ],
     buyerBlocks: [
       {
-        title: "Unboxing the £60.85 Free Gift Bundle: What's Inside the Box",
-        body: "The Miroooo Brush X promotional package arrives in premium packaging containing everything required for two full years of oral care: (1) The Miroooo Brush X 51g aerospace aluminium handle, (2) The Magnetic Charging Dock (£24.95 value) with universal USB-C cable, (3) The Slim Aerospace Aluminium Travel Case (£15.95 value), and (4) 2x extra DuPont Diamond-Cut Replacement Heads (£19.95 value) plus 1 pre-installed head (3 total heads).",
+        title: "Unboxing the £20 Free Gift Bundle: What's Inside the Box",
+        body: "The Miroooo Brush X promotional package arrives in premium packaging containing: (1) The Miroooo Brush X 51g aerospace aluminium handle with magnetic charging dock and USB-C cable, (2) 2x Free Replacement Brush Heads (£10 value), and (3) Miroooo Digital Gift Card (£10 value).",
       },
       {
         title: "Analyzing 4,275+ Verified 4.9★ UK Customer Reviews",
@@ -1576,7 +1569,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       {
         question: "What is included in the £69 promotional offer?",
         answer:
-          "The £69 package includes the Miroooo Brush X 51g aerospace aluminium handle, plus a complimentary £60.85 3-piece gift bundle: Magnetic Charging Dock with USB-C cable (£24.95 value), Aluminium Travel Case (£15.95 value), and 2x extra DuPont Replacement Heads (£19.95 value).",
+          "The £69 package includes the Miroooo Brush X 51g aerospace aluminium handle, plus a complimentary £20 gift bundle: 2 Free Brush Heads (£10 value) and Miroooo Digital Gift Card (£10 value).",
       },
     ],
   },
