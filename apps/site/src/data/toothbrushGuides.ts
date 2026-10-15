@@ -113,7 +113,7 @@ export const MIROOOO_GIFT_BUNDLE = {
 };
 
 const images = {
-  mirooooWinner: "/img/toothbrushes/miroooo-brush-x-electric-toothbrush.webp",
+  mirooooWinner: "/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-rose-gold-space-grey-silver.webp",
   mirooooBanner: "/img/toothbrushes/miroooo-brush-x-electric-toothbrush-banner.webp",
   topFive: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp",
   drOlivia: "/img/toothbrushes/dr-olivia.webp",
