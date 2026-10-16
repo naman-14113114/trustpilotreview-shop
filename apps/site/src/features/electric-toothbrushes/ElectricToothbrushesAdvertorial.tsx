@@ -219,10 +219,10 @@ function GiftPanel({
               accessories bundled completely free with every brush.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
               {/* Left Column: What's Included Card */}
               <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative flex flex-col justify-between">
-                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
+                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-500 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
                   IN THE BOX
                 </div>
                 <a
@@ -242,6 +242,48 @@ function GiftPanel({
                 <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-tight pt-1">
                   What&apos;s Included in Box
                 </p>
+              </div>
+
+              {/* Mobile Plus Connector (visible only on mobile between vertically stacked cards) */}
+              <div className="flex md:hidden justify-center -my-2.5 sm:-my-3 z-30 relative pointer-events-none">
+                <div
+                  className="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_3px_8px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] border border-slate-200"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-4 h-4 text-black"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Desktop 3D Plus Sign (centered vertically & horizontally between columns) */}
+              <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center">
+                <div
+                  className="w-10 h-10 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.08)] border border-slate-200 transform hover:scale-105 transition-transform"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-5 h-5 text-black"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
               </div>
 
               {/* Right Column: Stacked Free Gifts */}

@@ -10903,3 +10903,40 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, & Deployment Status**:
   - No commit, push, or deployment performed (per strict user rule).
+
+## 2026-10-16: Best Electric Toothbrush 3D Plus Sign Addition & In The Box Emerald Sync
+
+- **User Intent & Protected Scope**:
+  - User requested:
+    1. Add a '+' sign between the "What's Included in Box" card and the two free gifts in the middle vertically on the Best Electric Toothbrush page (`/best-electric-toothbrush-uk-2026`).
+    2. Keep a simple white circular background for the '+' sign with a black '+' symbol.
+    3. Match the green background color of the "IN THE BOX" badge to the exact green hex color used on the "Official Website" button (`bg-emerald-500` / `#10b981`).
+    4. Confine changes strictly to the Best Brush page with minimal code edits.
+  - Protected Scope: Confined strictly to `trustpilotreview-shop`, specifically the `GiftPanel` inside `isBestBrushPage` (`!guide`) in `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`. Zero changes to comparison guide pages (`/best-battery-life-electric-toothbrush-uk-2026`, etc.), other product categories (hair dryer, LED mask, pillow, grounding sheets), or outside repositories.
+
+- **Starting and Ending Git State**:
+  - Starting: `main` at commit `4026c69` (clean working tree, up to date with `origin/main`).
+  - Ending: Working tree has modified `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` and updated `CONTEXT.md`.
+
+- **Inspected and Changed Files**:
+  - Modified:
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+      1. Updated `IN THE BOX` badge background from `bg-emerald-600` to `bg-emerald-500` to match the exact computed background color of the `Official Website` button (`bg-emerald-500` / `oklch(0.696 0.17 162.48)` / `#10b981`).
+      2. Added desktop 3D plus sign in a white circular badge with black plus icon centered vertically and horizontally between the left column ("What's Included") and the right column (Free Gifts): `hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center` with `w-10 h-10 rounded-full bg-white text-gray-900 shadow-[0_4px_12px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.08)] border border-slate-200`.
+      3. Added mobile plus connector badge centered between the vertically stacked cards: `flex md:hidden justify-center -my-2.5 sm:-my-3 z-30 relative pointer-events-none` with `w-8 h-8 rounded-full bg-white text-gray-900 shadow-[0_3px_8px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] border border-slate-200` and black plus SVG icon.
+      4. Made container `relative grid grid-cols-1 md:grid-cols-2 ...` inside `{isBestBrushPage ? (...) : (...)}`.
+
+- **Mistakes & Corrections**:
+  - Initially implemented a blue radial 3D spherical plus button. The user clarified preference for a simple white circular button with a black plus icon, and requested syncing the "IN THE BOX" badge color to the exact green hex of the "Official Website" button. Replaced the blue styling with clean white and black plus SVG, and updated the badge from `bg-emerald-600` to `bg-emerald-500`.
+
+- **Verification Performed & Skipped**:
+  - Performed:
+    1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+    2. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+    3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled).
+    4. Chrome DevTools live visual DOM inspection on Desktop (1280px) and Mobile (390x844 iPhone) via Chrome DevTools MCP. Verified exact color matching between `IN THE BOX` badge and `Official Website` button, and verified white circle + black plus symbol placement vertically in the middle between What's Included and Free Gifts.
+  - Skipped:
+    - Snyk code scan (auth required).
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - No commit, push, branch, or deployment performed (per strict user rule).
