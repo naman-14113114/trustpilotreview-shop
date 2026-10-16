@@ -178,9 +178,11 @@ function MetricBar({ label, value }: Metric) {
 function GiftPanel({
   loadingTarget,
   setLoadingTarget,
+  isBestBrushPage = true,
 }: {
   loadingTarget: string | null;
   setLoadingTarget: (target: string) => void;
+  isBestBrushPage?: boolean;
 }) {
   return (
     <motion.div
@@ -202,77 +204,192 @@ function GiftPanel({
           <span className="text-lg">💡</span> Editor&apos;s Tip
         </div>
 
-        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-          Active Offer Found: £20 in{" "}
-          <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
-            FREE GIFTS
-          </span>
-        </h4>
-
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-          While doing our research, we found that Miroooo is currently running a
-          limited-time promotional sale where you get these two premium dental
-          accessories bundled completely free with every brush.
-        </p>
-
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-8 max-w-xl mx-auto">
-          {/* 2 Free Brush Heads */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
-              FREE
-            </div>
-            <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
-              rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with 2 Free Brush Heads"
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £10
+        {isBestBrushPage ? (
+          <>
+            <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+              What&apos;s Included &amp;{" "}
+              <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
+                FREE GIFTS WORTH £20
               </span>
-              <img
-                src="/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp"
-                alt="2 Free Brush Heads"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
-              2 Free Brush Heads
-            </p>
-          </div>
+            </h4>
 
-          {/* Miroooo Digital Gift Card */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-            <div
-              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
-              style={{ animationDelay: "0.2s" }}
-            >
-              FREE
-            </div>
-            <a
-              href="https://www.trymiroooo.com/products/miroooo-x"
-              rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
-              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            >
-              <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
-                Normally £10
-              </span>
-              <img
-                src="/img/toothbrushes/miroooo-digital-gift-card.webp"
-                alt="Miroooo Digital Gift Card"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover"
-              />
-            </a>
-            <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
-              Miroooo Gift Card
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
+              While doing our research, we found that Miroooo is currently running a
+              limited-time promotional sale where you get these premium dental
+              accessories bundled completely free with every brush.
             </p>
-          </div>
-        </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
+              {/* Left Column: What's Included Card */}
+              <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative flex flex-col justify-between">
+                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
+                  IN THE BOX
+                </div>
+                <a
+                  href="https://www.trymiroooo.com/products/miroooo-x"
+                  rel="noopener noreferrer sponsored"
+                  aria-label="View what is included in the Miroooo Brush X package"
+                  className="block relative mb-2 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 flex-1 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                >
+                  <img
+                    src="/img/toothbrushes/miroooo-brush-x-what-is-included-package.webp"
+                    alt="What's Included in Miroooo Brush X Package"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-square object-cover"
+                  />
+                </a>
+                <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-tight pt-1">
+                  What&apos;s Included in Box
+                </p>
+              </div>
+
+              {/* Right Column: Stacked Free Gifts */}
+              <div className="flex flex-col gap-3 sm:gap-4 justify-between h-full">
+                {/* 2 Extra Free Heads */}
+                <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-blue-100 shadow-lg transform hover:-translate-y-1 transition-transform relative flex items-center gap-3 sm:gap-4 flex-1">
+                  <div className="absolute -top-2 sm:-top-2.5 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 rounded-full shadow-lg z-20 animate-bounce">
+                    FREE
+                  </div>
+                  <a
+                    href="https://www.trymiroooo.com/products/miroooo-x"
+                    rel="noopener noreferrer sponsored"
+                    aria-label="View the Miroooo Brush X offer with 2 Extra Free Heads"
+                    className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  >
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] shadow-sm whitespace-nowrap">
+                      Normally £10
+                    </span>
+                    <img
+                      src="/img/toothbrushes/miroooo-brush-x-2-extra-free-brush-heads.webp"
+                      alt="2 Extra Free Heads"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover"
+                    />
+                  </a>
+                  <div className="flex-1 min-w-0 pr-2 text-left">
+                    <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-snug">
+                      2 Extra Free Heads
+                    </p>
+                    <p className="text-xs sm:text-sm text-blue-600 font-bold mt-1">
+                      FREE GIFT
+                    </p>
+                  </div>
+                </div>
+
+                {/* Miroooo Digital Gift Card */}
+                <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-blue-100 shadow-lg transform hover:-translate-y-1 transition-transform relative flex items-center gap-3 sm:gap-4 flex-1">
+                  <div
+                    className="absolute -top-2 sm:-top-2.5 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 rounded-full shadow-lg z-20 animate-bounce"
+                    style={{ animationDelay: "0.2s" }}
+                  >
+                    FREE
+                  </div>
+                  <a
+                    href="https://www.trymiroooo.com/products/miroooo-x"
+                    rel="noopener noreferrer sponsored"
+                    aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
+                    className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  >
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] shadow-sm whitespace-nowrap">
+                      Normally £10
+                    </span>
+                    <img
+                      src="/img/toothbrushes/miroooo-digital-gift-card.webp"
+                      alt="Miroooo Gift Card"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover"
+                    />
+                  </a>
+                  <div className="flex-1 min-w-0 pr-2 text-left">
+                    <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-snug">
+                      Miroooo Gift Card
+                    </p>
+                    <p className="text-xs sm:text-sm text-blue-600 font-bold mt-1">
+                      FREE GIFT
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+              Active Offer Found: £20 in{" "}
+              <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
+                FREE GIFTS
+              </span>
+            </h4>
+
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
+              While doing our research, we found that Miroooo is currently running a
+              limited-time promotional sale where you get these two premium dental
+              accessories bundled completely free with every brush.
+            </p>
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-8 max-w-xl mx-auto">
+              {/* 2 Free Brush Heads */}
+              <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+                <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
+                  FREE
+                </div>
+                <a
+                  href="https://www.trymiroooo.com/products/miroooo-x"
+                  rel="noopener noreferrer sponsored"
+                  aria-label="View the Miroooo Brush X offer with 2 Free Brush Heads"
+                  className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                >
+                  <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
+                    Normally £10
+                  </span>
+                  <img
+                    src="/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp"
+                    alt="2 Free Brush Heads"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-square object-cover"
+                  />
+                </a>
+                <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
+                  2 Free Brush Heads
+                </p>
+              </div>
+
+              {/* Miroooo Digital Gift Card */}
+              <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+                <div
+                  className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  FREE
+                </div>
+                <a
+                  href="https://www.trymiroooo.com/products/miroooo-x"
+                  rel="noopener noreferrer sponsored"
+                  aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
+                  className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                >
+                  <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
+                    Normally £10
+                  </span>
+                  <img
+                    src="/img/toothbrushes/miroooo-digital-gift-card.webp"
+                    alt="Miroooo Digital Gift Card"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-square object-cover"
+                  />
+                </a>
+                <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
+                  Miroooo Gift Card
+                </p>
+              </div>
+            </div>
+          </>
+        )}
 
         <OfficialButton
           href="https://www.trymiroooo.com/products/miroooo-x"
@@ -336,10 +453,12 @@ function ProductCard({
   product,
   loadingTarget,
   setLoadingTarget,
+  isBestBrushPage = true,
 }: {
   product: RankedProduct;
   loadingTarget: string | null;
   setLoadingTarget: (target: string) => void;
+  isBestBrushPage?: boolean;
 }) {
   const isMiroooo = product.rank === 1;
 
@@ -552,6 +671,7 @@ function ProductCard({
             <GiftPanel
               loadingTarget={loadingTarget}
               setLoadingTarget={setLoadingTarget}
+              isBestBrushPage={isBestBrushPage}
             />
           )}
 
@@ -1196,6 +1316,7 @@ export default function ElectricToothbrushesAdvertorial({
               product={product}
               loadingTarget={loadingTarget}
               setLoadingTarget={setLoadingTarget}
+              isBestBrushPage={!guide}
             />
           ))}
         </div>
