@@ -1,4 +1,5 @@
 import os
+import shutil
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -90,8 +91,8 @@ def generate_banner(output_webp: Path, output_png: Path):
     # Mirror to root img/toothbrushes/
     root_img_dir = REPO_ROOT / "img" / "toothbrushes"
     root_img_dir.mkdir(parents=True, exist_ok=True)
-    canvas.save(root_img_dir / "top-4-competitors-container-bar.png", "PNG")
-    canvas.convert("RGB").save(root_img_dir / "top-4-competitors-container-bar.webp", "WEBP", quality=95)
+    shutil.copy2(container_bar_png, root_img_dir / "top-4-competitors-container-bar.png")
+    shutil.copy2(container_bar_webp, root_img_dir / "top-4-competitors-container-bar.webp")
 
     # 4. #1 Miroooo X Card (Taller than container, extends OUT vertically 30px above and 30px below)
     miroooo_path = TOOTHBRUSH_DIR / "miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp"
@@ -163,8 +164,8 @@ def generate_banner(output_webp: Path, output_png: Path):
     print(f"Generated PNG: {output_png}")
     print(f"Generated WebP: {output_webp}")
 
-    canvas.save(root_img_dir / "top-5-electric-toothbrushes-uk.png", "PNG")
-    canvas.convert("RGB").save(root_img_dir / "top-5-electric-toothbrushes-uk.webp", "WEBP", quality=95)
+    shutil.copy2(output_png, root_img_dir / "top-5-electric-toothbrushes-uk.png")
+    shutil.copy2(output_webp, root_img_dir / "top-5-electric-toothbrushes-uk.webp")
 
 if __name__ == "__main__":
     out_webp = TOOTHBRUSH_DIR / "top-5-electric-toothbrushes-uk.webp"

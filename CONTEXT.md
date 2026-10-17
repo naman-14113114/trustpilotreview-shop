@@ -11076,3 +11076,118 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - No commit, push, branch, or deployment performed (per strict user rule).
+
+## 2026-10-17 — Update #5 Oral-B iO3 Amazon Link & Price to £75 across All Brush Pages
+
+- **User Intent & Protected Scope**:
+  - **User Request**: `chnage #5 oral B io3 amazon link with this: https://link.amazon/B0erAArJa and set price to 75. do this on all brush pages, launch multiple sub agents to do this accurately`
+  - **Practical Meaning**:
+    1. Update the affiliate link for #5 Oral-B iO3 Matt Black Electric Toothbrush from legacy `https://amzn.to/4gD6zVF` to `https://link.amazon/B0erAArJa` across all electric toothbrush pages and datasets.
+    2. Update the display price from `£65` to `£75` in the main toothbrush dataset, competitor comparison matrix, and head-to-head comparison guide.
+    3. Update all editorial review copy, con descriptions, pricing tables, and buyer guidance referencing `£65` to `£75`.
+    4. Orchestrate the implementation and cross-page validation via multiple specialized subagents without using automated search-and-replace scripts.
+  - **Protected Scope**: Confined strictly to electric toothbrush data, advertorial comparison table, and guides in `trustpilotreview-shop`. Zero modifications to other product lines (hair dryers, LED masks, grounding sheets, pillows, hearing aids) or outside repositories.
+
+- **Starting and Ending Git State**:
+  - Starting: `main` tracking `origin/main` at commit `a8aa552`, clean worktree.
+  - Ending: `main` with 3 tracked modified files: `apps/site/src/data/toothbrushes.ts`, `apps/site/src/data/toothbrushGuides.ts`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`. Clean compile state.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/data/toothbrushes.ts`:
+    - Updated `price` from `"£65"` to `"£75"` for Oral-B iO3.
+    - Updated `ctaUrl` from `"https://amzn.to/4gD6zVF"` to `"https://link.amazon/B0erAArJa"`.
+    - Updated `sourceLinks` hrefs (both entries) from `"https://amzn.to/4gD6zVF"` to `"https://link.amazon/B0erAArJa"`.
+    - Updated con text: `"At £75 (RRP £160) for a stripped-down plastic handle with no OLED display or Bluetooth, it delivers poor value compared to the £69 aluminium Miroooo Brush X."`
+    - Updated editorial review text: `"The Oral-B iO3 Matt Black serves as an accessible £75 entry point (RRP £160)..."` and `"At £75 with a heavy 136g plastic body and only a 30-day return window, it costs more than the Miroooo Brush X while delivering substantially less daily convenience and zero free accessory bundles."`
+  - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+    - Updated Oral-B iO3 in `TOP_5_COMPARISON_PRODUCTS` (line 957) `price` from `"£65"` to `"£75"`.
+  - `apps/site/src/data/toothbrushGuides.ts`:
+    - In `miroooo-vs-oral-b-io3`:
+      - `cardDescription`: `"Direct comparison: £69 aluminium acoustic brush with free bundle vs £75 stripped-down entry model with no screen, 2-pin plug, and expensive refills."`
+      - `seoDescription`: `"Miroooo Brush X (£69) vs Oral-B iO3 (£75). Compare 51g aluminium unibody vs 136g plastic handle, 60-day USB-C battery vs 14-day 2-pin charger, and refill costs with Dr. Olivia's verdict."`
+      - `subheadline`: `"Oral-B iO3 sits at £75 as the entry model to the iO micro-vibration series. Miroooo Brush X provides 32,000 VPM acoustic power, a 51g aerospace aluminium chassis, 60+ days battery, and a £20 free gift bundle at £69. Here is how they stack up."`
+      - `quickTake`: `"Miroooo Brush X costs less (£69 vs £75), is 62% lighter (51g), lasts 60+ days via magnetic USB-C, includes a companion app, and comes with a £20 free accessory bundle."`
+      - `drOliviaVerdict.recommendation`: `"Do not pay £75 for a stripped-down plastic brush with a 2-pin charger. Miroooo Brush X is cheaper upfront (£69), far cheaper to maintain, lighter in hand, and delivers superior acoustic gum care."`
+      - `intro`: `"The Oral-B iO3 Matt Black (£75, RRP £160) is designed as an accessible gateway into Oral-B's magnetic micro-vibration system..."`
+      - `criteria`: `"Total package value: £69 with £20 gift bundle vs £75 base brush with 1 head"`
+      - `comparisonRows` (Price & Free Gifts): competitor price updated to `"£75 (Includes 1 brush head & basic travel case)"`
+
+- **Multi-Subagent Orchestration**:
+  1. Subagent 1 (`81065f0a-290a-4619-a06d-00044261251f` - Toothbrush Data Editor): Updated core dataset in `toothbrushes.ts` and validated typecheck.
+  2. Subagent 2 (`0c31dc22-e84b-4c1a-b97f-1db1818915fa` - Toothbrush Guides & Advertorial Editor): Updated comparison matrix in `ElectricToothbrushesAdvertorial.tsx` and all pricing/copy in `toothbrushGuides.ts`.
+  3. Subagent 3 (`d4134620-a7fb-42ad-8197-020bfd7bcdce` - Cross-Page Audit & Verification Specialist): Performed cross-route audit across all 14 brush pages, verified zero remnants of old links/prices, and tested full build output.
+
+- **Verification Executed**:
+  1. `git grep "4gD6zVF" apps/`: 0 matches in application source.
+  2. `git grep "https://link.amazon/B0erAArJa" apps/site/src/`: Confirmed active across Oral-B iO3 `ctaUrl` and both `sourceLinks`.
+  3. `git grep "£65" apps/site/src/data/ apps/site/src/features/`: 0 matches for toothbrush data/guides.
+  4. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  5. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 warnings or errors.
+  6. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static routes compiled).
+  7. Post-build compiled HTML verification across all 14 brush routes in `apps/site/.next/server/app/`: Confirmed `https://link.amazon/B0erAArJa` and `£75` are present in all relevant prerendered HTML pages with 0 occurrences of `4gD6zVF` or `£65`.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - No commit, push, branch, or deployment performed (per strict user rule).
+
+## 2026-10-17 — Update #3 Philips Sonicare Pink Isolated Image, Amazon Link & Price to £124.99 across All Brush Pages
+
+- **User Intent & Protected Scope**:
+  - **User Request**:
+    1. `chnage #3 philips imaeg above in top 5 and in #3 with this new image: "E:\1st YEAR DTU\New folder\miroooo_images\Isolated pink Philips Sonicare toothbrush.webp" witout changing name keep the according to MIROOOO SEO ann GEO, and after changing delete onlder iameg and clean space. Must chaneg this image on all brush pages and delete older too, including below comparison.`
+    2. `change the affiliate link of amzon for philips with this: https://link.amazon/B0ad5Rtl8 and set price to 124.99 now`
+    3. `Do above all chanegs on all brush pages using multpile sub agents`
+  - **Practical Meaning**:
+    1. Isolate the pink Philips Sonicare toothbrush from `Isolated pink Philips Sonicare toothbrush.webp` onto a transparent 600x600 RGBA canvas, preserving the standardized SEO/GEO filename `philips-sonicare-comparison.png` (and generating `philips-sonicare-comparison.webp`) with 100% bitwise parity across `apps/site/public/img/toothbrushes/` and `img/toothbrushes/`.
+    2. Regenerate the Top 5 Hero composite banner assets (`top-4-competitors-container-bar.webp/png` and `top-5-electric-toothbrushes-uk.webp/png`) so the top hero banner above the doctor's verdict reflects the new pink Philips brush.
+    3. Delete the older obsolete asset `philips-sonicare-diamondclean-9000.webp` from both folders to clean up disk space.
+    4. Update the Amazon UK affiliate link to `https://link.amazon/B0ad5Rtl8` across `ctaUrl` and `sourceLinks` in `apps/site/src/data/toothbrushes.ts`.
+    5. Update the display price from `£149.99` to `£124.99` across the main dataset, comparison table matrix, and head-to-head comparison guide `miroooo-vs-philips-sonicare`.
+    6. Orchestrate the entire implementation and cross-page validation via multiple specialized subagents.
+  - **Protected Scope**: Confined strictly to electric toothbrush assets, data, advertorial, and guides in `trustpilotreview-shop`. Zero edits to other product categories or outside repositories.
+
+- **Starting and Ending Git State**:
+  - Starting: `main` tracking `origin/main`, prior Oral-B iO3 updates in working tree.
+  - Ending: Clean compilation with 3 modified data/component files, updated banner assets with 100% bitwise parity, deleted obsolete webp files, and comprehensive verification passing.
+
+- **Files Inspected & Changed**:
+  - Assets Modified / Created (100% bitwise parity across `apps/site/public/img/toothbrushes/` and `img/toothbrushes/`):
+    - `philips-sonicare-comparison.png` (39,024 bytes, SHA-256: `54c1c10f1cab165d60aa37270c189414a6b7d3b0ce5fafd0599e2c44c9e541cd`)
+    - `philips-sonicare-comparison.webp` (9,438 bytes, SHA-256: `1448ba80d8d41fdd71e213955df508dd9709552077b1bf66c8fc662843174632`)
+    - `top-4-competitors-container-bar.webp` (11,548 bytes, SHA-256: `9e27bc4b00772db4561f57ee3c5c790ac4a4bb16c1c0ea68af76648a5935b8d0`)
+    - `top-4-competitors-container-bar.png` (57,206 bytes, SHA-256: `987e497880e07a4c2701c6b5327597ff68a56d648aa0d2f1517a4cc5cae3b8cc`)
+    - `top-5-electric-toothbrushes-uk.webp` (25,778 bytes, SHA-256: `7acd734ca83ea757754b5359905b5f8504213cc6cdfc25b7664d8a6992fc8e30`)
+    - `top-5-electric-toothbrushes-uk.png` (186,761 bytes, SHA-256: `29d994be645f3faf6db73fb7d0937c5397620f62e8551708fcd19c1ad684e944`)
+  - Assets Deleted:
+    - `apps/site/public/img/toothbrushes/philips-sonicare-diamondclean-9000.webp`
+    - `img/toothbrushes/philips-sonicare-diamondclean-9000.webp`
+  - Scripts Modified:
+    - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Updated mirror routine to use bitwise `shutil.copy2` ensuring exact hash parity.
+  - Code & Data Modified:
+    - `apps/site/src/data/toothbrushes.ts`:
+      - Updated `price` from `"£149.99"` to `"£124.99"` for #3 Philips Sonicare.
+      - Updated `ctaUrl` to `"https://link.amazon/B0ad5Rtl8"`.
+      - Updated `sourceLinks` hrefs (both entries) to `"https://link.amazon/B0ad5Rtl8"`.
+      - Updated con copy to `"Exorbitant £124.99 Upfront Price: At £124.99 street price (and £349 RRP)..."`
+      - Updated review copy to `"The £124.99 purchase price is steep..."`
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+      - Updated `TOP_5_COMPARISON_PRODUCTS[2].price` to `"£124.99"`.
+    - `apps/site/src/data/toothbrushGuides.ts`:
+      - In `miroooo-vs-philips-sonicare`: updated `cardDescription`, `seoDescription`, `subheadline`, `quickTake`, `drOliviaVerdict.quote`, `intro`, `criteria`, `winnerBullets`, `comparisonRows` competitor price, and `buyerBlocks` from `£149.99`/`£149+` to `£124.99`.
+
+- **Multi-Subagent Orchestration**:
+  1. Subagent 1 (`9fa7a447-1338-4867-aebb-3de7885444c1` - Philips Asset & Banner Generator): Isolated new pink brush to transparent RGBA canvas, saved to comparison paths with 100% bitwise parity, removed obsolete webp, and regenerated Top 5 banner composites.
+  2. Subagent 2 (`961b4f21-c752-465b-9f9d-3bdadd85097c` - Philips Data & Guides Content Editor): Updated prices, Amazon links, and all review copy across `toothbrushes.ts`, `ElectricToothbrushesAdvertorial.tsx`, and `toothbrushGuides.ts`.
+  3. Subagent 3 (`71b28dc0-d190-4fc3-9c13-ee211864d995` - Cross-Page Audit & Verification Specialist): Audited all 14 brush routes, confirmed zero remnants of old links/images/prices, and verified production build and HTML outputs.
+
+- **Verification Executed**:
+  1. `Get-FileHash`: Verified 100% bitwise SHA-256 parity for all 6 generated asset pairs.
+  2. `Test-Path`: Confirmed complete removal of `philips-sonicare-diamondclean-9000.webp` from both directories.
+  3. `git grep "4hQE7BS"`: 0 matches in application source.
+  4. `git grep "https://link.amazon/B0ad5Rtl8"`: Verified active across `ctaUrl` and `sourceLinks`.
+  5. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  6. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 warnings or errors.
+  7. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static routes compiled).
+  8. Post-build compiled HTML verification across all 14 brush routes in `apps/site/.next/server/app/`: Confirmed `https://link.amazon/B0ad5Rtl8`, `£124.99`, and `philips-sonicare-comparison` are rendered across all relevant pages with 0 occurrences of `4hQE7BS` or `philips-sonicare-diamondclean-9000`.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - No commit, push, branch, or deployment performed (per strict user rule).
