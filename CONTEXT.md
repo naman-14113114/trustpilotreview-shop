@@ -11190,4 +11190,4 @@ ext/image unconfigured host 500 error that was crashing the page.
   8. Post-build compiled HTML verification across all 14 brush routes in `apps/site/.next/server/app/`: Confirmed `https://link.amazon/B0ad5Rtl8`, `£124.99`, and `philips-sonicare-comparison` are rendered across all relevant pages with 0 occurrences of `4hQE7BS` or `philips-sonicare-diamondclean-9000`.
 
 - **Commit, Push, Branch, & Deployment Status**:
-  - No commit, push, branch, or deployment performed (per strict user rule).
+  - Committed to `main` as `06ac526` (`feat: update Oral-B iO3 and Philips Sonicare pricing, links, and assets across brush pages`) and pushed cleanly to `origin/main` (`https://github.com/naman-14113114/trustpilotreview-shop.git`) on GitHub per explicit user instruction.
