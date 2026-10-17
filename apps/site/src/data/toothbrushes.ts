@@ -173,7 +173,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Very Noisy Operation (~64dB+): Mechanical oscillating gearbox generates a loud motor whine exceeding 64dB that vibrates through teeth and jawbone.",
       "Clunky Bluetooth App Sync: The Oral-B smartphone app frequently disconnects mid-brush and noticeably increases handle battery drain.",
-      "No Wall-Mounted Storage: Ships without any wall-mounted bathroom dock or magnetic cradle, forcing countertop placement.",
       "Standard 2-Year Limited Warranty: Covered by only a 2-year limited manufacturer warranty, trailing Miroooo Brush X's comprehensive warranty coverage.",
       "Short 14-Day Battery Life: Requires recharging every two weeks, falling well behind modern 60-day standards set by Miroooo Brush X.",
       "Heavy Plastic Handle (~140g): Substantially heavier and bulkier in hand than lightweight aluminium brushes.",
@@ -232,7 +231,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "High-Pitched Sonic Buzz Noise (~56–60dB): High-frequency sonic vibrations generate an irritating high-pitched humming and buzz in the ear during use.",
       "Frustrating App Connectivity: The Sonicare mobile app suffers from frequent Bluetooth dropouts, sync delays, and lacks seamless real-time guidance.",
-      "No Wall-Mounted Storage Dock: Does not include any space-saving wall-mounted bathroom dock, requiring a bulky glass charging cup that clutters sink counters.",
       "Standard 2-Year Limited Warranty: Philips provides only a standard 2-year limited warranty, falling short of Miroooo Brush X's 3-year comprehensive coverage.",
       "Exorbitant £149+ Upfront Price: At £149.99–£249 street price (and £349 RRP), it is the most expensive electric toothbrush in this comparison.",
       "Short 14-Day Battery Life: Requires bi-weekly charging, far shorter than Miroooo Brush X's 60+ day battery endurance.",
@@ -290,7 +288,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Noticeable Motor Buzz Noise (~54dB): High-frequency sonic buzzing is noticeably audible compared to Miroooo Brush X's whisper-quiet <50dB acoustic motor.",
       "Zero Smart App Connectivity: Lacks Bluetooth tracking, coverage mapping, or real-time mobile app coaching to identify missed brushing zones.",
-      "Mould-Prone Magnetic Mirror Mount: While it includes a magnetic mirror mount, toothpaste slurry and humidity easily trap behind it, creating stubborn black mould.",
       "Short 1-Year Limited Warranty: Backed by only a 1-year limited warranty, compared to Miroooo Brush X's 2-year comprehensive warranty.",
       "Heavier in Hand (~85g): Noticeably heavier and bulkier than Miroooo Brush X's 51g featherlight aerospace aluminium unibody.",
       "Extortionate Refill Costs (£14.99 for 2 Heads): Proprietary plant-based replacement heads cost a steep £14.99 per 2-pack, leading to high ongoing yearly maintenance expenses.",
@@ -303,7 +300,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     review: [
       "The SURI Pro 2.0 continues SURI's eco-conscious mission with recyclable cornstarch heads, castor-oil bristles, a modular aluminium chassis, and an integrated Touchsense™ pressure sensor, selling as a standalone brush for £85.",
-      "While its sustainability focus is commendable, everyday ownership reveals persistent trade-offs. The £85 base box includes zero extra heads or travel accessories, the plant-based cornstarch heads are prone to micro-cracking and loosening under moisture, the magnetic mirror mount easily gathers black mold, and proprietary refill packs remain expensive (£14.99 for 3). Without companion app coaching, only 2 cleaning modes, a heavier 85g handle, and a standard 30-day return policy, SURI Pro 2.0 remains a high-priced eco alternative that trails Miroooo Brush X in performance, bundle value, and long-term convenience.",
+      "While its sustainability focus is commendable, everyday ownership reveals persistent trade-offs. The £85 base box includes zero extra heads or travel accessories, the plant-based cornstarch heads are prone to micro-cracking and loosening under moisture, and proprietary refill packs remain expensive (£14.99 for 3). Without companion app coaching, only 2 cleaning modes, a heavier 85g handle, and a standard 30-day return policy, SURI Pro 2.0 remains a high-priced eco alternative that trails Miroooo Brush X in performance, bundle value, and long-term convenience.",
     ],
   },
   {
@@ -350,7 +347,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Loud Motor Noise (~64dB): Mechanical oscillating motor produces a loud 64dB whine and vibration that resonates through the jaw, far louder than Miroooo Brush X's <50dB whisper-quiet operation.",
       "No Smart App Connectivity: Hardware is completely stripped of Bluetooth and mobile app coaching, offering zero tracking or guidance for missed brushing zones.",
-      "No Wall-Mounted Stand: Ships without any wall-mounted storage dock or magnetic cradle, forcing the handle to sit on damp, bacteria-prone bathroom countertops.",
       "Short 2-Year Limited Warranty: Backed by only a basic 2-year manufacturer warranty, falling behind Miroooo Brush X's 2-year comprehensive warranty coverage.",
       "High Price for Stripped Features: At £65 (RRP £160) for a stripped-down plastic handle with no OLED display or Bluetooth, it delivers poor value compared to the £69 aluminium Miroooo Brush X.",
       "No Interactive OLED Display Screen: Completely lacks the real-time visual timer screen, battery percentage display, and mode icons found on higher iO models like the iO6.",

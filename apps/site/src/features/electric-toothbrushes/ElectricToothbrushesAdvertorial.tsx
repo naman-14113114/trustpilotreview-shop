@@ -871,7 +871,6 @@ interface ComparisonTableProduct {
   weight: string;
   batteryLife: string;
   travelCase: boolean;
-  wallMount: boolean;
   appTracking: boolean;
   chassisMaterial: string;
   freeHeads: boolean;
@@ -892,7 +891,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "51g",
     batteryLife: "60+ Days",
     travelCase: true,
-    wallMount: true,
     appTracking: true,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: true,
@@ -910,7 +908,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~140g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Plastic & Rubber",
     freeHeads: false,
@@ -928,7 +925,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~135g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Composite Plastic",
     freeHeads: false,
@@ -946,7 +942,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~85g",
     batteryLife: "34 Days",
     travelCase: false,
-    wallMount: true,
     appTracking: false,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: false,
@@ -964,7 +959,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~136g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Matte Plastic",
     freeHeads: false,
@@ -978,7 +972,6 @@ type ComparisonRowDef =
   | {
       key:
         | "travelCase"
-        | "wallMount"
         | "appTracking"
         | "freeHeads"
         | "freeDelivery";
@@ -1000,7 +993,6 @@ const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
   { key: "weight", label: "Ultra-Light Weight", kind: "text" },
   { key: "batteryLife", label: "Battery Life", kind: "text" },
   { key: "travelCase", label: "Luxury Travel Case", kind: "boolean" },
-  { key: "wallMount", label: "Wall-Mounted Storage", kind: "boolean" },
   { key: "appTracking", label: "Dental Care App", kind: "boolean" },
   { key: "chassisMaterial", label: "Chassis Material", kind: "text" },
   { key: "freeHeads", label: "Free Extra Brush Heads", kind: "boolean" },

@@ -475,7 +475,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
     },
     intro: [
       "In recent years, modern aluminium electric toothbrushes have gained huge popularity across the UK as stylish, sustainable alternatives to bulky plastic brushes. Two prominent names in this category are SURI (Sustainable Rituals) and Miroooo.",
-      "The SURI Pro 2.0 (£85) emphasizes eco-friendliness with plant-based cornstarch heads, castor oil bristles, a modular aluminium body, and a magnetic mirror mount. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, a magnetic mirror mount that gathers black mold, and zero bonus accessories in the £85 box.",
+      "The SURI Pro 2.0 (£85) emphasizes eco-friendliness with plant-based cornstarch heads, castor oil bristles, and a modular aluminium body. However, long-term ownership reveals several compromises: fragile cornstarch heads that crack and loosen on the vibrating shaft, expensive refill packs (£14.99 for 3 heads), a heavier 85g modular handle, only 2 cleaning modes, and zero bonus accessories in the £85 box.",
       "Miroooo Brush X (£69) takes a precision engineering approach: a seamless 51g aerospace aluminium unibody, 32,000 VPM acoustic motor with 3 modes (Clean, Soft, White), durable DuPont Tynex 3D end-rounded bristles, 60+ days battery on a magnetic USB-C dock, and an active promotion including a £20 gift bundle (2 Free Brush Heads and £10 Miroooo Digital Gift Card).",
     ],
     criteria: [
@@ -483,7 +483,7 @@ export const toothbrushGuides: Record<ToothbrushGuideSlug, ToothbrushGuide> = {
       "Weight & ergonomics: 51g precision unibody vs ~85g modular aluminium body",
       "Cleaning modes & speed: 3 modes (Clean, Soft, White) vs 2 basic speeds (Everyday Clean, Polish)",
       "Battery runtime: 60+ days magnetic USB-C dock vs 34–40 days",
-      "Bathroom hygiene: Compact magnetic dock vs sticky mirror mount prone to mold and residue",
+      "Everyday hygiene & build: Seamless aluminium unibody vs multi-piece modular body prone to residue",
       "Upfront price & bundle: £69 with £20 free gift bundle vs £85 standalone brush",
       "Refill head costs: Affordable DuPont replacements vs £14.99 per 3-pack (£5/head)",
     ],
