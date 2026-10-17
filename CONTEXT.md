@@ -10994,3 +10994,43 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - No commit, push, branch, or deployment performed (per strict user rule).
+
+
+## 2026-10-17: Top 5 Hero Banner #1 Studio Image Asset Replacement (Gemini_Generated_Image_8v1kiq8v1kiq8v1k)
+
+- **User Intent & Protected Scope**:
+  - **User Request**: `"E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\Mirooo x compressed\Gemini_Generated_Image_8v1kiq8v1kiq8v1k.webp" use above image in top 5 above image instead one ussing right now, replce it with above image keeping name and all rest things same just change image only there and whereever u sing on rest brush pages`
+  - **Practical Meaning**:
+    1. Replace the current #1 image used in the Top 5 Hero Banner floating card (`miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`) with the provided image `Gemini_Generated_Image_8v1kiq8v1kiq8v1k.webp`.
+    2. Keep the established SEO/GEO filename (`miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`) intact to maintain data integrity and avoid broken asset paths.
+    3. Update the asset across both destination folders (`apps/site/public/img/toothbrushes/` and `img/toothbrushes/`) with 100% bitwise parity.
+    4. Regenerate the 5-product composite preview assets (`top-5-electric-toothbrushes-uk.webp` and `top-5-electric-toothbrushes-uk.png`) via `generate_top5_toothbrush_banner.py`.
+    5. Update alt text to `"Miroooo Brush X Sonic Electric Toothbrush - #1 Best Electric Toothbrush UK 2026"`.
+  - **Protected Scope**: Confined 100% to electric toothbrush banner assets in `trustpilotreview-shop`. Zero modifications to other categories or outside repositories.
+
+- **Starting and Ending Git State**:
+  - Starting: Working tree with uncommitted toothbrush wall mount banishment changes.
+  - Ending: Working tree with updated banner image assets, regenerated composite banners, updated advertorial alt text, and updated context documentation.
+
+- **Files Inspected & Changed**:
+  - Source: `E:\1st YEAR DTU\New folder\miroooo_images\edited with miroooo\Mirooo x compressed\Gemini_Generated_Image_8v1kiq8v1kiq8v1k.webp` (2048x2048 WebP RGB, 51,176 bytes, SHA-256: `899A6144D093C615A1F4FD2DC16B186B8BAEEDFF9A53E01F92198083A340DEB8`).
+  - Overwritten in place:
+    - `apps/site/public/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`
+    - `img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`
+  - Regenerated:
+    - `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`
+    - `img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`
+    - Verified 100% SHA-256 parity (`3FDC9E52EEFD9B83EDC7E602106E9811A5586B6304641A2604A6B9771FB33F7F`).
+  - Modified:
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`: Updated alt text to `"Miroooo Brush X Sonic Electric Toothbrush - #1 Best Electric Toothbrush UK 2026"`.
+
+- **Verification Executed**:
+  1. `Get-FileHash`: Verified 100% bitwise SHA-256 parity between source and destination files.
+  2. Visual inspection with `view_file`: Verified clean centering and portrait crop of the new vertical studio shot with blue atmospheric background in both the standalone floating card and composite banner.
+  3. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  4. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  5. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static and dynamic routes compiled).
+  6. Built HTML verification: Confirmed new banner image renders in `/best-electric-toothbrush-uk-2026.html`.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - No commit, push, branch, or deployment performed (per strict user rule).
