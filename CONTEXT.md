@@ -11034,3 +11034,45 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - No commit, push, branch, or deployment performed (per strict user rule).
+
+
+## 2026-10-17: Dedicated In-Hand Banner in Comparison Table (Below Doctor Verdict) & Decoupled Studio Banner in Top 5 Hero
+
+- **User Intent & Protected Scope**:
+  - **User Request**: `https://www.trustpilotreview.shop/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp use this image in comaprison only doing below doctore verdict section doing minimal chanegs do this only in comaprsion u using on all brush pages`
+  - **Practical Meaning**:
+    1. Restore the authentic in-hand image on clean white background from `https://www.trustpilotreview.shop/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` (39,354 bytes, SHA-256: `CA4E6FD50D52198C2080B9D7366343A227F276C5476BBB01B586349E9B6DE2DD`) to `apps/site/public/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` and `img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`.
+    2. Use this in-hand banner image ONLY in the 5-Product Side-by-Side Comparison Table (`CompetitorComparisonTable`, `TOP_5_COMPARISON_PRODUCTS[0].image`), which sits below the Dentist's Verdict section across all electric toothbrush pages. This gives #1 Miroooo Brush X a clean white-background product thumbnail matching competitor thumbnails (`oral-b-io6-comparison.png`, `philips-sonicare-comparison.png`, etc.).
+    3. Keep the newly added vertical standing studio shot (`Gemini_Generated_Image_8v1kiq8v1kiq8v1k.webp`, 51,176 bytes, SHA-256: `899A6144D093C615A1F4FD2DC16B186B8BAEEDFF9A53E01F92198083A340DEB8`) for the Top 5 Hero floating card above the Doctor's Verdict section, cleanly decoupled as `miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp`.
+    4. Update `toothbrushGuides.ts` (`images.mirooooBanner`) and `generate_top5_toothbrush_banner.py` to reference `miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp` and regenerate the composite banner preview assets.
+  - **Protected Scope**: Confined strictly to electric toothbrush files in `trustpilotreview-shop`. Zero edits to other product categories (hair dryers, LED masks, grounding sheets, pillows, hearing aids) or outside repositories.
+
+- **Starting and Ending Git State**:
+  - Starting: Working tree with uncommitted changes from the hero banner studio asset replacement.
+  - Ending: Working tree with restored in-hand image at `miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp`, new decoupled hero asset `miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp`, updated code references in `ElectricToothbrushesAdvertorial.tsx`, `toothbrushGuides.ts`, and `generate_top5_toothbrush_banner.py`.
+
+- **Files Inspected & Changed**:
+  - Assets Modified / Added:
+    - Restored: `apps/site/public/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` (39,354 bytes, SHA-256: `CA4E6FD50D52198C2080B9D7366343A227F276C5476BBB01B586349E9B6DE2DD`).
+    - Restored: `img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` (39,354 bytes, identical hash).
+    - Added: `apps/site/public/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp` (51,176 bytes, SHA-256: `899A6144D093C615A1F4FD2DC16B186B8BAEEDFF9A53E01F92198083A340DEB8`).
+    - Added: `img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp` (51,176 bytes, identical hash).
+    - Regenerated: `apps/site/public/img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png`
+    - Regenerated: `img/toothbrushes/top-5-electric-toothbrushes-uk.webp` & `.png` (SHA-256: `3FDC9E52EEFD9B83EDC7E602106E9811A5586B6304641A2604A6B9771FB33F7F`).
+  - Code Modified:
+    - `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+      - Line 887: `TOP_5_COMPARISON_PRODUCTS[0].image` set to `/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` (in-hand image for comparison table below doctor verdict).
+      - Line 1226: Top 5 Hero floating card above doctor verdict set to `/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp` (studio standing shot).
+    - `apps/site/src/data/toothbrushGuides.ts`: Line 117 (`images.mirooooBanner`) updated to `/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp`.
+    - `apps/site/scripts/generate_top5_toothbrush_banner.py`: Line 97 updated to reference `miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp`.
+
+- **Verification Executed**:
+  1. `Get-FileHash`: Verified 100% bitwise SHA-256 parity for all assets in `apps/site/public/img/toothbrushes/` and root `img/toothbrushes/`.
+  2. `git grep`: Confirmed `miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp` is used exclusively in the comparison table (`TOP_5_COMPARISON_PRODUCTS[0]`).
+  3. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  4. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors (`tsc --noEmit`).
+  5. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 68/68 static routes compiled).
+  6. Built HTML verification: Checked `apps/site/.next/server/app/best-electric-toothbrush-uk-2026.html` and verified the in-hand image is in the comparison table below doctor verdict and the hero banner image is in the hero floating card.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - No commit, push, branch, or deployment performed (per strict user rule).
