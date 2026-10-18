@@ -11191,3 +11191,84 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - Committed to `main` as `06ac526` (`feat: update Oral-B iO3 and Philips Sonicare pricing, links, and assets across brush pages`) and pushed cleanly to `origin/main` (`https://github.com/naman-14113114/trustpilotreview-shop.git`) on GitHub per explicit user instruction.
+
+## 2026-10-18 — Create "Best Water Flosser UK 2026" Advertorial Page (/best-water-flosser-uk-2026)
+
+- **User Intent & Protected Scope**:
+  - **User Request**:
+    1. Update memory and create a new "best page" for water flossers named `best water flosser uk 2026` (`/best-water-flosser-uk-2026`).
+    2. #1 Miroooo Water Flosser (`https://www.trymiroooo.com/products/miroooo-water-flosser`). Deeply inspect all specs, break competition on key parameters.
+    3. Competitors:
+       - #2 Oral-B AquaCare 6 Pro-Expert Cordless Irrigator (Oxyjet): Price £99.
+       - #3 Waterpik Cordless Advanced (WP-562 Black): £99.99.
+       - #4 Philips Cordless Power Flosser 3000 (HX3826/33): £109.99 (RRP £119.99).
+       - #5 Panasonic Ultrasonic Irrigator (EW-DJ67-W311): £89.99 (RRP £124.99).
+    4. Imagery: High-quality Miroooo imagery for #1; for all competitors (#2–#5), strictly isolated water flosser units on pure white backgrounds (no boxes, pouches, cables, or loose nozzles).
+    5. Outbound CTAs: Route competitor CTAs to `https://www.trymiroooo.com/products/miroooo-water-flosser` until Amazon affiliate links are provided.
+    6. Design parity: Strictly follow `best-electric-toothbrush-uk-2026` structure, 2-layer top hero composite banner (container bar + floating card), Dr. Olivia BDS verdict, font family, layout, gift panel, and side-by-side comparison matrix.
+    7. Neutral editorial tone: "being biased but not biased" — acknowledge genuine competitor merits (e.g., Oxyjet micro-bubbles, ADA seal heritage, QuadStream coverage, ultrasonic cavitation) while highlighting decisive Miroooo advantages (320ml vs 145–250ml tank, 138 PSI piston pump vs 55–75 PSI, 60+ days USB-C battery vs 7–14 days / 2-pin shaver docks, 7 included nozzles + case, 90-day trial vs 30 days).
+    8. Orchestrate via multiple specialized subagents.
+  - **Protected Scope**: Confined 100% to `trustpilotreview-shop`. Zero edits to outside repositories (`miroooo`, `Best_Product_Verdict`, etc.). All existing pages, routes, and styles preserved.
+
+- **Starting and Ending Git State**:
+  - Starting: `main` tracking `origin/main` at commit `06ac526`.
+  - Ending: Clean branch tracking `origin/main` with 2 modified files (`sitemap.xml`, `metadata.ts`) and newly created route/data/asset files. Next.js static build 69/69 passing.
+
+- **Files Inspected & Changed**:
+  - New Route & Component:
+    - `apps/site/src/app/best-water-flosser-uk-2026/page.tsx`: Complete static page route with SEO metadata, OpenGraph, Twitter card, and JSON-LD compatibility.
+    - `apps/site/src/features/water-flossers/WaterFlossersAdvertorial.tsx`: React advertorial component matching the electric toothbrush advertorial architecture (2-layer hero banner, Dr. Olivia verdict, 10-criteria checklist, 5 ranked product cards, gift panel, bottom dentist verdict card, and 10-metric comparison table).
+  - New Dataset:
+    - `apps/site/src/data/waterFlossers.ts`: Full data structures, specs, metrics, pros/cons, and 3-paragraph clinical reviews for all 5 products.
+  - Modified Configuration:
+    - `apps/site/src/lib/metadata.ts`: Added `/best-water-flosser-uk-2026` route metadata configuration with canonical and OpenGraph image.
+    - `apps/site/public/sitemap.xml`: Added `/best-water-flosser-uk-2026` entry with weekly changefreq and 1.0 priority.
+  - Python Pipeline Script:
+    - `apps/site/scripts/generate_top5_flosser_banner.py`: Python script utilizing PIL + rembg (`u2netp`) with automatic mirror copy to ensure 100% bitwise parity.
+  - Generated Image Assets (100% bitwise parity across `apps/site/public/img/water-flossers/` and `img/water-flossers/`):
+    - `top-4-competitors-container-bar.webp` & `.png` (1536x430, container bar with 4 pure isolated handles and open center space)
+    - `miroooo-water-flosser-hero-banner.webp` (696x1087, floating Miroooo hero unit on `#e6e6e6` studio background)
+    - `top-5-water-flossers-uk.webp` & `.png` (1536x430, flat composite banner)
+    - `miroooo-water-flosser-duo-black-white.webp` (Card #1 main image)
+    - `miroooo-water-flosser-comparison.png` (Miroooo comparison table transparent handle)
+    - `oral-b-aquacare-pro-expert-comparison.png` (Card #2 and table transparent handle)
+    - `waterpik-cordless-advanced-comparison.png` (Card #3 and table transparent handle)
+    - `philips-power-flosser-3000-comparison.png` (Card #4 and table transparent handle)
+    - `panasonic-ew-dj67-ultrasonic-comparison.png` (Card #5 and table transparent handle)
+    - `miroooo-water-flosser-what-is-included-package.webp` (Gift card 1 - package contents)
+    - `miroooo-water-flosser-7-precision-nozzles-gift.webp` (Gift card 2 - 7 nozzles kit)
+    - `miroooo-digital-gift-card.webp` (Gift card 3 - £10 voucher)
+    - `dr-olivia.webp` (Doctor portrait)
+
+- **Exact Data, Routes, Asset Paths, and Links**:
+  - Route: `/best-water-flosser-uk-2026`
+  - Canonical URL: `https://www.trustpilotreview.shop/best-water-flosser-uk-2026`
+  - #1 Miroooo CTA URL: `https://www.trymiroooo.com/products/miroooo-water-flosser`
+  - Competitor Interim CTA URLs: `https://www.trymiroooo.com/products/miroooo-water-flosser`
+  - Price & Specs:
+    - #1 Miroooo: £69 (RRP £139, 50% OFF), 320ml, 60–138 PSI, 2000mAh (60+ days USB-C), 7 nozzles, 90-day trial.
+    - #2 Oral-B AquaCare 6 Pro-Expert: £99, 145ml, 40–55 PSI, NiMH (10–14 days, 14h 2-pin dock), 2 Oxyjet nozzles, 30-day trial.
+    - #3 Waterpik Cordless Advanced: £99.99, 210ml, 45–75 PSI, Li-ion (7–10 days, 4h magnetic dock), 4 nozzles, 30-day trial.
+    - #4 Philips Cordless Power Flosser 3000: £109.99 (RRP £119.99), 250ml, QuadStream, Li-ion (14 days, USB-C), 2 nozzles, 28-day trial.
+    - #5 Panasonic Ultrasonic EW-DJ67: £89.99 (RRP £124.99), 200ml, 28–94 PSI, NiMH (~10 min runtime, 17h 2-pin cradle), 4 nozzles, 30-day trial.
+
+- **Mistakes & Corrections**:
+  - Rembg Memory Issue: Initial high-res 1200x1200+ images caused ONNXRuntime `bad allocation` on Windows memory limits. Fixed by enforcing max dimension 800px pre-scaling and selecting the lightweight `u2netp` model session.
+  - Hero Floating Card Zoom: Initial crop was over-zoomed. Fixed by positioning the full standing unit at `scale = 960.0 / height` centered on a 696x1087 `#e6e6e6` canvas to match the exact studio aspect ratio of the toothbrush hero banner.
+
+- **Multi-Subagent Orchestration**:
+  1. Subagent 1 (`3a2af292-7416-43a6-abaf-0a1d6e85deeb` - Miroooo Flosser Researcher): Extracted complete specs, assets, and value propositions from the Miroooo repository.
+  2. Subagent 2 (`7850d0eb-fc5e-45fe-82f4-8a7574c5d308` - Competitor Analyst): Analyzed Oral-B, Waterpik, Philips, and Panasonic technical specs, strengths, weaknesses, and scoring.
+  3. Subagent 3 (`199756e0-cf3b-461e-a735-7fd0b25a7931` - Visual Asset Specialist): Inspected toothbrush banner generator and outlined flosser asset dimensions and generation procedures.
+
+- **Verification Executed**:
+  1. `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors (`tsc --noEmit`).
+  2. `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  3. `pnpm --filter @trustpilotreview/site build`: Next.js 16.2.11 Turbopack build succeeded with Exit Code 0 (all 69/69 static routes compiled).
+  4. Post-build compiled HTML verification at `apps/site/.next/server/app/best-water-flosser-uk-2026.html`: Confirmed all 10 key terms, all 5 products, images, and links present.
+  5. Mojibake/encoding check: Verified 0 mojibake characters in compiled HTML.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - Scratch Asset Cleanup: Removed all 29 temporary/scratch working files from `apps/site/public/img/water-flossers/` and `img/water-flossers/`, leaving strictly the 15 clean, production-ready assets with 100% bitwise parity.
+  - Verification Re-run: Re-verified with `tsc --noEmit`, ESLint, and Next.js Turbopack build (all 69/69 static routes passed with code 0).
+  - Committed to `main` and pushed cleanly to `origin/main` (`https://github.com/naman-14113114/trustpilotreview-shop.git`) per explicit user instruction.

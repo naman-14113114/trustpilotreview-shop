@@ -84,6 +84,13 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-electric-toothbrush-uk-2026`,
     image: "/img/toothbrushes/top-5-electric-toothbrushes-uk.webp"
   },
+  "/best-water-flosser-uk-2026": {
+    title: "Best Water Flosser UK 2026 | Top 5 Cordless Water Flossers Compared",
+    description:
+      "Compare the top 5 best water flossers in the UK for 2026. Ranked for water tank capacity, hydrodynamic pressure range, battery life, nozzle accessories, gum health, and overall value.",
+    canonical: `${SITE_URL}/best-water-flosser-uk-2026`,
+    image: "/img/water-flossers/top-5-water-flossers-uk.webp"
+  },
   "/best-hearing-aids-uk-2026": {
     title: "Best Hearing Aids UK 2026: Top 5 Compared & Reviewed",
     description:
