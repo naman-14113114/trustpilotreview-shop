@@ -11272,3 +11272,19 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Scratch Asset Cleanup: Removed all 29 temporary/scratch working files from `apps/site/public/img/water-flossers/` and `img/water-flossers/`, leaving strictly the 15 clean, production-ready assets with 100% bitwise parity.
   - Verification Re-run: Re-verified with `tsc --noEmit`, ESLint, and Next.js Turbopack build (all 69/69 static routes passed with code 0).
   - Committed to `main` and pushed cleanly to `origin/main` (`https://github.com/naman-14113114/trustpilotreview-shop.git`) per explicit user instruction.
+
+## 2026-10-18 — Remove Competitor Compare-At / Original Prices on Best Water Flosser UK Page
+
+- **User Intent & Protected Scope**:
+  - Request: "don't show compare at price of competitors, doing minimal changes do this too".
+  - Scope: Remove `compareAt` and `originalPrice` from competitors (#4 Philips and #5 Panasonic) in both `waterFlossers.ts` and `WaterFlossersAdvertorial.tsx`. Remove RRP mention in Panasonic review copy. Preserve #1 Miroooo's compare-at price (£139) and all other page structure and assets intact.
+- **Files Inspected & Changed**:
+  - `apps/site/src/data/waterFlossers.ts`: Removed `compareAt: "£119.99"` from Philips; removed `compareAt: "£124.99"` and updated review text from Panasonic.
+  - `apps/site/src/features/water-flossers/WaterFlossersAdvertorial.tsx`: Removed `originalPrice: "£119.99"` and `originalPrice: "£124.99"` from `TOP_5_COMPARISON_PRODUCTS`.
+- **Verification Executed**:
+  - `tsc --noEmit`: Exit Code 0.
+  - ESLint: Exit Code 0.
+  - Next.js Turbopack build: 69/69 static routes compiled with Exit Code 0.
+  - Compiled HTML check (`apps/site/.next/server/app/best-water-flosser-uk-2026.html`): Confirmed `£139` remains present for Miroooo, while `£119.99` and `£124.99` are 100% absent.
+- **Commit, Push, Branch, & Deployment Status**:
+  - Committed to `main` and pushed to `origin/main`.

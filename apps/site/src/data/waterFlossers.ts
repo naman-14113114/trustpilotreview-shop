@@ -276,7 +276,6 @@ export const PHILIPS_SONICARE_3000_DATASET: RankedWaterFlosserProduct = {
   image: "/img/water-flossers/philips-power-flosser-3000-comparison.png",
   imageAlt: "Philips Sonicare Cordless Power Flosser 3000 Oral Irrigator HX3826/33 with Quad Stream Technology - #4 Best Water Flosser UK 2026",
   price: "£109.99",
-  compareAt: "£119.99",
   rating: 4.0,
   ratingLabel: "Editorial rating",
   grade: "B-",
@@ -343,7 +342,6 @@ export const PANASONIC_EW_DJ67_DATASET: RankedWaterFlosserProduct = {
   image: "/img/water-flossers/panasonic-ew-dj67-ultrasonic-comparison.png",
   imageAlt: "Panasonic Series 600 Ultrasonic Oral Irrigator EW-DJ67-W311 with 5 Pressure Levels - #5 Best Water Flosser UK 2026",
   price: "£89.99",
-  compareAt: "£124.99",
   rating: 3.9,
   ratingLabel: "Editorial rating",
   grade: "C+",
@@ -398,7 +396,7 @@ export const PANASONIC_EW_DJ67_DATASET: RankedWaterFlosserProduct = {
   review: [
     "The Panasonic Series 600 Ultrasonic (EW-DJ67) incorporates sophisticated cavitation engineering. By tapering the nozzle aperture, it generates shockwaves of microscopic bubbles that collapse upon impact with the tooth surface, amplifying plaque disruption without needing excessive hydraulic volume.",
     "With 5 adjustable pressure settings reaching up to 94 PSI and a dedicated tongue scraper, its cleaning mechanics are undeniably capable. However, the device is severely penalized by its battery and charging architecture. A full recharge takes an excruciating 17 hours on an old-fashioned 2-pin bathroom charging stand, yielding just 10 minutes of total operational runtime on its top power level.",
-    "Furthermore, the 200ml reservoir runs dry within 60 seconds, and the ultrasonic pump produces an uncomfortable high-frequency acoustic whine during use. While clinically competent, its painfully slow charging, short battery life, and £89.99 sale price (£124.99 RRP) leave it trailing behind more practical modern competitors.",
+    "Furthermore, the 200ml reservoir runs dry within 60 seconds, and the ultrasonic pump produces an uncomfortable high-frequency acoustic whine during use. While clinically competent, its painfully slow charging, short battery life, and £89.99 purchase price leave it trailing behind more practical modern competitors.",
   ],
 };
 
