@@ -1,4 +1,3 @@
-// Main comparison data synced from the supplied Vercel reference on 16 October 2026.
 export type ToothbrushMetric = {
   label: string;
   value: number;
@@ -174,7 +173,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Very Noisy Operation (~64dB+): Mechanical oscillating gearbox generates a loud motor whine exceeding 64dB that vibrates through teeth and jawbone.",
       "Clunky Bluetooth App Sync: The Oral-B smartphone app frequently disconnects mid-brush and noticeably increases handle battery drain.",
-      "No Wall-Mounted Storage: Ships without any wall-mounted bathroom dock or magnetic cradle, forcing countertop placement.",
       "Standard 2-Year Limited Warranty: Covered by only a 2-year limited manufacturer warranty, trailing Miroooo Brush X's comprehensive warranty coverage.",
       "Short 14-Day Battery Life: Requires recharging every two weeks, falling well behind modern 60-day standards set by Miroooo Brush X.",
       "Heavy Plastic Handle (~140g): Substantially heavier and bulkier in hand than lightweight aluminium brushes.",
@@ -192,22 +190,22 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     rank: 3,
     name: "Philips Sonicare DiamondClean 9000 Electric Toothbrush",
     brand: "Philips Sonicare",
-    image: "/img/toothbrushes/philips-sonicare-comparison.png",
-    price: "£149.99",
+    image: "/img/toothbrushes/reference-sync-20261018/philips-sonicare-comparison.png",
+    price: "£124.99",
     rating: 4.1,
     ratingLabel: "Editorial rating",
     grade: "B+",
     badge: "Premium Sonic",
-    ctaUrl: "https://amzn.to/4hQE7BS",
+    ctaUrl: "https://link.amazon/B0ad5Rtl8",
     ctaLabel: "Shop Now",
     sourceLinks: [
       {
         label: "Philips Sonicare product page",
-        href: "https://amzn.to/4hQE7BS",
+        href: "https://link.amazon/B0ad5Rtl8",
       },
       {
         label: "Philips UK Store",
-        href: "https://amzn.to/4hQE7BS",
+        href: "https://link.amazon/B0ad5Rtl8",
       },
     ],
     weight: "~135g (Standard composite)",
@@ -233,9 +231,8 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "High-Pitched Sonic Buzz Noise (~56–60dB): High-frequency sonic vibrations generate an irritating high-pitched humming and buzz in the ear during use.",
       "Frustrating App Connectivity: The Sonicare mobile app suffers from frequent Bluetooth dropouts, sync delays, and lacks seamless real-time guidance.",
-      "No Wall-Mounted Storage Dock: Does not include any space-saving wall-mounted bathroom dock, requiring a bulky glass charging cup that clutters sink counters.",
       "Standard 2-Year Limited Warranty: Philips provides only a standard 2-year limited warranty, falling short of Miroooo Brush X's 3-year comprehensive coverage.",
-      "Exorbitant £149+ Upfront Price: At £149.99–£249 street price (and £349 RRP), it is the most expensive electric toothbrush in this comparison.",
+      "Exorbitant £124.99 Upfront Price: At £124.99 street price (and £349 RRP), it is the most expensive electric toothbrush in this comparison.",
       "Short 14-Day Battery Life: Requires bi-weekly charging, far shorter than Miroooo Brush X's 60+ day battery endurance.",
       "Heavy Composite Handle (~135g): More than 2.6x the weight of Miroooo Brush X's 51g featherlight aerospace aluminium body.",
       "Poor Durability & Shaft Loosening: Composite plastic casing and internal vibrating shaft are prone to seal wear and motor rattle over time, reducing working lifespan compared to unibody metal.",
@@ -244,7 +241,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     review: [
       "Philips Sonicare DiamondClean 9000 is well known for its luxury bathroom presentation and iconic charging glass. Its sleek finish and smart brush sync tracking offer an attractive high-end feel for countertops.",
-      "However, the value equation is difficult to justify for most UK buyers. The £149+ purchase price is steep, the charging glass requires an awkward 2-pin bathroom socket, the handle is heavy (135g), and the 14-day battery life feels dated compared to modern 60-day magnetic USB-C docks. If luxury countertop aesthetics are your sole priority, it's a solid performer—otherwise, Miroooo Brush X offers superior lightweight comfort, battery life, and long-term value.",
+      "However, the value equation is difficult to justify for most UK buyers. The £124.99 purchase price is steep, the charging glass requires an awkward 2-pin bathroom socket, the handle is heavy (135g), and the 14-day battery life feels dated compared to modern 60-day magnetic USB-C docks. If luxury countertop aesthetics are your sole priority, it's a solid performer—otherwise, Miroooo Brush X offers superior lightweight comfort, battery life, and long-term value.",
     ],
   },
   {
@@ -291,7 +288,6 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Noticeable Motor Buzz Noise (~54dB): High-frequency sonic buzzing is noticeably audible compared to Miroooo Brush X's whisper-quiet <50dB acoustic motor.",
       "Zero Smart App Connectivity: Lacks Bluetooth tracking, coverage mapping, or real-time mobile app coaching to identify missed brushing zones.",
-      "Mould-Prone Magnetic Mirror Mount: While it includes a magnetic mirror mount, toothpaste slurry and humidity easily trap behind it, creating stubborn black mould.",
       "Short 1-Year Limited Warranty: Backed by only a 1-year limited warranty, compared to Miroooo Brush X's 2-year comprehensive warranty.",
       "Heavier in Hand (~85g): Noticeably heavier and bulkier than Miroooo Brush X's 51g featherlight aerospace aluminium unibody.",
       "Extortionate Refill Costs (£14.99 for 2 Heads): Proprietary plant-based replacement heads cost a steep £14.99 per 2-pack, leading to high ongoing yearly maintenance expenses.",
@@ -304,7 +300,7 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     ],
     review: [
       "The SURI Pro 2.0 continues SURI's eco-conscious mission with recyclable cornstarch heads, castor-oil bristles, a modular aluminium chassis, and an integrated Touchsense™ pressure sensor, selling as a standalone brush for £85.",
-      "While its sustainability focus is commendable, everyday ownership reveals persistent trade-offs. The £85 base box includes zero extra heads or travel accessories, the plant-based cornstarch heads are prone to micro-cracking and loosening under moisture, the magnetic mirror mount easily gathers black mold, and proprietary refill packs remain expensive (£14.99 for 3). Without companion app coaching, only 2 cleaning modes, a heavier 85g handle, and a standard 30-day return policy, SURI Pro 2.0 remains a high-priced eco alternative that trails Miroooo Brush X in performance, bundle value, and long-term convenience.",
+      "While its sustainability focus is commendable, everyday ownership reveals persistent trade-offs. The £85 base box includes zero extra heads or travel accessories, the plant-based cornstarch heads are prone to micro-cracking and loosening under moisture, and proprietary refill packs remain expensive (£14.99 for 3). Without companion app coaching, only 2 cleaning modes, a heavier 85g handle, and a standard 30-day return policy, SURI Pro 2.0 remains a high-priced eco alternative that trails Miroooo Brush X in performance, bundle value, and long-term convenience.",
     ],
   },
   {
@@ -312,21 +308,21 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     name: "Oral-B iO3 Matt Black Electric Toothbrush",
     brand: "Oral-B",
     image: "/img/toothbrushes/oral-b-io3-comparison.png",
-    price: "£65",
+    price: "£75",
     rating: 3.4,
     ratingLabel: "Editorial rating",
     grade: "C+",
     badge: "No Display Screen & 2-Pin Plug",
-    ctaUrl: "https://amzn.to/4gD6zVF",
+    ctaUrl: "https://link.amazon/B0erAArJa",
     ctaLabel: "Shop Now",
     sourceLinks: [
       {
         label: "Oral-B iO3 product page",
-        href: "https://amzn.to/4gD6zVF",
+        href: "https://link.amazon/B0erAArJa",
       },
       {
         label: "Oral-B UK Store",
-        href: "https://amzn.to/4gD6zVF",
+        href: "https://link.amazon/B0erAArJa",
       },
     ],
     weight: "~136g (Chunky plastic handle)",
@@ -351,9 +347,8 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
     cons: [
       "Loud Motor Noise (~64dB): Mechanical oscillating motor produces a loud 64dB whine and vibration that resonates through the jaw, far louder than Miroooo Brush X's <50dB whisper-quiet operation.",
       "No Smart App Connectivity: Hardware is completely stripped of Bluetooth and mobile app coaching, offering zero tracking or guidance for missed brushing zones.",
-      "No Wall-Mounted Stand: Ships without any wall-mounted storage dock or magnetic cradle, forcing the handle to sit on damp, bacteria-prone bathroom countertops.",
       "Short 2-Year Limited Warranty: Backed by only a basic 2-year manufacturer warranty, falling behind Miroooo Brush X's 2-year comprehensive warranty coverage.",
-      "High Price for Stripped Features: At £65 (RRP £160) for a stripped-down plastic handle with no OLED display or Bluetooth, it delivers poor value compared to the £69 aluminium Miroooo Brush X.",
+      "High Price for Stripped Features: At £75 (RRP £160) for a stripped-down plastic handle with no OLED display or Bluetooth, it delivers poor value compared to the £69 aluminium Miroooo Brush X.",
       "No Interactive OLED Display Screen: Completely lacks the real-time visual timer screen, battery percentage display, and mode icons found on higher iO models like the iO6.",
       "Dated 14-Day Battery Life: Requires recharging every two weeks on a sluggish 16-hour charge, falling far behind modern 60-day standards.",
       "Extortionate iO Refill Costs (£8–£12/head): Incompatible with standard Oral-B heads, creating a costly £32–£48/year ongoing maintenance trap.",
@@ -362,8 +357,8 @@ export const toothbrushProducts: RankedToothbrushProduct[] = [
       "Standard 30-Day Terms: Ships with only a single brush head, backed by standard 30-day corporate return terms with no extended risk-free home trial.",
     ],
     review: [
-      "The Oral-B iO3 Matt Black serves as an accessible £65 entry point (RRP £160) to Oral-B's magnetic micro-vibration system. Featuring the classic round brush head, a 360-degree smart pressure ring that glows green for optimal brushing and red for excess force, 3 cleaning modes, and a hard travel case, it delivers a capable mechanical clean.",
-      "However, in stripping down the brush to hit an entry price tier, Oral-B removed the defining smart features of the iO line. The iO3 has no interactive OLED screen (unlike the iO6 at #2), no Bluetooth app coaching for missed zones, a dated 14-day battery that demands a 16-hour charge via an obsolete 2-pin bathroom shaver socket, and locks owners into extortionate £8–£12 iO refill heads. At £65 with a heavy 136g plastic body and only a 30-day return window, it costs more than the Miroooo Brush X while delivering substantially less daily convenience and zero free accessory bundles.",
+      "The Oral-B iO3 Matt Black serves as an accessible £75 entry point (RRP £160) to Oral-B's magnetic micro-vibration system. Featuring the classic round brush head, a 360-degree smart pressure ring that glows green for optimal brushing and red for excess force, 3 cleaning modes, and a hard travel case, it delivers a capable mechanical clean.",
+      "However, in stripping down the brush to hit an entry price tier, Oral-B removed the defining smart features of the iO line. The iO3 has no interactive OLED screen (unlike the iO6 at #2), no Bluetooth app coaching for missed zones, a dated 14-day battery that demands a 16-hour charge via an obsolete 2-pin bathroom shaver socket, and locks owners into extortionate £8–£12 iO refill heads. At £75 with a heavy 136g plastic body and only a 30-day return window, it costs more than the Miroooo Brush X while delivering substantially less daily convenience and zero free accessory bundles.",
     ],
   },
 ];

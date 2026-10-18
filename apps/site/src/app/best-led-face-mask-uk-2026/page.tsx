@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BestLedFaceMaskAdvertorial from "@/legacy-pages/BestLedFaceMaskAdvertorial";
+import BestLedFaceMaskAdvertorial from "@/legacy-pages/BestLedFaceMaskReferenceAdvertorial";
 import { getUkPageContext } from "@/lib/page-context";
 import { metadataForPath } from "@/lib/metadata";
 

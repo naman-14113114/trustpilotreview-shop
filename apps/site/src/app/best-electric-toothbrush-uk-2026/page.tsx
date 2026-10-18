@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://www.trustpilotreview.shop/best-electric-toothbrush-uk-2026",
     siteName: "Trustpilot Review Shop",
-    images: ["/img/toothbrushes/top-5-electric-toothbrushes-uk-reference-20261016.webp"],
+    images: ["/img/toothbrushes/reference-sync-20261018/top-5-electric-toothbrushes-uk.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Best Electric Toothbrush UK 2026 | Top 5 Toothbrushes Compared",
     description:
       "Compare the top 5 best electric toothbrushes in the UK for 2026. Ranked for acoustic motor power, plaque removal, battery life, gum protection, refill costs and value.",
-    images: ["/img/toothbrushes/top-5-electric-toothbrushes-uk-reference-20261016.webp"],
+    images: ["/img/toothbrushes/reference-sync-20261018/top-5-electric-toothbrushes-uk.webp"],
   },
 };
 

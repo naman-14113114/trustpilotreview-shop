@@ -1,4 +1,3 @@
-// Scoped reference for the main comparison route; supporting guides retain their approved version.
 "use client";
 
 import Image from "next/image";
@@ -33,7 +32,11 @@ import {
   type ToothbrushMetric as Metric,
 } from "@/data/toothbrushComparison";
 
-import { type ToothbrushGuide } from "@/data/toothbrushGuides";
+import {
+  toothbrushGuides,
+  type ToothbrushGuide,
+  type ToothbrushGuideProduct,
+} from "@/data/toothbrushComparisonGuides";
 
 const defaultEvaluationCriteria = [
   "Deep cleaning & plaque removal (32,000 VPM acoustic fluid dynamics)",
@@ -285,10 +288,10 @@ function GiftPanel({
               accessories bundled completely free with every brush.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
               {/* Left Column: What's Included Card */}
               <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative flex flex-col justify-between">
-                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
+                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-500 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
                   IN THE BOX
                 </div>
                 <a
@@ -308,6 +311,48 @@ function GiftPanel({
                 <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-tight pt-1">
                   What&apos;s Included in Box
                 </p>
+              </div>
+
+              {/* Mobile Plus Connector (visible only on mobile between vertically stacked cards) */}
+              <div className="flex md:hidden justify-center -my-2.5 sm:-my-3 z-30 relative pointer-events-none">
+                <div
+                  className="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_3px_8px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] border border-slate-200"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-4 h-4 text-black"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Desktop 3D Plus Sign (centered vertically & horizontally between columns) */}
+              <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center">
+                <div
+                  className="w-10 h-10 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.08)] border border-slate-200 transform hover:scale-105 transition-transform"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-5 h-5 text-black"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
               </div>
 
               {/* Right Column: Stacked Free Gifts */}
@@ -895,7 +940,6 @@ interface ComparisonTableProduct {
   weight: string;
   batteryLife: string;
   travelCase: boolean;
-  wallMount: boolean;
   appTracking: boolean;
   chassisMaterial: string;
   freeHeads: boolean;
@@ -916,7 +960,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "51g",
     batteryLife: "60+ Days",
     travelCase: true,
-    wallMount: true,
     appTracking: true,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: true,
@@ -934,7 +977,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~140g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Plastic & Rubber",
     freeHeads: false,
@@ -946,13 +988,12 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     rank: 3,
     name: "Philips Sonicare DiamondClean 9000",
     shortName: "Philips 9000",
-    image: "/img/toothbrushes/philips-sonicare-comparison.png",
-    price: "£149.99",
+    image: "/img/toothbrushes/reference-sync-20261018/philips-sonicare-comparison.png",
+    price: "£124.99",
     rating: 4.1,
     weight: "~135g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Composite Plastic",
     freeHeads: false,
@@ -970,7 +1011,6 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~85g",
     batteryLife: "34 Days",
     travelCase: false,
-    wallMount: true,
     appTracking: false,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: false,
@@ -983,12 +1023,11 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     name: "Oral-B iO3 Matt Black",
     shortName: "Oral-B iO3",
     image: "/img/toothbrushes/oral-b-io3-comparison.png",
-    price: "£65",
+    price: "£75",
     rating: 3.4,
     weight: "~136g",
     batteryLife: "14 Days",
     travelCase: false,
-    wallMount: false,
     appTracking: false,
     chassisMaterial: "Matte Plastic",
     freeHeads: false,
@@ -1002,7 +1041,6 @@ type ComparisonRowDef =
   | {
       key:
         | "travelCase"
-        | "wallMount"
         | "appTracking"
         | "freeHeads"
         | "freeDelivery";
@@ -1024,7 +1062,6 @@ const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
   { key: "weight", label: "Ultra-Light Weight", kind: "text" },
   { key: "batteryLife", label: "Battery Life", kind: "text" },
   { key: "travelCase", label: "Luxury Travel Case", kind: "boolean" },
-  { key: "wallMount", label: "Wall-Mounted Storage", kind: "boolean" },
   { key: "appTracking", label: "Dental Care App", kind: "boolean" },
   { key: "chassisMaterial", label: "Chassis Material", kind: "text" },
   { key: "freeHeads", label: "Free Extra Brush Heads", kind: "boolean" },
@@ -1214,7 +1251,7 @@ export default function ElectricToothbrushesAdvertorial({
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
       <Script
-        src="/assets/miroooo-brush-x-comparison-exit-popup.js?v=20261016"
+        src="/assets/miroooo-brush-x-comparison-exit-popup.js?v=20261018"
         strategy="afterInteractive"
       />
       {/* Header / Hero */}
@@ -1247,7 +1284,7 @@ export default function ElectricToothbrushesAdvertorial({
           <div className="relative w-full max-w-6xl mx-auto mb-10 md:mb-12 flex items-center justify-center">
             {/* Layer 1: Background Container Bar with 4 competitors and open center space */}
             <img
-              src="/img/toothbrushes/top-4-competitors-container-bar.webp"
+              src="/img/toothbrushes/reference-sync-20261018/top-4-competitors-container-bar.webp"
               alt="Electric Toothbrushes UK Comparison"
               className="w-full h-auto object-contain pointer-events-none"
             />
@@ -1255,8 +1292,8 @@ export default function ElectricToothbrushesAdvertorial({
             {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
-                src="/img/toothbrushes/miroooo-x1-sonic-electric-toothbrush-grey-dark-metallic-vanity.webp"
-                alt="Miroooo Brush X sonic electric toothbrush in grey dark metallic finish on a vanity"
+                src="/img/toothbrushes/reference-sync-20261018/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp"
+                alt="Miroooo Brush X Sonic Electric Toothbrush - #1 Best Electric Toothbrush UK 2026"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
