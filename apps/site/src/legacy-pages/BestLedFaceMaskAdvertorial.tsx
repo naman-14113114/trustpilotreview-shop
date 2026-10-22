@@ -1586,7 +1586,7 @@ export default function Home({
           {products.map((product) => (
             <div
               key={product.id}
-              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? "border-emerald-500 ring-4 ring-emerald-50 pt-8 md:pt-9" : "border-slate-200"} p-6 md:p-8 lg:p-10`}
+              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? "border-emerald-500 ring-4 ring-emerald-50 pt-10 md:pt-10" : "border-slate-200"} p-6 md:p-10`}
             >
               {product.isWinner && (
                 <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm tracking-wide uppercase flex items-center gap-1.5 md:gap-2 shadow-lg z-10 whitespace-nowrap">
@@ -1604,10 +1604,7 @@ export default function Home({
                       {product.rank} {product.name}
                     </h2>
 
-                    <div
-                      className={`relative w-full ${product.isWinner ? "max-w-[250px] mx-auto mb-3 sm:mb-4" : "mb-6"}`}
-                      style={product.isWinner ? { maxWidth: "250px" } : undefined}
-                    >
+                    <div className="relative w-full mb-6">
                       <a
                         href={product.link}
                         onClick={(event) =>
@@ -1620,12 +1617,12 @@ export default function Home({
                           alt={product.name}
                           loading="lazy"
                           decoding="async"
-                          className={`w-full ${product.isWinner ? "max-w-[250px] mx-auto" : ""} aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300`}
+                          className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
                         />
                       </a>
                     </div>
 
-                    <div className={`text-center ${product.isWinner ? "mb-2 lg:mb-3" : "mb-2 lg:mb-6"} w-full`}>
+                    <div className="text-center mb-2 lg:mb-6 w-full">
                       <div className="flex items-center justify-center gap-3 mb-2">
                         <span className="text-3xl font-extrabold text-slate-900">
                           {product.price}
@@ -1635,15 +1632,12 @@ export default function Home({
                             {product.originalPrice}
                           </span>
                         )}
-                      </div>
-                      {product.isWinner && (
-                        <div className="mb-2 flex justify-center">
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-500 px-3 py-0.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-sm">
-                            <span className="text-sm sm:text-base leading-none">🎃</span>
-                            HALLOWEEN SALE
+                        {product.isWinner && (
+                          <span className="text-xl sm:text-2xl leading-none select-none" aria-label="Halloween" title="Halloween">
+                            🎃
                           </span>
-                        </div>
-                      )}
+                        )}
+                      </div>
                       {product.isWinner ? (
                         <a
                           href={product.link}
@@ -1653,8 +1647,8 @@ export default function Home({
                           <GreenStarRating
                             rating={product.rating}
                             forceFull={product.isWinner}
-                            size={product.isWinner ? 20 : 24}
-                            className={product.isWinner ? "mb-1" : "mb-2"}
+                            size={24}
+                            className="mb-2"
                           />
                           <p className="text-sm font-medium text-slate-500 transition-colors hover:text-emerald-600">
                             Overall rating {product.rating}
@@ -1665,8 +1659,8 @@ export default function Home({
                           <GreenStarRating
                             rating={product.rating}
                             forceFull={product.isWinner}
-                            size={product.isWinner ? 20 : 24}
-                            className={product.isWinner ? "mb-1" : "mb-2"}
+                            size={24}
+                            className="mb-2"
                           />
                           <p className="text-sm font-medium text-slate-500">
                             Overall rating {product.rating}
@@ -1682,7 +1676,7 @@ export default function Home({
                           text={
                             product.isWinner ? "Official Website" : "Shop Now"
                           }
-                          className={`w-full ${product.isWinner ? "!py-2.5 md:!py-3 !text-base md:!text-lg max-w-[280px] mx-auto" : ""}`}
+                          className="w-full"
                         />
                       </div>
                     )}
@@ -1952,7 +1946,7 @@ export default function Home({
                             Check Availability{" "}
                             <ChevronRight size={20} className="sm:hidden" />
                             <ChevronRight
-                              size={product.isWinner ? 20 : 24}
+                              size={24}
                               className="hidden sm:block"
                             />
                           </span>

@@ -11416,3 +11416,40 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm lint` (`turbo lint`): Passed with 0 errors.
   - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
   - Verified compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`) contains the exact expected markup and font style.
+
+## 2026-10-22 — Reverted Card #1 Image Shrinkage & Replaced Orange Pill Badge with Pumpkin Emoji Next to Compare-at Price
+
+- **User Intent & Protected Scope**:
+  - Request: User noted the #1 product image became smaller due to the "halloween sale" pill badge under the price and requested removing the badge and restoring full image size, placing simply a pumpkin emoji (`🎃`) right next to the compare-at price (`£449 🎃`).
+  - Strict Scope: Applied across mask advertorial comparison cards.
+    - Card container top padding restored to `pt-10 md:pt-10` and `p-6 md:p-10`.
+    - Image container and image element restored to full width (`relative w-full mb-6` and `w-full aspect-square ...`, removing all `max-w-[250px]` restrictions).
+    - Removed the orange `🎃 HALLOWEEN SALE` pill badge under the price block.
+    - Added pumpkin emoji (`🎃`) inline right next to the compare-at price in the price flex container (`<span className="text-xl sm:text-2xl leading-none select-none" aria-label="Halloween" title="Halloween">🎃</span>`).
+    - Restored full star rating size (24px, `mb-2`) and CTA button width (`className="w-full"`).
+    - Preserved the Cookie cursive script `Halloween sale` in the Active Offer Found / Editor's Tip section.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/CurrentbodyComparison.tsx`
+  - `apps/site/src/legacy-pages/old/DeluxeskinComparison.tsx`
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/QureskincareComparison.tsx`
+  - `apps/site/src/legacy-pages/old/TherafaceComparison.tsx`
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`
+  - `unzipped/src/pages/CurrentbodyComparison.tsx`
+  - `unzipped/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped/src/pages/NewAdvertorial.tsx`
+  - `unzipped/src/pages/QureskincareComparison.tsx`
+  - `unzipped/src/pages/TherafaceComparison.tsx`
+  - `unzipped/src/pages/VideoAdvertorial.tsx`
+  - `unzipped_new_pages/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped_new_pages/src/pages/Home.tsx`
+  - `unzipped_new_pages/src/pages/QureskincareComparison.tsx`
+  - `unzipped_new_pages/src/pages/TherafaceComparison.tsx`
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with 0 errors.
+  - `pnpm lint` (`turbo lint`): Passed with 0 errors.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
+  - Verified compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`) contains `£179`, `£449`, and `🎃` side-by-side with 0 image size constraints.
