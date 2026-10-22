@@ -1852,7 +1852,7 @@ export default function Home({
 
                         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
                           While doing our research, we found that Buudy is
-                          currently running a <strong>Halloween Sale</strong> where you can
+                          currently running a <span className="font-cookie text-[#c77840] text-2xl md:text-3xl leading-none inline-block" style={{ fontFamily: "'Cookie', cursive" }}>Halloween</span> sale where you can
                           get these premium accessories bundled for free with
                           every mask purchase.
                         </p>

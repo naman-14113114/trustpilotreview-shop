@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cookie } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -13,6 +13,13 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+});
+
+const cookie = Cookie({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cookie",
 });
 
 export const metadata: Metadata = {
@@ -144,6 +151,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="en-GB">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet" />
         <link rel="preconnect" href="https://bat.bing.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.buudy.co.uk" crossOrigin="anonymous" />
@@ -159,7 +169,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         />
         <script dangerouslySetInnerHTML={{ __html: googleTagManager }} />
       </head>
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${inter.variable} ${playfair.variable} ${cookie.variable}`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TQ3HRZMJ"

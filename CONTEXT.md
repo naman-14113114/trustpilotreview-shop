@@ -11393,3 +11393,26 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - Clean commit pushed to `origin/main` on GitHub (`https://github.com/naman-14113114/trustpilotreview-shop.git`).
+
+## 2026-10-22 — Custom Script Font ("Cookie" Cursive) and Color Applied to "Halloween" in Active Offer Found Copy
+
+- **User Intent & Protected Scope**:
+  - Request: on the trustpilotreview.shop best led face mask page, change "limited-time sale" to "Halloween sale" matching the exact cursive script font and warm terracotta/amber-orange color (`#c77840`) shown in the user-provided screenshot.
+  - Strict Scope: Applied specifically to the Active Offer Found / Editor's Tip section across mask pages. Loaded Google Font `Cookie` (cursive) via `next/font/google` and fallback preconnect/stylesheet link in `layout.tsx`. Styled the word `Halloween` in `font-cookie text-[#c77840] text-2xl md:text-3xl leading-none inline-block` with `'Cookie', cursive` fallback, followed by `sale` in normal body font.
+  - All other layout elements, prices, tracking events, affiliate destinations, and non-mask routes 100% preserved.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/app/layout.tsx`: Configured Next.js Google font `Cookie` variable `--font-cookie`, preconnect tags, and body variable assignment.
+  - `apps/site/src/app/globals.css`: Added `--font-cookie` to `@theme` and defined `.font-cookie`.
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`: Updated Active Offer Found paragraph to render `Halloween` in Cookie font `#c77840` followed by `sale`.
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`
+  - `unzipped/src/pages/NewAdvertorial.tsx`
+  - `unzipped/src/pages/VideoAdvertorial.tsx`
+  - `unzipped_new_pages/src/pages/Home.tsx`
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with 0 errors.
+  - `pnpm lint` (`turbo lint`): Passed with 0 errors.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
+  - Verified compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`) contains the exact expected markup and font style.
