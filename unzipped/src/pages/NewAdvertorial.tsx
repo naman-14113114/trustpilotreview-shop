@@ -467,7 +467,7 @@ export default function Home() {
                         </h4>
                         
                         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-                          While doing our research, we found that Buudy is currently running a limited-time sale where you can get these premium accessories bundled for free with every mask purchase.
+                          While doing our research, we found that Buudy is currently running a Halloween Sale where you can get these premium accessories bundled for free with every mask purchase.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">

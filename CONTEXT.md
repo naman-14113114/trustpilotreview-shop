@@ -11288,3 +11288,43 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Compiled HTML check (`apps/site/.next/server/app/best-water-flosser-uk-2026.html`): Confirmed `£139` remains present for Miroooo, while `£119.99` and `£124.99` are 100% absent.
 - **Commit, Push, Branch, & Deployment Status**:
   - Committed to `main` and pushed to `origin/main`.
+
+## 2026-10-22 — Minimal Halloween Sale Text Update Across All Mask Pages
+
+- **User Intent & Protected Scope**:
+  - Request: "update your memory take pull from github, then doing minimal chanegs do this, instead of that limited-time sale write Halloween Sale. just do this where ever u see on all maks pages, doing minimal chnegs do this and this only nad push clean code on github wihtout fucking anythign else strictly".
+  - Protected Scope: Strictly isolated to LED face mask pages. Replaced "limited-time sale" with "Halloween Sale" in the free gifts / editor's tip offer section where Buudy mask accessories are bundled. All other copy, layout, styling, tracking, prices, and non-mask pages (hair dryers, toothbrushes, grounding sheets, water flossers) 100% preserved and untouched.
+
+- **Starting and Ending Git State**:
+  - Starting: Clean branch tracking `origin/main` at commit `4d8e4c9`. `git pull` executed (Already up to date).
+  - Ending: Clean branch tracking `origin/main` after committing and pushing minimal mask page edits.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`: Replaced "currently running a limited-time sale where you can" with "currently running a Halloween Sale where you can" in the free gifts section for `/best-led-face-mask-uk-2026`.
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`: Replaced "limited-time sale" with "Halloween Sale" in the free gifts section for `/new-advertorial`.
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`: Replaced "limited-time sale" with "Halloween Sale" in the free gifts section for `/best-led-face-mask-uk-2026-previous` and `/best-led-face-mask-uk-2026-video-test`.
+  - `unzipped/src/pages/NewAdvertorial.tsx`: Replaced "limited-time sale" with "Halloween Sale".
+  - `unzipped/src/pages/VideoAdvertorial.tsx`: Replaced "limited-time sale" with "Halloween Sale".
+  - `unzipped_new_pages/src/pages/Home.tsx`: Replaced "limited-time sale" with "Halloween Sale".
+  - `section-text-video-test.json`: Replaced "running a limited-time sale" with "running a Halloween Sale".
+
+- **Exact Data, Routes, Asset Paths, and Links**:
+  - Routes affected:
+    - `/best-led-face-mask-uk-2026`
+    - `/new-advertorial`
+    - `/best-led-face-mask-uk-2026-previous`
+    - `/best-led-face-mask-uk-2026-video-test`
+  - Text change: "While doing our research, we found that Buudy is currently running a Halloween Sale where you can get these premium accessories bundled for free with every mask purchase."
+
+- **Mistakes & Corrections**:
+  - Initial check confirmed "limited-time sale" also appears in `GroundingSheetsAdvertorial.tsx` (Juujo grounding sheets) and `HairDryerAdvertorial.tsx` (Muuhu hair dryer). Strictly respected the user's explicit directive to change ONLY mask pages ("on all maks pages, doing minimal chnegs do this and this only... wihtout fucking anythign else strictly"), leaving non-mask pages untouched.
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm lint` (`turbo lint`): Passed with 0 errors.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
+  - `pnpm verify:parity`: Parity checks passed with Exit Code 0.
+  - Zero mojibake or encoding corruption verified.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - Committed to `main` and pushed cleanly to `origin/main` on GitHub (`https://github.com/naman-14113114/trustpilotreview-shop.git`).

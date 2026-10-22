@@ -1098,7 +1098,7 @@ export default function Home({
 
                         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
                           While doing our research, we found that Buudy is
-                          currently running a limited-time sale where you can
+                          currently running a Halloween Sale where you can
                           get these premium accessories bundled for free with
                           every mask purchase.
                         </p>
