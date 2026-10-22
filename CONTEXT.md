@@ -11453,3 +11453,38 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm lint` (`turbo lint`): Passed with 0 errors.
   - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
   - Verified compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`) contains `£179`, `£449`, and `🎃` side-by-side with 0 image size constraints.
+
+## 2026-10-22 — Bolded Key Value Claims in Card #1 Description
+
+- **User Intent & Protected Scope**:
+  - Request: In the #1 product description, bold key conversion terms: "7-colour", "near-infrared", "neck coverage", "cordless", "Buudy AI", "4.9-star", "90-day money-back".
+  - Strict Scope: Applied across mask advertorial description copy.
+    - Paragraph 1: "with a <strong>7-colour</strong> spectrum plus 830nm <strong>near-infrared</strong>."
+    - Paragraph 2: "built-in <strong>neck coverage</strong>, a vital feature...", "The <strong>cordless</strong>, rechargeable design...", "and <strong>Buudy AI</strong> guided sessions..."
+    - Paragraph 3: "with a <strong>4.9-star</strong> rating...", "and a <strong>90-day money-back</strong> guarantee..."
+    - Preserved all other copy, prices, pumpkin emoji, Cookie font "Halloween sale", and non-mask routes.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/CurrentbodyComparison.tsx`
+  - `apps/site/src/legacy-pages/old/DeluxeskinComparison.tsx`
+  - `apps/site/src/legacy-pages/old/QureskincareComparison.tsx`
+  - `apps/site/src/legacy-pages/old/TherafaceComparison.tsx`
+  - `unzipped/src/pages/NewAdvertorial.tsx`
+  - `unzipped/src/pages/VideoAdvertorial.tsx`
+  - `unzipped/src/pages/CurrentbodyComparison.tsx`
+  - `unzipped/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped/src/pages/QureskincareComparison.tsx`
+  - `unzipped/src/pages/TherafaceComparison.tsx`
+  - `unzipped_new_pages/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped_new_pages/src/pages/Home.tsx`
+  - `unzipped_new_pages/src/pages/QureskincareComparison.tsx`
+  - `unzipped_new_pages/src/pages/TherafaceComparison.tsx`
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with 0 errors.
+  - `pnpm lint` (`turbo lint`): Passed with 0 errors.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
+  - Verified all 7 bold phrases in compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`).
