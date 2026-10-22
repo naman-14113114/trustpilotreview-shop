@@ -11488,3 +11488,20 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm lint` (`turbo lint`): Passed with 0 errors.
   - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
   - Verified all 7 bold phrases in compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`).
+
+## 2026-10-22 — Comparison Table Halloween Sale Badge
+
+- **Owner Intent / Goal**:
+  - In the competitor comparison table (Top 5 LED Face Masks Side-by-Side Comparison), add the Halloween Sale badge under the £179 price in the Buudy column.
+  - Aligns with the user's uploaded snippet showing Buudy 7 Colour, stars, £179 £449 and the comparison rows down to the Price row.
+  - Ensured header columns align with align-top so all mask images, titles, star ratings, and prices sit on uniform horizontal baselines, with the orange Halloween Sale badge cleanly positioned directly under £179 £449.
+  - Also added the badge below £179 £449 in the final Price comparison row.
+
+- **Files Inspected & Changed**:
+  - apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx
+
+- **Verification Executed**:
+  - turbo typecheck: Passed (0 errors).
+  - turbo lint: Passed (0 errors).
+  - pnpm --filter @trustpilotreview/site build: Passed (0 errors, 69/69 routes built).
+  - Static HTML verification: Confirmed 2 occurrences of HALLOWEEN SALE with pumpkin emoji in comparison table (apps/site/.next/server/app/best-led-face-mask-uk-2026.html).

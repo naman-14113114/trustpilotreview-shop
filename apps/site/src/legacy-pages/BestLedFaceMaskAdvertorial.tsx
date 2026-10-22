@@ -1042,7 +1042,7 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
               {comparisonProducts.map((prod) => (
                 <th
                   key={prod.rank}
-                  className={`py-4 px-2 text-center w-[16.4%] align-bottom border-l border-slate-200 ${
+                  className={`py-4 px-2 text-center w-[16.4%] align-top border-l border-slate-200 ${
                     prod.rank === 1 ? "bg-emerald-50/40" : "bg-white"
                   }`}
                 >
@@ -1089,6 +1089,14 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                         </span>
                       )}
                     </div>
+                    {prod.rank === 1 && (
+                      <div className="mt-1.5 flex justify-center">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-orange-500 px-2 sm:px-2.5 py-0.5 text-[9px] sm:text-[10px] md:text-xs font-extrabold uppercase tracking-wider text-white shadow-xs whitespace-nowrap">
+                          <span className="text-[10px] sm:text-xs leading-none">🎃</span>
+                          HALLOWEEN SALE
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </th>
               ))}
@@ -1132,13 +1140,21 @@ function CompetitorComparisonTable({ market }: { market: AdvertorialMarket }) {
                           prod.rank === 1 ? "bg-emerald-50/20" : ""
                         }`}
                       >
-                        <div className="flex items-baseline justify-center gap-1.5 font-sans">
-                          <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
-                            {prod.price}
-                          </span>
-                          {prod.originalPrice && (
-                            <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
-                              {prod.originalPrice}
+                        <div className="flex flex-col items-center justify-center gap-1 font-sans">
+                          <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                            <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
+                              {prod.price}
+                            </span>
+                            {prod.originalPrice && (
+                              <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
+                                {prod.originalPrice}
+                              </span>
+                            )}
+                          </div>
+                          {prod.rank === 1 && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-orange-500 px-2 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-white shadow-xs whitespace-nowrap">
+                              <span className="text-[10px] sm:text-xs leading-none">🎃</span>
+                              HALLOWEEN SALE
                             </span>
                           )}
                         </div>
