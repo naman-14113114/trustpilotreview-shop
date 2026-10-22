@@ -11328,3 +11328,68 @@ ext/image unconfigured host 500 error that was crashing the page.
 
 - **Commit, Push, Branch, & Deployment Status**:
   - Committed to `main` and pushed cleanly to `origin/main` on GitHub (`https://github.com/naman-14113114/trustpilotreview-shop.git`).
+
+
+## 2026-10-22 — Card #1 Orange Halloween Sale Badge, Tightened Spacing, and Paragraph Bolding on All Mask Pages
+
+- **User Intent & Protected Scope**:
+  - Add the orange `🎃 HALLOWEEN SALE` badge in product Card #1 under the price (`£179 £449`) strictly on all mask pages.
+  - Adjust container top padding, space above/below image, image size, and button padding so the left column (image, price, badge, stars, and Official Website button) fits completely in frame alongside the 3 paragraphs without overflowing into the Performance Metrics section or off-screen.
+  - In Paragraph 3 beside the Card #1 image, bold `<strong>Halloween Sale</strong>` (e.g. "Currently priced at £179 during their <strong>Halloween Sale</strong>, it offers the best value on the market...").
+  - Strictly confined to `trustpilotreview-shop`. All non-mask pages (hair dryers, toothbrushes, grounding sheets, water flossers) 100% untouched.
+
+- **Starting & Ending Git State**:
+  - Starting: `main...origin/main` at `daf2d52`.
+  - Ending: Clean branch tracking `origin/main` after committing and pushing all calibrated mask page edits.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`
+  - `apps/site/src/legacy-pages/old/CurrentbodyComparison.tsx`
+  - `apps/site/src/legacy-pages/old/DeluxeskinComparison.tsx`
+  - `apps/site/src/legacy-pages/old/QureskincareComparison.tsx`
+  - `apps/site/src/legacy-pages/old/TherafaceComparison.tsx`
+  - `unzipped/src/pages/NewAdvertorial.tsx`
+  - `unzipped/src/pages/VideoAdvertorial.tsx`
+  - `unzipped/src/pages/CurrentbodyComparison.tsx`
+  - `unzipped/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped/src/pages/QureskincareComparison.tsx`
+  - `unzipped/src/pages/TherafaceComparison.tsx`
+  - `unzipped_new_pages/src/pages/Home.tsx`
+  - `unzipped_new_pages/src/pages/DeluxeskinComparison.tsx`
+  - `unzipped_new_pages/src/pages/QureskincareComparison.tsx`
+  - `unzipped_new_pages/src/pages/TherafaceComparison.tsx`
+
+- **Exact Changes & Visual Calibration**:
+  1. Orange Pill Badge Added Under Price in Card #1:
+     ```tsx
+     {product.isWinner && (
+       <div className="mb-2 flex justify-center">
+         <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-500 px-3 py-0.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-sm">
+           <span className="text-sm sm:text-base leading-none">🎃</span>
+           HALLOWEEN SALE
+         </span>
+       </div>
+     )}
+     ```
+  2. Description Paragraph 3 Bolding:
+     - Set to `Currently priced at £179 during their <strong>Halloween Sale</strong>, it offers the best value...`
+     - Applied `dangerouslySetInnerHTML={{ __html: p }}` across all comparison pages so `<strong>` tags render as rich bold text instead of escaped HTML.
+  3. Spacing & Fit Calibration:
+     - Card container top padding tightened to `pt-8 md:pt-9` and `p-6 md:p-8 lg:p-10`.
+     - Image container constrained to `max-w-[250px] mx-auto` with `style={{ maxWidth: '250px' }}` and bottom margin tightened to `mb-3 sm:mb-4`.
+     - Price section margin tightened to `mb-2 lg:mb-3`.
+     - Star rating size adjusted to `20` with `mb-1`.
+     - Desktop CTA button tightened to `!py-2.5 md:!py-3 !text-base md:!text-lg max-w-[280px] mx-auto`.
+     - Live browser DOM measurements verified the button ends 210px before the Performance Metrics container begins on desktop, perfectly framing alongside the 3 paragraphs.
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with Exit Code 0 (0 errors).
+  - `pnpm lint` (`turbo lint`): Passed with Exit Code 0.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes.
+  - `pnpm verify:parity`: Parity checks passed with Exit Code 0.
+  - Live visual review via Chrome DevTools MCP on `http://localhost:3001/best-led-face-mask-uk-2026`: Confirmed orange badge, bolded text, and button alignment.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - Clean commit pushed to `origin/main` on GitHub (`https://github.com/naman-14113114/trustpilotreview-shop.git`).

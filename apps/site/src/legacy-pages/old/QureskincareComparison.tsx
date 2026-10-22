@@ -30,7 +30,7 @@ const products = [
     description: [
       "Our top pick is the Buudy LED Mask, a medical-grade device that outperforms the competition with its comprehensive 7-color spectrum. While most brands offer only basic red light, Buudy includes specialized wavelengths to target everything from deep wrinkles and acne to inflammation. This FDA-cleared technology ensures professional-grade results for all skin types.",
       "A major advantage is the built-in neck coverage, a vital feature often missing from more expensive models. This allows you to treat \"turkey neck\" and sagging skin simultaneously. The cordless, rechargeable design features \"Tap Technology,\" making it completely hands-free and portable for a convenient 15-minute daily session.",
-      "Trusted by over 16,000 customers with a 4.9-star rating, this mask delivers visible improvements in as few as ten uses. Currently priced at £179, it offers the best value on the market, combining full-face and neck rejuvenation with advanced eye protection for a safe, effective, and painless experience."
+      "Trusted by over 16,000 customers with a 4.9-star rating, this mask delivers visible improvements in as few as ten uses. Currently priced at £179 during their <strong>Halloween Sale</strong>, it offers the best value on the market, combining full-face and neck rejuvenation with advanced eye protection for a safe, effective, and painless experience."
     ],
     pros: [
       "Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 1,000 reviews and performed well in internal testing.",
@@ -283,7 +283,7 @@ export default function QureskincareComparison() {
           {products.map((product) => (
             <div 
               key={product.id} 
-              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? 'border-emerald-500 ring-4 ring-emerald-50 pt-10 md:pt-10' : 'border-slate-200'} p-6 md:p-10`}
+              className={`relative bg-white rounded-3xl shadow-sm border ${product.isWinner ? 'border-emerald-500 ring-4 ring-emerald-50 pt-8 md:pt-9' : 'border-slate-200'} p-6 md:p-8 lg:p-10`}
             >
               {product.isWinner && (
                 <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm tracking-wide uppercase flex items-center gap-1.5 md:gap-2 shadow-lg z-10 whitespace-nowrap">
@@ -300,21 +300,29 @@ export default function QureskincareComparison() {
                       {product.rank} {product.name}
                     </h2>
                     
-                    <a href={product.link} className="block w-full mb-6 group">
+                    <a href={product.link} className={`block w-full ${product.isWinner ? "max-w-[250px] mx-auto mb-3 sm:mb-4" : "mb-6"} group`}>
                       <img 
                         src={product.image} 
                         alt={product.name} 
-                        className="w-full rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
+                        className="w-full rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300 aspect-square object-cover"
                       />
                     </a>
 
-                    <div className="text-center mb-6 w-full">
+                    <div className={`text-center ${product.isWinner ? "mb-2 lg:mb-3" : "mb-6"} w-full`}>
                       <div className="flex items-center justify-center gap-3 mb-2">
                         <span className="text-3xl font-extrabold text-slate-900">{product.price}</span>
                         {product.originalPrice && (
                           <span className="text-lg text-slate-400 line-through font-medium">{product.originalPrice}</span>
                         )}
                       </div>
+                      {product.isWinner && (
+                        <div className="mb-2 flex justify-center">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-500 px-3 py-0.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-sm">
+                            <span className="text-sm sm:text-base leading-none">🎃</span>
+                            HALLOWEEN SALE
+                          </span>
+                        </div>
+                      )}
                       <div className="flex items-center justify-center gap-1 text-amber-400 mb-1">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} size={20} fill="currentColor" />
@@ -325,7 +333,7 @@ export default function QureskincareComparison() {
 
                     {product.isWinner && (
                       <div className="w-full hidden lg:block">
-                        <CTAButton href={product.link} text="Official Website" className="w-full" />
+                        <CTAButton href={product.link} text="Official Website" className={`w-full ${product.isWinner ? "!py-2.5 md:!py-3 !text-base md:!text-lg max-w-[280px] mx-auto" : ""}`} />
                       </div>
                     )}
                   </div>
@@ -341,7 +349,7 @@ export default function QureskincareComparison() {
 
                   <div className="prose prose-slate prose-lg max-w-none mb-8">
                     {product.description.map((p, idx) => (
-                      <p key={idx} className="text-slate-600 leading-relaxed">{p}</p>
+                      <p key={idx} className="text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: p }} />
                     ))}
                   </div>
 
