@@ -272,7 +272,7 @@ const baseProducts: Product[] = [
     rank: "#4",
     name: "Shark CryoGlow LED Mask",
     image:
-      "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
+      "/img/shark.png",
     price: "£299.99",
     rating: "4.6 / 5",
     link: "https://amzn.to/4b4C8WS",

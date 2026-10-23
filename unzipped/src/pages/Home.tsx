@@ -119,7 +119,7 @@ export default function Home() {
               {
                 title: "Silicone LED Mask Dangers",
                 description: "Why silicone-based LED masks may be damaging your skin — the hidden dangers most brands won't tell you.",
-                image: "https://img.thesitebase.net/10677/10677322/themes/1768726434a7e6301df7.png",
+                image: "/img/shark.png",
                 link: "/silicone-led-mask-dangers",
                 badge: "Health Alert"
               },
