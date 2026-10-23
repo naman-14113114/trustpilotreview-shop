@@ -11505,3 +11505,62 @@ ext/image unconfigured host 500 error that was crashing the page.
   - turbo lint: Passed (0 errors).
   - pnpm --filter @trustpilotreview/site build: Passed (0 errors, 69/69 routes built).
   - Static HTML verification: Confirmed 2 occurrences of HALLOWEEN SALE with pumpkin emoji in comparison table (apps/site/.next/server/app/best-led-face-mask-uk-2026.html).
+
+## 2026-10-23 — Updated CurrentBody Price to £399.99 and Shark LED Mask Price to £299.99 Across All Mask Pages
+
+- **User Intent & Protected Scope**:
+  - Request: Update memory, take from GitHub, then set price of CurrentBody to £399.99 and Shark LED mask to £299.99 on all mask pages wherever we are using it. Doing minimal changes only. Check locally after completing them and if all ok push clean code to GitHub.
+  - Strict Working Scope: Confined 100% strictly to `trustpilotreview-shop`. Zero edits to outside repositories.
+  - Minimal Scope Discipline: Updated CurrentBody from £499.99 to £399.99 (along with rounded price £400 and restocking fee £40) and Shark CryoGlow from £249.99 to £299.99 across all mask pages, comparison matrices, and direct product cons. Non-mask pages (hair dryers, toothbrushes, grounding sheets, pillows, hearing aids) preserved 100% untouched.
+
+- **Starting & Ending Git State**:
+  - Starting: Fast-forward pulled 4 incoming commits from `origin/main` (`aa1b00b`). Worktree clean.
+  - Ending: Clean branch tracking `origin/main` after committing and pushing minimal mask page price updates.
+
+- **Files Inspected & Changed**:
+  - `apps/site/src/lib/advertorialMarkets.ts`:
+    - Updated UK CurrentBody price to `${legacyPound}399.99`, roundedPrice to `${legacyPound}400`, restockingFee to `${legacyPound}40`.
+    - Updated UK Shark price to `${legacyPound}299.99`.
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`:
+    - Updated CurrentBody product `price` to `"£399.99"`.
+    - Updated CurrentBody cons: `"Extremely High Price: At £399.99..."`, `'No Neck Coverage: The standard £400 mask...'`, `"Costly Money-Back Guarantee: ...would be £40 on a £400 mask."`
+    - Updated Shark product `price` to `"£299.99"`.
+    - Updated Shark cons: `"Extremely High Price: At £299.99..."`
+  - `apps/site/src/data/buudyEditorialPages.ts`:
+    - Updated CurrentBody product `price` to `"£399.99"`.
+    - Updated quick facts takeaway: `"Buudy is £179; CurrentBody’s face mask was £399.99 when checked."`
+    - Updated FAQ answer: `"At the prices checked on 3 August 2026, Buudy was £179 and the CurrentBody face mask was £399.99."`
+    - Updated guideFacts table rows: `"Face mask £399.99; face-and-neck kit £679.99 when checked"` and `"£399.99 face mask; three red/NIR wavelengths; flexible silicone"`.
+  - `apps/site/src/legacy-pages/mobileProsCons.ts`:
+    - Updated CurrentBody mobile cons: `"Face-only treatment at £399.99; neck kit costs an additional £679.99"` and `"(~£40)"`.
+    - Updated Shark mobile cons: `"At £299.99, significantly more expensive than Buudy (£179)"`.
+  - `apps/site/src/legacy-pages/old/NewAdvertorial.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`, `"standard £400 mask"`, `"£40 on a £400 mask"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/VideoAdvertorial.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`, `"standard £400 mask"`, `"£40 on a £400 mask"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/CurrentbodyComparison.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`, `"standard £400 mask"`, `"£40 on a £400 mask"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/DeluxeskinComparison.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/QureskincareComparison.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/TherafaceComparison.tsx`:
+    - Updated CurrentBody price to `"£399.99"`, cons to `"At £399.99"`.
+    - Updated Shark price to `"£299.99"`, cons to `"At £299.99"`.
+  - `apps/site/src/legacy-pages/old/FloatingHeadWarning.tsx`:
+    - Updated CurrentBody/Omnilux reference price from `£350-£500` to `£350-£400` and `£500 LED masks` to `£400 LED masks`.
+
+- **Verification Executed**:
+  - `pnpm typecheck` (`turbo typecheck`): Passed with 0 errors (`tsc --noEmit`).
+  - `pnpm lint` (`turbo lint`): Passed with 0 errors.
+  - `pnpm build:site` (`next build`): Turbopack production build succeeded with Exit Code 0, compiling all 69/69 static routes cleanly.
+  - `pnpm verify:parity`: Passed with Exit Code 0.
+  - Verified compiled static HTML (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`, `currentbody-vs-buudy.html`, `floating-head-warning.html`): Confirmed CurrentBody renders £399.99 and Shark renders £299.99 across product cards and comparison tables, with 0 occurrences of £499.99 or £249.99.
+
+- **Commit, Push, Branch, & Deployment Status**:
+  - Clean commit pushed to `origin/main` on GitHub (`https://github.com/naman-14113114/trustpilotreview-shop.git`).
