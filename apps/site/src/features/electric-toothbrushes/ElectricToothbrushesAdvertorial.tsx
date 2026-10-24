@@ -1,12 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import Script from "next/script";
 import { motion } from "motion/react";
 import React, {
   useEffect,
-  useRef,
   useState,
   type MouseEvent,
   type ReactNode,
@@ -16,8 +14,8 @@ import {
   CheckCircle2,
   ChevronRight,
   ChevronDown,
-  Play,
   ShieldCheck,
+  X,
   XCircle,
   HelpCircle,
   Sparkles,
@@ -32,24 +30,38 @@ import {
   type ToothbrushMetric as Metric,
 } from "@/data/toothbrushes";
 
-import {
-  toothbrushGuides,
-  type ToothbrushGuide,
-  type ToothbrushGuideProduct,
-} from "@/data/toothbrushGuides";
+import { type ToothbrushGuide } from "@/data/toothbrushGuides";
 
 const defaultEvaluationCriteria = [
-  "Deep cleaning & plaque removal (32,000 VPM acoustic fluid dynamics)",
-  "Gentle on gums & enamel safe (Soft mode & DuPont rounded bristles)",
-  "Whisper-quiet acoustic motor sound (<50dB)",
-  "Lightweight ergonomic handling (51g unibody)",
-  "Long battery life & magnetic USB-C charging (60+ days)",
-  "DuPont™ Tynex® 3D end-rounded bristle quality",
-  "100% mold-resistant aerospace aluminium & IPX7 waterproof",
-  "Travel convenience with included protective aluminium travel case",
+  "Deep cleaning & plaque removal",
+  "Gentle on gums & enamel safe",
+  "Lightweight ergonomic handling",
+  "Long battery life & USB-C charging",
+  "Travel friendly with protective travel case",
+  "Whisper-quiet acoustic motor sound",
+  "Precision 3D contour brush head quality",
+  "100% mould-resistant aerospace aluminium & IPX7 waterproof",
   "Affordable long-term replacement brush heads",
   "Verified UK customer reviews & 90-day money-back guarantee",
 ];
+
+const attributionQueryKeys = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "msclkid",
+  "gclid",
+  "fbclid",
+] as const;
+
+type TrackingWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  uetq?: {
+    push: (...args: unknown[]) => unknown;
+  };
+};
 
 function formatLondonDate(date: Date) {
   return new Intl.DateTimeFormat("en-GB", {
@@ -65,6 +77,57 @@ function handleOutboundClick(
   setLoadingTarget: (target: string) => void,
   target: string,
 ) {
+  try {
+    const destination = new URL(event.currentTarget.href, window.location.href);
+    if (destination.hostname === "www.trymiroooo.com") {
+      const current = new URL(window.location.href);
+      attributionQueryKeys.forEach((key) => {
+        const value = current.searchParams.get(key);
+        if (value && !destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
+      });
+
+      if (!destination.searchParams.has("utm_source")) {
+        destination.searchParams.set("utm_source", "trustpilotreview");
+      }
+      if (!destination.searchParams.has("utm_medium")) {
+        destination.searchParams.set("utm_medium", "comparison");
+      }
+      if (!destination.searchParams.has("utm_campaign")) {
+        destination.searchParams.set(
+          "utm_campaign",
+          "best_electric_toothbrush_uk_2026",
+        );
+      }
+
+      event.currentTarget.href = destination.toString();
+
+      const trackingWindow = window as TrackingWindow;
+      const payload = {
+        event_category: "comparison",
+        event_label: target,
+        outbound_url: destination.toString(),
+        page_type: "best_electric_toothbrush_uk_2026",
+      };
+
+      trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
+      trackingWindow.dataLayer.push({
+        event: "miroooo_outbound_click",
+        ecommerce: null,
+        ...payload,
+      });
+      trackingWindow.dataLayer.push({
+        event: "affiliate_click",
+        ...payload,
+      });
+      trackingWindow.uetq?.push("event", "miroooo_outbound_click", payload);
+      trackingWindow.uetq?.push("event", "affiliate_click", payload);
+    }
+  } catch {
+    // Keep the original native anchor navigation if attribution cannot be added.
+  }
+
   if (
     event.metaKey ||
     event.ctrlKey ||
@@ -175,278 +238,7 @@ function MetricBar({ label, value }: Metric) {
   );
 }
 
-function GiftPanel({
-  loadingTarget,
-  setLoadingTarget,
-  isBestBrushPage = true,
-}: {
-  loadingTarget: string | null;
-  setLoadingTarget: (target: string) => void;
-  isBestBrushPage?: boolean;
-}) {
-  return (
-    <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, type: "spring" }}
-      className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50"
-    >
-      {/* Animated background elements */}
-      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-pulse" />
-      <div
-        className="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-200/40 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
 
-      <div className="relative z-10">
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
-          <span className="text-lg">💡</span> Editor&apos;s Tip
-        </div>
-
-        {isBestBrushPage ? (
-          <>
-            <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-              What&apos;s Included &amp;{" "}
-              <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
-                FREE GIFTS WORTH £20
-              </span>
-            </h4>
-
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-              While doing our research, we found that Miroooo is currently running a
-              limited-time promotional sale where you get these premium dental
-              accessories bundled completely free with every brush.
-            </p>
-
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto items-stretch">
-              {/* Left Column: What's Included Card */}
-              <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative flex flex-col justify-between">
-                <div className="absolute -top-2 sm:-top-3 -right-1 sm:-right-2 bg-emerald-500 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg z-20">
-                  IN THE BOX
-                </div>
-                <a
-                  href="https://www.trymiroooo.com/products/miroooo-x"
-                  rel="noopener noreferrer sponsored"
-                  aria-label="View what is included in the Miroooo Brush X package"
-                  className="block relative mb-2 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 flex-1 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                >
-                  <img
-                    src="/img/toothbrushes/miroooo-brush-x-what-is-included-package.webp"
-                    alt="What's Included in Miroooo Brush X Package"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full aspect-square object-cover"
-                  />
-                </a>
-                <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-tight pt-1">
-                  What&apos;s Included in Box
-                </p>
-              </div>
-
-              {/* Mobile Plus Connector (visible only on mobile between vertically stacked cards) */}
-              <div className="flex md:hidden justify-center -my-2.5 sm:-my-3 z-30 relative pointer-events-none">
-                <div
-                  className="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_3px_8px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] border border-slate-200"
-                  aria-hidden="true"
-                >
-                  <svg
-                    className="w-4 h-4 text-black"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Desktop 3D Plus Sign (centered vertically & horizontally between columns) */}
-              <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center">
-                <div
-                  className="w-10 h-10 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.08)] border border-slate-200 transform hover:scale-105 transition-transform"
-                  aria-hidden="true"
-                >
-                  <svg
-                    className="w-5 h-5 text-black"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Right Column: Stacked Free Gifts */}
-              <div className="flex flex-col gap-3 sm:gap-4 justify-between h-full">
-                {/* 2 Extra Free Heads */}
-                <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-blue-100 shadow-lg transform hover:-translate-y-1 transition-transform relative flex items-center gap-3 sm:gap-4 flex-1">
-                  <div className="absolute -top-2 sm:-top-2.5 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 rounded-full shadow-lg z-20 animate-bounce">
-                    FREE
-                  </div>
-                  <a
-                    href="https://www.trymiroooo.com/products/miroooo-x"
-                    rel="noopener noreferrer sponsored"
-                    aria-label="View the Miroooo Brush X offer with 2 Extra Free Heads"
-                    className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                  >
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] shadow-sm whitespace-nowrap">
-                      Normally £10
-                    </span>
-                    <img
-                      src="/img/toothbrushes/miroooo-brush-x-2-extra-free-brush-heads.webp"
-                      alt="2 Extra Free Heads"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                    />
-                  </a>
-                  <div className="flex-1 min-w-0 pr-2 text-left">
-                    <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-snug">
-                      2 Extra Free Heads
-                    </p>
-                    <p className="text-xs sm:text-sm text-blue-600 font-bold mt-1">
-                      FREE GIFT
-                    </p>
-                  </div>
-                </div>
-
-                {/* Miroooo Digital Gift Card */}
-                <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-blue-100 shadow-lg transform hover:-translate-y-1 transition-transform relative flex items-center gap-3 sm:gap-4 flex-1">
-                  <div
-                    className="absolute -top-2 sm:-top-2.5 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-xs px-2.5 sm:px-3 py-0.5 rounded-full shadow-lg z-20 animate-bounce"
-                    style={{ animationDelay: "0.2s" }}
-                  >
-                    FREE
-                  </div>
-                  <a
-                    href="https://www.trymiroooo.com/products/miroooo-x"
-                    rel="noopener noreferrer sponsored"
-                    aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
-                    className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                  >
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] shadow-sm whitespace-nowrap">
-                      Normally £10
-                    </span>
-                    <img
-                      src="/img/toothbrushes/miroooo-digital-gift-card.webp"
-                      alt="Miroooo Gift Card"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                    />
-                  </a>
-                  <div className="flex-1 min-w-0 pr-2 text-left">
-                    <p className="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg leading-snug">
-                      Miroooo Gift Card
-                    </p>
-                    <p className="text-xs sm:text-sm text-blue-600 font-bold mt-1">
-                      FREE GIFT
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
-              Active Offer Found: £20 in{" "}
-              <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
-                FREE GIFTS
-              </span>
-            </h4>
-
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-              While doing our research, we found that Miroooo is currently running a
-              limited-time promotional sale where you get these two premium dental
-              accessories bundled completely free with every brush.
-            </p>
-
-            <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-8 max-w-xl mx-auto">
-              {/* 2 Free Brush Heads */}
-              <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-                <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
-                  FREE
-                </div>
-                <a
-                  href="https://www.trymiroooo.com/products/miroooo-x"
-                  rel="noopener noreferrer sponsored"
-                  aria-label="View the Miroooo Brush X offer with 2 Free Brush Heads"
-                  className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-                >
-                  <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
-                    Normally £10
-                  </span>
-                  <img
-                    src="/img/toothbrushes/miroooo-brush-x-2-free-heads-gift.webp"
-                    alt="2 Free Brush Heads"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full aspect-square object-cover"
-                  />
-                </a>
-                <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
-                  2 Free Brush Heads
-                </p>
-              </div>
-
-              {/* Miroooo Digital Gift Card */}
-              <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
-                <div
-                  className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
-                  style={{ animationDelay: "0.2s" }}
-                >
-                  FREE
-                </div>
-                <a
-                  href="https://www.trymiroooo.com/products/miroooo-x"
-                  rel="noopener noreferrer sponsored"
-                  aria-label="View the Miroooo Brush X offer with Free Miroooo Gift Card"
-                  className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-                >
-                  <span className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-gray-900 font-bold line-through z-10 bg-white/90 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs shadow-sm whitespace-nowrap">
-                    Normally £10
-                  </span>
-                  <img
-                    src="/img/toothbrushes/miroooo-digital-gift-card.webp"
-                    alt="Miroooo Digital Gift Card"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full aspect-square object-cover"
-                  />
-                </a>
-                <p className="font-extrabold text-gray-900 text-xs sm:text-lg leading-tight">
-                  Miroooo Gift Card
-                </p>
-              </div>
-            </div>
-          </>
-        )}
-
-        <OfficialButton
-          href="https://www.trymiroooo.com/products/miroooo-x"
-          targetId="miroooo-gift-panel"
-          loadingTarget={loadingTarget}
-          setLoadingTarget={setLoadingTarget}
-          testId="miroooo-cta-gifts"
-          className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
-        >
-          Check Availability
-        </OfficialButton>
-      </div>
-    </motion.div>
-  );
-}
 
 function RankRibbon({
   rank,
@@ -491,16 +283,147 @@ function RankRibbon({
   );
 }
 
+function PackagePanel({
+  loadingTarget,
+  setLoadingTarget,
+}: {
+  loadingTarget: string | null;
+  setLoadingTarget: (target: string) => void;
+}) {
+  return (
+    <motion.div
+      initial={false}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, type: "spring" }}
+      className="mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl shadow-blue-100/50"
+    >
+      {/* Animated background elements */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-200/40 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+
+      <div className="relative z-10">
+        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-200">
+          <span className="text-lg">🎁</span> Free Gifts Included
+        </div>
+
+        <h4 className="font-extrabold text-2xl md:text-3xl text-gray-900 mb-4 leading-tight">
+          Free Gifts Included in{" "}
+          <span className="text-blue-600 bg-blue-100 px-2 rounded-md inline-block transform -rotate-1">
+            Your Package
+          </span>
+        </h4>
+
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
+          Every Miroooo Brush X2 order includes these essential accessories in the box for complete oral care at home and on the go.
+        </p>
+
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-8">
+          {/* Luxury Travel Case */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce">
+              FREE
+            </div>
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with Luxury Travel Case"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-luxury-travel-case-gift.webp"
+                alt="Miroooo Brush X2 Luxury Aluminium Travel Case"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              Luxury Travel Case
+            </p>
+          </div>
+
+          {/* Wall-Mounted Storage */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.2s" }}
+            >
+              FREE
+            </div>
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with Wall-Mounted Storage"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-wall-mounted-storage-dock-gift.webp"
+                alt="Miroooo Brush X2 Wall-Mounted Storage"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              Wall-Mounted Storage
+            </p>
+          </div>
+
+          {/* 4 Free Heads */}
+          <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
+            <div
+              className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
+              style={{ animationDelay: "0.4s" }}
+            >
+              FREE
+            </div>
+            <a
+              href="https://www.trymiroooo.com/products/miroooo-x2"
+              rel="noopener noreferrer sponsored"
+              aria-label="View the Miroooo Brush X2 package with 4 Free Heads"
+              className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+              <img
+                src="/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp"
+                alt="Miroooo Brush X2 4 Free Heads"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-square object-cover"
+              />
+            </a>
+            <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
+              4 Free Heads
+            </p>
+          </div>
+        </div>
+
+        <OfficialButton
+          href="https://www.trymiroooo.com/products/miroooo-x2"
+          targetId="miroooo-package-panel"
+          loadingTarget={loadingTarget}
+          setLoadingTarget={setLoadingTarget}
+          testId="miroooo-cta-package"
+          className="w-full !bg-blue-600 hover:!bg-blue-700 !shadow-blue-600/30 !border-2 !border-blue-500"
+        >
+          Check Availability
+        </OfficialButton>
+      </div>
+    </motion.div>
+  );
+}
+
 function ProductCard({
   product,
   loadingTarget,
   setLoadingTarget,
-  isBestBrushPage = true,
 }: {
   product: RankedProduct;
   loadingTarget: string | null;
   setLoadingTarget: (target: string) => void;
-  isBestBrushPage?: boolean;
 }) {
   const isMiroooo = product.rank === 1;
 
@@ -544,7 +467,12 @@ function ProductCard({
               >
                 <img
                   src={product.image}
-                  alt={product.imageAlt || product.name}
+                  alt={
+                    product.imageAlt ||
+                    (isMiroooo
+                      ? "Miroooo Brush X2 Sonic Electric Toothbrush with Precision Bristle Heads & 45° Bass Sweep - #1 Best Electric Toothbrush UK 2026"
+                      : product.name)
+                  }
                   loading={isMiroooo ? "eager" : "lazy"}
                   decoding="async"
                   className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
@@ -610,9 +538,11 @@ function ProductCard({
 
           <div className="prose prose-slate prose-lg max-w-none mb-8 space-y-4">
             {product.review.map((paragraph, pIdx) => (
-              <p key={pIdx} className="text-slate-600 leading-relaxed">
-                {paragraph}
-              </p>
+              <p
+                key={pIdx}
+                className="text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
           </div>
 
@@ -710,10 +640,9 @@ function ProductCard({
           </div>
 
           {isMiroooo && (
-            <GiftPanel
+            <PackagePanel
               loadingTarget={loadingTarget}
               setLoadingTarget={setLoadingTarget}
-              isBestBrushPage={isBestBrushPage}
             />
           )}
 
@@ -752,7 +681,7 @@ function ComparisonMatrix({
           Side-by-Side Comparison Matrix
         </h2>
         <p className="text-slate-600 mt-2 text-base md:text-lg">
-          How the Miroooo Brush X compares against legacy models on key clinical &amp; daily benchmarks.
+          How the Miroooo Brush X2 compares against legacy models on key clinical &amp; daily benchmarks.
         </p>
       </div>
 
@@ -764,7 +693,7 @@ function ComparisonMatrix({
                 Feature / Metric
               </th>
               <th className="py-4 px-4 font-bold text-emerald-700 bg-emerald-50/70 text-base md:text-lg w-2/5 rounded-t-xl border-t-2 border-l-2 border-r-2 border-emerald-300">
-                Miroooo Brush X (£69)
+                Miroooo Brush X2 (£69)
               </th>
               <th className="py-4 px-4 font-bold text-slate-700 text-base md:text-lg w-1/3">
                 Competitor Standard
@@ -871,6 +800,7 @@ interface ComparisonTableProduct {
   weight: string;
   batteryLife: string;
   travelCase: boolean;
+  wallMount: boolean;
   appTracking: boolean;
   chassisMaterial: string;
   freeHeads: boolean;
@@ -882,19 +812,20 @@ interface ComparisonTableProduct {
 const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
   {
     rank: 1,
-    name: "Miroooo Brush X",
-    shortName: "Miroooo Brush X",
-    image: "/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-in-hand-banner.webp",
+    name: "Miroooo X2",
+    shortName: "Miroooo X2",
+    image: "/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp",
     price: "£69",
     originalPrice: "£139",
     rating: 4.9,
     weight: "51g",
-    batteryLife: "60+ Days",
+    batteryLife: "90 Days",
     travelCase: true,
+    wallMount: true,
     appTracking: true,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: true,
-    noiseLevel: "<50dB",
+    noiseLevel: "<45dB",
     moneyBackTrial: "90-Day Money-Back",
     freeDelivery: true,
   },
@@ -908,6 +839,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~140g",
     batteryLife: "14 Days",
     travelCase: false,
+    wallMount: false,
     appTracking: false,
     chassisMaterial: "Plastic & Rubber",
     freeHeads: false,
@@ -920,11 +852,12 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     name: "Philips Sonicare DiamondClean 9000",
     shortName: "Philips 9000",
     image: "/img/toothbrushes/philips-sonicare-comparison.png",
-    price: "£124.99",
+    price: "£149.99",
     rating: 4.1,
     weight: "~135g",
     batteryLife: "14 Days",
     travelCase: false,
+    wallMount: false,
     appTracking: false,
     chassisMaterial: "Composite Plastic",
     freeHeads: false,
@@ -942,6 +875,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~85g",
     batteryLife: "34 Days",
     travelCase: false,
+    wallMount: true,
     appTracking: false,
     chassisMaterial: "Aluminium Alloy",
     freeHeads: false,
@@ -959,6 +893,7 @@ const TOP_5_COMPARISON_PRODUCTS: ComparisonTableProduct[] = [
     weight: "~136g",
     batteryLife: "14 Days",
     travelCase: false,
+    wallMount: false,
     appTracking: false,
     chassisMaterial: "Matte Plastic",
     freeHeads: false,
@@ -972,6 +907,7 @@ type ComparisonRowDef =
   | {
       key:
         | "travelCase"
+        | "wallMount"
         | "appTracking"
         | "freeHeads"
         | "freeDelivery";
@@ -993,6 +929,7 @@ const TOP_5_COMPARISON_ROWS: ComparisonRowDef[] = [
   { key: "weight", label: "Ultra-Light Weight", kind: "text" },
   { key: "batteryLife", label: "Battery Life", kind: "text" },
   { key: "travelCase", label: "Luxury Travel Case", kind: "boolean" },
+  { key: "wallMount", label: "Wall-Mounted Storage", kind: "boolean" },
   { key: "appTracking", label: "Dental Care App", kind: "boolean" },
   { key: "chassisMaterial", label: "Chassis Material", kind: "text" },
   { key: "freeHeads", label: "Free Extra Brush Heads", kind: "boolean" },
@@ -1147,33 +1084,11 @@ export default function ElectricToothbrushesAdvertorial({
     formatLondonDate(new Date()),
   );
   const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
-  const [isVerdictVideoPlaying, setIsVerdictVideoPlaying] = useState(false);
-  const verdictVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const displayProducts: RankedProduct[] =
     guide && guide.products && guide.products.length > 0
       ? (guide.products as RankedProduct[])
       : toothbrushProducts;
-
-  const playVerdictVideo = () => {
-    const video = verdictVideoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      video
-        .play()
-        .then(() => {
-          setIsVerdictVideoPlaying(true);
-        })
-        .catch(() => {
-          setIsVerdictVideoPlaying(false);
-        });
-      return;
-    }
-
-    video.pause();
-    setIsVerdictVideoPlaying(false);
-  };
 
   useEffect(() => {
     setUpdatedDate(formatLondonDate(new Date()));
@@ -1182,7 +1097,7 @@ export default function ElectricToothbrushesAdvertorial({
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-24 md:pb-0">
       <Script
-        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260823-59"
+        src="/assets/miroooo-x-electric-toothbrush-exit-popup.js?v=20260907-01"
         strategy="afterInteractive"
       />
       {/* Header / Hero */}
@@ -1220,11 +1135,11 @@ export default function ElectricToothbrushesAdvertorial({
               className="w-full h-auto object-contain pointer-events-none"
             />
 
-            {/* Layer 2: #1 Miroooo Brush X Card floating OVER the container space */}
+            {/* Layer 2: #1 Miroooo Brush X2 Card floating OVER the container space */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[18%] min-w-[110px] max-w-[280px]">
               <img
-                src="/img/toothbrushes/miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp"
-                alt="Miroooo Brush X Sonic Electric Toothbrush - #1 Best Electric Toothbrush UK 2026"
+                src="/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-banner.webp"
+                alt="Miroooo Brush X2 Electric Toothbrush"
                 className="w-full aspect-[696/1087] rounded-xl sm:rounded-2xl md:rounded-3xl object-cover shadow-[0_18px_45px_rgba(0,0,0,0.32),0_8px_20px_rgba(0,0,0,0.18)] border-2 border-white ring-1 ring-slate-900/10 pointer-events-none"
               />
             </div>
@@ -1234,8 +1149,15 @@ export default function ElectricToothbrushesAdvertorial({
             <div className="flex flex-col md:block items-center text-center md:text-left w-full">
               <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
                 <Image
-                  src={guide?.drOliviaVerdict?.avatar || "/img/toothbrushes/dr-olivia.webp"}
-                  alt={guide?.drOliviaVerdict?.name || "Dr. Olivia"}
+                  src={
+                    guide?.drOliviaVerdict?.avatar ||
+                    "/img/toothbrushes/miroooo-dr-olivia-dental-consultant.webp"
+                  }
+                  alt={
+                    guide?.drOliviaVerdict?.name
+                      ? `${guide.drOliviaVerdict.name} - Clinical Dental Consultant & Oral Health Specialist`
+                      : "Dr. Olivia, BDS - Clinical Dental Consultant & Oral Health Specialist"
+                  }
                   width={96}
                   height={96}
                   priority
@@ -1272,9 +1194,9 @@ export default function ElectricToothbrushesAdvertorial({
                     ideal brush should be whisper-quiet rather than loudly buzzing
                     in your ear, featherlight (around 50g) for easy handling, and
                     gentle on gums while delivering a deep sonic clean. You
-                    don&apos;t need to spend £200+ on heavy, clunky handles or
-                    outdated 2-pin bathroom chargers to get a dentist-clean smile
-                    and 60+ days of battery life.
+                    don&apos;t need to spend £200+ on heavy, loud, clunky handles
+                    to get a dentist-clean smile, whisper-quiet sound, and 90+
+                    days of battery life.
                   </p>
                 )}
               </div>
@@ -1291,36 +1213,15 @@ export default function ElectricToothbrushesAdvertorial({
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Intro */}
-        <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
-          {guide?.intro && guide.intro.length > 0 ? (
-            guide.intro.map((paragraph, idx) => (
+        {guide?.intro && guide.intro.length > 0 && (
+          <div className="prose prose-lg prose-slate w-full max-w-none mb-16 space-y-6">
+            {guide.intro.map((paragraph, idx) => (
               <p key={idx} className="leading-relaxed">
                 {paragraph}
               </p>
-            ))
-          ) : (
-            <>
-              <p>
-                <strong>Upgrading to the right electric toothbrush</strong> is one
-                of the most impactful decisions you can make for your long-term oral
-                health. While manual brushing often relies on harsh back-and-forth
-                scrubbing that can wear away protective tooth enamel and irritate
-                sensitive gums, modern electric toothbrushes create gentle
-                micro-bubbles that wash between tight teeth gaps and sweep
-                plaque from beneath the gumline.
-              </p>
-              <p>
-                However, not all electric toothbrushes are created equal. Many big-brand
-                models are heavy and uncomfortably loud, lose their charge within two
-                weeks, still rely on awkward 2-pin bathroom shaver adapters, and trap
-                shoppers into overpriced replacement heads. When ranking the top
-                electric toothbrushes in the UK for 2026, we evaluated real cleaning
-                performance, daily comfort, battery convenience, and overall long-term
-                value to help you find the best brush for your smile.
-              </p>
-            </>
-          )}
-        </div>
+            ))}
+          </div>
+        )}
 
         <EvaluationCriteria criteria={guide?.criteria} />
 
@@ -1329,7 +1230,7 @@ export default function ElectricToothbrushesAdvertorial({
           <div className="bg-emerald-50 rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 border-emerald-200 mb-12 shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold text-emerald-950 font-serif mb-4 flex items-center gap-2">
               <Sparkles className="w-6 h-6 text-emerald-600 shrink-0" />
-              Key Findings &amp; Why Miroooo Brush X Took #1
+              Key Findings &amp; Why Miroooo Brush X2 Took #1
             </h3>
             <ul className="space-y-3">
               {guide.winnerBullets.map((bullet, idx) => (
@@ -1350,7 +1251,6 @@ export default function ElectricToothbrushesAdvertorial({
               product={product}
               loadingTarget={loadingTarget}
               setLoadingTarget={setLoadingTarget}
-              isBestBrushPage={!guide}
             />
           ))}
         </div>
@@ -1372,46 +1272,23 @@ export default function ElectricToothbrushesAdvertorial({
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Left Video Area */}
-              <div className="relative">
-                <div className="relative mx-auto max-w-[190px] min-[380px]:max-w-[210px] sm:max-w-[240px] md:max-w-[300px] overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-black shadow-xl">
-                  <video
-                    ref={verdictVideoRef}
-                    className="block w-full"
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster="/assets/miroooo-dentist-verdict-poster.webp"
-                    aria-label="Dentist walkthrough of the Miroooo Brush X"
-                    onPlay={() => setIsVerdictVideoPlaying(true)}
-                    onPause={() => setIsVerdictVideoPlaying(false)}
-                    onEnded={() => setIsVerdictVideoPlaying(false)}
-                  >
-                    <source
-                      src="/assets/miroooo-dentist-verdict.mp4"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                  <button
-                    type="button"
-                    aria-label="Play dentist walkthrough video"
-                    onClick={playVerdictVideo}
-                    className={`absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_14px_34px_rgba(16,185,129,0.35)] ring-8 ring-white/60 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-emerald-400 ${
-                      isVerdictVideoPlaying
-                        ? "pointer-events-none opacity-0 scale-90"
-                        : "opacity-100 scale-100"
-                    }`}
-                  >
-                    <Play size={30} fill="currentColor" className="ml-1" />
-                  </button>
+              {/* Left Image Area */}
+              <div className="relative flex justify-center items-center">
+                <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
+                  <Image
+                    src="/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp"
+                    alt="Dr. Olivia holding Miroooo Brush X2 Electric Toothbrush in dental clinic - Dentist's Verdict"
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
               {/* Right Content Area */}
               <div className="flex flex-col justify-center text-center">
                 <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 font-serif tracking-tight">
-                  Miroooo Brush X Electric Toothbrush
+                  Miroooo X2
                 </h3>
 
                 <div className="w-28 md:w-32 h-[1px] bg-[#d4af37] mx-auto mb-5 md:mb-6"></div>
@@ -1435,7 +1312,7 @@ export default function ElectricToothbrushesAdvertorial({
                 </div>
 
                 <OfficialButton
-                  href="https://www.trymiroooo.com/products/miroooo-x"
+                  href="https://www.trymiroooo.com/products/miroooo-x2"
                   targetId="verdict-cta"
                   loadingTarget={loadingTarget}
                   setLoadingTarget={setLoadingTarget}
@@ -1451,12 +1328,14 @@ export default function ElectricToothbrushesAdvertorial({
 
         {/* 5-Product Side-by-Side Comparison Table */}
         <CompetitorComparisonTable />
+
+
       </main>
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-50 md:hidden flex items-center justify-center">
         <a
-          href="https://www.trymiroooo.com/products/miroooo-x"
+          href="https://www.trymiroooo.com/products/miroooo-x2"
           rel="noopener noreferrer sponsored"
           data-testid="mobile-sticky-cta"
           onClick={(event) =>

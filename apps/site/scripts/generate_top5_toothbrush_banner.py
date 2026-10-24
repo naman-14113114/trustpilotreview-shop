@@ -1,5 +1,4 @@
 import os
-import shutil
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -91,24 +90,18 @@ def generate_banner(output_webp: Path, output_png: Path):
     # Mirror to root img/toothbrushes/
     root_img_dir = REPO_ROOT / "img" / "toothbrushes"
     root_img_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(container_bar_png, root_img_dir / "top-4-competitors-container-bar.png")
-    shutil.copy2(container_bar_webp, root_img_dir / "top-4-competitors-container-bar.webp")
+    canvas.save(root_img_dir / "top-4-competitors-container-bar.png", "PNG")
+    canvas.convert("RGB").save(root_img_dir / "top-4-competitors-container-bar.webp", "WEBP", quality=95)
 
     # 4. #1 Miroooo X Card (Taller than container, extends OUT vertically 30px above and 30px below)
-    miroooo_path = TOOTHBRUSH_DIR / "miroooo-brush-x-sonic-electric-toothbrush-hero-banner.webp"
+    miroooo_path = Path(r"E:\1st YEAR DTU\New folder\miroooo_images\Miroooo X2\Miroooo-X2_top_image.jpg")
     im_m = Image.open(miroooo_path).convert("RGB")
     
     CARD_H = 410
     CARD_W = int(round(CARD_H * 696 / 1087)) # ~262px
     card_r = 24
     
-    # Center-crop to aspect ratio 696/1087 before resizing
-    w_m, h_m = im_m.size
-    target_w = int(round(h_m * 696 / 1087))
-    crop_x0 = (w_m - target_w) // 2
-    crop_x1 = crop_x0 + target_w
-    im_m_cropped = im_m.crop((crop_x0, 0, crop_x1, h_m))
-    m_resized = im_m_cropped.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
+    m_resized = im_m.resize((CARD_W, CARD_H), Image.Resampling.LANCZOS)
     
     scale_factor = 4
     mask = Image.new("L", (CARD_W * scale_factor, CARD_H * scale_factor), 0)
@@ -164,8 +157,8 @@ def generate_banner(output_webp: Path, output_png: Path):
     print(f"Generated PNG: {output_png}")
     print(f"Generated WebP: {output_webp}")
 
-    shutil.copy2(output_png, root_img_dir / "top-5-electric-toothbrushes-uk.png")
-    shutil.copy2(output_webp, root_img_dir / "top-5-electric-toothbrushes-uk.webp")
+    canvas.save(root_img_dir / "top-5-electric-toothbrushes-uk.png", "PNG")
+    canvas.convert("RGB").save(root_img_dir / "top-5-electric-toothbrushes-uk.webp", "WEBP", quality=95)
 
 if __name__ == "__main__":
     out_webp = TOOTHBRUSH_DIR / "top-5-electric-toothbrushes-uk.webp"
