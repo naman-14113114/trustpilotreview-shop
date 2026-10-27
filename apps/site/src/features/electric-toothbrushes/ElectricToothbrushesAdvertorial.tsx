@@ -373,7 +373,7 @@ function PackagePanel({
             </p>
           </div>
 
-          {/* 4 Free Heads */}
+          {/* Free Brush Heads */}
           <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-4 border border-blue-100 shadow-lg text-center transform hover:-translate-y-1 transition-transform relative">
             <div
               className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 bg-blue-600 text-white font-black text-[10px] sm:text-base px-2 sm:px-4 py-0.5 sm:py-1.5 rounded-full shadow-lg z-20 animate-bounce"
@@ -384,19 +384,19 @@ function PackagePanel({
             <a
               href="https://www.trymiroooo.com/products/miroooo-x2"
               rel="noopener noreferrer sponsored"
-              aria-label="View the Miroooo Brush X2 package with 4 Free Heads"
+              aria-label="View the Miroooo Brush X2 package with Free Brush Heads"
               className="block relative mb-1.5 sm:mb-3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               <img
-                src="/img/toothbrushes/miroooo-brush-x2-4-free-heads-gift.webp"
-                alt="Miroooo Brush X2 4 Free Heads"
+                src="/img/toothbrushes/miroooo-brush-x2-free-brush-heads-gift.webp"
+                alt="Miroooo Brush X2 Free Brush Heads"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-square object-cover"
               />
             </a>
             <p className="font-extrabold text-gray-900 text-[10px] sm:text-lg leading-tight">
-              4 Free Heads
+              Free Brush Heads
             </p>
           </div>
         </div>
