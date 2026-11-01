@@ -11730,3 +11730,33 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Mojibake check: 0 matches for corrupted characters.
 - **Commit & Push Status**:
   - Committed and pushed cleanly to `origin/main` per explicit user request.
+
+
+## 2026-11-01 — Conversion from Halloween Sale to Black Friday Early Access Across All Mask Pages
+- **Owner Directive**:
+  - Request: `OK , https://www.trustpilotreview.shop/best-led-face-mask-uk-2026 ON THIS PAGE , MAKE SURE YOU CONVERT HALLOWEEN TO BLACK FRIDAY EARLY ACCESS`
+  - Scoped strictly to converting Halloween references and styling into luxury "Black Friday Early Access" styling across mask pages.
+  - Zero regression on outbound Microsoft Ads tracking (UET ID `211072489`, GTM `GTM-TQ3HRZMJ`, Clarity `w4nply9u93`, conversion value 660 INR) and immediate unblocked navigation to `https://www.buudy.co.uk/products/buudy-led-face-mask`.
+
+- **Files Updated**:
+  - `apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx`:
+    - Converted comparison table header badge from orange `🎃 HALLOWEEN SALE` to luxury slate/amber `BLACK FRIDAY EARLY ACCESS`.
+    - Converted comparison table price row badge from orange `🎃 HALLOWEEN SALE` to luxury slate/amber `BLACK FRIDAY EARLY ACCESS`.
+    - Converted Card #1 price row pumpkin emoji `🎃` to inline luxury badge `BLACK FRIDAY EARLY ACCESS`.
+    - Updated Card #1 editorial description: replaced `during their <strong>Halloween Sale</strong>` with `during their <strong>Black Friday Early Access Sale</strong>`.
+    - Updated Active Offer Found / Editor's Tip callout: replaced cursive Cookie font `Halloween` with `Black Friday Early Access Sale`.
+    - Localize helper updated for non-UK fallback consistency.
+  - `apps/site/src/legacy-pages/old/CurrentbodyComparison.tsx`, `DeluxeskinComparison.tsx`, `NewAdvertorial.tsx`, `QureskincareComparison.tsx`, `TherafaceComparison.tsx`, `VideoAdvertorial.tsx`:
+    - Updated editorial descriptions and editor's tip offers to `Black Friday Early Access Sale`.
+  - Mirror legacy files in `unzipped/` and `unzipped_new_pages/`:
+    - Synced to `Black Friday Early Access Sale`.
+  - `section-text-video-test.json`:
+    - Synced test snapshot strings.
+
+- **Verification Executed**:
+  - `next build`: Turbopack production build succeeded with Exit Code 0 across all 69 static routes.
+  - Verified static HTML output (`apps/site/.next/server/app/best-led-face-mask-uk-2026.html`):
+    - `Halloween count: 0`
+    - `Pumpkin emoji count: 0`
+    - `Black Friday Early Access count: 5`
+    - `Outbound Buudy UK links: 12`

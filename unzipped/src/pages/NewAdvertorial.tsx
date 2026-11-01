@@ -29,7 +29,7 @@ const products = [
     description: [
       "Our top pick is the Buudy 7 Colour LED Mask, a medical-grade device that outperforms the competition with a <strong>7-colour</strong> spectrum plus 830nm <strong>near-infrared</strong>. While most brands focus only on basic red light, Buudy uses targeted wavelengths to support everything from deep wrinkles and acne to inflammation, uneven tone, and overall skin recovery. This Health Canada Approved technology (with CE, FCC, and ROHS certifications) ensures professional-grade results for all skin types.",
       "A major advantage is the built-in <strong>neck coverage</strong>, a vital feature often missing from more expensive models. This allows you to treat \"turkey neck\" and sagging skin simultaneously. The <strong>cordless</strong>, rechargeable design features \"Tap Technology\" and <strong>Buudy AI</strong> guided sessions, making it simple to choose the right routine for your skin goals.",
-      "Trusted by over 16,000 customers with a <strong>4.9-star</strong> rating, this mask delivers visible improvements in as few as ten uses. Currently priced at £179 during their <strong>Halloween Sale</strong>, it offers the best value on the market, combining full-face and neck rejuvenation, advanced eye protection, and a <strong>90-day money-back</strong> guarantee for a safer, lower-risk trial."
+      "Trusted by over 16,000 customers with a <strong>4.9-star</strong> rating, this mask delivers visible improvements in as few as ten uses. Currently priced at £179 during their <strong>Black Friday Early Access Sale</strong>, it offers the best value on the market, combining full-face and neck rejuvenation, advanced eye protection, and a <strong>90-day money-back</strong> guarantee for a safer, lower-risk trial."
     ],
     pros: [
       "Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 1,000 reviews and performed well in internal testing.",
@@ -467,7 +467,7 @@ export default function Home() {
                         </h4>
                         
                         <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-                          While doing our research, we found that Buudy is currently running a <span className="font-cookie text-[#c77840] text-2xl md:text-3xl leading-none inline-block" style={{ fontFamily: "'Cookie', cursive" }}>Halloween</span> sale where you can get these premium accessories bundled for free with every mask purchase.
+                          While doing our research, we found that Buudy is currently running a <strong className="font-extrabold text-slate-900 bg-amber-100 text-amber-950 px-2 py-0.5 rounded border border-amber-300 inline-block">Black Friday Early Access Sale</strong> where you can get these premium accessories bundled for free with every mask purchase.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
