@@ -436,7 +436,7 @@ function ProductCard({
         isMiroooo
           ? "border-emerald-500 ring-4 ring-emerald-50 pt-10 md:pt-10"
           : "border-slate-200"
-      } p-6 md:p-10 pt-20 md:pt-24 scroll-mt-28`}
+      } p-6 md:p-10 scroll-mt-28`}
     >
       <RankRibbon rank={`#${product.rank}`} featured={isMiroooo} />
 
@@ -481,7 +481,7 @@ function ProductCard({
             </div>
 
             <div className="text-center mb-2 lg:mb-6 w-full">
-              <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3 mb-2 flex-wrap">
                 <span className="text-3xl font-extrabold text-slate-900">
                   {product.price}
                 </span>
@@ -490,6 +490,11 @@ function ProductCard({
                     {product.compareAt}
                   </span>
                 ) : null}
+                {isMiroooo && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">
+                    BLACK FRIDAY EARLY ACCESS
+                  </span>
+                )}
               </div>
               <GreenStarRating
                 rating={product.rating}
@@ -1038,13 +1043,20 @@ function CompetitorComparisonTable() {
                         key={`${prod.rank}-price-row`}
                         className="py-3.5 px-2 text-center align-middle border-l border-slate-100"
                       >
-                        <div className="flex items-baseline justify-center gap-1.5 font-sans">
-                          <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
-                            {prod.price}
-                          </span>
-                          {prod.originalPrice && (
-                            <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
-                              {prod.originalPrice}
+                        <div className="flex flex-col items-center justify-center gap-1 font-sans">
+                          <div className="flex items-baseline justify-center gap-1.5">
+                            <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
+                              {prod.price}
+                            </span>
+                            {prod.originalPrice && (
+                              <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
+                                {prod.originalPrice}
+                              </span>
+                            )}
+                          </div>
+                          {prod.rank === 1 && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-2 py-0.5 text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">
+                              BLACK FRIDAY EARLY ACCESS
                             </span>
                           )}
                         </div>

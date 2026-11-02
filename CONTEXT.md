@@ -11760,3 +11760,33 @@ ext/image unconfigured host 500 error that was crashing the page.
     - `Pumpkin emoji count: 0`
     - `Black Friday Early Access count: 5`
     - `Outbound Buudy UK links: 12`
+
+
+## 2026-11-02 — Clean Black Friday Early Access Theme & Top Padding Alignment Across All Electric Toothbrush Pages
+- **User Intent & Scope Lock**:
+  - Request: "what the fuck u increase top padding in 1st imaeg section the black friday writeen below see carefully best mask page u have to reduce top padding instead u increase it. Also in 2nd imaeg section no need to write here above blackfriday below is enouth, fix these things only on all brush pages and discard all unecessary chanegs and push clean code on github"
+  - Strict Isolation: Confined strictly to electric toothbrush pages in `trustpilotreview-shop`. All mask, hair dryer, grounding sheet, water flosser, pillow, and hearing aid routes 100% untouched.
+  - Tracking Boundary: 100% preservation of Miroooo outbound tracking (`miroooo_outbound_click`, `affiliate_click`, Bing Ads UET tag, GTM `GTM-TQ3HRZMJ`, Clarity `w4nply9u93`).
+
+- **Starting & Ending Git State**:
+  - Starting: Fast-forwarded local `main` with `origin/main` (`c8a660f`).
+  - Ending: Working tree modified locally in `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx` and `CONTEXT.md`. Discarded all unnecessary changes in data files and other sections. Committed and pushed clean code to `origin/main` per explicit user instruction.
+
+- **Files Updated & Changes Implemented**:
+  1. `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`:
+     - **Card Outer Top Padding Reduced**: Removed the previous `pt-20 md:pt-24` (which had added 96px of excessive padding), restoring the clean top padding from the best mask page (`pt-10 md:pt-10` for #1 winner, `p-6 md:p-10`).
+     - **First Image Section (Card #1 Left Column)**: Removed any artificial top padding on the image container (`pt-0`), perfectly aligning the image with the best mask page layout (`relative w-full mb-6`). Added the inline luxury pill badge `BLACK FRIDAY EARLY ACCESS` (`bg-slate-900 text-amber-300 border border-amber-400/40`) directly below the image next to `{product.price}` and `{product.compareAt}`.
+     - **Second Image Section (Top 5 Competitor Comparison Table)**:
+       - No badge added above the image in `#1 Ranked` header ("below is enouth").
+       - Added the luxury `BLACK FRIDAY EARLY ACCESS` badge in the price row directly below the image under `£69 £139`.
+     - **Discarded All Unnecessary Changes**: Reverted all experimental margin adjustments, PackagePanel copy, Dentist's verdict, and data files, keeping code 100% clean and surgical.
+
+- **Verification Executed**:
+  - `pnpm typecheck`: 3/3 packages passed with 0 errors.
+  - `next build`: Turbopack build succeeded with 0 errors across all 69 static routes.
+  - Headless Chrome DevTools DOM verification on `http://localhost:3005/miroooo-vs-oral-b-io6`:
+    - Card padding-top verified at 40px (`pt-10 md:pt-10`).
+    - Image container padding-top verified at 0px.
+    - Comparison table verified: 0 badges above image, 1 badge in price row below image.
+    - Mojibake check: 0 corrupted characters (`git diff | Select-String "Ã"` returned 0).
+  - Outbound link integrity: `https://www.trymiroooo.com/products/miroooo-x2` preserved with full parameter pass-through.
