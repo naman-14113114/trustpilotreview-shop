@@ -11790,3 +11790,41 @@ ext/image unconfigured host 500 error that was crashing the page.
     - Comparison table verified: 0 badges above image, 1 badge in price row below image.
     - Mojibake check: 0 corrupted characters (`git diff | Select-String "Ã"` returned 0).
   - Outbound link integrity: `https://www.trymiroooo.com/products/miroooo-x2` preserved with full parameter pass-through.
+
+
+## 2026-11-05 — Zero Overlap for Rank Badges (#1–#5), New Miroooo X2 Image Asset & Complete Left-Side In-Frame Optimization
+- **User Intent & Scope Lock**:
+  - Request:
+    1. "I clearly tell u not to overlap images with badges of #1, #2 and so on, so move them little down so it will not overlap on all brush pages where u fuck this and change #1 iamge with this image keeping name and alt text same (of older image) just chnage image: \"E:\1st YEAR DTU\New folder\miroooo_images\Miroooo X2\x2 compressed\Gemini_Generated_Image_43ipb643ipb643ip.webp\""
+    2. "where the the fuck u make official website buton out of frame can;t u understand u haev to adjust padding in such way all things that are inside frame of left side must remain in frame without getting overlap by #1, #2, and so badges see yourself how u do it I tell u wnat I want"
+  - Strict Isolation: 100% confined to electric toothbrush routes in `trustpilotreview-shop`. Mask, hair dryer, grounding sheet, flosser, pillow, and hearing aid routes 100% untouched.
+  - Tracking Boundary: 100% preservation of Miroooo outbound tracking (`miroooo_outbound_click`, `affiliate_click`, Bing Ads UET tag, GTM `GTM-TQ3HRZMJ`, Clarity `w4nply9u93`).
+
+- **Starting & Ending Git State**:
+  - Starting: Clean at commit `40d1e04` on `origin/main`.
+  - Ending: Working tree updated in `apps/site/public/img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp`, `img/toothbrushes/miroooo-brush-x2-electric-toothbrush.webp`, `apps/site/src/features/electric-toothbrushes/ElectricToothbrushesAdvertorial.tsx`, and `CONTEXT.md`.
+
+- **Files Updated & Implementation Details**:
+  1. **New #1 Image Asset Replacement (`apps/site/public/img/toothbrushes/` & `img/toothbrushes/`)**:
+     - Replaced Miroooo X2 image with `Gemini_Generated_Image_43ipb643ipb643ip.webp` (130,034 bytes).
+     - Preserved exact filename `miroooo-brush-x2-electric-toothbrush.webp` and canonical alt text.
+  2. **Rank Ribbon Badge Geometry & Clearance (`RankRibbon`)**:
+     - Refined corner triangle size from `108px x 128px` to `96px x 114px` for featured (#1) and `80px x 96px` for #2–#5.
+     - Triangle hypotenuse at image left border (x = 40px) is y = 62.3px for #1 and y = 46.6px for #2–#5.
+     - Card top padding set to 24px (`pt-5 md:pt-6`), image container top clearance set to `lg:pt-10` (40px) for #1 (image starts at 64px > 62.3px) and `lg:pt-6` (24px) for #2–#5 (image starts at 48px > 46.6px).
+     - Zero overlap mathematically and visually verified across all ranks (#1 to #5).
+  3. **Left Column In-Frame Optimization (`ProductCard` & `OfficialButton`)**:
+     - Sticky top adjusted to `lg:sticky lg:top-2 xl:top-3` (8px–12px from viewport top).
+     - Spacing tightened: image bottom margin `mb-2.5`, price row margin `mb-1`, star rating size 22 with `mb-0.5`, rating block bottom margin `mb-2 lg:mb-2`.
+     - OfficialButton padding tightened to `py-2.5 sm:py-3` with `min-h-11 sm:min-h-12` (height 52px, text size preserved at `text-lg md:text-xl font-bold`).
+     - Total sticky column height reduced to 498px (from 556px). In sticky mode, entire left column sits from 12px to 510px, completely visible inside a 520px–550px viewport frame with zero cutoff.
+
+- **Verification Executed**:
+  - `pnpm typecheck`: 3/3 packages passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Next.js Turbopack build succeeded with 0 errors across all 69 static routes.
+  - Headless Chrome DevTools DOM audit on `http://localhost:3008/best-electric-toothbrush-uk-2026`:
+    - #1 Clearance: +2.91px (0px overlap).
+    - #2–#5 Clearance: +2.55px (0px overlap).
+    - Sticky div height: 498px.
+    - Viewport visibility check at scroll position: `isButtonFullyVisibleIn520pxViewport: true`.
+    - Mojibake check: 0 corrupted characters.

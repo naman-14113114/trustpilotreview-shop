@@ -168,7 +168,7 @@ function OfficialButton({
       onClick={(event) =>
         handleOutboundClick(event, setLoadingTarget, targetId)
       }
-      className={`group relative inline-flex min-h-14 w-full items-center justify-center overflow-hidden rounded-full bg-emerald-500 px-6 py-4 text-center text-lg md:text-xl font-bold text-white shadow-xl shadow-emerald-500/30 transition-transform duration-300 hover:scale-[1.02] ${className}`}
+      className={`group relative inline-flex min-h-11 sm:min-h-12 w-full items-center justify-center overflow-hidden rounded-full bg-emerald-500 px-6 py-2.5 sm:py-3 text-center text-lg md:text-xl font-bold text-white shadow-xl shadow-emerald-500/30 transition-transform duration-300 hover:scale-[1.02] ${className}`}
       aria-busy={isLoading}
     >
       {isLoading ? (
@@ -247,10 +247,10 @@ function RankRibbon({
   rank: string;
   featured?: boolean;
 }) {
-  const outerSize = featured ? "h-[118px] w-[138px]" : "h-[96px] w-[112px]";
-  const triangleSize = featured ? "h-[108px] w-[128px]" : "h-[88px] w-[108px]";
-  const textBox = featured ? "h-[78px] w-[82px]" : "h-[64px] w-[68px]";
-  const textSize = featured ? "text-[2rem]" : "text-[1.55rem]";
+  const outerSize = featured ? "h-[106px] w-[124px]" : "h-[90px] w-[106px]";
+  const triangleSize = featured ? "h-[96px] w-[114px]" : "h-[80px] w-[96px]";
+  const textBox = featured ? "h-[70px] w-[74px]" : "h-[58px] w-[62px]";
+  const textSize = featured ? "text-[1.85rem]" : "text-[1.45rem]";
 
   return (
     <div
@@ -434,25 +434,29 @@ function ProductCard({
       data-product-rank={product.rank}
       className={`relative bg-white rounded-3xl shadow-sm border ${
         isMiroooo
-          ? "border-emerald-500 ring-4 ring-emerald-50 pt-10 md:pt-10"
-          : "border-slate-200"
-      } p-6 md:p-10 scroll-mt-28`}
+          ? "border-emerald-500 ring-4 ring-emerald-50 pt-5 md:pt-6"
+          : "border-slate-200 pt-5 md:pt-6"
+      } px-6 md:px-10 pb-6 md:pb-10 scroll-mt-28`}
     >
       <RankRibbon rank={`#${product.rank}`} featured={isMiroooo} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
         {/* Left Column: Image & Quick Stats */}
         <aside className="lg:col-span-4 flex flex-col items-center">
-          <div className="lg:sticky lg:top-8 w-full flex flex-col items-center">
+          <div className="lg:sticky lg:top-2 xl:top-3 w-full flex flex-col items-center">
             <h2
               className={`text-2xl font-bold text-slate-900 mb-6 text-center lg:hidden ${
-                isMiroooo ? "mt-3" : ""
+                isMiroooo ? "mt-3" : "mt-2 sm:mt-0"
               }`}
             >
               {product.name}
             </h2>
 
-            <div className="relative w-full mb-6">
+            <div
+              className={`relative w-full mb-2.5 ${
+                isMiroooo ? "lg:pt-10" : "lg:pt-6"
+              }`}
+            >
               <a
                 href={product.ctaUrl}
                 rel="noopener noreferrer sponsored"
@@ -480,8 +484,8 @@ function ProductCard({
               </a>
             </div>
 
-            <div className="text-center mb-2 lg:mb-6 w-full">
-              <div className="flex items-center justify-center gap-2.5 sm:gap-3 mb-2 flex-wrap">
+            <div className="text-center mb-2 lg:mb-2 w-full">
+              <div className="flex items-center justify-center gap-2 sm:gap-2.5 mb-1 flex-wrap">
                 <span className="text-3xl font-extrabold text-slate-900">
                   {product.price}
                 </span>
@@ -499,10 +503,10 @@ function ProductCard({
               <GreenStarRating
                 rating={product.rating}
                 forceFull={isMiroooo}
-                size={24}
-                className="mb-2"
+                size={22}
+                className="mb-0.5"
               />
-              <p className="text-sm font-medium text-slate-500">
+              <p className="text-xs sm:text-sm font-medium text-slate-500">
                 Overall rating {product.rating.toFixed(1)} / 5
               </p>
             </div>
