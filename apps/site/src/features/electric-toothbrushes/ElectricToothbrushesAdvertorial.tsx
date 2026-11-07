@@ -1292,8 +1292,8 @@ export default function ElectricToothbrushesAdvertorial({
               <div className="relative flex justify-center items-center">
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] aspect-square overflow-hidden rounded-[1.35rem] md:rounded-[1.75rem] border border-[#dfd1bd] bg-white shadow-xl">
                   <Image
-                    src="/img/toothbrushes/miroooo-brush-x2-dentist-verdict-dr-olivia.webp"
-                    alt="Dr. Olivia holding Miroooo Brush X2 Electric Toothbrush in dental clinic - Dentist's Verdict"
+                    src="/img/toothbrushes/miroooo-brush-x2-electric-toothbrush-dentist-verdict.webp"
+                    alt="Miroooo Brush X2 Sonic Electric Toothbrush with Luxury Travel Case - Dentist's Verdict Recommended Electric Toothbrush UK 2026"
                     width={600}
                     height={600}
                     className="w-full h-full object-cover"
