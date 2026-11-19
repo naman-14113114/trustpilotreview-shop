@@ -11940,3 +11940,31 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Increased arrow size slightly to match new font size.
 - **Verification:** Changes are contained strictly within the button's Tailwind classes.
 - **Git Status:** Modified locally. No commit or push performed per rules.
+
+## 2026-11-19 — Conversion from Black Friday Early Access to Biggest Black Friday Sale on UK LED Mask Route
+- **Owner Directive**:
+  - Request: "make https://www.trustpilotreview.shop/best-led-face-mask-uk-2026 , change from black friday early access to biggest black friday sale , first take a pull"
+  - Scoped strictly to converting "Black Friday Early Access" to "Biggest Black Friday Sale" across the UK LED face mask route and legacy comparison mirrors.
+  - Zero regression on outbound Microsoft Ads tracking (UET ID 211072489, GTM GTM-TQ3HRZMJ, Clarity w4nply9u93, conversion value 660 INR) and immediate unblocked navigation to https://www.buudy.co.uk/products/buudy-led-face-mask.
+  - Toothbrush routes strictly untouched.
+
+- **Files Updated**:
+  - apps/site/src/legacy-pages/BestLedFaceMaskAdvertorial.tsx:
+    - Converted comparison table header badge from luxury slate/amber BLACK FRIDAY EARLY ACCESS to BIGGEST BLACK FRIDAY SALE.
+    - Converted comparison table price row badge from luxury slate/amber BLACK FRIDAY EARLY ACCESS to BIGGEST BLACK FRIDAY SALE.
+    - Converted Card #1 price row inline luxury badge from BLACK FRIDAY EARLY ACCESS to BIGGEST BLACK FRIDAY SALE.
+    - Updated Card #1 editorial description: replaced during their Black Friday Early Access Sale with during their Biggest Black Friday Sale.
+    - Updated Active Offer Found / Editor's Tip callout: replaced Black Friday Early Access Sale with Biggest Black Friday Sale.
+    - Localize helper updated for non-UK fallback consistency.
+  - Mirror legacy files in apps/site/src/legacy-pages/old/, unzipped/, unzipped_new_pages/, and section-text-video-test.json:
+    - Synced to Biggest Black Friday Sale / BIGGEST BLACK FRIDAY SALE.
+
+- **Verification Executed**:
+  - pnpm typecheck: 3/3 packages passed with 0 errors.
+  - next build: Turbopack production build succeeded with Exit Code 0 across all 69 static routes.
+  - Verified static HTML output (apps/site/.next/server/app/best-led-face-mask-uk-2026.html):
+    - Early Access count: 0
+    - Biggest Black Friday count: 5
+    - BIGGEST BLACK FRIDAY count: 3
+    - Outbound Buudy UK links: 12
+    - Exit popup included: true
