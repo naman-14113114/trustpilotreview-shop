@@ -7145,90 +7145,6 @@ or deployment-setting change occurred.
   - Left Muuhu AirPro (#1) untouched.
 - **Verification:** Ran `pnpm --filter @trustpilotreview/site typecheck` (passed with 0 errors).
 - **Git Status:** Modified locally. No commit or push performed per rules.
-<<<<<<< HEAD
-### Replaced Verdict Video and Removed Footer on Grounding Sheet Page
-- **User Intent & Protected Scope:** Replace the verdict video with a new one named according to juujo seo, delete the old video, and remove the footer below it on the best grounding sheet page. Do minimal changes.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Copied Grounding_sheets best 5 video - 2.mp4 to public/assets/juujo-grounding-fitted-sheet-review.mp4.
-  - Deleted the older video public/assets/grounding-best-5-video.mp4.
-  - Updated <source> src in GroundingSheetsAdvertorial.tsx to /assets/juujo-grounding-fitted-sheet-review.mp4.
-  - Removed the <footer> block entirely from GroundingSheetsAdvertorial.tsx.
-- **Verification:** Ran pnpm --filter @trustpilotreview/site typecheck (passed with 0 errors).
-- **Git Status:** Modified locally. No commit or push performed per rules.
-
-### Updated Video Thumbnail for Grounding Sheet Page
-- **User Intent & Protected Scope:** Extract a thumbnail image from the 3:06 frame of the new video and update the video poster to use it. Minimal changes.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Extracted 3:06 frame from juujo-grounding-fitted-sheet-review.mp4 using fmpeg to public/assets/juujo-grounding-fitted-sheet-review-poster.webp.
-  - Updated <video poster="..."> in GroundingSheetsAdvertorial.tsx to reference the new thumbnail /assets/juujo-grounding-fitted-sheet-review-poster.webp.
-- **Verification:** Ran fmpeg to verify the image creation.
-- **Git Status:** Modified locally. No commit or push performed per rules.
-
-### Updated Header Text Size on Grounding Sheet Page
-- **User Intent & Protected Scope:** Match the size of the "United States - 2026" text under the header in the grounding sheet page to the proportional size (72%) found in the LED mask page header. Minimal changes.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Combined the "Best Grounding Sheets" heading and the "United States - 2026" subheading into a single <h1> tag.
-  - Applied 	ext-[0.72em] to the country/year line so its font size is relatively smaller (72%) compared to the main header, perfectly matching the design from the LED mask page.
-- **Verification:** Changes logically sound and structure directly mirrors QualityReviewerAdvertorial.
-- **Git Status:** Modified locally. No commit or push performed per rules.
-
-### Updated 50% OFF Card Color and Dynamic Date
-- **User Intent & Protected Scope:** Change the 50% OFF card background color to match the green Official Website button. Update the dynamic date shown on this card to be one day ahead of the current date (e.g., if today is August 6, show August 7). Minimal changes.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Updated ormatNewYorkDate function to accept an optional daysToAdd argument and applied standard JS date math.
-  - Changed the "Sale Ends:" call to ormatNewYorkDate(1) to show tomorrow's date.
-  - Changed the red background class g-[#df4e45] on the "50% OFF" card to g-emerald-500 (which matches the Official Website button's color).
-- **Verification:** Logic checked for date incrementing, matches expected output.
-- **Git Status:** Modified locally. No commit or push performed per rules.
-
-### Corrected 50% OFF Card Color to Blue
-- **User Intent & Protected Scope:** Correct the 50% OFF card color to match the *blue* "Check Availability" button rather than the green "Official Website" button.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Changed g-emerald-500 to g-blue-600 on the "50% OFF" card to precisely match the user's requested blue color from the Check Availability button.
-- **Verification:** Matched tailwind class g-blue-600 from line 574.
-- **Git Status:** Modified locally. No commit or push performed per rules.
-
-### Increased Official Website Button Text Size
-- **User Intent & Protected Scope:** Increase the text size of the Official Website button above the 50% OFF card, adjust padding, and prevent the arrow from wrapping to the next line.
-- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
-- **Inspected Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changed Files:**
-  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
-- **Changes Made:**
-  - Increased button text from 	ext-[15px] to 	ext-[17px].
-  - Added whitespace-nowrap to prevent the text and arrow from wrapping.
-  - Reduced horizontal padding from px-4 to px-2 sm:px-3 to accommodate the larger text within the sidebar container without pushing boundaries.
-  - Increased arrow size slightly to match new font size.
-- **Verification:** Changes are contained strictly within the button's Tailwind classes.
-- **Git Status:** Modified locally. No commit or push performed per rules.
-=======
-
 ### Added Protected Muuhu Microsoft Ads Offline-Conversion Feed
 - **User Intent & Protected Scope:** Reproduce the existing Buudy Microsoft Ads offline-conversion workflow for Muuhu without requesting or using Microsoft Ads account access. Reconcile the customer's supplied Microsoft click ID against the just-created PlusBase order, prepare the one-off upload CSV, and make future Muuhu orders available through a protected HTTPS CSV feed.
 - **Starting Git State:** Clean detached worktree created from `origin/main` at `794801391bbef4da89ad59fccca60078116f8849`; the owner's separate dirty hair-CRO worktree was not modified.
@@ -11762,6 +11678,7 @@ ext/image unconfigured host 500 error that was crashing the page.
     - `Outbound Buudy UK links: 12`
 
 
+<<<<<<< HEAD
 ## 2026-11-02 — Clean Black Friday Early Access Theme & Top Padding Alignment Across All Electric Toothbrush Pages
 - **User Intent & Scope Lock**:
   - Request: "what the fuck u increase top padding in 1st imaeg section the black friday writeen below see carefully best mask page u have to reduce top padding instead u increase it. Also in 2nd imaeg section no need to write here above blackfriday below is enouth, fix these things only on all brush pages and discard all unecessary chanegs and push clean code on github"
@@ -11924,3 +11841,102 @@ ext/image unconfigured host 500 error that was crashing the page.
     - Route status checks: `HTTP 200 OK` on `/best-electric-toothbrush-uk-2026`, `/miroooo-brush-x-uk-review-2026`, `/miroooo-vs-oral-b-io6`, `/best-lightweight-electric-toothbrush-uk-2026`, and `/why-switch-from-legacy-electric-toothbrushes-uk`.
   - Mojibake & Encoding Check: 0 corrupted characters.
   - Commit & Push Status: Staged and pushed cleanly to `origin/main` on GitHub.
+=======
+---
+
+## Session Log: 4 November 2026 - Recover the UK LED-mask exit popup
+
+- User intent: Recover the former exit-oriented popup or make a replacement that encourages visitors to reach Buudy, on both TrustpilotReview and BestProductVerdict. Preserve page layout, copy, media, product order, tracking and immediate retailer navigation.
+- Baseline and scope: Verified the custom domain www.trustpilotreview.shop belongs to elato-tests-projects/trustpilot-led-mask-replica, project prj_moC6YhuDufmzdh8NrYZGqndONmtJ. The live source was c8a660f351573163fa1ed19a31722a1ed3fa84ce (deployment dpl_3Y2Kk7JqGAhXBTppDetRfctZL8Vi). Remote main was 40d1e04eaaaad6a5a22258d237140c937eca37f1, with a later toothbrush change that was not live on this custom domain. Created isolated worktree .codex-worktrees/led-exit-popup-20261104 and branch codex/restore-led-exit-popup-20261104 from exact production. Preserved the pre-existing dirty CONTEXT.md in the earlier trustpilot-domain-sync worktree. The custom-domain project has no Git link; the separate reference project and remote main were not promoted or rewritten.
+- Root cause: Historical assets buudy-exit-popup.js and buudy-exit-popup-buudycouk-v2.js still existed, but the active UK route no longer loaded either. Live desktop exit simulation and application-bundle inspection confirmed no active exit modal. Recovered the trigger/session structure into a new versioned asset rather than editing immutable historical paths.
+- Implementation: Added apps/site/public/assets/buudy-exit-popup-20261104.js and an afterInteractive Script mount only in apps/site/src/app/best-led-face-mask-uk-2026/page.tsx. Identical script is deployed on BestProductVerdict with its blue/amber variant; TrustpilotReview uses emerald. Scope is the UK mask route (plus the existing BestProductVerdict /top-10 alias). The popup uses the existing /img/57-w.webp photo, feature copy, a clear current-offer button, a linked product image and neutral keep-comparing dismissal. It asserts no fixed discount, deadline, price, rating or new professional endorsement. Destination is https://www.buudy.co.uk/products/buudy-led-face-mask, checked live before implementation.
+- Behaviour: At most one popup per session using buudy_exit_popup_seen_v3. Desktop top-edge exit can trigger after seven seconds. Mobile requires fourteen seconds, over 500px of engagement and at least 120px upward scrolling; no timer-only mobile interruption or history/back-button trap. Native dialog handles modal focus; Escape, X, keep-comparing and backdrop dismissal restore prior body/html overflow and focus. A pathname watcher runs only while open and is cleared on close, including client navigation. Incoming msclkid, click IDs and UTM parameters are preserved. Normal Buudy clicks suppress later prompts in that session.
+- Tracking: Popup views, CTA clicks and closes use existing dataLayer event names. Trust popup anchors invoke existing tprTrackBuudyOutbound and consent helper from window capture, preserving buudy_outbound_click/affiliate_click, INR 660 and UET 211072489, then allow the anchor's native action. This bypasses the legacy document redirect timer for these popup links only. Other tracking scripts and buttons remain unchanged. BPV preserves UET 355062041 and its existing outbound event schema. Analytics exceptions cannot cancel navigation. Ads/Clarity account dashboards and an actual CTR lift were not verified or claimed.
+- Validation: Typecheck and lint passed. Final clean Next 16 production build generated 69 routes; seven-route parity smoke passed. Normalized visible-body hashes of the main mask, toothbrush, hair-dryer and homepage match the pre-change custom-domain pages locally and live. Browser regression suite (in Best_Product_Verdict/scripts/verify-led-exit-popup.mjs) passed against both final local builds and both live domains: all dismissal methods and scroll restoration, session cap/reload, mobile fit and touch close, native destination and attribution, conversion events, image middle-click into a new tab, analytics failure, client route cleanup and unrelated-route absence. Mock-clock runs intercept custom ad collect requests and Clarity SDK recording to avoid false conversions/recordings; live base tags were checked separately. Desktop and mobile screenshots were inspected. Independent pre-landing review is clean.
+- Corrections: Review exposed an open-dialog leak after client pushState; the regression failed before its 200ms open-only pathname watcher and passed afterward. A local mock-clock scroll could coalesce native browser events; the regression now dispatches the modeled scroll events after setting each position. One Clarity SDK latency exception under the artificial clock was avoided by blocking its recording SDK in that test only. A repeated local Next build hit an unrelated generated-directory ENOENT in the toothbrush route. Automatic review rejected recursive deletion of generated .next; instead, verified both absolute paths and moved the failed generated cache reversibly under ignored node_modules/.cache/popup-build-prerender-failed-20261104. Regenerated build passed. Vercel curl forwarding rejected --silent, so used the CLI's ordinary curl call via subprocess and captured raw bytes safely.
+- Publication: Application commit df5b1d0 is pushed on codex/restore-led-exit-popup-20261104. Staged production deployment dpl_9JhydFcrP8T96HUzAxNbzf5cmguy at trustpilot-led-mask-replica-nh8xqiyg0-elato-tests-projects.vercel.app passed authenticated unchanged-body and exact-asset-byte checks. Rechecked the old custom-domain deployment before promotion, then promoted this READY release in the confirmed project. Live inspection confirms the new deployment serves www.trustpilotreview.shop. BestProductVerdict PR #7 merged as 7a4aa08f9e2eade07b0e123d5b076998febb4527 and is live. No base page copy, unrelated release, reference-project production deployment, Ads goal, order, payment or customer message was changed.
+- Evidence: Parent .codex-tmp-led-clone-20261027/popup-trustpilot-page-parity.json, popup-trustpilot-staged.html/js, popup-trustpilot-local-final, popup-trustpilot-live, popup-bpv-local-final, popup-bpv-live, and popup-bpv-uet-live.json. The new public script on the live custom domain is byte-identical to reviewed source. Both local verification servers were stopped. A source-integration PR will retain the custom-domain release branch separately from unrelated remote-main work.
+
+---
+
+### Replaced Verdict Video and Removed Footer on Grounding Sheet Page
+- **User Intent & Protected Scope:** Replace the verdict video with a new one named according to juujo seo, delete the old video, and remove the footer below it on the best grounding sheet page. Do minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Copied Grounding_sheets best 5 video - 2.mp4 to public/assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Deleted the older video public/assets/grounding-best-5-video.mp4.
+  - Updated <source> src in GroundingSheetsAdvertorial.tsx to /assets/juujo-grounding-fitted-sheet-review.mp4.
+  - Removed the <footer> block entirely from GroundingSheetsAdvertorial.tsx.
+- **Verification:** Ran pnpm --filter @trustpilotreview/site typecheck (passed with 0 errors).
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Video Thumbnail for Grounding Sheet Page
+- **User Intent & Protected Scope:** Extract a thumbnail image from the 3:06 frame of the new video and update the video poster to use it. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Extracted 3:06 frame from juujo-grounding-fitted-sheet-review.mp4 using fmpeg to public/assets/juujo-grounding-fitted-sheet-review-poster.webp.
+  - Updated <video poster="..."> in GroundingSheetsAdvertorial.tsx to reference the new thumbnail /assets/juujo-grounding-fitted-sheet-review-poster.webp.
+- **Verification:** Ran fmpeg to verify the image creation.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated Header Text Size on Grounding Sheet Page
+- **User Intent & Protected Scope:** Match the size of the "United States - 2026" text under the header in the grounding sheet page to the proportional size (72%) found in the LED mask page header. Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Combined the "Best Grounding Sheets" heading and the "United States - 2026" subheading into a single <h1> tag.
+  - Applied 	ext-[0.72em] to the country/year line so its font size is relatively smaller (72%) compared to the main header, perfectly matching the design from the LED mask page.
+- **Verification:** Changes logically sound and structure directly mirrors QualityReviewerAdvertorial.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Updated 50% OFF Card Color and Dynamic Date
+- **User Intent & Protected Scope:** Change the 50% OFF card background color to match the green Official Website button. Update the dynamic date shown on this card to be one day ahead of the current date (e.g., if today is August 6, show August 7). Minimal changes.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Updated ormatNewYorkDate function to accept an optional daysToAdd argument and applied standard JS date math.
+  - Changed the "Sale Ends:" call to ormatNewYorkDate(1) to show tomorrow's date.
+  - Changed the red background class g-[#df4e45] on the "50% OFF" card to g-emerald-500 (which matches the Official Website button's color).
+- **Verification:** Logic checked for date incrementing, matches expected output.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Corrected 50% OFF Card Color to Blue
+- **User Intent & Protected Scope:** Correct the 50% OFF card color to match the *blue* "Check Availability" button rather than the green "Official Website" button.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Changed g-emerald-500 to g-blue-600 on the "50% OFF" card to precisely match the user's requested blue color from the Check Availability button.
+- **Verification:** Matched tailwind class g-blue-600 from line 574.
+- **Git Status:** Modified locally. No commit or push performed per rules.
+
+### Increased Official Website Button Text Size
+- **User Intent & Protected Scope:** Increase the text size of the Official Website button above the 50% OFF card, adjust padding, and prevent the arrow from wrapping to the next line.
+- **Starting Git State:** GroundingSheetsAdvertorial.tsx modified.
+- **Inspected Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changed Files:**
+  - pps/site/src/features/grounding-sheets/GroundingSheetsAdvertorial.tsx
+- **Changes Made:**
+  - Increased button text from 	ext-[15px] to 	ext-[17px].
+  - Added whitespace-nowrap to prevent the text and arrow from wrapping.
+  - Reduced horizontal padding from px-4 to px-2 sm:px-3 to accommodate the larger text within the sidebar container without pushing boundaries.
+  - Increased arrow size slightly to match new font size.
+- **Verification:** Changes are contained strictly within the button's Tailwind classes.
+- **Git Status:** Modified locally. No commit or push performed per rules.

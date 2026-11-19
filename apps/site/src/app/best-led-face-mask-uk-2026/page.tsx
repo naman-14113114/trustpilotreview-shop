@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import BestLedFaceMaskAdvertorial from "@/legacy-pages/BestLedFaceMaskAdvertorial";
 import { getUkPageContext } from "@/lib/page-context";
 import { metadataForPath } from "@/lib/metadata";
@@ -42,5 +43,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <BestLedFaceMaskAdvertorial market="uk" context={getUkPageContext()} />;
+  return (
+    <>
+      <BestLedFaceMaskAdvertorial market="uk" context={getUkPageContext()} />
+      <Script id="buudy-exit-popup" src="/assets/buudy-exit-popup-20261104.js" strategy="afterInteractive" />
+    </>
+  );
 }
