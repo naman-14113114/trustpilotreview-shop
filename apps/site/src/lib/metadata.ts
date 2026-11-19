@@ -98,6 +98,71 @@ const routeMetadata: Record<string, RouteMetadata> = {
     canonical: `${SITE_URL}/best-hearing-aids-uk-2026`,
     image: "/img/hearing-aids/top-5-hearing-aids-uk.webp"
   },
+  "/currentbody-skin-led-light-therapy-mask-review-uk": {
+    title: "CurrentBody vs Buudy LED Mask UK (2026 Comparison)",
+    description: "Compare CurrentBody and Buudy LED masks by UK price, wavelengths, face and neck coverage, session time, features and guarantee.",
+    canonical: `${SITE_URL}/currentbody-vs-buudy`
+  },
+  "/deluxskin-led-facial-mask-review-uk": {
+    title: "DeluxeSkin vs Buudy LED Mask UK (2026)",
+    description: "Compare DeluxeSkin and Buudy LED masks by UK price, wavelengths, neck coverage, treatment format and guarantee.",
+    canonical: `${SITE_URL}/deluxeskin-vs-buudy`
+  },
+  "/qure-skincare-light-therapy-mask-review-uk": {
+    title: "Qure vs Buudy LED Mask UK (2026 Comparison)",
+    description: "Compare Qure Q-Rejuvalight Pro and Buudy LED masks by price, wavelengths, session time, app features and face-and-neck coverage.",
+    canonical: `${SITE_URL}/qureskincare-vs-buudy`
+  },
+  "/theraface-mask-review-uk": {
+    title: "TheraFace Mask vs Buudy UK (2026 Comparison)",
+    description: "Compare Therabody TheraFace Mask and Buudy by UK price, LED modes, weight, vibration, coverage and guarantee.",
+    canonical: `${SITE_URL}/theraface-vs-other-masks`
+  },
+  "/theraface-vs-buudy": {
+    title: "TheraFace Mask vs Buudy UK (2026 Comparison)",
+    description: "Compare Therabody TheraFace Mask and Buudy by UK price, LED modes, weight, vibration, coverage and guarantee.",
+    canonical: `${SITE_URL}/theraface-vs-other-masks`
+  },
+  "/silicon-led-mask-warning-uk": {
+    title: "Are Silicone LED Masks Safe? Fit & Cleaning Guide (2026)",
+    description: "Understand flexible silicone LED mask comfort, cleaning, skin contact and fit, plus how silicone compares with rigid and open designs.",
+    canonical: `${SITE_URL}/silicone-led-mask-dangers`
+  },
+  "/floating-head-led-mask-warning-uk": {
+    title: "Face-only vs Face-and-Neck LED Masks UK (2026)",
+    description: "Compare face-only and face-and-neck LED masks by coverage, convenience, kit price and fit before choosing a UK device.",
+    canonical: `${SITE_URL}/floating-head-warning`
+  },
+  "/missing-colors-led-mask-expose-uk": {
+    title: "2 Wavelengths vs Multi-Colour LED Masks (2026 Guide)",
+    description: "Compare focused red and near-infrared LED masks with multi-colour systems, including wavelengths, modes, coverage and value.",
+    canonical: `${SITE_URL}/missing-colors-expose`
+  },
+  "/led-density-scam-uk": {
+    title: "Does LED Count Matter in a Face Mask? (2026 Guide)",
+    description: "Understand LED count, irradiance, distance, coverage and wavelength specifications before comparing light therapy face masks.",
+    canonical: `${SITE_URL}/led-density-scam`
+  },
+  "/brand-name-premium-led-mask-uk": {
+    title: "Are Premium LED Face Masks Worth It? UK 2026",
+    description: "Compare premium and value LED face masks by price, wavelengths, coverage, routine, support and guarantee—not brand recognition alone.",
+    canonical: `${SITE_URL}/brand-name-premium`
+  },
+  "/new-advertorial": {
+    title: "Best LED Face Mask UK (2026) | Top Light Therapy Masks",
+    description: defaultLedDescription,
+    canonical: `${SITE_URL}/new-advertorial`
+  },
+  "/new-led-face-mask-review-uk": {
+    title: "Best LED Face Mask UK (2026) | Top Light Therapy Masks",
+    description: defaultLedDescription,
+    canonical: `${SITE_URL}/new-advertorial`
+  },
+  "/best-led-face-mask-video-review-uk": {
+    title: "Best LED Face Mask UK (2026) | Video Review",
+    description: defaultLedDescription,
+    canonical: `${SITE_URL}/best-led-face-mask-uk-2026-previous`
+  },
   ...Object.fromEntries(
     buudyEditorialPages.map((page) => [
       page.path,

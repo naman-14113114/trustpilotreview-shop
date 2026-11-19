@@ -1250,7 +1250,7 @@ export default function Home({
         "url": "https://www.trustpilotreview.shop/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://img.thesitebase.net/10677/10677322/themes/17688355473bc9b44aac.png",
+          "url": "https://www.trustpilotreview.shop/favicon.ico",
         },
         "description": "Trustpilot Review Shop publishes UK beauty technology comparisons, buyer guides, and specification reviews.",
         "areaServed": {

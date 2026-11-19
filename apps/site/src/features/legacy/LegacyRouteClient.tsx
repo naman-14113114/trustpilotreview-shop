@@ -32,22 +32,33 @@ type Props = {
 const noShellPages: Record<string, ComponentType> = {
   // Advertorial variants
   "/new-advertorial": NewAdvertorial,
+  "/new-led-face-mask-review-uk": NewAdvertorial,
   "/best-led-face-mask-uk-2026-previous": VideoAdvertorial,
   "/best-led-face-mask-uk-2026-video-test": VideoAdvertorial,
+  "/best-led-face-mask-video-review-uk": VideoAdvertorial,
 
-  // Direct comparison pages
+  // Direct comparison pages (canonical & legacy slugs)
   "/currentbody-vs-buudy": CurrentbodyComparison,
+  "/currentbody-skin-led-light-therapy-mask-review-uk": CurrentbodyComparison,
   "/deluxeskin-vs-buudy": DeluxeskinComparison,
+  "/deluxskin-led-facial-mask-review-uk": DeluxeskinComparison,
   "/qureskincare-vs-buudy": QureskincareComparison,
+  "/qure-skincare-light-therapy-mask-review-uk": QureskincareComparison,
   "/theraface-vs-other-masks": TherafaceComparison,
   "/theraface-vs-buudy": TherafaceComparison,
+  "/theraface-mask-review-uk": TherafaceComparison,
 
-  // Warning and educational guide pages
+  // Warning and educational guide pages (canonical & legacy slugs)
   "/silicone-led-mask-dangers": SiliconMaskWarning,
+  "/silicon-led-mask-warning-uk": SiliconMaskWarning,
   "/floating-head-warning": FloatingHeadWarning,
+  "/floating-head-led-mask-warning-uk": FloatingHeadWarning,
   "/missing-colors-expose": MissingColorsExpose,
+  "/missing-colors-led-mask-expose-uk": MissingColorsExpose,
   "/led-density-scam": LedDensityScam,
+  "/led-density-scam-uk": LedDensityScam,
   "/brand-name-premium": BrandNamePremium,
+  "/brand-name-premium-led-mask-uk": BrandNamePremium,
 };
 
 function Shell({ children }: { children: ReactNode }) {
@@ -69,9 +80,7 @@ export default function LegacyRouteClient({ pathname, params, context }: Props) 
       ) : pathname === "/best-led-face-mask-uk-2026" ? (
         <BestLedFaceMaskAdvertorial market="uk" context={context} />
       ) : pathname.startsWith("/blog/") ? (
-        <Shell>
-          <Article />
-        </Shell>
+        <Article />
       ) : pathname === "/privacy" || pathname === "/terms" || pathname === "/disclosure" || pathname === "/contact" ? (
         <Shell>
           <Legal />

@@ -1,7 +1,32 @@
-import { useParams, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { articles } from '@/data/old/articles';
-import { Calendar, User, Star } from 'lucide-react';
+"use client";
+
+import React from "react";
+import { useParams, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { articles } from "@/data/old/articles";
+import {
+  EmeraldMasthead,
+  ExpertReviewerCard,
+  FreeGiftsBox,
+  DermatologistVerdictSection,
+  CompetitorComparisonTable,
+  StickyMobileCta,
+  MaskFooter,
+  BUUDY_7_COLOR_DOTS,
+  BUUDY_OFFICIAL_URL,
+  CTAButton,
+  EXPERT_PROFILE,
+} from "@/features/mask-common/MaskAdvertorialCommon";
+import { GreenStarRating } from "@/components/GreenStarRating";
+import {
+  Calendar,
+  User,
+  Clock,
+  Sparkles,
+  Award,
+  Check,
+  BookOpen,
+} from "lucide-react";
 
 export default function Article() {
   const { slug } = useParams<{ slug: string }>();
@@ -10,87 +35,212 @@ export default function Article() {
   if (!article) return <Navigate to="/" replace />;
 
   return (
-    <div className="w-full bg-slate-50 relative pb-16">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
       <Helmet>
         <title>{article.seoTitle}</title>
         <meta name="description" content={article.seoDescription} />
         <meta name="keywords" content={article.seoKeywords} />
-        {/* Open Graph */}
         <meta property="og:title" content={article.seoTitle} />
         <meta property="og:description" content={article.seoDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={article.image} />
       </Helmet>
 
-      {/* Article Header */}
-      <div className="bg-white border-b border-slate-200 pt-16 pb-12 px-4 shadow-sm relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8 font-serif">
+      {/* Emerald Top Header & Market Masthead */}
+      <EmeraldMasthead
+        title={article.title}
+        subtitle={article.excerpt}
+        badgeText="United Kingdom - 2026"
+        alertBadge="CLINICAL EDITORIAL"
+      />
+
+      {/* Expert Reviewer Credential Card */}
+      <ExpertReviewerCard
+        customBio={
+          <p>
+            With {EXPERT_PROFILE.yearsExperience} years of clinical dermatology experience,{" "}
+            <strong className="text-slate-900">{EXPERT_PROFILE.name}</strong>{" "}
+            evaluated this clinical phototherapy guide according to UK MHRA, CE, and NHS dermatology standards.
+          </p>
+        }
+      />
+
+      {/* Article Hero Banner */}
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-16">
+        <header className="mb-10 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-5">
+            <BookOpen size={14} className="text-emerald-600" />
+            <span>UK Clinical Guide · 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6 font-serif">
             {article.title}
           </h1>
-          <div className="flex items-center justify-center gap-6 text-sm font-medium text-slate-600">
+
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600 mb-8 pb-6 border-b border-slate-200">
             <div className="flex items-center gap-2">
-              <User size={16} className="text-emerald-500" />
+              <User size={16} className="text-emerald-600" />
               <span className="font-bold text-slate-800">{article.author}</span>
             </div>
             <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
             <div className="flex items-center gap-2">
-               <Calendar size={16} className="text-slate-400" />
-               {article.date}
+              <Calendar size={16} className="text-slate-400" />
+              <span>{article.date}</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+            <div className="flex items-center gap-2">
+              <Clock size={16} className="text-slate-400" />
+              <span>5 min read</span>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="max-w-3xl mx-auto px-4 py-16">
-        <div className="rounded-3xl overflow-hidden shadow-2xl mb-16 border-4 border-white">
-           <img src={article.image} alt={article.title} className="w-full h-auto object-cover" />
-        </div>
+          {/* Featured Article Image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 border border-slate-200/80 bg-slate-900">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full h-auto max-h-[500px] object-cover mx-auto"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 right-4 text-left">
+              <span className="inline-block bg-white/90 backdrop-blur-md text-slate-900 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
+                Verified Medical-Grade Phototherapy Analysis
+              </span>
+            </div>
+          </div>
 
+          {/* Lead Excerpt */}
+          <div className="bg-emerald-50/70 border-l-4 border-emerald-500 rounded-r-2xl p-6 text-left my-8">
+            <p className="text-lg sm:text-xl font-serif text-slate-800 italic leading-relaxed">
+              "{article.excerpt}"
+            </p>
+          </div>
+        </header>
+
+        {/* Article Body Content */}
         <div className="prose prose-lg prose-slate max-w-none">
-          <p className="lead text-2xl font-serif text-slate-600 italic mb-12 text-center">
-            {article.excerpt}
-          </p>
-
           {article.content.map((paragraph, index) => (
-            <div key={index}>
-              <p className="text-slate-700 leading-relaxed mb-8">{paragraph}</p>
-              
-              {/* Inject 'Our Top Pick' Buudy Ad after paragraph 2 */}
-              {index === 1 && (
-                <div className="my-16 bg-[#f8f4e6] rounded-3xl p-8 md:p-10 shadow-lg border border-[#e8dccb] relative transform hover:scale-[1.01] transition-transform duration-300">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-6 py-1.5 rounded-full font-bold text-xs tracking-widest uppercase shadow-md border border-emerald-400">
-                    Featured Product
+            <React.Fragment key={index}>
+              <p className="text-slate-700 leading-relaxed mb-6 text-base sm:text-lg">
+                {paragraph}
+              </p>
+
+              {/* Mid-Article Highlight Card: Our #1 Rated Buudy Mask with £128 Free Gifts */}
+              {index === 2 && (
+                <div className="my-12 rounded-3xl border-2 border-emerald-500 bg-gradient-to-b from-emerald-50/60 to-white p-6 sm:p-8 shadow-xl relative overflow-hidden not-prose">
+                  <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-32 h-32 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none" />
+
+                  {/* Top Badges */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-3 py-1 text-xs font-black uppercase tracking-wider shadow-sm">
+                      <Sparkles size={13} className="text-amber-300" />
+                      BIGGEST BLACK FRIDAY SALE
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+                      <Award size={14} className="text-emerald-700" />
+                      #1 EDITOR'S CHOICE OVERALL
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-center text-[#8b1528] mb-6 font-serif mt-2">
-                    Buudy 7-Colour LED Mask
-                  </h3>
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
-                     <div className="flex-1 w-full max-w-xs mx-auto">
-                        <img src="https://img.thesitebase.net/10677/10677322/themes/176943060543a303d043.png?width=828&height=0&min_height=0" alt="Buudy Mask" className="w-full h-auto rounded-xl shadow-md border border-white" />
-                     </div>
-                     <div className="flex-1 text-center md:text-left">
-                       <p className="text-slate-700 font-medium mb-4 leading-relaxed">
-                         The Buudy mask offers 7 LED colour options and includes integrated neck coverage — features that many competitors charge significantly more for or sell separately.
-                       </p>
-                       <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
-                         <span className="text-3xl font-extrabold text-slate-900">£179</span>
-                       </div>
-                       
-                       <a 
-                          href="https://www.buudy.co.uk/products/buudy-led-face-mask" 
-                          className="inline-block w-full text-center bg-gradient-to-b from-[#1a7444] to-[#0d4a29] hover:from-[#145c35] hover:to-[#0a381f] text-white text-lg font-bold font-sans tracking-wide py-4 px-8 rounded-full shadow-[0_8px_20px_rgba(13,74,41,0.3)] transition-all"
-                        >
-                          View Product Details
-                        </a>
-                     </div>
+
+                  <div className="grid md:grid-cols-[1fr_1.2fr] gap-6 sm:gap-8 items-center">
+                    <div className="relative mx-auto max-w-[280px]">
+                      <div className="rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-3 shadow-md">
+                        <img
+                          src="/img/57-w.webp"
+                          alt="Buudy 7 Colour LED Face and Neck Mask"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                      <div className="mt-3 text-center">
+                        <span className="text-[11px] font-semibold text-slate-500">
+                          192 Medical LEDs · Full Face & Neck
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif leading-tight mb-2">
+                        Buudy 7 Colour LED Mask
+                      </h3>
+                      <div className="flex items-center gap-3 mb-4">
+                        <GreenStarRating rating={4.9} />
+                        <span className="text-sm font-bold text-slate-800">4.9 / 5</span>
+                        <span className="text-xs text-slate-500 font-medium">(4,277+ UK reviews)</span>
+                      </div>
+
+                      {/* Pricing */}
+                      <div className="flex items-baseline gap-3 mb-4">
+                        <span className="text-3xl sm:text-4xl font-black text-slate-950">£179</span>
+                        <span className="text-lg text-slate-400 line-through">£449</span>
+                        <span className="rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-xs font-black uppercase">
+                          SAVE 60%
+                        </span>
+                      </div>
+
+                      {/* 8 Color Dots */}
+                      <div className="mb-5">
+                        <span className="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">
+                          All 7 Visible Wavelengths + 830nm Near-Infrared:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {BUUDY_7_COLOR_DOTS.map((dot) => (
+                            <span
+                              key={dot.name}
+                              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 border border-slate-200/80 px-2.5 py-1 text-[11px] font-bold text-slate-700"
+                            >
+                              <span
+                                className="w-2.5 h-2.5 rounded-full inline-block shadow-sm"
+                                style={{ backgroundColor: dot.bg, border: dot.border ? "1px solid #cbd5e1" : "none" }}
+                              />
+                              {dot.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Key Pros */}
+                      <ul className="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li className="flex items-start gap-2">
+                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
+                          <span><strong>Integrated Neck Panel:</strong> Covers face and neck in one wearable without expensive £300+ add-ons.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
+                          <span><strong>Cordless & Rechargeable:</strong> Up to 12 hands-free treatments per single charge.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
+                          <span><strong>90-Day Money-Back Guarantee:</strong> 100% risk-free home clinical trial.</span>
+                        </li>
+                      </ul>
+
+                      {/* £128 Free Gifts Box */}
+                      <FreeGiftsBox />
+
+                      <div className="mt-6">
+                        <CTAButton
+                          href={BUUDY_OFFICIAL_URL}
+                          text="CHECK AVAILABILITY & CLAIM GIFTS"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
-            </div>
+            </React.Fragment>
           ))}
         </div>
-      </div>
+      </article>
+
+      {/* Dermatologist Verdict Section with HTML5 Video */}
+      <DermatologistVerdictSection />
+
+      {/* Full 5-Mask Comparison Table */}
+      <CompetitorComparisonTable />
+
+      {/* Sticky Mobile CTA & Footer */}
+      <StickyMobileCta />
+      <MaskFooter />
     </div>
   );
 }

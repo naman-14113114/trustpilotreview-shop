@@ -16,21 +16,46 @@ const staticRoutes = [
   "/best-hair-removal-device-uk-2026",
   "/best-led-face-mask-uk-2026-previous",
   "/best-led-face-mask-uk-2026-video-test",
+  "/best-led-face-mask-video-review-uk",
   "/new-advertorial",
-  "/theraface-vs-other-masks",
-  "/deluxeskin-vs-buudy",
-  "/qureskincare-vs-buudy",
+  "/new-led-face-mask-review-uk",
+
+  // Direct comparison routes
   "/currentbody-vs-buudy",
+  "/currentbody-skin-led-light-therapy-mask-review-uk",
+  "/deluxeskin-vs-buudy",
+  "/deluxskin-led-facial-mask-review-uk",
+  "/qureskincare-vs-buudy",
+  "/qure-skincare-light-therapy-mask-review-uk",
+  "/theraface-vs-other-masks",
+  "/theraface-vs-buudy",
+  "/theraface-mask-review-uk",
+
+  // Warning and educational guide routes
   "/silicone-led-mask-dangers",
+  "/silicon-led-mask-warning-uk",
   "/floating-head-warning",
+  "/floating-head-led-mask-warning-uk",
   "/missing-colors-expose",
+  "/missing-colors-led-mask-expose-uk",
   "/led-density-scam",
+  "/led-density-scam-uk",
   "/brand-name-premium",
+  "/brand-name-premium-led-mask-uk",
+
+  // All 6 Blog Articles
+  "/blog/red-light-therapy-ultimate-guide",
+  "/blog/blue-red-light-blemish-prone-skin",
+  "/blog/led-masks-for-mature-skin",
+  "/blog/led-mask-face-neck-coverage-guide",
+  "/blog/choosing-safe-led-mask",
+  "/blog/understanding-led-light-colours",
+
+  // Legal routes
   "/privacy",
   "/terms",
   "/disclosure",
-  "/contact",
-  "/blog/red-light-therapy-ultimate-guide"
+  "/contact"
 ];
 
 function pathnameFromSegments(path?: string[]) {

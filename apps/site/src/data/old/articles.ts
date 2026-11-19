@@ -95,7 +95,7 @@ export const articles: Article[] = [
     seoKeywords: "led mask with neck coverage, led mask face and neck, neck led therapy uk, full coverage led mask",
     author: "Trustpilot Review Shop Editorial",
     date: "February 15, 2026",
-    image: "https://img.thesitebase.net/10677/10677322/themes/176872504642f0322d65.jpeg",
+    image: "/img/neck_led_mask_1774237229811.png",
     excerpt: "When shopping for an LED mask, one detail that many buyers overlook is coverage area. Most masks stop at the jawline, but the neck is often the area that could benefit most from attention. Here is what to consider.",
     content: [
       "If you are in the market for an LED face mask, you have probably noticed that the vast majority of devices on the market cover only the face — from forehead to chin. This seems logical at first glance, but many skin care professionals point out that the neck and upper chest are areas where skin changes often become noticeable first, particularly as we get older.",
@@ -143,7 +143,7 @@ export const articles: Article[] = [
     seoKeywords: "led mask colours explained, green light therapy, yellow light skin, 7 colour led mask, led wavelengths",
     author: "Trustpilot Review Shop Editorial",
     date: "January 20, 2026",
-    image: "/img/shark.png",
+    image: "/img/seven_colors_mask_1774237479088.png",
     excerpt: "LED masks come with different colour options, but what does each colour actually do? Here is a plain-English breakdown of the 7 most common LED wavelengths and what each one is typically associated with in skin care contexts.",
     content: [
       "If you have looked at LED face masks, you have probably noticed that they come with different colour options. Some masks offer just one or two colours, while others include up to seven. But what is the difference between red and blue? What about green or yellow? Here is a straightforward guide to help you understand what each wavelength is commonly used for.",
