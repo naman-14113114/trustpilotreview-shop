@@ -8,7 +8,16 @@ import BestLedFaceMaskAdvertorial from "@/legacy-pages/BestLedFaceMaskAdvertoria
 import Article from "@/legacy-pages/old/Article";
 import Home from "@/legacy-pages/old/Home";
 import Legal from "@/legacy-pages/old/Legal";
+import BrandNamePremium from "@/legacy-pages/old/BrandNamePremium";
+import CurrentbodyComparison from "@/legacy-pages/old/CurrentbodyComparison";
+import DeluxeskinComparison from "@/legacy-pages/old/DeluxeskinComparison";
+import FloatingHeadWarning from "@/legacy-pages/old/FloatingHeadWarning";
+import LedDensityScam from "@/legacy-pages/old/LedDensityScam";
+import MissingColorsExpose from "@/legacy-pages/old/MissingColorsExpose";
 import NewAdvertorial from "@/legacy-pages/old/NewAdvertorial";
+import QureskincareComparison from "@/legacy-pages/old/QureskincareComparison";
+import SiliconMaskWarning from "@/legacy-pages/old/SiliconMaskWarning";
+import TherafaceComparison from "@/legacy-pages/old/TherafaceComparison";
 import VideoAdvertorial from "@/legacy-pages/old/VideoAdvertorial";
 import { LegacyRouterProvider } from "@/lib/router-shim";
 import type { PageMarketContext } from "@/lib/marketContext";
@@ -21,9 +30,24 @@ type Props = {
 };
 
 const noShellPages: Record<string, ComponentType> = {
+  // Advertorial variants
   "/new-advertorial": NewAdvertorial,
   "/best-led-face-mask-uk-2026-previous": VideoAdvertorial,
-  "/best-led-face-mask-uk-2026-video-test": VideoAdvertorial
+  "/best-led-face-mask-uk-2026-video-test": VideoAdvertorial,
+
+  // Direct comparison pages
+  "/currentbody-vs-buudy": CurrentbodyComparison,
+  "/deluxeskin-vs-buudy": DeluxeskinComparison,
+  "/qureskincare-vs-buudy": QureskincareComparison,
+  "/theraface-vs-other-masks": TherafaceComparison,
+  "/theraface-vs-buudy": TherafaceComparison,
+
+  // Warning and educational guide pages
+  "/silicone-led-mask-dangers": SiliconMaskWarning,
+  "/floating-head-warning": FloatingHeadWarning,
+  "/missing-colors-expose": MissingColorsExpose,
+  "/led-density-scam": LedDensityScam,
+  "/brand-name-premium": BrandNamePremium,
 };
 
 function Shell({ children }: { children: ReactNode }) {
@@ -37,8 +61,11 @@ export default function LegacyRouteClient({ pathname, params, context }: Props) 
 
   return (
     <LegacyRouterProvider pathname={pathname} params={params ?? {}}>
-      {getBuudyEditorialPage(pathname) ? (
-        <BuudyEditorialPage pathname={pathname} />
+      {noShellPages[pathname] ? (
+        (() => {
+          const Page = noShellPages[pathname];
+          return <Page />;
+        })()
       ) : pathname === "/best-led-face-mask-uk-2026" ? (
         <BestLedFaceMaskAdvertorial market="uk" context={context} />
       ) : pathname.startsWith("/blog/") ? (
@@ -49,11 +76,8 @@ export default function LegacyRouteClient({ pathname, params, context }: Props) 
         <Shell>
           <Legal />
         </Shell>
-      ) : noShellPages[pathname] ? (
-        (() => {
-          const Page = noShellPages[pathname];
-          return <Page />;
-        })()
+      ) : getBuudyEditorialPage(pathname) ? (
+        <BuudyEditorialPage pathname={pathname} />
       ) : (
         <Shell>
           <Home />

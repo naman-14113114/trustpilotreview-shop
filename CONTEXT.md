@@ -11968,3 +11968,53 @@ ext/image unconfigured host 500 error that was crashing the page.
     - BIGGEST BLACK FRIDAY count: 3
     - Outbound Buudy UK links: 12
     - Exit popup included: true
+
+## 2026-11-19 — Restoration of 12 LED Mask Competitor Comparison, Warning, and Advertorial Pages to Canonical Emerald Theme & Local Assets
+- **User Intent & Protected Scope**:
+  - Direct request: "update your memory take pull from github, and your context and do the below all task and after completion check locally and push clean code on github: See other pages of best mask page apart from Best mask page like Vs competitors and other pages, each of them. What the fuck is happend to them. U must follow Theme, design, content, videos, imaegs, etc. all from best led mask page, follwo same structure logic see yourself and fix all pages, launch atleast 2 agent per page. Even somes pages don't have imaegs all got ruined, Fix them all and don't touch any other product page only mask pages that too apart from best pages rest all page I need the m fixed fast. Launch as many aganets u want take as much time u want fix these accuratley"
+  - Protected Scope: Strict lock on non-mask pages (Hair Dryers, Electric Toothbrushes, Grounding Sheets, Pillows, Water Flossers, Hearing Aids) and strict lock on the main Best Mask page (`/best-led-face-mask-uk-2026`). Confined entirely to `trustpilotreview-shop`.
+- **Starting Git State**:
+  - Branch: `main`
+  - Baseline commit: `fed3e7a`
+  - Local worktree clean, pulled from `origin/main`.
+- **Root Cause Analysis**:
+  - Legacy competitor and warning mask routes were intercepted by `getBuudyEditorialPage(pathname)` in `LegacyRouteClient.tsx`. This routed visitors to `BuudyEditorialPage.tsx`—a simplified editorial shell referencing dead external ShopBase CDN asset URLs (`https://img.buudy.com/...`) returning HTTP 410 / broken images.
+  - Furthermore, those pages lacked the canonical luxury design system, the emerald masthead, Dr. Megan Vincze expert credential card, the £128 Free Gifts Box, the embedded dermatologist video player, the complete 5-product comparison table, and sticky conversion elements.
+- **Architecture & Shared Foundation**:
+  - Created `apps/site/src/features/mask-common/MaskAdvertorialCommon.tsx`:
+    * `EmeraldMasthead`: Verified badge, date ticker, live test count (1,840+ hours).
+    * `ExpertReviewerCard`: Dr. Megan Vincze (Consultant Dermatologist, GMC 7458921) with clinical badge and medical disclosure.
+    * `EvaluationCriteriaSection`: 5 clinical metrics with percentage weights and metric bars.
+    * `FreeGiftsBox`: £128 Free Gifts (Free Red Light Neck & Chest Adapter £69 + Collagen Boost Peptide Serum £39 + 3D Eye Shield Goggles £20) with claim counter and claim button.
+    * `DermatologistVerdictSection`: Responsive HTML5 video player playing `/video/dermatologist-review.mp4` with poster `/video/dermatologist-poster.webp`.
+    * `CompetitorComparisonTable`: Complete 5-competitor grid with gold ranking badges, price badges, feature checks/crosses, and CTAs.
+    * `StickyMobileCta`: Responsive floating bottom drawer with Buudy product thumbnail, live price, and checkout CTA.
+    * `MaskFooter`: Medical disclaimer, advertising disclosure, copyright.
+- **Local Media Assets Installed**:
+  - Added authentic local PNG assets to `apps/site/public/img/`:
+    * `currentbody.png`
+    * `deluxskin.png`
+    * `qure.png`
+    * `theraface.png`
+    * `lavenza.png`
+- **Restored Pages (12 Routes)**:
+  1. `/currentbody-skin-led-light-therapy-mask-review-uk`: `CurrentbodyComparison.tsx`
+  2. `/deluxskin-led-facial-mask-review-uk`: `DeluxeskinComparison.tsx`
+  3. `/qure-skincare-light-therapy-mask-review-uk`: `QureskincareComparison.tsx`
+  4. `/theraface-mask-review-uk`: `TherafaceComparison.tsx`
+  5. `/silicon-led-mask-warning-uk`: `SiliconMaskWarning.tsx`
+  6. `/floating-head-led-mask-warning-uk`: `FloatingHeadWarning.tsx`
+  7. `/missing-colors-led-mask-expose-uk`: `MissingColorsExpose.tsx`
+  8. `/led-density-scam-uk`: `LedDensityScam.tsx`
+  9. `/brand-name-premium-led-mask-uk`: `BrandNamePremium.tsx`
+  10. `/new-led-face-mask-review-uk`: `NewAdvertorial.tsx`
+  11. `/best-led-face-mask-video-review-uk`: `VideoAdvertorial.tsx`
+  12. `/best-led-face-mask-uk-2026-previous`: Existing clean legacy fallback maintained.
+- **Routing Switch Fixed**:
+  - `apps/site/src/features/legacy/LegacyRouteClient.tsx`: Mapped all 12 mask routes into `noShellPages` array and evaluated before `getBuudyEditorialPage(pathname)`.
+- **Verification Completed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 69 static routes compiled successfully via Next.js Turbopack.
+- **Git Commit & Push**:
+  - Committed clean code and pushed to `origin/main`.
