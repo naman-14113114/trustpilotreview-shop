@@ -12149,3 +12149,19 @@ ext/image unconfigured host 500 error that was crashing the page.
   - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 86 static routes generated successfully via Next.js Turbopack.
 - **Ending Git State**:
   - Committed clean code and pushed to `origin/main`.
+
+
+## 2026-11-21 — Removal of Empty Green Circle Avatar Placeholders from Expert Quotes Across All Warning Pages
+- **User Intent & Protected Scope**:
+  - Direct user trigger: "1. if u don;t have images no need to show that green circle too. DO thsi on all other mask pages" [Attachment: screenshot of /silicone-led-mask-dangers showing empty green circle avatar next to Dr. Sarah Mitchell and Dr. James Chen]
+  - Strict Scope Lock:
+    * Confined strictly to mask warning pages. Zero edits to `BestLedFaceMaskAdvertorial.tsx` or non-mask pages.
+- **Root Cause & Corrections**:
+  - In `SiliconMaskWarning.tsx`, `FloatingHeadWarning.tsx`, `MissingColorsExpose.tsx`, `LedDensityScam.tsx`, and `BrandNamePremium.tsx`, the `expertQuotes` section rendered an empty green circle placeholder (`w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-lg shrink-0` with `{expert.name.charAt(3)}`). Because charAt(3) for names starting with "Dr. " resolved to a space character `" "`, it displayed as a blank green circle.
+  - Removed the green circle container from all 5 warning pages, cleanly presenting the expert doctor's name and credential title directly without missing avatar graphics.
+- **Verification Completed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 86 static routes generated successfully.
+- **Ending Git State**:
+  - Committed clean code and pushed to `origin/main`.

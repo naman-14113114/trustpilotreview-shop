@@ -220,16 +220,11 @@ export default function FloatingHeadWarning() {
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-lg shrink-0">
-                    {expert.name.charAt(3)}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-lg">
-                      {expert.name}
-                    </h3>
-                    <p className="text-sm text-slate-500">{expert.title}</p>
-                  </div>
+                <div className="mb-4">
+                  <h3 className="font-bold text-slate-900 text-lg">
+                    {expert.name}
+                  </h3>
+                  <p className="text-sm text-slate-500">{expert.title}</p>
                 </div>
                 <blockquote className="text-slate-700 italic leading-relaxed text-base md:text-lg">
                   "{expert.quote}"
