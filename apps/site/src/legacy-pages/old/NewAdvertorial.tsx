@@ -197,7 +197,6 @@ export default function NewAdvertorial() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="Top 5 Best LED Face Masks in the UK"
-        subtitle="Ranked by board-certified dermatologists based on wavelengths, coverage, and value."
         badgeText="United Kingdom - 2026"
       />
 

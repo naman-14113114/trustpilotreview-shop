@@ -288,7 +288,6 @@ export default function TherafaceComparison() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="TheraFace Mask vs Other Masks: UK Comparison"
-        subtitle="High-tech features vs real-world comfort, neck coverage, and price."
         badgeText="United Kingdom - 2026"
       />
 

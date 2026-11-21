@@ -204,7 +204,6 @@ export default function CurrentbodyComparison() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="CurrentBody vs Buudy: Best LED Face Mask UK"
-        subtitle="Independent dermatological comparison: clinical wavelengths, neck coverage, and real value."
         badgeText="United Kingdom - 2026"
       />
 

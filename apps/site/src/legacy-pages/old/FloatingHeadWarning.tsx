@@ -108,9 +108,7 @@ export default function FloatingHeadWarning() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="The £300 'Neck Tax': Why Buying A Face-Only LED Mask Is A Huge Mistake"
-        subtitle="How ignoring your neck causes the 'floating head' aging effect—and why you shouldn't pay £300 extra to fix it."
         badgeText="United Kingdom - 2026"
-        alertBadge="CRITICAL DESIGN FLAW EXPOSÉ"
       />
 
       {/* Expert Reviewer Card */}

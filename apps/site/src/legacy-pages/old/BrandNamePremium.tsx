@@ -107,9 +107,7 @@ export default function BrandNamePremium() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="The 'Celebrity Markup': Are You Paying For Light Therapy Or Marketing?"
-        subtitle="Why a £500 price tag often reflects celebrity endorsement contracts, not superior LED chips."
         badgeText="United Kingdom - 2026"
-        alertBadge="PRICE TRANSPARENCY REPORT"
       />
 
       {/* Expert Reviewer Card */}

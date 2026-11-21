@@ -12124,3 +12124,28 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Zero outside repo modifications.
 - **Git Commit & Push**:
   - Committed clean code and pushed to `origin/main`.
+
+
+## 2026-11-21 — Removal of Editorial Alert Badge, Masthead Subtitle Description, and Unauthorized Second Article Image Across All LED Mask Pages
+- **User Intent & Protected Scope**:
+  - Direct user trigger: "no need to wrir this editorial or description below heading and remove that 2nd image from there u r not allowed to use any other image han best 5 page, fix it if presnrt on all other mask pages"
+  - Strict Scope Lock:
+    * Zero edits to `BestLedFaceMaskAdvertorial.tsx` (READ-ONLY canonical reference).
+    * Zero edits to outside repositories (`Best_Product_Verdict`, `uk.Buudy`, `buudy`, etc.).
+    * Zero edits to non-mask product pages.
+    * Only mask pages and common mask advertorial components touched.
+- **Starting Git State**:
+  - Baseline commit: `82ff55e`
+  - Clean working copy on `main`, synchronized with `origin/main`.
+- **Root Cause & Corrections**:
+  1. `EmeraldMasthead` in `MaskAdvertorialCommon.tsx` had retained conditional rendering of an `alertBadge` (e.g. `CLINICAL EDITORIAL`, `CONSUMER HEALTH ALERT`) and a `subtitle` paragraph below the heading. In `BestLedFaceMaskAdvertorial.tsx`, the masthead only has the `<h1>` (title + flag + country) and the `Last updated – <date>` timestamp.
+  2. Removed both `alertBadge` and `subtitle` rendering from `EmeraldMasthead` in `MaskAdvertorialCommon.tsx`.
+  3. Cleaned up call sites across all 12 mask pages (`Article.tsx`, `BrandNamePremium.tsx`, `CurrentbodyComparison.tsx`, `DeluxeskinComparison.tsx`, `FloatingHeadWarning.tsx`, `LedDensityScam.tsx`, `MissingColorsExpose.tsx`, `NewAdvertorial.tsx`, `QureskincareComparison.tsx`, `SiliconMaskWarning.tsx`, `TherafaceComparison.tsx`, `VideoAdvertorial.tsx`).
+  4. On `Article.tsx`, lines 90-103 rendered an unauthorized 2nd image (`article.image`), which was the AI-generated photo of a woman in a clinical room wearing an LED mask. Removed this image block entirely.
+  5. Verified across all mask sub-pages that NO images outside the canonical 5-mask advertorial assets (`/img/TOP 5 LED Mask uk.png`, `/img/14.webp`, `/img/57-w.webp`, `/img/currentbody.png`, `/img/omnilux.png`, `/img/shark.png`, `/img/drdennis.png`, `/img/93-w.webp`, `/img/35-w.webp`, `/img/94-w.webp`, `/assets/buudy-dermatologist-verdict-poster.jpg`) are used.
+- **Verification Completed**:
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 86 static routes generated successfully via Next.js Turbopack.
+- **Ending Git State**:
+  - Committed clean code and pushed to `origin/main`.

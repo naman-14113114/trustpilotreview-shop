@@ -42,9 +42,7 @@ export default function Article() {
       {/* Emerald Top Header & Market Masthead */}
       <EmeraldMasthead
         title={article.title}
-        subtitle={article.excerpt}
         badgeText="United Kingdom - 2026"
-        alertBadge="CLINICAL EDITORIAL"
       />
 
       {/* Expert Reviewer Credential Card */}
@@ -87,20 +85,6 @@ export default function Article() {
             </div>
           </div>
 
-          {/* Featured Article Image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 border border-slate-200/80 bg-slate-900">
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full h-auto max-h-[500px] object-cover mx-auto"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-4 left-4 right-4 text-left">
-              <span className="inline-block bg-white/90 backdrop-blur-md text-slate-900 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
-                Verified Medical-Grade Phototherapy Analysis
-              </span>
-            </div>
-          </div>
 
           {/* Lead Excerpt */}
           <div className="bg-emerald-50/70 border-l-4 border-emerald-500 rounded-r-2xl p-6 text-left my-8">

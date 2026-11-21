@@ -130,9 +130,7 @@ export default function MissingColorsExpose() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="The 2-Colour Trap: Why Your £400 LED Mask Is Only Doing Half The Job"
-        subtitle="Why single or dual-wavelength masks ignore acne, redness, and dark spots—and how full-spectrum therapy works."
         badgeText="United Kingdom - 2026"
-        alertBadge="SPECIAL INVESTIGATION"
       />
 
       {/* Expert Reviewer Card */}

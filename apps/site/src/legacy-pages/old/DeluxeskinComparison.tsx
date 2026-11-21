@@ -289,7 +289,6 @@ export default function DeluxeskinComparison() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="DeluxeSkin vs Buudy: Best LED Face Mask UK"
-        subtitle="Clinical analysis: dual-chip coverage, wavelength spectrum, and value."
         badgeText="United Kingdom - 2026"
       />
 

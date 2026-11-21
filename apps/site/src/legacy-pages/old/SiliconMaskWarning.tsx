@@ -155,9 +155,7 @@ export default function SiliconMaskWarning() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="Why Silicone LED Masks Are Damaging Your Skin"
-        subtitle="The 6 hidden dangers dermatologists warn about: heat trapping, bacterial growth, and light loss."
         badgeText="United Kingdom - 2026"
-        alertBadge="CONSUMER HEALTH ALERT"
       />
 
       {/* Expert Reviewer Card */}

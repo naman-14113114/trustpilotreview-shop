@@ -297,7 +297,6 @@ export default function QureskincareComparison() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="Qure Skincare vs Buudy: Best LED Face Mask UK"
-        subtitle="Custom zone controls vs 7-colour full-face and neck therapy."
         badgeText="United Kingdom - 2026"
       />
 

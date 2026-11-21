@@ -107,9 +107,7 @@ export default function LedDensityScam() {
       {/* Emerald Masthead */}
       <EmeraldMasthead
         title="The LED Density Scam: Is Your Expensive Mask Actually Treating Nothing?"
-        subtitle="Why sparse LED diodes create facial 'dead zones'—and why diode count and irradiance matter."
         badgeText="United Kingdom - 2026"
-        alertBadge="TECHNICAL AUDIT"
       />
 
       {/* Expert Reviewer Card */}

@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Check,
   Play,
-  AlertTriangle,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { GreenStarIcon, GreenStarRating } from "@/components/GreenStarRating";
@@ -150,9 +149,7 @@ export const MetricBar: React.FC<{ label: string; value: number }> = ({
 
 export function EmeraldMasthead({
   title,
-  subtitle,
   badgeText = "United Kingdom - 2026",
-  alertBadge,
 }: {
   title: string | React.ReactNode;
   subtitle?: string;
@@ -165,12 +162,6 @@ export function EmeraldMasthead({
   return (
     <div className="bg-emerald-500 border-b border-emerald-600 pt-5 pb-6 px-4 md:pt-6 md:pb-8">
       <div className="max-w-6xl mx-auto text-center">
-        {alertBadge && (
-          <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-3 shadow-sm border border-amber-300">
-            <AlertTriangle size={14} className="shrink-0" />
-            {alertBadge}
-          </div>
-        )}
         <h1 className="mx-[-0.25rem] text-[clamp(1.3rem,6.6vw,2.5rem)] md:mx-0 md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 md:mb-6 font-serif text-center">
           <span className="block">{title}</span>
           <span className="mt-2 flex items-center justify-center gap-2 text-[0.72em] md:gap-3">
@@ -178,11 +169,6 @@ export function EmeraldMasthead({
             <span>{badgeText}</span>
           </span>
         </h1>
-        {subtitle && (
-          <p className="max-w-3xl mx-auto text-emerald-50 text-sm md:text-base font-medium mb-3">
-            {subtitle}
-          </p>
-        )}
         <div className="flex items-center justify-center gap-2 md:gap-2.5 text-base md:text-lg font-bold text-white">
           <CheckCircle2 size={20} className="text-white shrink-0" />
           Last updated – <span suppressHydrationWarning>{updatedDate}</span>
