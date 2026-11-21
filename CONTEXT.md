@@ -12068,3 +12068,59 @@ ext/image unconfigured host 500 error that was crashing the page.
   - Local asset scan: 100% of referenced image paths exist on disk.
 - **Git Commit & Push**:
   - Committed clean code and pushed to `origin/main`.
+
+
+## 2026-11-21 — Parity Alignment of All Other LED Mask Pages to the Best Mask Page Layout, Design Structure, Sticky Scrolling, and Comparison Architecture
+- **User Intent & Protected Scope**:
+  - Direct user trigger: "See all other mask page except best mask page, u must follow design structure, padding, scrolling effect imaegs everthing from best mask page not from your memory, go see that page first and fix all these rest mask paeg below compersion everthing is fucked up. launch multiple sub agents open locla browser see and fix design stucture everything all animation all effects I wnat same take same code from best mask page no need ot do anything extra code, if u already have somethign resuse that functionality, algo, logic, funcions, etc. [Attachment: image/png showing mid-article card on /blog/led-mask-face-neck-coverage-guide]"
+  - Strict Scope Lock:
+    * Zero edits to `BestLedFaceMaskAdvertorial.tsx` (READ-ONLY canonical reference).
+    * Zero edits to outside repositories (`Best_Product_Verdict`, `uk.Buudy`, `buudy`, etc.).
+    * Zero edits to non-mask product pages (Hair Dryers, Electric Toothbrushes, Grounding Sheets, Pillows, Water Flossers, Hearing Aids).
+    * Work strictly confined to LED Mask sub-pages: 6 blog articles via `Article.tsx`, 5 warning/expose pages (`SiliconMaskWarning.tsx`, `FloatingHeadWarning.tsx`, `MissingColorsExpose.tsx`, `LedDensityScam.tsx`, `BrandNamePremium.tsx`), 4 competitor comparisons, 2 advertorial variants, and the shared component `MaskAdvertorialCommon.tsx`.
+- **Starting Git State**:
+  - Branch: `main`
+  - Baseline commit: `c7abd60`
+  - Local worktree clean, pulled from `origin/main`.
+- **Root Cause Analysis & Problems Identified**:
+  1. On `/blog/*` (`Article.tsx`), the mid-article card rendered a custom ad-hoc layout lacking the canonical Card #1 2-column structure, lacking the left-column sticky scrolling (`lg:sticky lg:top-8`), lacking animated `MetricBar` performance metrics, lacking the canonical pros/cons formatting, and lacking the full `#1 Editor's Choice` / `BIGGEST BLACK FRIDAY SALE` treatment.
+  2. Below the comparison on `/blog/*` (`Article.tsx`), `DermatologistVerdictSection` and `CompetitorComparisonTable` sat directly outside any `<main>` container without canonical padding/max-width (`max-w-6xl mx-auto px-4 pb-16`), and `<StickyMobileCta />` was positioned out of order.
+  3. In `apps/site/src/features/mask-common/MaskAdvertorialCommon.tsx`, `CompetitorComparisonTable` was a bare unstyled table lacking the outer card wrapper (`bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans`), title, subtitle, mobile swipe hint, rank badges, checkmarks/crosses, colour dots, and `BIGGEST BLACK FRIDAY SALE` header and price badges.
+  4. The 5 warning/expose pages (`SiliconMaskWarning.tsx`, `FloatingHeadWarning.tsx`, `MissingColorsExpose.tsx`, `LedDensityScam.tsx`, `BrandNamePremium.tsx`) completely lacked the canonical `<CompetitorComparisonTable />` below `DermatologistVerdictSection`.
+- **Changes Implemented**:
+  1. `apps/site/src/features/mask-common/MaskAdvertorialCommon.tsx`:
+     - Built and exported `BuudyWinnerProductCard`: Extracted Card #1 directly from `BestLedFaceMaskAdvertorial.tsx` with identical markup, classes, animations, and responsive behavior:
+       * `#1 Editor's Choice` pill badge.
+       * 12-column responsive grid (`lg:grid-cols-12 gap-4 lg:gap-16`).
+       * Left column with sticky scrolling (`lg:sticky lg:top-8 w-full flex flex-col items-center`).
+       * Square image with hover elevation and link to official store.
+       * Price section: £179 / £449 with `BIGGEST BLACK FRIDAY SALE` badge.
+       * Overall rating 4.9 / 5 with Trustpilot-style GreenStarRating.
+       * Primary "Official Website" CTA button.
+       * Right column: Headings, 3-paragraph clinical narrative, animated `MetricBar` performance metrics (Light Effectiveness 97%, Skin Comfort 96%, Ease of Use 97%, Material Quality 96%, Affordability 100%), Pros with `BUUDY_7_COLOR_DOTS`, Cons with red badges, and `FreeGiftsBox` Editor's Tip with spring animation and £128 in Free Gifts (Travel Box, LED Torch, Skincare Guide).
+       * Mobile CTA fallback.
+     - Upgraded `CompetitorComparisonTable`: Replaced the legacy table with the full canonical luxury card table from `BestLedFaceMaskAdvertorial.tsx`:
+       * Container: `bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans`.
+       * Header: Title, subtitle, and mobile horizontal swipe hint.
+       * Table layout: `TOP_5_LED_MASK_COMPARISON_ROWS` with rank badges, images, `BIGGEST BLACK FRIDAY SALE` badge on Buudy, green checkmarks, red crosses, and full spec comparisons.
+  2. `apps/site/src/legacy-pages/old/Article.tsx`:
+     - Replaced the custom ad-hoc mid-article card at `index === 2` with `<BuudyWinnerProductCard />` inside `<div className="not-prose my-12">`.
+     - Enlarged article container to `max-w-5xl` for optimal grid rendering.
+     - Wrapped bottom sections inside `<main className="max-w-6xl mx-auto px-4 pb-16 font-sans">` housing `<DermatologistVerdictSection />` and `<CompetitorComparisonTable />`.
+     - Ordered footer cleanly: `<MaskFooter />` followed by `<StickyMobileCta />`.
+  3. Warning / Exposé Pages (`SiliconMaskWarning.tsx`, `FloatingHeadWarning.tsx`, `MissingColorsExpose.tsx`, `LedDensityScam.tsx`, `BrandNamePremium.tsx`):
+     - Imported `CompetitorComparisonTable` from `@/features/mask-common/MaskAdvertorialCommon`.
+     - Added `<CompetitorComparisonTable />` below `<DermatologistVerdictSection />` inside `<main>` before the footer.
+- **Verification Completed**:
+  - Live inspection via `chrome-devtools-mcp` on `http://localhost:3000`:
+    * Evaluated `/blog/led-mask-face-neck-coverage-guide`: Verified sticky column (`lg:sticky lg:top-8`), video verdict player, and 9-row comparison table with full headers and `BIGGEST BLACK FRIDAY SALE` badge.
+    * Evaluated `/silicone-led-mask-dangers`: Verified sticky column, video verdict player, and full 5-product comparison table below verdict.
+    * Evaluated `/currentbody-vs-buudy`: Verified sticky column, video verdict player, and canonical comparison table.
+  - `pnpm --filter @trustpilotreview/site typecheck`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site lint`: Passed with 0 errors.
+  - `pnpm --filter @trustpilotreview/site build`: Passed with 0 errors; all 86 static routes generated successfully via Next.js Turbopack.
+- **Ending Git State**:
+  - Local modifications in 7 files inside `apps/site/src/`.
+  - Zero outside repo modifications.
+- **Git Commit & Push**:
+  - Committed clean code and pushed to `origin/main`.

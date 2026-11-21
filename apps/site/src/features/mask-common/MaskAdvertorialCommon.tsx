@@ -578,6 +578,39 @@ export interface ComparisonTableItem {
   freeDelivery?: boolean;
 }
 
+export type ComparisonRowDef =
+  | {
+      key:
+        | "neckCoverage"
+        | "multiSkinModes"
+        | "eyeProtection"
+        | "cordlessRechargeable"
+        | "freeGifts";
+      label: string;
+      kind: "boolean";
+    }
+  | {
+      key: "lightWavelengths" | "moneyBackTrial";
+      label: string;
+      kind: "text";
+    }
+  | {
+      key: "price";
+      label: string;
+      kind: "price";
+    };
+
+export const TOP_5_LED_MASK_COMPARISON_ROWS: ComparisonRowDef[] = [
+  { key: "lightWavelengths", label: "Light Spectrum / Modes", kind: "text" },
+  { key: "neckCoverage", label: "Integrated Neck Coverage", kind: "boolean" },
+  { key: "multiSkinModes", label: "Total Skin Health (Acne, Tone, Aging)", kind: "boolean" },
+  { key: "eyeProtection", label: "Built-in Eye Protection", kind: "boolean" },
+  { key: "cordlessRechargeable", label: "Cordless & Hands-Free", kind: "boolean" },
+  { key: "freeGifts", label: "Free Deluxe Gift Bundle", kind: "boolean" },
+  { key: "moneyBackTrial", label: "Risk-Free Trial", kind: "text" },
+  { key: "price", label: "Price", kind: "price" },
+];
+
 export const CANONICAL_5_COMPARISON_PRODUCTS: ComparisonTableItem[] = [
   {
     rank: 1,
@@ -602,7 +635,7 @@ export const CANONICAL_5_COMPARISON_PRODUCTS: ComparisonTableItem[] = [
     rank: 2,
     name: "CurrentBody LED Mask",
     shortName: "CurrentBody",
-    image: "/img/currentbody.png",
+    image: "/img/Untitled design.png",
     price: "£399.99",
     rating: 4.7,
     ledCount: "132 LEDs",
@@ -642,12 +675,12 @@ export const CANONICAL_5_COMPARISON_PRODUCTS: ComparisonTableItem[] = [
     price: "£299.99",
     rating: 4.6,
     ledCount: "Unspecified",
-    lightWavelengths: "Red & Blue + Under-Eye Cryo",
+    lightWavelengths: "Red & Blue (4 Modes)",
     colorDots: RED_BLUE_DOTS,
     neckCoverage: false,
     multiSkinModes: false,
-    eyeProtection: false,
-    cordlessRechargeable: true,
+    eyeProtection: true,
+    cordlessRechargeable: false,
     freeGifts: false,
     moneyBackTrial: "30-Day Guarantee",
     freeDelivery: false,
@@ -678,212 +711,473 @@ export function CompetitorComparisonTable({
   products?: ComparisonTableItem[];
 }) {
   return (
-    <section className="mt-16 md:mt-24 mb-16">
-      <div className="text-center mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif tracking-tight mb-3">
-          Side-by-Side Comparison
+    <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-sm mt-16 mb-12 max-w-6xl mx-auto font-sans">
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 font-serif">
+          Top 5 LED Face Masks Side-by-Side Comparison
         </h2>
-        <p className="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">
-          See how the top LED face masks compare across key clinical specs,
-          coverage, and value.
+        <p className="text-slate-600 mt-2 text-sm md:text-base font-sans">
+          Detailed technical specifications, light wavelengths, included coverage, and ownership value compared across the UK&apos;s leading 2026 models.
         </p>
       </div>
 
-      <div className="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm bg-white">
-        <table className="w-full min-w-[700px] border-collapse text-left text-sm">
+      {/* Mobile Swipe Hint */}
+      <div className="block lg:hidden text-center text-xs text-slate-500 font-medium mb-4 bg-slate-50 py-2 px-3 rounded-lg border border-slate-100 font-sans">
+        ← Swipe horizontally to compare all 5 masks →
+      </div>
+
+      {/* Table Container */}
+      <div className="overflow-x-auto -mx-2 sm:mx-0">
+        <table className="w-full text-left border-collapse min-w-[720px] lg:min-w-full table-fixed font-sans">
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50/80">
-              <th className="py-4 px-4 font-bold text-slate-900 w-48">Feature</th>
-              {products.map((p) => (
+            <tr className="border-b-2 border-slate-200">
+              <th className="py-4 px-3 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm md:text-base w-[18%] bg-slate-50/50 rounded-tl-xl align-bottom font-sans">
+                Feature / Metric
+              </th>
+              {products.map((prod) => (
                 <th
-                  key={p.rank}
-                  className={`py-4 px-3 text-center ${
-                    p.rank === 1
-                      ? "bg-emerald-50/60 font-black text-emerald-950 border-x border-emerald-200"
-                      : "font-bold text-slate-800"
+                  key={prod.rank}
+                  className={`py-4 px-2 text-center w-[16.4%] align-top border-l border-slate-200 ${
+                    prod.rank === 1 ? "bg-emerald-50/40" : "bg-white"
                   }`}
                 >
                   <div className="flex flex-col items-center">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="w-14 h-14 object-cover rounded-xl border border-slate-200 mb-2"
-                    />
-                    <span className="text-xs text-slate-500 font-semibold mb-0.5">
-                      #{p.rank} Pick
+                    <span
+                      className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-1.5 font-sans ${
+                        prod.rank === 1 ? "text-emerald-700" : "text-slate-500"
+                      }`}
+                    >
+                      #{prod.rank} {prod.rank === 1 ? "Winner" : "Ranked"}
                     </span>
-                    <span className="text-xs md:text-sm line-clamp-1">{p.shortName}</span>
-                    <span className="text-sm font-extrabold text-slate-900 mt-1">
-                      {p.price}
+                    <div
+                      className={
+                        prod.rank === 1
+                          ? "w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square mb-2.5 rounded-2xl overflow-hidden bg-white border-2 border-emerald-500/50 shadow-md flex items-center justify-center p-0"
+                          : "w-full max-w-[95px] sm:max-w-[110px] md:max-w-[125px] aspect-square mb-2.5 rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm flex items-center justify-center p-1.5"
+                      }
+                    >
+                      <img
+                        src={prod.image}
+                        alt={prod.name}
+                        loading="lazy"
+                        decoding="async"
+                        className={
+                          prod.rank === 1
+                            ? "w-full h-full object-cover rounded-2xl"
+                            : "max-h-full max-w-full object-contain"
+                        }
+                      />
+                    </div>
+                    <span className="font-bold text-slate-900 text-sm sm:text-base md:text-lg line-clamp-1 mb-1 font-sans">
+                      {prod.shortName}
                     </span>
+                    <div className="mb-2 scale-90 sm:scale-100">
+                      <GreenStarRating rating={prod.rating} size={14} />
+                    </div>
+                    <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                      <span className="text-base sm:text-xl md:text-2xl font-black text-slate-900">
+                        {prod.price}
+                      </span>
+                      {prod.originalPrice && (
+                        <span className="text-xs sm:text-sm text-slate-400 line-through font-medium">
+                          {prod.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                    {prod.rank === 1 && (
+                      <div className="mt-1.5 flex justify-center">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-2 sm:px-2.5 py-0.5 text-[8px] sm:text-[9px] md:text-[10px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">
+                          BIGGEST BLACK FRIDAY SALE
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Light Spectrum / Modes</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center text-xs leading-snug ${
-                    p.rank === 1
-                      ? "bg-emerald-50/30 font-bold text-emerald-900 border-x border-emerald-100"
-                      : "text-slate-600"
-                  }`}
-                >
-                  {p.lightWavelengths}
+          <tbody className="divide-y divide-slate-100 text-xs sm:text-sm font-sans">
+            {TOP_5_LED_MASK_COMPARISON_ROWS.map((row, idx) => (
+              <tr
+                key={row.key}
+                className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"}
+              >
+                <td className="py-3.5 px-3 sm:px-4 font-semibold text-slate-800 align-middle text-xs sm:text-sm font-sans">
+                  {row.label}
                 </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Integrated Neck Coverage</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/30 border-x border-emerald-100" : ""
-                  }`}
-                >
-                  {p.neckCoverage ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-bold text-xs">
-                      <Check size={16} /> Yes
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-red-500 font-medium text-xs">
-                      <XCircle size={16} /> No
-                    </span>
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Total Skin Health (7-Color)</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/30 border-x border-emerald-100" : ""
-                  }`}
-                >
-                  {p.multiSkinModes ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-bold text-xs">
-                      <Check size={16} /> Yes
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-red-500 font-medium text-xs">
-                      <XCircle size={16} /> No
-                    </span>
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Built-in Eye Protection</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/30 border-x border-emerald-100" : ""
-                  }`}
-                >
-                  {p.eyeProtection ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-bold text-xs">
-                      <Check size={16} /> Yes
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-red-500 font-medium text-xs">
-                      <XCircle size={16} /> No
-                    </span>
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Cordless & Hands-Free</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/30 border-x border-emerald-100" : ""
-                  }`}
-                >
-                  {p.cordlessRechargeable ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-bold text-xs">
-                      <Check size={16} /> Yes
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-red-500 font-medium text-xs">
-                      <XCircle size={16} /> No
-                    </span>
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Free Deluxe Gift Bundle</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/30 border-x border-emerald-100" : ""
-                  }`}
-                >
-                  {p.freeGifts ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-bold text-xs bg-emerald-100 px-2 py-0.5 rounded-full">
-                      <Check size={14} /> £128 Value
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-slate-400 text-xs">
-                      <XCircle size={16} /> None
-                    </span>
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="py-3.5 px-4 font-semibold text-slate-700">Risk-Free Trial</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-3.5 px-3 text-center text-xs ${
-                    p.rank === 1
-                      ? "bg-emerald-50/30 font-bold text-emerald-900 border-x border-emerald-100"
-                      : "text-slate-600"
-                  }`}
-                >
-                  {p.moneyBackTrial}
-                </td>
-              ))}
-            </tr>
-            <tr className="bg-slate-50/50">
-              <td className="py-4 px-4 font-bold text-slate-900">Final Verdict</td>
-              {products.map((p) => (
-                <td
-                  key={p.rank}
-                  className={`py-4 px-3 text-center ${
-                    p.rank === 1 ? "bg-emerald-50/80 border-x border-emerald-200" : ""
-                  }`}
-                >
-                  {p.rank === 1 ? (
-                    <OutboundButton
-                      href={BUUDY_OFFICIAL_URL}
-                      ariaLabel="Check Buudy Availability"
-                      className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs py-2 px-3 rounded-full shadow-md transition-transform hover:scale-105"
+                {products.map((prod) => {
+                  if (row.kind === "boolean") {
+                    const isPassed = (prod as any)[row.key];
+                    return (
+                      <td
+                        key={`${prod.rank}-${row.key}`}
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
+                      >
+                        <div className="flex items-center justify-center">
+                          {isPassed ? (
+                            <Check className="w-5 h-5 text-emerald-500 shrink-0" />
+                          ) : (
+                            <XCircle className="w-5 h-5 text-red-500 shrink-0" />
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  if (row.kind === "price") {
+                    return (
+                      <td
+                        key={`${prod.rank}-price-row`}
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
+                      >
+                        <div className="flex flex-col items-center justify-center gap-1 font-sans">
+                          <div className="flex items-baseline justify-center gap-1.5 font-sans">
+                            <span className="font-extrabold text-slate-900 text-sm sm:text-base md:text-lg">
+                              {prod.price}
+                            </span>
+                            {prod.originalPrice && (
+                              <span className="text-[11px] sm:text-xs text-slate-400 line-through font-medium">
+                                {prod.originalPrice}
+                              </span>
+                            )}
+                          </div>
+                          {prod.rank === 1 && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-2 py-0.5 text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">
+                              BIGGEST BLACK FRIDAY SALE
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  if (row.key === "lightWavelengths") {
+                    const dots = prod.colorDots || [];
+                    return (
+                      <td
+                        key={`${prod.rank}-${row.key}`}
+                        className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                          prod.rank === 1 ? "bg-emerald-50/20" : ""
+                        }`}
+                      >
+                        <div className="flex flex-col items-center justify-center gap-1.5">
+                          {dots.length > 0 && (
+                            <div className="flex items-center justify-center gap-1 flex-wrap max-w-[125px]">
+                              {dots.map((dot, i) => (
+                                <span
+                                  key={i}
+                                  title={dot.name}
+                                  className={`inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full shadow-2xs shrink-0 ${
+                                    dot.border
+                                      ? "border border-slate-300 ring-1 ring-slate-200/50"
+                                      : ""
+                                  }`}
+                                  style={{ backgroundColor: dot.bg }}
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <span className="text-[11px] sm:text-xs md:text-sm font-semibold text-slate-800 font-sans leading-tight">
+                            {prod.lightWavelengths}
+                          </span>
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  const textVal = (prod as any)[row.key];
+                  return (
+                    <td
+                      key={`${prod.rank}-${row.key}`}
+                      className={`py-3.5 px-2 text-center align-middle border-l border-slate-100 ${
+                        prod.rank === 1 ? "bg-emerald-50/20" : ""
+                      }`}
                     >
-                      Top Pick
-                    </OutboundButton>
-                  ) : (
-                    <span className="text-xs text-slate-500 font-medium">Alternative</span>
-                  )}
-                </td>
-              ))}
-            </tr>
+                      <span className="text-xs sm:text-sm font-medium text-slate-800 font-sans">
+                        {textVal}
+                      </span>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </section>
+  );
+}
+
+export function BuudyWinnerProductCard({
+  buudyUrl = BUUDY_OFFICIAL_URL,
+  customDescription,
+  customPros,
+  customCons,
+  customMetrics,
+}: {
+  buudyUrl?: string;
+  customDescription?: string[];
+  customPros?: string[];
+  customCons?: string[];
+  customMetrics?: Array<{ label: string; value: number }>;
+}) {
+  const descriptions = customDescription || [
+    "Our top pick is the Buudy 7 Colour LED Mask, a medical-grade device that outperforms the competition with a <strong>7-colour</strong> spectrum plus 830nm <strong>near-infrared</strong>. While most brands focus only on basic red light, Buudy uses targeted wavelengths to support everything from deep wrinkles and acne to inflammation, uneven tone, and overall skin recovery. This Health Canada Approved technology (with CE, FCC, and ROHS certifications) ensures professional-grade results for all skin types.",
+    'A major advantage is the built-in <strong>neck coverage</strong>, a vital feature often missing from more expensive models. This allows you to treat "turkey neck" and sagging skin simultaneously. The <strong>cordless</strong>, rechargeable design features "Tap Technology" and <strong>Buudy AI</strong> guided sessions, making it simple to choose the right routine for your skin goals.',
+    "Trusted by over 16,000 customers with a <strong>4.9-star</strong> rating, this mask delivers visible improvements in as few as ten uses. Currently priced at £179 during their <strong>Biggest Black Friday Sale</strong>, it offers the best value on the market, combining full-face and neck rejuvenation, advanced eye protection, and a <strong>90-day money-back</strong> guarantee for a safer, lower-risk trial.",
+  ];
+
+  const pros = customPros || [
+    "Proven Results: Has an outstanding rating of 5/5 and 4.9 stars based on over 4,000 reviews and performed well in internal testing.",
+    "7 Colour Medical Grade Spectrum: Unlike competitors with just 2–3 colours, Buudy offers 7 LED colours (Red, Blue, Green, Cyan, Yellow, Purple & White) plus 830nm near-infrared.",
+    "Dermatologist Proven: Health Canada Approved with CE, FCC, and ROHS certifications.",
+    'Built-in Neck Coverage: Specifically designed to target "turkey neck" and sagging skin, a critical feature most expensive brands miss.',
+    "Fast Results: Claims noticeable skin improvement after just a few uses and full results in under 10 uses.",
+    'Cordless, Portable & Guided: A hands-free, rechargeable design with "Tap Technology" and Buudy AI guided sessions that help match each routine to your skin concern.',
+    "Safe and Effective: This painless treatment is suitable for all skin types and includes integrated eye protection for enhanced safety.",
+    "Cost-effective: Currently priced at £179, which is a 60% discount from its regular price of £449.",
+    "90-Day Money-Back Guarantee: Buudy offers a generous 90-day trial period to test for results. If you're not satisfied, you get a full refund.",
+  ];
+
+  const cons = customCons || [
+    "Limited Availability: Available for purchase online only and exclusively in the United Kingdom.",
+    "Limited Stock: There is a risk of the product being sold out due to limited stock.",
+    "Learning Curve: Some users note the intuitive tap controls take a session or two to fully get used to, though most find it second nature after the first few uses.",
+  ];
+
+  const metrics = customMetrics || [
+    { label: "Light Effectiveness", value: 97 },
+    { label: "Skin Comfort and Fit", value: 96 },
+    { label: "Ease of Use", value: 97 },
+    { label: "Material Quality", value: 96 },
+    { label: "Affordability", value: 100 },
+  ];
+
+  return (
+    <div className="relative bg-white rounded-3xl shadow-sm border border-emerald-500 ring-4 ring-emerald-50 pt-10 md:pt-10 p-6 md:p-10 my-12 not-prose">
+      <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm tracking-wide uppercase flex items-center gap-1.5 md:gap-2 shadow-lg z-10 whitespace-nowrap">
+        <Award size={16} className="md:w-[18px] md:h-[18px]" />
+        #1 Editor's Choice
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
+        {/* Left Column: Image & Quick Stats (STICKY) */}
+        <div className="lg:col-span-4 flex flex-col items-center">
+          <div className="lg:sticky lg:top-8 w-full flex flex-col items-center">
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center lg:hidden mt-3">
+              #1 Buudy 7 Colour LED Mask
+            </h2>
+
+            <div className="relative w-full mb-6">
+              <a
+                href={buudyUrl}
+                onClick={(event) => preventPlaceholderNavigation(event, buudyUrl)}
+                className="block w-full group"
+              >
+                <img
+                  src="/img/57-w.webp"
+                  alt="Buudy 7 Colour LED Mask"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-square object-cover rounded-2xl shadow-md border border-slate-100 group-hover:shadow-xl transition-shadow duration-300"
+                />
+              </a>
+            </div>
+
+            <div className="text-center mb-2 lg:mb-6 w-full">
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3 mb-2 flex-wrap">
+                <span className="text-3xl font-extrabold text-slate-900">
+                  £179
+                </span>
+                <span className="text-lg text-slate-400 line-through font-medium">
+                  £449
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">
+                  BIGGEST BLACK FRIDAY SALE
+                </span>
+              </div>
+
+              <a
+                href={buudyUrl}
+                aria-label="View the Buudy LED Mask and customer reviews"
+                className="block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              >
+                <GreenStarRating
+                  rating="4.9 / 5"
+                  forceFull={true}
+                  size={24}
+                  className="mb-2"
+                />
+                <p className="text-sm font-medium text-slate-500 transition-colors hover:text-emerald-600">
+                  Overall rating 4.9 / 5
+                </p>
+              </a>
+            </div>
+
+            <div className="w-full hidden lg:block">
+              <CTAButton
+                href={buudyUrl}
+                text="Official Website"
+                className="w-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Details */}
+        <div className="lg:col-span-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 hidden lg:block font-serif">
+            <a
+              href={buudyUrl}
+              onClick={(event) => preventPlaceholderNavigation(event, buudyUrl)}
+              className="hover:text-emerald-600 transition-colors"
+            >
+              #1 Buudy 7 Colour LED Mask
+            </a>
+          </h2>
+
+          <div className="prose prose-slate prose-lg max-w-none mb-8">
+            {descriptions.map((p, idx) => (
+              <p
+                key={idx}
+                className="text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: p }}
+              />
+            ))}
+          </div>
+
+          {/* Metrics */}
+          <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 mb-8">
+            <h4 className="font-bold text-slate-900 mb-6 text-lg">
+              Performance Metrics
+            </h4>
+            <div className="space-y-3">
+              {metrics.map((metric, idx) => (
+                <MetricBar
+                  key={idx}
+                  label={metric.label}
+                  value={metric.value}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 mb-8">
+            {/* Pros */}
+            <div className="bg-emerald-50/50 rounded-2xl px-3 py-5 md:p-6 border border-emerald-100">
+              <h4 className="bg-emerald-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+                Pros
+              </h4>
+              <ul className="space-y-4">
+                {pros.map((pro, idx) => {
+                  const [bold, ...rest] = pro.split(":");
+                  const is7ColorPoint =
+                    bold.toLowerCase().includes("7 colour") ||
+                    bold.toLowerCase().includes("7 color") ||
+                    bold.toLowerCase().includes("7-colour");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-base text-slate-700 flex items-start gap-3"
+                    >
+                      <Check
+                        size={20}
+                        className="text-emerald-500 shrink-0 mt-0.5"
+                      />
+                      <div>
+                        <span>
+                          <strong className="text-slate-900">
+                            {bold}:
+                          </strong>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: rest.join(":"),
+                            }}
+                          />
+                        </span>
+                        {is7ColorPoint && (
+                          <div className="mt-2.5 flex items-center gap-1.5 flex-wrap">
+                            {BUUDY_7_COLOR_DOTS.map((dot, i) => (
+                              <span
+                                key={i}
+                                title={dot.name}
+                                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-white border shadow-2xs ${
+                                  dot.border
+                                    ? "border-slate-300 text-slate-700"
+                                    : "border-slate-200 text-slate-800"
+                                }`}
+                              >
+                                <span
+                                  className="w-2.5 h-2.5 rounded-full shrink-0 shadow-2xs"
+                                  style={{ backgroundColor: dot.bg }}
+                                />
+                                <span className="text-[11px] font-medium">
+                                  {dot.name.split(" ")[0]}
+                                </span>
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            {/* Cons */}
+            <div className="bg-red-50/50 rounded-2xl px-3 py-5 md:p-6 border border-red-100">
+              <h4 className="bg-red-500 text-white font-bold text-center text-2xl py-3 px-3 md:px-6 -mt-5 -mx-3 md:-mt-6 md:-mx-6 mb-5 md:mb-6 rounded-t-2xl">
+                Cons
+              </h4>
+              <ul className="space-y-4">
+                {cons.map((con, idx) => {
+                  const [bold, ...rest] = con.split(":");
+                  return (
+                    <li
+                      key={idx}
+                      className="text-base text-slate-700 flex items-start gap-3"
+                    >
+                      <XCircle
+                        size={20}
+                        className="text-red-500 shrink-0 mt-0.5"
+                      />
+                      <span>
+                        <strong className="text-slate-900">
+                          {bold}:
+                        </strong>
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: rest.join(":"),
+                          }}
+                        />
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+
+          {/* Editor's Tip - Free Gifts */}
+          <FreeGiftsBox buudyUrl={buudyUrl} />
+
+          {/* Mobile CTA */}
+          <div className="w-full mt-8 lg:hidden">
+            <CTAButton
+              href={buudyUrl}
+              text="Official Website"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -7,24 +7,17 @@ import { articles } from "@/data/old/articles";
 import {
   EmeraldMasthead,
   ExpertReviewerCard,
-  FreeGiftsBox,
+  BuudyWinnerProductCard,
   DermatologistVerdictSection,
   CompetitorComparisonTable,
   StickyMobileCta,
   MaskFooter,
-  BUUDY_7_COLOR_DOTS,
-  BUUDY_OFFICIAL_URL,
-  CTAButton,
   EXPERT_PROFILE,
 } from "@/features/mask-common/MaskAdvertorialCommon";
-import { GreenStarRating } from "@/components/GreenStarRating";
 import {
   Calendar,
   User,
   Clock,
-  Sparkles,
-  Award,
-  Check,
   BookOpen,
 } from "lucide-react";
 
@@ -66,7 +59,7 @@ export default function Article() {
       />
 
       {/* Article Hero Banner */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-16">
+      <article className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-16">
         <header className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-5">
             <BookOpen size={14} className="text-emerald-600" />
@@ -125,106 +118,10 @@ export default function Article() {
                 {paragraph}
               </p>
 
-              {/* Mid-Article Highlight Card: Our #1 Rated Buudy Mask with £128 Free Gifts */}
+              {/* Mid-Article Highlight Card: Canonical Winner Card from Best Mask Page */}
               {index === 2 && (
-                <div className="my-12 rounded-3xl border-2 border-emerald-500 bg-gradient-to-b from-emerald-50/60 to-white p-6 sm:p-8 shadow-xl relative overflow-hidden not-prose">
-                  <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-32 h-32 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none" />
-
-                  {/* Top Badges */}
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 text-amber-300 border border-amber-400/40 px-3 py-1 text-xs font-black uppercase tracking-wider shadow-sm">
-                      <Sparkles size={13} className="text-amber-300" />
-                      BIGGEST BLACK FRIDAY SALE
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-                      <Award size={14} className="text-emerald-700" />
-                      #1 EDITOR'S CHOICE OVERALL
-                    </span>
-                  </div>
-
-                  <div className="grid md:grid-cols-[1fr_1.2fr] gap-6 sm:gap-8 items-center">
-                    <div className="relative mx-auto max-w-[280px]">
-                      <div className="rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-3 shadow-md">
-                        <img
-                          src="/img/57-w.webp"
-                          alt="Buudy 7 Colour LED Face and Neck Mask"
-                          className="w-full h-auto object-contain"
-                        />
-                      </div>
-                      <div className="mt-3 text-center">
-                        <span className="text-[11px] font-semibold text-slate-500">
-                          192 Medical LEDs · Full Face & Neck
-                        </span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif leading-tight mb-2">
-                        Buudy 7 Colour LED Mask
-                      </h3>
-                      <div className="flex items-center gap-3 mb-4">
-                        <GreenStarRating rating={4.9} />
-                        <span className="text-sm font-bold text-slate-800">4.9 / 5</span>
-                        <span className="text-xs text-slate-500 font-medium">(4,277+ UK reviews)</span>
-                      </div>
-
-                      {/* Pricing */}
-                      <div className="flex items-baseline gap-3 mb-4">
-                        <span className="text-3xl sm:text-4xl font-black text-slate-950">£179</span>
-                        <span className="text-lg text-slate-400 line-through">£449</span>
-                        <span className="rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-xs font-black uppercase">
-                          SAVE 60%
-                        </span>
-                      </div>
-
-                      {/* 8 Color Dots */}
-                      <div className="mb-5">
-                        <span className="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">
-                          All 7 Visible Wavelengths + 830nm Near-Infrared:
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {BUUDY_7_COLOR_DOTS.map((dot) => (
-                            <span
-                              key={dot.name}
-                              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 border border-slate-200/80 px-2.5 py-1 text-[11px] font-bold text-slate-700"
-                            >
-                              <span
-                                className="w-2.5 h-2.5 rounded-full inline-block shadow-sm"
-                                style={{ backgroundColor: dot.bg, border: dot.border ? "1px solid #cbd5e1" : "none" }}
-                              />
-                              {dot.name}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Key Pros */}
-                      <ul className="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
-                        <li className="flex items-start gap-2">
-                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
-                          <span><strong>Integrated Neck Panel:</strong> Covers face and neck in one wearable without expensive £300+ add-ons.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
-                          <span><strong>Cordless & Rechargeable:</strong> Up to 12 hands-free treatments per single charge.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Check size={16} className="text-emerald-600 shrink-0 mt-0.5" />
-                          <span><strong>90-Day Money-Back Guarantee:</strong> 100% risk-free home clinical trial.</span>
-                        </li>
-                      </ul>
-
-                      {/* £128 Free Gifts Box */}
-                      <FreeGiftsBox />
-
-                      <div className="mt-6">
-                        <CTAButton
-                          href={BUUDY_OFFICIAL_URL}
-                          text="CHECK AVAILABILITY & CLAIM GIFTS"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div className="not-prose my-12">
+                  <BuudyWinnerProductCard />
                 </div>
               )}
             </React.Fragment>
@@ -232,15 +129,16 @@ export default function Article() {
         </div>
       </article>
 
-      {/* Dermatologist Verdict Section with HTML5 Video */}
-      <DermatologistVerdictSection />
+      {/* Canonical Bottom Sections: Dermatologist Video Verdict + Top 5 Comparison Table */}
+      <main className="max-w-6xl mx-auto px-4 pb-16 font-sans">
+        <DermatologistVerdictSection />
+        <CompetitorComparisonTable />
+      </main>
 
-      {/* Full 5-Mask Comparison Table */}
-      <CompetitorComparisonTable />
-
-      {/* Sticky Mobile CTA & Footer */}
-      <StickyMobileCta />
       <MaskFooter />
+
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCta />
     </div>
   );
 }

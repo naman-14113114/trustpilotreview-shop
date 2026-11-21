@@ -21,6 +21,7 @@ import {
   ExpertReviewerCard,
   FreeGiftsBox,
   DermatologistVerdictSection,
+  CompetitorComparisonTable,
   StickyMobileCta,
   MaskFooter,
   preventPlaceholderNavigation,
@@ -470,6 +471,9 @@ export default function BrandNamePremium() {
 
         {/* Dermatologist's Verdict Video Section */}
         <DermatologistVerdictSection />
+
+        {/* 5-Product Side-by-Side Comparison Table */}
+        <CompetitorComparisonTable />
       </main>
 
       <MaskFooter />

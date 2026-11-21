@@ -24,6 +24,7 @@ import {
   ExpertReviewerCard,
   FreeGiftsBox,
   DermatologistVerdictSection,
+  CompetitorComparisonTable,
   StickyMobileCta,
   MaskFooter,
   preventPlaceholderNavigation,
@@ -573,6 +574,9 @@ export default function SiliconMaskWarning() {
 
         {/* Dermatologist's Verdict Video Section */}
         <DermatologistVerdictSection />
+
+        {/* 5-Product Side-by-Side Comparison Table */}
+        <CompetitorComparisonTable />
       </main>
 
       <MaskFooter />
